@@ -1,0 +1,8 @@
+// импортируем css-переменные
+@import '../variables/variables';
+
+// импортируем миксины
+@import '../mixin/adaptive';
+
+@import '../mixin/link';
+@import '../mixin/listElement';

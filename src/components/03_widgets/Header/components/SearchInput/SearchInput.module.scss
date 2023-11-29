@@ -1,0 +1,28 @@
+@import '~global_styles';
+
+
+.container {
+  position: relative;
+  &:focus-within {
+    svg {
+      stroke: $accent-green;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  font-size: 14px;
+  line-height: 1;
+  padding: 10px 35px 10px 17px;
+}
+
+.icon {
+  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  //cursor: pointer;
+}
+

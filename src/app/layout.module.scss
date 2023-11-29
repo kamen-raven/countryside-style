@@ -1,0 +1,39 @@
+@import '~global_styles';
+
+.page {
+  margin: 0;
+  padding: 0;
+  color: $dark;
+  background-color: $white;
+  font-family: $ff-gothamPro;
+  font-size: $paragraph-md;
+  font-style: normal;
+  font-weight: $regular;
+}
+
+.container {
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  //grid-template-columns: minmax(280px, 1920px);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+}
+
+.gridArea {
+  &_header {
+    grid-area: header;
+  }
+
+  &_main {
+    grid-area: main;
+  }
+
+  &_footer {
+    grid-area: footer;
+  }
+}
+

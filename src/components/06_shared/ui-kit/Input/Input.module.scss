@@ -1,0 +1,16 @@
+@import '~global_styles';
+
+.commonInput {
+  box-sizing: border-box;
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  outline: none;
+  background: $white;
+  color: $gray;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $accent-green;
+  }
+}
+

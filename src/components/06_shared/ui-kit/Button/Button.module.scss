@@ -1,0 +1,28 @@
+@import '~global_styles';
+
+.common-button {
+  display: inline-block;
+
+  padding: 12px 25px;
+  cursor: pointer;
+
+  border: none;
+  border-radius: $border-radius;
+
+  font-family: $ff-openSans;
+  line-height: 132%;
+  text-align: center;
+}
+
+.colored {
+  @extend .common-button;
+  background: $accent-green;
+  color: #FFF;
+}
+
+.transparent {
+  @extend .common-button;
+  border: 1px solid $gray;
+  background-color: transparent;
+  color: $accent-green;
+}

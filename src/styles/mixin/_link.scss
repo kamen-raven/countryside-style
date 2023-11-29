@@ -1,0 +1,9 @@
+@import '~variables';
+
+@mixin common-link {
+  text-decoration: none;
+  font-family: $ff-gothamPro;
+  font-weight: $medium;
+  font-style: normal;
+  transition: all 0.2s linear;
+}
