@@ -24,10 +24,10 @@ const InfoHeadBlock = ({ ...props }: InfoHeadBlockProps): JSX.Element => {
             <span className={styles.countInfo__num}>
               256
             </span>
-            Проданных объектов загородной недвижимости в 2022 году
+            Проданных объектов загородной недвижимости в&nbsp;2022 году
           </h3>
           <p className={styles.countInfo__description}>
-            Мы продаем только те объекты, которые видели своими глазами
+            Мы продаем только те&nbsp;объекты, которые видели своими глазами
           </p>
         </div>
 
@@ -54,7 +54,7 @@ const InfoHeadBlock = ({ ...props }: InfoHeadBlockProps): JSX.Element => {
 
         <div className={styles.requestForm}>
           <p className={styles.requestForm__title}>
-            Оставьте заявку<br /> на БЕСПЛАТНУЮ консультацию
+            Оставьте заявку<br /> на&nbsp;БЕСПЛАТНУЮ консультацию
           </p>
           <form name='requestForm' className={styles.requestForm__form}>
             <Input className={styles.requestForm__input}
@@ -63,10 +63,9 @@ const InfoHeadBlock = ({ ...props }: InfoHeadBlockProps): JSX.Element => {
               Узнать цену
             </Button>
             <span className={styles.requestForm__agreement}>
-              Нажимая на кнопку, вы даете свое согласие на 
-              <Link className={styles.requestForm__agreement} href={`/personal`}>обработку персональных данных
+              Нажимая на кнопку, вы даете свое согласие на
+              <Link className={styles.requestForm__agreement} href={`/personal`}>&nbsp;обработку персональных данных
               </Link>
-
             </span>
           </form>
         </div>

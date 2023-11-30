@@ -17,11 +17,11 @@ const TitleHeadBlock = ({ ...props }: TitleHeadBlockProps): JSX.Element => {
         <h1 className = {styles.title}>
           Агентство<br/> загородной недвижимости
           <span className = {styles.subtitle}>
-            в Санкт-Петербурге и Ленинградской области
+            в&nbsp;Санкт-Петербурге и Ленинградской области
           </span>
         </h1>
         <p className = {styles.description}>
-          Лучшая риэлтерская компания на рынке загородной недвижимости 2018 года
+          Лучшая риэлтерская компания на рынке загородной недвижимости 2018 года
         </p>
       </div>
       <div className = {styles.info}>
