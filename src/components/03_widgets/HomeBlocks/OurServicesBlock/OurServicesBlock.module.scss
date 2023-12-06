@@ -1,0 +1,29 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: ourServices;
+
+  @include common-wrapper;
+  //overflow: hidden;
+  position: relative;
+  border-top: 1px solid $gray;
+}
+
+.container {
+  grid-area: container;
+  margin: 90px 120px 130px;
+  z-index: 1;
+}
+
+
+.title {
+  @include common-title(h2);
+}
+
+
+.servicesBlock {
+  display: grid;
+  grid-template-rows: 384px repeat(2, minmax(384px, 600px)) ;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px 50px;
+}

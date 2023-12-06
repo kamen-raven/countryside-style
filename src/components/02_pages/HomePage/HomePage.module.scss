@@ -1,4 +1,11 @@
 .mainContainer {
   grid-area: main;
 
+  display: grid;
+  grid-template-columns: auto;
+  grid-template:
+  "headBlock"
+  "objectsForSale"
+  "ourServices"
+  "press";
 }

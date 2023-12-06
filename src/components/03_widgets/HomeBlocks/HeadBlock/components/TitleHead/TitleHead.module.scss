@@ -1,0 +1,88 @@
+@import '~global_styles';
+
+.wrapper {
+  @include common-wrapper;
+  width: 100%;
+  position: relative;
+  color: $white;
+
+  &__bg {
+    background-image: url('../../../../../../../public/img/headBlock/mainBackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.titleContainer {
+  grid-area: container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.title {
+  @include common-title(h1, $color: $white);
+
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 15px;
+  text-align: center;
+
+  font-size: 60px;
+  font-weight: $regular;
+  line-height: 100%;
+
+
+}
+
+.description {
+  margin-bottom: 250px;
+
+  font-size: 30px;
+  line-height: 120%;
+
+}
+
+
+
+.info {
+  grid-area: container;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 160px;
+  height: 160px;
+  background-color: $accent-gray;
+  border-radius: 50%;
+  position: absolute;
+  top: 70px;
+  right: 120px;
+
+  &__text {
+
+    margin: 0;
+    font-family: $ff-openSans;
+    font-size: 16px;
+
+    line-height: 135%;
+
+  }
+
+  &__years {
+    font-family: $ff-openSans;
+    font-size: $h1;
+    font-weight: $bold;
+    line-height: 100%;
+
+  }
+}
+
+

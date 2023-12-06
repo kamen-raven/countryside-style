@@ -1,0 +1,57 @@
+@import '~global_styles';
+
+
+.wrapper {
+  grid-area: press;
+
+  @include common-wrapper;
+  background-color: $dark;
+  color: $white;
+}
+
+.container {
+  grid-area: container;
+  margin: 110px 120px;
+
+  display: grid;
+  grid-template-columns: 390px 3fr;
+  column-gap: 180px;
+}
+
+.inner {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 25px;
+  }
+
+  &__articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 100px;
+  }
+}
+
+.title {
+  @include common-title(h3, $color: $white);
+  text-align: right;
+}
+
+.description {
+  font-size: $paragraph-md;
+  font-weight: $regular;
+  line-height: 130%;
+  text-align: right;
+  margin: 0;
+}
+
+.link {
+  width: auto;
+  object-fit: cover;
+  max-height: 60px;
+}
+
+.logo {
+
+}

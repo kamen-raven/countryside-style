@@ -1,0 +1,38 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: objectsForSale;
+
+  @include common-wrapper;
+
+  overflow: hidden;
+  position: relative;
+}
+
+
+.background svg {
+  grid-area: container;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-size: cover;
+  z-index: -10;
+}
+
+.container {
+  grid-area: container;
+  margin: 90px 120px 130px;
+  z-index: 1;
+}
+
+
+
+.title {
+  @include common-title(h2);
+}
+
+.objectsBlock {
+  display: grid;
+  gap: 150px;
+}

@@ -1,0 +1,6 @@
+@mixin common-wrapper {
+  display: grid;
+  grid-template-columns: auto minmax(280px, 1920px) auto;
+  grid-template-areas:
+  ". container .";
+}

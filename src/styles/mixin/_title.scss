@@ -1,0 +1,33 @@
+@import '~variables';
+
+@mixin common-title($htag,
+                    $font-size: $title,
+                    $font-weight: $medium,
+                    $line-height: 110%,
+                    $margin: 0 0 60px,
+                    $color: $dark)  {
+
+    @if $htag == h1 {
+      font-size: $h1;
+      font-weight: $font-weight;
+      line-height: $line-height;
+      margin: 260px 0 0;
+      color: $color;
+    }
+
+    @if $htag == h2 {
+      font-size: $font-size;
+      font-weight: $font-weight;
+      line-height: $line-height;
+      margin: $margin;
+      color: $color;
+    }
+
+    @if $htag == h3 {
+      font-size: $subtitle;
+      font-weight: $font-weight;
+      line-height: 100%;
+      margin: 0;
+      color: $color;
+    }
+}
