@@ -18,18 +18,19 @@
   column-gap: 180px;
 }
 
-.inner {
+.innerBlock {
   &__text {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 25px;
+    justify-content: space-between;
+    gap: 40px;
   }
 
   &__articles {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px 100px;
+    gap: 40px 100px;
   }
 }
 

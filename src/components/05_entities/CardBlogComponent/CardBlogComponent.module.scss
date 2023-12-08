@@ -1,0 +1,162 @@
+@import '~global_styles';
+
+/* общий компонент */
+.innerBlock {
+  display: grid;
+  grid-template-columns: [pic-start] minmax(280px, 1050px) [pic-end info-start] 1fr [question-column] auto [info-end];
+  grid-template-rows: [text-start] minmax(260px, 1fr) [text-end under-text] minmax(255px, 1fr) [question-start] auto [question-end];
+  gap: 15px;
+  max-height: 600px;
+
+  &_homePage { /* шаблон для ДОМАШНЕЙ СТРАНИЦЫ */
+    grid-template-areas:
+    "image title title"
+    "image button ."
+    "image arrows question";
+  }
+
+  &_blogPage { /* шаблон для страницы БЛОГА */
+    grid-template-areas:
+    "image title title"
+    "image tags tags"
+    "image button question";
+  }
+}
+/* ------------------- */
+
+
+/* компонент изображения */
+.imageWrapper {
+  grid-area: image;
+  position: relative;
+}
+
+.image {
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center;
+  clip-path: polygon(
+    0% 100%,
+    0% 0%,
+    100% 0%,
+    calc(100% - 50px) 50px,
+    calc(100% - 50px) 100%
+  );
+}
+/* ------------------- */
+
+/* заголовок статьи */
+.blogTitle {
+  grid-area: title;
+
+  @include common-title(h3small);
+  align-self: flex-end;
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+/* ----------------- */
+
+/* кнопка ПОДРОБНЕЕ для перехода на текст статьи */
+.button {
+  grid-area: button;
+  justify-self: flex-start;
+  min-width: 145px;
+}
+/* ------------------- */
+
+/* кнопки для листания статей в карусели ТОЛЬКО ДЛЯ ГЛАВНОЙ СТРАНИЦЫ!! */
+.blogArrows {
+  grid-area: arrows;
+  //margin-top: 210px;
+
+  &_none { /* отключаем отображение на странице БЛОГА */
+    display: none;
+  }
+}
+/* -------------------------- */
+
+/* контейнер для тэгов и количества комментариев */
+.blogInfo {
+  grid-area: tags;
+  display: flex;
+  flex-direction: column;
+
+  &_none { /* отключаем отображение на ГЛАВНОЙ */
+    display: none;
+  }
+}
+
+/* контейнер с количеством комментариев */
+.commentsContainer {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  color: $black;
+  margin-bottom: 30px;
+}
+
+.commentsCount {
+  margin: 0;
+  font-family: $ff-openSans;
+  font-size: $fs-navLink;
+  font-weight: $regular;
+  line-height: 150%;
+}
+/* ------------------------------ */
+
+/* компонент тэгов */
+.tagsContainer {
+  display: flex;
+  gap: 15px;
+
+}
+
+.tag {
+  font-family: $ff-openSans;
+  font-size: $paragraph-md;
+  font-weight: $regular;
+  line-height: 135%;
+}
+/* -------------------------- */
+
+/* контейнер с кнопкой для ПОП-АПА "Задать вопрос" */
+.askYourQuestion {
+  grid-area: question;
+  align-self: flex-end;
+
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  font-family: $ff-openSans;
+  padding: 0;
+  margin: 10px 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  max-height: 35px;
+
+  &__text {
+    margin: 0;
+    text-wrap: nowrap;
+    text-decoration: underline;
+    line-height: 100%;
+  }
+
+  &__span {
+    box-sizing: border-box;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    border: 1px solid $dark;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+  }
+}
+/* ---------------------------- */

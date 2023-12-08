@@ -1,0 +1,17 @@
+@import '~global_styles';
+
+
+.wrapper {
+  grid-area: blog;
+  position: relative;
+  @include common-wrapper;
+}
+
+.container {
+  grid-area: container;
+  margin: 90px 120px 130px;
+}
+
+.title {
+  @include common-title(h2);
+}

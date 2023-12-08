@@ -18,7 +18,7 @@ const ObjectsForSaleBlock: React.FC<ObjectsForSaleBlockProps> = ({ objItems }) =
           Объекты в продаже
         </h2>
 
-        <div className={styles.objectsBlock}>
+        <div className={styles.innerBlock}>
           {objItems && objItems.map(m => {
             return (
               <ObjectForSale

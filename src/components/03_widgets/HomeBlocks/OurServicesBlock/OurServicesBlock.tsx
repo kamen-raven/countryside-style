@@ -16,7 +16,7 @@ const OurServicesBlock: React.FC<OurServicesBlockProps> = ({ servicesItems }) =>
         <h2 className={styles.title}>
           Наши услуги
         </h2>
-        <div className={styles.servicesBlock}>
+        <div className={styles.innerBlock}>
 
           {servicesItems && servicesItems.map(m => {
             return (

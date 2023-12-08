@@ -62,43 +62,6 @@
 }
 
 
-
-
-.arrows {
-  display: flex;
-  gap: 15px;
+.arrowsCardInfo {
   margin-top: 25px;
-
 }
-
-.arrow {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid $dark;
-  border-radius: 50%;
-  background: none;
-  padding: 0;
-  width: 55px;
-  height: 55px;
-
-  & svg {
-    transition: transform .3s linear;
-  }
-
-  &:hover {
-    & svg {
-      transition: transform .3s linear;
-      transform: translate(10px);
-    }
-  }
-  &_left  {
-    transform: rotate(180deg);
-  }
-
-  &_right {
-    transform: rotate(0);
-  }
-}
-
-

@@ -1,9 +1,8 @@
 import React from 'react';
 import { CardInfoComponentProps } from './CardInfoComponent.props';
 import styles from './CardInfoComponent.module.scss';
-import { Button } from '~/components/06_shared';
+import { ArrowsButton, Button } from '~/components/06_shared';
 
-import ArrowIcon from '~svg/button/arrow.svg';
 
 
 const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
@@ -41,14 +40,7 @@ const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
           {title}
         </h3>
         {!arrows ? '' :
-          <div className={styles.arrows}>
-            <button className={`${styles.arrow} ${styles.arrow_left}`}>
-              <ArrowIcon />
-            </button>
-            <button className={`${styles.arrow} ${styles.arrow_right}`}>
-              <ArrowIcon />
-            </button>
-          </div>
+          <ArrowsButton className = {styles.arrowsCardInfo}/>
         }
       </div>
       <div className={`${styles.wrapper} ${selectedWrapper}`}>
