@@ -1,6 +1,8 @@
 @import '~global_styles';
 
 .page {
+  @include scrollbar ($arrows: true);
+
   margin: 0;
   padding: 0;
   color: $dark;

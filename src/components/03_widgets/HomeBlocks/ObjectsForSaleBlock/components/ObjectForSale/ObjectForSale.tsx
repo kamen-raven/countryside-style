@@ -21,14 +21,14 @@ const ObjectForSale: React.FC<ObjectForSaleProps> = ({
 
   // Определяем тип расположения контента - текст располагается справа или слева
   const containerType = {
-    picFirst: styles.innerContainer_picFirst, // текст слева, картинка идет первая
-    textFirst: styles.innerContainer_textFirst // текст справа, картинка идет вторая
+    picFirst: styles.innerBlock_picFirst, // текст слева, картинка идет первая
+    textFirst: styles.innerBlock_textFirst // текст справа, картинка идет вторая
   };
   // Селектор выбранного контейнера для контента
   const selectedContainer = containerType[containerTemplate];
 
   return (
-    <div className={`${styles.innerContainer} ${selectedContainer} `}>
+    <div className={`${styles.innerBlock} ${selectedContainer} `}>
       <div className={styles.photoSecondary}>
         {photoSecondary &&
         <Image

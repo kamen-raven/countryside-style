@@ -1,0 +1,70 @@
+@import '~global_styles';
+
+.container {
+
+  &_bg_green {
+    background-color: $accent-green;
+  }
+
+  &_bg_gray {
+    background-color: $accent-gray;
+  }
+}
+
+
+
+.innerBlock {
+  display: flex;
+  align-items: stretch;
+  max-height: 800px;
+
+  &_textFirst{
+    flex-direction: row-reverse;
+  }
+
+}
+
+
+.imageContainer {
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  width:  max(350px, 880px);
+  height: max(350px, 800px);;
+}
+
+.infoContainer {
+  margin: 150px 100px;
+}
+
+.name {
+  @include common-title(h3, $color: $white);
+
+}
+
+.jobTitle {
+  font-size: 30px;
+  font-weight: $regular;
+  line-height: 120%;
+  margin: 25px 0 0;
+}
+
+.quoteContainer {
+  margin-top: 100px ;
+display: flex;
+}
+
+.quotationMark {
+  font-size: 100px;
+  font-weight: $medium;
+  line-height: 100%;
+  margin: 0;
+  margin-right: 25px;
+}
+
+.quoteText {
+  @include common-title(h3small, $color: $white);
+  margin-top: 30px;
+}

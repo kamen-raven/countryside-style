@@ -1,6 +1,6 @@
 @import '~global_styles';
 
-.innerContainer {
+.innerBlock {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   justify-content: space-between;
@@ -21,7 +21,7 @@
 .photoGeneral {
   grid-area: photoGeneral;
   position: relative;
-  
+
   &__image {
     object-fit: cover;
     max-width: 830px;

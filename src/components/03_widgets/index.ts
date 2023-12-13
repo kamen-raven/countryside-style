@@ -7,4 +7,5 @@ export * from './HomeBlocks/OurServicesBlock/OurServicesBlock';
 export * from './HomeBlocks/PressBlock/PressBlock';
 export * from './HomeBlocks/BlogBlock/BlogBlock';
 export * from './HomeBlocks/TeamBlock/TeamBlock';
+export * from './HomeBlocks/ReviewsBlock/ReviewsBlock';
 

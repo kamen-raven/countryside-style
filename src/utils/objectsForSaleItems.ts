@@ -1,4 +1,8 @@
-import { ObjectForSaleProps } from "~/components/03_widgets/HomeBlocks/ObjectsForSaleBlock/components/ObjectForSale/ObjectForSale.props";
+import { ObjectForSaleProps } from "~widgets/HomeBlocks/ObjectsForSaleBlock/components/ObjectForSale/ObjectForSale.props";
+
+
+
+
 
 const objectsForSaleData: ObjectForSaleProps[] = [
   {

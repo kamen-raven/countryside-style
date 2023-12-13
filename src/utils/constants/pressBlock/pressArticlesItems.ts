@@ -1,16 +1,8 @@
 import CudNewsLogo from "~img/PressBlock/CudNews.png";
 import KommersantLogo from "~img/PressBlock/Commersant.png";
 import PromdevelopLogo from "~img/PressBlock/Promdevelop.png";
-import { StaticImageData } from "next/image";
+import { pressDataInterface } from "~widgets/HomeBlocks/PressBlock/PressBlock.props";
 
-
-export interface pressDataInterface {
-  _id: number;
-  journal: string;
-  article: string;
-  link:string;
-  logo: StaticImageData;
-}
 
 const pressData: pressDataInterface[] = [
   {
@@ -38,35 +30,6 @@ const pressData: pressDataInterface[] = [
 
 export default pressData;
 
-
-/*
-interface PressLogoItem {
-  logo: StaticImageData;
-  name: string;
-}
-
-export interface PressLogos {
-  CudNews: PressLogoItem;
-  Kommersant: PressLogoItem;
-  Promdevelop: PressLogoItem;
-}
-
-export const pressLogos = [
-  {
-    logo: CudNewsLogo,
-    name: "CudNews",
-  },
-  {
-    logo: KommersantLogo,
-    name: "Kommersant",
-  },
-  {
-    logo: PromdevelopLogo,
-    name: "Promdevelop",
-  },
-];
-
- */
 
 
 

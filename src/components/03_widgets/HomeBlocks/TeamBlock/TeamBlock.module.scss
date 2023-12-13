@@ -1,0 +1,10 @@
+@import '~global_styles';
+
+
+.wrapper {
+  grid-area: team;
+  @include common-wrapper;
+  color: $white;
+  row-gap: 20px;
+  grid-template-areas: none;
+}

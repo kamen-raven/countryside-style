@@ -2,8 +2,10 @@
 
 .wrapper {
   grid-area: objectsForSale;
-
   @include common-wrapper;
+  //display: flex;
+  //justify-content: center;
+  //margin: 0 auto;
 
   overflow: hidden;
   position: relative;
@@ -22,11 +24,10 @@
 
 .container {
   grid-area: container;
+  //max-width: calc(1920px - 240px);
   margin: 90px 120px 130px;
   z-index: 1;
 }
-
-
 
 .title {
   @include common-title(h2);

@@ -1,0 +1,89 @@
+@import '~variables';
+
+
+
+@mixin scrollbar ($arrows,
+                  $border-radius: 8px,
+                  $border: 1px solid $gray) {
+  scrollbar-color: $accent-green $white;
+  /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: $scrollbar-width;
+
+  /*   @include breakpoint(screen480) {
+    scrollbar-width: .8rem;
+  }
+  @include breakpoint(screen320) {
+    scrollbar-width: .6rem;
+  }
+ */
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+    /* ширина для вертикального скролла */
+    height: $scrollbar-width;
+    /* высота для горизонтального скролла */
+    background-color: $white;
+    border-radius: $border-radius;
+    /* Закругление углов полосы прокрутки */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $accent-green;
+    /* Цвет полосы прокрутки */
+    border-radius: $border-radius;
+    /* Закругление углов полосы прокрутки */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $white; /* Цвет фона полосы прокрутки */
+    border: $border;
+    border-radius: $border-radius; /* Закругление углов полосы прокрутки */
+  }
+
+  &:hover {
+    scrollbar-color: $accent-green-hover;
+    /* Изменение цвета полосы прокрутки при наведении */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $accent-green-hover ;
+    /* Изменение цвета полосы прокрутки при наведении в Chrome и Safari */
+  }
+
+
+
+  @if $arrows ==true {
+    /* Стрелки */
+    &::-webkit-scrollbar-button:vertical:start:decrement {
+      background:
+        linear-gradient(120deg, $white  40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, $white 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(0deg, $white 30%, rgba(0, 0, 0, 0) 31%);
+      background-color: $accent-green;
+    }
+
+    &::-webkit-scrollbar-button:vertical:end:increment {
+      background:
+        linear-gradient(300deg, $white 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(60deg, $white 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, $white 30%, rgba(0, 0, 0, 0) 31%);
+      background-color: $accent-green;
+    }
+
+    &::-webkit-scrollbar-button:horizontal:start:decrement {
+      background:
+        linear-gradient(30deg, $white 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, $white 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, $white 30%, rgba(0, 0, 0, 0) 31%);
+      background-color: $accent-green;
+    }
+
+    &::-webkit-scrollbar-button:horizontal:end:increment {
+      background:
+        linear-gradient(210deg, $white 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, $white 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(90deg, $white 30%, rgba(0, 0, 0, 0) 31%);
+      background-color: $accent-green;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '~global_styles';
+
+
+.wrapper {
+  grid-area: reviews;
+  @include common-wrapper;
+}
+
+.container {
+  grid-area: container;
+  margin: 90px 120px 130px;
+}
+
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  @include common-title(h2, $margin: 0);
+}
+
+.innerBlock {
+  @include scrollbar ($arrows: false);
+
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 25px));
+  grid-auto-columns: calc(50% - 25px);
+  grid-auto-flow: column;
+  column-gap: 50px;
+  padding-bottom: 70px;
+  overflow-x: auto;
+}
+
+
