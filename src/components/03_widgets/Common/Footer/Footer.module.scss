@@ -1,0 +1,97 @@
+@import '~global_styles';
+
+.footerWrapper {
+  @include common-wrapper;
+}
+
+.container {
+  grid-area: container;
+  margin: 90px 120px;
+  display: grid;
+  grid-template-rows: 60px auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "logo logo"
+    "nav contacts";
+  gap: 60px 440px;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+
+.listItem {
+  visibility: hidden;
+
+  &_empty1 {
+    grid-area: empty1;
+  }
+
+  &_empty2 {
+    grid-area: empty2;
+  }
+
+  &_empty3 {
+    grid-area: empty3;
+  }
+}
+
+.addressContainer {
+  font-style: normal;
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.phone {
+  @include common-title(p,
+    $color: $gray-dark,
+    $font-weight: $bold,);
+    font-weight: $bold;
+  text-decoration: none;
+}
+
+
+.contactsList {
+  @include common-ul;
+  display: flex;
+
+  gap: 10px;
+}
+
+.contactItem {
+  @include common-li;
+  border-radius: 30px;
+
+  &__icon {
+    display: flex;
+
+
+    & svg {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      fill: none;
+      border: 1px solid $gray-dark;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+
+    text-decoration: none;
+  }
+}
+
+
+.address {
+  @include common-title (pSmall, $color: $gray-dark);
+
+text-align: right;
+
+}

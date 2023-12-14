@@ -1,0 +1,57 @@
+@import '~global_styles';
+
+.form {
+  /*  display: flex;
+  flex-direction: column;
+  gap: 30px; */
+}
+
+.title {
+  @include common-title(h3small,
+                        $color: $white);
+  margin-bottom: 10px;
+}
+
+.description {
+  @include common-title (p,
+                        $color: $white);
+  font-family: $ff-openSans;
+  margin-bottom: 35px;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+}
+
+.label {
+  visibility: hidden;
+}
+
+.input {
+  @include common-input;
+  padding: 10px 30px;
+  margin-bottom: 10px
+}
+
+.textarea {
+  @include common-input;
+  width: 100%;
+  height: max(220px, 120px);
+  resize: none;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+}
+
+.button {
+  width: 255px;
+  margin-bottom: 20px;
+}
+
+.agreement {
+  display: inline-block;
+  @include common-title(pSmall, $color: $white);
+}

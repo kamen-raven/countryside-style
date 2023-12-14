@@ -1,0 +1,122 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: contacts;
+  @include common-wrapper;
+  grid-template-areas:
+  ". container ."
+  ". form .";
+  border-top: 1px solid $gray;
+}
+
+.containerInfo {
+  grid-area: container;
+  margin: 90px 120px;
+}
+
+.title {
+  @include common-title(h2);
+}
+
+.innerBlock {
+  /*   display: flex;
+  flex-direction: column;
+  gap: 10px; */
+  font-style: normal;
+}
+
+.description {
+  @include common-title (h3small,
+    $font-weight: $bold,
+    $line-height: 140%);
+  margin-bottom: 10px;
+}
+
+.address {
+  @include common-title (h3small,
+    $font-weight: $regular,
+    $line-height: 140%);
+  margin-bottom: 25px;
+}
+
+.contactsList {
+  @include common-ul;
+  display: flex;
+  gap: 10px;
+}
+
+.contactItem {
+  @include common-li;
+  border-radius: 30px;
+  max-height: 55px;
+
+  &__icon {
+    width: 45px;
+    height: 45px;
+    padding: 5px 5px 5px 15px;
+
+    & svg {
+      border-radius: 50%;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    padding-left: 15px;
+
+    text-decoration: none;
+    color: $white;
+    text-align: center;
+    font-family: $ff-openSans;
+    font-size: 22px;
+    font-weight: $regular;
+    line-height: 130%;
+  }
+
+  &__telegram {
+    background-color: $telegram;
+  }
+
+  &__whatsapp {
+    background-color: $whatsapp;
+  }
+
+  &__vkontakte {
+    background-color: $vkontakte;
+  }
+}
+
+
+
+.containerForm {
+  grid-area: form;
+  background-color: $dark;
+  color: $white;
+
+  display: flex;
+  align-items: stretch;
+  max-height: 800px;
+}
+
+.wrapperInner {
+  max-width: 880px;
+  width: 100%;
+  max-height: 800px;
+  height: 100%;
+
+  display: flex;
+}
+
+.yandexMap {
+  height: 800px;
+  width: 880px;
+  border: none;
+}
+
+
+.wrapperForm {
+  margin: 90px 120px;
+  width: 100%;
+}

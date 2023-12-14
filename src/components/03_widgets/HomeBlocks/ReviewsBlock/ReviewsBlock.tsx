@@ -5,7 +5,7 @@ import { Button } from '~/components/06_shared';
 import { ReviewCard } from '~/components/04_features';
 
 
-const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ }) => {
+const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ reviewsDataItem }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -18,10 +18,12 @@ const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ }) => {
           </Button>
         </div>
         <div className = {`${styles.innerBlock}`}>
-          <ReviewCard />
+          {reviewsDataItem && reviewsDataItem.map(item => {
+            return (
+              <ReviewCard key={item._id} data={item} />
+            );
+          })}
 
-          <ReviewCard />
-          <ReviewCard />
         </div>
       </div>
     </section>

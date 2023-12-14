@@ -1,12 +1,12 @@
 import React from 'react';
-import { ContactBlockProps } from './ContactBlock.props';
-import styles from './ContactBlock.module.scss';
+import { ContactComponentProps } from './ContactComponent.props';
+import styles from './ContactComponent.module.scss';
 import { Button } from '~/components/06_shared';
 import CallIcon from '~svg/contacts/Phone.svg';
 
-const ContactBlock = ({ ...props }: ContactBlockProps): JSX.Element => {
+const ContactComponent = ({ ...props }: ContactComponentProps): JSX.Element => {
   return (
-    <div className={styles.container} {...props}>
+    <address className={styles.container} {...props}>
       <a className={styles.callLink} href={`tel:${+78126432040}`}>
         <span className={styles.callIcon}>
           <CallIcon />
@@ -16,8 +16,8 @@ const ContactBlock = ({ ...props }: ContactBlockProps): JSX.Element => {
       <Button className={styles.buttonCall} appearance={"colored"}>
         Обратный звонок
       </Button>
-    </div>
+    </address>
   );
 };
 
-export { ContactBlock };
+export { ContactComponent };

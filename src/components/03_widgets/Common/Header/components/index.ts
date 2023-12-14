@@ -1,3 +1,2 @@
-export * from './ContactBlock/ContactBlock';
+export * from './ContactComponent/ContactComponent';
 export * from './SearchInput/SearchInput';
-export * from './Navbar/Navbar';

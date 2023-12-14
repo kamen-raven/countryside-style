@@ -1,6 +1,14 @@
+@import '~global_styles';
+
 .logo {
   display: inline-flex;
   //height: 60px;
   //margin-top: 35px;
   //cursor: pointer;
+
+  &_gray  {
+    & svg {
+      fill: $gray;
+    }
+  }
 }

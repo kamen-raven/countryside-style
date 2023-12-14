@@ -36,6 +36,7 @@ const ObjectForSale: React.FC<ObjectForSaleProps> = ({
           src={photoSecondary}
           alt={title}
           fill={true}
+          sizes={`(max-width: 1920px) 410px`}
           />}
       </div>
       <div className={styles.photoGeneral}>
@@ -44,7 +45,8 @@ const ObjectForSale: React.FC<ObjectForSaleProps> = ({
           className={styles.photoGeneral__image}
           src={photoGeneral}
           alt={title}
-          fill={true} />}
+          fill={true}
+          sizes={`(max-width: 1920px) 830px`} />}
       </div>
       <CardInfoComponent
         title={title}

@@ -35,11 +35,17 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     image: {
       small: styles.image_smallSize, // маленькая картинка
       big: styles.image_bigSize // большая картинка
+    },
+    sizes: {
+      small: '(max-width: 1920px) 390px',
+      big: '(max-width: 1920px) 100%'
     }
   };
   // Селектор выбранного контейнера для контента
   const setContainerSize = sizes.container[containerSize];
-  const setImageSize = sizes.image[containerSize];
+  const setImageSizeContainer = sizes.image[containerSize];
+  const setImageSize = sizes.sizes[containerSize];
+
 
   return (
     <div className={`${styles.container} ${setContainerSize} ${selectedContainerType} `}>
@@ -47,10 +53,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className={styles.imageContainer}>
         {image &&
           <Image
-            className={`${styles.image} ${setImageSize}`}
+            className={`${styles.image} ${setImageSizeContainer}`}
             src={image}
             alt={title}
-            fill={true} />}
+            fill={true}
+            sizes={setImageSize} />}
       </div>
 
       <CardInfoComponent

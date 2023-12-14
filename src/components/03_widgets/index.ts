@@ -8,4 +8,5 @@ export * from './HomeBlocks/PressBlock/PressBlock';
 export * from './HomeBlocks/BlogBlock/BlogBlock';
 export * from './HomeBlocks/TeamBlock/TeamBlock';
 export * from './HomeBlocks/ReviewsBlock/ReviewsBlock';
+export * from './HomeBlocks/ContactsBlock/ContactsBlock';
 

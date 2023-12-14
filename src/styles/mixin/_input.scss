@@ -1,0 +1,43 @@
+@import '~variables';
+
+@mixin common-input {
+    box-sizing: border-box;
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+    outline: none;
+    background: $white;
+    color: $gray;
+    font-family: $ff-openSans;
+    font-size: 22px;
+    font-weight: $regular;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $accent-green;
+    }
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $gray;
+    }
+
+    &:-moz-placeholder {
+      color: $gray;
+    }
+
+    &::-moz-placeholder {
+      color: $gray;
+    }
+
+    &:-ms-input-placeholder {
+      color: $gray;
+    }
+
+    &::-ms-input-placeholder {
+      color: $gray;
+    }
+}
+

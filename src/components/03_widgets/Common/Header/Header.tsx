@@ -4,8 +4,8 @@ import { HeaderProps } from './Header.props';
 
 import { menuList } from '~/utils/constants/menu/menuList';
 
-import { SearchInput, ContactBlock, Navbar } from './components';
-import { Logo } from '~/components/06_shared';
+import { SearchInput, ContactComponent } from './components';
+import { Logo, Navbar } from '~/components/06_shared';
 
 
 const Header = ({ headerGridArea }: HeaderProps): JSX.Element => {
@@ -14,10 +14,10 @@ const Header = ({ headerGridArea }: HeaderProps): JSX.Element => {
       <div className={styles.inner}>
         <Logo />
         <SearchInput />
-        <ContactBlock />
+        <ContactComponent />
       </div>
       <nav className = {`${styles.navMenu}`}>
-        <Navbar listItems={menuList} />
+        <Navbar listItems={menuList} parentComponent={'header'} />
       </nav>
     </header>
   );

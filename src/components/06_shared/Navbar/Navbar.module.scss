@@ -1,0 +1,40 @@
+@import '~global_styles';
+
+.list {
+  @include common-ul;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  &_footer {
+    grid-area: nav;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px 60px;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . empty1"
+    ". empty2 empty3";
+  }
+}
+
+.listItem {
+  @include common-li;
+}
+
+.link {
+  @include common-link;
+
+    &_header {
+      color: $white;
+    }
+
+    &_footer {
+      color: $gray-dark;
+    }
+}

@@ -7,14 +7,15 @@ import {
   OurServicesBlock,
   PressBlock,
   TeamBlock,
-  ReviewsBlock
+  ReviewsBlock,
+  ContactsBlock
 } from '~widgets/index';
 
 import objectsForSaleData from "~utils/objectsForSaleItems";
 import servicesData from "~utils/servicesItems";
 import pressData from '~/utils/constants/pressBlock/pressArticlesItems';
 import teamMembersData from '~/utils/temp/teamMembersData/teamMembersData';
-
+import reviews from '~/utils/temp/reviewsData/reviewsData';
 
 
 const HomePage = ({ ...props }): JSX.Element => {
@@ -31,7 +32,8 @@ const HomePage = ({ ...props }): JSX.Element => {
       <PressBlock pressItems={pressInfoItems} />
       <BlogBlock path={'home'} />
       <TeamBlock teamMembersItems={teamMembersData} />
-      <ReviewsBlock />
+      <ReviewsBlock reviewsDataItem={reviews} />
+      <ContactsBlock />
     </main>
   );
 };

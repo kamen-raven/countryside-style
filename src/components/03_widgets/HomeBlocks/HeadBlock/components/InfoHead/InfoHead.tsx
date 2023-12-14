@@ -64,8 +64,8 @@ const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
               Узнать цену
             </Button>
             <span className={styles.requestForm__agreement}>
-              Нажимая на кнопку, вы даете свое согласие на
-              <Link className={styles.requestForm__agreement} href={`/personal`}>&nbsp;обработку персональных данных
+              Нажимая на кнопку, вы даете свое согласие на&nbsp;
+              <Link className={styles.requestForm__agreement} href={`/personal`}>обработку персональных данных
               </Link>
             </span>
           </form>

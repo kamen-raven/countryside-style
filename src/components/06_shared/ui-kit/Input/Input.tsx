@@ -6,10 +6,10 @@ import styles from './Input.module.scss';
 const Input = ({ className, ...props }: InputProps ): JSX.Element  => {
 
 
-  
+
     return (
         <>
-          <input className = {`${className} ${styles.commonInput}`} {...props} />
+          <input {...props} className = {`${className} ${styles.commonInput}`}  />
         </>
     );
 };

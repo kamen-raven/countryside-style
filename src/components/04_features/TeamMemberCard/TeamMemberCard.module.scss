@@ -1,7 +1,7 @@
 @import '~global_styles';
 
 .container {
-
+  width: auto;
   &_bg_green {
     background-color: $accent-green;
   }

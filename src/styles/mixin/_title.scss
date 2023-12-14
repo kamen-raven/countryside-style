@@ -8,32 +8,32 @@
                     $color: $dark)  {
 
     @if $htag == h1 {
-      font-size: $h1;
-      font-weight: $font-weight;
+      font-size: $h1; // 80px
+      font-weight: $font-weight; // medium - 500
       line-height: $line-height;
       margin: 260px 0 0;
       color: $color;
     }
 
     @if $htag == h2 {
-      font-size: $font-size;
-      font-weight: $font-weight;
+      font-size: $font-size; //80px
+      font-weight: $font-weight; // medium - 500
       line-height: $line-height;
       margin: $margin;
       color: $color;
     }
 
     @if $htag == h3 {
-      font-size: $subtitle;
-      font-weight: $font-weight;
+      font-size: $subtitle;  //60px
+      font-weight: $font-weight;// medium - 500
       line-height: 100%;
       margin: 0;
       color: $color;
     }
 
     @if $htag == h3small {
-      font-size: $small-title;
-      font-weight: $font-weight;
+      font-size: $small-title;  // 36px
+      font-weight: $font-weight; // medium - 500
       line-height: 120%;
       margin: 0;
       color: $color;
@@ -41,9 +41,17 @@
 
 
     @if $htag == p {
-      font-size: $paragraph-md;
-      font-weight: $regular;
+      font-size: $paragraph-md; // 22px
+      font-weight: $regular; // regular - 400
       line-height: 130%;
+      margin: 0;
+      color: $color;
+    }
+
+    @if $htag == pSmall {
+      font-size: $paragraph-small; // 14px
+      font-weight: $regular; // regular - 400
+      line-height: 150%;
       margin: 0;
       color: $color;
     }
