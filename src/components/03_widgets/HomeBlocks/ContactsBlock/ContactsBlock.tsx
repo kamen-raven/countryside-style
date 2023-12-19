@@ -5,7 +5,7 @@ import styles from './ContactsBlock.module.scss';
 import TelegramIcon from '~svg/contacts/Telegram.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp.svg';
 import VkontakteIcon from '~svg/contacts/VK.svg';
-import { RequestFormComponent } from '~entities/index';
+import { HalfScreenTemplate, RequestFormComponent } from '~entities/index';
 
 
 const ContactsBlock: React.FC<ContactsBlockProps> = () => {
@@ -50,15 +50,25 @@ const ContactsBlock: React.FC<ContactsBlockProps> = () => {
           </ul>
         </address>
       </div>
-
       <div className={styles.containerForm}>
+        <HalfScreenTemplate conditionColor={"dark"} conditionTemplate={'picFirst'}>
+          <div className={styles.wrapperInner}>
+            <iframe className={styles.yandexMap} src="https://yandex.ru/map-widget/v1/?um=constructor%3A82d4640cfff3946c64d9620d25ce191b0ca06b56eea9ee8a0ad636757cd19e55&amp;source=constructor" ></iframe>
+          </div>
+          <div className={styles.wrapperForm}>
+            <RequestFormComponent />
+          </div>
+        </HalfScreenTemplate>
+      </div>
+
+      {/*       <div className={styles.containerForm}>
         <div className={styles.wrapperInner}>
           <iframe className={styles.yandexMap} src="https://yandex.ru/map-widget/v1/?um=constructor%3A82d4640cfff3946c64d9620d25ce191b0ca06b56eea9ee8a0ad636757cd19e55&amp;source=constructor" ></iframe>
         </div>
         <div className={styles.wrapperForm}>
           <RequestFormComponent />
         </div>
-      </div>
+      </div> */}
 
     </section>
   );

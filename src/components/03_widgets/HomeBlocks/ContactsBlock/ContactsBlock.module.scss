@@ -92,12 +92,12 @@
 
 .containerForm {
   grid-area: form;
-  background-color: $dark;
+/*   background-color: $dark; */
   color: $white;
 
-  display: flex;
+/*   display: flex;
   align-items: stretch;
-  max-height: 800px;
+  max-height: 800px; */
 }
 
 .wrapperInner {

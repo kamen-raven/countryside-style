@@ -1,0 +1,30 @@
+@import '~global_styles';
+
+.container {
+  width: auto;
+  &_bg_green {
+    background-color: $accent-green;
+  }
+
+  &_bg_gray {
+    background-color: $accent-gray;
+  }
+
+  &_bg_dark {
+    background-color: $dark;
+  }
+}
+
+.innerBlock {
+  display: flex;
+  align-items: stretch;
+  max-height: 800px;
+
+  &_textFirst{
+    flex-direction: row-reverse;
+  }
+
+  &_picFirst{
+    flex-direction: row;
+  }
+}
