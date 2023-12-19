@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { InfoHeadProps } from './InfoHead.props';
 import styles from './InfoHead.module.scss';
 
-import { BackgroundSVG, Button, Input } from '~/components/06_shared';
+import { BackgroundSVG, Button, Input } from '~shared/index';
 import SecondImg from '~img/headBlock/second.jpg';
 import Kaissa from '~img/headBlock/kaissa.png';
 import BackgroundPattern from '~svg/background/backgroundTitleHead.svg';

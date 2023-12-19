@@ -6,8 +6,8 @@ import styles from './BlogBlock.module.scss';
 
 import BackgroundPattern from '~svg/background/backgroundBlog.svg';
 
-import { BackgroundSVG } from '~/components/06_shared';
-import { CardBlogComponent } from '~/components/05_entities';
+import { BackgroundSVG } from '~shared/index';
+import { CardBlogComponent } from '~entities/index';
 
 
 const BlogBlock: React.FC<BlogBlockProps> = ({ path }) => {

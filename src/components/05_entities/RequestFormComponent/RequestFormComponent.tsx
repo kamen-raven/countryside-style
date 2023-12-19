@@ -1,8 +1,11 @@
 import React from 'react';
-import { RequestFormComponentProps } from './RequestFormComponent.props';
-import styles from './RequestFormComponent.module.scss';
-import { Button } from '~/components/06_shared';
 import Link from 'next/link';
+
+import styles from './RequestFormComponent.module.scss';
+import { RequestFormComponentProps } from './RequestFormComponent.props';
+
+import { Button } from '~shared/index';
+
 
 
 const RequestFormComponent = ({...props }: RequestFormComponentProps): JSX.Element => {

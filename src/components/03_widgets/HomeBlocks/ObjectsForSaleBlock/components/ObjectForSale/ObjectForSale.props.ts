@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { CardInfoComponentProps } from '~/components/05_entities/CardInfoComponent/CardInfoComponent.props';
+import { CardInfoComponentProps } from '~entities/CardInfoComponent/CardInfoComponent.props';
 /* import { StaticImageData } from "next/image"; */
 
 export interface ObjectForSaleProps extends CardInfoComponentProps {

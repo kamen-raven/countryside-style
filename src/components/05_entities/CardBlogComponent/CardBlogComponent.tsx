@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { CardBlogComponentProps } from './CardBlogComponent.props';
 import styles from './CardBlogComponent.module.scss';
-import { Button, ArrowsButton } from '~/components/06_shared';
+import { Button, ArrowsButton } from '~shared/index';
 
 import CommentIcon from '~svg/blog/commentsIcon.svg';
 

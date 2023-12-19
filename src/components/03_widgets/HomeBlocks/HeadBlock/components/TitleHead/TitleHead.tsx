@@ -27,7 +27,7 @@ const TitleHead = ({ ...props }: TitleHeadProps): JSX.Element => {
       <div className = {styles.info}>
         <p className = {styles.info__text}>
           <span className = {styles.info__years}>
-            {years}<br/>
+            {years}
           </span>
           лет на рынке
         </p>

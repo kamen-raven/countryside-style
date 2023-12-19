@@ -13,9 +13,9 @@ import {
 
 import objectsForSaleData from "~utils/objectsForSaleItems";
 import servicesData from "~utils/servicesItems";
-import pressData from '~/utils/constants/pressBlock/pressArticlesItems';
-import teamMembersData from '~/utils/temp/teamMembersData/teamMembersData';
-import reviews from '~/utils/temp/reviewsData/reviewsData';
+import pressData from '~utils/constants/pressBlock/pressArticlesItems';
+import teamMembersData from '~utils/temp/teamMembersData/teamMembersData';
+import reviews from '~utils/temp/reviewsData/reviewsData';
 
 
 const HomePage = ({ ...props }): JSX.Element => {

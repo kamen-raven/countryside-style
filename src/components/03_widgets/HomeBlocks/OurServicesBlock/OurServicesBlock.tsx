@@ -2,8 +2,9 @@ import React from 'react';
 import { OurServicesBlockProps } from './OurServicesBlock.props';
 import styles from './OurServicesBlock.module.scss';
 import BackgroundPattern from '~svg/background/backgroundOurServices.svg';
-import { BackgroundSVG } from '~/components/06_shared';
-import ServiceCard from '~/components/04_features/ServiceCard/ServiceCard';
+import { BackgroundSVG } from '~shared/index';
+import { ServiceCard } from '~features/index';
+
 
 const OurServicesBlock: React.FC<OurServicesBlockProps> = ({ servicesItems }) => {
 

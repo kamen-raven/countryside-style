@@ -1,8 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
+
 import { LogoProps } from './Logo.props';
 import styles from './Logo.module.scss';
+
 import LogoIcon from '~svg/logo/logo.svg';
-import Link from 'next/link';
 
 
 const Logo = ({ color, className }: LogoProps): JSX.Element => {

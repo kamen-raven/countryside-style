@@ -1,7 +1,7 @@
 import React from 'react';
 import { TeamBlockProps } from './TeamBlock.props';
 import styles from './TeamBlock.module.scss';
-import { TeamMemberCard } from '~/components/04_features';
+import { TeamMemberCard } from '~features/index';
 
 
 

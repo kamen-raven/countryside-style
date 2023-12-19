@@ -1,7 +1,7 @@
 import React from 'react';
 import { ContactComponentProps } from './ContactComponent.props';
 import styles from './ContactComponent.module.scss';
-import { Button } from '~/components/06_shared';
+import { Button } from '~shared/index';
 import CallIcon from '~svg/contacts/Phone.svg';
 
 const ContactComponent = ({ ...props }: ContactComponentProps): JSX.Element => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReviewCardProps } from './ReviewCard.props';
 import styles from './ReviewCard.module.scss';
-import { Button } from '~/components/06_shared';
+import { Button } from '~shared/index';
 
 
 const ReviewCard = ({ data }: ReviewCardProps): JSX.Element => {

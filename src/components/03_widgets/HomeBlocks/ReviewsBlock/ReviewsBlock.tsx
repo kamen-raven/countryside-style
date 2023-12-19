@@ -1,8 +1,8 @@
 import React from 'react';
 import { ReviewsBlockProps } from './ReviewsBlock.props';
 import styles from './ReviewsBlock.module.scss';
-import { Button } from '~/components/06_shared';
-import { ReviewCard } from '~/components/04_features';
+import { Button } from '~shared/index';
+import { ReviewCard } from '~features/index';
 
 
 const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ reviewsDataItem }) => {

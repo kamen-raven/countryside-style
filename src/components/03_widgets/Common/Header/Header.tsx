@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './Header.module.scss';
 import { HeaderProps } from './Header.props';
 
-import { menuList } from '~/utils/constants/menu/menuList';
+import { menuList } from '~utils/constants/menu/menuList';
 
 import { SearchInput, ContactComponent } from './components';
-import { Logo, Navbar } from '~/components/06_shared';
+import { Logo, Navbar } from '~shared/index';
 
 
 const Header = ({ headerGridArea }: HeaderProps): JSX.Element => {

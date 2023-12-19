@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { ServiceCardProps } from './ServiceCard.props';
 import styles from './ServiceCard.module.scss';
 
-import { CardInfoComponent } from '~/components/05_entities';
+import { CardInfoComponent } from '~entities/index';
 
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -73,4 +73,4 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   );
 };
 
-export default ServiceCard;
+export { ServiceCard };

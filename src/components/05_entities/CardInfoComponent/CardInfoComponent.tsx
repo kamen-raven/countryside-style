@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardInfoComponentProps } from './CardInfoComponent.props';
 import styles from './CardInfoComponent.module.scss';
-import { ArrowsButton, Button } from '~/components/06_shared';
+import { ArrowsButton, Button } from '~shared/index';
 
 
 

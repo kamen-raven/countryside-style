@@ -6,7 +6,7 @@ import Image from 'next/image';
 import TelegramIcon from '~svg/contacts/Telegram.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp.svg';
 import VkontakteIcon from '~svg/contacts/VK.svg';
-import { RequestFormComponent } from '~/components/05_entities';
+import { RequestFormComponent } from '~entities/index';
 
 
 const ContactsBlock: React.FC<ContactsBlockProps> = ({ }) => {
