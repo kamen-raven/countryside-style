@@ -1,7 +1,6 @@
 import React from 'react';
 import { ContactsBlockProps } from './ContactsBlock.props';
 import styles from './ContactsBlock.module.scss';
-import Image from 'next/image';
 
 import TelegramIcon from '~svg/contacts/Telegram.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp.svg';
@@ -9,7 +8,7 @@ import VkontakteIcon from '~svg/contacts/VK.svg';
 import { RequestFormComponent } from '~entities/index';
 
 
-const ContactsBlock: React.FC<ContactsBlockProps> = ({ }) => {
+const ContactsBlock: React.FC<ContactsBlockProps> = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.containerInfo}>

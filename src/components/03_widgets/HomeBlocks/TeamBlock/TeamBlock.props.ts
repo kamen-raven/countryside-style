@@ -5,3 +5,5 @@ export interface TeamBlockProps extends DetailedHTMLProps<HTMLAttributes<HTMLDiv
   teamMembersItems: teamMembersDataInterface[];
   children?: ReactNode;
 }
+
+export type { teamMembersDataInterface };

@@ -11,7 +11,7 @@ const ContactComponent = ({ ...props }: ContactComponentProps): JSX.Element => {
         <span className={styles.callIcon}>
           <CallIcon />
         </span>
-        8 (812) 643-20-40
+        8&nbsp;(812)&nbsp;643-20-40
       </a>
       <Button className={styles.buttonCall} appearance={"colored"}>
         Обратный звонок

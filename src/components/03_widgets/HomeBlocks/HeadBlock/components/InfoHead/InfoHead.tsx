@@ -28,7 +28,7 @@ const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
             Проданных объектов загородной недвижимости в&nbsp;2022 году
           </h3>
           <p className={styles.countInfo__description}>
-            Мы продаем только те&nbsp;объекты, которые видели своими глазами
+            Мы продаем только те&nbsp;объекты, которые видели своими глазами
           </p>
         </div>
 
@@ -48,7 +48,7 @@ const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
           </div>
           <div className={styles.kaissa__infoBlock}>
             <p className={styles.kaissa__info}>
-              Лучшая риэлтерская компания на рынке загородной недвижимости 2018 года
+              Лучшая риэлтерская компания на&nbsp;рынке загородной недвижимости 2018&nbsp;года
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { ServiceCardProps } from "~/components/04_features/ServiceCard/ServiceCard.props";
+import { ServiceCardProps } from "~features/ServiceCard/ServiceCard.props";
 
 const servicesData: ServiceCardProps[] = [
   {
