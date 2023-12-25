@@ -6,7 +6,7 @@ import styles from './CardBlogComponent.module.scss';
 import { Button, ArrowsButton } from '~shared/index';
 
 import CommentIcon from '~svg/blog/commentsIcon.svg';
-
+import TemplatePic from '~img/blog/Template.jpg';
 
 const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path }) => {
 
@@ -32,9 +32,11 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path }) => {
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}
-          src={'https://s3-alpha-sig.figma.com/img/1723/d612/b632410863b75bf5b3be69820d78682e?Expires=1702857600&Signature=AYh~emLV6AL33c2jGNIMexFodi-6s3FHITZTnjdnMaub4~tGlDkOS5YlLSfLDQwTMpqfLVkp9aYv4KKEL389HIG6VHvvGHrFMhsCgbiR33EHT8oSbTjNlPk8dP6igr--D8ztV4cILY3qgzD3AdcbwzPJctuA5Gm6-ZICNYgoIrAQog1pgeuqcB5CAdtMF-PNxMnaelJb9FwCdpjFrvP-HEqGHwSYmiwIazJlSfTTsUQ8hD~h0YXJeJYajF3Yg4Ev-ViV0XrG0GMRetDEugTDKx5Xc~009z9TgZcrL6hjjYdqUqOfAICdF7G~q8uIcRqZFVfKL5HLtnyAERH2plrpGw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'}
+          src={TemplatePic}
           alt={''}
-          fill={true}
+          width={100}
+          height={100}
+          /* fill={true} */
           sizes={'(max-width: 1920px) 100%'}
         />
       </div>

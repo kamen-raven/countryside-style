@@ -2,7 +2,7 @@ export const menuList = [
   {
     name: "houses",
     title: "Дома, дачи, коттеджи",
-    link: "/doma-dachi-kottedzhi",
+    link: "/houses",
   },
   {
     name: "land",

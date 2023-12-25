@@ -56,7 +56,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             className={`${styles.image} ${setImageSizeContainer}`}
             src={image}
             alt={title}
-            fill={true}
+            width={100}
+            height={100}
             sizes={setImageSize} />}
       </div>
 

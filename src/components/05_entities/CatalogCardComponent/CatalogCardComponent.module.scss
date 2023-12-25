@@ -1,0 +1,188 @@
+@import '~global_styles';
+
+
+
+.cardWrapper {
+  box-sizing: border-box;
+
+  max-width: 530px;
+  width: 100%;
+  max-height: 730px;
+  height: 100%;
+
+  border: 1px solid $gray;
+
+  display: grid;
+  grid-template-rows: 55% 45%;
+}
+
+// IMAGE
+.link {
+  display: block;
+  text-decoration: none;
+  height: 100%;
+
+  &_image {
+    width: 100%;
+  }
+
+  &_title {
+    width: fit-content;
+  }
+}
+
+
+
+
+.imageBlock {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+.label {
+  position: absolute;
+  margin: 20px;
+
+  &_new {
+    top: 0;
+    left: 0;
+
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $accent-gray;
+
+    color: $white;
+    text-align: center;
+    font-family: $ff-openSans;
+    font-size: 25px;
+    font-weight: $bold;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  &_youtube {
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+// INFO
+.infoBlock {
+  padding: 35px;
+  padding-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px
+}
+
+.title {
+  @include common-title(h3small);
+  cursor: pointer;
+  display: flex;
+  & .link {
+    text-decoration: none;
+  }
+}
+
+.statusContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #398281;
+}
+
+.status {
+  @include common-title(p,
+    $color: $accent-green);
+
+  font-family: $ff-openSans;
+  &_bold {
+    font-weight: $bold;
+  }
+}
+
+.address {
+  @include common-title(p);
+font-family: $ff-openSans;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100px;
+    height: 4px;
+    background-color: $accent-green;
+  }
+}
+
+.price {
+  @include common-title(h3small,
+                        $color: $accent-green);
+}
+
+.arrow {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $dark;
+  border-radius: 50%;
+  background: none;
+  padding: 0;
+  width: 55px;
+  height: 55px;
+
+  & svg {
+    transition: transform .3s linear;
+  }
+
+  &:hover {
+    & svg {
+      transition: transform .3s linear;
+      transform: translate(10px);
+    }
+  }
+  &_left  {
+    transform: rotate(180deg);
+  }
+
+  &_right {
+    transform: rotate(0);
+  }
+}
+
+

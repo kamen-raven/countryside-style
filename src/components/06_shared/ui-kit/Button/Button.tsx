@@ -5,7 +5,8 @@ const Button = ({appearance, className='', children, ...props}: ButtonProps):JSX
 
   const btnStyle = {
     colored: styles.colored,
-    transparent: styles.transparent
+    transparent: styles.transparent,
+    dark: styles.dark
   };
   const selectedStyle = btnStyle[appearance] || ''; // Выбираем стиль на основе значения appearance
 

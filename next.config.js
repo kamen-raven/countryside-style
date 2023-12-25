@@ -11,6 +11,12 @@ module.exports = {
         protocol: 'https',
         hostname: '**.figma.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'rickandmortyapi.com',
+        port: '',
+        pathname: '/api/character/avatar/**',
+      },
     ],
   },
   // Другие настройки...

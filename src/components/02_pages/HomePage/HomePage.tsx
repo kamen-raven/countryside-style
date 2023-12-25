@@ -11,8 +11,8 @@ import {
   ContactsBlock
 } from '~widgets/index';
 
-import objectsForSaleData from "~utils/objectsForSaleItems";
-import servicesData from "~utils/servicesItems";
+import objectsForSaleData from "~utils/temp/objectsForSaleData/objectsForSaleItems";
+import servicesData from "~utils/temp/OurServicesData/servicesItems";
 import pressData from '~utils/constants/pressBlock/pressArticlesItems';
 import teamMembersData from '~utils/temp/teamMembersData/teamMembersData';
 import reviews from '~utils/temp/reviewsData/reviewsData';

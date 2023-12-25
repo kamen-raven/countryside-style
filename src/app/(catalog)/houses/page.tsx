@@ -10,8 +10,10 @@ import { CatalogPage } from "~pages/CatalogPage/CatalogPage";
 
  */
 export const metadata: Metadata = {
-  title: 'COURSES'
+  title: 'HOUSES',
+  description: 'CATALOG PAGE',
 };
+
 
 
 

@@ -12,3 +12,9 @@
   background-color: transparent;
   color: $accent-green;
 }
+
+.dark {
+  @include common-button;
+  background: $dark;
+  color: #FFF;
+}

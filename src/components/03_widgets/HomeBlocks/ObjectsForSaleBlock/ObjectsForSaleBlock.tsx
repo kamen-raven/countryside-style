@@ -4,15 +4,15 @@ import styles from './ObjectsForSaleBlock.module.scss';
 import BackgroundPattern from '~svg/background/backgroundObjectsForSale.svg';
 
 import { ObjectForSale } from './components/ObjectForSale/ObjectForSale';
-import { BackgroundSVG } from '~shared/index';
+import { BackgroundSVGPattern } from '~shared/index';
 
 const ObjectsForSaleBlock: React.FC<ObjectsForSaleBlockProps> = ({ objItems }) => {
 
   return (
     <section className={styles.wrapper}>
-      <BackgroundSVG>
+      <BackgroundSVGPattern>
         <BackgroundPattern />
-      </BackgroundSVG>
+      </BackgroundSVGPattern>
       <div className={styles.container}>
         <h2 className={styles.title}>
           Объекты в продаже

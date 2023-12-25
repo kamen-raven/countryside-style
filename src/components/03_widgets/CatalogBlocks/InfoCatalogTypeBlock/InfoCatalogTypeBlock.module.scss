@@ -1,0 +1,7 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: description;
+  position: relative;
+  @include common-wrapper;
+}

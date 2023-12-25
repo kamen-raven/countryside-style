@@ -1,0 +1,60 @@
+@import '~global_styles';
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.buttonPagination {
+  cursor: pointer;
+  width: 55px;
+  height: 55px;
+  box-sizing: border-box;
+
+
+  color: $dark;
+  text-align: center;
+  font-size: $paragraph-lg;
+  font-weight: $medium;
+  line-height: 130%;
+
+  border: 1ps solid $dark;
+  border-radius: 50%;
+  background-color: transparent;
+
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_prev svg {
+      transform: rotate(180deg);
+    }
+
+    &_next {
+
+    }
+  }
+
+
+
+}
+
+.active {
+  cursor: default;
+  color: $white;
+  background-color: $accent-green;
+  border: 1px solid $accent-green;
+}
+
+.disabled {
+  border: 1px solid $gray;
+  background-color: transparent;
+  cursor: default;
+  & svg path {
+    fill: $gray;
+    stroke: $gray;
+  }
+}

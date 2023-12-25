@@ -6,7 +6,7 @@ import styles from './BlogBlock.module.scss';
 
 import BackgroundPattern from '~svg/background/backgroundBlog.svg';
 
-import { BackgroundSVG } from '~shared/index';
+import { BackgroundSVGPattern } from '~shared/index';
 import { CardBlogComponent } from '~entities/index';
 
 
@@ -15,9 +15,9 @@ const BlogBlock: React.FC<BlogBlockProps> = ({ path }) => {
 
   return (
     <section className={styles.wrapper}>
-      <BackgroundSVG positionX='right'>
+      <BackgroundSVGPattern positionX='right'>
         <BackgroundPattern />
-      </BackgroundSVG>
+      </BackgroundSVGPattern>
       <div className={styles.container}>
         <h2 className={styles.title}>
           Блог

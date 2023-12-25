@@ -1,0 +1,43 @@
+.customSelect {
+  position: relative;
+  display: inline-block;
+}
+
+.selectSelected {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.selectSelected:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: 10px;
+  margin-top: -3px;
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.selectItems {
+  position: absolute;
+  background-color: #f1f1f1;
+
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+
+.selectItems div {
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.selectItems div:hover {
+  background-color: #4caf50;
+  color: white;
+}

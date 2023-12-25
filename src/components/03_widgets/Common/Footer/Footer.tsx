@@ -3,8 +3,8 @@ import { FooterProps } from './Footer.props';
 import styles from './Footer.module.scss';
 import { Logo, Navbar } from '~shared/index';
 import { menuList } from '~utils/constants/menu/menuList';
-import TelegramIcon from '~svg/contacts/Telegram.svg';
-import WhatsappIcon from '~svg/contacts/WhatsApp.svg';
+import TelegramIcon from '~svg/contacts/Telegram2.svg';
+import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
 import VkontakteIcon from '~svg/contacts/VK.svg';
 
 const Footer = ({ footerGridArea }: FooterProps): JSX.Element => {

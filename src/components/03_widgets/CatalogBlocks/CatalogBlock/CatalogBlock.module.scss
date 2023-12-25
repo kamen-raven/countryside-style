@@ -1,0 +1,13 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: main-catalog;
+
+  @include common-wrapper;
+}
+
+.container {
+  grid-area: container;
+  margin: 0 120px 90px;
+}
+

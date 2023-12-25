@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { InfoHeadProps } from './InfoHead.props';
 import styles from './InfoHead.module.scss';
 
-import { BackgroundSVG, Button, Input } from '~shared/index';
+import { BackgroundSVGPattern, Button, Input } from '~shared/index';
 import SecondImg from '~img/headBlock/second.jpg';
 import Kaissa from '~img/headBlock/kaissa.png';
 import BackgroundPattern from '~svg/background/backgroundTitleHead.svg';
@@ -14,9 +14,9 @@ const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
 
   return (
     <div className={`${styles.wrapper}`}  {...props} >
-      <BackgroundSVG>
+      <BackgroundSVGPattern>
         <BackgroundPattern />
-      </BackgroundSVG>
+      </BackgroundSVGPattern>
 
       <div className={styles.container}>
 

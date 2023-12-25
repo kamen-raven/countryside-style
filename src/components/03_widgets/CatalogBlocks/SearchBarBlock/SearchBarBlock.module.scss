@@ -1,0 +1,15 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: search-bar;
+  background-color: $gray-light;
+  display: flex;
+  padding: 48px 120px;
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}

@@ -3,11 +3,7 @@ import styles from "./layout.module.scss";
 
 import reviews from "~utils/temp/reviewsData/reviewsData";
 import { ReviewsBlock } from "~widgets/index";
-
-export const metadata: Metadata = {
-  title: 'HOUSES',
-  description: 'CATALOG PAGE',
-};
+import { ContactUsBlock } from "~widgets/CatalogBlocks/ContactUsBlock/ContactUsBlock";
 
 
 /*
@@ -29,6 +25,7 @@ export default function GeneralCatalogLayout({
   return (
     <main className = {styles.mainContainer}>
       {children}
+      <ContactUsBlock/>
       <ReviewsBlock reviewsDataItem={reviews} />
     </main>
 

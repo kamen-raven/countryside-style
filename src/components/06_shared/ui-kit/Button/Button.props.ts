@@ -2,5 +2,5 @@ import { ReactNode, DetailedHTMLProps, ButtonHTMLAttributes} from "react";
 
 export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   children?: ReactNode;
-  appearance: 'colored' | 'transparent';
+  appearance: 'colored' | 'transparent' | 'dark';
 }
