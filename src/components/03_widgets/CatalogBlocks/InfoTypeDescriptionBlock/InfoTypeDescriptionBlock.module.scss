@@ -1,0 +1,16 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: description;
+  position: relative;
+  @include common-wrapper;
+}
+
+.container {
+  grid-area: container;
+  margin: 80px 120px;
+}
+
+.title {
+  @include common-title(h1, $margin: 0 0 45px);
+}

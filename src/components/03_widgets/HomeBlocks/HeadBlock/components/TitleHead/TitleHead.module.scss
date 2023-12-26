@@ -24,7 +24,7 @@
 }
 
 .title {
-  @include common-title(h1, $color: $white);
+  @include common-title(h1, $color: $white, $margin: 260px 0 0);
 
   display: inline-flex;
   flex-direction: column;

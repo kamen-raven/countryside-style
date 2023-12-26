@@ -8,7 +8,7 @@ import { getCharacter } from '../../../../api/temp/getCharacter.tsx';
 
 
 const CatalogBlock: React.FC<CatalogBlockInterface> = async () => {
-  const ITEMS_PER_PAGE = 6;
+  const ITEMS_PER_PAGE = 12;
 
   const data = await getCharacter();
 /*

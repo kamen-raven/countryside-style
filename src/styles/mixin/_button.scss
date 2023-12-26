@@ -1,5 +1,6 @@
 @mixin common-button {
   display: inline-block;
+  box-sizing: border-box;
   border: none;
   border-radius: $border-radius;
     font-family: $ff-openSans;

@@ -1,0 +1,62 @@
+@import '~global_styles';
+
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.inner {
+
+
+
+  &__visible {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+  }
+
+  &__toggle {
+    padding-top: 65px
+ /*    visibility: hidden;
+    height: 0; */
+  }
+}
+
+.textBlock {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 10px;
+/*   display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 10px; */
+}
+
+.subtitle {
+  @include common-title(h3small)
+}
+
+.paragraph {
+  @include common-title(p)
+}
+
+
+
+
+.toggleButton {
+  @include common-button;
+  border: 1px solid $gray;
+  background-color: transparent;
+  max-width: 275px;
+  width: 100%;
+
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+ .active svg {
+  transform: rotate(180deg);
+}

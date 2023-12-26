@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
-  ////////////////////////////////////////////////////////////////////////////
+  ////для того чтобы отображать статус и гендер ////////////////////////////////////////////////////////////////////////
   const targetKey = (targetValue: string) => Object.entries(item).find(([key, value]) => value === targetValue)?.[0];
   ////////////////////////////////////////////////////////////////////////////
 
@@ -24,18 +24,15 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
   };
 
 
-  const newLabel =
-    <div className={`${styles.label} ${styles.label_new}`}>
-      NEW
-    </div>;
-
+  const newLabel = <div className={`${styles.label} ${styles.label_new}`}>
+                    NEW
+                  </div>;
   const renderNewLabel = item.gender == 'Male' ? newLabel : '';
 
-  const youtubeLabel =
-    <div className={`${styles.label} ${styles.label_youtube}`}>
-      <YoutubeIcon />
-    </div>;
 
+  const youtubeLabel = <div className={`${styles.label} ${styles.label_youtube}`}>
+                        <YoutubeIcon />
+                      </div>;
   const renderYoutubeLabel = item.status == 'Dead' ? youtubeLabel : '';
 
 
