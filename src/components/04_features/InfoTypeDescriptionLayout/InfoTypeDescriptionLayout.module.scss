@@ -11,35 +11,79 @@
 
 
 
-  &__visible {
+  &__initial {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 65px;
+    gap: 60px;
   }
 
   &__toggle {
-    padding-top: 65px
- /*    visibility: hidden;
-    height: 0; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    grid-template-areas:
+    "info banner"
+    "info banner";
+
+
+    &_hidden {
+      padding-top: 0;
+      visibility: hidden;
+      height: 0;
+    }
+
+
+    &_visible {
+      padding-top: 65px;
+      visibility: visible;
+      height: auto;
+    }
   }
 }
 
+.toggleWrapper {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+.banner {
+  grid-area: banner;
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  padding: 60px;
+  display: flex;
+}
+
 .textBlock {
-  display: grid;
-  grid-template-rows: auto auto;
-  row-gap: 10px;
-/*   display: flex;
+  display: flex;
   flex-direction: column;
   text-align: start;
-  gap: 10px; */
+  gap: 15px;
+
+  &_banner {
+    gap: 35px;
+    justify-content: space-between;
+  }
 }
 
 .subtitle {
-  @include common-title(h3small)
+  @include common-title(h3small);
+
+  &_banner {
+    color: $accent-green;
+    font-size: 50px;
+  }
 }
 
 .paragraph {
-  @include common-title(p)
+  @include common-title(p);
+
+  &_banner {
+    color: $accent-green;
+    font-family: $ff-openSans;
+  }
 }
 
 
@@ -57,6 +101,6 @@
   justify-content: space-between;
 }
 
- .active svg {
+.active svg {
   transform: rotate(180deg);
 }

@@ -3,10 +3,10 @@ import styles from './InfoTypeDescriptionLayout.module.scss';
 import { InfoTypeDescriptionLayoutInterface } from './InfoTypeDescriptionLayout.interface.ts';
 
 import ToggleIcon from '~svg/button/toggle.svg';
-import useSplitText from '../../../hooks/useSplitText.tsx';
+
 
 const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = ({ data }) => {
-
+  const textArray = data.houses.SEOText;
 
 
   const buttonCondition = {
@@ -30,38 +30,74 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
 
 
 
-  const textArray = useSplitText(data.houses.SEOText).splitted;
-
-
-  console.log(textArray);
-
-
-
-
 
 
 
   return (
     <div className={styles.layoutContainer}>
       <div className={styles.inner}>
-        <div className={styles.inner__visible}> {/* видимые абзацы */}
+        <div className={styles.inner__initial}> {/* видимые абзацы */}
 
-          {textArray.slice(0, 2).map((item) =>
-          { /* берем только первые два абзаца из массива для видимой части */
+          {textArray.common.slice(0, 2).map((item, key) => { /* берем только первые два абзаца из массива для видимой части */
             return (
-              <div className={styles.textBlock}>
+              <div key={key} className={styles.textBlock}>
                 <h2 className={styles.subtitle}>
-                  {item[0]}
+                  {item.span}
                 </h2>
                 <p className={styles.paragraph}>
-                  {item[1]}
+                {item.text.split('\n\n').map((item, index, array) => {
+                      return (
+                        <React.Fragment key={index}>
+                          {item}
+                          {index !== (array.length - 1) ? <><br /><br /></> : ''}
+                        </React.Fragment>);
+                    })}
                 </p>
               </div>
             );
           })}
         </div>
-        <div className={styles.inner__toggle}>
-          Mollit do et eu ad esse non dolor enim consequat reprehenderit enim. Qui tempor nostrud sit non mollit dolor exercitation fugiat non ut. Reprehenderit magna adipisicing laborum adipisicing consectetur et aliquip aute qui incididunt officia ad adipisicing. Dolore duis culpa excepteur exercitation do ipsum veniam sunt labore ullamco nisi.Sunt ullamco quis do minim officia mollit commodo amet fugiat in sint. Minim quis id excepteur cillum cillum in voluptate anim tempor incididunt ea in elit pariatur. Laborum anim ea laboris qui et in commodo id minim. Exercitation proident dolore minim pariatur Lorem id occaecat amet eu velit. Adipisicing et adipisicing id nisi exercitation tempor cillum ullamco pariatur culpa ullamco ipsum labore. Ipsum mollit consectetur commodo exercitation ullamco laboris adipisicing cillum.Mollit sint enim aute ut labore esse deserunt dolor. Occaecat duis esse nisi ea deserunt do mollit ea elit exercitation velit exercitation do. Eiusmod minim eu cupidatat elit non sint consectetur et minim sit pariatur ex sint. Aliquip consectetur nulla est ut nisi ut amet voluptate ad commodo sunt exercitation ut exercitation. Dolore mollit velit dolore aliqua ipsum elit irure irure labore voluptate. Sit in esse adipisicing consequat dolore eu aute excepteur incididunt ad nisi ut commodo.Deserunt reprehenderit in eiusmod nisi cupidatat magna quis tempor velit quis nulla excepteur consectetur dolore. Eu culpa duis ad ipsum ut. Dolore pariatur deserunt occaecat proident Lorem. Aliquip aute qui Lorem duis adipisicing exercitation consequat. Sint occaecat duis Lorem ea ipsum laboris voluptate.Consectetur veniam irure voluptate eu duis quis. Cupidatat occaecat Lorem occaecat officia elit in ea Lorem enim dolore mollit. In mollit sit ad amet elit sit culpa id esse nisi.Est ipsum velit excepteur laborum officia ut dolor dolor consequat aliquip elit ex. Pariatur commodo reprehenderit aliquip excepteur tempor deserunt consectetur duis Lorem incididunt consequat. Sint dolore ea commodo eiusmod velit nulla non consequat exercitation adipisicing. Nisi nisi fugiat voluptate in ad est amet.
+
+        <div className={`${styles.inner__toggle} ${styles.inner__toggle_visible} `}>
+          <div className={styles.toggleWrapper}>
+            {textArray.common.slice(2).map((item, key) => { /* берем только первые два абзаца из массива для видимой части */
+              return (
+                <div key={key} className={styles.textBlock}>
+                  <h2 className={styles.subtitle}>
+                    {item.span}
+                  </h2>
+                  <p className={styles.paragraph}>
+                    {item.text.split('\n\n').map((item, index, array) => {
+                      return (
+                        <React.Fragment key={index}>
+                          {item}
+                          {index !== (array.length - 1) ? <br /> : ''}
+                        </React.Fragment>);
+                    })}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          <div className={styles.banner}>
+            <div className={`${styles.textBlock} ${styles.textBlock_banner}`}>
+              <h2 className={`${styles.subtitle} ${styles.subtitle_banner}`}>
+                {textArray.banner.span}
+              </h2>
+              <p className={`${styles.paragraph} ${styles.paragraph_banner}`}>
+                {textArray.banner.text.split('\n\n').map((item, index, array) => {
+                      return (
+                        <React.Fragment key={index}>
+                          {item}
+                          {index !== (array.length - 1) ? <><br /><br /></> : ''}
+                        </React.Fragment>);
+                    })}
+              </p>
+            </div>
+          </div>
+
+
+
         </div>
       </div>
       <button className={`${styles.toggleButton}`}>
