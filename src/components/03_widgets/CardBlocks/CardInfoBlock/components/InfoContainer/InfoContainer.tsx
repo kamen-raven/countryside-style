@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './InfoContainer.module.scss';
 import { InfoContainerInterface } from './InfoContainer.interface.ts';
-import { CharacteristicsInner, CommonInfoInner, IconsInner, MapInner } from './modules/index.ts';
+import { PhotosInner, CharacteristicsInner, CommonInfoInner, IconsInner, MapInner } from './modules/index.ts';
 
 
 const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
@@ -9,7 +9,9 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
 
   return (
     <div className={styles.infoContainer}>
-      <div className={styles.photosContainer}> PICTURES HERE</div>
+      <div className={styles.photosContainer}>
+        <PhotosInner data={data} />
+      </div>
 
       {data.characteristics &&
         <div className={styles.iconsContainer}>
@@ -33,7 +35,7 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
 
       {data.address.map.mapLink &&
         <div className={styles.mapContainer}>
-          <MapInner data={data}/>
+          <MapInner data={data} />
         </div>
       }
 

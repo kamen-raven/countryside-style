@@ -17,7 +17,7 @@
   margin: 48px auto 40px;
 
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(400px, 1fr) auto;
   justify-content: space-between;
   align-content: center;
   align-items: center;

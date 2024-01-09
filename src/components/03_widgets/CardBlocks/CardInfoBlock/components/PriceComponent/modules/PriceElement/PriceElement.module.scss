@@ -1,0 +1,65 @@
+@import '~global_styles';
+
+.priceElement {
+  padding-bottom: 50px;
+  border-bottom: 2px solid $gray;
+}
+
+.cost {
+  @include common-title(h3,
+  $color: $accent-green);
+  margin-bottom: 15px;
+}
+
+.idNum {
+  @include common-title(h3small);
+  margin-bottom: 40px;
+}
+
+.button {
+  @include common-button(colored,
+  $padding: 0 25px);
+  font-size: 22px;
+
+  &__call {
+    background-color: $accent-gray;
+    margin-right: 10px;
+  }
+
+  &_write {
+
+  }
+}
+
+
+.numberContainer {
+  margin-bottom: 25px;
+}
+
+.telNumber {
+  @include common-link;
+  @include common-title(h3small);
+  display: block;
+  margin-bottom: 25px;
+}
+
+.telInfo {
+  @include common-title(p);
+  font-family: $ff-openSans;
+  padding-left: 50px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '!';
+    top: -5px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $dark;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

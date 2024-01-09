@@ -21,12 +21,23 @@
   @if $appearance == colored {
     background: $accent-green;
     color: $white;
+
+
+    &:hover {
+      background: $accent-green-hover;
+    }
   }
 
   @if $appearance == transparent {
     border: 1px solid $gray;
     background-color: transparent;
     color: $accent-green;
+
+    &:hover {
+      background: $accent-green;
+      color: $white;
+      border: none;
+    }
   }
 
   @if $appearance == dark {

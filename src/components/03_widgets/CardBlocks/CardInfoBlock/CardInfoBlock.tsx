@@ -3,7 +3,7 @@ import styles from './CardInfoBlock.module.scss';
 import { CardInfoBlockInterface } from './CardInfoBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 
-import { InfoContainer, TitleComponent } from './components/index.ts';
+import { InfoContainer, PriceComponent, TitleComponent } from './components/index.ts';
 /* SVG Icons */
 
 
@@ -22,9 +22,7 @@ const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ data }) => {
         <InfoContainer data={data}/>
 
         {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}
-        <div className={styles.priceContainer}>
-
-        </div>
+        <PriceComponent data={data} />
       </div>
 
 

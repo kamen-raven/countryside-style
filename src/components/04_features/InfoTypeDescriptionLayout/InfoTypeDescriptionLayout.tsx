@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import styles from './InfoTypeDescriptionLayout.module.scss';
 import { InfoTypeDescriptionLayoutInterface } from './InfoTypeDescriptionLayout.interface.ts';
 
@@ -8,28 +9,57 @@ import ToggleIcon from '~svg/button/toggle.svg';
 const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = ({ data }) => {
   const textArray = data.houses.SEOText;
 
-
-  const buttonCondition = {
+  const blockCondition = {
     closed: {
-      text: 'Читать весь текст',
-      activeStyle: '',
+      buttonText: 'Читать весь текст',
+      buttonStyle: '',
+      textVisibleStyle: styles.inner__toggle_hidden,
     },
     opened: {
-      text: 'Свернуть текст',
-      activeStyle: styles.active,
+      buttonText: 'Свернуть текст',
+      buttonStyle: styles.active,
+      textVisibleStyle: styles.inner__toggle_visible,
     },
-    text: {
+/*     text: {
       closed: 'Читать весь текст',
       opened: 'Свернуть текст',
     },
     activationClass: {
       closed: '',
       opened: styles.active,
-    }
+    } */
   };
 
 
+  const [textButton, setTextButton] = useState(blockCondition.closed.buttonText);
+  const [styleButton, setStyleButton] = useState(blockCondition.closed.buttonStyle);
+  const [visibleText, setVisibleText] = useState(blockCondition.closed.textVisibleStyle);
 
+
+
+
+  const handleClick = () => {
+    // Инвертируем состояние для открытия/закрытия текста
+    setVisibleText((prevVisibleText) =>
+      prevVisibleText === blockCondition.closed.textVisibleStyle
+        ? blockCondition.opened.textVisibleStyle
+        : blockCondition.closed.textVisibleStyle
+    );
+
+    // Инвертируем состояние кнопки
+    setTextButton((prevTextButton) =>
+      prevTextButton === blockCondition.closed.buttonText
+        ? blockCondition.opened.buttonText
+        : blockCondition.closed.buttonText
+    );
+
+    // Инвертируем стиль кнопки
+    setStyleButton((prevStyleButton) =>
+      prevStyleButton === blockCondition.closed.buttonStyle
+        ? blockCondition.opened.buttonStyle
+        : blockCondition.closed.buttonStyle
+    );
+  };
 
 
 
@@ -59,7 +89,7 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
         </div>
 
           {/* скрываемая часть */}
-        <div className={`${styles.inner__toggle} ${styles.inner__toggle_visible} `}>
+        <div className={`${styles.inner__toggle} ${visibleText} `}>
           <div className={styles.toggleWrapper}>
             {textArray.common.slice(2).map((item, key) => { /* берем оставшиеся абзацы из массива для скрываемой части */
               return (
@@ -103,8 +133,9 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
       </div>
 
 
-      <button className={`${styles.toggleButton} ${buttonCondition.opened.activeStyle}`}>
-        {buttonCondition.opened.text}
+      <button className={`${styles.toggleButton} ${styleButton}`}
+              onClick={handleClick}>
+        {textButton}
         <ToggleIcon />
       </button>
     </div>

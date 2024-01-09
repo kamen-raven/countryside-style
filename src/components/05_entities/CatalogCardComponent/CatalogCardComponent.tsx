@@ -10,23 +10,24 @@ import ArrowIcon from '~svg/button/arrow.svg';
 
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import ImageTemplate from '~img/template/House_5 1.jpg';
+import { LabelNew } from '~shared/index.ts';
 
 const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
   ////для того чтобы отображать статус и гендер ////////////////////////////////////////////////////////////////////////
-  const targetKey = (targetValue: string) => Object.entries(item).find(([key, value]) => value === targetValue || key)?.[0];
+  const targetKey = (targetValue: string) => Object.entries(item).find(([, value]) => value === targetValue )?.[0];
   ////////////////////////////////////////////////////////////////////////////
 
   const router = useRouter();
 
   const goToAnotherPage = () => {
 
-    router.push(item.url);
+    router.push('/houses/card');
   };
 
 
-  const newLabel = <div className={`${styles.label} ${styles.label_new}`}>
-                    NEW
-                  </div>;
+  const newLabel = <LabelNew />;
+
   const renderNewLabel = item.gender == 'Male' ? newLabel : '';
 
 
@@ -40,10 +41,10 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.imageBlock}>
-        <Link className={`${styles.link} ${styles.link_image}`} href={item.url}>
+        <Link className={`${styles.link} ${styles.link_image}`} href={'/houses/card'}>
           <Image
             className={styles.image}
-            src={item.image}
+            src={ImageTemplate}
             alt={item.name}
             width={300}
             height={300}
@@ -55,9 +56,9 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
       </div>
       <div className={styles.infoBlock}>
         <div className={styles.infoContainer}>
-          <Link className={`${styles.link} ${styles.link_title}`} href={item.url}>
+          <Link className={`${styles.link} ${styles.link_title}`} href={'/houses/card'}>
             <h2 className={styles.title} >
-              {item.name}
+              Лесколово
             </h2>
           </Link>
           <div className={styles.statusContainer}>

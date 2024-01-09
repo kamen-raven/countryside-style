@@ -13,7 +13,7 @@
   margin: 80px 120px;
 
   display: grid;
-  grid-template-columns: minmax(720px, 1100px) minmax(380px, auto);
+  grid-template-columns: minmax(720px, 1100px) minmax(380px, 520px);
   gap: 50px;
   grid-template-areas:
     "title title" // "title ." ???

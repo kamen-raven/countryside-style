@@ -13,7 +13,7 @@ const CardPage: React.FC<CardPageInterface> = () => {
         <main className = {styles.mainContainer}>
           <CardSearchBarBlock />
           <CardInfoBlock data={data} />
-          <MoreObjectsBlock/>
+          <MoreObjectsBlock data={data} />
         </main>
     );
 };

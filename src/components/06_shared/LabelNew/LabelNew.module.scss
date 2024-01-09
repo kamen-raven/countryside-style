@@ -1,0 +1,27 @@
+@import '~global_styles';
+
+.label {
+  position: absolute;
+
+  &_new {
+    top: 20px;
+    right: 0;
+
+    width: 90px;
+    height: 45px;
+    border-radius: 27px 0 0  27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $accent-green;
+
+    color: $white;
+    text-align: center;
+    font-family: $ff-openSans;
+    font-size: 22px;
+    font-weight: $bold;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+}

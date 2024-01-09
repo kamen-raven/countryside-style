@@ -1,0 +1,15 @@
+@import '~global_styles';
+
+.priceWrapper {
+  grid-area: price;
+}
+
+.priceContainer {
+  display: grid;
+  grid-template-rows: auto auto;
+  position: sticky;
+  top: 50px;
+  align-self: start;
+  margin: 0;
+  height: auto;
+}

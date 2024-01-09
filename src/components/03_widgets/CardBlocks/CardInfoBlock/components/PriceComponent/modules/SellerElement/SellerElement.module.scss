@@ -1,0 +1,61 @@
+@import '~global_styles';
+
+.sellerElement {
+  padding-top: 50px;
+
+  display: flex;
+  gap: 25px;
+}
+
+
+.sellerPhoto {
+  display: flex;
+  &_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 80%;
+  }
+}
+
+.sellerContainer {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.name {
+  @include common-title(h3small,
+  $font-weight: $bold);
+
+}
+
+.description {
+  @include common-title(p,
+  $font-weight: $bold);
+  font-family: $ff-openSans;
+
+}
+
+.contactButton {
+  @include common-button(transparent,
+  $padding: 0 0 0 20px);
+  border-radius: 30px;
+  max-height: 55px;
+
+  @include common-title(p,
+  $color: $dark);
+  font-family: $ff-openSans;
+
+  &__icon {
+    width: 45px;
+    height: 45px;
+    padding: 5px 5px 5px 10px;
+
+    & svg {
+      border-radius: 50%;
+    }
+  }
+}
+
