@@ -5,7 +5,7 @@ import { CardInfoBlock, CardSearchBarBlock, MoreObjectsBlock } from '~widgets/in
 import dataTemplate from '~utils/temp/objectForCard/template.ts';
 
 
-const CardPage: React.FC<CardPageInterface> = ({  }) => {
+const CardPage: React.FC<CardPageInterface> = () => {
   const data = dataTemplate;
 
 

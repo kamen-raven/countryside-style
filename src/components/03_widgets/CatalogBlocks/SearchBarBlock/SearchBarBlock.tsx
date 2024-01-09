@@ -5,7 +5,7 @@ import { SearchBarBlockInterface } from './SearchBarBlock.interface.ts';
 import { SearchBar } from '~features/index.ts';
 
 
-const SearchBarBlock: React.FC<SearchBarBlockInterface> = ({ }) => {
+const SearchBarBlock: React.FC<SearchBarBlockInterface> = () => {
   return (
     <SearchBar />
   );

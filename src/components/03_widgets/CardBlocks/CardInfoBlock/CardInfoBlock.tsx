@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CardInfoBlock.module.scss';
 import { CardInfoBlockInterface } from './CardInfoBlock.interface.ts';
-import { BackgroundSVGPattern, Button } from '~shared/index.ts';
+import { BackgroundSVGPattern } from '~shared/index.ts';
 
 import { InfoContainer, TitleComponent } from './components/index.ts';
 /* SVG Icons */

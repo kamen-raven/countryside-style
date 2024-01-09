@@ -29,9 +29,6 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
   };
 
 
-  const handleClick = () => {
-    console.log('click!')
-  }
 
 
 

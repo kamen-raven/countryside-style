@@ -10,7 +10,7 @@ import { ContactUsBlock } from "~widgets/CatalogBlocks/ContactUsBlock/ContactUsB
 import { CatalogBlock, InfoTypeDescriptionBlock, SearchBarBlock } from '~widgets/index.ts';
 import housesSEOText from '~utils/constants/TypeSEOText/TypeSEOText.ts';
 
-const CatalogPage: React.FC<CatalogPageInterface> = ({ type }) => {
+const CatalogPage: React.FC<CatalogPageInterface> = () => {
 
   const SEOTextData = housesSEOText;
 

@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
   ////для того чтобы отображать статус и гендер ////////////////////////////////////////////////////////////////////////
-  const targetKey = (targetValue: string) => Object.entries(item).find(([key, value]) => value === targetValue)?.[0];
+  const targetKey = (targetValue: string) => Object.entries(item).find(([key, value]) => value === targetValue || key)?.[0];
   ////////////////////////////////////////////////////////////////////////////
 
   const router = useRouter();

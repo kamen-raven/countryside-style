@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './PhotosInner.module.scss';
+/* import styles from './PhotosInner.module.scss';
 import { InfoContainerInterface } from '../../InfoContainer.interface';
 
-
-const PhotosInner = ({ data }: InfoContainerInterface ): JSX.Element  => {
+ */
+const PhotosInner = (): JSX.Element  => {
     return (
         <div>
 

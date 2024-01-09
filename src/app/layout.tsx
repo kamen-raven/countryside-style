@@ -5,7 +5,6 @@ import '~styles/index.scss';
 import styles from "./layout.module.scss";
 
 import { Header, Footer } from '~widgets/index';
-import { Viewport } from 'next/dist/lib/metadata/types/extra-types';
 
 
 

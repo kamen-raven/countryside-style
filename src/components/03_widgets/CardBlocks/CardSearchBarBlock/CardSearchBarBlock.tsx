@@ -5,7 +5,7 @@ import { CardSearchBarBlockInterface } from './CardSearchBarBlock.interface.ts';
 import { SearchBar } from '~features/index.ts';
 
 
-const CardSearchBarBlock: React.FC<CardSearchBarBlockInterface> = ({ }) => {
+const CardSearchBarBlock: React.FC<CardSearchBarBlockInterface> = () => {
   return (
     <SearchBar />
   );
