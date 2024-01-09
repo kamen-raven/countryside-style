@@ -1,14 +1,13 @@
 'use client';
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { CustomSelectInterface } from './CustomSelect.interface';
 import styles from './CustomSelect.module.scss';
 
-interface CustomSelectProps {
-  options: string[];
-}
+import ToggleSelectIcon from '~svg/button/toggle.svg';
 
-const CustomSelect: React.FC<CustomSelectProps> = ({ options }) => {
+const CustomSelect: React.FC<CustomSelectInterface> = ({ options, label }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('Select an option');
+  const [selectedOption, setSelectedOption] = useState(label);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleToggle = () => {
@@ -36,22 +35,24 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ options }) => {
   }, [handleClickOutside]);
 
   return (
-    <div className={styles.customSelect} ref={dropdownRef}>
+    <div className={`${styles.customSelect} ${isOpen && styles.customSelect_opened}`} ref={dropdownRef}>
+
       <div className={styles.selectSelected} onClick={handleToggle}>
         {selectedOption}
         {isOpen && (
-        <div className={styles.selectItems}>
-          {options.map((option) => (
-            <div key={option} onClick={() => handleSelect(option)}>
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
+          <div className={`${styles.selectItems}  `}>
+            {options.map((option, index) => (
+              <div key={index} onClick={() => handleSelect(option)}>
+                {option}
+              </div>
+            ))}
+          </div>
+        )}
+        <ToggleSelectIcon className = {`${styles.toggleIcon} ${isOpen && styles.toggleIcon_opened}`}/>
       </div>
 
     </div>
   );
 };
 
-export {CustomSelect};
+export { CustomSelect };

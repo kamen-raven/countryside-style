@@ -1,0 +1,40 @@
+@import '~global_styles';
+
+.title {
+  @include common-title(h3small);
+}
+
+.description {
+  @include common-title(p);
+  font-family: $ff-openSans;
+
+  &_spanAccent {
+    @extend .description;
+    font-weight: $bold;
+  }
+}
+
+
+.list {
+  @include common-ul;
+}
+
+.listItem {
+  @include common-li;
+  padding-left: 25px;
+  position: relative;
+  display: inline-flex;
+
+  &::before {
+    content:'';
+    display: block;
+    position: absolute;
+    color: $accent-green;
+    width: 9px;
+    height: 9px;
+    left: 0;
+    top: 8px;
+    background-color: $accent-green;
+    border-radius: 50%;
+  }
+}

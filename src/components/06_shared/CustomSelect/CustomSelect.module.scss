@@ -1,43 +1,84 @@
+@import '~global_styles';
+
+
 .customSelect {
   position: relative;
-  display: inline-block;
+  box-sizing: border-box;
+
+  background-color: $white;
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+
+  @include common-title(p);
+
+  font-family: $ff-openSans;
+
+
+  &_opened {
+    border-radius: $border-radius $border-radius 0;
+
+  }
 }
 
 .selectSelected {
-  background-color: #4caf50;
-  color: white;
-  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 22px;
+  height: 100%;
+  color: $gray;;
   cursor: pointer;
+  position: relative;
 }
 
-.selectSelected:after {
+/* .selectSelected:after {
   position: absolute;
   content: '';
   top: 50%;
   right: 10px;
-  margin-top: -3px;
-  border-width: 6px 6px 0 6px;
-  border-style: solid;
-  border-color: white transparent transparent transparent;
 }
-
+ */
 .selectItems {
   position: absolute;
-  background-color: #f1f1f1;
+  right: -1px;
+  top: 100%;
+  background-color: $white;
 
-  max-height: 200px;
+
   overflow-y: auto;
-  border: 1px solid #ccc;
+  border: 1px solid $gray;
+  border-radius: 0 0 $border-radius  ;
   z-index: 1;
+  box-sizing: border-box;
+  transition: all .3s linear;
 }
 
 .selectItems div {
   padding: 8px 16px;
   cursor: pointer;
   user-select: none;
+  border-bottom: 1px solid $gray;
+  &:last-child {
+    border-bottom: none;
+   }
 }
 
 .selectItems div:hover {
-  background-color: #4caf50;
-  color: white;
+  background-color: $accent-green;
+  color: $white;
+}
+
+
+
+.toggleIcon {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform .3s linear;
+
+  &_opened {
+    transform: rotate(180deg) translateY(50%) scaleX(-1);
+    transition: transform .3s linear;
+}
 }

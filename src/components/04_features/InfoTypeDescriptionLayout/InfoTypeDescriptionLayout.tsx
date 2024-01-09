@@ -29,6 +29,9 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
   };
 
 
+  const handleClick = () => {
+    console.log('click!')
+  }
 
 
 
@@ -45,22 +48,23 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
                   {item.span}
                 </h2>
                 <p className={styles.paragraph}>
-                {item.text.split('\n\n').map((item, index, array) => {
-                      return (
-                        <React.Fragment key={index}>
-                          {item}
-                          {index !== (array.length - 1) ? <><br /><br /></> : ''}
-                        </React.Fragment>);
-                    })}
+                  {item.text.split('\n\n').map((item, index, array) => {
+                    return (
+                      <React.Fragment key={index}>
+                        {item}
+                        {index !== (array.length - 1) ? <><br /><br /></> : ''}
+                      </React.Fragment>);
+                  })}
                 </p>
               </div>
             );
           })}
         </div>
 
+          {/* скрываемая часть */}
         <div className={`${styles.inner__toggle} ${styles.inner__toggle_visible} `}>
           <div className={styles.toggleWrapper}>
-            {textArray.common.slice(2).map((item, key) => { /* берем только первые два абзаца из массива для видимой части */
+            {textArray.common.slice(2).map((item, key) => { /* берем оставшиеся абзацы из массива для скрываемой части */
               return (
                 <div key={key} className={styles.textBlock}>
                   <h2 className={styles.subtitle}>
@@ -79,6 +83,8 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
               );
             })}
           </div>
+
+          {/* баннер */}
           <div className={styles.banner}>
             <div className={`${styles.textBlock} ${styles.textBlock_banner}`}>
               <h2 className={`${styles.subtitle} ${styles.subtitle_banner}`}>
@@ -86,22 +92,22 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
               </h2>
               <p className={`${styles.paragraph} ${styles.paragraph_banner}`}>
                 {textArray.banner.text.split('\n\n').map((item, index, array) => {
-                      return (
-                        <React.Fragment key={index}>
-                          {item}
-                          {index !== (array.length - 1) ? <><br /><br /></> : ''}
-                        </React.Fragment>);
-                    })}
+                  return (
+                    <React.Fragment key={index}>
+                      {item}
+                      {index !== (array.length - 1) ? <><br /><br /></> : ''} {/* добавляем разрыв строки */}
+                    </React.Fragment>);
+                })}
               </p>
             </div>
           </div>
 
-
-
         </div>
       </div>
-      <button className={`${styles.toggleButton}`}>
-        Читать весь текст
+
+
+      <button className={`${styles.toggleButton} ${buttonCondition.opened.activeStyle}`}>
+        {buttonCondition.opened.text}
         <ToggleIcon />
       </button>
     </div>

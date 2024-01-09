@@ -1,13 +1,36 @@
-@mixin common-button {
-  display: inline-block;
+@import '~variables';
+
+@mixin common-button($appearance,
+                      $padding: 12px 25px,
+                      $height: 55px) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   border: none;
   border-radius: $border-radius;
-    font-family: $ff-openSans;
+  font-family: $ff-openSans;
   line-height: 130%;
   text-align: center;
-  height: 55px;
 
-  padding: 12px 25px;
+  height: $height;
+  padding: $padding;
   cursor: pointer;
+
+
+  @if $appearance == colored {
+    background: $accent-green;
+    color: $white;
+  }
+
+  @if $appearance == transparent {
+    border: 1px solid $gray;
+    background-color: transparent;
+    color: $accent-green;
+  }
+
+  @if $appearance == dark {
+    background: $dark;
+    color: #FFF;
+  }
 }

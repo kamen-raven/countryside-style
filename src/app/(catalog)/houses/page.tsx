@@ -25,8 +25,6 @@ export default async function PageType({ params }:  {params: {type: string}}) {
   } */
 
   return (
-    <>
       <CatalogPage type={params.type} />
-    </>
   );
 }

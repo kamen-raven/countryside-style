@@ -1,0 +1,51 @@
+@import '~global_styles';
+
+.title {
+  @include common-title(h3small);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 50px;
+}
+
+.blockInfo {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.label {
+  @include common-title(p,
+    $color: $white);
+  font-family: $ff-openSans;
+  font-weight: $bold;
+
+  background-color: $accent-gray;
+  padding: 0 20px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.list {
+  @include common-ul;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listItem {
+  @include common-li;
+  @include common-title(p);
+  font-family: $ff-openSans;
+
+
+  &__spanAccent {
+    font-weight: $bold;
+  }
+}

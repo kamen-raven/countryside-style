@@ -90,7 +90,7 @@
 
 
 .toggleButton {
-  @include common-button;
+  @include common-button(transparent);
   border: 1px solid $gray;
   background-color: transparent;
   max-width: 275px;

@@ -1,0 +1,34 @@
+@import '~global_styles';
+
+
+
+
+.iconContainer {
+  display: grid;
+  grid-template-columns: minmax(60px, 100px) auto;
+  justify-content: start;
+  align-items: center;
+  gap: 24px;
+
+}
+
+.icon {
+  display: inline-flex;
+
+  & svg {
+    width: 100px;
+    height: 100px;
+  }
+
+}
+
+.info {
+  @include common-title (p);
+  font-family: $ff-openSans;
+
+
+  &_accent {
+
+    font-weight: $bold;
+  }
+}

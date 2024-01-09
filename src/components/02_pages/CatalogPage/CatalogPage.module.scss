@@ -1,0 +1,14 @@
+@import '~global_styles';
+
+.mainContainer {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+  "description"
+  "search-bar"
+  "main-catalog"
+  "contactUs"
+  "reviews";
+}

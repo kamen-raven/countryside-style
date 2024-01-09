@@ -16,3 +16,9 @@ export * from './CatalogBlocks/InfoTypeDescriptionBlock/InfoTypeDescriptionBlock
 export * from './CatalogBlocks/SearchBarBlock/SearchBarBlock';
 export * from './CatalogBlocks/CatalogBlock/CatalogBlock';
 export * from './CatalogBlocks/ContactUsBlock/ContactUsBlock';
+
+
+// Card Blocks
+export * from './CardBlocks/CardSearchBarBlock/CardSearchBarBlock';
+export * from './CardBlocks/CardInfoBlock/CardInfoBlock';
+export * from './CardBlocks/MoreObjectsBlock/MoreObjectsBlock';

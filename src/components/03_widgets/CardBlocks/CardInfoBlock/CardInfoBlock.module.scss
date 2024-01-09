@@ -1,0 +1,28 @@
+@import '~global_styles';
+
+.wrapper {
+  @include common-wrapper;
+  grid-area: cardTemplate;
+  position: relative;
+
+  border-bottom: 1px solid $gray;
+}
+
+.mainContainer {
+  grid-area: container;
+  margin: 80px 120px;
+
+  display: grid;
+  grid-template-columns: minmax(720px, 1100px) minmax(380px, auto);
+  gap: 50px;
+  grid-template-areas:
+    "title title" // "title ." ???
+    "info price";
+}
+
+
+
+
+.priceContainer {
+  grid-area: price;
+}

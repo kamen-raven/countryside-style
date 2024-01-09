@@ -1,0 +1,55 @@
+@import '~global_styles';
+
+
+.infoContainer {
+  grid-area: info;
+  height: auto;
+
+  display: grid;
+/*   grid-template-areas:
+    "photos"
+    "icons"
+    "common-info"
+    "char"
+    "map"; */
+  gap: 70px;
+
+}
+
+.padding-border {
+  padding-bottom: 70px;
+  border-bottom: 1px solid $gray;
+}
+
+.photosContainer {
+  //grid-area: photos;
+}
+
+
+.iconsContainer {
+ // grid-area: icons;
+  @extend .padding-border;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+
+.commonInfoContainer {
+  //grid-area: common-info;
+  @extend .padding-border;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.characteristicsContainer {
+ // grid-area: char;
+  @extend .padding-border;
+}
+
+.mapContainer {
+ // grid-area: map;
+}

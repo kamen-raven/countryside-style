@@ -1,6 +1,5 @@
-import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
+import { SearchBarInterface } from '~features/SearchBar/SearchBar.interface';
 
-export interface SearchBarBlockInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export interface SearchBarBlockInterface extends SearchBarInterface {
 
-  children?: ReactNode;
 }

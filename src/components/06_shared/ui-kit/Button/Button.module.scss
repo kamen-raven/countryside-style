@@ -1,20 +1,20 @@
 @import '~global_styles';
 
 .colored {
-  @include common-button;
-  background: $accent-green;
-  color: #FFF;
+  @include common-button (colored);
+/*   background: $accent-green;
+  color: #FFF; */
 }
 
 .transparent {
-  @include common-button;
-  border: 1px solid $gray;
+  @include common-button(transparent);
+/*   border: 1px solid $gray;
   background-color: transparent;
-  color: $accent-green;
+  color: $accent-green; */
 }
 
 .dark {
-  @include common-button;
-  background: $dark;
-  color: #FFF;
+  @include common-button(dark);
+/*   background: $dark;
+  color: #FFF; */
 }
