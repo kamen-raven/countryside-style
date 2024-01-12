@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './ContactInfoElement.module.scss';
 import { ContactInfoElementInterface } from './ContactInfoElement.interface.ts';
 
-import { Button } from '~shared/index.ts';
 import CallIcon from '~svg/contacts/Phone.svg';
 import TelegramIcon from '~svg/contacts/Telegram2.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';

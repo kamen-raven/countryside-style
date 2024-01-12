@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 import styles from './ContactUsBlock.module.scss';
