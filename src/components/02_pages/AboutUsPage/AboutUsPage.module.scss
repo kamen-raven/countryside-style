@@ -1,0 +1,11 @@
+@import '~global_styles';
+
+.mainContainer {
+  @include main-container(
+    "aboutUs"
+    "partners"
+    "video"
+    "advantages"
+    "team");
+    gap: 90px;
+}

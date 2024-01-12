@@ -1,0 +1,12 @@
+@import '~global_styles';
+
+
+.wrapper {
+  grid-area: partners;
+  @include common-wrapper;
+  color: $white;
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

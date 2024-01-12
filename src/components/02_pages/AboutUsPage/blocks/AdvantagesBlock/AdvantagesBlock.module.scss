@@ -1,0 +1,26 @@
+@import '~global_styles';
+
+.wrapper {
+  @include common-wrapper;
+  grid-area: advantages;
+
+  border-bottom: 1px solid $gray;
+}
+
+.container {
+  grid-area: container;
+  margin: 0 120px 90px;
+
+
+}
+
+.iconsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px 50px;
+}
+
+
+.title {
+  @include common-title(h2);
+}

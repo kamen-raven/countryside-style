@@ -109,10 +109,13 @@
   &__icon {
     width: 45px;
     height: 45px;
-    padding: 5px 5px 5px 15px;
+    margin: 5px 5px 5px 15px;
+    background-color: $white;
+    border-radius: 50%;
 
     & svg {
       border-radius: 50%;
+      fill: $accent-gray;
     }
   }
 

@@ -1,0 +1,108 @@
+@import '~global_styles';
+
+
+.addressContainer {
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-top: 50px;
+}
+
+.callLink {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include common-link;
+  font-size: $paragraph-lg;
+  font-weight: $bold;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: $white;
+
+  & svg {
+    fill: $white;
+  }
+
+/*   &:hover {
+    color: $accent-green;
+    transition: all 0.2s linear;
+
+    & svg {
+      fill: $white;
+    }
+
+    & .callIcon {
+      border: 1px solid $accent-green;
+      background-color: $accent-green;
+      transition: all 0.3s linear;
+    }
+  } */
+}
+
+.callIcon {
+  border: 1px $white solid;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  box-sizing: border-box;
+  display: inline-flex;
+  background-color: transparent;
+  transition: background-color 0.3s linear;
+}
+
+
+
+.contactsList {
+  display: flex;
+  gap: 10px;
+}
+
+.contactItem {
+  border-radius: 30px;
+  max-height: 55px;
+  border: 1px solid $white;
+
+  &__icon {
+    width: 45px;
+    height: 45px;
+    margin: 5px 5px 5px 15px;
+    background-color: $white;
+    border-radius: 50%;
+
+/*     & svg {
+      border-radius: 50%;
+      fill: $accent-gray;
+    } */
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    padding-left: 20px;
+
+    text-decoration: none;
+    color: $white;
+    text-align: center;
+    font-family: $ff-openSans;
+    font-size: 22px;
+    font-weight: $regular;
+    line-height: 130%;
+  }
+}
+
+
+.buttonCall {
+  @include common-button(light);
+  max-height: 55px;
+  padding: 0 25px;
+  font-size: 22px;
+  line-height: 120%;
+  box-sizing: border-box;
+
+  margin-top: 35px;
+}

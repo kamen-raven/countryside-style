@@ -1,0 +1,37 @@
+@import '~global_styles';
+
+.advantageIconComponent {
+  display: grid;
+  grid-template-columns: minmax(100px, 150px) minmax(420px, 1fr);
+  gap: 36px;
+}
+
+
+.iconContainer {
+  background-color: $accent-green;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.title {
+  @include common-title(h3small);
+}
+
+.description {
+  @include common-title(p);
+  font-family: $ff-openSans;
+}

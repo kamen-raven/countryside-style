@@ -24,6 +24,11 @@ export const gothamPro = Gotham_Pro({
       weight: "700",
       style: "normal",
     },
+    {
+      path: "./Gotham Pro/GothamPro-Black.woff",
+      weight: "900",
+      style: "normal",
+    },
   ],
   variable: "--gothamPro",
   fallback: ["sans serif"],

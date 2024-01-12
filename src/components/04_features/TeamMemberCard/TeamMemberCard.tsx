@@ -3,17 +3,18 @@ import Image from 'next/image';
 
 import { TeamMemberCardProps } from './TeamMemberCard.props';
 import styles from './TeamMemberCard.module.scss';
+import { ContactInfoElement } from './elements';
 
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ data }) => {
 
   const styleItems = {
     oddStyles: {
-      color: styles.container_bg_green,
+      color: styles.green,
       template: '',
     },
     evenStyles: {
-      color: styles.container_bg_gray,
+      color: styles.gray,
       template: styles.innerBlock_textFirst
     }
   };
@@ -25,9 +26,23 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ data }) => {
   const setColor = isOdd(data._id) ? styleItems.oddStyles.color : styleItems.evenStyles.color;
   const setTemplate = isOdd(data._id) ? styleItems.oddStyles.template : styleItems.evenStyles.template;
 
+
+  const quoteElement = (
+    <div className={styles.quoteContainer}>
+      <span className={styles.quotationMark}>
+        “
+      </span>
+      <p className={styles.quoteText}>
+        {data.quote}
+      </p>
+    </div>
+  );
+
+
+
   return (
     <>
-      <div className={`${setColor}`}></div>
+      {/*       <div className={`${setColor}`}></div> */}
       <div className={`${styles.container}  ${setColor}`}>
         <div className={`${styles.innerBlock} ${setTemplate}`}>
           <div className={styles.imageContainer}>
@@ -35,6 +50,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ data }) => {
               src={data.photo}
               alt={''} />
           </div>
+
           <div className={styles.infoContainer}>
             <h3 className={styles.name}>
               {data.name}
@@ -42,18 +58,19 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ data }) => {
             <p className={styles.jobTitle}>
               {data.jobTitle}
             </p>
-            <div className={styles.quoteContainer}>
-              <div className={styles.quotationMark}>
-                “
-              </div>
-              <p className={styles.quoteText}>
-                {data.quote}
-              </p>
-            </div>
+
+            {data.role == 'employee' ?
+              <ContactInfoElement data={data}
+                                  containerColor={setColor}>
+                {quoteElement}
+              </ContactInfoElement>
+              :
+              quoteElement
+            }
           </div>
         </div>
       </div>
-      <div className={`${setColor}`}></div>
+      {/*       <div className={`${setColor}`}></div> */}
 
 
     </>

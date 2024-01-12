@@ -1,0 +1,37 @@
+@import '~global_styles';
+
+.kaissa {
+  grid-area: kaissa;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+
+  &__imgBlock {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+  }
+
+  &__image {
+    width: 75%;
+    height: 75%;
+  }
+
+  &__infoBlock {
+    display: flex;
+    align-items: center;
+    background: $accent-green;
+    margin-left: 130px;
+    width: 660px;
+    height: 320px;
+  }
+
+  &__info {
+    display: block;
+    font-size: 32px;
+    font-weight: $medium;
+    line-height: 130%;
+    padding-left: 90px;
+    margin: 0;
+  }
+}

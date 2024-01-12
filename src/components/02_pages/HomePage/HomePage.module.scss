@@ -1,15 +1,14 @@
-.mainContainer {
-  grid-area: main;
+@import '~global_styles';
 
-  display: grid;
-  grid-template-columns: auto;
-  grid-template:
-  "headBlock"
-  "objectsForSale"
-  "ourServices"
-  "press"
-  "blog"
-  "team"
-  "reviews"
-  "contacts";
+
+.mainContainer {
+  @include main-container(
+    "headBlock"
+    "objectsForSale"
+    "ourServices"
+    "press"
+    "blog"
+    "team"
+    "reviews"
+    "contacts")
 }

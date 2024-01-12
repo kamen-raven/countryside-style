@@ -2,21 +2,31 @@
 
 .container {
   width: auto;
-  &_bg_green {
-    background-color: $accent-green;
-  }
 
-  &_bg_gray {
-    background-color: $accent-gray;
+}
+
+.green {
+  background-color: $accent-green;
+
+  & svg {
+    fill: $accent-green;
   }
 }
 
+.gray {
+  background-color: $accent-gray;
 
+  & svg {
+    fill: $accent-gray;
+  }
+}
 
 .innerBlock {
   display: flex;
-  align-items: stretch;
   max-height: 800px;
+  max-width: 1920px;
+  margin: 0 auto;
+  align-items: stretch;
 
   &_textFirst{
     flex-direction: row-reverse;
@@ -35,8 +45,11 @@
   height: max(350px, 800px);;
 }
 
+
+
+
 .infoContainer {
-  margin: 150px 100px;
+  margin: auto 100px;
 }
 
 .name {
@@ -49,11 +62,15 @@
   font-weight: $regular;
   line-height: 120%;
   margin: 25px 0 0;
+  //padding-bottom: 30px;
 }
 
+
+
+
 .quoteContainer {
-  margin-top: 100px ;
-display: flex;
+  margin-top: 70px ;
+  display: flex;
 }
 
 .quotationMark {
@@ -66,5 +83,5 @@ display: flex;
 
 .quoteText {
   @include common-title(h3small, $color: $white);
-  margin-top: 30px;
+  margin-top: 10px;
 }

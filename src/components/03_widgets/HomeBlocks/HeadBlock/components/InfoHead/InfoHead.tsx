@@ -6,9 +6,10 @@ import styles from './InfoHead.module.scss';
 
 import { BackgroundSVGPattern, Button, Input } from '~shared/index';
 import SecondImg from '~img/headBlock/second.jpg';
-import Kaissa from '~img/headBlock/kaissa.png';
+
 import BackgroundPattern from '~svg/background/backgroundTitleHead.svg';
 import Link from 'next/link';
+import { AwardInfoElement } from './elements/AwardInfoElement/AwardInfoElement';
 
 const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
 
@@ -39,19 +40,7 @@ const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
             alt='Загородный дом' />
         </div>
 
-        <div className={styles.kaissa}>
-          <div className={styles.kaissa__imgBlock}>
-            <Image
-              className={styles.kaissa__image}
-              src={Kaissa}
-              alt='Каисса - 2018' />
-          </div>
-          <div className={styles.kaissa__infoBlock}>
-            <p className={styles.kaissa__info}>
-              Лучшая риэлтерская компания на&nbsp;рынке загородной недвижимости 2018&nbsp;года
-            </p>
-          </div>
-        </div>
+        <AwardInfoElement />
 
         <div className={styles.requestForm}>
           <p className={styles.requestForm__title}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import Image from 'next/image';
 
 import styles from './ContactUsBlock.module.scss';
@@ -60,7 +60,6 @@ const ContactUsBlock: React.FC<ContactUsBlockInterface> = () => {
                 </a>
               </li>
             </ul>
-
 
 
 

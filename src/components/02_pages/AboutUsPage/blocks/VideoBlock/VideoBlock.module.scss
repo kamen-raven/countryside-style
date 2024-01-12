@@ -1,0 +1,19 @@
+@import '~global_styles';
+
+.wrapper {
+  @include common-wrapper;
+  grid-area: video;
+
+}
+
+.container {
+  grid-area: container;
+  margin: 0 120px;
+  height: 800px;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

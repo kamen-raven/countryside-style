@@ -29,6 +29,7 @@
       "~variables": ["./src/styles/variables/_variables.scss"],
       "~mixin/*": ["./src/styles/mixin/*"],
       "~adaptive": ["./src/styles/mixin/_adaptive.scss"],
+      "~data/*": ["./src/data/*"],
       //images
       "~img/*": ["./public/img/*"],
       "~svg/*": ["./public/svg/*"],

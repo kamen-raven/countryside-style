@@ -2,7 +2,7 @@
 
 .wrapper {
   @include common-wrapper;
-  grid-area: cardTemplate;
+  grid-area: card;
   position: relative;
 
   border-bottom: 1px solid $gray;

@@ -22,7 +22,7 @@ export const menuList = [
   {
     name: "company",
     title: "О компании",
-    link: "/o-kompanii",
+    link: "/about",
   },
   {
     name: "services",

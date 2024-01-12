@@ -4,3 +4,4 @@ export * from './ReviewCard/ReviewCard';
 export * from './CatalogCardsLayout/CatalogCardsLayout';
 export * from './InfoTypeDescriptionLayout/InfoTypeDescriptionLayout';
 export * from './SearchBar/SearchBar';
+export * from './AdvantagesIconsComponent/AdvantagesIconsComponent';

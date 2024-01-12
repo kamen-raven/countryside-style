@@ -44,4 +44,9 @@
     background: $dark;
     color: #FFF;
   }
+
+  @if $appearance == light {
+    background: $white;
+    color: $dark;
+  }
 }
