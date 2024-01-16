@@ -32,7 +32,7 @@ export const menuList = [
   {
     name: "contacts",
     title: "Контакты",
-    link: "/kontakty",
+    link: "/contacts",
   },
   {
     name: "reviews",

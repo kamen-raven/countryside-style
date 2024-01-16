@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { AboutUsPage } from "~pages/index";
 
 // temp
-import teamMembersData from '~utils/temp/teamMembersData/teamMembersData';
+import teamMembersData from '~data/EmployeesList/teamMembersData';
 
 export const metadata: Metadata = {
   title: 'О компании',
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 
 
-export default function PageType() {
+export default function PageAbout() {
 
   return (
-    <AboutUsPage data={teamMembersData} />
+    <AboutUsPage employeesData={teamMembersData} />
   );
 }

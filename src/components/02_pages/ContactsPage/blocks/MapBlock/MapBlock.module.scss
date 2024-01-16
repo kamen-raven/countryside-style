@@ -1,0 +1,16 @@
+@import '~global_styles';
+
+.wrapper {
+  @include common-wrapper;
+  grid-area: map;
+}
+
+.container {
+  grid-area: container;
+}
+
+.yandexMap {
+  height: 800px;
+  width: 100%;
+  border: none;
+}

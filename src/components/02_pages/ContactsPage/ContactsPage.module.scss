@@ -1,0 +1,10 @@
+@import '~global_styles';
+
+.mainContainer {
+  @include main-container(
+    "title"
+    "map"
+    "contactsList"
+    "questionForm");
+    gap: 90px;
+}

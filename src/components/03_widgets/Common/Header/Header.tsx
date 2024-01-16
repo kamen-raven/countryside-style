@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Header.module.scss';
 import { HeaderProps } from './Header.props';
 
-import { menuList } from '~utils/constants/menu/menuList';
+import { menuList } from '~data/NavMenu/menuList';
 
 import { SearchInput, ContactComponent } from './components';
 import { Logo, Navbar } from '~shared/index';

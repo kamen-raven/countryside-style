@@ -2,53 +2,21 @@ import React from 'react';
 import { ContactsBlockProps } from './ContactsBlock.props';
 import styles from './ContactsBlock.module.scss';
 
-import TelegramIcon from '~svg/contacts/Telegram.svg';
-import WhatsappIcon from '~svg/contacts/WhatsApp.svg';
-import VkontakteIcon from '~svg/contacts/VK.svg';
-import { HalfScreenTemplate, RequestFormComponent } from '~entities/index';
+import { AddressElement, HalfScreenTemplate, RequestFormComponent } from '~entities/index';
 
 
-const ContactsBlock: React.FC<ContactsBlockProps> = () => {
+const ContactsBlock: React.FC<ContactsBlockProps> = ({ generalContactsData }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.containerInfo}>
         <h2 className={styles.title}>
           Контакты
         </h2>
-        <address className={styles.innerBlock}>
-          <p className={styles.description}>
-            Агентство недвижимости «Загородный Стиль»
-          </p>
-          <p className={styles.address}>
-            Санкт-Петербург, пр. Просвещения, дом 80, к. 1, ТЦ «Прометей», 3 этаж, офис 3.1
-          </p>
-          <ul className={styles.contactsList}>
-            <li className={`${styles.contactItem} ${styles.contactItem__telegram}`}>
-              <a className={styles.contactItem__link} href={'/'}>
-                Telegram
-                <span className={styles.contactItem__icon}>
-                  <TelegramIcon />
-                </span>
-              </a>
-            </li>
-            <li className={`${styles.contactItem} ${styles.contactItem__whatsapp}`}>
-              <a className={styles.contactItem__link} href={'/'}>
-                WhatsApp
-                <span className={styles.contactItem__icon}>
-                  <WhatsappIcon />
-                </span>
-              </a>
-            </li>
-            <li className={`${styles.contactItem} ${styles.contactItem__vkontakte}`}>
-              <a className={styles.contactItem__link} href={'/'}>
-                Все свежие объекты смотри в нашей группе ВК
-                <span className={styles.contactItem__icon}>
-                  <VkontakteIcon />
-                </span>
-              </a>
-            </li>
-          </ul>
-        </address>
+
+
+        <AddressElement addressInfoData={generalContactsData} />
+
+
       </div>
       <div className={styles.containerForm}>
         <HalfScreenTemplate conditionColor={"dark"} conditionTemplate={'picFirst'}>

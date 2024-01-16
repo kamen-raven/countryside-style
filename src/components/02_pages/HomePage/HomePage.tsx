@@ -14,8 +14,9 @@ import {
 import objectsForSaleData from "~utils/temp/objectsForSaleData/objectsForSaleItems";
 import servicesData from "~utils/temp/OurServicesData/servicesItems";
 import pressData from '~utils/constants/pressBlock/pressArticlesItems';
-import teamMembersData from '~utils/temp/teamMembersData/teamMembersData';
+import teamMembersData from '~data/EmployeesList/teamMembersData';
 import reviews from '~utils/temp/reviewsData/reviewsData';
+import GeneralContactsData from '~data/GeneralContacts/GeneralContactsData';
 
 
 const HomePage = ({ ...props }): JSX.Element => {
@@ -33,7 +34,7 @@ const HomePage = ({ ...props }): JSX.Element => {
       <BlogBlock path={'home'} />
       <TeamBlock teamMembersItems={teamMembersData} />
       <ReviewsBlock reviewsDataItem={reviews} />
-      <ContactsBlock />
+      <ContactsBlock generalContactsData={GeneralContactsData} />
     </main>
   );
 };

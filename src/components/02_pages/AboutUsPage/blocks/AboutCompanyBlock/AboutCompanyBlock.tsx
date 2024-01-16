@@ -1,15 +1,17 @@
 import React from 'react';
-
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-
 import styles from './AboutCompanyBlock.module.scss';
 
 import { BackgroundSVGPattern } from '~shared/index';
 import aboutUsPageFacts from '~data/AdvantagesLists/AboutUsPage/aboutUsPageFacts';
 import { AboutUsInfoElement } from './elements';
+import useReactMarkdown from '~hooks/useReactMarkdown';
 
 const AboutCompanyBlock: React.FC = () => {
+  const markdownStyles = {
+    p: styles.text,
+    strong: styles.text_spanAccent,
+  };
+
 
   return (
     <section className={styles.wrapper}>
@@ -32,7 +34,9 @@ const AboutCompanyBlock: React.FC = () => {
                   {item.icon && <item.icon />}
                 </div>
                 <div className={styles.textContainer}>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}
+                  {useReactMarkdown(item.title, markdownStyles)}
+
+{/*                   <ReactMarkdown remarkPlugins={[remarkGfm]}
                     components={{
                       p: ({ children }) =>
                         <p className={styles.text}>
@@ -43,7 +47,10 @@ const AboutCompanyBlock: React.FC = () => {
                           {children}
                         </span>,
                     }}
-                    children={item.title} />
+                    children={item.title} /> */}
+
+
+
                 </div>
               </div>
             );

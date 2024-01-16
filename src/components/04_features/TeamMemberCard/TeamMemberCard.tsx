@@ -6,7 +6,7 @@ import styles from './TeamMemberCard.module.scss';
 import { ContactInfoElement } from './elements';
 
 
-const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ data }) => {
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem }) => {
 
   const styleItems = {
     oddStyles: {
@@ -23,8 +23,8 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ data }) => {
 
   const isOdd = (num: number) => num % 2 !== 0;
 
-  const setColor = isOdd(data._id) ? styleItems.oddStyles.color : styleItems.evenStyles.color;
-  const setTemplate = isOdd(data._id) ? styleItems.oddStyles.template : styleItems.evenStyles.template;
+  const setColor = isOdd(employeeItem._id) ? styleItems.oddStyles.color : styleItems.evenStyles.color;
+  const setTemplate = isOdd(employeeItem._id) ? styleItems.oddStyles.template : styleItems.evenStyles.template;
 
 
   const quoteElement = (
@@ -33,7 +33,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ data }) => {
         “
       </span>
       <p className={styles.quoteText}>
-        {data.quote}
+        {employeeItem.quote}
       </p>
     </div>
   );
@@ -47,20 +47,20 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ data }) => {
         <div className={`${styles.innerBlock} ${setTemplate}`}>
           <div className={styles.imageContainer}>
             <Image className={styles.image}
-              src={data.photo}
+              src={employeeItem.photo}
               alt={''} />
           </div>
 
           <div className={styles.infoContainer}>
             <h3 className={styles.name}>
-              {data.name}
+              {employeeItem.name}
             </h3>
             <p className={styles.jobTitle}>
-              {data.jobTitle}
+              {employeeItem.jobTitle}
             </p>
 
-            {data.role == 'employee' ?
-              <ContactInfoElement data={data}
+            {employeeItem.role == 'employee' ?
+              <ContactInfoElement employeeItem={employeeItem}
                                   containerColor={setColor}>
                 {quoteElement}
               </ContactInfoElement>

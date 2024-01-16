@@ -30,6 +30,7 @@
       "~mixin/*": ["./src/styles/mixin/*"],
       "~adaptive": ["./src/styles/mixin/_adaptive.scss"],
       "~data/*": ["./src/data/*"],
+      "~hooks/*": ["./src/hooks/*"],
       //images
       "~img/*": ["./public/img/*"],
       "~svg/*": ["./public/svg/*"],

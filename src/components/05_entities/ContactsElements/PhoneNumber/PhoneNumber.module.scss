@@ -1,0 +1,123 @@
+@import '~global_styles';
+
+.callLink {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  @include common-link;
+
+
+  //
+
+  /* 138.462% */
+  //
+
+  &_white {
+    color: $white;
+    & svg {
+      fill: $white;
+    }
+    &:hover {
+      transition: all 0.2s linear;
+      color: $gray-light;
+      & svg {
+        fill: $white;
+      }
+
+      & .callIcon {
+        border: 1px solid $accent-green;
+        background-color: $accent-green;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+
+  &_gray {
+    color: $gray-dark;
+
+    &:hover {
+      color: $accent-green;
+      transition: all 0.2s linear;
+
+      & svg {
+        fill: $white;
+      }
+
+      & .callIcon {
+        border: 1px solid $accent-green;
+        background-color: $accent-green;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+
+  &_green {
+    color: $accent-green;
+    & svg {
+      fill: $accent-green;
+    }
+
+    &:hover {
+      color: $accent-green-hover;
+      transition: all 0.2s linear;
+
+      & svg {
+        fill: $white;
+      }
+
+      & .callIcon {
+        border: 2px solid $accent-green;
+        background-color: $accent-green;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+
+  &_black {
+    color: $dark;
+    & svg {
+      fill: $accent-green;
+    }
+
+    &:hover {
+      color: $accent-green;
+      transition: all 0.2s linear;
+
+      & svg {
+        fill: $white;
+      }
+
+      & .callIcon {
+        border: 1px solid $accent-green;
+        background-color: $accent-green;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+}
+
+
+.callIcon {
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-flex;
+  background-color: transparent;
+  transition: background-color 0.3s linear;
+
+  &_white {
+    border: 1px $white solid;
+  }
+
+  &_gray {
+    border: 1px $gray solid;
+  }
+
+  &_green {
+    border: 2px $accent-green solid;
+  }
+
+  &_black {
+    border: 1px $accent-green solid;
+  }
+}

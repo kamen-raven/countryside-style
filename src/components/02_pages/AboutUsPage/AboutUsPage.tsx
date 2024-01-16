@@ -5,15 +5,15 @@ import { AboutUsPageInterface } from './AboutUsPage.interface';
 import { AboutCompanyBlock, PartnersBlock, VideoBlock, AdvantagesBlock, OurTeamBlock } from './blocks';
 
 
-const AboutUsPage: React.FC<AboutUsPageInterface> = ({ data }) => {
+const AboutUsPage: React.FC<AboutUsPageInterface> = ({ employeesData }) => {
 
   return (
     <main className={styles.mainContainer}>
       <AboutCompanyBlock />
-      <PartnersBlock data={data} />
+      <PartnersBlock employeesData={employeesData} />
       <VideoBlock />
       <AdvantagesBlock />
-      <OurTeamBlock data={data} />
+      <OurTeamBlock employeesData={employeesData} />
     </main>
   );
 };

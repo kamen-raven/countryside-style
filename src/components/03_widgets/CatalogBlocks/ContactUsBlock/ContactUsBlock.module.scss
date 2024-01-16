@@ -55,11 +55,9 @@
   gap: 20px;
 
   @include common-link;
-  font-size: $paragraph-lg;
-  font-weight: $bold;
-  line-height: 120%;
-  text-transform: uppercase;
-  color: $white;
+  @include common-title(pLg,
+      $font-weight: $bold,
+      $color: $white);
 
   & svg {
     fill: $white;

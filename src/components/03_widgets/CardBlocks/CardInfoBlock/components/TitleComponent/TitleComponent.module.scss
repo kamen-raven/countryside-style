@@ -8,8 +8,7 @@
   align-items: flex-start;
 }
   .title {
-    @include common-title(h1);
-    margin: 0 0 40px;
+    @include common-title(h1,  $margin: 0 0 40px);
   }
 
   .squareArea {

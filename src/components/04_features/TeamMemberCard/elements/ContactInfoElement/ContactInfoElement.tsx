@@ -9,19 +9,21 @@ import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
 
 
 
-const ContactInfoElement: React.FC<ContactInfoElementInterface> = ({ data, children, containerColor }) => {
+const ContactInfoElement: React.FC<ContactInfoElementInterface> = ({ employeeItem, children, containerColor }) => {
 
 
 
 
   return (
     <address className={styles.addressContainer} >
-      <a className={styles.callLink} href={`tel:${data?.contacts.phone}`}>
+
+      
+      <a className={styles.callLink} href={`tel:${employeeItem.contacts.phone}`}>
         <span className={styles.callIcon}>
           <CallIcon />
         </span>
-        {data?.contacts.phone &&
-          formatPhoneNumber(data.contacts.phone)}
+        {employeeItem.contacts.phone &&
+          formatPhoneNumber(employeeItem.contacts.phone)}
       </a>
 
 

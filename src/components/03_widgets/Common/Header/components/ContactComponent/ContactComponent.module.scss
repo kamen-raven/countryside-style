@@ -6,44 +6,11 @@
   max-height: 38px;
 }
 
-.callLink {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-
-  @include common-link;
+.phoneNumber {
   font-size: 26px;
   font-weight: $bold;
-  line-height: 130%; /* 138.462% */
-
-  color: $gray-dark;
-
-
-  &:hover {
-    color: $accent-green;
-    transition: all 0.2s linear;
-
-    & svg {
-      fill: $white;
-    }
-
-    & .callIcon {
-      border: 1px solid $accent-green;
-      background-color: $accent-green;
-      transition: all 0.3s linear;
-    }
-  }
+  line-height: 130%;
 }
-
-.callIcon {
-  border: 1px $gray solid;
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: inline-flex;
-  background-color: transparent;
-  transition: background-color 0.3s linear;
-}
-
 
 .buttonCall {
   max-height: 38px;

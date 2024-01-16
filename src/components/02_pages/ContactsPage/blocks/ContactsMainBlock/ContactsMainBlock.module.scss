@@ -1,0 +1,116 @@
+@import '~global_styles';
+
+.wrapper {
+  @include common-wrapper;
+  grid-area: title;
+  position: relative;
+}
+
+.container {
+  grid-area: container;
+
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+.margin {
+  margin: 0 120px;
+}
+
+.title {
+  @include common-title(h1,
+    $margin: 80px 120px 0);
+
+}
+
+.disclaimerContainer {
+  background-color: $accent-green;
+
+  display: flex;
+  gap: 35px;
+  padding: 65px 120px;
+}
+
+/* .disclaimerIcon {
+
+} */
+
+.disclaimerText {
+  @include common-title(h3small,
+    $font-weight: $regular,
+    $color: $white);
+}
+
+.disclaimerText_spanAccent {
+  @extend .disclaimerText;
+  font-weight: $bold;
+}
+
+.addressContainer {
+  @extend .margin;
+}
+
+.contactsContainer {
+  @extend .margin;
+
+  display: flex;
+  gap: 60px ;
+  //justify-content: space-between;
+}
+
+
+.workTime {
+  @include common-title(pLg,
+    $font-weight: $regular);
+
+  &_spanAccent {
+    @extend .workTime;
+    font-weight: $bold;
+  }
+}
+
+.phoneNumber {
+  @include common-title(pLg,
+    $color: $accent-green,
+    $font-weight: $bold);
+}
+
+.emailContainer {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  margin: auto 0;
+
+  &:hover {
+    & .email {
+      color: $accent-green-hover;
+      transition: all 0.2s linear;
+    }
+
+    & svg {
+      fill: $accent-green;
+      stroke: $white;
+      transition: all 0.2s linear;
+    }
+  }
+}
+
+
+.email {
+  @include common-title(pLg,
+    $font-weight: $regular,
+    $color: $accent-green);
+  line-height: 100%;
+  text-decoration: none;
+  border-bottom: 1px solid $accent-green;
+  transition: all 0.2s linear;
+
+}
+
+.emailIcon {
+  display: flex;
+  & svg {
+    transition: all 0.2s linear;
+  }
+}

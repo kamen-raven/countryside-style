@@ -1,7 +1,7 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { teamMembersDataInterface } from '~utils/temp/teamMembersData/teamMembersData';
+import { teamMembersDataInterface } from '~data/EmployeesList/teamMembersData.interface';
 
 export interface AboutUsPageInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  data: teamMembersDataInterface[];
+  employeesData: teamMembersDataInterface[];
   children?: ReactNode;
 }

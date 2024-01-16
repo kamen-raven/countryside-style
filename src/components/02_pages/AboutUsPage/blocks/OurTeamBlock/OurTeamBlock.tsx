@@ -4,7 +4,7 @@ import { OurTeamBlockInterface } from './OurTeamBlock.interface.ts';
 import { TeamMemberCard } from '~features/index.ts';
 
 
-const OurTeamBlock: React.FC<OurTeamBlockInterface> = ({ data }) => {
+const OurTeamBlock: React.FC<OurTeamBlockInterface> = ({ employeesData }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.titleContainer}>
@@ -23,10 +23,10 @@ const OurTeamBlock: React.FC<OurTeamBlockInterface> = ({ data }) => {
 
 
       <div className={styles.contentContainer}>
-        {data && data.map(item => {
+        {employeesData && employeesData.map(item => {
           if (item.role == 'employee') {
             return (
-              <TeamMemberCard key={item._id} data={item} />
+              <TeamMemberCard key={item._id} employeeItem={item} />
             );
           }
         })}

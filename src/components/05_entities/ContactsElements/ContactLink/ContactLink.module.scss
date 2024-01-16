@@ -1,0 +1,47 @@
+@import '~global_styles';
+
+.contactItem {
+  border-radius: 30px;
+  border:  1px solid $gray;
+
+  &__icon {
+    width: 45px;
+    height: 45px;
+    padding: 5px 5px 5px 15px;
+
+    & svg {
+      border-radius: 50%;
+
+    }
+  }
+
+  &__link {
+
+    max-height: 55px;
+    display: flex;
+    align-items: center;
+
+    padding-left: 15px;
+
+    text-decoration: none;
+    color: $dark;
+    text-align: center;
+    font-family: $ff-openSans;
+    font-size: 22px;
+    font-weight: $regular;
+    line-height: 130%;
+  }
+
+  &__telegram {
+    background-color: $telegram;
+  }
+
+  &__whatsapp {
+    background-color: $whatsapp;
+  }
+
+  &__vkontakte {
+    background-color: $vkontakte;
+  }
+}
+

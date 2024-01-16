@@ -4,14 +4,14 @@ import { PartnersBlockInterface } from './PartnersBlock.interface.ts';
 import { TeamMemberCard } from '~features/index.ts';
 
 
-const PartnersBlock: React.FC<PartnersBlockInterface> = ({ data }) => {
+const PartnersBlock: React.FC<PartnersBlockInterface> = ({ employeesData }) => {
   return (
     <section className={styles.wrapper}>
 
-      {data && data.map(item => {
+      {employeesData && employeesData.map(item => {
         if (item.role == 'owner') {
           return (
-            <TeamMemberCard key={item._id} data={item} />
+            <TeamMemberCard key={item._id} employeeItem={item} />
           );
         }
       })}

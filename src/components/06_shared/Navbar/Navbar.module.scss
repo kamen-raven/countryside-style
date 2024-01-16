@@ -29,6 +29,7 @@
 
 .link {
   @include common-link;
+  @include common-title(link);
 
     &_header {
       color: $white;
