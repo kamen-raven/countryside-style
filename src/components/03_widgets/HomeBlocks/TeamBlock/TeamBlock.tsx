@@ -14,7 +14,7 @@ const TeamBlock: React.FC<TeamBlockProps> = ({ teamMembersItems }) => {
         {teamMembersItems && teamMembersItems.map(item => {
           if (item.role == 'owner') {
             return (
-              <TeamMemberCard key={item._id} data={item} />
+              <TeamMemberCard key={item._id} employeeItem={item} />
             );
           }
         })}

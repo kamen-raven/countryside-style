@@ -4,12 +4,19 @@ import { ContactLinkInterface } from './ContactLink.interface.ts';
 
 import TelegramIcon from '~svg/contacts/Telegram2.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
-import VkontakteIcon from '~svg/contacts/VK.svg';
+/* import VkontakteIcon from '~svg/contacts/VK.svg'; */
+import GeneralContactsData from '~data/GeneralContacts/GeneralContactsData.ts';
 
 
 const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, linkInfoData }) => {
 
-const testItem = linkInfoData[0];
+  let data;
+  if (linkInfoData) {
+    data = linkInfoData;
+  } else {
+    data = GeneralContactsData;
+  }
+
 
   const setLinkType = {
     text: {
@@ -17,8 +24,9 @@ const testItem = linkInfoData[0];
       whatsapp: 'WhatsApp'
     },
     icon: {
-      telegram: <TelegramIcon/>,
-      whatsapp: <WhatsappIcon/>
+      telegram: <TelegramIcon />,
+      whatsapp: <WhatsappIcon />
+
     }
   };
 
@@ -30,14 +38,15 @@ const testItem = linkInfoData[0];
 
 
   return (
-    <div className = {styles.contactItem}>
-    <a className={`${styles.contactItem__link}`}
-      href={testItem.contacts[messenger]}>
-      {setLinkType.text[messenger]}
-      <span className={styles.contactItem__icon}>
-        {setLinkType.icon[messenger]}
-      </span>
-    </a>
+
+    <div className={styles.contactItem}>
+      <a className={`${styles.contactItem__link}`}
+        href={data.contacts[messenger]}>
+        {setLinkType.text[messenger]}
+        <span className={styles.contactItem__icon}>
+          {setLinkType.icon[messenger]}
+        </span>
+      </a>
     </div>
 
   );

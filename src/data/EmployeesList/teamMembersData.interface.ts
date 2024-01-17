@@ -11,5 +11,6 @@ export interface teamMembersDataInterface {
     phone: string,
     whatsapp: string,
     telegram: string,
-  }
+  },
+  location: string;
 }

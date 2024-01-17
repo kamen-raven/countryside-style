@@ -11,6 +11,12 @@
   margin-top: 50px;
 }
 
+.phoneNumber {
+  @include common-title(pLg,
+  $font-weight: $bold,
+  $color: $white)
+}
+
 .callLink {
   display: flex;
   align-items: center;

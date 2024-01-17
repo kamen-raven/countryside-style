@@ -2,10 +2,9 @@ import React from 'react';
 import styles from './ContactInfoElement.module.scss';
 import { ContactInfoElementInterface } from './ContactInfoElement.interface.ts';
 
-import CallIcon from '~svg/contacts/Phone.svg';
 import TelegramIcon from '~svg/contacts/Telegram2.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
-import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
+import { PhoneNumber } from '~entities/index.ts';
 
 
 
@@ -16,15 +15,12 @@ const ContactInfoElement: React.FC<ContactInfoElementInterface> = ({ employeeIte
 
   return (
     <address className={styles.addressContainer} >
+      {employeeItem.contacts.phone &&
+        <PhoneNumber className={styles.phoneNumber}
+          employeeItem={employeeItem}
+          colorText={'white'} />
+      }
 
-      
-      <a className={styles.callLink} href={`tel:${employeeItem.contacts.phone}`}>
-        <span className={styles.callIcon}>
-          <CallIcon />
-        </span>
-        {employeeItem.contacts.phone &&
-          formatPhoneNumber(employeeItem.contacts.phone)}
-      </a>
 
 
       <div className={styles.contactsList}>
