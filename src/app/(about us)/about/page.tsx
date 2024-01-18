@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { AboutUsPage } from "~pages/index";
 
 // temp
-import teamMembersData from '~data/EmployeesList/teamMembersData';
+import teamMembersData from '~data/temp/employeesList/teamMembersData';
 
 export const metadata: Metadata = {
   title: 'О компании',

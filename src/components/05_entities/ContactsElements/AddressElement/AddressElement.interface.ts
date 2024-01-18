@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { GeneralContactsDataInterface } from '~data/GeneralContacts/GeneraLContactData.interface';
+import { generalContactsDataInterface } from '~data/constant/generalContacts/generalContactData.interface';
 
 export interface AddressElementInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  addressInfoData: GeneralContactsDataInterface;
+  addressInfoData: generalContactsDataInterface;
 }

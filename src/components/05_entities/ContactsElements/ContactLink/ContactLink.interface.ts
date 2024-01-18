@@ -1,9 +1,10 @@
 import { ReactNode, DetailedHTMLProps, AnchorHTMLAttributes } from 'react';
-import { teamMembersDataInterface } from '~data/EmployeesList/teamMembersData.interface';
+import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersData.interface';
 
 export interface ContactLinkInterface extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   linkInfoData?:  teamMembersDataInterface;
   messenger: 'telegram' | "whatsapp"// | "vkontakte";
-  colorSchema: 'color' | 'white' | 'transparent';
+  colorSchema: 'colored' | 'white' | 'transparent';
+  setColor?: string;
   children?: ReactNode;
 }

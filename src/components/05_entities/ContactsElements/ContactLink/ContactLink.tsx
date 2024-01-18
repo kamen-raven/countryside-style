@@ -5,17 +5,49 @@ import { ContactLinkInterface } from './ContactLink.interface.ts';
 import TelegramIcon from '~svg/contacts/Telegram2.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
 /* import VkontakteIcon from '~svg/contacts/VK.svg'; */
-import GeneralContactsData from '~data/GeneralContacts/GeneralContactsData.ts';
+import generalContactsData from '~data/constant/generalContacts/generalContactsData.ts';
 
 
-const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, linkInfoData }) => {
+const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, linkInfoData, setColor }) => {
 
   let data;
   if (linkInfoData) {
     data = linkInfoData;
   } else {
-    data = GeneralContactsData;
+    data = generalContactsData;
   }
+
+
+
+  const setLinkStyle = {
+    colored: {
+      border: styles.itemBorder_colored,
+      fontColor: styles.itemLink_colored,
+      backgroundColor: styles.itemIcon_colored,
+      svgFill: styles.svgFill_colored
+    },
+    white: {
+      border: styles.itemBorder_white,
+      fontColor: styles.itemLink_white,
+      backgroundColor: styles.itemIcon_white,
+      svgFill: setColor //styles.svgFill_white
+    },
+    transparent: {
+      border: styles.itemBorder_transparent,
+      fontColor: styles.itemLink_transparent,
+      backgroundColor: {
+        telegram: styles.itemIcon_transparent_telegram,
+        whatsapp: styles.itemIcon_transparent_whatsapp
+      },
+      svgFill: styles.svgFill_transparent
+    },
+  };
+
+  const setBackgroundColor = (
+    colorSchema == 'transparent' ?
+      setLinkStyle[colorSchema].backgroundColor[messenger]
+      :
+      setLinkStyle[colorSchema].backgroundColor);
 
 
   const setLinkType = {
@@ -24,26 +56,20 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
       whatsapp: 'WhatsApp'
     },
     icon: {
-      telegram: <TelegramIcon />,
-      whatsapp: <WhatsappIcon />
-
+      telegram: <TelegramIcon className={`${setLinkStyle[colorSchema].svgFill} `} />,
+      whatsapp: <WhatsappIcon className={`${setLinkStyle[colorSchema].svgFill} `} />
     }
   };
 
-  const setLinkStyle = {
-    color: '',
-    white: '',
-    transparent: ''
-  };
 
 
   return (
 
-    <div className={styles.contactItem}>
-      <a className={`${styles.contactItem__link}`}
+    <div className={`${styles.itemBorder} ${setLinkStyle[colorSchema].border}`}>
+      <a className={`${styles.itemLink} ${setLinkStyle[colorSchema].fontColor}`}
         href={data.contacts[messenger]}>
         {setLinkType.text[messenger]}
-        <span className={styles.contactItem__icon}>
+        <span className={`${styles.itemIcon} ${setBackgroundColor}`}>
           {setLinkType.icon[messenger]}
         </span>
       </a>

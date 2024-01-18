@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './AboutCompanyBlock.module.scss';
 
 import { BackgroundSVGPattern } from '~shared/index';
-import aboutUsPageFacts from '~data/AdvantagesLists/AboutUsPage/aboutUsPageFacts';
+import aboutUsPageFacts from '~data/constant/advantagesList/aboutUsPage/aboutUsPageFacts';
 import { AboutUsInfoElement } from './elements';
 import useReactMarkdown from '~hooks/useReactMarkdown';
 

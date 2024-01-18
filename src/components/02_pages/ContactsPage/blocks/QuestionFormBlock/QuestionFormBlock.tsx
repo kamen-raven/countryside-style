@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './QuestionFormBlock.module.scss';
 import { HalfScreenTemplate, RequestFormComponent } from '~entities/index.ts';
+import Image from 'next/image';
 
+import ContactUsImg from "~img/common-images/contactUsImg.jpg";
 
 const QuestionFormBlock: React.FC = () => {
   return (
@@ -10,7 +12,10 @@ const QuestionFormBlock: React.FC = () => {
         <div className={styles.containerForm}>
           <HalfScreenTemplate conditionColor={"dark"} conditionTemplate={'textFirst'}>
             <div className={styles.wrapperInner}>
-              <iframe className={styles.yandexMap} src="https://yandex.ru/map-widget/v1/?um=constructor%3A82d4640cfff3946c64d9620d25ce191b0ca06b56eea9ee8a0ad636757cd19e55&amp;source=constructor" ></iframe>
+              <Image
+              className = {styles.image}
+              src={ContactUsImg}
+              alt={'Задать вопрос'}/>
             </div>
             <div className={styles.wrapperForm}>
               <RequestFormComponent />

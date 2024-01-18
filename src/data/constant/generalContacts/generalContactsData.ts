@@ -1,6 +1,6 @@
-import { GeneralContactsDataInterface } from "./GeneraLContactData.interface";
+import { generalContactsDataInterface } from "./generalContactData.interface";
 
-const GeneralContactsData: GeneralContactsDataInterface = {
+const generalContactsData: generalContactsDataInterface = {
   contacts: {
     phone: '+78126432040',
     telegram: 'https://t.me/sokolovpv',
@@ -16,4 +16,4 @@ const GeneralContactsData: GeneralContactsDataInterface = {
 
 
 
-export default GeneralContactsData;
+export default generalContactsData;

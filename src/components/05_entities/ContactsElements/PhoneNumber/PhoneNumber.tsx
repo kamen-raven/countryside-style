@@ -2,14 +2,14 @@ import React from 'react';
 import styles from './PhoneNumber.module.scss';
 import { PhoneNumberInterface } from './PhoneNumber.interface.ts';
 import CallIcon from '~svg/contacts/Phone.svg';
-import GeneralContactsData from '~data/GeneralContacts/GeneralContactsData.ts';
+import generalContactsData from '~data/constant/generalContacts/generalContactsData.ts';
 import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
 
 const PhoneNumber: React.FC<PhoneNumberInterface> = ({ employeeItem, colorText = 'gray', className }) => {
 
   let data;
   if (employeeItem == undefined) {
-    data = GeneralContactsData;
+    data = generalContactsData;
   } else {
     data = employeeItem;
   }

@@ -6,6 +6,7 @@ import Person3 from "~img/Team/Person3.jpg";
 import Person4 from "~img/Team/Person4.jpg";
 import Person5 from "~img/Team/Person5.jpg";
 
+
 const teamMembersData: teamMembersDataInterface[] = [
   {
     _id: 1,
@@ -56,7 +57,7 @@ const teamMembersData: teamMembersDataInterface[] = [
     role: "employee",
     name: "Виктория Нардина",
     jobTitle:
-`Ведущий специалист по ипотеке,  
+`Ведущий специалист по ипотеке,
 специалист по продажам`,
 
     quote:

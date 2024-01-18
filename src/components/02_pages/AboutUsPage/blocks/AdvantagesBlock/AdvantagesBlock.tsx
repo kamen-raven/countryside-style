@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AdvantagesBlock.module.scss';
 import { AdvantagesIconsComponent } from '~features/index.ts';
-import aboutUsPageAdvantages from '~data/AdvantagesLists/AboutUsPage/aboutUsPageAdvantages';
+import aboutUsPageAdvantages from '~data/constant/advantagesList/aboutUsPage/aboutUsPageAdvantages';
 
 
 

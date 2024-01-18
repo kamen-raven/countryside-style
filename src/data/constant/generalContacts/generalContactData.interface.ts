@@ -1,4 +1,4 @@
-export interface GeneralContactsDataInterface {
+export interface generalContactsDataInterface {
   contacts: {
       phone: string;
       telegram: string;

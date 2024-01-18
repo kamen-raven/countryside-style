@@ -1,51 +1,90 @@
 @import '~global_styles';
 
-.contactItem {
+.itemBorder {
   border-radius: 30px;
+  max-height: 55px;
 
-  
-
-  border:  1px solid $gray;
-
-  &__icon {
-    width: 45px;
-    height: 45px;
-    padding: 5px 5px 5px 15px;
-
-    & svg {
-      border-radius: 50%;
-
-    }
+  &_colored {
+    border: 1px solid transparent;
   }
 
-  &__link {
-
-    max-height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding-left: 15px;
-
-    text-decoration: none;
-    color: $dark;
-    text-align: center;
-    font-family: $ff-openSans;
-    font-size: 22px;
-    font-weight: $regular;
-    line-height: 130%;
+  &_white {
+    border: 1px solid $white;
   }
 
-  &__telegram {
-    background-color: $telegram;
-  }
-
-  &__whatsapp {
-    background-color: $whatsapp;
-  }
-
-  &__vkontakte {
-    background-color: $vkontakte;
+  &_transparent {
+    border: 1px solid $accent-gray;
   }
 }
 
+
+
+
+.itemLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include common-title(p);
+  font-family: $ff-openSans;
+  text-decoration: none;
+  text-align: center;
+
+  padding-left: 15px;
+  border-radius: 30px;
+
+  &_colored {
+    color: $white;
+  }
+
+  &_white {
+    color: $white;
+  }
+
+  &_transparent {
+    color: $dark;
+  }
+}
+
+
+.itemIcon {
+  border-radius: 0 30px 30px 0;
+  width: 45px;
+  height: 45px;
+  padding: 5px 5px 5px 15px;
+
+  & svg {
+    border-radius: 50%;
+  }
+
+  &_colored svg {
+    background-color: $white;
+  }
+
+  &_white svg {
+    background-color: $white;
+  }
+
+  &_transparent {
+    background-color: transparent;
+    &_telegram svg {
+      background-color: $telegram;
+    }
+    &_whatsapp svg {
+      background-color: $whatsapp;
+    }
+  }
+}
+
+.svgFill {
+
+  &_colored {}
+
+  &_white {
+
+  }
+
+  &_transparent path {
+    fill: $white;
+  }
+}

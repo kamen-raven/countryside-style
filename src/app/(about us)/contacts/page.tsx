@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { ContactsPage } from "~pages/index";
 
 // temp
-import teamMembersData from '~data/EmployeesList/teamMembersData';
-import GeneralContactsData from '~data/GeneralContacts/GeneralContactsData.ts';
+import teamMembersData from '~data/temp/employeesList/teamMembersData';
+import generalContactsData from '~data/constant/generalContacts/generalContactsData';
 
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function PageContacts() {
 
   return (
-    <ContactsPage employeesList={teamMembersData} generalContactsData={GeneralContactsData}   />
+    <ContactsPage employeesList={teamMembersData} generalContactsData={generalContactsData}   />
   );
 }
 

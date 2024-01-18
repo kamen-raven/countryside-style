@@ -1,7 +1,7 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { GeneralContactsDataInterface } from '~data/GeneralContacts/GeneraLContactData.interface';
+import { generalContactsDataInterface } from '~data/constant/generalContacts/generalContactData.interface';
 
 export interface MapBlockInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  mapInfoData: GeneralContactsDataInterface;
+  mapInfoData: generalContactsDataInterface;
   children?: ReactNode;
 }

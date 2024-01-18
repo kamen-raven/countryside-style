@@ -1,7 +1,7 @@
 import CudNewsLogo from "~img/PressBlock/CudNews.png";
 import KommersantLogo from "~img/PressBlock/Commersant.png";
 import PromdevelopLogo from "~img/PressBlock/Promdevelop.png";
-import { pressDataInterface } from "~widgets/HomeBlocks/PressBlock/PressBlock.props";
+import { pressDataInterface } from "./pressArticles.interface";
 
 
 const pressData: pressDataInterface[] = [

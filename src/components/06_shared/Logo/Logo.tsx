@@ -7,7 +7,7 @@ import styles from './Logo.module.scss';
 import LogoIcon from '~svg/logo/logo.svg';
 
 
-const Logo = ({ color, className }: LogoProps): JSX.Element => {
+const Logo = ({ color }: LogoProps): JSX.Element => {
   const logoColor = {
     gray: styles.logo_gray
   };
@@ -16,7 +16,7 @@ const Logo = ({ color, className }: LogoProps): JSX.Element => {
 
     return (
       <>
-        <Link className = {`${styles.logo} ${className} ${setLogoColor}`} href={'/'}>
+        <Link className = {`${styles.logo}  ${setLogoColor}`} href={'/'}>
           <LogoIcon/>
         </Link>
       </>

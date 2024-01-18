@@ -54,7 +54,7 @@ const ContactListBlock: React.FC<ContactListBlockInterface> = ({ employeesList }
 
                 <div className={styles.messengersContainer}>
                   {item.contacts.telegram &&
-                    <ContactLink linkInfoData={item} messenger={'telegram'} colorSchema={'color'} />
+                    <ContactLink linkInfoData={item} messenger={'telegram'} colorSchema={'transparent'} />
                   }
 
                   {item.contacts.whatsapp &&

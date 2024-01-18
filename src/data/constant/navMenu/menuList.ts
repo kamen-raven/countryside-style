@@ -7,17 +7,17 @@ export const menuList = [
   {
     name: "land",
     title: "Земельные участки",
-    link: "/zemelnye-uchastki",
+    link: '/' // "/zemelnye-uchastki",
   },
   {
     name: "cottageSettlements",
     title: "Коттеджные поселки",
-    link: "/kottedzhnye-poselki",
+    link: '/' // "/kottedzhnye-poselki",
   },
   {
     name: "apartments",
     title: "Квартиры",
-    link: "/kvartiry",
+    link: '/' // "/kvartiry",
   },
   {
     name: "company",
@@ -27,7 +27,7 @@ export const menuList = [
   {
     name: "services",
     title: "Услуги",
-    link: "/uslugi",
+    link: '/' // "/uslugi",
   },
   {
     name: "contacts",
@@ -37,11 +37,11 @@ export const menuList = [
   {
     name: "reviews",
     title: "Отзывы",
-    link: "/otzyvy",
+    link: '/' // "/otzyvy",
   },
   {
     name: "blog",
     title: "Блог",
-    link: "/blog",
+    link: '/' // "/blog",
   },
 ];

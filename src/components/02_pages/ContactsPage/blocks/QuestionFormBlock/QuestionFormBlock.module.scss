@@ -29,10 +29,10 @@
   display: flex;
 }
 
-.yandexMap {
+.image {
   height: 800px;
   width: 880px;
-  border: none;
+  object-fit: cover;
 }
 
 
