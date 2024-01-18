@@ -12,7 +12,7 @@ const ContactListBlock: React.FC<ContactListBlockInterface> = ({ employeesList }
     p: styles.infoContainer__jobTitle,
     strong: '',
     em: ''
-  }
+  };
 
 
 
@@ -24,7 +24,7 @@ const ContactListBlock: React.FC<ContactListBlockInterface> = ({ employeesList }
           return (
             item.contacts.phone && // проверяем на наличие телефона в базе и не выводим сотрудника без номера телефона
 
-            <div className={styles.contactContainer}>
+            <div key={item._id} className={styles.contactContainer}>
 
               <Image
                 className={styles.infoContainer__avatar}
