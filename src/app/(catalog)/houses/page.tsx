@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 /* import { notFound } from "next/navigation"; */
-import { CatalogPage } from "~pages/CatalogPage/CatalogPage";
+import { CatalogPage } from "~pages/02_CatalogPages/CatalogPage/CatalogPage";
 
 
 /* interface paths {

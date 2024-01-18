@@ -1,9 +1,12 @@
-export * from './HomePage/HomePage';
+// 01_HomePage
+export * from './01_HomePage/HomePage/HomePage';
 
-export * from './CatalogPage/CatalogPage';
-export * from './CardPage/CardPage';
+// 02_CatalogPages
+export * from './02_CatalogPages/CatalogPage/CatalogPage';
+export * from './02_CatalogPages/CardPage/CardPage';
 
-
-export * from './AboutUsPage/AboutUsPage';
-export * from './ContactsPage/ContactsPage';
+// 03_AboutCompanyPages
+export * from './03_AboutCompanyPages/AboutUsPage/AboutUsPage';
+export * from './03_AboutCompanyPages/ContactsPage/ContactsPage';
+export * from './03_AboutCompanyPages/ServicesPage/ServicesPage';
 

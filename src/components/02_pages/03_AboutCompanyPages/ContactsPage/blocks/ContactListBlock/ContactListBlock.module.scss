@@ -1,0 +1,17 @@
+@import '~global_styles';
+
+.wrapper {
+  @include common-wrapper;
+
+  grid-area: contactsList;
+}
+
+.container {
+  grid-area: container;
+  margin: 0 120px;
+
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px 120px;
+}

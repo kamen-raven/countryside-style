@@ -27,7 +27,7 @@ export const menuList = [
   {
     name: "services",
     title: "Услуги",
-    link: '/' // "/uslugi",
+    link: "/services",
   },
   {
     name: "contacts",

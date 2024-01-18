@@ -1,22 +1,5 @@
 @import '~global_styles';
 
-.wrapper {
-  @include common-wrapper;
-
-  grid-area: contactsList;
-}
-
-.container {
-  grid-area: container;
-  margin: 0 120px;
-
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 90px 120px;
-}
-
-
 .contactContainer {
   display: grid;
   grid-template-columns: 100px auto;
@@ -26,6 +9,15 @@
   flex-direction: column; */
 }
 
+.avatar {
+  background-color: $gray;
+  width: 100%;
+  max-width: 100px;
+  height: 100%;
+  max-height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 .infoContainer {
   display: flex;
@@ -34,16 +26,6 @@
   align-items: flex-start;
 
   height: 100%;
-
-  &__avatar {
-    background-color: $gray;
-    width: 100%;
-    max-width: 100px;
-    height: 100%;
-    max-height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
 
   &__inner {
     display: flex;
