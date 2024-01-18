@@ -3,7 +3,7 @@ import styles from './CardInfoBlock.module.scss';
 import { CardInfoBlockInterface } from './CardInfoBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 
-import { InfoContainer, PriceComponent, TitleComponent } from './components/index.ts';
+import { InfoContainer, PriceComponent, TitleComponent } from './elements/index.ts';
 /* SVG Icons */
 
 

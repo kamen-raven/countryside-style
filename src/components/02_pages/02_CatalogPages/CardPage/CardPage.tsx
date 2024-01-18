@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './CardPage.module.scss';
 import { CardPageInterface } from './CardPage.interface.ts';
-import { CardInfoBlock, CardSearchBarBlock, MoreObjectsBlock } from '~widgets/index.ts';
+
 import dataTemplate from '~utils/temp/objectForCard/template.ts';
+import { CardSearchBarBlock, CardInfoBlock, MoreObjectsBlock } from './blocks/index.ts';
 
 
 const CardPage: React.FC<CardPageInterface> = () => {

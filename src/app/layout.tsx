@@ -3,8 +3,7 @@ import type { Metadata } from 'next';
 import { openSans, gothamPro } from '~fonts';
 import '~styles/index.scss';
 import styles from "./layout.module.scss";
-
-import { Header, Footer } from '~widgets/index';
+import { Footer, Header } from '~widgets/index';
 
 
 export const metadata: Metadata = {

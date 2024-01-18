@@ -3,7 +3,7 @@ import { ObjectsForSaleBlockProps } from './ObjectsForSaleBlock.props';
 import styles from './ObjectsForSaleBlock.module.scss';
 import BackgroundPattern from '~svg/background/backgroundObjectsForSale.svg';
 
-import { ObjectForSale } from './components/ObjectForSale/ObjectForSale';
+import { ObjectForSale } from './elements/ObjectForSale/ObjectForSale';
 import { BackgroundSVGPattern } from '~shared/index';
 
 const ObjectsForSaleBlock: React.FC<ObjectsForSaleBlockProps> = ({ objItems }) => {

@@ -9,7 +9,7 @@ import SecondImg from '~img/headBlock/second.jpg';
 
 import BackgroundPattern from '~svg/background/backgroundTitleHead.svg';
 import Link from 'next/link';
-import { AwardInfoElement } from './elements/AwardInfoElement/AwardInfoElement';
+import { AwardInfoElement } from './AwardInfoElement/AwardInfoElement';
 
 const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
 

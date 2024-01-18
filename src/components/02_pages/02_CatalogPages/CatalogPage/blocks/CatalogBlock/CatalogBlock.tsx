@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './CatalogBlock.module.scss';
 import { CatalogBlockInterface } from './CatalogBlock.interface.ts';
 import { CatalogCardsLayout } from '~features/index.ts';
-import { getCharacter } from '../../../../api/temp/getCharacter.tsx';
+import { getCharacter } from '../../../../../../api/temp/getCharacter.tsx';
 
 
 

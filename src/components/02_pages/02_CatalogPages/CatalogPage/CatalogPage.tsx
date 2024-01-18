@@ -3,12 +3,13 @@ import styles from './CatalogPage.module.scss';
 import { CatalogPageInterface } from './CatalogPage.interface.ts';
 
 import reviews from "~utils/temp/reviewsData/reviewsData";
-import { ReviewsBlock } from "~widgets/index";
-import { ContactUsBlock } from "~widgets/CatalogBlocks/ContactUsBlock/ContactUsBlock";
+import { ReviewsBlock } from "~pages/01_HomePage/HomePage/blocks/index";
+import { ContactUsBlock } from "~pages/02_CatalogPages/CatalogPage/blocks/ContactUsBlock/ContactUsBlock.tsx";
 
 
-import { CatalogBlock, InfoTypeDescriptionBlock, SearchBarBlock } from '~widgets/index.ts';
+
 import housesSEOText from '~utils/constants/TypeSEOText/TypeSEOText.ts';
+import { InfoTypeDescriptionBlock, SearchBarBlock, CatalogBlock } from './blocks/index.ts';
 
 const CatalogPage: React.FC<CatalogPageInterface> = () => {
 

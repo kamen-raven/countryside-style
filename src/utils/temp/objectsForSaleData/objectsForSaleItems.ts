@@ -1,4 +1,4 @@
-import { ObjectForSaleProps } from "~widgets/HomeBlocks/ObjectsForSaleBlock/components/ObjectForSale/ObjectForSale.props";
+import { ObjectForSaleProps } from "~pages/01_HomePage/HomePage/blocks/ObjectsForSaleBlock/elements/ObjectForSale/ObjectForSale.props";
 
 import HouseGen from '~img/objectsForSaleBlock/DachaGen.jpg';
 import HouseSm from '~img/objectsForSaleBlock/DachaSm.jpg';

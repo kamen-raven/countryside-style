@@ -9,7 +9,7 @@ import {
   TeamBlock,
   ReviewsBlock,
   ContactsBlock
-} from '~widgets/index';
+} from '~pages/01_HomePage/HomePage/blocks/index';
 
 import objectsForSaleData from "~utils/temp/objectsForSaleData/objectsForSaleItems";
 import servicesData from "~utils/temp/OurServicesData/servicesItems";
