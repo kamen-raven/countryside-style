@@ -66,7 +66,7 @@
   }
 
   &_transparent {
-    background-color: transparent;
+
     &_telegram svg {
       background-color: $telegram;
     }
@@ -77,12 +77,6 @@
 }
 
 .svgFill {
-
-  &_colored {}
-
-  &_white {
-
-  }
 
   &_transparent path {
     fill: $white;

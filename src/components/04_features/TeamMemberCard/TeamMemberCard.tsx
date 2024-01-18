@@ -55,13 +55,13 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem }) => {
             <h3 className={styles.name}>
               {employeeItem.name}
             </h3>
+
             <p className={styles.jobTitle}>
               {employeeItem.jobTitle}
             </p>
-
+            
             {employeeItem.role == 'employee' ?
-              <ContactInfoElement employeeItem={employeeItem}
-                                  containerColor={setColor}>
+              <ContactInfoElement employeeItem={employeeItem}>
                 {quoteElement}
               </ContactInfoElement>
               :

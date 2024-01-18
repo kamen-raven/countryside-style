@@ -23,4 +23,5 @@
 
 .title {
   @include common-title(h2);
+  margin: 0 0 65px;
 }

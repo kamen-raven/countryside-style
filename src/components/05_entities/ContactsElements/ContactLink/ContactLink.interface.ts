@@ -5,6 +5,5 @@ export interface ContactLinkInterface extends DetailedHTMLProps<AnchorHTMLAttrib
   linkInfoData?:  teamMembersDataInterface;
   messenger: 'telegram' | "whatsapp"// | "vkontakte";
   colorSchema: 'colored' | 'white' | 'transparent';
-  setColor?: string;
   children?: ReactNode;
 }

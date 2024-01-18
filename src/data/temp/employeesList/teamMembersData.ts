@@ -6,7 +6,6 @@ import Person3 from "~img/Team/Person3.jpg";
 import Person4 from "~img/Team/Person4.jpg";
 import Person5 from "~img/Team/Person5.jpg";
 
-
 const teamMembersData: teamMembersDataInterface[] = [
   {
     _id: 1,
@@ -56,9 +55,8 @@ const teamMembersData: teamMembersDataInterface[] = [
     _id: 4,
     role: "employee",
     name: "Виктория Нардина",
-    jobTitle:
-`Ведущий специалист по ипотеке,
-специалист по продажам`,
+    jobTitle: `Ведущий специалист по ипотеке,${"  "}
+    специалист по продажам`,
 
     quote:
       "Adipisicing Lorem in labore aliqua deserunt officia non id sit eiusmod ad id cupidatat excepteur.",
@@ -89,9 +87,8 @@ const teamMembersData: teamMembersDataInterface[] = [
     _id: 6,
     role: "employee",
     name: "Игорь Степыгин",
-    jobTitle:
-`Специалист по оформлению документов
-(межевание, постановка на кадастровый учет регистрация прав собственности и т.д.)`,
+    jobTitle: `Специалист по оформлению документов${"  "}
+    (межевание, постановка на кадастровый учет регистрация прав собственности и т.д.)`,
 
     quote:
       "Laborum laboris culpa laborum deserunt culpa enim aliquip amet veniam ut.",

@@ -8,7 +8,7 @@ import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
 import generalContactsData from '~data/constant/generalContacts/generalContactsData.ts';
 
 
-const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, linkInfoData, setColor }) => {
+const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, linkInfoData }) => {
 
   let data;
   if (linkInfoData) {
@@ -24,13 +24,13 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
       border: styles.itemBorder_colored,
       fontColor: styles.itemLink_colored,
       backgroundColor: styles.itemIcon_colored,
-      svgFill: styles.svgFill_colored
+      svgFill: ''
     },
     white: {
       border: styles.itemBorder_white,
       fontColor: styles.itemLink_white,
       backgroundColor: styles.itemIcon_white,
-      svgFill: setColor //styles.svgFill_white
+      svgFill: ''
     },
     transparent: {
       border: styles.itemBorder_transparent,
@@ -60,8 +60,6 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
       whatsapp: <WhatsappIcon className={`${setLinkStyle[colorSchema].svgFill} `} />
     }
   };
-
-
 
   return (
 

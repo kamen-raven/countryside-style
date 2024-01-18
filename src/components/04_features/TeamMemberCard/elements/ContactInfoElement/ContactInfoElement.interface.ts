@@ -3,6 +3,5 @@ import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersDa
 
 export interface ContactInfoElementInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   employeeItem: teamMembersDataInterface;
-  containerColor: string;
   children?: ReactNode;
 }
