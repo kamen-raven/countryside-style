@@ -1,5 +1,11 @@
 @import '~global_styles';
 
 .mainContainer {
-  
+  @include main-container(
+    "servicesList"
+    "questionsInfo"
+    "statisticsInfo"
+    "callToAction"
+    "owners"
+    "questionForm");
 }

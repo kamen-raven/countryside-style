@@ -1,0 +1,21 @@
+@import '~global_styles';
+
+.questionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+
+
+  &__iconContainer svg {
+    display: flex;
+    width: 80px;
+    height: 80px;
+  }
+
+  &__question {
+    @include common-paragraph(pLg,
+                    $font-weight: $regular,
+                    $color: $white);
+    padding-top: 10px;
+  }
+}

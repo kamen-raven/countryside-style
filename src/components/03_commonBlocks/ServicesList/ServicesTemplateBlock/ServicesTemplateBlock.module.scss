@@ -1,24 +1,15 @@
 @import '~global_styles';
 
-.wrapper {
-  grid-area: ourServices;
-
-  @include common-wrapper;
-  //overflow: hidden;
-  position: relative;
-  border-top: 1px solid $gray;
-}
-
 .container {
   grid-area: container;
-  margin: 90px 120px 130px;
+  margin: 90px 120px;
   z-index: 1;
 }
 
 
 .title {
   @include common-title(h2);
-  margin-bottom: 60px;
+
 }
 
 

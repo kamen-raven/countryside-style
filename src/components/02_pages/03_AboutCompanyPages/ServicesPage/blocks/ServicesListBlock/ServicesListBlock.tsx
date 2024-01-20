@@ -5,9 +5,12 @@ import { ServicesListBlockInterface } from './ServicesListBlock.interface.ts';
 
 const ServicesListBlock: React.FC<ServicesListBlockInterface> = ({  }) => {
     return (
-        <div>
+        <section className = {styles.wrapper}>
+          <div className = {styles.container}>
+          OUR SERVICES
+          </div>
 
-        </div>
+        </section>
     );
 };
 

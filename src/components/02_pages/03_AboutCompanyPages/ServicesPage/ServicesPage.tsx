@@ -1,17 +1,15 @@
 import React from 'react';
 import styles from './ServicesPage.module.scss';
 import { ServicesPageInterface } from './ServicesPage.interface.ts';
-import { CallToActionBlock, FactsInfoBlock, QuestionsInfoBlock, ServicesListBlock } from './blocks/index.ts';
+import { CallToActionBlock, StatisticInfoBlock, QuestionsInfoBlock, ServicesListBlock } from './blocks/index.ts';
 
-
-const ServicesPage: React.FC<ServicesPageInterface> = ({ employeesData }) => {
+const ServicesPage: React.FC<ServicesPageInterface> = ({ employeesData, questionsList, statIndicatorsList }) => {
     return (
         <main className = {styles.mainContainer}>
           <ServicesListBlock />
-          <QuestionsInfoBlock/>
-          <FactsInfoBlock/>
+          <QuestionsInfoBlock questionsList={questionsList}/>
+          <StatisticInfoBlock statIndicatorsList={statIndicatorsList} />
           <CallToActionBlock/>
-          
         </main>
     );
 };

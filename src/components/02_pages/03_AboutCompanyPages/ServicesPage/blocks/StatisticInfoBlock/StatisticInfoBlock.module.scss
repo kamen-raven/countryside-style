@@ -1,0 +1,12 @@
+@import '~global_styles';
+
+.container {
+  grid-area: statisticsInfo;
+
+  @include mainContainer($margin: 110px auto);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+

@@ -1,0 +1,12 @@
+@import '~global_styles';
+
+
+.wrapper {
+  @include common-wrapper;
+  grid-area: servicesList;
+  position: relative;
+}
+
+.container {
+  grid-area: container;
+}

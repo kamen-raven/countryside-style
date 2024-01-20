@@ -1,0 +1,1 @@
+export * from './StatisticInfoItem/StatisticInfoItem';

@@ -1,0 +1,41 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: questionsInfo;
+  background-color: $accent-green;
+}
+
+.container {
+  @include mainContainer($margin: 90px auto);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.title {
+  @include common-title(h2,
+            $color: $white);
+}
+
+.description {
+  @include common-paragraph(p,
+            $font-family: $ff-openSans,
+            $font-weight: $regular,
+            $color: $white);
+}
+
+.descriptionAction {
+  @include common-paragraph(pXl,
+            $font-family: $ff-openSans,
+            $font-weight: $bold,
+            $line-height: 120%,
+            $color: $white);
+}
+
+
+.questionsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+}
+

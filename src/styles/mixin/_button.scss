@@ -48,5 +48,14 @@
   @if $appearance == light {
     background: $white;
     color: $dark;
+    transition: all linear .2s;
+
+
+    &:hover {
+      background: $accent-green;
+      color: $white;
+      border: none;
+      transition: all linear .2s;
+    }
   }
 }

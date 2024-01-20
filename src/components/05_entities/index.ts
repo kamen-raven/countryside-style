@@ -1,4 +1,4 @@
-export * from './CardInfoComponent/CardInfoComponent';
+export * from '../03_commonBlocks/ServicesList/ServiceCard/elements/CardInfoComponent/CardInfoComponent';
 export * from './CardBlogComponent/CardBlogComponent';
 export * from './RequestFormComponent/RequestFormComponent';
 export * from './HalfScreenTemplate/HalfScreenTemplate';

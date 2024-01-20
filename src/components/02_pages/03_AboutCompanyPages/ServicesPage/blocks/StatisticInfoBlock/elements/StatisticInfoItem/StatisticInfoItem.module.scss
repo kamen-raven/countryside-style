@@ -1,0 +1,50 @@
+@import '~global_styles';
+
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+//
+.statContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.statIndicator {
+  @include common-paragraph(p,
+    $font-weight: $bold);
+  font-size: 100px;
+  line-height: 100%;
+}
+
+.statLabel {
+
+  @include common-paragraph(pLg,
+    $color: $white);
+  background-color: $accent-green;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+//
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  @include common-paragraph(pXl,
+    $line-height: 120%,
+    $color: $accent-green);
+}
+
+.description {
+  @include common-paragraph(pLg,
+    $font-weight: $regular,
+    $color: $accent-green);
+}

@@ -1,8 +1,13 @@
 import { Metadata } from "next";
-import { AboutUsPage } from "~pages/index";
+import { ServicesPage } from "~pages/index";
 
 // temp
 import teamMembersData from '~data/temp/employeesList/teamMembersData';
+
+// data
+import questionsForClients from '~data/constant/servicesBlock/questionsForClients/questionsForClients.ts';
+import statisticalIndicatorsData from "~data/constant/servicesBlock/statisticalIndicators/statisticalIndicators";
+
 
 export const metadata: Metadata = {
   title: 'Наши услуги',
@@ -15,6 +20,9 @@ export const metadata: Metadata = {
 export default function PageServices() {
 
   return (
-    <AboutUsPage employeesData={teamMembersData} />
+    <ServicesPage
+      employeesData={teamMembersData}
+      questionsList={questionsForClients}
+      statIndicatorsList={statisticalIndicatorsData}    />
   );
 }

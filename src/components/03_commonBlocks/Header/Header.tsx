@@ -4,7 +4,7 @@ import { HeaderProps } from './Header.props';
 
 import { menuList } from '~data/constant/navMenu/menuList';
 
-import { SearchInput, ContactComponent } from './components';
+import { SearchInput, ContactComponent } from './elements';
 import { Logo, Navbar } from '~shared/index';
 
 
