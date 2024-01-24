@@ -1,0 +1,86 @@
+@import '~global_styles';
+
+
+/* dataBackground */
+.sellers {
+  background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forSellersBG.jpg);
+}
+.buyers {
+  background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forBuyersBG.jpg);
+}
+.villages {
+  background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forVillagesBG.jpg);
+}
+.developers {
+  background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forDevelopersBG.jpg);
+}
+.legalSupport {
+  background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forLegalBG.jpg);
+}
+
+
+
+
+
+.wrapper {
+  grid-area: titleBlock;
+  background-color: $dark;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  @include mainContainer($padding: 70px 120px);
+  height: 800px;
+}
+
+
+.labelContainer {
+  display: flex;
+  align-items: baseline;
+
+}
+
+.label {
+  @include common-paragraph(p,
+  $color: $white,
+  $font-family: $ff-openSans,
+  $font-weight: $regular);
+  transition: all .3s linear;
+
+  &_link {
+    @extend .label;
+    text-decoration: underline;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $gray;
+      text-decoration: none;
+      transition: all .3s linear;
+    }
+  }
+
+  &_span {
+    padding: 0 .6em;
+  }
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 100%;
+  justify-content: center;
+}
+
+.h1 {
+  @include common-title(h1,
+            $color: $white);
+
+}
+
+.subtitle {
+  @include common-title(h3,
+            $color: $white,
+            $font-weight: $regular);
+}

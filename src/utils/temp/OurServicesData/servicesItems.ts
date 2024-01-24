@@ -1,8 +1,8 @@
 import { ServiceCardProps } from "../../../components/03_commonBlocks/ServicesList/ServiceCard/ServiceCard.props";
-import Sale from '~img/servicesPages/OurServicesBlock/ForSale.jpg';
-import Buy from '~img/servicesPages/OurServicesBlock/Buy.jpg';
-import Jud from '~img/servicesPages/OurServicesBlock/Jud.jpg';
-import Key from '~img/servicesPages/OurServicesBlock/key.jpg';
+import Sale from '~img/servicesPages/ourServicesBlock/ForSale.jpg';
+import Buy from '~img/servicesPages/ourServicesBlock/Buy.jpg';
+import Jud from '~img/servicesPages/ourServicesBlock/Jud.jpg';
+import Key from '~img/servicesPages/ourServicesBlock/key.jpg';
 
 
 

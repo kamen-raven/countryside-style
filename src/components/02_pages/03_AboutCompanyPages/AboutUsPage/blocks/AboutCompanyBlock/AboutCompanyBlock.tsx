@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './AboutCompanyBlock.module.scss';
+import { AboutCompanyBlockInterface } from './AboutCompanyBlock.interface';
 
 import { BackgroundSVGPattern } from '~shared/index';
-import aboutUsPageFacts from '~data/constant/advantagesList/aboutUsPage/aboutUsPageFacts';
 import { AboutUsInfoElement } from './elements';
 import useReactMarkdown from '~hooks/useReactMarkdown';
 
-const AboutCompanyBlock: React.FC = () => {
+const AboutCompanyBlock: React.FC<AboutCompanyBlockInterface> = ({ aboutUsPageFacts }) => {
   const markdownStyles = {
     p: styles.text,
     strong: styles.text_spanAccent,
@@ -48,8 +48,6 @@ const AboutCompanyBlock: React.FC = () => {
                         </span>,
                     }}
                     children={item.title} /> */}
-
-
 
                 </div>
               </div>

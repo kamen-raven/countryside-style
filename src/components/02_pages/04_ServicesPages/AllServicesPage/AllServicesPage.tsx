@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AllServicesPage.module.scss';
 import { AllServicesPageInterface } from './AllServicesPage.interface.ts';
-import { CallToActionBlock, StatisticInfoBlock, QuestionsInfoBlock, ServicesListBlock, PartnersBlock, QuestionFormBlock_ServicePage } from './blocks/index.ts';
+import { ServicesListBlock, QuestionsInfoBlock, StatisticInfoBlock, CallToActionBlock, PartnersBlock, QuestionFormBlock_ServicePage } from './blocks/index.ts';
 
 const AllServicesPage: React.FC<AllServicesPageInterface> = ({ servicesListData, employeesData, questionsList, statIndicatorsList }) => {
     return (

@@ -6,5 +6,4 @@ export * from '../blocks/OurServicesBlock/OurServicesBlock';
 export * from '../blocks/PressBlock/PressBlock';
 export * from '../blocks/BlogBlock/BlogBlock';
 export * from '../blocks/TeamBlock/TeamBlock';
-export * from '../blocks/ReviewsBlock/ReviewsBlock';
 export * from '../blocks/ContactsBlock/ContactsBlock';

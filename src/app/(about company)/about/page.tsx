@@ -3,6 +3,8 @@ import { AboutUsPage } from "~pages/index";
 
 // temp
 import teamMembersData from '~data/temp/employeesList/teamMembersData';
+import aboutUsPageAdvantages from "~data/constant/advantagesList/aboutUsPage/aboutUsPageAdvantages";
+import aboutUsPageFacts from '~data/constant/advantagesList/aboutUsPage/aboutUsPageFacts';
 
 export const metadata: Metadata = {
   title: 'О компании',
@@ -15,6 +17,9 @@ export const metadata: Metadata = {
 export default function PageAbout() {
 
   return (
-    <AboutUsPage employeesData={teamMembersData} />
+    <AboutUsPage
+    employeesData={teamMembersData}
+    advantagesListData={aboutUsPageAdvantages}
+    aboutUsPageFacts={aboutUsPageFacts} />
   );
 }

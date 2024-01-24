@@ -12,4 +12,5 @@ export * from './03_AboutCompanyPages/ContactsPage/ContactsPage';
 
 // 04_ServicesPage
 export * from './04_ServicesPages/AllServicesPage/AllServicesPage';
+export * from './04_ServicesPages/ForSellersPage/ForSellersPage';
 

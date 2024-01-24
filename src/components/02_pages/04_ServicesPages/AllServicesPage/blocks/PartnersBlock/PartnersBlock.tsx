@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './PartnersBlock.module.scss';
-import { PartnersBlockInterface } from './PartnersBlock.interface.ts';
+import { PartnersBlockInterface } from './PartnersBlock.interface';
 import { TeamMemberComponent } from '~common/index.ts';
 
 

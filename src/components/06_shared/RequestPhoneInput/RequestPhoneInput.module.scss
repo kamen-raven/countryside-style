@@ -1,0 +1,32 @@
+@import '~global_styles';
+
+.requestForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 55px auto;
+  gap: 10px;
+
+
+  &__input {
+    @include common-paragraph(p,
+            $color: $gray,
+            $font-family: $ff-openSans,
+            $font-weight: $regular);
+    width: 100%;
+    padding: 11px 30px;
+    border-radius: $border-radius;
+  }
+
+  &__button {
+    @extend .requestForm__input;
+    @include common-button(colored);
+  }
+
+  &__agreement {
+    @include common-paragraph(pSm,
+    $color: $white,
+    $line-height: 180%,
+    $font-weight: $regular);
+    grid-column: 1 / 3;
+  }
+}

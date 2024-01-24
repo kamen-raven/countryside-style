@@ -1,4 +1,6 @@
-import { AboutUsPageInterface } from '~pages/03_AboutCompanyPages/AboutUsPage/AboutUsPage.interface';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersData.interface';
 
-export interface OurTeamBlockInterface extends AboutUsPageInterface {
+export interface OurTeamBlockInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  employeesData: teamMembersDataInterface[];
 }

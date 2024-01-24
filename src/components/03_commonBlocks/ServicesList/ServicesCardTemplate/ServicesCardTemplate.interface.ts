@@ -1,5 +1,5 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { servicesDataInterface } from '~data/constant/servicesBlock/servicesListData/servicesListData.interface';
+import { servicesDataInterface } from '~data/constant/servicesBlock/allServicesPage/servicesListData/servicesListData.interface';
 
 export interface ServicesCardTemplateInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   serviceItem: servicesDataInterface;

@@ -5,9 +5,9 @@ import { AllServicesPage } from "~pages/index";
 import teamMembersData from '~data/temp/employeesList/teamMembersData';
 
 // data
-import questionsForClients from '~data/constant/servicesBlock/questionsForClients/questionsForClients.ts';
-import statisticalIndicatorsData from "~data/constant/servicesBlock/statisticalIndicators/statisticalIndicators";
-import servicesData from "~data/constant/servicesBlock/servicesListData/servicesListData";
+import questionsForClients from '~data/constant/servicesBlock/allServicesPage/questionsForClients/questionsForClients';
+import servicesData from "~data/constant/servicesBlock/allServicesPage/servicesListData/servicesListData";
+import statisticalIndicatorsData from "~data/constant/servicesBlock/allServicesPage/statisticalIndicators/statisticalIndicators";
 
 export const metadata: Metadata = {
   title: 'Наши услуги',

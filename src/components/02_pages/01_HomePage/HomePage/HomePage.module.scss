@@ -2,7 +2,7 @@
 
 
 .mainContainer {
-  @include main-container(
+  @include mainPageContainer(
     "headBlock"
     "objectsForSale"
     "ourServices"

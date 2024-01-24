@@ -1,25 +1,28 @@
 import { Metadata } from "next";
-import { ServicesPage } from "~pages/index";
+import { ForSellersPage } from "~pages/index";
 
 // temp
-import teamMembersData from '~data/temp/employeesList/teamMembersData';
 
 // data
-import questionsForClients from '~data/constant/servicesBlock/questionsForClients/questionsForClients.ts';
-import statisticalIndicatorsData from "~data/constant/servicesBlock/statisticalIndicators/statisticalIndicators";
-import servicesData from "~data/constant/servicesBlock/servicesListData/servicesListData";
+import forSellersPageAdvantages from "~data/constant/advantagesList/forSellersPage/forSellersPageAdvantages";
+import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
+import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
 
 export const metadata: Metadata = {
-  title: 'Наши услуги',
-  description: 'Мы предоставляем полный комплекс услуг в сфере продажи и покупки загородных участков, домов и коттеджей в Ленинградской области.',
+  title: 'Услуги | Продавцам',
+  description: 'Продадим Ваш дом или участок по максимальной цене в кратчайший срок',
 };
 
 
 
 
-export default function PageServicesForSellers() {
+
+export default function PageForSellers() {
 
   return (
-    <div>hello</div>
+    <ForSellersPage
+        typePage={typePageEnum.sellers}
+        titleBlockData={titleBlockData}
+        advantagesListData={forSellersPageAdvantages} />
   );
 }

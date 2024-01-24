@@ -7,9 +7,9 @@ import {
   OurServicesBlock,
   PressBlock,
   TeamBlock,
-  ReviewsBlock,
   ContactsBlock
 } from '~pages/01_HomePage/HomePage/blocks/index';
+import { ReviewsBlock } from '~common/index';
 
 import objectsForSaleData from "~utils/temp/objectsForSaleData/objectsForSaleItems";
 import servicesData from "~utils/temp/OurServicesData/servicesItems";

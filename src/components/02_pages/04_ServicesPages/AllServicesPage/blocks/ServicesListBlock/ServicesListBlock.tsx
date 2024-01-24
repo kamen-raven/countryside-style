@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ServicesListBlock.module.scss';
-import { ServicesListBlockInterface } from './ServicesListBlock.interface.ts';
+import { ServicesListBlockInterface } from './ServicesListBlock.interface';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 import { ServicesCardTemplate } from '~common/index.ts';
 

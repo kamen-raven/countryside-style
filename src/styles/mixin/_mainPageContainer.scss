@@ -1,4 +1,4 @@
-@mixin main-container($grid-template-areas) {
+@mixin mainPageContainer($grid-template-areas) {
   grid-area: main;
   display: grid;
   grid-template-columns: auto;

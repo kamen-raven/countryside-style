@@ -1,7 +1,7 @@
 @import '~global_styles';
 
 .mainContainer {
-  @include main-container(
+  @include mainPageContainer(
     "servicesList"
     "questionsInfo"
     "statisticsInfo"
