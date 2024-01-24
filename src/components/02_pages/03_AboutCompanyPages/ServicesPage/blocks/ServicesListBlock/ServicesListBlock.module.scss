@@ -2,11 +2,25 @@
 
 
 .wrapper {
-  @include common-wrapper;
   grid-area: servicesList;
   position: relative;
+
+  @include mainContainer($padding: 90px 120px);
 }
 
 .container {
-  grid-area: container;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.title {
+  @include common-title(h1);
+}
+
+.cardsLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px 60px;
+  font-size: 36px;
 }

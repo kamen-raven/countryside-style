@@ -1,0 +1,10 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: owners;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}

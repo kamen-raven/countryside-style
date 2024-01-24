@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './QuestionFormBlock.module.scss';
+import styles from './QuestionFormBlock_ContactsPage.module.scss';
 import { HalfScreenTemplate, RequestFormComponent } from '~entities/index.ts';
 import Image from 'next/image';
 
 import ContactUsImg from "~img/common-images/contactUsImg.jpg";
 
-const QuestionFormBlock: React.FC = () => {
+const QuestionFormBlock_ContactsPage: React.FC = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -28,4 +28,4 @@ const QuestionFormBlock: React.FC = () => {
   );
 };
 
-export { QuestionFormBlock };
+export { QuestionFormBlock_ContactsPage };

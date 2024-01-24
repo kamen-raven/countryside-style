@@ -4,7 +4,7 @@ import { StatisticInfoItemInterface } from './StatisticInfoItem.interface.ts';
 
 const StatisticInfoItem: React.FC<StatisticInfoItemInterface> = ({ statIndicatorItem }) => {
   return (
-    <div key={statIndicatorItem._id} className={styles.infoContainer}>
+    <div className={styles.infoContainer}>
       <div className={styles.statContainer}>
         <p className={styles.statIndicator}>
           {statIndicatorItem.statIndicator}

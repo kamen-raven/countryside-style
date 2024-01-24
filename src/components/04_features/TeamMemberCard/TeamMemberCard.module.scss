@@ -58,11 +58,10 @@
 }
 
 .jobTitle {
-  font-size: 30px;
-  font-weight: $regular;
-  line-height: 120%;
-  margin: 25px 0 0;
-  //padding-bottom: 30px;
+  @include common-paragraph(pLg,
+  $color: $white,
+  $font-weight: $regular,
+  $margin: 25px 0 0);
 }
 
 
@@ -74,6 +73,7 @@
 }
 
 .quotationMark {
+  color: $white;
   font-size: 100px;
   font-weight: $medium;
   line-height: 100%;

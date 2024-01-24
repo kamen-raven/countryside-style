@@ -1,0 +1,33 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: questionForm;
+
+  background-color: $dark;
+}
+
+.container {
+  @include mainContainer($padding: 0);
+
+  display: grid;
+  grid-template-columns: auto minmax(400px, 880px);
+  align-items: center;
+}
+
+.formContainer {
+  margin: auto 120px ;
+}
+
+.imageContainer {
+  max-width: 880px;
+  max-height: 800px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  overflow: hidden;
+  object-fit: cover;
+}

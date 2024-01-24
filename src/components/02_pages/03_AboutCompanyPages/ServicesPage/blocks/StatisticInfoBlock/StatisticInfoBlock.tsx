@@ -9,7 +9,7 @@ const StatisticInfoBlock: React.FC<StatisticInfoBlockInterface> = ({ statIndicat
     <section className={styles.container}>
       {statIndicatorsList && statIndicatorsList.map((statItem) => {
         return (
-          <StatisticInfoItem statIndicatorItem={statItem} />
+          <StatisticInfoItem key={statItem._id} statIndicatorItem={statItem} />
         );
       })}
     </section>

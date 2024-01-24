@@ -6,7 +6,7 @@ import { QuestionItem } from './elements/index.ts';
 
 const QuestionsInfoBlock: React.FC<QuestionsInfoBlockInterface> = ({ questionsList }) => {
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <div className={styles.container}>
         <h2 className={styles.title}>
           Загородный стиль
@@ -23,15 +23,10 @@ const QuestionsInfoBlock: React.FC<QuestionsInfoBlockInterface> = ({ questionsLi
         <div className={styles.questionsContainer}>
           {questionsList && questionsList.map((question) => {
             return <QuestionItem key={question._id} questionItem={question} />;
-
           })}
-
-
-
-
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
