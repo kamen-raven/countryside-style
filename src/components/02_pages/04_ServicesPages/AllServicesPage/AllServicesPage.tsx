@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './ServicesPage.module.scss';
-import { ServicesPageInterface } from './ServicesPage.interface.ts';
+import styles from './AllServicesPage.module.scss';
+import { AllServicesPageInterface } from './AllServicesPage.interface.ts';
 import { CallToActionBlock, StatisticInfoBlock, QuestionsInfoBlock, ServicesListBlock, PartnersBlock, QuestionFormBlock_ServicePage } from './blocks/index.ts';
 
-const ServicesPage: React.FC<ServicesPageInterface> = ({ servicesListData, employeesData, questionsList, statIndicatorsList }) => {
+const AllServicesPage: React.FC<AllServicesPageInterface> = ({ servicesListData, employeesData, questionsList, statIndicatorsList }) => {
     return (
         <main className = {styles.mainContainer}>
           <ServicesListBlock servicesListData={servicesListData} />
@@ -16,4 +16,4 @@ const ServicesPage: React.FC<ServicesPageInterface> = ({ servicesListData, emplo
     );
 };
 
-export { ServicesPage };
+export { AllServicesPage };

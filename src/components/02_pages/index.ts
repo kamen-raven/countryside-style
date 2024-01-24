@@ -8,5 +8,8 @@ export * from './02_CatalogPages/CardPage/CardPage';
 // 03_AboutCompanyPages
 export * from './03_AboutCompanyPages/AboutUsPage/AboutUsPage';
 export * from './03_AboutCompanyPages/ContactsPage/ContactsPage';
-export * from './03_AboutCompanyPages/ServicesPage/ServicesPage';
+/* export * from './03_AboutCompanyPages/ServicesPage/ServicesPage'; */
+
+// 04_ServicesPage
+export * from './04_ServicesPages/AllServicesPage/AllServicesPage';
 

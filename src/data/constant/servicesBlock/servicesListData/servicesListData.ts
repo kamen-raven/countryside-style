@@ -1,12 +1,12 @@
 import { servicesDataInterface } from './servicesListData.interface';
 
 // img
-import SaleImg from '~img/servicesCards/Sale.jpg';
-import BuyImg from '~img/servicesCards/Buy.jpg';
-import LawImg from '~img/servicesCards/law.jpg';
-import VillageImg from '~img/servicesCards/villages.jpg';
-import InvestImg from '~img/servicesCards/invest.jpg';
-import ConsultImg from '~img/servicesCards/consult.jpg';
+import SaleImg from '~img/servicesPages/servicesCards/sale.jpg';
+import BuyImg from '~img/servicesPages/servicesCards/Buy.jpg';
+import LawImg from '~img/servicesPages/servicesCards/law.jpg';
+import VillageImg from '~img/servicesPages/servicesCards/villages.jpg';
+import InvestImg from '~img/servicesPages/servicesCards/invest.jpg';
+import ConsultImg from '~img/servicesPages/servicesCards/consult.jpg';
 
 
 const servicesData: servicesDataInterface[]= [
@@ -14,7 +14,7 @@ const servicesData: servicesDataInterface[]= [
     _id: 1,
     title: 'Продажа',
     description: 'Поможем продать вашу загородную недвижимость, в короткий срок по максимальной цене',
-    link: '/',
+    link: 'services/for-sellers',
     image: SaleImg,
   },
   {

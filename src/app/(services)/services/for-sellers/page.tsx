@@ -17,13 +17,9 @@ export const metadata: Metadata = {
 
 
 
-export default function PageServices() {
+export default function PageServicesForSellers() {
 
   return (
-    <ServicesPage
-      servicesListData={servicesData}
-      employeesData={teamMembersData}
-      questionsList={questionsForClients}
-      statIndicatorsList={statisticalIndicatorsData} />
+    <div>hello</div>
   );
 }

@@ -28,6 +28,18 @@ export const menuList = [
     name: "services",
     title: "Услуги",
     link: "/services",
+    secondLevel: [
+      {
+        name: "sellers",
+        title: "Продажа",
+        link: "/services/for-sellers",
+      },
+      {
+        name: "buyer",
+        title: "Покупка",
+        link: "/services/for-buyer",
+      }
+    ]
   },
   {
     name: "contacts",
