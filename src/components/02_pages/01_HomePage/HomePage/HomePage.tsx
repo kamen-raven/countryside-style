@@ -15,7 +15,7 @@ import objectsForSaleData from "~utils/temp/objectsForSaleData/objectsForSaleIte
 import servicesData from "~utils/temp/OurServicesData/servicesItems";
 import pressData from '~data/constant/pressBlock/pressArticlesItems';
 import teamMembersData from '~data/temp/employeesList/teamMembersData';
-import reviews from '~utils/temp/reviewsData/reviewsData';
+import reviews from '~data/temp/reviewsData/reviewsData';
 import generalContactsData from '~data/constant/generalContacts/generalContactsData';
 
 

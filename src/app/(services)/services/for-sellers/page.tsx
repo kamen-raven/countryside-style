@@ -7,6 +7,7 @@ import { ForSellersPage } from "~pages/index";
 import forSellersPageAdvantages from "~data/constant/advantagesList/forSellersPage/forSellersPageAdvantages";
 import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
 import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
+import reviews from "~data/temp/reviewsData/reviewsData";
 
 export const metadata: Metadata = {
   title: 'Услуги | Продавцам',
@@ -23,6 +24,7 @@ export default function PageForSellers() {
     <ForSellersPage
         typePage={typePageEnum.sellers}
         titleBlockData={titleBlockData}
-        advantagesListData={forSellersPageAdvantages} />
+        advantagesListData={forSellersPageAdvantages}
+        reviewsData={reviews} />
   );
 }

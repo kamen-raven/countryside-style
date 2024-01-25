@@ -4,7 +4,7 @@ const titleBlockData: titleBlockDataInterface= {
   sellers: {
     className: 'sellers',
     label: 'Продавцам',
-    title: 'Продадим Ваш дом или участок по максимальной цене в кротчайший срок',
+    title: 'Продадим Ваш дом или участок по\u00A0максимальной цене в кратчайший срок',
     subtitle: '',
   },
   buyers: {

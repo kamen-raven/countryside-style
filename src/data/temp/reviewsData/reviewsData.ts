@@ -1,4 +1,4 @@
-import { reviewDataInterface } from "~features/ReviewCard/ReviewCard.props";
+import { reviewDataInterface } from "./reviewsData.interface";
 
 const reviews: reviewDataInterface[] = [
   {

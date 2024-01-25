@@ -1,0 +1,30 @@
+@import '~global_styles';
+
+.container {
+  border: 1px solid $accent-gray;
+  box-sizing: border-box;
+  height: 75px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 22px 20px;
+
+  cursor: pointer;
+@include common-link;
+}
+
+.innerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  @include common-paragraph(p,
+        $font-family: $ff-openSans,
+        $font-weight: $regular);
+  padding: 0 10px 0 28px;
+}
+
+.rateIcon {
+  display: flex;
+  gap: 3px;
+}

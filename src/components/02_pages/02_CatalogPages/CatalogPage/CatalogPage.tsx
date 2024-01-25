@@ -2,8 +2,9 @@ import React from 'react';
 import styles from './CatalogPage.module.scss';
 import { CatalogPageInterface } from './CatalogPage.interface.ts';
 
-import reviews from "~utils/temp/reviewsData/reviewsData";
-import { ReviewsBlock } from "~pages/01_HomePage/HomePage/blocks/index";
+import reviews from "~data/temp/reviewsData/reviewsData.ts";
+import { ReviewsBlock } from '~common/index.ts';
+
 import { ContactUsBlock } from "~pages/02_CatalogPages/CatalogPage/blocks/ContactUsBlock/ContactUsBlock.tsx";
 
 
