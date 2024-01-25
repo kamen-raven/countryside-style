@@ -1,2 +1,32 @@
 @import '~global_styles';
 
+.wrapper {
+  grid-area: recentlyObjects;
+  border-bottom: 1px solid $accent-gray;
+}
+
+.container {
+  @include mainContainer($padding: 90px 120px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.title {
+  @include common-title(h2);
+}
+
+
+
+
+.innerBlock {
+  @include scrollbar ($arrows: false);
+  max-width: 1664px;
+  display: grid;
+  grid-auto-columns: calc(33.3% - 33.3px);
+  grid-auto-flow: column;
+  column-gap: 50px;
+  padding-bottom: 70px;
+  overflow-x: auto;
+}

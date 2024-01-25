@@ -1,6 +1,8 @@
 export interface dataTemplateInterface {
   id: number;
   title: string;
+  type: string;
+  mainImage: StaticImageData;
   address: {
     area: string;
     town: string;
@@ -54,12 +56,15 @@ export interface dataTemplateInterface {
   };
 }
 
-
+import { StaticImageData } from 'next/image';
+import TemplateImage from '~img/template/House_5 1.jpg';
 
 
 const dataTemplate: dataTemplateInterface = {
   id: 1106057,
   title: 'д. Келози',
+  type: 'дача',
+  mainImage: TemplateImage,
   address: {
     area: 'Ломоносовский р-н',
     town: 'д. Келози',

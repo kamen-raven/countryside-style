@@ -10,14 +10,15 @@ const ForSellersPage: React.FC<ForSellersPageInterface> = ({
   typePage,
   titleBlockData,
   advantagesListData,
+  recentObjectsData,
   reviewsData }) => {
     return (
         <main className = {styles.mainContainer}>
           <TitleBlockTemplate  pageData={titleBlockData[typePage]} />
           <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={''}/>
           <AdvantagesBlock advantagesList={advantagesListData}/>
-          <RecentlySoldObjectsBlock/>
           <ServicesStoriesBlock/>
+          <RecentlySoldObjectsBlock recentObjectsData={recentObjectsData}/>
           <ReviewsBlock reviewsDataItem={reviewsData}/>
           <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''}/>
           <FAQBlock/>

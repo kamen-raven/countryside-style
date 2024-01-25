@@ -21,7 +21,7 @@ const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
 
         <Image
           className={styles.image}
-          src={TemplateImage}
+          src={data.mainImage}
           alt={data.title} />
 
         <LabelNew />

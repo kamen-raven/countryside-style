@@ -20,7 +20,6 @@ const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ reviewsDataItem }) => {
             Оставить свой отзыв
           </button>
         </div>
-
       </div>
 
       <div className={`${styles.innerBlock}`}>

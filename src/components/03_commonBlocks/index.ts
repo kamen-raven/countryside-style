@@ -13,3 +13,4 @@ export * from './ServicesPagesCommonComponents/RequestActionBlock/RequestActionB
 export * from './ServicesPagesCommonComponents/ServicesStoriesBlock/ServicesStoriesBlock';
 export * from './ServicesPagesCommonComponents/TitleBlockTemplate/TitleBlockTemplate';
 
+export * from './CardOfObject/CatalogCardItem/CatalogCardItem';
