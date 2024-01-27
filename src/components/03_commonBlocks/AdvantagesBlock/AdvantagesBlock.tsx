@@ -8,7 +8,8 @@ import { BackgroundSVGPattern } from '~shared/index';
 const AdvantagesBlock: React.FC<AdvantagesBlockInterface> = ({
   title = 'Наши преимущества',
   background = true,
-  advantagesList }) => {
+  advantagesList,
+  children }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -16,13 +17,24 @@ const AdvantagesBlock: React.FC<AdvantagesBlockInterface> = ({
           {background ?
             <BackgroundSVGPattern positionX='right' />
             : ''}
-
         </>
-        <h2 className={styles.title}>
-          {title}
-        </h2>
-        <div className={styles.iconsContainer}>
-          <AdvantagesIconsComponent advantagesList={advantagesList} />
+        <div className={styles.innerContainer}>
+          {children ?
+            <div className={styles.titleContainer}>
+              <h2 className={styles.title}>
+                {title}
+              </h2>
+              {children}
+            </div>
+            :
+            <h2 className={styles.title}>
+              {title}
+            </h2>
+          }
+
+          <div className={styles.iconsContainer}>
+            <AdvantagesIconsComponent advantagesList={advantagesList} />
+          </div>
         </div>
       </div>
     </section>

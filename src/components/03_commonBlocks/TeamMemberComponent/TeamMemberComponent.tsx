@@ -1,7 +1,6 @@
 import React from 'react';
 import { TeamMemberComponentInterface } from './TeamMemberComponent.interface.ts';
-import { TeamMemberCard } from '~features/index.ts';
-
+import { TeamMemberCard } from './blocks/index.ts';
 
 const TeamMemberComponent: React.FC<TeamMemberComponentInterface> = ({ employeesData, teamRole  }) => {
     return (

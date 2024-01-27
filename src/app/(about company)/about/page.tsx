@@ -3,8 +3,8 @@ import { AboutUsPage } from "~pages/index";
 
 // temp
 import teamMembersData from '~data/temp/employeesList/teamMembersData';
-import aboutUsPageAdvantages from "~data/constant/advantagesList/aboutUsPage/aboutUsPageAdvantages";
-import aboutUsPageFacts from '~data/constant/advantagesList/aboutUsPage/aboutUsPageFacts';
+import aboutUsPageAdvantages from "~data/constant/servicesBlock/advantagesList/aboutUsPage/aboutUsPageAdvantages";
+import aboutUsPageFacts from '~data/constant/servicesBlock/advantagesList/aboutUsPage/aboutUsPageFacts';
 
 export const metadata: Metadata = {
   title: 'О компании',

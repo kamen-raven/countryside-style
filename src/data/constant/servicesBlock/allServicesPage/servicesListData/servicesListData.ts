@@ -21,35 +21,35 @@ const servicesData: servicesDataInterface[]= [
     _id: 2,
     title: 'Покупка',
     description: 'Решили купить загородную недвижимость? Звоните – поможем!',
-    link: '/',
+    link: 'services/for-buyers',
     image: BuyImg
   },
   {
     _id: 3,
     title: 'Юридическое сопровождение',
     description: 'Юридическое сопровождение сделки, проверка и оформление документов',
-    link: '/',
+    link: 'services/legal-support',
     image: LawImg
   },
   {
     _id: 4,
     title: 'Коттеджным поселкам',
     description: 'Требуется помощь в оптимизации процесса продаж существующего коттеджного поселка или организации продаж поселка «с нуля»? Звоните – поможем!',
-    link: '/',
+    link: 'services/for-cottage-villages',
     image: VillageImg
   },
   {
     _id: 5,
     title: 'Инвестиции в\u00A0загородную недвижимость',
     description: 'Уже построили дом на продажу или только планируете? Звоните – поможем!',
-    link: '/',
+    link: 'services/for-developers',
     image: InvestImg
   },
   {
     _id: 6,
     title: 'Консультация специалиста',
     description: 'Нужна консультация опытного специалиста по недвижимости? Звоните - поможем!',
-    link: '/',
+    link: 'services/legal-support',
     image: ConsultImg
   },
 ];

@@ -3,13 +3,18 @@
 .wrapper {
   grid-area: servicesStories;
 
+
+
+  border-bottom: 1px solid $gray;
+}
+
+.container {
   @include mainContainer($padding: 90px 120px 120px);
 
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
-
 
 .title {
   @include common-title(h2);

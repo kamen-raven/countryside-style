@@ -14,7 +14,7 @@ const ContactListBlock: React.FC<ContactListBlockInterface> = ({ employeesList }
         {employeesList.map((item) => {
           return (
             (item.contacts.phone || item.contacts.telegram || item.contacts.whatsapp) && // проверяем на наличие телефона в базе и не выводим сотрудника без номера телефона
-            <ContactItemElement employeeInfo={item} />
+            <ContactItemElement key={item._id} employeeInfo={item} />
           );
         })}
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './OurTeamBlock.module.scss';
 import { OurTeamBlockInterface } from './OurTeamBlock.interface.ts';
-import { TeamMemberCard } from '~features/index.ts';
+import { TeamMemberCard } from '~common/TeamMemberComponent/blocks/index.ts';
 
 
 const OurTeamBlock: React.FC<OurTeamBlockInterface> = ({ employeesData }) => {

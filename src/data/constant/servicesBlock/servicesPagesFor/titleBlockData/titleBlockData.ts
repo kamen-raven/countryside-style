@@ -27,7 +27,7 @@ const titleBlockData: titleBlockDataInterface= {
   },
   legalSupport: {
     className: 'legalSupport',
-    label: 'Юридическое сопровождение',
+    label: 'Юридическое сопровождение и консультирование',
     title: 'Хотите безопасно провести сделку с недвижимостью?',
     subtitle: 'Сопроводим сделку от бронирования объекта до получения ключей',
   },

@@ -10,7 +10,11 @@
 .container {
   position: relative;
 
-  @include mainContainer($padding: 0 120px 90px);
+  @include mainContainer($padding: 90px 120px 120px);
+
+}
+
+.innerContainer {
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -27,7 +31,10 @@
   @include common-title(h2);
 }
 
-
+.titleContainer {
+  @extend .innerContainer;
+  gap: 30px;
+}
 /*
 .wrapper {
   @include common-wrapper;

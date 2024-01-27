@@ -4,7 +4,7 @@ import { ForSellersPage } from "~pages/index";
 // temp
 
 // data
-import forSellersPageAdvantages from "~data/constant/advantagesList/forSellersPage/forSellersPageAdvantages";
+import forSellersPageAdvantages from "~data/constant/servicesBlock/advantagesList/forSellersPage/forSellersPageAdvantages";
 import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
 import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
 import reviews from "~data/temp/reviewsData/reviewsData";

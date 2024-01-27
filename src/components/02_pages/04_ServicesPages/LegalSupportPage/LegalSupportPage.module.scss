@@ -1,0 +1,16 @@
+@import '~global_styles';
+
+.mainContainer {
+  @include mainPageContainer(
+    "titleBlock"
+    "requestAction-1"
+    "advantages"
+    "servicesStories"
+    "reviews"
+    "requestAction-2");
+}
+
+
+.description {
+  @include common-paragraph(pXl);
+}

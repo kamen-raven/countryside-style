@@ -4,22 +4,24 @@ import { ServicesStoriesBlockInterface } from './ServicesStoriesBlock.interface.
 import { StoriesCardElement } from './elements/index.ts';
 
 
-const ServicesStoriesBlock: React.FC<ServicesStoriesBlockInterface> = ({  }) => {
-    return (
-        <section className = {styles.wrapper}>
-            <h2 className = {styles.title}>
-            Услуги
-            </h2>
+const ServicesStoriesBlock: React.FC<ServicesStoriesBlockInterface> = ({ }) => {
+  return (
+    <section className={styles.wrapper}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>
+          Услуги
+        </h2>
 
-            <div className = {styles.innerContainer}>
-              <StoriesCardElement/>
-              <StoriesCardElement/>
-              <StoriesCardElement/>
-              
+        <div className={styles.innerContainer}>
+          <StoriesCardElement />
+          <StoriesCardElement />
+          <StoriesCardElement />
 
-            </div>
-        </section>
-    );
+
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export { ServicesStoriesBlock };

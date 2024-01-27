@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PartnersBlock.module.scss';
 import { PartnersBlockInterface } from './PartnersBlock.interface.ts';
-import { TeamMemberCard } from '~features/index.ts';
+import { TeamMemberCard } from '~common/TeamMemberComponent/blocks/index.ts';
 
 
 const PartnersBlock: React.FC<PartnersBlockInterface> = ({ employeesData }) => {

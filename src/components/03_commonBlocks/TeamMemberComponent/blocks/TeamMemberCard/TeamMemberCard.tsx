@@ -59,7 +59,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem }) => {
             <p className={styles.jobTitle}>
               {employeeItem.jobTitle}
             </p>
-            
+
             {employeeItem.role == 'employee' ?
               <ContactInfoElement employeeItem={employeeItem}>
                 {quoteElement}

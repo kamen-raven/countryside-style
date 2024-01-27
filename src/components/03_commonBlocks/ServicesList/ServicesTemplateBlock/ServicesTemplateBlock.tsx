@@ -2,9 +2,8 @@ import React from 'react';
 import styles from './ServicesTemplateBlock.module.scss';
 import { ServicesTemplateBlockInterface } from './ServicesTemplateBlock.interface.ts';
 
-import BackgroundPattern from '~svg/background/backgroundOurServices.svg';
-import { BackgroundSVGPattern } from '~shared/index';
-import { ServiceCard } from '~features/index';
+
+import { ServiceCard } from '~common/index.ts';
 
 const ServicesTemplateBlock: React.FC<ServicesTemplateBlockInterface> = ({ servicesItems, title }) => {
 
