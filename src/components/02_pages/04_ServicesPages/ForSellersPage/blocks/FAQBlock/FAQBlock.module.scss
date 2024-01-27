@@ -1,0 +1,30 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: faqBlock;
+
+  @include mainContainer($padding: 90px 120px 120px)
+}
+
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 70px;
+  border-bottom: 2px solid $gray;
+}
+
+.title {
+  @include common-title(h2);
+
+}
+.buttonAsk {
+  @include common-button(colored);
+  @include common-paragraph(p,
+  $color: $white,
+  $font-family: $ff-openSans,
+  $font-weight: $regular);
+  text-align: center
+
+}

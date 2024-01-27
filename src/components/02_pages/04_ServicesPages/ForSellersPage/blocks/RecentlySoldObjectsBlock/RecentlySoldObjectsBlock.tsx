@@ -20,7 +20,7 @@ const RecentlySoldObjectsBlock: React.FC<RecentlySoldObjectsBlockInterface> = ({
           {recentObjectsData.map((item) => {
             if (item.status == 'sold') {
               return (
-                <CatalogCardItem item={item} />
+                <CatalogCardItem key={item.id} item={item} />
               );
             }
           })}

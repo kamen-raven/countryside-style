@@ -1,2 +1,23 @@
 @import '~global_styles';
 
+.wrapper {
+  grid-area: servicesStories;
+
+  @include mainContainer($padding: 90px 120px 120px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+
+.title {
+  @include common-title(h2);
+}
+
+.innerContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(400px, 800px);
+  gap: 50px;
+}

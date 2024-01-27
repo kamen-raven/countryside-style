@@ -1,0 +1,78 @@
+@import '~global_styles';
+
+.container {
+  padding: 50px 0;
+  border-bottom: 2px solid $gray;
+}
+
+
+.questionInner {
+display: grid;
+grid-template-columns: auto 55px;
+gap: 80px;
+cursor: pointer;
+
+
+}
+
+.question {
+  @include common-paragraph(pXl,
+  $line-height: 120%);
+  max-width: fit-content;
+
+  }
+
+
+.button {
+  @include common-button(transparent);
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  border: 1px solid $dark;
+  transition: all 0.3s linear;
+
+  & svg {
+    transition: all 0.3s linear;
+  }
+
+  &:hover {
+    transition: all 0.3s linear;
+
+    & svg {
+      stroke: $white;
+      transition: all 0.3s linear;
+    }
+  }
+}
+
+.answer {
+  padding-top: 30px;
+  @include common-paragraph(p,
+        $font-family: $ff-openSans,
+        $font-weight: $regular);
+    max-height: 0;
+    overflow: hidden;
+    transition:  max-height .3s ease-out;
+}
+
+.answerVisible {
+  max-height: 1000px;
+  transition: max-height .3s ease-out;
+}
+
+
+.isOpened {
+  background-color: $accent-green;
+  border: 1px solid $accent-green;
+  transition: all 0.3s linear;
+
+  & svg {
+    transform: rotate(45deg);
+    stroke: $white;
+    transition: all 0.3s linear;
+  }
+}
+
+

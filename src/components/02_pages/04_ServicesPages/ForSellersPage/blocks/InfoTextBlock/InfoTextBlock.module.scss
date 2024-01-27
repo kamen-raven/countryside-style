@@ -1,2 +1,87 @@
 @import '~global_styles';
 
+.wrapper {
+  grid-area: infoText;
+  background-image: url('../../../../../../../public/img/servicesPages/forSellersPage/infoBlockBG.jpg');
+  background-color: $dark;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  @include mainContainer($padding: 90px 120px);
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  height: 600px;
+}
+
+
+///titleContainer///
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.title {
+  @include common-title(h3small,
+    $color: $white);
+}
+
+.subtitle {
+  @include common-paragraph(p,
+    $color: $white,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+}
+
+
+///quoteContainer///
+.quoteContainer {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+
+.innerAuthor {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+
+}
+
+.authorAvatar {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.authorName {
+  @include common-paragraph(pXl,
+    $color: $white,
+    $font-weight: $bold,
+    $line-height: 120%);
+  text-wrap: nowrap;
+}
+
+.innerQuote {
+  padding-top: 30px;
+}
+
+.quote {
+  @include common-paragraph(p,
+    $color: $white,
+    $font-weight: $regular,
+    $line-height: 130%,
+    $font-style: italic);
+}
+
+.quoteSpan {
+  @extend .quote;
+  font-weight: $bold;
+  display: block;
+  padding-top: 1rem;
+}

@@ -5,6 +5,7 @@ import { advantagesItemInterface } from "~data/constant/advantagesList/advantage
 import { titleBlockDataInterface } from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockDataInterface";
 import { reviewDataInterface } from "~data/temp/reviewsData/reviewsData.interface";
 import { objectItemInterface } from "~data/temp/objectsTemplateList/objectItem.interface";
+import { faqDataListInterface } from "~data/constant/faqBlock/faqDataList.interface";
 
 export interface ForSellersPageInterface
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -13,4 +14,5 @@ export interface ForSellersPageInterface
   titleBlockData: titleBlockDataInterface;
   reviewsData: reviewDataInterface[];
   recentObjectsData: objectItemInterface[];
+  faqData: faqDataListInterface[];
 }

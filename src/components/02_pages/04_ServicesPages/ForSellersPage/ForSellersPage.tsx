@@ -11,7 +11,8 @@ const ForSellersPage: React.FC<ForSellersPageInterface> = ({
   titleBlockData,
   advantagesListData,
   recentObjectsData,
-  reviewsData }) => {
+  reviewsData,
+  faqData }) => {
     return (
         <main className = {styles.mainContainer}>
           <TitleBlockTemplate  pageData={titleBlockData[typePage]} />
@@ -21,7 +22,7 @@ const ForSellersPage: React.FC<ForSellersPageInterface> = ({
           <RecentlySoldObjectsBlock recentObjectsData={recentObjectsData}/>
           <ReviewsBlock reviewsDataItem={reviewsData}/>
           <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''}/>
-          <FAQBlock/>
+          <FAQBlock faqData={faqData} />
           <InfoTextBlock/>
         </main>
     );
