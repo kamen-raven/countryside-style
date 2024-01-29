@@ -59,9 +59,10 @@
 }
 
 .text {
-  @include common-title(h3small);
-  font-size: 30px;
-  line-height: 130%;
+  @include common-paragraph(pLg,
+    $line-height: 130%);
+
+
 
   &_spanAccent {
     @extend .text;

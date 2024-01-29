@@ -10,13 +10,13 @@ const ForCottageVillagesPage: React.FC<ForCottageVillagesPageInterface> = ({
 }) => {
     return (
         <main className = {styles.mainContainer}>
-          <TitleBlockTemplate  pageData={titleBlockData[typePage]} />
+{/*           <TitleBlockTemplate  pageData={titleBlockData[typePage]} />
           <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={''}/>
-
+ */}
           {/* Offers */}
           {/* Projects */}
           {/* TeamMemberBlock */}
-          <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''}/>
+{/*           <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''}/> */}
         </main>
     );
 };

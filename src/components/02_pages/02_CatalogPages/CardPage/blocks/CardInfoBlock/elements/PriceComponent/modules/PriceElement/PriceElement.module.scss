@@ -12,7 +12,8 @@
 }
 
 .idNum {
-  @include common-title(h3small);
+  @include common-paragraph(pXl,
+  $line-height: 120%);
   margin-bottom: 40px;
 }
 
@@ -38,14 +39,18 @@
 
 .telNumber {
   @include common-link;
-  @include common-title(h3small);
+  @include common-paragraph(pXl,
+  $line-height: 120%);
+
   display: block;
   margin-bottom: 25px;
 }
 
 .telInfo {
-  @include common-title(p);
-  font-family: $ff-openSans;
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-family: $ff-openSans);
+
   padding-left: 50px;
   position: relative;
 

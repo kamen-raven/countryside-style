@@ -3,15 +3,10 @@
 .callLink {
   display: flex;
   align-items: center;
-  gap: 15px;
-
+  gap: 1rem;
+  text-wrap: nowrap;
   @include common-link;
 
-
-  //
-
-  /* 138.462% */
-  //
 
   &_white {
     color: $white;
@@ -47,7 +42,7 @@
       & .callIcon {
         border: 1px solid $accent-green;
         background-color: $accent-green;
-        transition: all 0.3s linear;
+        transition: all 0.3s linear
       }
     }
   }
@@ -104,6 +99,14 @@
   display: inline-flex;
   background-color: transparent;
   transition: background-color 0.3s linear;
+
+  & svg {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   &_white {
     border: 1px $white solid;

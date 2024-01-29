@@ -1,3 +1,6 @@
+@import '../mixin/adaptive';
+
+
 //---COLOR---//
 $white: #ffffff;
 $black: #000000;
@@ -32,14 +35,14 @@ $extra-bold: 900;
 
 //font-size:
 $decorate: 6rem; //96px;
-$h1: 80px;//48px;
+$h1: clamp(45px, 6vw, 80px);// 80px;//48px;
 
 $title: 80px;
 $subtitle: 60px;
 $small-title: 36px;
 
 
-$fs-navLink: 16px;
+$fs-navLink: 0.813rem; // 13px //clamp(13px, 1vw, 16px);
 
 
 $paragraph-xl: 36px;
@@ -51,3 +54,9 @@ $paragraph-small: 14px;
 //---OTHER---//
 $border-radius: 27px;
 $scrollbar-width: 1rem;
+
+
+$padding-side: 120px;
+
+$margin-side: 18.125rem; // 290px
+

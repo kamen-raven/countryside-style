@@ -64,12 +64,13 @@
 
     background-color: $accent-green;
 
-    color: $white;
+    @include common-paragraph(p,
+    $font-weight: $bold,
+    $color: $white,
+    $font-family: $ff-openSans,
+    $line-height: 110%);
+
     text-align: center;
-    font-family: $ff-openSans;
-    font-size: 22px;
-    font-weight: $bold;
-    line-height: 110%;
     text-transform: uppercase;
   }
 
@@ -127,8 +128,9 @@
 }
 
 .address {
-  @include common-title(p);
-font-family: $ff-openSans;
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-family: $ff-openSans);
 }
 
 .priceContainer {
@@ -150,8 +152,8 @@ font-family: $ff-openSans;
 }
 
 .price {
-  @include common-title(h3small,
-                        $color: $accent-green);
+  @include common-paragraph(pXl,
+  $color: $accent-green);
 }
 
 .arrow {

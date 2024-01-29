@@ -9,10 +9,9 @@
   border: 1px solid $gray;
   border-radius: $border-radius;
 
-  @include common-title(p);
-
-  font-family: $ff-openSans;
-
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-family: $ff-openSans);
 
   &_opened {
     border-radius: $border-radius $border-radius 0;

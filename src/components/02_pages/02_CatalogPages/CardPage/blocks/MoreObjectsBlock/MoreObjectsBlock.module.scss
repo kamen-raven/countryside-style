@@ -145,18 +145,20 @@
 }
 
 .status {
-  @include common-title(p,
-    $color: $accent-green);
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $color: $accent-green,
+  $font-family: $ff-openSans);
 
-  font-family: $ff-openSans;
   &_bold {
     font-weight: $bold;
   }
 }
 
 .address {
-  @include common-title(p);
-font-family: $ff-openSans;
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-family: $ff-openSans);
 }
 
 .priceContainer {
@@ -178,8 +180,10 @@ font-family: $ff-openSans;
 }
 
 .price {
-  @include common-title(h3small,
-                        $color: $accent-green);
+  @include common-paragraph(pXl,
+  $color: $accent-green);
+
+
 }
 
 .arrow {

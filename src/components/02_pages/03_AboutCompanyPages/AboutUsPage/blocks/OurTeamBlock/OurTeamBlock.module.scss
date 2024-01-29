@@ -23,9 +23,11 @@
 }
 
 .paragraph {
-  @include common-title(p);
-  margin: 0 120px;
-  font-family: $ff-openSans;
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-family: $ff-openSans,
+  $margin: 0 120px);
+
   column-count: 2;
   column-gap: 50px;
 }

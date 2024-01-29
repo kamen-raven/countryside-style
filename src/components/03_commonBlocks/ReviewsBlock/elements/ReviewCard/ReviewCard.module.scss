@@ -37,12 +37,13 @@
   }
 
   &__name {
-    @include common-title(h3small);
+    @include common-paragraph(pXl);
     max-width: 500px;
   }
 
   &__date {
-    @include common-title(p);
+    @include common-paragraph(p,
+    $font-weight: $regular);
 
   }
 
@@ -65,7 +66,9 @@
 }
 
 .reviewText {
-  @include common-title(p);
+  @include common-paragraph(p,
+  $font-weight: $regular);
+
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;

@@ -23,8 +23,9 @@
 }
 
 .info {
-  @include common-title (p);
-  font-family: $ff-openSans;
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-family: $ff-openSans);
 
 
   &_accent {

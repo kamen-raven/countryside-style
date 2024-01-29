@@ -32,10 +32,11 @@
 }
 
 .schedule {
-  font-size: $paragraph-lg;
-  font-weight: $regular;
-  line-height: 120%;
-  margin: 0;
+  @include common-paragraph(pLg,
+  $font-weight: $regular,
+  $line-height: 120%,
+  $color: $white);
+
   margin-bottom: 50px;
 }
 
@@ -55,9 +56,10 @@
   gap: 20px;
 
   @include common-link;
-  @include common-title(pLg,
-      $font-weight: $bold,
-      $color: $white);
+
+  @include common-paragraph(pLg,
+  $font-weight: $bold,
+  $color: $white);
 
   & svg {
     fill: $white;
@@ -123,13 +125,13 @@
 
     padding-left: 20px;
 
+    @include common-paragraph(p,
+    $font-weight: $regular,
+    $color: $white,
+    $font-family: $ff-openSans);
+
     text-decoration: none;
-    color: $white;
     text-align: center;
-    font-family: $ff-openSans;
-    font-size: 22px;
-    font-weight: $regular;
-    line-height: 130%;
   }
 }
 
@@ -137,7 +139,9 @@
 .buttonCall {
   max-height: 55px;
   padding: 0 20px;
-  font-size: 22px;
-  line-height: 120%;
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $color: $white,
+  $line-height: 120%);
   box-sizing: border-box;
 }

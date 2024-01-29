@@ -30,7 +30,9 @@
 }
 
 .container {
-  @include mainContainer($padding: 70px 120px);
+  @include mainContainer();
+  padding: 70px 120px;
+
   height: 800px;
 }
 
@@ -80,6 +82,9 @@
 }
 
 .subtitle {
+
+
+
   @include common-title(h3,
             $color: $white,
             $font-weight: $regular);

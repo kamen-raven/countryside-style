@@ -3,7 +3,8 @@
 .container {
   grid-area: statisticsInfo;
 
-  @include mainContainer($margin: 110px auto);
+  @include mainContainer();
+  margin: 110px auto;
 
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { InfoHeadProps } from './InfoHead.props';
 import styles from './InfoHead.module.scss';
 
-import { BackgroundSVGPattern, Button, Input } from '~shared/index';
+import { BackgroundSVGPattern, Button } from '~shared/index';
 import SecondImg from '~img/headBlock/second.jpg';
 
 import BackgroundPattern from '~svg/background/backgroundTitleHead.svg';
@@ -47,7 +47,7 @@ const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
             Оставьте заявку<br /> на&nbsp;БЕСПЛАТНУЮ консультацию
           </p>
           <form name='requestForm' className={styles.requestForm__form}>
-            <Input className={styles.requestForm__input}
+            <input className={styles.requestForm__input}
               placeholder='Ваш телефон' />
             <Button className={styles.requestForm__button} appearance={'colored'}>
               Узнать цену

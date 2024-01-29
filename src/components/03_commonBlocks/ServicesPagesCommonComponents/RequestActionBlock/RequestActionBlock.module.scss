@@ -11,7 +11,9 @@
 }
 
 .container {
-  @include mainContainer($padding: 70px 120px 90px);
+  @include mainContainer();
+  padding: 70px 120px 90px;
+
   display: flex;
   flex-direction: column;
   gap: 35px;

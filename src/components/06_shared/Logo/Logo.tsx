@@ -17,7 +17,7 @@ const Logo = ({ color }: LogoProps): JSX.Element => {
     return (
       <>
         <Link className = {`${styles.logo}  ${setLogoColor}`} href={'/'}>
-          <LogoIcon/>
+          <LogoIcon />
         </Link>
       </>
     );

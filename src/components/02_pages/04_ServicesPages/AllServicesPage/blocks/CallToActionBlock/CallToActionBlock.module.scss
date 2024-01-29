@@ -1,7 +1,8 @@
 @import '~global_styles';
 
 .wrapper {
-  @include mainContainer($padding: 90px 120px);
+  @include mainContainer();
+  padding: 90px 120px;
   background-image: url('../../../../../../../public/img/common-images/backgroundCallToAction.jpg');
   background-position: center;
   background-repeat: no-repeat;

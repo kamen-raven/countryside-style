@@ -7,8 +7,8 @@
 }
 
 .container {
-  @include mainContainer($padding: 0);
-
+  @include mainContainer();
+  padding: 0;
   display: grid;
   grid-template-columns: auto minmax(400px, 880px);
   align-items: center;

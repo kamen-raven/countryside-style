@@ -75,7 +75,8 @@
 }
 
 .paragraph {
-  @include common-title(p);
+  @include common-paragraph(p,
+  $font-weight: $regular);
 
   &_banner {
     color: $accent-green;

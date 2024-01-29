@@ -2,11 +2,15 @@
 
 .list {
   @include common-ul;
-
+  @include mainContainer();
+  width: 100%;
+  margin: 0 auto;
   &_header {
     display: flex;
     align-items: center;
-    gap: 60px;
+    justify-content: space-between;
+    gap: 1rem;
+
   }
 
   &_footer {
@@ -29,8 +33,9 @@
 
 .link {
   @include common-link;
-  @include common-title(link);
+  @include common-paragraph(link);
   text-transform: uppercase;
+  text-wrap: nowrap;
     &_header {
       color: $white;
     }

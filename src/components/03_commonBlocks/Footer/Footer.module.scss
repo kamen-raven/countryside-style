@@ -50,10 +50,9 @@
 }
 
 .phone {
-  @include common-title(p,
-    $color: $gray-dark,
-    $font-weight: $bold,);
-    font-weight: $bold;
+  @include common-paragraph(p,
+  $font-weight: $bold,
+  $color: $gray-dark);
   text-decoration: none;
 }
 
@@ -89,8 +88,9 @@
 
 
 .address {
-  @include common-title (pSmall, $color: $gray-dark);
-
+  @include common-paragraph(pSm,
+  $font-weight: $regular,
+  $color: $gray-dark);
 text-align: right;
 
 }

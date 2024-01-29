@@ -6,7 +6,9 @@
 }
 
 .container {
-  @include mainContainer($margin: 90px auto);
+  @include mainContainer();
+
+  margin: 90px auto;
   display: flex;
   flex-direction: column;
   gap: 50px;

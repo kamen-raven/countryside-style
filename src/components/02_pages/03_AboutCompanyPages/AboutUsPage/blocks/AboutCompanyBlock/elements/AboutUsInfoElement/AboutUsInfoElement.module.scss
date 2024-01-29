@@ -34,8 +34,9 @@
 }
 
 .awardDescription {
-  @include common-title(h3small,
+  @include common-paragraph(pXl,
   $color: $white);
+
   max-width: 520px;
 
 }
@@ -56,8 +57,6 @@
 }
 
 .associationDescription {
-  @include common-title(h3small,
+  @include common-paragraph(pLg,
   $color: $accent-green);
-  font-size: 30px;
-
 }

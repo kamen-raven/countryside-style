@@ -1,6 +1,29 @@
 @import '~global_styles';
 
 .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner {
+  @include mainContainer();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: stretch;
+  gap: 50px;
+  padding: 32px 0;
+}
+
+.navMenu {
+  box-sizing: border-box;
+  display: flex;
+  background-color: $dark;
+  padding: 16px 0;
+}
+
+
+/* .header {
   display: grid;
   grid-template-rows: auto 60px;
   //grid-template-columns: minmax(20px, 120px) minmax(280px, 1920px) minmax(20px, 120px);
@@ -35,3 +58,4 @@
   max-height: 60px;
   height: 100%;
 }
+ */

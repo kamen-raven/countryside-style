@@ -34,17 +34,22 @@
   }
 
   &__name {
-    @include common-title(h3small,
+    @include common-paragraph(pXl,
     $font-weight: $bold);
+
   }
 
   &__jobTitle {
-    @include common-title(p);
+
+    @include common-paragraph(p,
+    $font-weight: $regular);
+
   }
 
   &__location {
-    @include common-title(p);
-    font-weight: $bold;
+    @include common-paragraph(p,
+    $font-weight: $bold);
+
     display: inline-flex;
     gap: 13px;
     align-items: center;
@@ -56,7 +61,7 @@
 }
 
 .phoneNumber {
-  @include common-title(pLg,
+  @include common-paragraph(pLg,
   $font-weight: $bold);
 }
 

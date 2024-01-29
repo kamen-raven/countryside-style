@@ -2,8 +2,11 @@
   @if  $point == screen1920 {
     @media (max-width: 1920px) {@content;}
   }
-  @else if $point == screen1600 {
-    @media (max-width: 1600px)  {@content;}
+  @else if $point == screen1680 {
+    @media (max-width: 1680px)  {@content;}
+  }
+  @else if $point == screen1440 {
+    @media (max-width: 1440px)  {@content;}
   }
   @else if $point == screen1280 {
     @media (max-width: 1280px)  {@content;}

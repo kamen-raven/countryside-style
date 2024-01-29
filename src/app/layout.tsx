@@ -29,7 +29,7 @@ export default function RootLayout({
         <div className={styles.container} >
           <Header headerGridArea={styles.gridArea_header} />
             {children}
-          <Footer footerGridArea={styles.gridArea_footer} />
+{/*           <Footer footerGridArea={styles.gridArea_footer} /> */}
         </div>
       </body>
     </html>

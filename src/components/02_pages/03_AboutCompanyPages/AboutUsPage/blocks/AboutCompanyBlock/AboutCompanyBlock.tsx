@@ -21,9 +21,9 @@ const AboutCompanyBlock: React.FC<AboutCompanyBlockInterface> = ({ aboutUsPageFa
           <h1 className={styles.title}>
             О компании
           </h1>
-          <p className={styles.subtitle}>
+          <h2 className={styles.subtitle}>
             Загородный стиль – это специализированное агентство по&nbsp;загородной недвижимости.
-          </p>
+          </h2>
         </>
 
         <div className={styles.iconsContainer}>

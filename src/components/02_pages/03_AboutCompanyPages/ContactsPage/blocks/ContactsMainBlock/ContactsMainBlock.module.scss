@@ -37,9 +37,9 @@
 } */
 
 .disclaimerText {
-  @include common-title(h3small,
-    $font-weight: $regular,
-    $color: $white);
+  @include common-paragraph(pXl,
+  $font-weight: $regular,
+  $color: $white);
 }
 
 .disclaimerText_spanAccent {
@@ -61,8 +61,9 @@
 
 
 .workTime {
-  @include common-title(pLg,
-    $font-weight: $regular);
+  @include common-paragraph(pLg,
+  $font-weight: $regular);
+
 
   &_spanAccent {
     @extend .workTime;
@@ -71,9 +72,9 @@
 }
 
 .phoneNumber {
-  @include common-title(pLg,
-    $color: $accent-green,
-    $font-weight: $bold);
+  @include common-paragraph(pLg,
+  $color: $accent-green,
+  $font-weight: $bold);
 }
 
 .emailContainer {
@@ -98,10 +99,10 @@
 
 
 .email {
-  @include common-title(pLg,
-    $font-weight: $regular,
-    $color: $accent-green);
-  line-height: 100%;
+  @include common-paragraph(pLg,
+  $font-weight: $regular,
+  $color: $accent-green,
+  $line-height: 100%);
   text-decoration: none;
   border-bottom: 1px solid $accent-green;
   transition: all 0.2s linear;

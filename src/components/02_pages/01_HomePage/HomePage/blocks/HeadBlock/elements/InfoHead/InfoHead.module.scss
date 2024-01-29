@@ -92,12 +92,8 @@
   }
 
   &__input {
-    color: $gray;
-    font-family: $ff-openSans;
-    font-size: 22px;
-    line-height: 135%;
-    width: 100%;
-    padding: 11px 30px;
+    @include common-input;
+
   }
 
   &__button {

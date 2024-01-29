@@ -65,9 +65,10 @@
   justify-content: space-evenly;
   gap: 6px;
 
-  @include common-title(pSmall );
-  font-family: $ff-openSans;
-  line-height: 120%; /* 121.429% */
+  @include common-paragraph(pSm,
+  $font-weight: $regular,
+  $font-family: $ff-openSans,
+  $line-height: 120%);
   text-decoration-line: underline;
 
   padding: 0;

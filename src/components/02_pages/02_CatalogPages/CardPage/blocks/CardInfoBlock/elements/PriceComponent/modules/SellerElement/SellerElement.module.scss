@@ -26,16 +26,15 @@
 }
 
 .name {
-  @include common-title(h3small,
-  $font-weight: $bold);
-
+  @include common-paragraph(pXl,
+            $font-weight: $bold,
+            $line-height: 120%);
 }
 
 .description {
-  @include common-title(p,
-  $font-weight: $bold);
-  font-family: $ff-openSans;
-
+  @include common-paragraph(p,
+        $font-weight: $bold,
+        $font-family: $ff-openSans);
 }
 
 .contactButton {
@@ -44,9 +43,10 @@
   border-radius: 30px;
   max-height: 55px;
 
-  @include common-title(p,
-  $color: $dark);
-  font-family: $ff-openSans;
+  @include common-paragraph(p,
+  $color: $dark,
+  $font-family: $ff-openSans,
+  $font-weight: $regular);
 
   &__icon {
     width: 45px;

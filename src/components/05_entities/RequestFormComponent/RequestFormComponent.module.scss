@@ -13,9 +13,12 @@
 }
 
 .description {
-  @include common-title (p,
-                        $color: $white);
-  font-family: $ff-openSans;
+
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $color: $white,
+  $font-family: $ff-openSans);
+
   margin-bottom: 35px;
 }
 
@@ -53,5 +56,8 @@
 
 .agreement {
   display: inline-block;
-  @include common-title(pSmall, $color: $white);
+
+  @include common-paragraph(pSm,
+  $font-weight: $regular,
+  $color: $white);
 }

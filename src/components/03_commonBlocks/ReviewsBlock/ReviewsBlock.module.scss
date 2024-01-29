@@ -4,7 +4,10 @@
 .wrapper {
   grid-area: reviews;
 /*   @include common-wrapper; */
-@include mainContainer($padding: 90px 120px 120px, $margin: 0 auto);
+@include mainContainer();
+padding: 90px 120px 120px;
+margin: 0 auto;
+
 }
 
 
