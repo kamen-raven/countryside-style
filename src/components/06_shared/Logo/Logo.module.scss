@@ -12,6 +12,13 @@
     display: flex;
     width: min-content;
     object-fit: contain;
+
+    @include breakpoint(screen1280) {
+      max-width: 80px;
+    }
+    @include breakpoint(screen960) {
+      width: 100%;
+    }
   }
 
   &_gray  {

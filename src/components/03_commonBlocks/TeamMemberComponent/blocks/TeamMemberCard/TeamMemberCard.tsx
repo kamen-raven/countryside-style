@@ -45,11 +45,11 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem }) => {
       {/*       <div className={`${setColor}`}></div> */}
       <div className={`${styles.container}  ${setColor}`}>
         <div className={`${styles.innerBlock} ${setTemplate}`}>
-          <div className={styles.imageContainer}>
+
             <Image className={styles.image}
               src={employeeItem.photo}
               alt={''} />
-          </div>
+
 
           <div className={styles.infoContainer}>
             <h3 className={styles.name}>

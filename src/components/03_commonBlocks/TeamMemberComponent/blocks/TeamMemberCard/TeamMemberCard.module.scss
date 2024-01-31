@@ -1,7 +1,7 @@
 @import '~global_styles';
 
 .container {
-  width: auto;
+  width: 0 auto;
 
 }
 
@@ -23,10 +23,10 @@
 
 .innerBlock {
   display: flex;
-  max-height: 800px;
-  max-width: 1920px;
+  max-height: 600px;
+  max-width: calc(1920px - ($padding-side) * 2);
   margin: 0 auto;
-  align-items: stretch;
+  align-items: center;
 
   &_textFirst{
     flex-direction: row-reverse;
@@ -36,24 +36,24 @@
 
 
 .imageContainer {
-  position: relative;
+
 }
 
 .image {
   object-fit: cover;
-  width:  max(350px, 880px);
-  height: max(350px, 800px);;
+  width:  50%;
+  height: max(350px, 600px);
 }
 
 
 
 
 .infoContainer {
-  margin: auto 100px;
+  margin: 0 85px;
 }
 
 .name {
-  @include common-title(h3, $color: $white);
+  @include common-title(hSubtitle, $color: $white);
 
 }
 
@@ -61,27 +61,27 @@
   @include common-paragraph(pLg,
   $color: $white,
   $font-weight: $regular,
-  $margin: 25px 0 0);
+  $margin: 12px 0 0);
 }
 
 
 
 
 .quoteContainer {
-  margin-top: 70px ;
+  margin-top: 45px ;
   display: flex;
 }
 
 .quotationMark {
   color: $white;
-  font-size: 100px;
+  font-size: $decorate;
   font-weight: $medium;
   line-height: 100%;
   margin: 0;
-  margin-right: 25px;
+  margin-right: 20px;
 }
 
 .quoteText {
-  @include common-title(h3small, $color: $white);
+  @include common-paragraph(pLg, $color: $white);
   margin-top: 10px;
 }

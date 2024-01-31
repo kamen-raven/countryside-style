@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styles from './PriceElement.module.scss';
 import { PriceComponentInterface } from '../../PriceComponent.interface.ts';
 import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
+import Link from 'next/link';
 
 
 const PriceElement: React.FC<PriceComponentInterface> = ({ data }) => {
@@ -22,10 +23,10 @@ const PriceElement: React.FC<PriceComponentInterface> = ({ data }) => {
     } else {
       return (
         <div className={styles.numberContainer}>
-          <a className={styles.telNumber}
+          <Link className={styles.telNumber}
               href={`tel: ${data.seller.contact}`}>
             {formatPhoneNumber(data.seller.contact)}
-          </a>
+          </Link>
           <p className={styles.telInfo}>
             Номер только для звонков, сообщения не дойдут.
             Если захотите оставить жалобу, напишите нам.

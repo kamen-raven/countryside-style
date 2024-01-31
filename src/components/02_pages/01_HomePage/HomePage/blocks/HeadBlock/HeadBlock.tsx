@@ -5,9 +5,7 @@ import { InfoHead, TitleHead } from './elements';
 import styles from './HeadBlock.module.scss';
 
 
-
-const HeadBlock = (): JSX.Element => {
-
+const HeadBlock: React.FC = () => {
 
   return (
     <section className = {styles.wrapper}>

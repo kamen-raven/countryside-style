@@ -6,13 +6,16 @@
 }
 
 .inner {
-  @include mainContainer();
+  @include mainContainer($padding-upDown: 32px );
   display: flex;
   justify-content: space-between;
   align-items: center;
   justify-items: stretch;
   gap: 50px;
-  padding: 32px 0;
+
+  @include breakpoint(screen1280) {
+    gap: 35px;
+  }
 }
 
 .navMenu {

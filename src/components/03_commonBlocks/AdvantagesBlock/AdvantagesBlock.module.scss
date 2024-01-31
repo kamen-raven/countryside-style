@@ -29,7 +29,7 @@
 
 
 .title {
-  @include common-title(h2);
+  @include common-title(hTitle);
 }
 
 .titleContainer {
@@ -59,7 +59,7 @@
 
 
 .title {
-  @include common-title(h2);
+  @include common-title(hTitle);
   margin: 0 0 65px;
 }
  */

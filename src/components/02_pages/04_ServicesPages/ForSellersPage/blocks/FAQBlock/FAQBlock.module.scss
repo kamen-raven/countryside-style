@@ -17,7 +17,7 @@
 }
 
 .title {
-  @include common-title(h2);
+  @include common-title(hTitle);
 
 }
 .buttonAsk {

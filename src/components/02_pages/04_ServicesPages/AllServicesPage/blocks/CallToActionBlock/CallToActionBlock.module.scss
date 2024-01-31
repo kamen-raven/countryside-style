@@ -17,7 +17,7 @@
 }
 
 .callText {
-  @include common-title(h2,
+  @include common-title(hTitle,
           $color: $white);
 
 }

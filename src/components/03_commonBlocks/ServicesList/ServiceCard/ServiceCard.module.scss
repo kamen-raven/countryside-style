@@ -1,11 +1,16 @@
+@import '~global_styles';
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 50px;
+
+  @include breakpoint(screen1440) {
+    gap: 30px;
+  }
 
   &_smallSize {
     grid-column: auto;
-
   }
 
   &_bigSize {
@@ -29,18 +34,18 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .image {
   object-fit: cover;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: auto;
 
   &_smallSize {
     max-width: 390px;
-    max-height: 390px;
+    height: clamp(300px, 20vw, 390px);
   }
 
   &_bigSize {

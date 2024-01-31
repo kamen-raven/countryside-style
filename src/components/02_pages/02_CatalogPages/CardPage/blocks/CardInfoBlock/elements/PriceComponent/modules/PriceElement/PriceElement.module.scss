@@ -6,7 +6,7 @@
 }
 
 .cost {
-  @include common-title(h3,
+  @include common-title(hSubtitle,
   $color: $accent-green);
   margin-bottom: 15px;
 }

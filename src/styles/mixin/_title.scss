@@ -8,65 +8,33 @@
                     $color: $dark)  {
 
     @if $htag == h1 {
-      font-size: $h1; // 80px
+      font-size: $h1; // 65px
       font-weight: $font-weight; // medium - 500
       line-height: $line-height;
       margin: $margin;
       color: $color;
     }
 
-    @if $htag == h2 {
-      font-size: $font-size; //80px
+    @if $htag == hTitle {
+      font-size: $font-size; // 65px
       font-weight: $font-weight; // medium - 500
       line-height: $line-height;
       margin: $margin;
       color: $color;
     }
 
-    @if $htag == h3 {
-      font-size: $subtitle;  //60px
+    @if $htag == hSubtitle {
+      font-size: $subtitle; // 45px
       font-weight: $font-weight;// medium - 500
       line-height: 115%;
       margin: 0;
       color: $color;
     }
 
-    @if $htag == h3small {
-      font-size: $small-title;  // 36px
+    @if $htag == hSmall {
+      font-size: $small-title;  //28px
       font-weight: $font-weight; // medium - 500
-      line-height: 120%;
-      margin: 0;
-      color: $color;
-    }
-
-    @if $htag == pLg {
-      font-size: $paragraph-lg;  // 30px
-      font-weight: $font-weight; // medium - 500
-      line-height: 120%;
-      margin: 0;
-      color: $color;
-    }
-
-    @if $htag == p {
-      font-size: $paragraph-md; // 22px
-      font-weight: $regular; // regular - 400
-      line-height: 130%;
-      margin: 0;
-      color: $color;
-    }
-
-    @if $htag == pSmall {
-      font-size: $paragraph-small; // 14px
-      font-weight: $regular; // regular - 400
-      line-height: 150%;
-      margin: 0;
-      color: $color;
-    }
-
-    @if $htag == link {
-      font-size: $fs-navLink; // 16px
-      font-weight: $medium; //500
-      line-height: 150%;
+      line-height: 128.571%;
       margin: 0;
       color: $color;
     }

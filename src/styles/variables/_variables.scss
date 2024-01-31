@@ -34,29 +34,27 @@ $bold: 700;
 $extra-bold: 900;
 
 //font-size:
-$decorate: 6rem; //96px;
-$h1: clamp(45px, 6vw, 80px);// 80px;//48px;
+$decorate: 5rem; // 80px |96px;
 
-$title: 80px;
-$subtitle: 60px;
-$small-title: 36px;
+$h1: 4.063rem; // 65px | 80px
 
+$title: 4.063rem; // 65px
+$subtitle: 2.813rem; // 45px |60px;
+$small-title: 1.75rem; //28px |36px;
+
+$paragraph-xl: 1.75rem; //28px |36px;
+$paragraph-lg: 1.5rem; // 24px |30px;
+$paragraph-md: 1.125rem; // 18px |22px;
+$paragraph-small: 0.75rem; // 12px |14px;
 
 $fs-navLink: 0.813rem; // 13px //clamp(13px, 1vw, 16px);
-
-
-$paragraph-xl: 36px;
-$paragraph-lg: 30px;
-$paragraph-md: 22px;
-$paragraph-small: 14px;
-
 
 //---OTHER---//
 $border-radius: 27px;
 $scrollbar-width: 1rem;
 
 
-$padding-side: 120px;
+$padding-side: clamp(3.125rem, 7vw, 7.5rem);  //clamp(50px, 7vw, 120px);
 
 $margin-side: 18.125rem; // 290px
 

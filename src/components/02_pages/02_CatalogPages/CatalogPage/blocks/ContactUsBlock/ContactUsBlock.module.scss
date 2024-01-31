@@ -27,7 +27,7 @@
 
 
 .title {
-  @include common-title(h3, $color: $white);
+  @include common-title(hSubtitle, $color: $white);
   margin-bottom: 25px;
 }
 

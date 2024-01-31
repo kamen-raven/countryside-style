@@ -10,6 +10,7 @@ import { Button } from '~shared/index.ts';
 import CallIcon from '~svg/contacts/Phone.svg';
 import TelegramIcon from '~svg/contacts/Telegram2.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
+import Link from 'next/link';
 
 
 
@@ -34,30 +35,30 @@ const ContactUsBlock: React.FC<ContactUsBlockInterface> = () => {
           <address className={styles.addressContainer} >
 
 
-            <a className={styles.callLink} href={`tel:${+78126432040}`}>
+            <Link className={styles.callLink} href={`tel:${+78126432040}`}>
               <span className={styles.callIcon}>
                 <CallIcon />
               </span>
               8&nbsp;(812)&nbsp;643-20-40
-            </a>
+            </Link>
 
 
             <ul className={styles.contactsList}>
               <li className={`${styles.contactItem}`}>
-                <a className={styles.contactItem__link} href={'/'}>
+                <Link className={styles.contactItem__link} href={'/'}>
                   Telegram
                   <span className={styles.contactItem__icon}>
                     <TelegramIcon />
                   </span>
-                </a>
+                </Link>
               </li>
               <li className={`${styles.contactItem}`}>
-                <a className={styles.contactItem__link} href={'/'}>
+                <Link className={styles.contactItem__link} href={'/'}>
                   WhatsApp
                   <span className={styles.contactItem__icon}>
                     <WhatsappIcon />
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
 

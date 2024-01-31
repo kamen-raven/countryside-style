@@ -4,14 +4,17 @@
 .wrapper {
   grid-area: blog;
   position: relative;
-  @include common-wrapper;
+  padding-top: 70px;
+  padding-bottom: 100px;
 }
 
 .container {
-  grid-area: container;
-  margin: 90px 120px 130px;
+  @include mainContainer();
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .title {
-  @include common-title(h2);
+  @include common-title(hTitle);;
 }

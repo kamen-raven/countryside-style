@@ -1,4 +1,6 @@
-export const menuList = [
+import { MenuItemInterface } from "./menuList.interface";
+
+export const menuList: MenuItemInterface[] = [
   {
     name: "houses",
     title: "Дома, дачи, коттеджи",

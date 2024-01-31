@@ -6,6 +6,7 @@ import WhatsappIcon from '~svg/contacts/WhatsApp.svg';
 import VkontakteIcon from '~svg/contacts/VK.svg';
 
 import { AddressElementInterface } from './AddressElement.interface';
+import Link from 'next/link';
 
 const AddressElement: React.FC<AddressElementInterface> = ({ addressInfoData }) => {
   return (
@@ -18,31 +19,31 @@ const AddressElement: React.FC<AddressElementInterface> = ({ addressInfoData }) 
       </p>
       <ul className={styles.contactsList}>
         <li className={`${styles.contactItem} ${styles.contactItem__telegram}`}>
-          <a className={styles.contactItem__link}
+          <Link className={styles.contactItem__link}
             href={addressInfoData.contacts.telegram}>
             Telegram
             <span className={styles.contactItem__icon}>
               <TelegramIcon />
             </span>
-          </a>
+          </Link>
         </li>
         <li className={`${styles.contactItem} ${styles.contactItem__whatsapp}`}>
-          <a className={styles.contactItem__link}
+          <Link className={styles.contactItem__link}
             href={addressInfoData.contacts.whatsapp}>
             WhatsApp
             <span className={styles.contactItem__icon}>
               <WhatsappIcon />
             </span>
-          </a>
+          </Link>
         </li>
         <li className={`${styles.contactItem} ${styles.contactItem__vkontakte}`}>
-          <a className={styles.contactItem__link}
+          <Link className={styles.contactItem__link}
             href={addressInfoData.vkontakte}>
             Все свежие объекты смотри в нашей группе ВК
             <span className={styles.contactItem__icon}>
               <VkontakteIcon />
             </span>
-          </a>
+          </Link>
         </li>
       </ul>
     </address>

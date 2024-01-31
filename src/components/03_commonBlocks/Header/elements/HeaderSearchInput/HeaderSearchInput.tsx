@@ -1,11 +1,13 @@
 import React from "react";
-import { SearchInputProps } from "./SearchInput.props";
-import styles from "./SearchInput.module.scss";
+
+import styles from "./HeaderSearchInput.module.scss";
 import SearchIcon from "~svg/search/searchIcon.svg";
 
-const SearchInput = ({ ...props }: SearchInputProps): JSX.Element => {
+
+
+const HeaderSearchInput: React.FC = () => {
   return (
-    <div className={styles.container} {...props}>
+    <div className={styles.container} >
       <input className={styles.input} placeholder={`Поиск по сайту`} />
       <div className={styles.icon}>
         <SearchIcon />
@@ -14,4 +16,4 @@ const SearchInput = ({ ...props }: SearchInputProps): JSX.Element => {
   );
 };
 
-export { SearchInput };
+export { HeaderSearchInput };

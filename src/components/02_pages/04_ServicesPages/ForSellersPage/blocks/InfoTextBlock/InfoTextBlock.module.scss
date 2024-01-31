@@ -27,7 +27,7 @@
 }
 
 .title {
-  @include common-title(h3small,
+  @include common-title(hSmall,
     $color: $white);
 }
 

@@ -7,17 +7,17 @@ import { pressDataInterface } from "./pressArticles.interface";
 const pressData: pressDataInterface[] = [
   {
     _id: 1,
-    journal: 'CudNews',
-    article: 'Какие квартиры невозможно продать без дисконта?',
-    link: 'https://cud.news/72686/',
-    logo: CudNewsLogo,
-  },
-  {
-    _id: 2,
     journal: 'Kommersant',
     article: 'Обратная ипотека ',
     link: 'https://www.kommersant.ru/doc/5899850',
     logo: KommersantLogo,
+  },
+  {
+    _id: 2,
+    journal: 'CudNews',
+    article: 'Какие квартиры невозможно продать без дисконта?',
+    link: 'https://cud.news/72686/',
+    logo: CudNewsLogo,
   },
   {
     _id: 3,

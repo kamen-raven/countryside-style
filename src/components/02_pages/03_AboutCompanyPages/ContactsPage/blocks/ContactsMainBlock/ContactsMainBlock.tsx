@@ -8,6 +8,7 @@ import AttentionDisclaimerIcon from '~svg/icons/attentionDisclaimer.svg';
 import MailIcon from '~svg/contacts/email.svg';
 
 import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
+import Link from 'next/link';
 
 const ContactsMainBlock: React.FC<ContactsMainBlockInterface> = ({ generalContactsData }) => {
 
@@ -55,9 +56,9 @@ const ContactsMainBlock: React.FC<ContactsMainBlockInterface> = ({ generalContac
               <div className={styles.emailIcon}>
                 <MailIcon />
               </div>
-              <a className={styles.email} href={`mailto:${generalContactsData.email}`}>
+              <Link className={styles.email} href={`mailto:${generalContactsData.email}`}>
                 {generalContactsData.email}
-              </a>
+              </Link>
             </div>
           </>
         </div>

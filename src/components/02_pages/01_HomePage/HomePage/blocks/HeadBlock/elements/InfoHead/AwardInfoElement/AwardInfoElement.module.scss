@@ -1,37 +1,54 @@
 @import '~global_styles';
 
-.kaissa {
-  grid-area: kaissa;
+.award {
+  flex-shrink: 1;
   display: flex;
   align-items: flex-start;
   position: relative;
+  width: 100%;
 
   &__imgBlock {
     position: absolute;
-    bottom: 30px;
+    top: -100px;
     left: 0;
+
+    @include breakpoint(screen1280) {
+      top: -100px;
+      left: 0;
+    }
   }
 
   &__image {
-    width: 75%;
-    height: 75%;
-  }
+    max-width: 140px;
+    max-height: 348px;
+    object-fit: contain;
 
+    @include breakpoint(screen1280) {
+      max-width: none;
+      max-height: none;
+      width: 65%;
+      height: 65%;
+    }
+  }
   &__infoBlock {
+    width: 100%;
     display: flex;
     align-items: center;
     background: $accent-green;
-    margin-left: 130px;
-    width: 660px;
-    height: 320px;
+    margin-left: 90px;
   }
 
   &__info {
-    display: block;
-    font-size: 32px;
-    font-weight: $medium;
-    line-height: 130%;
-    padding-left: 90px;
+    @include common-paragraph(pXl,
+      $color: $white);
+    padding: 50px 90px;
     margin: 0;
+
+
+    @include breakpoint(screen1280) {
+      padding: 50px 70px;
+    }
   }
+
+
 }

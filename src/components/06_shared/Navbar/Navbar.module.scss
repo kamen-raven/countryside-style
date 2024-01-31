@@ -2,15 +2,39 @@
 
 .list {
   @include common-ul;
-  @include mainContainer();
+
   width: 100%;
   margin: 0 auto;
+
+
   &_header {
+    @include mainContainer();
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
 
+
+      & .listItem  {
+        &:first-of-type   {
+          padding-left: 26px;
+
+          @include breakpoint(screen1680) {
+            padding-left: 16px;
+          }
+        }
+        &:last-of-type   {
+          padding-right: 26px;
+          @include breakpoint(screen1680) {
+            padding-right: 16px;
+          }
+        }
+      }
+
+
+      @include breakpoint(screen1280) {
+        padding: 0;
+      }
   }
 
   &_footer {
@@ -29,6 +53,7 @@
 
 .listItem {
   @include common-li;
+
 }
 
 .link {
@@ -36,8 +61,16 @@
   @include common-paragraph(link);
   text-transform: uppercase;
   text-wrap: nowrap;
+
+
+
+
     &_header {
       color: $white;
+
+      @include breakpoint(screen1280) {
+        font-size: 0.745rem;
+      }
     }
 
     &_footer {

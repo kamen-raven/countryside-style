@@ -1,10 +1,22 @@
-.background svg {
-    grid-area: container;
-    width: 100%;
-    position: absolute;
-    background-size: cover;
-    z-index: -10;
+@import '~global_styles';
 
+
+.background {
+  width: 100%;
+  background-size: cover;
+  z-index: -10;
+
+
+
+  @include breakpoint(screen960) {
+    display: none;
+  }
+
+  & svg {
+    position: absolute;
+    overflow: hidden;
+    z-index: -10;
+  }
 }
 
 .background_top svg {
@@ -21,4 +33,9 @@
 
 .background_right svg {
   right: 0;
+}
+
+.background_center svg {
+  top: 50%;
+  transform: translateY(-50%);
 }

@@ -12,6 +12,7 @@ const BackgroundSVGPattern = ({ positionY = 'top', positionX = 'left', children 
     bottom: styles.background_bottom,
     left: styles.background_left,
     right: styles.background_right,
+    center: styles.background_center
   };
 
   const Y = absolutePosition[positionY];

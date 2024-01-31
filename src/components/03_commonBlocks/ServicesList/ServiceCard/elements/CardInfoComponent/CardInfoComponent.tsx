@@ -44,9 +44,9 @@ const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
         }
       </div>
       <div className={`${styles.wrapper} ${selectedWrapper}`}>
-        <Button appearance={'colored'} className={styles.button}>
+        <button className={styles.button}>
           {buttonText}
-        </Button>
+        </button>
         <p className={styles.description}>
           {description}
         </p>

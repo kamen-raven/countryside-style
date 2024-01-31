@@ -1,7 +1,7 @@
 @import '~global_styles';
 
 .title {
-  @include common-title(h3small);
+  @include common-title(hSmall);
   margin-bottom: 35px;
 }
 

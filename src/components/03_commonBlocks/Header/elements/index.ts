@@ -1,2 +1,2 @@
 export * from './ContactComponent/ContactComponent';
-export * from './SearchInput/SearchInput';
+export * from './HeaderSearchInput/HeaderSearchInput';

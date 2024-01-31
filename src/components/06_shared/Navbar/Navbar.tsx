@@ -1,10 +1,10 @@
 import React from 'react';
-import { NavbarProps } from './Navbar.props';
-import styles from './Navbar.module.scss';
 import Link from 'next/link';
+import styles from './Navbar.module.scss';
 
+import { NavbarInterface } from './Navbar.interface';
 
-const Navbar = ({ listItems, parentComponent, children }: NavbarProps): JSX.Element => {
+const Navbar: React.FC<NavbarInterface> = ({ listItems, parentComponent, children }) => {
 
   const parent = {
     header: {
@@ -27,7 +27,6 @@ const Navbar = ({ listItems, parentComponent, children }: NavbarProps): JSX.Elem
               {item.title}
             </Link>
           </li>
-
         ))}
         {children}
       </ul>

@@ -34,7 +34,7 @@ const HomePage = ({ ...props }): JSX.Element => {
       <BlogBlock path={'home'} />
       <TeamBlock teamMembersItems={teamMembersData} />
       <ReviewsBlock reviewsDataItem={reviews} />
-      <ContactsBlock generalContactsData={generalContactsData} />
+      {/* <ContactsBlock generalContactsData={generalContactsData} /> */}
     </main>
   );
 };

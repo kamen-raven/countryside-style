@@ -1,9 +1,7 @@
 @import '~global_styles';
 
 .wrapper {
-  @include common-wrapper;
   width: 100%;
-  position: relative;
   color: $white;
 
   &__bg {
@@ -14,17 +12,26 @@
   }
 }
 
-.titleContainer {
-  grid-area: container;
+.container {
+  @include mainContainer();
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
 }
 
+.titleContainer {
+  margin: clamp(9rem, 15vw, 11.875rem) auto;
+
+  @include breakpoint(screen1280) {
+    margin: clamp(7rem, 12vw, 10rem) auto;
+  }
+}
+
+
 .title {
-  @include common-title(h1, $color: $white, $margin: 260px 0 0);
+  @include common-title(h1, $color: $white, );
 
   display: inline-flex;
   flex-direction: column;
@@ -32,22 +39,21 @@
 }
 
 .subtitle {
-  margin-top: 15px;
+
+  @include common-title(hSubtitle,
+    $font-weight: $regular,
+    $line-height: 100%,
+    $color: $white);
   text-align: center;
-
-  font-size: 60px;
-  font-weight: $regular;
-  line-height: 100%;
-
-
+  margin-top: 1.25rem;
 }
 
 .description {
-  margin-bottom: 250px;
-
-  font-size: 30px;
-  line-height: 120%;
-
+  @include common-paragraph(pLg,
+    $font-weight: $regular,
+    $color: $white,
+    $line-height: 130%);
+  margin-top: 2rem;
 }
 
 
@@ -58,22 +64,24 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 160px;
-  height: 160px;
+  width: 125px;
+  height: 125px;
   background-color: $accent-gray;
   border-radius: 50%;
   position: absolute;
-  top: 70px;
-  right: 120px;
+  top: 60px;
+  right: $padding-side;
+
+  @include breakpoint(screen1280) {
+    right: calc($padding-side / 1.5);
+
+  }
 
   &__text {
-
-    margin: 0;
-    font-family: $ff-openSans;
-    font-size: 16px;
-
-    line-height: 135%;
-
+    @include common-paragraph(pSm,
+      $font-family: $ff-openSans,
+      $color: $white,
+      $line-height: 135%);
   }
 
   &__years {
@@ -87,5 +95,3 @@
     margin: 0 auto;
   }
 }
-
-

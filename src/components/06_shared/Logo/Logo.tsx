@@ -1,13 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { LogoProps } from './Logo.props';
+import { LogoInterface } from './Logo.interface';
 import styles from './Logo.module.scss';
 
 import LogoIcon from '~svg/logo/logo.svg';
 
-
-const Logo = ({ color }: LogoProps): JSX.Element => {
+const Logo: React.FC<LogoInterface> = ({ color }) => {
   const logoColor = {
     gray: styles.logo_gray
   };

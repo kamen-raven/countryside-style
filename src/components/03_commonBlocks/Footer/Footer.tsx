@@ -6,6 +6,7 @@ import { menuList } from '~data/constant/navMenu/menuList';
 import TelegramIcon from '~svg/contacts/Telegram_footer.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp_footer.svg';
 import VkontakteIcon from '~svg/contacts/VK_footer.svg';
+import Link from 'next/link';
 
 const Footer = ({ footerGridArea }: FooterProps): JSX.Element => {
   return (
@@ -23,31 +24,31 @@ const Footer = ({ footerGridArea }: FooterProps): JSX.Element => {
         </Navbar>
 
         <address className={styles.addressContainer}>
-          <a className={styles.phone} href={`tel:${+78126432040}`}>
+          <Link className={styles.phone} href={`tel:${+78126432040}`}>
             8 (812) 643-20-40
-          </a>
+          </Link>
 
           <ul className={styles.contactsList}>
             <li className={`${styles.contactItem}`}>
-              <a className={styles.contactItem__link} href={'/'}>
+              <Link className={styles.contactItem__link} href={'/'}>
                 <span className={styles.contactItem__icon}>
                   <TelegramIcon />
                 </span>
-              </a>
+              </Link>
             </li>
             <li className={`${styles.contactItem}`}>
-              <a className={styles.contactItem__link} href={'/'}>
+              <Link className={styles.contactItem__link} href={'/'}>
                 <span className={styles.contactItem__icon}>
                   <WhatsappIcon />
                 </span>
-              </a>
+              </Link>
             </li>
             <li className={`${styles.contactItem}`}>
-              <a className={styles.contactItem__link} href={'/'}>
+              <Link className={styles.contactItem__link} href={'/'}>
                 <span className={styles.contactItem__icon}>
                   <VkontakteIcon />
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
 

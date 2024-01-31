@@ -85,7 +85,7 @@
 
 
 
-  @include common-title(h3,
+  @include common-title(hSubtitle,
             $color: $white,
             $font-weight: $regular);
 }

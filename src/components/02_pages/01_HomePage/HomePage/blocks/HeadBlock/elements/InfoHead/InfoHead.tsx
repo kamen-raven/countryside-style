@@ -1,32 +1,37 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { InfoHeadProps } from './InfoHead.props';
 import styles from './InfoHead.module.scss';
 
-import { BackgroundSVGPattern, Button } from '~shared/index';
+import { BackgroundSVGPattern, RequestPhoneInput } from '~shared/index';
 import SecondImg from '~img/headBlock/second.jpg';
 
-import BackgroundPattern from '~svg/background/backgroundTitleHead.svg';
-import Link from 'next/link';
+import BackgroundPatternLeft from '~svg/background/backgroundTitleHeadLeftSide.svg';
+import BackgroundPatternRight from '~svg/background/backgroundTitleHeadRightSide.svg';
 import { AwardInfoElement } from './AwardInfoElement/AwardInfoElement';
 
-const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
+
+
+const InfoHead: React.FC = () => {
 
   return (
-    <div className={`${styles.wrapper}`}  {...props} >
-      <BackgroundSVGPattern>
-        <BackgroundPattern />
-      </BackgroundSVGPattern>
-
-      <div className={styles.container}>
+    <div className={`${styles.wrapper}`}  >
+      <>
+        <BackgroundSVGPattern positionX='right' positionY='top' >
+          <BackgroundPatternRight className={styles.backgroundRight} />
+        </BackgroundSVGPattern>
+        <BackgroundSVGPattern positionX='left' positionY='bottom'>
+          <BackgroundPatternLeft className={styles.backgroundLeft} />
+        </BackgroundSVGPattern>
+      </>
+      <div className={`${styles.container} ${styles.container_first}`}>
 
         <div className={styles.countInfo}>
           <h3 className={styles.countInfo__title}>
             <span className={styles.countInfo__num}>
               256
             </span>
-            Проданных объектов загородной недвижимости в&nbsp;2022 году
+            Проданных объектов загородной недвижимости в&nbsp;2023 году
           </h3>
           <p className={styles.countInfo__description}>
             Мы продаем только те&nbsp;объекты, которые видели своими глазами
@@ -39,27 +44,18 @@ const InfoHead = ({ ...props }: InfoHeadProps): JSX.Element => {
             src={SecondImg}
             alt='Загородный дом' />
         </div>
-
+      </div>
+      <div className={`${styles.container} ${styles.container_second}`}>
         <AwardInfoElement />
 
         <div className={styles.requestForm}>
-          <p className={styles.requestForm__title}>
+          <p className={styles.requestForm__description}>
             Оставьте заявку<br /> на&nbsp;БЕСПЛАТНУЮ консультацию
           </p>
-          <form name='requestForm' className={styles.requestForm__form}>
-            <input className={styles.requestForm__input}
-              placeholder='Ваш телефон' />
-            <Button className={styles.requestForm__button} appearance={'colored'}>
-              Узнать цену
-            </Button>
-            <span className={styles.requestForm__agreement}>
-              Нажимая на кнопку, вы даете свое согласие на&nbsp;
-              <Link className={styles.requestForm__agreement} href={`/personal`}>обработку персональных данных
-              </Link>
-            </span>
-          </form>
+          <RequestPhoneInput nameForm={''} buttonText={'Узнать цену'} />
         </div>
       </div>
+
     </div>
   );
 };

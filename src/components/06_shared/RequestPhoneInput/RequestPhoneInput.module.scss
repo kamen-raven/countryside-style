@@ -3,22 +3,23 @@
 .requestForm {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 55px auto;
+  grid-template-rows: 45px auto;
   gap: 10px;
 
 
   &__input {
+    @include common-input;
     @include common-paragraph(p,
             $color: $gray,
             $font-family: $ff-openSans,
             $font-weight: $regular);
     width: 100%;
-    padding: 11px 30px;
+    min-width: 240px;
+    padding: 9px 30px;
     border-radius: $border-radius;
   }
 
   &__button {
-    @extend .requestForm__input;
     @include common-button(colored);
   }
 

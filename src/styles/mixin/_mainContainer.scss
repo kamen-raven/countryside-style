@@ -1,23 +1,23 @@
 @import '~variables';
 @import './adaptive';
 
-@mixin mainContainer () {
+@mixin mainContainer ($margin: 0 auto,
+  $padding-upDown: 0,
+  $padding-leftRight: $padding-side,
+) {
   box-sizing: border-box;
   width: 100%;
-  margin: 0 clamp(220px, 15vw, 290px);
-  max-width: calc(100% - (clamp(220px, 15vw, 290px) * 2));
+  margin: $margin;
+  padding: $padding-upDown $padding-leftRight;
+  max-width: calc(1920px - ($padding-side) * 2);
 
-  @include breakpoint(screen1680) {
-    margin: 0 clamp(180px, 8vw, 220px);
-    max-width: calc(100% - (clamp(180px, 8vw, 220px) * 2));
-  }
-  @include breakpoint(screen1440) {
-    margin: 0 clamp(140px, 5vw, 180px);
-    max-width: calc(100% - (clamp(140px, 5vw, 180px) * 2));
-  }
+/*   @include breakpoint(screen1440) {
+    max-width: calc(1920px - ($padding-side / 1.2) * 2);
+    padding: $padding-upDown calc($padding-side / 1.2);
+  } */
   @include breakpoint(screen1280) {
-    margin: 0 80px;
-    max-width: calc(100% - (80px * 2));
+    max-width: calc(1280px - ($padding-side / 1.5) * 2);
+    padding: $padding-upDown calc($padding-side / 1.5);
   }
 }
 
@@ -29,4 +29,3 @@
   margin: $margin;
   padding: $padding;
 } */
-

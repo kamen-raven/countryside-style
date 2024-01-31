@@ -54,7 +54,7 @@
 .blogTitle {
   grid-area: title;
 
-  @include common-title(h3small);
+  @include common-title(hSmall);
   align-self: flex-end;
   padding-top: 40px;
   padding-bottom: 15px;

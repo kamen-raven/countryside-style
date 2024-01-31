@@ -12,7 +12,7 @@
 }
 
 .title {
-  @include common-title(h3);
+  @include common-title(hSubtitle);
   margin-bottom: 60px;
 }
 
@@ -129,7 +129,7 @@
 }
 
 .title_card {
-  @include common-title(h3small);
+  @include common-title(hSmall);
   cursor: pointer;
   display: flex;
   & .link {

@@ -3,19 +3,19 @@
 
 .wrapper {
   grid-area: press;
-
-  @include common-wrapper;
   background-color: $dark;
   color: $white;
 }
-  
-.container {
-  grid-area: container;
-  margin: 110px 120px;
 
-  display: grid;
+.container {
+  @include mainContainer();
+  margin: 90px auto;
+  display: flex;
+  align-items: center;
+  gap: 150px;
+/*   display: grid;
   grid-template-columns: 390px 3fr;
-  column-gap: 180px;
+  column-gap: 180px; */
 }
 
 .innerBlock {
@@ -30,12 +30,12 @@
   &__articles {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px 100px;
+    gap: 30px 80px;
   }
 }
 
 .title {
-  @include common-title(h3, $color: $white);
+  @include common-title(hSubtitle, $color: $white);
   text-align: right;
 }
 

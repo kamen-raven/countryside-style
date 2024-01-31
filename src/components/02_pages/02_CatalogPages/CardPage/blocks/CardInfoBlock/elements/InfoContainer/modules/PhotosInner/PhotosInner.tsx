@@ -7,8 +7,9 @@ import PlanIcon from '~svg/catalogCard/plan.svg';
 import YouTubeIcon from '~svg/catalogCard/youtubeIcon.svg';
 
 
-import TemplateImage from '~img/template/House_3.jpg';
+
 import { LabelNew } from '~shared/index';
+import Link from 'next/link';
 
 
 const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
@@ -28,21 +29,21 @@ const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
 
         <div className = {styles.infoButtonContainer}>
           <div className={`${styles.imageInfoButton} ${styles.imageInfoButton__plan}`}>
-            <a className={styles.imageInfoButton__link} href={'/'}>
+            <Link className={styles.imageInfoButton__link} href={'/'}>
               Планировка
               <span className={styles.imageInfoButton__icon}>
                 <PlanIcon />
               </span>
-            </a>
+            </Link>
           </div>
 
           <div className={`${styles.imageInfoButton} ${styles.imageInfoButton__youtube}`}>
-            <a className={styles.imageInfoButton__link} href={'/'}>
+            <Link className={styles.imageInfoButton__link} href={'/'}>
               Видео
               <span className={styles.imageInfoButton__icon}>
                 <YouTubeIcon />
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 

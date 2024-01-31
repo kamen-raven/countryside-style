@@ -4,6 +4,7 @@ import { PhoneNumberInterface } from './PhoneNumber.interface.ts';
 import CallIcon from '~svg/contacts/Phone.svg';
 import generalContactsData from '~data/constant/generalContacts/generalContactsData.ts';
 import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
+import Link from 'next/link';
 
 const PhoneNumber: React.FC<PhoneNumberInterface> = ({ employeeItem, colorText = 'gray', className }) => {
 
@@ -36,13 +37,13 @@ const PhoneNumber: React.FC<PhoneNumberInterface> = ({ employeeItem, colorText =
 
 
   return (
-    <a className={`${styles.callLink} ${colorSchema[colorText].link} ${className}`}
+    <Link className={`${styles.callLink} ${colorSchema[colorText].link} ${className}`}
       href={`tel:${data.contacts.phone}`}>
       <span className={`${styles.callIcon} ${colorSchema[colorText].icon}`}>
         <CallIcon />
       </span>
       {formatPhoneNumber(data.contacts.phone)}
-    </a>
+    </Link>
   );
 };
 

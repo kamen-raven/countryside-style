@@ -6,6 +6,7 @@ import TelegramIcon from '~svg/contacts/Telegram2.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
 /* import VkontakteIcon from '~svg/contacts/VK.svg'; */
 import generalContactsData from '~data/constant/generalContacts/generalContactsData.ts';
+import Link from 'next/link';
 
 
 const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, linkInfoData }) => {
@@ -64,13 +65,13 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
   return (
 
     <div className={`${styles.itemBorder} ${setLinkStyle[colorSchema].border}`}>
-      <a className={`${styles.itemLink} ${setLinkStyle[colorSchema].fontColor}`}
+      <Link className={`${styles.itemLink} ${setLinkStyle[colorSchema].fontColor}`}
         href={data.contacts[messenger]}>
         {setLinkType.text[messenger]}
         <span className={`${styles.itemIcon} ${setBackgroundColor}`}>
           {setLinkType.icon[messenger]}
         </span>
-      </a>
+      </Link>
     </div>
 
   );

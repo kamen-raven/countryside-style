@@ -1,19 +1,18 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import { HeaderProps } from './Header.props';
+import { HeaderInterface } from './Header.interface';
 
 import { menuList } from '~data/constant/navMenu/menuList';
 
-import { SearchInput, ContactComponent } from './elements';
+import { HeaderSearchInput, ContactComponent } from './elements';
 import { Logo, Navbar } from '~shared/index';
 
-
-const Header = ({ headerGridArea }: HeaderProps): JSX.Element => {
+const Header: React.FC<HeaderInterface> = ({ headerGridArea }) => {
   return (
     <header className={`${headerGridArea} ${styles.header}`}>
       <div className={styles.inner}>
         <Logo />
-        <SearchInput />
+        <HeaderSearchInput />
         <ContactComponent />
       </div>
       <nav className = {`${styles.navMenu}`}>

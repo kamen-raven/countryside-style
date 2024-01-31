@@ -1,7 +1,8 @@
 import React from 'react';
 import { OurServicesBlockProps } from './OurServicesBlock.props';
 import styles from './OurServicesBlock.module.scss';
-import BackgroundPattern from '~svg/background/backgroundOurServices.svg';
+import BackgroundPatternLeft from '~svg/background/backgroundOurServicesLeft.svg';
+import BackgroundPatternRight from '~svg/background/backgroundOurServicesRight.svg';
 import { BackgroundSVGPattern } from '~shared/index';
 import { ServiceCard } from '~common/index';
 
@@ -9,9 +10,14 @@ const OurServicesBlock: React.FC<OurServicesBlockProps> = ({ servicesItems }) =>
 
   return (
     <section className={styles.wrapper}>
-      <BackgroundSVGPattern positionY='bottom'>
-        <BackgroundPattern />
-      </BackgroundSVGPattern>
+      <>
+        <BackgroundSVGPattern positionX='right' positionY='center'>
+          <BackgroundPatternRight className={styles.backgroundRight} />
+        </BackgroundSVGPattern>
+        <BackgroundSVGPattern positionX='left' positionY='bottom'>
+          <BackgroundPatternLeft className={styles.backgroundLeft} />
+        </BackgroundSVGPattern>
+      </>
       <div className={styles.container}>
         <h2 className={styles.title}>
           Наши услуги

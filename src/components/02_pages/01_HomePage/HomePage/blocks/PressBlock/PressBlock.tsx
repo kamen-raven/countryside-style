@@ -1,8 +1,9 @@
 import React from 'react';
-import { PressBlockProps } from './PressBlock.props';
-import styles from './PressBlock.module.scss';
-
 import Image from 'next/image';
+import Link from 'next/link';
+import styles from './PressBlock.module.scss';
+import { PressBlockProps } from './PressBlock.props';
+
 
 const PressBlock: React.FC<PressBlockProps> = ({ pressItems }) => {
 
@@ -20,7 +21,7 @@ const PressBlock: React.FC<PressBlockProps> = ({ pressItems }) => {
         <div className={styles.innerBlock__articles}>
 
           {pressItems && pressItems.map(m => (
-            <a key={m._id}
+            <Link key={m._id}
               className={styles.link}
               href={m.link}
               target='_blank'
@@ -30,7 +31,7 @@ const PressBlock: React.FC<PressBlockProps> = ({ pressItems }) => {
                 src={m.logo}
                 alt={m.journal}
               />
-            </a>
+            </Link>
           ))}
 
         </div>
@@ -48,7 +49,7 @@ export { PressBlock };
 
             if (matchingLogo) {
               return (
-                <a key={m._id}
+                <Link key={m._id}
                   className = {styles.link}
                   href={m.link}>
                 <Image
@@ -56,7 +57,7 @@ export { PressBlock };
                   src={matchingLogo.logo}
                   alt={m.journal}
                 />
-              </a>
+              </Link>
               );
             }
           })}
@@ -65,26 +66,26 @@ export { PressBlock };
 
 
 
-<a className = {styles.link} href={'/'}>
+<Link className = {styles.link} href={'/'}>
             <Image
               className = {styles.logo}
               src={Commersant}
               alt={'m.journal'}
             />
-          </a>
-          <a className = {styles.link} href={'/'}>
+          </Link>
+          <Link className = {styles.link} href={'/'}>
             <Image
               className = {styles.logo}
               src={CudNews}
               alt={'m.journal'}
             />
-          </a>
-          <a className = {styles.link} href={'/'}>
+          </Link>
+          <Link className = {styles.link} href={'/'}>
             <Image
               className = {styles.logo}
               src={Promdevelop}
               alt={'m.journal'}
             />
-          </a> */}
+          </Link> */}
 
 
