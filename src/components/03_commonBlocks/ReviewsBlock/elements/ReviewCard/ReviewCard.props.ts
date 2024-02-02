@@ -5,3 +5,5 @@ export interface ReviewCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDi
   data: reviewDataInterface;
   children?: ReactNode;
 }
+
+export { reviewDataInterface };

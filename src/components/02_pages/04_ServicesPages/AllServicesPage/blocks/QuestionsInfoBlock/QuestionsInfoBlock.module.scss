@@ -9,9 +9,7 @@
   @include mainContainer();
 
   margin: 90px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+@include flexColumnGap;
 }
 
 .title {

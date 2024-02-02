@@ -2,45 +2,50 @@
 
 
 .innerBlock {
-  /*   display: flex;
+  display: flex;
   flex-direction: column;
-  gap: 10px; */
-  font-style: normal;
+  gap: 20px;
+
 }
 
-.description {
-  @include common-paragraph(pXl,
-  $font-weight: $bold,
-  $line-height: 140%);
+.titleContainer {
 
-  margin-bottom: 10px;
+  @include flexColumnGap(0.3rem);
+}
+
+.title {
+  @include common-paragraph(pXl,
+  $line-height: 140%,
+  $font-weight: $bold);
+
 }
 
 .address {
   @include common-paragraph(pXl,
-  $font-weight: $regular,
-  $line-height: 140%);
-
-  margin-bottom: 25px;
+  $line-height: 140%,
+  $font-weight: $regular);
 }
 
 .contactsList {
   @include common-ul;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 .contactItem {
   @include common-li;
   border-radius: 30px;
-  max-height: 55px;
+  max-height: 45px;
 
   &__icon {
-    width: 45px;
-    height: 45px;
-    padding: 5px 5px 5px 15px;
+    width: 36.82px;
+    height: 36.82px;
+    padding: 4px 4px 4px 14px;
 
     & svg {
+      background-color: $white;
+      border-radius: 50%;
       border-radius: 50%;
     }
   }
@@ -49,7 +54,7 @@
     display: flex;
     align-items: center;
 
-    padding-left: 15px;
+    padding-left: 18px;
 
     text-decoration: none;
     @include common-paragraph(p,

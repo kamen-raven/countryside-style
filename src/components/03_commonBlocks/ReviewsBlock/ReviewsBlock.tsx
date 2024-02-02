@@ -9,25 +9,28 @@ import { RatingLabelElement, ReviewCard } from './elements';
 const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ reviewsDataItem }) => {
   return (
     <section className={styles.wrapper}>
-      <div className={styles.titleContainer}>
-        <h2 className={styles.title}>
-          Отзывы
-        </h2>
-        <div className={styles.reviewsContainer}>
-          <RatingLabelElement service={'cian'} />
-          <RatingLabelElement service={'yandex'} />
-          <button className={styles.buttonReview}>
-            Оставить свой отзыв
-          </button>
+      <div className={styles.container}>
+        <div className={styles.titleContainer}>
+          <h2 className={styles.title}>
+            Отзывы
+          </h2>
+          <div className={styles.reviewsContainer}>
+            <RatingLabelElement service={'cian'} />
+            <RatingLabelElement service={'yandex'} />
+            <button className={styles.buttonReview}>
+              Оставить свой отзыв
+            </button>
+          </div>
         </div>
-      </div>
-
-      <div className={`${styles.innerBlock}`}>
-        {reviewsDataItem && reviewsDataItem.map(item => {
-          return (
-            <ReviewCard key={item._id} data={item} />
-          );
-        })}
+        <div className={styles.contentContainer}>
+          <div className={`${styles.innerBlock}`}>
+            {reviewsDataItem && reviewsDataItem.map(item => {
+              return (
+                <ReviewCard key={item._id} data={item} />
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

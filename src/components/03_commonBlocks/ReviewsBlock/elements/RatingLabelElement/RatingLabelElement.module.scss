@@ -3,13 +3,18 @@
 .container {
   border: 1px solid $accent-gray;
   box-sizing: border-box;
-  height: 75px;
+  height: 55px;
   display: flex;
   align-items: flex-end;
-  padding: 0 22px 20px;
+  padding: 0 17px 12px;
 
   cursor: pointer;
-@include common-link;
+  @include common-link;
+
+  & svg {
+    max-width: 87px;
+    width: 100%;
+  }
 }
 
 .innerContainer {
@@ -19,9 +24,9 @@
 
 .rating {
   @include common-paragraph(p,
-        $font-family: $ff-openSans,
-        $font-weight: $regular);
-  padding: 0 10px 0 28px;
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+  padding: 0 7px 0 17px;
 }
 
 .rateIcon {

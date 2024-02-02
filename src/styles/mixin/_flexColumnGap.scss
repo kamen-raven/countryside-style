@@ -1,0 +1,7 @@
+@import '~variables';
+
+@mixin flexColumnGap($gap: $gap-title) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}

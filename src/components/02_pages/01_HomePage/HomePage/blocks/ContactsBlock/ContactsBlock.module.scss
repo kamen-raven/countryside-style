@@ -2,29 +2,27 @@
 
 .wrapper {
   grid-area: contacts;
-  @include common-wrapper;
-  grid-template-areas:
-  ". container ."
-  ". form .";
   border-top: 1px solid $gray;
+  padding-top: 70px;
+  @include flexColumnGap(4.375rem); //70px
 }
 
 .containerInfo {
-  grid-area: container;
-  margin: 90px 120px;
+  @include mainContainer();
+  @include flexColumnGap;
 }
 
 .title {
-  @include common-title(hTitle);;
+  @include common-title(hTitle);
 }
 
 
 .containerForm {
   grid-area: form;
-/*   background-color: $dark; */
+  /*   background-color: $dark; */
   color: $white;
 
-/*   display: flex;
+  /*   display: flex;
   align-items: stretch;
   max-height: 800px; */
 }

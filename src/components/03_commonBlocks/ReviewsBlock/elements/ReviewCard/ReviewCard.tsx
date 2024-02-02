@@ -1,35 +1,34 @@
 import React from 'react';
 import { ReviewCardProps } from './ReviewCard.props';
 import styles from './ReviewCard.module.scss';
-import { Button } from '~shared/index';
 
 
 const ReviewCard = ({ data }: ReviewCardProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.infoContainer}>
-        <div className={styles.infoContainer__avatar}></div>
+        <div className={styles.infoContainer__avatar}></div>  {/* avatar */}
         <div className={styles.infoContainer__inner}>
           <p className={styles.infoContainer__name}>
-            {data.name}
+            {data.name}                                   {/* ИМЯ */}
           </p>
           <p className={styles.infoContainer__date}>
-            {data.date}
+            {data.date}                         {/* ДАТА ПУБЛИКАЦИИ ОТЗЫВА */}
           </p>
         </div>
       </div>
       <div className={styles.reviewContainer}>
         <p className={styles.reviewText}>
-          {data.textReview}
+          {data.textReview}                           {/* Текст отзыва */}
         </p>
       </div>
       <div className={styles.buttonsContainer}>
-        <Button appearance="transparent">
+        <button className={styles.button}>
           Читать весь отзыв
-        </Button>
-        <Button appearance="transparent">
+        </button>
+        <button className={styles.button}>
           Оригинал отзыва
-        </Button>
+        </button>
       </div>
     </div>
   );

@@ -17,8 +17,6 @@ const ContactsMainBlock: React.FC<ContactsMainBlockInterface> = ({ generalContac
     strong: styles.workTime_spanAccent
   };
 
-
-
   return (
     <section className={styles.wrapper}>
       <BackgroundSVGPattern positionX='right' />

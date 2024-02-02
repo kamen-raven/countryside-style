@@ -1,21 +1,7 @@
-<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="18" height="18" fill="#D5D5D6"/>
-<g id="For sellers 1920 px">
-<rect width="1920" height="8839" transform="translate(-1041 -4803)" fill="white"/>
-<g id="Group 2053">
-<g id="Group 2051">
-<rect id="Rectangle 160" x="-198.5" y="-28.5" width="323" height="74" fill="white" stroke="#A1A9AC"/>
-<g id="&#208;&#183;&#208;&#178;&#208;&#181;&#208;&#183;&#208;&#180;&#209;&#139;">
-<g id="ri:star-fill" clip-path="url(#clip0_0_1)">
-<path id="Vector" d="M8.95738 13.6311L3.69241 16.5783L4.86813 10.6601L0.438477 6.5634L6.43052 5.85274L8.95738 0.373535L11.4842 5.85274L17.4763 6.5634L13.0466 10.6601L14.2223 16.5783L8.95738 13.6311Z" fill="#F68B09"/>
-</g>
-</g>
-</g>
-</g>
-</g>
-<defs>
-<clipPath id="clip0_0_1">
-<rect width="17.9157" height="17.9157" fill="white"/>
-</clipPath>
-</defs>
+<svg width="17.037842" height="16.205078" viewBox="0 0 17.0378 16.2051" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs/>
+	<path id="Vector" d="M8.51892 13.2578L3.25391 16.2051L4.42969 10.2861L0 6.18945L5.99207 5.47949L8.51892 0L11.0458 5.47949L17.0378 6.18945L12.6082 10.2861L13.7838 16.2051L8.51892 13.2578Z" fill="#F68B09" fill-opacity="1.000000" fill-rule="nonzero"/>
 </svg>

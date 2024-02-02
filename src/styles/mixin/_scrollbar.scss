@@ -8,15 +8,7 @@
   scrollbar-color: $accent-green $white;
   /* «цвет ползунка» «цвет полосы скроллбара» */
   scrollbar-width: $scrollbar-width;
-
-  /*   @include breakpoint(screen480) {
-    scrollbar-width: .8rem;
-  }
-  @include breakpoint(screen320) {
-    scrollbar-width: .6rem;
-  }
- */
-
+  border-radius: $border-radius;
   &::-webkit-scrollbar {
     width: $scrollbar-width;
     /* ширина для вертикального скролла */
