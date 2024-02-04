@@ -136,7 +136,7 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
       <button className={`${styles.toggleButton} ${styleButton}`}
               onClick={handleClick}>
         {textButton}
-        <ToggleIcon />
+        <ToggleIcon/>
       </button>
     </div>
   );

@@ -1,17 +1,19 @@
 'use client';
 
 import React from 'react';
-import styles from './CatalogCardComponent.module.scss';
-import { CatalogCardComponentInterface } from './CatalogCardComponent.interface.ts';
+import Link from 'next/link';
 import Image from 'next/image';
 
-import YoutubeIcon from '~svg/catalogCard/youtubeIcon.svg';
+import { useRouter } from 'next/navigation';
+
+import styles from './CatalogCardComponent.module.scss';
+import { CatalogCardComponentInterface } from './CatalogCardComponent.interface.ts';
+
+
 import ArrowIcon from '~svg/button/arrow.svg';
 
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import ImageTemplate from '~img/template/House_5 1.jpg';
-import { LabelNew } from '~shared/index.ts';
+import { LabelNew, YoutubeLabel } from '~shared/index.ts';
 
 const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
   ////для того чтобы отображать статус и гендер ////////////////////////////////////////////////////////////////////////
@@ -27,13 +29,9 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
 
 
   const newLabel = <LabelNew />;
-
   const renderNewLabel = item.gender == 'Male' ? newLabel : '';
 
-
-  const youtubeLabel = <div className={`${styles.label} ${styles.label_youtube}`}>
-                        <YoutubeIcon />
-                      </div>;
+  const youtubeLabel = <YoutubeLabel/>;
   const renderYoutubeLabel = item.status == 'Dead' ? youtubeLabel : '';
 
 
@@ -80,7 +78,6 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
             {item.location.name}
           </p>
         </div>
-
 
 
         <div className={styles.priceContainer}>

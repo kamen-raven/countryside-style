@@ -16,17 +16,11 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ data, items
 
   const totalPages = Math.ceil(perPage / itemsPerPage);
 
-
-
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = data.results.slice(startIndex, endIndex);
 
-
   const parentRef = useRef<HTMLDivElement>(null); // реф для скролла вверх при пагинации
-
-
-
 
   return (
     <>
@@ -34,13 +28,7 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ data, items
 
         {currentItems.map((item) => (
           <CatalogCardComponent key={item.id} item={item} />
-          /*
-                    <div key={item.id} className="card">
-                      <h3>{item.name}</h3>
-                      <p>{item.status}</p>
-                    </div> */
         ))}
-
       </div>
 
       <CatalogCardsPagination
@@ -49,10 +37,7 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ data, items
         totalPages={totalPages}
         parentRef={parentRef}
         /* scrollFunction={scrollToTop} */ />
-
     </>
-
-
   );
 };
 

@@ -1,13 +1,13 @@
 @import '~global_styles';
 
 .footerWrapper {
-  @include mainContainer();
   border-top: 1px solid $gray;
-  margin-top: 70px;
-  margin-bottom: 100px;
+  padding-top: 70px;
+  padding-bottom: 100px;
 }
 
 .container {
+  @include mainContainer();
   display: grid;
   align-items: start;
   grid-template-rows: 60px auto;

@@ -9,10 +9,9 @@ import { Button } from '~shared/index.ts';
 
 
 const SearchBar: React.FC<SearchBarInterface> = ({ className }) => {
-    return (
-      <section className={`${styles.wrapper} ${className}`}>
+  return (
+    <section className={`${styles.wrapper} ${className}`}>
       <form className={styles.container}>
-
 
         <div className={styles.inputContainer}>
           <div className={styles.inputContainer__icon}>
@@ -21,22 +20,26 @@ const SearchBar: React.FC<SearchBarInterface> = ({ className }) => {
           <input className={styles.inputContainer__input} placeholder={`Введите текст`} />
         </div>
 
+        <div className={styles.optionsContainer}>
+          <CustomSelect label={`Тип недвижимости`} options={['option1', 'option2', 'option3']} />
+          <CustomSelect label={`Район`} options={['option1', 'option2', 'option3']} />
+          <CustomSelect label={`Цена от - до, руб.`} options={['option1', 'option2', 'option3']} />
+        </div>
 
+        <div className={styles.buttonContainer}>
+          <button className={styles.button}>
+            Подобрать
+          </button>
 
-        <CustomSelect label={`Тип недвижимости`} options={['option1', 'option2', 'option3']}/>
-        <CustomSelect label={`Район`} options={['option1', 'option2', 'option3']}/>
-        <CustomSelect label={`Цена от - до, руб.`} options={['option1', 'option2', 'option3']}/>
+          <button className={styles.clearButton}>
+            Сбросить
+            <ClearIcon />
+          </button>
+        </div>
 
-        <Button appearance={"colored"}>
-          Подобрать
-        </Button>
-        <button className = {styles.clearButton}>
-          Сбросить
-          <ClearIcon/>
-        </button>
       </form>
     </section>
-    );
+  );
 };
 
 export { SearchBar };

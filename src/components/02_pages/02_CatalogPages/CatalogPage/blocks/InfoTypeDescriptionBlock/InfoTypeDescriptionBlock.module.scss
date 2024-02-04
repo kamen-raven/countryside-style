@@ -3,14 +3,15 @@
 .wrapper {
   grid-area: description;
   position: relative;
-  @include common-wrapper;
+  padding-top: 70px;
+  padding-bottom: 100px;
 }
 
 .container {
-  grid-area: container;
-  margin: 80px 120px;
+  @include mainContainer;
+  @include flexColumnGap;
 }
 
 .title {
-  @include common-title(h1, $margin: 0 0 45px);
+  @include common-title(h1);
 }

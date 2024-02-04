@@ -1,0 +1,15 @@
+@import '~global_styles';
+
+.label {
+  position: absolute;
+
+  &_youtube {
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    & svg {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

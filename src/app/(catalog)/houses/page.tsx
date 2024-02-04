@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import generalContactsData from "~data/constant/generalContacts/generalContactsData";
 /* import { notFound } from "next/navigation"; */
 import { CatalogPage } from "~pages/02_CatalogPages/CatalogPage/CatalogPage";
 
@@ -25,6 +26,7 @@ export default async function PageType({ params }:  {params: {type: string}}) {
   } */
 
   return (
-      <CatalogPage type={params.type} />
+      <CatalogPage type={params.type}
+      generalContactsData={generalContactsData}/>
   );
 }

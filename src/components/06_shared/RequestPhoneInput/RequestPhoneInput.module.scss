@@ -21,6 +21,8 @@
 
   &__button {
     @include common-button(colored);
+    width: 100%;
+    text-wrap: nowrap;
   }
 
   &__agreement {

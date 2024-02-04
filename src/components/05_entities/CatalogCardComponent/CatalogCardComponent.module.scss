@@ -4,19 +4,19 @@
 
 .cardWrapper {
   box-sizing: border-box;
-
-  max-width: 530px;
+  z-index: 5;
+  max-width: clamp(360px, 55vw, 540px);
   width: 100%;
-  max-height: 730px;
+
   height: 100%;
 
   border: 1px solid $gray;
 
   display: grid;
-  grid-template-rows: 390px auto;//grid-template-rows: 55% 45%;
+  grid-template-rows: 310px auto; //grid-template-rows: 55% 45%;
 }
 
-// IMAGE
+
 .link {
   display: block;
   text-decoration: none;
@@ -31,80 +31,45 @@
   }
 }
 
-
-
-
+// IMAGE
 .imageBlock {
   position: relative;
   display: flex;
   cursor: pointer;
 }
 
-.image {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-}
-
-.label {
-  position: absolute;
-
-
-  &_new {
-    top: 20px;
-    right: 0;
-
-    width: 90px;
-    height: 45px;
-    border-radius: 27px 0 0  27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: $accent-green;
-
-    @include common-paragraph(p,
-    $font-weight: $bold,
-    $color: $white,
-    $font-family: $ff-openSans,
-    $line-height: 110%);
-
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  &_youtube {
-    bottom: 20px;
-    right: 20px;
-
-    display: flex;
-    width: 45px;
-    height: 45px;
-  }
-}
-
+    .image {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
 
 // INFO
 .infoBlock {
-  padding: 35px;
-  padding-top: 30px;
+  background-color: $white;
+  padding: 25px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: .8rem;
+  min-height: 220px;
+
 }
 
 .infoContainer {
   display: flex;
   flex-direction: column;
-  gap: 15px
+  gap: 10px;
+
 }
 
 .title {
   @include common-title(hSmall);
   cursor: pointer;
   display: flex;
+
   & .link {
     text-decoration: none;
   }
@@ -113,15 +78,17 @@
 .statusContainer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  column-gap: 10px;
   color: #398281;
 }
 
 .status {
-  @include common-title(p,
-    $color: $accent-green);
+  @include common-paragraph(p,
+    $color: $accent-green,
+    $font-family: $ff-openSans);
 
-  font-family: $ff-openSans;
+
+
   &_bold {
     font-weight: $bold;
   }
@@ -129,16 +96,17 @@
 
 .address {
   @include common-paragraph(p,
-  $font-weight: $regular,
-  $font-family: $ff-openSans);
+    $font-weight: $regular,
+    $font-family: $ff-openSans);
 }
 
 .priceContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 10px;
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
@@ -153,7 +121,7 @@
 
 .price {
   @include common-paragraph(pXl,
-  $color: $accent-green);
+    $color: $accent-green);
 }
 
 .arrow {
@@ -178,7 +146,8 @@
       transform: translate(10px);
     }
   }
-  &_left  {
+
+  &_left {
     transform: rotate(180deg);
   }
 
@@ -186,5 +155,3 @@
     transform: rotate(0);
   }
 }
-
-

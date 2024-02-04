@@ -7,9 +7,10 @@
 }
 
 .buttonPagination {
+  z-index: 2;
   cursor: pointer;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   box-sizing: border-box;
 
 
@@ -21,7 +22,7 @@
 
   border: 1px solid $dark;
   border-radius: 50%;
-  background-color: transparent;
+  background-color: $white;
 
 
   &__arrow {
@@ -51,7 +52,7 @@
 
 .disabled {
   border: 1px solid $gray;
-  background-color: transparent;
+  background-color: $white;
   cursor: default;
   & svg path {
     fill: $gray;

@@ -2,6 +2,9 @@
 
 
 .customSelect {
+  min-width: 240px;
+  height: 45px;
+width: 100%;
   position: relative;
   box-sizing: border-box;
 
@@ -71,9 +74,9 @@
 
 .toggleIcon {
   position: absolute;
-  right: 22px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 1rem;
+  top: 52%;
+  transform: translateY(-52%);
   transition: transform .3s linear;
 
   &_opened {

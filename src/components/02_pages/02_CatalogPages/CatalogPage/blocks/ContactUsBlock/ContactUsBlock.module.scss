@@ -2,33 +2,53 @@
 
 .wrapper {
   grid-area: contactUs;
-  @include common-wrapper;
-  color: $white;
-  grid-template-areas: none;
+  background-color: $accent-gray;
 }
 
+.container {
+  max-width: 1920px;
+  max-height: 600px;
+  margin: 0 auto;
 
-.imageContainer {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
+
 
 .image {
-  object-fit: fill;
-  width:  max(350px, 880px);
-  height: max(350px, 800px);;
+  flex-basis: 50%;
+  object-fit: cover;
+  height: clamp(450px, 50vw, 600px);// max(350px, 600px);
+  width: 100%;
+/*
+  flex-shrink: 3;
+  object-fit: cover;
+  max-height: 600px; */
 }
 
-.infoContainer {
-  margin: 200px auto auto 120px;
+
+
+.innerContainer {
+  flex-basis: 60%;
+  flex-grow: 3;
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  gap: 40px;
+
+  padding-left: $padding-side;
+
+  @include breakpoint(screen1280) {
+    padding-left: calc($padding-side / 1.5);
+  }
 }
 
+.titleContainer {
+  @include flexColumnGap($gap: 20px);
+}
 
 .title {
   @include common-title(hSubtitle, $color: $white);
-  margin-bottom: 25px;
 }
 
 .schedule {
@@ -36,15 +56,12 @@
   $font-weight: $regular,
   $line-height: 120%,
   $color: $white);
-
-  margin-bottom: 50px;
 }
 
 .addressContainer {
   font-style: normal;
   display: flex;
   gap: 60px;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 
@@ -103,12 +120,12 @@
 .contactItem {
   @include common-li;
   border-radius: 30px;
-  max-height: 55px;
+  max-height: 45px;
   border: 1px solid $white;
 
   &__icon {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     margin: 5px 5px 5px 15px;
     background-color: $white;
     border-radius: 50%;
@@ -137,11 +154,10 @@
 
 
 .buttonCall {
-  max-height: 55px;
-  padding: 0 20px;
+  @include common-button(dark);
   @include common-paragraph(p,
   $font-weight: $regular,
   $color: $white,
   $line-height: 120%);
-  box-sizing: border-box;
+  width: fit-content;
 }

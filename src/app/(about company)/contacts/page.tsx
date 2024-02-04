@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function PageContacts() {
 
   return (
-    <ContactsPage employeesList={teamMembersData} generalContactsData={generalContactsData}   />
+    <ContactsPage employeesList={teamMembersData} generalContactsData={generalContactsData} />
   );
 }
 

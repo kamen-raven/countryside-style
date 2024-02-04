@@ -26,7 +26,7 @@ const ContactFormBlock: React.FC<ContactFormBlockInterface> = ({ direction = 'fo
 
   return (
     <div className={styles.wrapper}>
-      <div className={`${styles.containerForm} ${setDirection}`}>
+      <div className={`${styles.container} ${setDirection}`}>
         {/* MAP || IMAGE */}
         <div className={styles.wrapperInner}>
           {setContent}
