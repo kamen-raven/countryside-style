@@ -27,13 +27,11 @@ const HalfScreenTemplate: React.FC<HalfScreenTemplateInterface> = ({
 
   return (
     <>
-      {conditionColor === "dark" ? '' : <div className={`${setColor}`}></div>}
       <div className={`${styles.container}  ${setColor}`}>
         <div className={`${styles.innerBlock} ${setTemplate} ${className}`}>
           {children}
         </div>
       </div>
-      {conditionColor === "dark" ? '' : <div className={`${setColor}`}></div>}
     </>
   );
 };

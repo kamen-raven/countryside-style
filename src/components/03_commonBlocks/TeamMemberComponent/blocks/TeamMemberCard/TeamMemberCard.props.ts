@@ -3,5 +3,6 @@ import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersDa
 
 export interface TeamMemberCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   employeeItem: teamMembersDataInterface;
+  index: number;
   children?: ReactNode;
 }

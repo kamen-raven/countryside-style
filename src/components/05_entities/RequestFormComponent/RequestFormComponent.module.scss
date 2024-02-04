@@ -1,63 +1,62 @@
 @import '~global_styles';
 
 .form {
-  /*  display: flex;
+  display: flex;
   flex-direction: column;
-  gap: 30px; */
+  gap: 20px;
 }
 
 .title {
   @include common-title(hSmall,
-                        $color: $white);
-  margin-bottom: 10px;
+    $color: $white);
 }
 
 .description {
 
   @include common-paragraph(p,
-  $font-weight: $regular,
-  $color: $white,
-  $font-family: $ff-openSans);
+    $font-weight: $regular,
+    $color: $white,
+    $font-family: $ff-openSans);
 
-  margin-bottom: 35px;
 }
 
 .fieldset {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   padding: 0;
   border: none;
 }
 
 .label {
-  visibility: hidden;
+  width: auto;
 }
 
 .input {
+  width: 100%;
   @include common-input;
   padding: 10px 30px;
-  margin-bottom: 10px
+  height: 45px
 }
 
 .textarea {
   @include common-input;
   width: 100%;
-  height: max(220px, 120px);
-  resize: none;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  resize: vertical;
+  min-height: 140px;
+  max-height: 200px;
   padding: 10px 30px;
 }
 
 .button {
-  width: 255px;
-  margin-bottom: 20px;
+  @include common-button(colored);
+  width: fit-content;
 }
 
 .agreement {
   display: inline-block;
 
   @include common-paragraph(pSm,
-  $font-weight: $regular,
-  $color: $white);
+    $font-weight: $regular,
+    $color: $white);
 }

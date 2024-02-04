@@ -8,6 +8,7 @@ export * from './ServicesList/ServicesTemplateBlock/ServicesTemplateBlock';
 export * from './ServicesList/ServicesCardTemplate/ServicesCardTemplate';
 export * from './AdvantagesBlock/AdvantagesBlock';
 export * from './ReviewsBlock/ReviewsBlock';
+export * from './ContactFormBlock/ContactFormBlock';
 
 export * from './ServicesPagesCommonComponents/RequestActionBlock/RequestActionBlock';
 export * from './ServicesPagesCommonComponents/ServicesStoriesBlock/ServicesStoriesBlock';

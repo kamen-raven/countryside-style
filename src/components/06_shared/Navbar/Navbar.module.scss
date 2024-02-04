@@ -40,8 +40,9 @@
   &_footer {
     grid-area: nav;
     display: grid;
+    align-content: center;
     grid-auto-flow: column;
-    gap: 10px 60px;
+    gap: 10px 40px;
     grid-template-columns: auto auto auto;
     grid-template-areas:
     ". . ."

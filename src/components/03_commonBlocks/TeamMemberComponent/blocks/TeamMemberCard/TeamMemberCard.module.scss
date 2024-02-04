@@ -24,9 +24,13 @@
 .innerBlock {
   display: flex;
   max-height: 600px;
-  max-width: calc(1920px - ($padding-side) * 2);
   margin: 0 auto;
   align-items: center;
+  max-width: 1920px;
+
+  @include breakpoint( screen1680) {
+    max-width: calc(1920px - ($padding-side) * 2);
+  }
 
   &_textFirst{
     flex-direction: row-reverse;
@@ -42,14 +46,18 @@
 .image {
   object-fit: cover;
   width:  50%;
-  height: max(350px, 600px);
+  height: clamp(450px, 50vw, 600px)// max(350px, 600px);
 }
 
 
 
 
 .infoContainer {
-  margin: 0 85px;
+  margin: 0 $padding-side;
+
+  @include breakpoint(screen1280) {
+    margin: 0 calc($padding-side / 1.5);
+  }
 }
 
 .name {

@@ -1,0 +1,17 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: contacts;
+  border-top: 1px solid $gray;
+  padding-top: 70px;
+  @include flexColumnGap(4.375rem); //70px
+}
+
+.containerInfo {
+  @include mainContainer();
+  @include flexColumnGap;
+}
+
+.title {
+  @include common-title(hTitle);
+}

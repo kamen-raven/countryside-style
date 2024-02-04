@@ -11,10 +11,10 @@ const TeamBlock: React.FC<TeamBlockProps> = ({ teamMembersItems }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.contentContainer}>
-        {teamMembersItems && teamMembersItems.map(item => {
+        {teamMembersItems && teamMembersItems.map((item, index) => {
           if (item.role == 'owner') {
             return (
-              <TeamMemberCard key={item._id} employeeItem={item} />
+              <TeamMemberCard key={item._id} employeeItem={item} index={index} />
             );
           }
         })}

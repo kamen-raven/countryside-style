@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './HomePage.module.scss';
 import {
   BlogBlock,
+  ContactsMainBlock,
   HeadBlock,
   ObjectsForSaleBlock,
   OurServicesBlock,
   PressBlock,
   TeamBlock,
-  ContactsBlock
 } from '~pages/01_HomePage/HomePage/blocks/index';
 import { ReviewsBlock } from '~common/index';
 
@@ -34,7 +34,7 @@ const HomePage = ({ ...props }): JSX.Element => {
       <BlogBlock path={'home'} />
       <TeamBlock teamMembersItems={teamMembersData} />
       <ReviewsBlock reviewsDataItem={reviews} />
-      <ContactsBlock generalContactsData={generalContactsData} />
+      <ContactsMainBlock generalContactsData={generalContactsData} />
     </main>
   );
 };

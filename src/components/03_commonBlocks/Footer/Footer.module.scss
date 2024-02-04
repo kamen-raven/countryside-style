@@ -1,20 +1,21 @@
 @import '~global_styles';
 
 .footerWrapper {
-  @include common-wrapper;
+  @include mainContainer();
   border-top: 1px solid $gray;
+  margin-top: 70px;
+  margin-bottom: 100px;
 }
 
 .container {
-  grid-area: container;
-  margin: 90px 120px;
   display: grid;
+  align-items: start;
   grid-template-rows: 60px auto;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "logo logo"
     "nav contacts";
-  gap: 60px 440px;
+  gap: 45px;
 }
 
 
@@ -47,6 +48,7 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .phone {
@@ -73,8 +75,9 @@
 
 
     & svg {
-
       fill: none;
+      width: 35px;
+      height: 35px;
     }
   }
 

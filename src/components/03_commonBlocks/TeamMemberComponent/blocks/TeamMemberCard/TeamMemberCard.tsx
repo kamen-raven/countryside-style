@@ -6,7 +6,7 @@ import styles from './TeamMemberCard.module.scss';
 import { ContactInfoElement } from './elements';
 
 
-const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem }) => {
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index }) => {
 
   const styleItems = {
     oddStyles: {
@@ -23,8 +23,8 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem }) => {
 
   const isOdd = (num: number) => num % 2 !== 0;
 
-  const setColor = isOdd(employeeItem._id) ? styleItems.oddStyles.color : styleItems.evenStyles.color;
-  const setTemplate = isOdd(employeeItem._id) ? styleItems.oddStyles.template : styleItems.evenStyles.template;
+  const setColor = isOdd(index+1) ? styleItems.oddStyles.color : styleItems.evenStyles.color;
+  const setTemplate = isOdd(index+1) ? styleItems.oddStyles.template : styleItems.evenStyles.template;
 
 
   const quoteElement = (

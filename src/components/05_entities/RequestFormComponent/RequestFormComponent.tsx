@@ -8,44 +8,48 @@ import { Button } from '~shared/index';
 
 
 
-const RequestFormComponent = ({...props }: RequestFormComponentProps): JSX.Element => {
+const RequestFormComponent = ({ ...props }: RequestFormComponentProps): JSX.Element => {
   return (
-    <form className={styles.form} {...props }
+    <form className={styles.form} {...props}
       action={''}
       name={'question'}>
       <h3 className={styles.title}>
         Задать вопрос
       </h3>
       <p className={styles.description}>
-        Напишите Ваше имя, телефон и свой вопрос. Наш менеджер ответит Вам в ближайшее время.
+        Напишите Ваше имя, телефон и&nbsp;свой вопрос. Наш&nbsp;менеджер ответит Вам в&nbsp;ближайшее время.
       </p>
       <fieldset className={styles.fieldset}>
-        <label className={styles.label} htmlFor='name' ></label>
-        <input className={styles.input}
-          name={'name'}
-          type={'text'}
-          required
-          placeholder={'Ваше имя'} />
-        <label className={styles.label} htmlFor='phone'></label>
-        <input className={styles.input}
-          name={'phone'}
-          type={'tel'}
-          required
-          placeholder={'Ваш телефон'} />
-        <label className={styles.label} htmlFor='question'></label>
-        <textarea className={styles.textarea}
-          name={'question'}
-          required
-          placeholder={'Вопрос'}></textarea>
+        <label className={styles.label}>
+          <input className={styles.input}
+            name={'name'}
+            type={'text'}
+            required
+            placeholder={'Ваше имя'} />
+        </label>
+
+        <label className={styles.label}>
+          <input className={styles.input}
+            name={'phone'}
+            type={'tel'}
+            required
+            placeholder={'Ваш телефон'} />
+        </label>
+
+        <label className={styles.label}>
+          <textarea className={styles.textarea}
+            name={'question'}
+            required
+            placeholder={'Вопрос'}></textarea>
+        </label>
       </fieldset>
-      <Button appearance="colored"
-        className={styles.button}
+      <button className={styles.button}
         type={"submit"}>
         Отправить вопрос
-      </Button>
+      </button>
       <span className={styles.agreement}>
-        Нажимая на кнопку, вы даете свое согласие на&nbsp;
-        <Link className={styles.agreement} href={`/personal`}>обработку персональных данных
+        Нажимая на кнопку, вы даете свое согласие&nbsp;
+        <Link className={styles.agreement} href={`/personal`}>на&nbsp;обработку персональных данных
         </Link>
       </span>
     </form>
