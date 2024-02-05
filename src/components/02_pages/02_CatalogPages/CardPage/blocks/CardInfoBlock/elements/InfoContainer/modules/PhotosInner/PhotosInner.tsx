@@ -27,7 +27,7 @@ const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
 
         <LabelNew />
 
-        <div className = {styles.infoButtonContainer}>
+        <div className={styles.infoButtonContainer}>
           <div className={`${styles.imageInfoButton} ${styles.imageInfoButton__plan}`}>
             <Link className={styles.imageInfoButton__link} href={'/'}>
               Планировка
@@ -36,15 +36,16 @@ const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
               </span>
             </Link>
           </div>
-
-          <div className={`${styles.imageInfoButton} ${styles.imageInfoButton__youtube}`}>
-            <Link className={styles.imageInfoButton__link} href={'/'}>
-              Видео
-              <span className={styles.imageInfoButton__icon}>
-                <YouTubeIcon />
-              </span>
-            </Link>
-          </div>
+          {data.links?.youtube &&
+            <div className={`${styles.imageInfoButton} ${styles.imageInfoButton__youtube}`}>
+              <Link className={styles.imageInfoButton__link} href={data.links?.youtube}>
+                Видео
+                <span className={styles.imageInfoButton__icon}>
+                  <YouTubeIcon />
+                </span>
+              </Link>
+            </div>
+          }
         </div>
 
 

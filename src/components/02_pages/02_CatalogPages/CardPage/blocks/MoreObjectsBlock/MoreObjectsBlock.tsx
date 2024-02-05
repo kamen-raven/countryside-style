@@ -1,14 +1,11 @@
 import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 
 import styles from './MoreObjectsBlock.module.scss';
 import { MoreObjectsBlockInterface } from './MoreObjectsBlock.interface.ts';
 
-import ArrowIcon from '~svg/button/arrow.svg';
-import Tepmlate from '~img/template/House_3.jpg';
+import { CatalogCardComponent } from '~entities/index.ts';
 
-const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = () => {
+const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = ({ commonObjectsData }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -16,12 +13,19 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = () => {
           Похожие объекты
         </h2>
 
-
-
-
         <div className={styles.cardsLayout}>
+          {commonObjectsData.map((item) => {
+            if (item.status == 'available') {
+              return (
+                <CatalogCardComponent key={item.id} item={item} />
+              );
+            }
 
-          <div className={styles.cardWrapper}>
+          })}
+
+
+
+{/*           <div className={styles.cardWrapper}>
             <div className={styles.imageBlock}>
               <Link className={`${styles.link} ${styles.link_image}`} href={'/houses/card'}>
                 <Image
@@ -123,7 +127,7 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -9,27 +9,32 @@ import { InfoContainer, PriceComponent, TitleComponent } from './elements/index.
 
 const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ data }) => {
 
+  const currentObj = data.find((elem) => elem.status == 'current'); // потом поправить"!!!
+
+  if (currentObj) {//потом поправить
+
+    return (
+      <section className={styles.wrapper}>
+
+        
+        <BackgroundSVGPattern positionX='right' />
+        <div className={`${styles.mainContainer}`}>
+          {/* ЗАГОЛОВОК TITLE */}
+          <TitleComponent data={currentObj} />
+          {/* ОСНОВНОЙ КОНТЕЙНЕР С ИНФОРМАЦИЕЙ / INFO */}
+          <InfoContainer data={currentObj}/>
+
+          {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}
+          <PriceComponent data={currentObj} />
+        </div>
 
 
 
-  return (
-    <section className={styles.wrapper}>
-      <BackgroundSVGPattern positionX='right' />
-      <div className={`${styles.mainContainer}`}>
-        {/* ЗАГОЛОВОК TITLE */}
-        <TitleComponent data={data} />
-        {/* ОСНОВНОЙ КОНТЕЙНЕР С ИНФОРМАЦИЕЙ / INFO */}
-        <InfoContainer data={data}/>
 
-        {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}
-        <PriceComponent data={data} />
-      </div>
+      </section>
+    );
+  }
 
-
-
-
-    </section>
-  );
 };
 
 export { CardInfoBlock };

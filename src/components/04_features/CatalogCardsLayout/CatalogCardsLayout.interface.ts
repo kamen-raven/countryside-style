@@ -1,8 +1,8 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { CharacterResponse } from '../../../api/temp/interfaces';
+import { objectItemInterface } from '~data/temp/objectsTemplateList/objectItem.interface';
 
 export interface CatalogCardsLayoutInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  data:  CharacterResponse;
+  objectsData: objectItemInterface[];
   itemsPerPage: number;
   children?: ReactNode;
 }

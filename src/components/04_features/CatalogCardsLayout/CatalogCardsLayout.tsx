@@ -6,11 +6,11 @@ import { CatalogCardsLayoutInterface } from './CatalogCardsLayout.interface.ts';
 import { CatalogCardComponent, CatalogCardsPagination } from '~entities/index.ts';
 
 
-const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ data, itemsPerPage }) => {
-  const pageInfo = data.info.pages;
-  const countInfo = data.info.count;
+const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ objectsData, itemsPerPage }) => {
+/*   const pageInfo = data.info.pages;
+  const countInfo = data.info.count; */
 
-  const perPage = countInfo / pageInfo;
+  const perPage = objectsData.length; //countInfo / pageInfo;
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -18,7 +18,7 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ data, items
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentItems = data.results.slice(startIndex, endIndex);
+  const currentItems = objectsData.slice(startIndex, endIndex);
 
   const parentRef = useRef<HTMLDivElement>(null); // реф для скролла вверх при пагинации
 

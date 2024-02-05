@@ -1,12 +1,13 @@
 import TemplateImage from '~img/template/House_5 1.jpg';
 import TemplateImage2 from '~img/template/House_3.jpg';
+import TemplateImage3 from '~img/template/House_9.jpg';
 import { objectItemInterface } from './objectItem.interface';
 
 
 const objectsTemplate: objectItemInterface[] = [
   {
     id: 1106057,
-    status: '',
+    status: 'current',
     title: 'д. Келози',
     type: 'дача',
     mainImage: TemplateImage,
@@ -41,12 +42,12 @@ const objectsTemplate: objectItemInterface[] = [
       },
     },
     links: {
-      youtube: ''
+      youtube: 'youtube.com/example'
     },
 
     seller: {
       manager: 'Елена Жукова',
-      contact:  '+79000000000'
+      contact:  '+79100000000'
     },
     information: {
       common: 'Продается новый зимний дом 144,2 кв. м на участке 8 соток в дер. Келози, Ломоносовский район. Дом построен по каркасной технологии с утеплением, фундамент – железобетонные сваи (размер фундамента 10x11 м). Утепление стен, потолка, пола 200 мм, крыши 200 мм.',
@@ -79,7 +80,7 @@ const objectsTemplate: objectItemInterface[] = [
     status: 'new',
     title: 'д. Келози',
     type: 'дача',
-    mainImage: TemplateImage,
+    mainImage: TemplateImage2,
     address: {
       area: 'Ломоносовский р-н',
       town: 'д. Келози',
@@ -149,7 +150,7 @@ const objectsTemplate: objectItemInterface[] = [
     status: 'sold',
     title: 'д. Новый Лес',
     type: 'коттедж',
-    mainImage: TemplateImage2,
+    mainImage: TemplateImage3,
     address: {
       area: 'Петербург',
       town: 'д. Новый Лес',
@@ -399,6 +400,143 @@ const objectsTemplate: objectItemInterface[] = [
       }
     }
   },
+  {
+    id: 1234,
+    status: 'available',
+    title: 'Новая дача',
+    type: 'дача',
+    mainImage: TemplateImage3,
+    address: {
+      area: 'Новый р-н',
+      town: 'Новая дача',
+      organization: 'Новая организация',
+      map: {
+        coordinateX: '56.12345',
+        coordinateY: '30.98765',
+        mapLink: 'https://yandex.ru/map-widget/v1/?um=constructor%3Aexample-link'
+      }
+    },
+    cost: 10.99,
+    characteristics: {
+      distanceToKad: '5 км',
+      house: {
+        squareHouse: 120.5,
+        squareLiving: 90,
+        squareKitchen: 30.5,
+        roomCount: 4,
+        rooms: '2 спальни, кухня, с/у, гостиная',
+        material: 'кирпич',
+        basement: 'Фундамент на сваях',
+        communications: 'Электричество 20 кВт, водопровод, отопление, канализация'
+      },
+      homestead: {
+        category: 'ДНТ',
+        squareArea: '10 соток',
+        relief: 'Холмистый',
+        fence: 'Есть'
+      },
+    },
+    links: {
+      youtube: 'https://www.youtube.com/example'
+    },
+    seller: {
+      manager: 'Иван Петров',
+      contact: '+79111111111'
+    },
+    information: {
+      common: 'Продается новая дача 120.5 кв. м на участке 10 соток в Новом районе. Дом построен из кирпича, с фундаментом на сваях. Все коммуникации доступны: электричество 20 кВт, водопровод, отопление, канализация.',
+      communications: 'Отличная инфраструктура: школы, детские сады, магазины - все рядом. Близко к остановке общественного транспорта. Прекрасные условия для жизни и отдыха.',
+      plan: [
+        {
+          floor: '1 этаж',
+          info: 'гостиная, кухня, спальня, с/у'
+        },
+        {
+          floor: '2 этаж',
+          info: 'коридор, две спальни, санузел, балкон'
+        }
+      ],
+      advantages: {
+        bullet: [
+          'Близость к общественному транспорту.',
+          'Отличная инфраструктура в шаговой доступности.',
+          'Прекрасные условия для отдыха и релаксации.'
+        ],
+        additional: [
+          'Готовность к заселению.'
+        ]
+      }
+    }
+  },
+  {
+    id: 9876,
+    status: 'available',
+    title: 'д. Новое Место',
+    type: 'дача',
+    mainImage: TemplateImage2,
+    address: {
+      area: 'Пушкинский р-н',
+      town: 'д. Новое Место',
+      organization: 'КП «Зеленая поляна»',
+      map: {
+        coordinateX: '',
+        coordinateY: '',
+        mapLink: 'https://yandex.ru/map-widget/v1/?um=constructor%3Aa1b2c3d4e5f6g7h8i9j0&amp'
+      }
+    },
+    cost: 6.45,
+    characteristics: {
+      distanceToKad: '5 км',
+      house: {
+        squareHouse: 120.5,
+        squareLiving: 95,
+        squareKitchen: 25.5,
+        roomCount: 4,
+        rooms: '2 спальни, гостиная, с/у, кухня',
+        material: 'брус',
+        basement: 'Фундамент на сваях',
+        communications: 'Электричество 10 кВт, водопровод, отопление'
+      },
+      homestead: {
+        category: 'ДНП',
+        squareArea: '10 соток',
+        relief: 'Участок с легким наклоном',
+        fence: 'Есть'
+      }
+    },
+    links: {
+      youtube: 'https://www.youtube.com/watch?v=abcdefghijk'
+    },
+    seller: {
+      manager: 'Александр Иванов',
+      contact: '+79111111111'
+    },
+    information: {
+      common: 'Продается уютный дом 120,5 кв. м на участке 10 соток в дер. Новое Место, Пушкинский район. Дом построен из бруса, фундамент – сваи. Площадь участка позволяет создать ухоженный сад или огород.',
+      communications: '10 кВт электричества, водопровод. Отопление от камина.',
+      plan: [
+        {
+          floor: '1 этаж',
+          info: 'гостиная, кухня, спальня, санузел, терраса.'
+        },
+        {
+          floor: 'Мансарда',
+          info: 'большая спальня, рабочий кабинет.'
+        }
+      ],
+      advantages: {
+        bullet: [
+          'Тихое место, подходит для отдыха от городской суеты.',
+          'Ухоженный сад с фруктовыми деревьями.',
+          'Близость к парку и лесной зоне.',
+          'Удобный подъезд от трассы.'
+        ],
+        additional: [
+          'Возможен торг при серьезном интересе.'
+        ]
+      }
+    }
+  }
 ];
 
 

@@ -1,7 +1,7 @@
-<svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M25.4082 0V23.407" stroke="#398281" stroke-width="2.5" stroke-miterlimit="10"/>
-<path d="M2 23.407V0" stroke="#398281" stroke-width="2.5" stroke-miterlimit="10"/>
-<path d="M13.7051 0V5.054" stroke="#398281" stroke-width="2.5" stroke-miterlimit="10"/>
-<path d="M13.7051 18.353V23.407" stroke="#398281" stroke-width="2.5" stroke-miterlimit="10"/>
-<path d="M13.7051 9.177V14.23" stroke="#398281" stroke-width="2.5" stroke-miterlimit="10"/>
+<svg width="25.908203" height="23.407227" viewBox="0 0 25.9082 23.4072" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<path d="M24.6582 0L24.6582 23.4072" stroke="#398281" stroke-opacity="1.000000" stroke-width="2.500000"/>
+	<path d="M1.25 23.4072L1.25 0" stroke="#398281" stroke-opacity="1.000000" stroke-width="2.500000"/>
+	<path d="M12.9551 0L12.9551 5.05371" stroke="#398281" stroke-opacity="1.000000" stroke-width="2.500000"/>
+	<path d="M12.9551 18.3535L12.9551 23.4072" stroke="#398281" stroke-opacity="1.000000" stroke-width="2.500000"/>
+	<path d="M12.9551 9.17676L12.9551 14.2295" stroke="#398281" stroke-opacity="1.000000" stroke-width="2.500000"/>
 </svg>

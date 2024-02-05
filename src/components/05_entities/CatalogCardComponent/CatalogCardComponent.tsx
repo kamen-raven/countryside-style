@@ -17,7 +17,7 @@ import { LabelNew, YoutubeLabel } from '~shared/index.ts';
 
 const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
   ////для того чтобы отображать статус и гендер ////////////////////////////////////////////////////////////////////////
-  const targetKey = (targetValue: string) => Object.entries(item).find(([, value]) => value === targetValue )?.[0];
+  const targetKey = (targetValue: string) => Object.entries(item).find(([, value]) => value === targetValue)?.[0];
   ////////////////////////////////////////////////////////////////////////////
 
   const router = useRouter();
@@ -29,10 +29,10 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
 
 
   const newLabel = <LabelNew />;
-  const renderNewLabel = item.gender == 'Male' ? newLabel : '';
+  const renderNewLabel = item.status == 'new' ? newLabel : '';
 
-  const youtubeLabel = <YoutubeLabel/>;
-  const renderYoutubeLabel = item.status == 'Dead' ? youtubeLabel : '';
+  const youtubeLabel = <YoutubeLabel />;
+  const renderYoutubeLabel = item.links?.youtube != '' ? youtubeLabel : '';
 
 
 
@@ -42,47 +42,51 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
         <Link className={`${styles.link} ${styles.link_image}`} href={'/houses/card'}>
           <Image
             className={styles.image}
-            src={ImageTemplate}
-            alt={item.name}
-            width={300}
-            height={300}
+            src={item.mainImage}
+            alt={item.address.town}
           />
-
           {renderNewLabel}
           {renderYoutubeLabel}
         </Link>
       </div>
+
       <div className={styles.infoBlock}>
         <div className={styles.infoContainer}>
           <Link className={`${styles.link} ${styles.link_title}`} href={'/houses/card'}>
             <h2 className={styles.title} >
-              Лесколово
+              {item.address.town}
             </h2>
           </Link>
           <div className={styles.statusContainer}>
             <p className={styles.status}>
-              {targetKey(item.status)}&nbsp;
+              {item.type}&nbsp;
               <span className={styles.status_bold}>
-                {item.status}
+                {item.characteristics.house?.squareHouse}&nbsp;кв.м.
               </span>
             </p>
-            <span>&nbsp;|&nbsp;</span>
-            <p className={styles.status}>
-              {targetKey(item.gender)}&nbsp;
-              <span className={styles.status_bold}>
-                {item.gender}
-              </span>
-            </p>
+
+            {item.characteristics.homestead &&
+              <>
+                <span>|</span>
+                <p className={styles.status}>
+                  Участок&nbsp;
+                  <span className={styles.status_bold}>
+                    {item.characteristics.homestead.squareArea}
+                  </span>
+                </p>
+              </>
+            }
           </div>
+
           <p className={styles.address}>
-            {item.location.name}
+            {item.address.town}, {item.address.area}, {item.address.organization}
           </p>
         </div>
 
 
         <div className={styles.priceContainer}>
           <p className={styles.price}>
-            {item.created.slice(11, 18)} млн. руб.
+            {item.cost}&nbsp;млн.&nbsp;руб.
           </p>
           <button className={`${styles.arrow} ${styles.arrow_right}`}
             onClick={goToAnotherPage}>

@@ -1,5 +1,6 @@
-export interface dataTemplateInterface {
+export interface dataTemplateInterface  {
   id: number;
+  status: string;
   title: string;
   type: string;
   mainImage: StaticImageData;
@@ -56,12 +57,14 @@ export interface dataTemplateInterface {
   };
 }
 
+
 import { StaticImageData } from 'next/image';
 import TemplateImage from '~img/template/House_5 1.jpg';
 
 
 const dataTemplate: dataTemplateInterface = {
   id: 1106057,
+  status: 'current',
   title: 'д. Келози',
   type: 'дача',
   mainImage: TemplateImage,

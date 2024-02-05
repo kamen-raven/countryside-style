@@ -49,12 +49,14 @@ const PriceElement: React.FC<PriceComponentInterface> = ({ data }) => {
       <p className={styles.idNum}>
         ID {data.id}
       </p>
+    <div className = {styles.buttonContainer}>
 
       {showNumber()}
 
-      <button className={`${styles.button} ${styles.button__write}`}>
+      <button className={`${styles.button} ${styles.button_write}`}>
         Написать
       </button>
+    </div>
 
     </div>
   );

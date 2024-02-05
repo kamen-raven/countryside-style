@@ -5,19 +5,19 @@
 
 .iconContainer {
   display: grid;
-  grid-template-columns: minmax(60px, 100px) auto;
+  grid-template-columns: minmax(60px, 80px) auto;
   justify-content: start;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 
 }
 
 .icon {
-  display: inline-flex;
+  display: flex;
 
   & svg {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
 }

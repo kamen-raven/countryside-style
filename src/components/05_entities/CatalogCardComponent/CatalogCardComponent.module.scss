@@ -78,7 +78,7 @@
 .statusContainer {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 5px;
   color: #398281;
 }
 
@@ -133,8 +133,8 @@
   border-radius: 50%;
   background: none;
   padding: 0;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
 
   & svg {
     transition: transform .3s linear;

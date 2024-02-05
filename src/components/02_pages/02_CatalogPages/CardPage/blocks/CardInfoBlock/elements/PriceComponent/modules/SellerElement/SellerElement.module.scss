@@ -4,15 +4,15 @@
   padding-top: 50px;
 
   display: flex;
-  gap: 25px;
+  gap: 20px;
 }
 
 
 .sellerPhoto {
   display: flex;
   &_img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     object-position: 80%;
@@ -33,7 +33,7 @@
 
 .description {
   @include common-paragraph(p,
-        $font-weight: $bold,
+        $font-weight: $regular,
         $font-family: $ff-openSans);
 }
 
@@ -49,12 +49,14 @@
   $font-weight: $regular);
 
   &__icon {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     padding: 5px 5px 5px 10px;
 
     & svg {
       border-radius: 50%;
+      width: 35px;
+      height: 35px;
     }
   }
 }

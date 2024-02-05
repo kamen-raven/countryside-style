@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import objectsTemplate from "~data/temp/objectsTemplateList/objectsDataTemplate";
 /* import { notFound } from "next/navigation"; */
 import { CardPage } from "~pages/index";
 
@@ -25,6 +26,8 @@ export default async function CardType({ params }:  {params: {type: string}}) {
   } */
 
   return (
-    <CardPage type={params.type} />
+    <CardPage
+    type={params.type}
+    objectsData={objectsTemplate} />
   );
 }

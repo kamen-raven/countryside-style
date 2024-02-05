@@ -5,7 +5,6 @@ import SearchIcon from "~svg/search/searchIcon.svg";
 import ClearIcon from '~svg/button/clear.svg';
 
 import { CustomSelect } from '~shared/CustomSelect/CustomSelect.tsx';
-import { Button } from '~shared/index.ts';
 
 
 const SearchBar: React.FC<SearchBarInterface> = ({ className }) => {

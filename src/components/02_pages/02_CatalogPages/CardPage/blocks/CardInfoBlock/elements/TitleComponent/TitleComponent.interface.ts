@@ -1,7 +1,7 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { dataTemplateInterface } from '~utils/temp/objectForCard/template';
+import { objectItemInterface } from '~data/temp/objectsTemplateList/objectItem.interface';
 
 export interface TitleComponentInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  data: dataTemplateInterface;
+  data: objectItemInterface;
   children?: ReactNode;
 }

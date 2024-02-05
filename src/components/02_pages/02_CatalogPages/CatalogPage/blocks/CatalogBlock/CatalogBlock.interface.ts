@@ -1,6 +1,6 @@
-import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { objectItemInterface } from '~data/temp/objectsTemplateList/objectItem.interface';
 
 export interface CatalogBlockInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-
-  children?: ReactNode;
+  objectsData: objectItemInterface[];
 }

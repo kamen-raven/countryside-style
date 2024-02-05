@@ -1,8 +1,9 @@
 @import '~global_styles';
 
 .priceElement {
-  padding-bottom: 50px;
+  padding-bottom: 40px;
   border-bottom: 2px solid $gray;
+  @include flexColumnGap($gap: 0);
 }
 
 .cost {
@@ -14,28 +15,34 @@
 .idNum {
   @include common-paragraph(pXl,
   $line-height: 120%);
-  margin-bottom: 40px;
+  margin-bottom: 15px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px 10px;
+  flex-wrap: wrap;
 }
 
 .button {
   @include common-button(colored,
   $padding: 0 25px);
   font-size: 22px;
-
+  max-width: 225px;
+//  margin-top: 20px;
   &__call {
     background-color: $accent-gray;
-    margin-right: 10px;
+    flex-grow: 4;
   }
 
   &_write {
+    flex-grow: 1;
 
   }
 }
 
 
-.numberContainer {
-  margin-bottom: 25px;
-}
+
 
 .telNumber {
   @include common-link;
@@ -57,10 +64,12 @@
   &::before {
     position: absolute;
     content: '!';
+    font-weight: $bold;
+    font-size: $paragraph-xl;
     top: -5px;
     left: 0;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border: 1px solid $dark;
     border-radius: 50%;
     display: flex;
