@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './InfoContainer.module.scss';
 import { InfoContainerInterface } from './InfoContainer.interface.ts';
 import { PhotosInner, CharacteristicsInner, CommonInfoInner, IconsInner, MapInner } from './modules/index.ts';
+import { PriceElement, SellerElement } from '../PriceComponent/modules/index.ts';
 
 
 const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
@@ -12,6 +13,12 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
       <div className={styles.photosContainer}>
         <PhotosInner data={data} />
       </div>
+
+      <div className={styles.priceContainer}>
+        <PriceElement data={data} />
+        <SellerElement data={data} />
+      </div>
+
 
       {data.characteristics &&
         <div className={styles.iconsContainer}>

@@ -2,6 +2,11 @@
 
 .priceWrapper {
   grid-area: price;
+
+  @include breakpoint(screen1024) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .priceContainer {

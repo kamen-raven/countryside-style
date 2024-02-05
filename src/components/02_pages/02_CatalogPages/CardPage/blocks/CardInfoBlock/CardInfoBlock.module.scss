@@ -14,9 +14,19 @@
   @include mainContainer();
 
   display: grid;
-  grid-template-columns: minmax(720px, 1100px) minmax(280px, 520px);
+  grid-template-columns: minmax(680px, 1100px) minmax(350px, 520px);
   gap: 40px;
   grid-template-areas:
-    "title title" // "title ." ???
+  "title title" // "title ." ???
     "info price";
+
+    @include breakpoint(screen1280) {
+      grid-template-columns: auto 350px;
+    }
+    @include breakpoint(screen1024) {
+      grid-template-columns: auto;
+      grid-template-areas:
+      "title"
+      "info";
+    }
 }

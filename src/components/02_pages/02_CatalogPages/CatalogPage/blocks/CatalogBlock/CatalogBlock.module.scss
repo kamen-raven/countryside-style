@@ -1,6 +1,7 @@
 @import '~global_styles';
 
 .wrapper {
+  overflow: hidden;
   grid-area: main-catalog;
   z-index: 0;
   position: relative;
