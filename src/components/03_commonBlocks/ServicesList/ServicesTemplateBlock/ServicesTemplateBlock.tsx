@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import styles from './ServicesTemplateBlock.module.scss';
 import { ServicesTemplateBlockInterface } from './ServicesTemplateBlock.interface.ts';
 
@@ -37,3 +37,4 @@ const ServicesTemplateBlock: React.FC<ServicesTemplateBlockInterface> = ({ servi
 };
 
 export { ServicesTemplateBlock };
+ */

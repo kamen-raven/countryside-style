@@ -12,12 +12,11 @@ import { CatalogCardComponentInterface } from './CatalogCardComponent.interface.
 
 import ArrowIcon from '~svg/button/arrow.svg';
 
-import ImageTemplate from '~img/template/House_5 1.jpg';
 import { LabelNew, YoutubeLabel } from '~shared/index.ts';
 
 const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
   ////для того чтобы отображать статус и гендер ////////////////////////////////////////////////////////////////////////
-  const targetKey = (targetValue: string) => Object.entries(item).find(([, value]) => value === targetValue)?.[0];
+/*   const targetKey = (targetValue: string) => Object.entries(item).find(([, value]) => value === targetValue)?.[0]; */
   ////////////////////////////////////////////////////////////////////////////
 
   const router = useRouter();

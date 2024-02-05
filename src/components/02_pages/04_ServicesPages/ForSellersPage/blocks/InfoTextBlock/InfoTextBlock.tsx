@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './InfoTextBlock.module.scss';
-import { InfoTextBlockInterface } from './InfoTextBlock.interface.ts';
+
 import Image from 'next/image';
 
 import AvatarImage from '~img/Team/Person2.jpg';
 
-const InfoTextBlock: React.FC<InfoTextBlockInterface> = ({ }) => {
+const InfoTextBlock: React.FC = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>

@@ -1,9 +1,9 @@
 import React from 'react';
-import { ReviewCardProps } from './ReviewCard.props';
+import { ReviewCardInterface } from './ReviewCard.interface';
 import styles from './ReviewCard.module.scss';
 
 
-const ReviewCard = ({ data }: ReviewCardProps): JSX.Element => {
+const ReviewCard = ({ data }: ReviewCardInterface): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.infoContainer}>

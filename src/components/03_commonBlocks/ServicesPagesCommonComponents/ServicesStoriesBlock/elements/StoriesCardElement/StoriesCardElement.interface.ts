@@ -1,6 +1,4 @@
-import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export interface StoriesCardElementInterface extends DetailedHTMLProps<HTMLAttributes<>, > {
-  : ;
-  children?: ReactNode;
+export interface StoriesCardElementInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 }

@@ -44,7 +44,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   // Селектор выбранного контейнера для контента
   const setContainerSize = sizes.container[containerSize];
   const setImageSizeContainer = sizes.image[containerSize];
-  const setImageSize = sizes.sizes[containerSize];
+  /* const setImageSize = sizes.sizes[containerSize]; */
 
 
   return (

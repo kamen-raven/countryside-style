@@ -23,10 +23,10 @@ const OurTeamBlock: React.FC<OurTeamBlockInterface> = ({ employeesData }) => {
 
 
       <div className={styles.contentContainer}>
-        {employeesData && employeesData.map(item => {
+        {employeesData && employeesData.map((item, index) => {
           if (item.role == 'employee') {
             return (
-              <TeamMemberCard key={item._id} employeeItem={item} />
+              <TeamMemberCard key={item._id} employeeItem={item} index={index} />
             );
           }
         })}

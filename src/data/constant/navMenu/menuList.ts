@@ -1,4 +1,4 @@
-import { MenuItemInterface } from "./menuList.interface";
+import { MenuItemInterface } from "./menuList.interface.ts";
 
 export const menuList: MenuItemInterface[] = [
   {
@@ -30,7 +30,7 @@ export const menuList: MenuItemInterface[] = [
     name: "services",
     title: "Услуги",
     link: "/services",
-    secondLevel: [
+/*     secondLevel: [
       {
         name: "sellers",
         title: "Продажа",
@@ -41,7 +41,7 @@ export const menuList: MenuItemInterface[] = [
         title: "Покупка",
         link: "/services/for-buyer",
       }
-    ]
+    ] */
   },
   {
     name: "contacts",

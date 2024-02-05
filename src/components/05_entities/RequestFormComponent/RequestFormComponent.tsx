@@ -4,8 +4,6 @@ import Link from 'next/link';
 import styles from './RequestFormComponent.module.scss';
 import { RequestFormComponentProps } from './RequestFormComponent.props';
 
-import { Button } from '~shared/index';
-
 
 
 const RequestFormComponent = ({ ...props }: RequestFormComponentProps): JSX.Element => {

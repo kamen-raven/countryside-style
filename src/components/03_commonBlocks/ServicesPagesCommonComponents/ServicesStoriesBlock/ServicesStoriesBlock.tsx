@@ -4,7 +4,7 @@ import { ServicesStoriesBlockInterface } from './ServicesStoriesBlock.interface.
 import { StoriesCardElement } from './elements/index.ts';
 
 
-const ServicesStoriesBlock: React.FC<ServicesStoriesBlockInterface> = ({ }) => {
+const ServicesStoriesBlock: React.FC<ServicesStoriesBlockInterface> = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>

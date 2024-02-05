@@ -1,5 +1,5 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { reviewDataInterface } from '~common/ReviewsBlock/elements/ReviewCard/ReviewCard.props';
+import { reviewDataInterface } from '~data/temp/reviewsData/reviewsData.interface';
 
 export interface ReviewsBlockProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   reviewsDataItem: reviewDataInterface[]

@@ -8,10 +8,10 @@ const PartnersBlock: React.FC<PartnersBlockInterface> = ({ employeesData }) => {
   return (
     <section className={styles.wrapper}>
 
-      {employeesData && employeesData.map(item => {
+      {employeesData && employeesData.map((item, index) => {
         if (item.role == 'owner') {
           return (
-            <TeamMemberCard key={item._id} employeeItem={item} />
+            <TeamMemberCard key={item._id} employeeItem={item} index={index} />
           );
         }
       })}
