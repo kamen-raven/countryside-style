@@ -2,7 +2,7 @@ import { servicesDataInterface } from './servicesListData.interface';
 
 // img
 import SaleImg from '~img/servicesPages/servicesCards/sale.jpg';
-import BuyImg from '~img/servicesPages/servicesCards/Buy.jpg';
+import BuyImg from '~img/servicesPages/servicesCards/buy.jpg';
 import LawImg from '~img/servicesPages/servicesCards/law.jpg';
 import VillageImg from '~img/servicesPages/servicesCards/villages.jpg';
 import InvestImg from '~img/servicesPages/servicesCards/invest.jpg';
