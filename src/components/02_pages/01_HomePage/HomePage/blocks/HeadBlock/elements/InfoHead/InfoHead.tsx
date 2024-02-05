@@ -52,7 +52,7 @@ const InfoHead: React.FC = () => {
           <p className={styles.requestForm__description}>
             Оставьте заявку<br /> на&nbsp;БЕСПЛАТНУЮ консультацию
           </p>
-          <RequestPhoneInput nameForm={''} buttonText={'Узнать цену'} />
+          <RequestPhoneInput nameForm={''} buttonText={'Оставить заявку'} />
         </div>
       </div>
 

@@ -1,0 +1,18 @@
+@import '~global_styles';
+
+.wrapper {
+  @include flexColumnGap($gap: 20px);
+}
+
+.employeesArea {
+  grid-area: employees;
+}
+
+.ownersArea {
+  grid-area: partners;
+  margin-bottom: 20px;
+}
+
+.allArea {
+  grid-area: team;
+}

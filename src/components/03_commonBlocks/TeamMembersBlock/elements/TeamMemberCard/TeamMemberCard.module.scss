@@ -3,6 +3,9 @@
 .container {
   width: 0 auto;
 
+/*   &:last-of-type {
+    margin-bottom: 20px;
+  } */
 }
 
 .green {
@@ -30,6 +33,7 @@
 
   @include breakpoint( screen1680) {
     max-width: calc(1920px - ($padding-side) * 2);
+    max-height: fit-content;
   }
 
   &_textFirst{
@@ -38,15 +42,16 @@
 
 }
 
-
+/*
 .imageContainer {
-
-}
+  width: 100%;
+  height: clamp(450px, 70vw, 600px)// max(350px, 600px);
+} */
 
 .image {
   object-fit: cover;
-  width:  50%;
-  height: clamp(450px, 50vw, 600px)// max(350px, 600px);
+  width: 50%;
+  height: clamp(450px, 70vw, 600px)// max(350px, 600px);
 }
 
 
@@ -57,6 +62,7 @@
 
   @include breakpoint(screen1280) {
     margin: 0 calc($padding-side / 1.5);
+    padding: 20px 0;
   }
 }
 

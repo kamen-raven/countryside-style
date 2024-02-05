@@ -1,43 +1,19 @@
 @import '~global_styles';
 
-
-.wrapper {
-  grid-area: team;
-  @include common-wrapper;
-  color: $white;
-  grid-template-areas:
-  "title title title"
-  "content content content";
-}
-
 .titleContainer {
-  grid-area: title;
-  max-width: 1920px;
-  margin: 0 auto 70px;
+  @include mainContainer();
+  @include flexColumnGap($gap: 40px);
+  margin-bottom: 70px;
 }
 
 .title {
-  @include common-title(hTitle,
-    $margin: 0 120px 40px);
-
+  @include common-title(hTitle);
 }
 
 .paragraph {
   @include common-paragraph(p,
   $font-weight: $regular,
-  $font-family: $ff-openSans,
-  $margin: 0 120px);
-
+  $font-family: $ff-openSans);
   column-count: 2;
   column-gap: 50px;
-}
-
-
-
-.contentContainer {
-  grid-area: content;
-
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }

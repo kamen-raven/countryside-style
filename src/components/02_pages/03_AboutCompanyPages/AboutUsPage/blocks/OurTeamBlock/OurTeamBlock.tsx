@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './OurTeamBlock.module.scss';
 import { OurTeamBlockInterface } from './OurTeamBlock.interface.ts';
-import { TeamMemberCard } from '~common/TeamMemberComponent/blocks/index.ts';
+import { TeamMembersBlock } from '~common/index.ts';
 
 
 const OurTeamBlock: React.FC<OurTeamBlockInterface> = ({ employeesData }) => {
   return (
-    <section className={styles.wrapper}>
+    <TeamMembersBlock employeesData={employeesData} teamRole={'all'}>
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>
           Наша команда
@@ -22,18 +22,11 @@ const OurTeamBlock: React.FC<OurTeamBlockInterface> = ({ employeesData }) => {
 
 
 
-      <div className={styles.contentContainer}>
-        {employeesData && employeesData.map((item, index) => {
-          if (item.role == 'employee') {
-            return (
-              <TeamMemberCard key={item._id} employeeItem={item} index={index} />
-            );
-          }
-        })}
+    </TeamMembersBlock>
 
-      </div>
 
-    </section>
+
+
   );
 };
 

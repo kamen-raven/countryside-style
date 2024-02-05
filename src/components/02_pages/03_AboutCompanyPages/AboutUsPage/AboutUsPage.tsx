@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './AboutUsPage.module.scss';
 import { AboutUsPageInterface } from './AboutUsPage.interface';
 
-import { AboutCompanyBlock, PartnersBlock, VideoBlock, OurTeamBlock } from './blocks';
-import { AdvantagesBlock } from '~common/index';
+import { AboutCompanyBlock, VideoBlock, OurTeamBlock } from './blocks';
+import { AdvantagesBlock, TeamMembersBlock } from '~common/index';
 
 
 const AboutUsPage: React.FC<AboutUsPageInterface> = ({
@@ -14,12 +14,12 @@ const AboutUsPage: React.FC<AboutUsPageInterface> = ({
 
   return (
     <main className={styles.mainContainer}>
-      <AboutCompanyBlock aboutUsPageFacts={aboutUsPageFacts} />
-      <PartnersBlock employeesData={employeesData} />
-      <VideoBlock />
-      <AdvantagesBlock title='Наши преимущества'
+      {/*  <AboutCompanyBlock aboutUsPageFacts={aboutUsPageFacts} /> */}
+      <TeamMembersBlock employeesData={employeesData} teamRole={'owner'} />
+{/*       <VideoBlock /> */}
+{/*       <AdvantagesBlock title='Наши преимущества'
         background={false}
-        advantagesList={advantagesListData} />
+        advantagesList={advantagesListData} /> */}
       <OurTeamBlock employeesData={employeesData} />
     </main>
   );

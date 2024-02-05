@@ -11,6 +11,14 @@
   margin-top: 50px;
 }
 
+.contactsContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .phoneNumber {
   @include common-paragraph(pLg,
   $font-weight: $bold,

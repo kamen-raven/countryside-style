@@ -7,9 +7,8 @@ import {
   ObjectsForSaleBlock,
   OurServicesBlock,
   PressBlock,
-  TeamBlock,
 } from '~pages/01_HomePage/HomePage/blocks/index';
-import { ReviewsBlock } from '~common/index';
+import { ReviewsBlock, TeamMembersBlock } from '~common/index';
 
 import objectsForSaleData from "~utils/temp/objectsForSaleData/objectsForSaleItems";
 import servicesData from "~utils/temp/OurServicesData/servicesItems";
@@ -32,7 +31,7 @@ const HomePage = ({ ...props }): JSX.Element => {
       <OurServicesBlock servicesItems={ourServicesItems} />
       <PressBlock pressItems={pressInfoItems} />
       <BlogBlock path={'home'} />
-      <TeamBlock teamMembersItems={teamMembersData} />
+      <TeamMembersBlock employeesData={teamMembersData} teamRole={'owner'} />
       <ReviewsBlock reviewsDataItem={reviews} />
       <ContactsMainBlock generalContactsData={generalContactsData} />
     </main>

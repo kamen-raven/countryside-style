@@ -13,19 +13,21 @@ const ContactInfoElement: React.FC<ContactInfoElementInterface> = ({ employeeIte
 
   return (
     <address className={styles.addressContainer} >
-      {employeeItem.contacts.phone &&
-        <PhoneNumber className={styles.phoneNumber}
-          employeeItem={employeeItem}
-          colorText={'white'} />
-      }
+      <div className={styles.contactsContainer}>
+        {employeeItem.contacts.phone &&
+          <PhoneNumber className={styles.phoneNumber}
+            employeeItem={employeeItem}
+            colorText={'white'} />
+        }
 
-      <div className={styles.contactsList}>
-        {employeeItem.contacts.telegram &&
-          <ContactLink linkInfoData={employeeItem} messenger={'telegram'} colorSchema={'white'} />
-        }
-        {employeeItem.contacts.whatsapp &&
-          <ContactLink linkInfoData={employeeItem} messenger={'whatsapp'} colorSchema={'white'} />
-        }
+        <div className={styles.contactsList}>
+          {employeeItem.contacts.telegram &&
+            <ContactLink linkInfoData={employeeItem} messenger={'telegram'} colorSchema={'white'} />
+          }
+          {employeeItem.contacts.whatsapp &&
+            <ContactLink linkInfoData={employeeItem} messenger={'whatsapp'} colorSchema={'white'} />
+          }
+        </div>
       </div>
 
       {children}
