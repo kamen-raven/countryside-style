@@ -31,6 +31,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include breakpoint(screen1280) {
+    padding: 0 20px 0 80px;
+  }
 }
 
 .awardDescription {
@@ -48,12 +52,21 @@
   justify-content: center;
   align-items: flex-start;
   gap: 25px;
-  padding-left: 90px;
+  margin: 0 auto;
+  padding:  30px 70px 30px;
+  @include breakpoint(screen1280) {
+    padding:  30px 50px 30px;
+  }
 }
 
 .associationImage {
   max-height: 100px;
   object-fit: contain;
+
+  @include breakpoint(screen1280) {
+    max-width: 90%;
+    height: auto;
+  }
 }
 
 .associationDescription {

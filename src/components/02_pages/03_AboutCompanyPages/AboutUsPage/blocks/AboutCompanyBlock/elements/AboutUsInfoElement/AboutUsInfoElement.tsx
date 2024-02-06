@@ -18,7 +18,7 @@ const AboutUsInfoElement: React.FC = () => {
 
       <div className={styles.awardContainer}>
         <p className={styles.awardDescription}>
-          Лучшая риэлтерская компания на рынке загородной недвижимости 2018 года
+          Лучшая риэлтерская компания на&nbsp;рынке загородной недвижимости 2018&nbsp;года
         </p>
       </div>
       <div className={styles.associationContainer}>
@@ -27,7 +27,7 @@ const AboutUsInfoElement: React.FC = () => {
           src={AssociationLabel}
           alt={'Ассоциация риэлторов СПб и ЛО'} />
         <p className={styles.associationDescription}>
-          Состоим в Ассоциации риэлторов <br/>Санкт-Петербурга и Ленинградской области
+          Состоим в&nbsp;Ассоциации риэлторов <br/>Санкт-Петербурга и&nbsp;Ленинградской области
         </p>
       </div>
     </div>

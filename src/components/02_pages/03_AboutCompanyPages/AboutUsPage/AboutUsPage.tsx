@@ -14,12 +14,12 @@ const AboutUsPage: React.FC<AboutUsPageInterface> = ({
 
   return (
     <main className={styles.mainContainer}>
-      {/*  <AboutCompanyBlock aboutUsPageFacts={aboutUsPageFacts} /> */}
+      <AboutCompanyBlock aboutUsPageFacts={aboutUsPageFacts} />
       <TeamMembersBlock employeesData={employeesData} teamRole={'owner'} />
-{/*       <VideoBlock /> */}
-{/*       <AdvantagesBlock title='Наши преимущества'
+      <VideoBlock />
+      <AdvantagesBlock title='Наши преимущества'
         background={false}
-        advantagesList={advantagesListData} /> */}
+        advantagesList={advantagesListData} />
       <OurTeamBlock employeesData={employeesData} />
     </main>
   );

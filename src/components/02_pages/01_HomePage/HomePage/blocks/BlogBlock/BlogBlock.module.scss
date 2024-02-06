@@ -4,8 +4,7 @@
 .wrapper {
   grid-area: blog;
   position: relative;
-  padding-top: 70px;
-  padding-bottom: 100px;
+  padding: $padding-gap;
 }
 
 .container {

@@ -1,15 +1,13 @@
 @import '~global_styles';
 
 .wrapper {
-  @include common-wrapper;
   grid-area: video;
-
+padding-top: 50px;
 }
 
 .container {
-  grid-area: container;
-  margin: 0 120px;
-  height: 800px;
+  @include mainContainer();
+  height: clamp(400px, 45vw, 720px);
 }
 
 .video {

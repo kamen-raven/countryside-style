@@ -2,7 +2,7 @@
 
 .itemBorder {
   border-radius: 30px;
-  max-height: 55px;
+  max-height: 45px;
 
   &_colored {
     border: 1px solid transparent;
@@ -51,8 +51,8 @@
 
 .itemIcon {
   border-radius: 0 30px 30px 0;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   padding: 5px 5px 5px 15px;
 
   & svg {

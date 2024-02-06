@@ -2,17 +2,14 @@
 
 .wrapper {
   grid-area: advantages;
-
-
   border-bottom: 1px solid $gray;
+  padding: $padding-gap;
 }
 
 .container {
   position: relative;
 
   @include mainContainer();
-  padding: 90px 120px 120px;
-
 }
 
 .innerContainer {
@@ -24,7 +21,10 @@
 .iconsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px 50px;
+  gap: 50px;
+  @include breakpoint(screen1280) {
+    gap: 40px;
+  }
 }
 
 
