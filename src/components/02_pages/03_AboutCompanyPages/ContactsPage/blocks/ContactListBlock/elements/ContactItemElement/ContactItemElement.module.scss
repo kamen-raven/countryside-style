@@ -4,9 +4,19 @@
   display: grid;
   grid-template-columns: 100px auto;
   gap: 30px;
+
 /*   box-sizing: border-box;
   display: flex;
   flex-direction: column; */
+  @include breakpoint(screen1280){
+    grid-template-columns: 90px auto;
+    gap: 20px;
+  }
+  @include breakpoint(screen1024){
+    max-width: 700px;
+    grid-template-columns: 120px auto;
+    gap: 40px;
+  }
 }
 
 .avatar {
@@ -17,6 +27,14 @@
   max-height: 100px;
   border-radius: 50%;
   object-fit: cover;
+  @include breakpoint(screen1280){
+    max-width: 90px;
+    max-height: 90px;
+  }
+  @include breakpoint(screen1024){
+    max-width: 120px;
+    max-height: 120px;
+  }
 }
 
 .infoContainer {
@@ -24,7 +42,6 @@
   flex-direction: column;
   gap: 20px;
   align-items: flex-start;
-
   height: 100%;
 
   &__inner {
@@ -36,14 +53,11 @@
   &__name {
     @include common-paragraph(pXl,
     $font-weight: $bold);
-
   }
 
   &__jobTitle {
-
     @include common-paragraph(p,
     $font-weight: $regular);
-
   }
 
   &__location {

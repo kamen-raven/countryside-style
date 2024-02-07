@@ -1,45 +1,40 @@
 @import '~global_styles';
 
 .wrapper {
-  @include common-wrapper;
   grid-area: title;
   position: relative;
+  padding: $padding-gap;
 }
 
 .container {
-  grid-area: container;
-
-  display: flex;
-  flex-direction: column;
-  gap: 65px;
+  @include flexColumnGap();
 }
 
-.margin {
-  margin: 0 120px;
-}
 
 .title {
-  @include common-title(h1,
-    $margin: 80px 120px 0);
-
+  @include common-title(h1);
+    @include mainContainer();
 }
 
-.disclaimerContainer {
+.disclaimerWrapper {
   background-color: $accent-green;
+}
+.disclaimerContainer {
+  @include mainContainer($padding-upDown: 80px);
 
   display: flex;
   gap: 35px;
-  padding: 65px 120px;
 }
 
-/* .disclaimerIcon {
+.disclaimerIcon {
 
-} */
+}
 
 .disclaimerText {
   @include common-paragraph(pXl,
   $font-weight: $regular,
   $color: $white);
+  width: auto;
 }
 
 .disclaimerText_spanAccent {
@@ -48,15 +43,18 @@
 }
 
 .addressContainer {
-  @extend .margin;
+  @include mainContainer();
+
 }
 
 .contactsContainer {
-  @extend .margin;
+  @include mainContainer();
 
   display: flex;
-  gap: 60px ;
-  //justify-content: space-between;
+  //flex-wrap: wrap;
+  gap: 20px 30px ;
+  justify-content: space-between;
+
 }
 
 
@@ -64,7 +62,7 @@
   @include common-paragraph(pLg,
   $font-weight: $regular);
 
-
+  flex-shrink: 3;
   &_spanAccent {
     @extend .workTime;
     font-weight: $bold;

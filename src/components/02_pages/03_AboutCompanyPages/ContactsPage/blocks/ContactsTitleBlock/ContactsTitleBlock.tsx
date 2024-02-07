@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './ContactsMainBlock.module.scss';
-import { ContactsMainBlockInterface } from './ContactsMainBlock.interface';
+import styles from './ContactsTitleBlock.module.scss';
+import { ContactsTitleBlockInterface } from './ContactsTitleBlock.interface';
+
 
 import { BackgroundSVGPattern } from '~shared/index.ts';
 import { AddressElement, PhoneNumber } from '~entities/index.ts';
@@ -10,7 +11,7 @@ import MailIcon from '~svg/contacts/email.svg';
 import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
 import Link from 'next/link';
 
-const ContactsMainBlock: React.FC<ContactsMainBlockInterface> = ({ generalContactsData }) => {
+const ContactsTitleBlock: React.FC<ContactsTitleBlockInterface> = ({ generalContactsData }) => {
 
   const mkdStyles = {
     p: styles.workTime,
@@ -26,14 +27,18 @@ const ContactsMainBlock: React.FC<ContactsMainBlockInterface> = ({ generalContac
           Контакты
         </h1>
 
-        <div className={styles.disclaimerContainer}>
-          <AttentionDisclaimerIcon className={styles.disclaimerIcon} />
-          <p className={styles.disclaimerText}>
-            <span className={styles.disclaimerText_spanAccent}>
-              Вам не обязательно ехать к нам в офис, <br />
-            </span>
-            мы готовы встретиться с Вами в любом удобном для вас месте
-          </p>
+        <div className={styles.disclaimerWrapper}>
+          <div className={styles.disclaimerContainer}>
+            <div className={styles.disclaimerIcon}>
+              <AttentionDisclaimerIcon />
+            </div>
+            <p className={styles.disclaimerText}>
+              <span className={styles.disclaimerText_spanAccent}>
+                Вам не обязательно ехать к нам в офис, <br />
+              </span>
+              мы готовы встретиться с Вами в любом удобном для&nbsp;вас месте
+            </p>
+          </div>
         </div>
 
         <div className={styles.addressContainer}>
@@ -66,4 +71,4 @@ const ContactsMainBlock: React.FC<ContactsMainBlockInterface> = ({ generalContac
   );
 };
 
-export { ContactsMainBlock };
+export { ContactsTitleBlock };

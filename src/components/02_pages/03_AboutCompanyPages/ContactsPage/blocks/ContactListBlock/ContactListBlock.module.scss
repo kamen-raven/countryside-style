@@ -1,17 +1,22 @@
 @import '~global_styles';
 
 .wrapper {
-  @include common-wrapper;
-
   grid-area: contactsList;
+  padding: $padding-gap;
 }
 
 .container {
-  grid-area: container;
-  margin: 0 120px;
-
-
+  @include mainContainer();
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 90px 120px;
+  gap: 90px;
+
+  @include breakpoint(screen1280) {
+    gap: 90px 55px;
+  }
+  @include breakpoint(screen1024) {
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 80px;
+  }
 }
