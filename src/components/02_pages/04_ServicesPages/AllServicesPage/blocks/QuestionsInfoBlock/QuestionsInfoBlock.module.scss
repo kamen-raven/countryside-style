@@ -3,13 +3,12 @@
 .wrapper {
   grid-area: questionsInfo;
   background-color: $accent-green;
+  padding: $padding-gap;
 }
 
 .container {
   @include mainContainer();
-
-  margin: 90px auto;
-@include flexColumnGap;
+@include flexColumnGap($gap: 30px);
 }
 
 .title {
@@ -22,6 +21,10 @@
             $font-family: $ff-openSans,
             $font-weight: $regular,
             $color: $white);
+    max-width: 90%;
+    @include breakpoint(screen1280) {
+      max-width: 100%;
+    }
 }
 
 .descriptionAction {
@@ -30,12 +33,26 @@
             $font-weight: $bold,
             $line-height: 120%,
             $color: $white);
+    max-width: 90%;
+
+    @include breakpoint(screen1280) {
+      max-width: 100%;
+    }
 }
 
 
 .questionsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px 60px;
+  gap: 30px 40px;
+
+  @include breakpoint(screen1280) {
+    gap: 20px 40px;
+  }
+
+  @include breakpoint(screen1024) {
+    grid-template-columns: auto;
+    gap: 30px;
+  }
 }
 

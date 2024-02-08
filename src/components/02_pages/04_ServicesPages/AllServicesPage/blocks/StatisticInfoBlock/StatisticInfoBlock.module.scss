@@ -1,13 +1,19 @@
 @import '~global_styles';
 
-.container {
+.wrapper {
+  padding: $padding-gap;
   grid-area: statisticsInfo;
-
+}
+.container {
   @include mainContainer();
-  margin: 110px auto;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 50px;
+
+  @include breakpoint(screen1024) {
+    grid-template-columns: auto;
+    justify-items: center;
+  }
 }
 

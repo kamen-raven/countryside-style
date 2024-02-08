@@ -5,20 +5,38 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @include breakpoint(screen1024) {
+    width: 60%;
+    gap: 20px;
+
+  }
 }
 
 //
 .statContainer {
   display: flex;
   align-items: center;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .statIndicator {
+  flex-shrink: -1;
   @include common-paragraph(p,
     $font-weight: $bold);
-  font-size: 100px;
   line-height: 100%;
+
+  &_extraBig {
+    font-size: 6.25rem; //100px;
+  }
+
+  &_big {
+    font-size: 5rem; //80px;
+  }
+
+@include breakpoint(screen1280) {
+  font-size: 4.55rem;
+}
 }
 
 .statLabel {
@@ -28,6 +46,9 @@
   background-color: $accent-green;
   border-radius: 10px;
   padding: 10px 20px;
+  @include breakpoint(screen1280) {
+    padding: 10px;
+  }
 }
 
 //

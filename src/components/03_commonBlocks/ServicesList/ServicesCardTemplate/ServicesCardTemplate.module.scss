@@ -2,9 +2,15 @@
 
 .itemContainer {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
-  grid-template-rows: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(300px, auto));
   gap: 50px;
+
+  @include breakpoint(screen1280) {
+    grid-template-columns: auto;
+    grid-template-rows: 300px auto;
+    gap: 20px;
+  }
 }
 
 .imageContainer {
@@ -22,25 +28,32 @@
 .infoContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  gap: 20px;
+
+  @include breakpoint(screen1280) {
+    justify-content: flex-start;
+  }
 }
 
 .title {
-  @include common-title(hSubtitle);
-  font-size: clamp(36px, 1em, 60px);
+  @include common-title(hSmall);
+
+  &_big {
+    font-size: $subtitle;
+  }
 }
 
 .innerContainer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 .linkButton {
   @include common-link;
   @include common-button(colored);
-  font-size: 22px;
 }
 
 .description {

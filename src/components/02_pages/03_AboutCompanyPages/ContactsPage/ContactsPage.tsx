@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './ContactsPage.module.scss';
 import { ContactsPageInterface } from './ContactsPage.interface.ts';
-import { ContactListBlock, MapBlock, QuestionFormBlock_ContactsPage, ContactsTitleBlock } from './blocks/index.ts';
+import { ContactListBlock, MapBlock, ContactsTitleBlock } from './blocks/index.ts';
+import { QuestionFormBlock } from '~common/index.ts';
 
 const ContactsPage: React.FC<ContactsPageInterface> = ({ generalContactsData, employeesList }) => {
 
@@ -10,10 +11,11 @@ const ContactsPage: React.FC<ContactsPageInterface> = ({ generalContactsData, em
 
   return (
     <main className={styles.mainContainer}>
-      <ContactsTitleBlock generalContactsData={generalContactsData} /> 
+      <ContactsTitleBlock generalContactsData={generalContactsData} />
       <MapBlock mapInfoData={generalContactsData} />
       <ContactListBlock employeesList={employeesList} />
-      <QuestionFormBlock_ContactsPage />
+      <QuestionFormBlock contentType={'image'}
+          direction={'formFirst'}/>
     </main>
   );
 };

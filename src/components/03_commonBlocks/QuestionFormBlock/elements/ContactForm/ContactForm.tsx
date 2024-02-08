@@ -1,16 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 
-import styles from './ContactFormBlock.module.scss';
-import { ContactFormBlockInterface } from './ContactFormBlock.interface.ts';
+import styles from './ContactForm.module.scss';
+import { ContactFormInterface } from './ContactForm.interface.ts';
 import { RequestFormComponent } from '~entities/index.ts';
 
 import ContactImg from '~img/common-images/contactUsImg.jpg';
 
-const ContactFormBlock: React.FC<ContactFormBlockInterface> = ({ direction = 'formSecond', contentType = 'image', srcContent }) => {
+const ContactForm: React.FC<ContactFormInterface> = ({ direction = 'formSecond', contentType = 'image', srcContent }) => {
   /* определяем направление контента - что отображается сначала */
   const formDirection = {
-    formFirst: styles.containerForm_formFirst,
+    formFirst: styles.container_formFirst,
     formSecond: ''
   };
   const setDirection = (direction == 'formFirst') ? formDirection.formFirst : formDirection.formSecond;
@@ -41,4 +41,4 @@ const ContactFormBlock: React.FC<ContactFormBlockInterface> = ({ direction = 'fo
   );
 };
 
-export { ContactFormBlock };
+export { ContactForm };

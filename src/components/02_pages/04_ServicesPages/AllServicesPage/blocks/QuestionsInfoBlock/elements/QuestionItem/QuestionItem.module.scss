@@ -3,19 +3,27 @@
 .questionItem {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
+  gap: 20px;
+
+  @include breakpoint(screen1024) {
+    align-items: center
+  }
 
 
   &__iconContainer svg {
     display: flex;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   &__question {
     @include common-paragraph(pLg,
-                    $font-weight: $regular,
-                    $color: $white);
-    padding-top: 10px;
+      $font-weight: $regular,
+      $color: $white);
+    padding-top: 20px;
+
+    @include breakpoint(screen1024) {
+      padding-top: 0;
+    }
   }
 }

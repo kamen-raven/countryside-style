@@ -4,14 +4,12 @@
 .wrapper {
   grid-area: servicesList;
   position: relative;
-
-  @include mainContainer();
-
-  padding: 90px 120px;
+  padding: $padding-gap;
 }
 
 .container {
-@include flexColumnGap;
+  @include mainContainer();
+  @include flexColumnGap;
 }
 
 .title {
@@ -21,6 +19,9 @@
 .cardsLayout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 90px 60px;
-  font-size: 36px;
+  gap: 60px 50px;
+
+  @include breakpoint(screen1280) {
+    gap: 60px;
+  }
 }

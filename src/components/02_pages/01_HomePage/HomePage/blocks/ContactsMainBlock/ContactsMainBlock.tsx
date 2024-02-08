@@ -3,7 +3,7 @@ import { ContactsBlockProps } from './ContactsMainBlock.interface';
 import styles from './ContactsMainBlock.module.scss';
 
 import { AddressElement } from '~entities/index';
-import { ContactFormBlock } from '~common/index';
+import { ContactForm } from '~common/QuestionFormBlock/elements';
 
 
 const ContactsMainBlock: React.FC<ContactsBlockProps> = ({ generalContactsData }) => {
@@ -16,7 +16,7 @@ const ContactsMainBlock: React.FC<ContactsBlockProps> = ({ generalContactsData }
         <AddressElement addressInfoData={generalContactsData} />
       </div>
 
-      <ContactFormBlock contentType='map' srcContent={generalContactsData.mapLink} />
+      <ContactForm contentType='map' srcContent={generalContactsData.mapLink} />
     </section>
   );
 };

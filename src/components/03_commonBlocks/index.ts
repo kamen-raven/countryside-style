@@ -9,10 +9,10 @@ export * from './ServicesList/ServiceCard/ServiceCard';
 export * from './ServicesList/ServicesCardTemplate/ServicesCardTemplate';
 export * from './AdvantagesBlock/AdvantagesBlock';
 export * from './ReviewsBlock/ReviewsBlock';
-export * from './ContactFormBlock/ContactFormBlock';
 
 export * from './ServicesPagesCommonComponents/RequestActionBlock/RequestActionBlock';
 export * from './ServicesPagesCommonComponents/ServicesStoriesBlock/ServicesStoriesBlock';
 export * from './ServicesPagesCommonComponents/TitleBlockTemplate/TitleBlockTemplate';
 
 export * from './CardOfObject/CatalogCardItem/CatalogCardItem';
+export * from './QuestionFormBlock/QuestionFormBlock';

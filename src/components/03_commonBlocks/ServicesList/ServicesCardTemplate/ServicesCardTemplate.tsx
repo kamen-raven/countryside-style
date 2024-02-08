@@ -8,7 +8,7 @@ import { ArrowsButton } from '~shared/index.ts';
 
 const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({ serviceItem, arrows = false, buttonText = 'Подробнее' }) => {
 
-
+const setFontSize = (serviceItem.title.length <= 7) ? styles.title_big : '';
   return (
     <div className={styles.itemContainer}>
       <div className={styles.imageContainer}>
@@ -22,7 +22,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({ service
 
 
       <div className={styles.infoContainer}>
-        <h3 className={styles.title}>
+        <h3 className={`${styles.title} ${setFontSize}`}>
           {serviceItem.title}
         </h3>
 

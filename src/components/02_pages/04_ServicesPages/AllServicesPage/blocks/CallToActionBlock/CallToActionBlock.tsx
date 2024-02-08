@@ -9,11 +9,11 @@ const CallToActionBlock: React.FC = () => {
     <section className={styles.wrapper}>
       <div className={styles.container}>
         <h2 className={styles.callText}>
-          Живите спокойно, мы сделаем всю работу за Вас!
+          Живите спокойно, мы&nbsp;сделаем всю работу за&nbsp;Вас!
         </h2>
         <div className={styles.innerContainer}>
           <p className={styles.subtitle}>
-            Размер комиссии фиксируется в начале и&nbsp;не&nbsp;меняется в процессе работы
+            Размер комиссии фиксируется в&nbsp;начале и&nbsp;не&nbsp;меняется в&nbsp;процессе работы
           </p>
 
           <div className={styles.info}>
@@ -21,7 +21,7 @@ const CallToActionBlock: React.FC = () => {
               <BulletIcon />
             </div>
             <p className={styles.info__text}>
-              Она определяется в момент первичного обращения, фиксируется и не растет в процессе работы.
+              Она определяется в&nbsp;момент первичного обращения, фиксируется и&nbsp;не&nbsp;растет в&nbsp;процессе работы.
             </p>
           </div>
 

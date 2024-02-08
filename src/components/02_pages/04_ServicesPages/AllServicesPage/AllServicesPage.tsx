@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './AllServicesPage.module.scss';
 import { AllServicesPageInterface } from './AllServicesPage.interface.ts';
-import { ServicesListBlock, QuestionsInfoBlock, StatisticInfoBlock, CallToActionBlock, QuestionFormBlock_ServicePage } from './blocks/index.ts';
-import { TeamMembersBlock } from '~common/index.ts';
+import { ServicesListBlock, QuestionsInfoBlock, StatisticInfoBlock, CallToActionBlock } from './blocks/index.ts';
+import { QuestionFormBlock, TeamMembersBlock } from '~common/index.ts';
 
 const AllServicesPage: React.FC<AllServicesPageInterface> = ({ servicesListData, employeesData, questionsList, statIndicatorsList }) => {
     return (
@@ -12,7 +12,9 @@ const AllServicesPage: React.FC<AllServicesPageInterface> = ({ servicesListData,
           <StatisticInfoBlock statIndicatorsList={statIndicatorsList} />
           <CallToActionBlock />
           <TeamMembersBlock employeesData={employeesData} teamRole={'owner'} />
-          <QuestionFormBlock_ServicePage />
+          <QuestionFormBlock contentType={'image'}
+        direction={'formFirst'} />
+
         </main>
     );
 };
