@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 // next.config.js
 const withSvgr = require('next-plugin-svgr');
 

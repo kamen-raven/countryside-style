@@ -6,8 +6,8 @@ import { MapBlockInterface } from './MapBlock.interface.ts';
 
 const MapBlock: React.FC<MapBlockInterface> = ({ mapInfoData }) => {
   const [isActive, setIsActive] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+/*   const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 }); */
 
 /*   const handleMouseEnter = () => {
     setShowTooltip(false);
