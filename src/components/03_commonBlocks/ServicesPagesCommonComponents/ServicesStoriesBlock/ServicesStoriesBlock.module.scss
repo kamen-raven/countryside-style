@@ -2,7 +2,7 @@
 
 .wrapper {
   grid-area: servicesStories;
-
+  padding: $padding-gap;
 
 
   border-bottom: 1px solid $gray;
@@ -10,12 +10,9 @@
 
 .container {
   @include mainContainer();
-  padding: 90px 120px 120px;
 
+  @include flexColumnGap($gap: 50px);
 
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
 }
 
 .title {
@@ -24,7 +21,7 @@
 
 .innerContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(400px, 800px);
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  grid-auto-rows: minmax(400px, 640px);
   gap: 50px;
 }

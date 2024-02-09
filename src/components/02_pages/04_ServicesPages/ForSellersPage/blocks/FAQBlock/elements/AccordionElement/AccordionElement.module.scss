@@ -1,14 +1,14 @@
 @import '~global_styles';
 
 .container {
-  padding: 50px 0;
+  padding: 40px 0;
   border-bottom: 2px solid $gray;
 }
 
 
 .questionInner {
 display: grid;
-grid-template-columns: auto 55px;
+grid-template-columns: auto 45px;
 gap: 80px;
 cursor: pointer;
 
@@ -28,8 +28,9 @@ cursor: pointer;
   padding: 0;
   box-sizing: border-box;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
+  min-width: 45px;
+  width: 45px;
+  height: 45px;
   border: 1px solid $dark;
   transition: all 0.3s linear;
 
@@ -48,18 +49,19 @@ cursor: pointer;
 }
 
 .answer {
-  padding-top: 30px;
+
   @include common-paragraph(p,
         $font-family: $ff-openSans,
         $font-weight: $regular);
     max-height: 0;
     overflow: hidden;
-    transition:  max-height .3s ease-out;
+    transition:  all .3s ease-out;
 }
 
 .answerVisible {
   max-height: 1000px;
-  transition: max-height .3s ease-out;
+  transition: all .3s ease-out;
+  padding-top: 20px;
 }
 
 

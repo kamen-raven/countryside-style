@@ -13,8 +13,8 @@ const AccordionElement: React.FC<AccordionElementInterface> = ({ faqItem }) => {
     setIsOpened(!isOpened);
   };
 
-const openedButtonStyle = isOpened ? styles.isOpened : '';
-const answerStyle = isOpened ? styles.answerVisible : '';
+  const openedButtonStyle = isOpened ? styles.isOpened : '';
+  const answerStyle = isOpened ? styles.answerVisible : '';
 
   return (
     <div className={styles.container}>
@@ -23,17 +23,14 @@ const answerStyle = isOpened ? styles.answerVisible : '';
           {faqItem.question}
         </p>
 
-        <button className={`${styles.button} ${openedButtonStyle}`}
-            >
+        <button className={`${styles.button} ${openedButtonStyle}`} >
           <ToggleIcon />
         </button>
       </div>
 
-
       <p className={`${styles.answer} ${answerStyle}`}>
         {faqItem.answer}
       </p>
-
 
     </div>
   );

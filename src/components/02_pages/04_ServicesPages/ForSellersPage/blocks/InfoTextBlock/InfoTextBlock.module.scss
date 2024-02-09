@@ -4,18 +4,14 @@
   grid-area: infoText;
   background-image: url('../../../../../../../public/img/servicesPages/forSellersPage/infoBlockBG.jpg');
   background-color: $dark;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
+  padding: $padding-gap;
 }
 
 .container {
   @include mainContainer();
-  padding: 90px 120px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  height: 600px;
+  @include flexColumnGap($gap: 40px);
 }
 
 
@@ -23,7 +19,7 @@
 .titleContainer {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 1.4rem;
 }
 
 .title {
@@ -42,7 +38,7 @@
 ///quoteContainer///
 .quoteContainer {
   display: flex;
-  gap: 50px;
+  gap: 40px;
   align-items: flex-start;
 }
 
@@ -55,8 +51,8 @@
 }
 
 .authorAvatar {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 80px;
+  max-height: 80px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -70,7 +66,7 @@
 }
 
 .innerQuote {
-  padding-top: 30px;
+  padding-top: 1.4rem;
 }
 
 .quote {
@@ -85,5 +81,5 @@
   @extend .quote;
   font-weight: $bold;
   display: block;
-  padding-top: 1rem;
+  padding-top: 1.4rem;
 }

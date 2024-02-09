@@ -2,9 +2,12 @@
 
 .wrapper {
   background-color: $dark;
+  padding: $padding-gap;
+
   &_first {
     grid-area: requestAction-1;
   }
+
   &_second {
     grid-area: requestAction-2;
   }
@@ -12,17 +15,7 @@
 
 .container {
   @include mainContainer();
-  padding: 70px 120px 90px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-}
-
-.titleContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  @include flexColumnGap($gap: 20px);
 }
 
 .title {
@@ -30,11 +23,12 @@
 }
 
 .description {
-@include common-paragraph(pXl,
-              $color: $white,
-              $line-height: 125%);
+  @include common-paragraph(pXl,
+    $color: $white,
+    $line-height: 125%);
 }
 
 .formContainer {
-  max-width: 50%;
+
+  width: clamp(600px, 70%, 720px) //50%;
 }

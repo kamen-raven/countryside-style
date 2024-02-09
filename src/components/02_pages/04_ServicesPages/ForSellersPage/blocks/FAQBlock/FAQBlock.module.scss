@@ -2,17 +2,19 @@
 
 .wrapper {
   grid-area: faqBlock;
-
-  @include mainContainer();
-  padding: 90px 120px 120px;
+  padding: $padding-gap;
 }
 
+.container {
+  @include mainContainer();
+}
 
 .titleContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 70px;
+  gap: 20px;
+  padding-bottom: 50px;
   border-bottom: 2px solid $gray;
 }
 
@@ -26,6 +28,8 @@
   $color: $white,
   $font-family: $ff-openSans,
   $font-weight: $regular);
-  text-align: center
-
+  text-align: center;
+  text-wrap: nowrap;
+  min-width: 220px;
+  width: 220px;
 }

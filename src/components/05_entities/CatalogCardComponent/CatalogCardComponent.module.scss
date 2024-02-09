@@ -6,6 +6,7 @@
   box-sizing: border-box;
   z-index: 5;
   max-width: clamp(360px, 55vw, 540px);
+  //min-width:  calc(33.3% - 33.3px);
   width: 100%;
 
   height: 100%;
@@ -55,7 +56,6 @@
   justify-content: space-between;
   gap: .8rem;
   min-height: 220px;
-
 }
 
 .infoContainer {

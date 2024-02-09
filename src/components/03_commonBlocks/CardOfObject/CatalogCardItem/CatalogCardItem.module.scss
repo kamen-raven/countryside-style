@@ -5,15 +5,17 @@
 .cardWrapper {
   box-sizing: border-box;
 
-  max-width: 530px;
+  min-width: calc(33.3% - 27px);
   width: 100%;
-  max-height: 730px;
   height: 100%;
 
   border: 1px solid $gray;
 
   display: grid;
-  grid-template-rows: 390px auto;//grid-template-rows: 55% 45%;
+  grid-template-rows: 310px auto;//grid-template-rows: 55% 45%;
+  @include breakpoint(screen1024) {
+    grid-template-rows: 260px auto;
+  }
 }
 
 // IMAGE
@@ -47,48 +49,11 @@
   height: 100%;
 }
 
-.label {
-  position: absolute;
-
-
-  &_new {
-    top: 20px;
-    right: 0;
-
-    width: 90px;
-    height: 45px;
-    border-radius: 27px 0 0  27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: $accent-green;
-
-    @include common-paragraph(p,
-    $font-weight: $bold,
-    $color: $white,
-    $font-family: $ff-openSans,
-    $line-height: 110%);
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  &_youtube {
-    bottom: 20px;
-    right: 20px;
-
-    display: flex;
-    width: 45px;
-    height: 45px;
-  }
-}
-
 
 // INFO
 .infoBlock {
-  padding: 35px;
-  padding-top: 30px;
-
+  padding: 25px;
+  background-color: $white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -97,7 +62,7 @@
 .infoContainer {
   display: flex;
   flex-direction: column;
-  gap: 15px
+  gap: 10px
 }
 
 .title {
@@ -112,7 +77,8 @@
 .statusContainer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 5px 10px;
   color: #398281;
 }
 
@@ -132,62 +98,3 @@
   $font-weight: $regular,
   $font-family: $ff-openSans);
 }
-
-.priceContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-  position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100px;
-    height: 4px;
-    background-color: $accent-green;
-  }
-}
-
-.price {
-
-  @include common-paragraph(pXl,
-  $font-weight: $regular,
-  $color: $accent-green);
-
-}
-
-.arrow {
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid $dark;
-  border-radius: 50%;
-  background: none;
-  padding: 0;
-  width: 55px;
-  height: 55px;
-
-  & svg {
-    transition: transform .3s linear;
-  }
-
-  &:hover {
-    & svg {
-      transition: transform .3s linear;
-      transform: translate(10px);
-    }
-  }
-  &_left  {
-    transform: rotate(180deg);
-  }
-
-  &_right {
-    transform: rotate(0);
-  }
-}
-
-

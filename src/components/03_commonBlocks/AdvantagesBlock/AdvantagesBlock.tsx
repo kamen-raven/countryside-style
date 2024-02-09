@@ -12,30 +12,30 @@ const AdvantagesBlock: React.FC<AdvantagesBlockInterface> = ({
   children }) => {
   return (
     <section className={styles.wrapper}>
+      <>
+        {background ?
+          <BackgroundSVGPattern positionX='right' />
+          : ''}
+      </>
       <div className={styles.container}>
-        <>
-          {background ?
-            <BackgroundSVGPattern positionX='right' />
-            : ''}
-        </>
-        <div className={styles.innerContainer}>
-          {children ?
-            <div className={styles.titleContainer}>
-              <h2 className={styles.title}>
-                {title}
-              </h2>
-              {children}
-            </div>
-            :
+
+        {children ?
+          <div className={styles.titleContainer}>
             <h2 className={styles.title}>
               {title}
             </h2>
-          }
-
-          <div className={styles.iconsContainer}>
-            <AdvantagesIconsComponent advantagesList={advantagesList} />
+            {children}
           </div>
+          :
+          <h2 className={styles.title}>
+            {title}
+          </h2>
+        }
+
+        <div className={styles.iconsContainer}>
+          <AdvantagesIconsComponent advantagesList={advantagesList} />
         </div>
+
       </div>
     </section>
   );

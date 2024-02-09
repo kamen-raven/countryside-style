@@ -6,7 +6,7 @@ import { RequestPhoneInput } from '~shared/index.ts';
 
 const RequestActionBlock: React.FC<RequestActionBlockInterface> = ({ typePage, gridArea, nameForm }) => {
   const callToActionText = {
-    sellers: 'и получите бесплатную оценку своего объекта недвижимости уже сегодня',
+    sellers: 'и получите бесплатную оценку своего объекта недвижимости уже\u00A0сегодня',
     buyers: 'и получите бесплатную консультацию специалиста',
     villages: 'и получите бесплатную консультацию',
     developers: 'и получите бесплатную консультацию',
@@ -18,14 +18,14 @@ const RequestActionBlock: React.FC<RequestActionBlockInterface> = ({ typePage, g
   return (
     <section className={`${styles.wrapper} ${gridAreaClassName}`}>
       <div className={styles.container}>
-        <div className={styles.titleContainer}>
+
           <h2 className={styles.title}>
             Оставьте заявку
           </h2>
           <p className={styles.description}>
             {callToActionText[typePage]}
           </p>
-        </div>
+
         <div className={styles.formContainer}>
           <RequestPhoneInput nameForm={nameForm} buttonText={'Отправить заявку'} />
         </div>

@@ -16,7 +16,7 @@ import { LabelNew, YoutubeLabel } from '~shared/index.ts';
 
 const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
   ////для того чтобы отображать статус и гендер ////////////////////////////////////////////////////////////////////////
-/*   const targetKey = (targetValue: string) => Object.entries(item).find(([, value]) => value === targetValue)?.[0]; */
+  /*   const targetKey = (targetValue: string) => Object.entries(item).find(([, value]) => value === targetValue)?.[0]; */
   ////////////////////////////////////////////////////////////////////////////
 
   const router = useRouter();
@@ -49,7 +49,7 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
         </Link>
       </div>
 
-      <div className={styles.infoBlock}>
+      <div className={`${styles.infoBlock}`}>
         <div className={styles.infoContainer}>
           <Link className={`${styles.link} ${styles.link_title}`} href={'/houses/card'}>
             <h2 className={styles.title} >
@@ -83,15 +83,17 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
         </div>
 
 
-        <div className={styles.priceContainer}>
-          <p className={styles.price}>
-            {item.cost}&nbsp;млн.&nbsp;руб.
-          </p>
-          <button className={`${styles.arrow} ${styles.arrow_right}`}
-            onClick={goToAnotherPage}>
-            <ArrowIcon />
-          </button>
-        </div>
+          <div className={styles.priceContainer}>
+            <p className={styles.price}>
+              {item.cost}&nbsp;млн.&nbsp;руб.
+            </p>
+            <button className={`${styles.arrow} ${styles.arrow_right}`}
+              onClick={goToAnotherPage}>
+              <ArrowIcon />
+            </button>
+          </div>
+
+
       </div>
     </div>
   );

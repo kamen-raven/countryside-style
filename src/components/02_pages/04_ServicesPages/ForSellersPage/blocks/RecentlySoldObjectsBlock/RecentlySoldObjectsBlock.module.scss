@@ -2,26 +2,44 @@
 
 .wrapper {
   grid-area: recentlyObjects;
+  padding: $padding-gap;
   border-bottom: 1px solid $accent-gray;
 }
 
+
 .container {
   @include mainContainer();
-  padding: 90px 120px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+  @include flexColumnGap();
 }
+
 
 .title {
   @include common-title(hTitle);
 }
 
 
-
+.contentContainer {
+  min-width: 0;
+  max-width: 100%;
+  overflow: auto;
+  padding-bottom: 50px;
+}
 
 .innerBlock {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-columns: calc(33.3% - calc(80px/3));
+  grid-auto-flow: column;
+  grid-column-gap: 40px;
+
+  @include breakpoint(screen1280) {
+    grid-auto-columns: calc(50% - 20px);
+  }
+}
+
+
+
+/* .innerBlock {
   @include scrollbar ($arrows: false);
   max-width: 1664px;
   display: grid;
@@ -31,3 +49,4 @@
   padding-bottom: 70px;
   overflow-x: auto;
 }
+ */

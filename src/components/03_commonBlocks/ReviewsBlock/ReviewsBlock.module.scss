@@ -8,7 +8,7 @@
 
 .container {
   @include mainContainer();
-@include flexColumnGap;
+  @include flexColumnGap;
 }
 
 .titleContainer {
@@ -20,7 +20,7 @@
 }
 
 .title {
-  @include common-title(hTitle, $margin: 0);
+  @include common-title(hTitle);
 }
 
 .reviewsContainer {
@@ -44,11 +44,9 @@
 .innerBlock {
   display: grid;
   grid-template-rows: 1fr;
-  grid-auto-columns: calc(50% - 25px);
+  grid-auto-columns: calc(50% - 20px);
   grid-auto-flow: column;
-  grid-column-gap: 50px;
-
-
+  grid-column-gap: 40px;
 }
 
 

@@ -9,19 +9,21 @@ const FAQBlock: React.FC<FAQBlockInterface> = ({ faqData }) => {
 
   return (
     <section className={styles.wrapper}>
-      <div className={styles.titleContainer}>
-        <h2 className={styles.title}>
-          Ответы на частые вопросы
-        </h2>
-        <button className={styles.buttonAsk}>
-          Задать свой вопрос
-        </button>
+      <div className={styles.container}>
+        <div className={styles.titleContainer}>
+          <h2 className={styles.title}>
+            Ответы на частые вопросы
+          </h2>
+          <button className={styles.buttonAsk}>
+            Задать свой вопрос
+          </button>
+        </div>
+        {faqData.map((item) => {
+          return (
+            <AccordionElement key={item._id} faqItem={item} />
+          );
+        })}
       </div>
-      {faqData.map((item) => {
-        return (
-          <AccordionElement key={item._id} faqItem={item} />
-        );
-      })}
 
     </section>
   );

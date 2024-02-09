@@ -4,7 +4,7 @@ import {CatalogCardItemInterface } from './CatalogCardItem.interface.ts';
 import Image from 'next/image';
 
 import YoutubeIcon from '~svg/catalogCard/youtubeIcon.svg';
-import ArrowIcon from '~svg/button/arrow.svg';
+
 
 import Link from 'next/link';
 import { LabelNew } from '~shared/index.ts';
@@ -78,18 +78,6 @@ const CatalogCardItem: React.FC<CatalogCardItemInterface> = ({ item }) => {
           </p>
         </div>
 
-        {item.status != 'sold' ?
-          <div className={styles.priceContainer}>
-            <p className={styles.price}>
-              {item.cost} млн. руб.
-            </p>
-            <button className={`${styles.arrow} ${styles.arrow_right}`}>
-              <ArrowIcon />
-            </button>
-          </div>
-          :
-          ''
-        }
 
 
 

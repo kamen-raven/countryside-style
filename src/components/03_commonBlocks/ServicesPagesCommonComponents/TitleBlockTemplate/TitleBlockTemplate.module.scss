@@ -19,28 +19,23 @@
 }
 
 
-
-
-
 .wrapper {
   grid-area: titleBlock;
   background-color: $dark;
   background-position: center;
   background-size: cover;
+  padding-top: 50px;
 }
 
 .container {
   @include mainContainer();
-  padding: 70px 120px;
-
-  height: 800px;
+  height: 660px;
 }
 
 
 .labelContainer {
   display: flex;
   align-items: baseline;
-
 }
 
 .label {
@@ -78,13 +73,9 @@
 .h1 {
   @include common-title(h1,
             $color: $white);
-
 }
 
 .subtitle {
-
-
-
   @include common-title(hSubtitle,
             $color: $white,
             $font-weight: $regular);
