@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LegalSupportPage.module.scss';
 import { LegalSupportPageInterface } from './LegalSupportPage.interface.ts';
-import { TitleBlockTemplate, RequestActionBlock, AdvantagesBlock, ServicesStoriesBlock, ReviewsBlock } from '~common/index.ts';
+import { TitleBlockTemplate, RequestActionBlock, AdvantagesBlock, ReviewsBlock } from '~common/index.ts';
 
 
 const LegalSupportPage: React.FC<LegalSupportPageInterface> = ({
@@ -20,7 +20,7 @@ const LegalSupportPage: React.FC<LegalSupportPageInterface> = ({
           проконсультируют по налогам, проведут переговоры с продавцами и покупателя.
         </p>
       </AdvantagesBlock>
-      <ServicesStoriesBlock />
+{/* TODO: <ServicesStoriesBlock/> УСЛУГИ STORIES ДОДЕЛАТЬ*/}
       <ReviewsBlock reviewsDataItem={reviewsData} />
       <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''} />
     </main>

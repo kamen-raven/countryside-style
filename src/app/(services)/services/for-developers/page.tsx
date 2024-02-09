@@ -7,6 +7,7 @@ import { ForDevelopersPage } from "~pages/index";
 import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
 import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
 import reviews from "~data/temp/reviewsData/reviewsData";
+import teamMembersData from "~data/temp/employeesList/teamMembersData";
 
 export const metadata: Metadata = {
   title: 'Услуги | Строительным бригадам и частным застройщикам',
@@ -23,6 +24,7 @@ export default function PageForDevelopers() {
     <ForDevelopersPage
       typePage={typePageEnum.developers}
       titleBlockData={titleBlockData}
+      employeesData={teamMembersData}
       reviewsData={reviews}
       />
   );

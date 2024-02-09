@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ForBuyersPage.module.scss';
 import { ForBuyersPageInterface } from './ForBuyersPage.interface.ts';
-import { TitleBlockTemplate, RequestActionBlock, AdvantagesBlock, ServicesStoriesBlock, ReviewsBlock } from '~common/index.ts';
+import { TitleBlockTemplate, RequestActionBlock, AdvantagesBlock, ReviewsBlock } from '~common/index.ts';
 
 
 const ForBuyersPage: React.FC<ForBuyersPageInterface> = ({
@@ -15,7 +15,7 @@ const ForBuyersPage: React.FC<ForBuyersPageInterface> = ({
           <TitleBlockTemplate  pageData={titleBlockData[typePage]} />
           <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={''}/>
           <AdvantagesBlock advantagesList={advantagesListData}/>
-          <ServicesStoriesBlock/>
+{/* TODO: <ServicesStoriesBlock/> УСЛУГИ STORIES ДОДЕЛАТЬ*/}
           <ReviewsBlock reviewsDataItem={reviewsData}/>
           <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''}/>
         </main>

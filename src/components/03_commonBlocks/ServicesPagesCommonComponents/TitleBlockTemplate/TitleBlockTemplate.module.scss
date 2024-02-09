@@ -20,6 +20,7 @@
 
 
 .wrapper {
+  box-sizing: border-box;
   grid-area: titleBlock;
   background-color: $dark;
   background-position: center;
@@ -29,7 +30,7 @@
 
 .container {
   @include mainContainer();
-  height: 660px;
+  height: calc(660px - 50px);
 }
 
 
