@@ -1,0 +1,17 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: projects;
+  @include flexColumnGap($gap: 20px);
+  border-top: 1px solid $gray;
+  margin-bottom: 20px;
+}
+
+.titleContainer {
+  @include mainContainer($padding-upDown: 70px);
+}
+
+.title {
+  @include common-title(hTitle);
+}
+

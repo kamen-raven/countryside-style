@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { ArrowsButton } from '~shared/index.ts';
 
 
-const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({ serviceItem, arrows = false, buttonText = 'Подробнее' }) => {
+const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({ serviceItem, arrows = false, buttonText }) => {
 
-const setFontSize = (serviceItem.title.length <= 7) ? styles.title_big : '';
+  const setFontSize = (serviceItem.title.length <= 7) ? styles.title_big : '';
   return (
     <div className={styles.itemContainer}>
       <div className={styles.imageContainer}>
@@ -27,14 +27,16 @@ const setFontSize = (serviceItem.title.length <= 7) ? styles.title_big : '';
         </h3>
 
         {!arrows ? '' :
-          <ArrowsButton className = {styles.arrowsCardInfo}/>
+          <ArrowsButton className={styles.arrowsCardInfo} />
         }
 
-        <div className = {styles.innerContainer}>
-          <Link href={serviceItem.link} className = {styles.linkButton} >
-          {buttonText}
-          </Link>
-          <p className = {styles.description}>
+        <div className={styles.innerContainer}>
+          {buttonText &&
+            <Link href={serviceItem.link} className={styles.linkButton} >
+              {buttonText}
+            </Link>
+          }
+          <p className={styles.description}>
             {serviceItem.description}
           </p>
         </div>

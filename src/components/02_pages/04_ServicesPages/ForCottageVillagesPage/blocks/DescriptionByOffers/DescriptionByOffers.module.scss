@@ -1,0 +1,15 @@
+@import '~global_styles';
+
+.descriptionContainer {
+  padding-top: 40px;
+  @include flexColumnGap($gap: 20px);
+}
+
+.descriptionTitle {
+  @include common-title(hSubtitle,
+    $color: $accent-green);
+}
+
+.descriptionText {
+  @include common-paragraph(pXl);
+}

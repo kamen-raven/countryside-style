@@ -27,6 +27,10 @@
   justify-content: space-between;
   gap: 60px;
 
+    @include breakpoint(screen1280) {
+      gap: 20px;
+    }
+
   &_first {
     @extend .container;
     padding-bottom: 60px;

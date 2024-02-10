@@ -1,0 +1,28 @@
+@import '~global_styles';
+
+
+.wrapper {
+  grid-area: offers;
+  position: relative;
+  padding: $padding-gap;
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap;
+}
+
+.title {
+  @include common-title(h1);
+}
+
+.cardsLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 50px;
+
+  @include breakpoint(screen1280) {
+    gap: 60px;
+  }
+}
+

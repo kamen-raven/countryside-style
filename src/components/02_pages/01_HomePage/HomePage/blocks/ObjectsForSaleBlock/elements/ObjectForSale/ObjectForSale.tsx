@@ -4,8 +4,7 @@ import Image from 'next/image';
 
 import { ObjectForSaleProps } from './ObjectForSale.props';
 import styles from './ObjectForSale.module.scss';
-import { CardInfoComponent } from '~entities/index';
-
+import { CardInfoComponent } from '~common/ServicesList/ServiceCard/elements/CardInfoComponent/CardInfoComponent';
 
 
 

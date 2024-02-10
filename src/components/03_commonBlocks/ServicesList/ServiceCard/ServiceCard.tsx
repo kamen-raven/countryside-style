@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 import { ServiceCardProps } from './ServiceCard.props';
 import styles from './ServiceCard.module.scss';
+import { CardInfoComponent } from './elements/CardInfoComponent/CardInfoComponent';
 
-import { CardInfoComponent } from '~entities/index';
 
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
