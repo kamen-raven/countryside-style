@@ -2,17 +2,19 @@ import React from 'react';
 import styles from './ReviewFormComponent.module.scss';
 import Link from 'next/link';
 
+import AddButtonIcon from '~svg/button/add.svg';
 
 const ReviewFormComponent: React.FC = () => {
-    return (
-      <form className={styles.form}
+  return (
+    <form className={styles.form}
       action={''}
-      name={'question'}>
+      name={'reviewForm'}
+    >
       <h3 className={styles.title}>
-        Оставить отзыв
+        Оставить свой отзыв
       </h3>
       <p className={styles.description}>
-        Напишите Ваше имя, телефон и&nbsp;свой вопрос. Наш&nbsp;менеджер ответит Вам в&nbsp;ближайшее время.
+        Напишите Ваше имя, телефон и&nbsp;свой отзыв. После модерации мы разместим его на&nbsp;нашем сайте.
       </p>
       <fieldset className={styles.fieldset}>
         <label className={styles.label}>
@@ -33,15 +35,27 @@ const ReviewFormComponent: React.FC = () => {
 
         <label className={styles.label}>
           <textarea className={styles.textarea}
-            name={'question'}
+            name={'review'}
             required
-            placeholder={'Вопрос'}></textarea>
+            placeholder={'Ваш отзыв'}></textarea>
         </label>
       </fieldset>
-      <button className={styles.button}
-        type={"submit"}>
-        Отправить вопрос
-      </button>
+      <div className={styles.buttonContainer}>
+        <button className={styles.buttonImg}
+          type={"submit"}>
+          Прикрепить фото
+          <span className = {styles.icon}>
+            <AddButtonIcon/>
+          </span>
+        </button>
+        <button className={styles.buttonSubmit}
+          type={"submit"}>
+          Отправить отзыв
+        </button>
+      </div>
+
+
+
       <span className={styles.agreement}>
         Нажимая на кнопку, вы даете свое согласие&nbsp;
         <Link className={styles.agreement} href={`/personal`}>
@@ -49,7 +63,7 @@ const ReviewFormComponent: React.FC = () => {
         </Link>
       </span>
     </form>
-    );
+  );
 };
 
 export { ReviewFormComponent };

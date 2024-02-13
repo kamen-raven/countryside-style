@@ -49,7 +49,31 @@
   padding: 10px 30px;
 }
 
-.button {
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.buttonImg {
+  @include common-button(light);
+  color: $gray;
+
+  &:hover {
+    border: 1px solid $white;
+
+    & svg {
+      stroke: $white;
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  margin-left: 12px;
+}
+
+.buttonSubmit {
   @include common-button(colored);
   width: fit-content;
 }

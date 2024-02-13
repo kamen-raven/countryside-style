@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './RatingLabelElement.module.scss';
 import { RatingLabelElementInterface } from './RatingLabelElement.interface.ts';
 
-import CianLogo from '~svg/reviews/buttonChian.svg';
+import CianLogo from '~svg/reviews/chianLogo.svg';
 import YandexLogo from '~svg/reviews/yandexLogo.svg';
 import RatingStar from '~svg/reviews/ratingStar.svg';
 import Link from 'next/link';
