@@ -22,6 +22,9 @@
     "paths": {
       "~helpers/*": ["./src/helpers/*"],
       "~utils/*": ["./src/utils/*"],
+      //api
+      "~api/*": ["./src/api/components/*"],
+      "~interfaces/*": ["./src/api/interfaces/*"],
       //styles
       "~styles/*": ["./src/styles/*"],
       "~fonts": ["./src/styles/fonts/fonts.ts"],

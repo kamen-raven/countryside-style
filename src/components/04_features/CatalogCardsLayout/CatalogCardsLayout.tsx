@@ -1,24 +1,20 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import styles from './CatalogCardsLayout.module.scss';
 import { CatalogCardsLayoutInterface } from './CatalogCardsLayout.interface.ts';
-import { CatalogCardComponent, CatalogCardsPagination } from '~entities/index.ts';
+import { CatalogCardComponent, CardItemPagination } from '~entities/index.ts';
+import usePaginationCounter from '~hooks/usePaginationCounter.ts';
 
 
 const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ objectsData, itemsPerPage }) => {
-/*   const pageInfo = data.info.pages;
-  const countInfo = data.info.count; */
+  const {
+    totalPages,
+    currentItems,
+    currentPage,
+    setCurrentPage
+  } = usePaginationCounter(objectsData, itemsPerPage); // функция пагинации
 
-  const perPage = objectsData.length; //countInfo / pageInfo;
-
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(perPage / itemsPerPage);
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentItems = objectsData.slice(startIndex, endIndex);
 
   const parentRef = useRef<HTMLDivElement>(null); // реф для скролла вверх при пагинации
 
@@ -31,12 +27,12 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ objectsData
         ))}
       </div>
 
-      <CatalogCardsPagination
+      <CardItemPagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         totalPages={totalPages}
         parentRef={parentRef}
-        /* scrollFunction={scrollToTop} */ />
+      />
     </>
   );
 };

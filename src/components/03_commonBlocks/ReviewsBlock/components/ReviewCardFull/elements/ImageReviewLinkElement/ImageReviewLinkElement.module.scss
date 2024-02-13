@@ -1,0 +1,18 @@
+@import '~global_styles';
+
+
+.imageButton {
+  display: flex;
+  box-sizing: border-box;
+  background: none;
+  border: 1px solid $gray;
+  cursor: pointer;
+  padding: 5px;
+
+}
+
+.image {
+  object-fit: contain;
+  width: clamp(180px, 20vw, 320px);
+  height: auto;
+}

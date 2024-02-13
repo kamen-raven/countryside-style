@@ -5,7 +5,6 @@ const withSvgr = require('next-plugin-svgr');
 
 module.exports = {
   ...withSvgr({
-    // Ваши настройки для next-plugin-svgr
   }),
   images: {
     remotePatterns: [
@@ -14,12 +13,9 @@ module.exports = {
         hostname: '**.figma.com',
       },
       {
-        protocol: 'https',
-        hostname: 'rickandmortyapi.com',
-        port: '',
-        pathname: '/api/character/avatar/**',
+        protocol: 'http',
+        hostname: 'expert-crm.ru',
       },
     ],
   },
-  // Другие настройки...
 };

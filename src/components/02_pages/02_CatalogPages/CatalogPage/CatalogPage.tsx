@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './CatalogPage.module.scss';
 import { CatalogPageInterface } from './CatalogPage.interface.ts';
 
-import reviews from "~data/temp/reviewsData/reviewsData.ts";
 import { ReviewsBlock } from '~common/index.ts';
 
 import { ContactUsBlock } from "~pages/02_CatalogPages/CatalogPage/blocks/ContactUsBlock/ContactUsBlock.tsx";
@@ -12,7 +11,7 @@ import { ContactUsBlock } from "~pages/02_CatalogPages/CatalogPage/blocks/Contac
 import housesSEOText from '~utils/constants/TypeSEOText/TypeSEOText.ts';
 import { InfoTypeDescriptionBlock, SearchBarBlock, CatalogBlock } from './blocks/index.ts';
 
-const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, objectsData }) => {
+const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, objectsData, reviewsData }) => {
 
   const SEOTextData = housesSEOText;
 
@@ -23,7 +22,7 @@ const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, obje
       <SearchBarBlock />
       <CatalogBlock objectsData={objectsData} />
       <ContactUsBlock generalContactsData={generalContactsData} />
-      <ReviewsBlock reviewsDataItem={reviews} />
+      <ReviewsBlock reviewsDataItem={reviewsData} />
     </main>
   );
 };

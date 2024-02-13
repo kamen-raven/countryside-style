@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { getAllReviews } from "~api/Reviews/getReviews";
 import generalContactsData from "~data/constant/generalContacts/generalContactsData";
 import objectsTemplate from "~data/temp/objectsTemplateList/objectsDataTemplate";
 /* import { notFound } from "next/navigation"; */
@@ -20,6 +21,8 @@ export const metadata: Metadata = {
 
 
 export default async function PageType({ params }:  {params: {type: string}}) {
+  const reviews = await getAllReviews(); // запрос ОТЗЫВОВ
+
 
 
 /*   if (!) {
@@ -29,6 +32,8 @@ export default async function PageType({ params }:  {params: {type: string}}) {
   return (
       <CatalogPage type={params.type}
     generalContactsData={generalContactsData}
-    objectsData={objectsTemplate}/>
+    objectsData={objectsTemplate}
+    reviewsData={reviews}
+    />
   );
 }

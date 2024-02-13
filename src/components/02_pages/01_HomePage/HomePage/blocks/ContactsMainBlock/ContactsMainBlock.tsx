@@ -2,8 +2,8 @@ import React from 'react';
 import { ContactsBlockProps } from './ContactsMainBlock.interface';
 import styles from './ContactsMainBlock.module.scss';
 
-import { AddressElement } from '~entities/index';
-import { ContactForm } from '~common/QuestionFormBlock/elements';
+import { AddressElement, RequestFormComponent } from '~entities/index';
+import { ContactFormLayout } from '~common/QuestionFormBlock/elements';
 
 
 const ContactsMainBlock: React.FC<ContactsBlockProps> = ({ generalContactsData }) => {
@@ -16,7 +16,9 @@ const ContactsMainBlock: React.FC<ContactsBlockProps> = ({ generalContactsData }
         <AddressElement addressInfoData={generalContactsData} />
       </div>
 
-      <ContactForm contentType='map' srcContent={generalContactsData.mapLink} />
+      <ContactFormLayout contentType='map' mapContent={generalContactsData.mapLink}>
+        <RequestFormComponent />
+      </ContactFormLayout>
     </section>
   );
 };

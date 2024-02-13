@@ -1,7 +1,8 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { reviewDataInterface } from '~data/temp/reviewsData/reviewsData.interface';
+
+import { ReviewInterface } from '~interfaces/review.interface';
 
 export interface ReviewsBlockProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  reviewsDataItem: reviewDataInterface[]
+  reviewsDataItem: ReviewInterface[]; //reviewDataInterface[]
   children?: ReactNode;
 }

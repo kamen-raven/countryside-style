@@ -8,7 +8,7 @@ export * from './02_CatalogPages/CardPage/CardPage';
 // 03_AboutCompanyPages
 export * from './03_AboutCompanyPages/AboutUsPage/AboutUsPage';
 export * from './03_AboutCompanyPages/ContactsPage/ContactsPage';
-/* export * from './03_AboutCompanyPages/ServicesPage/ServicesPage'; */
+
 
 // 04_ServicesPage
 export * from './04_ServicesPages/AllServicesPage/AllServicesPage';
@@ -19,3 +19,6 @@ export * from './04_ServicesPages/LegalSupportPage/LegalSupportPage';
 export * from './04_ServicesPages/ForCottageVillagesPage/ForCottageVillagesPage';
 export * from './04_ServicesPages/ForDevelopersPage/ForDevelopersPage';
 
+// 05_ContentPages
+export * from './05_ContentPages/BlogPage/BlogPage';
+export * from './05_ContentPages/ReviewsPage/ReviewsPage';

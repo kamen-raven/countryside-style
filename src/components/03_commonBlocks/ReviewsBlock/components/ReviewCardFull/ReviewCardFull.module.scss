@@ -1,0 +1,34 @@
+@import '~global_styles';
+
+
+.wrapper {
+  box-sizing: border-box;
+  border: 1px solid $gray;
+  padding: 40px;
+  display: grid;
+  row-gap: 20px;
+  column-gap: 40px;
+  grid-template-columns: 3fr auto;
+  grid-template-areas:
+    "info info"
+    "text original";
+}
+
+
+.infoContainer {
+  grid-area: info;
+}
+
+.reviewText {
+  grid-area: text;
+  @include common-paragraph(p,
+    $font-weight: $regular);
+
+}
+
+
+.buttonsContainer {
+  grid-area: original;
+  @include flexColumnGap($gap: 20px);
+}
+

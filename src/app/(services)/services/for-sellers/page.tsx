@@ -7,9 +7,10 @@ import { ForSellersPage } from "~pages/index";
 import forSellersPageAdvantages from "~data/constant/servicesBlock/advantagesList/forSellersPage/forSellersPageAdvantages";
 import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
 import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
-import reviews from "~data/temp/reviewsData/reviewsData";
+//import reviews from "~data/temp/reviewsData/reviewsData";
 import objectsTemplate from "~data/temp/objectsTemplateList/objectsDataTemplate";
 import faqDataList from "~data/constant/faqBlock/faqDataList";
+import { getAllReviews } from "~api/Reviews/getReviews";
 
 export const metadata: Metadata = {
   title: 'Услуги | Продавцам',
@@ -20,7 +21,10 @@ export const metadata: Metadata = {
 
 
 
-export default function PageForSellers() {
+export default async function PageForSellers() {
+  const reviews = await getAllReviews(); // запрос ОТЗЫВОВ
+
+
 
   return (
     <ForSellersPage

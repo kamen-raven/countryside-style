@@ -1,0 +1,20 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: title;
+  position: relative;
+  padding-top: 70px;
+}
+
+.container {
+  @include flexColumnGap();
+}
+
+.titleContainer {
+  @include mainContainer();
+}
+
+.ownerContainer > div > div  {
+  flex-direction: row-reverse;
+}
+

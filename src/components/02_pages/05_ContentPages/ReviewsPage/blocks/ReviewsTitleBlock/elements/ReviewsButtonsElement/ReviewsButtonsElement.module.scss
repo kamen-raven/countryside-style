@@ -1,0 +1,62 @@
+@import '~global_styles';
+
+.buttonsContainer {
+  @include mainContainer();
+}
+
+.contactsList {
+  @include common-ul;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contactItem {
+  @include common-li;
+  border-radius: 30px;
+  max-height: 45px;
+
+  &__icon {
+    box-sizing: border-box;
+    width: 36.82px;
+    height: 36.82px;
+    margin: 4px 4px 4px 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_cian {
+      background-color: $cian;
+      border: 1px solid $cian;
+    }
+    &_yandex {
+      background-color: $white;
+      border: 1px solid $gray;
+    }
+
+    & svg {
+      width: 80%;
+      height: 80%;
+      border-radius: 20%;
+    }
+  }
+
+  &__link {
+    @include common-button(transparent);
+    @include common-paragraph(p,
+    $font-weight: $regular,
+    $font-family: $ff-openSans,
+    $line-height: 130%);
+    display: flex;
+    align-items: center;
+
+    padding-left: 18px;
+    padding-right: 0;
+
+    text-decoration: none;
+    text-align: center;
+  }
+
+}
+

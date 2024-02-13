@@ -15,7 +15,7 @@ const ContactsPage: React.FC<ContactsPageInterface> = ({ generalContactsData, em
       <MapBlock mapInfoData={generalContactsData} />
       <ContactListBlock employeesList={employeesList} />
       <QuestionFormBlock contentType={'image'}
-          direction={'formFirst'}/>
+          direction={'formFirst'} />
     </main>
   );
 };

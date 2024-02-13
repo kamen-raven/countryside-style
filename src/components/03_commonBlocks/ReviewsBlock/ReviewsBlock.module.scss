@@ -11,29 +11,6 @@
   @include flexColumnGap;
 }
 
-.titleContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.title {
-  @include common-title(hTitle);
-}
-
-.reviewsContainer {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-
-.buttonReview {
-  @include common-button(colored);
-}
-
 .contentContainer {
   min-width: 0;
   max-width: 100%;

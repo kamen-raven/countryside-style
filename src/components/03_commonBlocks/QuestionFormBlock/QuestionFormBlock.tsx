@@ -1,16 +1,20 @@
 import React from 'react';
 import styles from './QuestionFormBlock.module.scss';
 import { QuestionFormBlockInterface } from './QuestionFormBlock.interface';
-import { ContactForm } from './elements';
+import { ContactFormLayout } from './elements';
+import { RequestFormComponent } from '~entities/index';
 
 
 
-const QuestionFormBlock: React.FC<QuestionFormBlockInterface> = ({ direction, contentType, srcContent }) => {
+const QuestionFormBlock: React.FC<QuestionFormBlockInterface> = ({ direction, contentType, mapContent, imgContent }) => {
   return (
     <section className={styles.wrapper}>
-      <ContactForm contentType={contentType}
+      <ContactFormLayout contentType={contentType}
         direction={direction}
-        srcContent={srcContent}/>
+        imgContent={imgContent}
+        mapContent={mapContent}>
+        <RequestFormComponent />
+      </ContactFormLayout>
     </section>
   );
 };

@@ -51,11 +51,11 @@ export const menuList: MenuItemInterface[] = [
   {
     name: "reviews",
     title: "Отзывы",
-    link: '/' // "/otzyvy",
+    link: '/reviews' // "/otzyvy",
   },
   {
     name: "blog",
     title: "Блог",
-    link: '/' // "/blog",
+    link: '/blog' // "/blog",
   },
 ];

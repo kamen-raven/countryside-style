@@ -1,9 +1,10 @@
 
 export * from './CardBlogComponent/CardBlogComponent';
 export * from './RequestFormComponent/RequestFormComponent';
+export * from './ReviewFormComponent/ReviewFormComponent';
 export * from './HalfScreenTemplate/HalfScreenTemplate';
 export * from './CatalogCardComponent/CatalogCardComponent';
-export * from './CatalogCardsPagination/CatalogCardsPagination';
+export * from './CardItemPagination/CardItemPagination';
 
 // contacts elements
 export * from './ContactsElements/AddressElement/AddressElement';

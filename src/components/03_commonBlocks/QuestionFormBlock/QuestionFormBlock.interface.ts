@@ -1,7 +1,9 @@
+import { StaticImageData } from 'next/image';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export interface QuestionFormBlockInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   contentType?: 'map' | 'image';
-  srcContent?: string;
+  mapContent?: string;
+  imgContent?: StaticImageData;
   direction?: 'formFirst' | 'formSecond';
 }

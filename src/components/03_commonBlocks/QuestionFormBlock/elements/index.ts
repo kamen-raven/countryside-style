@@ -1,1 +1,1 @@
-export * from './ContactForm/ContactForm';
+export * from './ContactFormLayout/ContactFormLayout';
