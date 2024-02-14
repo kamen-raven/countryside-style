@@ -30,7 +30,7 @@ export const menuList: MenuItemInterface[] = [
     name: "services",
     title: "Услуги",
     link: "/services",
-/*     secondLevel: [
+    secondLevel: [
       {
         name: "sellers",
         title: "Продажа",
@@ -40,8 +40,28 @@ export const menuList: MenuItemInterface[] = [
         name: "buyer",
         title: "Покупка",
         link: "/services/for-buyer",
-      }
-    ] */
+      },
+      {
+        name: "legal",
+        title: "Юридическое сопровождение",
+        link: "/services/legal-support",
+      },
+      {
+        name: "cottageVillages",
+        title: "Коттеджным поселкам",
+        link: "/services/for-cottage-villages",
+      },
+      {
+        name: "invest",
+        title: "Инвестиции в загородную недвижимость",
+        link: "/services/for-developers",
+      },
+      {
+        name: "consult",
+        title: "Продажа",
+        link: "/services/legal-support",
+      },
+    ]
   },
   {
     name: "contacts",
@@ -51,11 +71,11 @@ export const menuList: MenuItemInterface[] = [
   {
     name: "reviews",
     title: "Отзывы",
-    link: '/reviews' // "/otzyvy",
+    link: '/reviews'
   },
   {
     name: "blog",
     title: "Блог",
-    link: '/blog' // "/blog",
+    link: '/blog'
   },
 ];

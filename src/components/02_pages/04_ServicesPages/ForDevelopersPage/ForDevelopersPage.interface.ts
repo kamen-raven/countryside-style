@@ -11,5 +11,5 @@ export interface ForDevelopersPageInterface   extends DetailedHTMLProps<HTMLAttr
   titleBlockData: titleBlockDataInterface;
   offersListData: servicesDataInterface[];
   employeesData: teamMembersDataInterface[];
-  reviewsData: ReviewInterface[]; //reviewDataInterface[];
+  reviewsData: ReviewInterface[];
 }

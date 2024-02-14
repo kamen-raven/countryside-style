@@ -8,7 +8,7 @@ import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/type
 import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
 import legalSupportServices from "~data/constant/servicesBlock/advantagesList/legalSupport/legalSupport";
 
-import reviews from "~data/temp/reviewsData/reviewsData";
+import { getAllReviews } from "~api/Reviews/getReviews";
 
 export const metadata: Metadata = {
   title: 'Услуги | Юридическое консультация и сопровождение',
@@ -19,7 +19,9 @@ export const metadata: Metadata = {
 
 
 
-export default function PageLegalSupport() {
+export default async function PageLegalSupport() {
+  const reviews = await getAllReviews(); // запрос ОТЗЫВОВ
+
 
   return (
     <LegalSupportPage
