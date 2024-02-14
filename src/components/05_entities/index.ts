@@ -2,7 +2,6 @@
 export * from './CardBlogComponent/CardBlogComponent';
 export * from './RequestFormComponent/RequestFormComponent';
 export * from './ReviewFormComponent/ReviewFormComponent';
-export * from './HalfScreenTemplate/HalfScreenTemplate';
 export * from './CatalogCardComponent/CatalogCardComponent';
 export * from './CardItemPagination/CardItemPagination';
 

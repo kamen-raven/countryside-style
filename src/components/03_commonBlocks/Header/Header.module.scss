@@ -1,6 +1,7 @@
 @import '~global_styles';
 
 .header {
+  grid-area: header;
   display: flex;
   flex-direction: column;
 }
@@ -16,13 +17,6 @@
   @include breakpoint(screen1280) {
     gap: 35px;
   }
-}
-
-.navMenu {
-  box-sizing: border-box;
-  display: flex;
-  background-color: $dark;
-  padding: 16px 0;
 }
 
 

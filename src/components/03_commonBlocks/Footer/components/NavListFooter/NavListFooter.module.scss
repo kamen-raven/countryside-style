@@ -1,0 +1,47 @@
+@import '~global_styles';
+
+.list {
+  @include common-ul;
+
+  width: 100%;
+  margin: 0 auto;
+
+    grid-area: nav;
+    display: grid;
+    align-content: center;
+    grid-auto-flow: column;
+    gap: 10px 40px;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . empty1"
+    ". empty2 empty3";
+
+}
+
+.listItem {
+  @include common-li;
+  &_empty1 {
+    grid-area: empty1;
+    visibility: hidden;
+  }
+
+  &_empty2 {
+    grid-area: empty2;
+    visibility: hidden;
+  }
+
+  &_empty3 {
+    grid-area: empty3;
+    visibility: hidden;
+  }
+}
+
+.link {
+  @include common-link;
+  @include common-paragraph(link);
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  color: $gray-dark;
+}

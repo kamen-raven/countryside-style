@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { openSans, gothamPro } from '~fonts';
 import '~styles/index.scss';
 import styles from "./layout.module.scss";
-import { Footer, Header } from '../components/03_commonBlocks/index';
+import { Footer, Header, Navbar } from '../components/03_commonBlocks/index';
 
 
 export const metadata: Metadata = {
@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     initialScale: 0.8,
   } */
 };
-
+import { menuList } from '~data/constant/navMenu/menuList';
+import generalContactsData from '~data/constant/generalContacts/generalContactsData';
 
 
 
@@ -28,9 +29,10 @@ export default function RootLayout({
     <html className={`${openSans.variable} ${gothamPro.variable}`} lang="ru" >
       <body className={` ${styles.page}`}>
         <div className={styles.container} >
-          <Header headerGridArea={styles.gridArea_header} />
+          <Header />
+          <Navbar listItems={menuList}/>
             {children}
-          <Footer footerGridArea={styles.gridArea_footer} />
+          <Footer listItems={menuList} generalContactsData={generalContactsData} />
         </div>
       </body>
     </html>

@@ -1,0 +1,68 @@
+@import '~global_styles';
+
+.navMenu {
+  grid-area: navbar;
+  box-sizing: border-box;
+  display: flex;
+  background-color: $dark;
+  padding: 16px 0;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  border-bottom: 1px solid gray;
+}
+
+.list {
+  @include common-ul;
+
+  width: 100%;
+  margin: 0 auto;
+
+  @include mainContainer();
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  & .listItem {
+    &:first-of-type {
+      padding-left: 26px;
+
+      @include breakpoint(screen1680) {
+        padding-left: 16px;
+      }
+    }
+
+    &:last-of-type {
+      padding-right: 26px;
+
+      @include breakpoint(screen1680) {
+        padding-right: 16px;
+      }
+    }
+  }
+
+
+  @include breakpoint(screen1280) {
+    padding: 0;
+  }
+}
+
+.listItem {
+  @include common-li;
+
+}
+
+.link {
+  @include common-link;
+  @include common-paragraph(link);
+  text-transform: uppercase;
+  text-wrap: nowrap;
+
+  color: $white;
+
+  @include breakpoint(screen1280) {
+    font-size: 0.745rem;
+  }
+}
