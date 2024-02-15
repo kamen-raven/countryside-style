@@ -5,7 +5,7 @@
   box-sizing: border-box;
   display: flex;
   background-color: $dark;
-  padding: 16px 0;
+  //padding: 16px 0;
 
   position: sticky;
   top: 0;
@@ -24,21 +24,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  //gap: 1rem;
   & .listItem {
     &:first-of-type {
-      padding-left: 26px;
+      margin-left: 26px;
 
       @include breakpoint(screen1680) {
-        padding-left: 16px;
+        margin-left: 1rem;
+      }
+      @include breakpoint(screen1440) {
+        margin-left: .8rem;
+      }
+      @include breakpoint(screen1280) {
+        margin-left: .5rem;
       }
     }
 
     &:last-of-type {
-      padding-right: 26px;
+      margin-right: 26px;
 
       @include breakpoint(screen1680) {
-        padding-right: 16px;
+        margin-right: 1rem;
+      }
+      @include breakpoint(screen1440) {
+        margin-right: .8rem;
+      }
+      @include breakpoint(screen1280) {
+        margin-right: .5rem;
       }
     }
   }
@@ -51,7 +63,14 @@
 
 .listItem {
   @include common-li;
+  padding: 16px 20px;
 
+  @include breakpoint(screen1680) {
+    padding: 16px clamp(8px, 1.2%, 16px);
+  }
+  @include breakpoint(screen1280) {
+    padding: 16px 8px;
+  }
 }
 
 .link {
@@ -64,5 +83,14 @@
 
   @include breakpoint(screen1280) {
     font-size: 0.745rem;
+  }
+}
+
+
+.active {
+  background-color: $accent-green;
+
+  & .link {
+    cursor: default;
   }
 }

@@ -1,10 +1,14 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import styles from './NavListFooter.module.scss';
+import { usePathname } from 'next/navigation';
 
+import styles from './NavListFooter.module.scss';
 import { NavListFooterInterface } from './NavListFooter.interface';
 
 const NavListFooter: React.FC<NavListFooterInterface> = ({ listItems }) => {
+  const pathname = usePathname();
 
 
   return (
@@ -12,7 +16,7 @@ const NavListFooter: React.FC<NavListFooterInterface> = ({ listItems }) => {
       <ul className={`${styles.list}`}>
         {listItems.map((item) => (
           <li className={styles.listItem} key={item.name}>
-            <Link className={`${styles.link}`} href={`${item.link}`}>
+            <Link className={`${styles.link} ${pathname === item.link ? styles.active : ''}`} href={item.link}>
               {item.title}
             </Link>
           </li>
