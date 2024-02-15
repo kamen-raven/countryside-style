@@ -2,20 +2,20 @@
 
 .scrollToTopButton {
   position: fixed;
-  bottom: 30px;
+  bottom: 100px;
   right: 30px;
 
+  box-sizing: border-box;
   width: 50px;
   height: 50px;
 
-  box-sizing: border-box;
   cursor: pointer;
   z-index: 100;
   border-radius: 50%;
-  background-color: $accent-green;
-  border: 2px solid $gray;
+  background-color: $white;
+  border: 3px solid $accent-green;
   opacity: 0;
-
+  visibility: hidden;
 
   transition: all .5s linear;
 
@@ -24,9 +24,8 @@
   justify-content: center;
 
   & svg {
-
-    transition: all .3s linear;
-
+    transition: all .5s linear;
+    
   }
 
   @include breakpoint(screen960) {
@@ -42,7 +41,7 @@
 
   }
 
-/*   &:after {
+  /*   &:after {
     content: '';
     width: 70%;
     height: 75%;
@@ -62,7 +61,7 @@
 
     & svg {
       transform: translateY(-5px);
-      transition: transform .3s linear;
+      transition: transform .5s linear;
     }
   }
 
@@ -72,9 +71,7 @@
 
 .scrollToTopButton.show {
   opacity: 1;
-  transform: translateY(0);
-  z-index: 100;
-  transition: opacity 5s linear;
+  visibility: visible;
+  bottom: 30px;
+  transition: all .5s linear;
 }
-
-

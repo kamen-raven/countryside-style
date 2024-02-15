@@ -30,11 +30,11 @@ const ScrollToTopButton: React.FC = () => {
 
   return (
     <div>
-      {isVisible && (
+
         <div className={`${styles.scrollToTopButton} ${isVisible ? styles.show : ''}`} onClick={scrollToTop}>
           <ArrowIcon/>
         </div>
-      )}
+
     </div>
   );
 };

@@ -45,3 +45,9 @@
   text-wrap: nowrap;
   color: $gray-dark;
 }
+
+.active.link {
+  color: $accent-green;
+  cursor: default;
+
+}
