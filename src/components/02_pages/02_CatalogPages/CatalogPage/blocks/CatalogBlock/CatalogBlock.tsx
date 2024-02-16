@@ -2,11 +2,11 @@
 import React from 'react';
 import styles from './CatalogBlock.module.scss';
 import { CatalogBlockInterface } from './CatalogBlock.interface.ts';
-import { CatalogCardsLayout } from '~features/index.ts';
+
 import { BackgroundSVGPattern } from '~shared/index.ts';
 import BackgroundPatternLeft from '~svg/background/backgroundObjectsForSaleLeft.svg';
 import BackgroundPatternRight from '~svg/background/backgroundObjectsForSaleRight.svg';
-
+import { CatalogCardsLayout } from './components/index.ts';
 
 
 const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData }) => {

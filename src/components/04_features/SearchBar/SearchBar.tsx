@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from './SearchBar.module.scss';
 import { SearchBarInterface } from './SearchBar.interface.ts';
+
 import SearchIcon from "~svg/search/searchIcon.svg";
 import ClearIcon from '~svg/button/clear.svg';
 
 import { CustomSelect } from '~shared/CustomSelect/CustomSelect.tsx';
 
 
-const SearchBar: React.FC<SearchBarInterface> = ({ className }) => {
+const SearchBar: React.FC<SearchBarInterface> = () => {
   return (
-    <section className={`${styles.wrapper} ${className}`}>
+    <section className={`${styles.wrapper}`}>
       <form className={styles.container}>
 
         <div className={styles.inputContainer}>

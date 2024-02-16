@@ -1,6 +1,6 @@
-export * from './Header/Header';
-export * from './Navbar/Navbar';
-export * from './Footer/Footer';
+export * from './LayoutBlocks/Header/Header';
+export * from './LayoutBlocks/Navbar/Navbar';
+export * from './LayoutBlocks/Footer/Footer';
 
 export * from './TeamMembersBlock/TeamMembersBlock';
 

@@ -49,13 +49,14 @@
   @if $appearance == light {
     background: $white;
     color: $dark;
+    border: 1px solid $gray;
     transition: all linear .2s;
 
 
     &:hover {
       background: $dark;
       color: $white;
-      border: none;
+      border: 1px solid $dark;;
       transition: all linear .2s;
     }
   }

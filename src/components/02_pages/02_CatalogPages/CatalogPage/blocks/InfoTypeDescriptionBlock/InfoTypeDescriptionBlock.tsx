@@ -3,8 +3,8 @@ import React from 'react';
 import styles from './InfoTypeDescriptionBlock.module.scss';
 import { InfoTypeDescriptionBlockInterface } from './InfoTypeDescriptionBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
+import { InfoTypeDescriptionLayout } from './components/index.ts';
 
-import { InfoTypeDescriptionLayout } from '~features/index.ts';
 
 
 const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({ data }) => {

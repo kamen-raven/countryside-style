@@ -1,0 +1,8 @@
+@import '~global_styles';
+
+.innerContainer h3,
+.innerContainer p,
+.innerContainer span,
+.innerContainer span * {
+  color: $dark
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.module.scss';
 
-import { HeaderSearchInput, ContactComponent } from './elements';
+import { HeaderSearchInput, ContactComponent } from './components';
 import { Logo } from '~shared/index';
 
 

@@ -113,4 +113,9 @@ flex-basis: clamp(130px, 20vw, 180px);
   padding: 0;
   background-color: transparent;
   border: none;
+
+  & svg {
+    width: 15px;
+    height: 15px;
+  }
 }

@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ScrollToTopButton.module.scss';
 
-import ArrowIcon from '~svg/button/arrowUp.svg';
+
+import ArrowIcon from '~svg/button/toggle.svg';
 
 const ScrollToTopButton: React.FC = () => {
   const scrollPX = 400;
@@ -26,15 +27,13 @@ const ScrollToTopButton: React.FC = () => {
       top: 0,
       behavior: 'smooth' // Плавная прокрутка
     });
+
   };
 
   return (
-    <div>
-
-        <div className={`${styles.scrollToTopButton} ${isVisible ? styles.show : ''}`} onClick={scrollToTop}>
-          <ArrowIcon/>
-        </div>
-
+    <div className={`${styles.scrollToTopButton} ${isVisible ? styles.show : ''}`}
+        onClick={scrollToTop}>
+      <ArrowIcon />
     </div>
   );
 };

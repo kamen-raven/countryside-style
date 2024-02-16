@@ -6,26 +6,33 @@
   right: 30px;
 
   box-sizing: border-box;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 
   cursor: pointer;
   z-index: 100;
   border-radius: 50%;
   background-color: $white;
-  border: 3px solid $accent-green;
+  border: 2px solid $accent-green;
   opacity: 0;
   visibility: hidden;
 
-  transition: all .5s linear;
+  transition: all .3s linear;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   & svg {
-    transition: all .5s linear;
-    
+    stroke: $accent-green;
+    transition: all .3s linear;
+    transform: rotate(180deg);
+  }
+
+  @include breakpoint(screen1280) {
+    width: 40px;
+    height: 40px;
+    right: .5rem;
   }
 
   @include breakpoint(screen960) {
@@ -38,30 +45,18 @@
     height: 40px;
     bottom: 25px;
     right: 25px;
-
   }
 
-  /*   &:after {
-    content: '';
-    width: 70%;
-    height: 75%;
-    background-image: url(../../../../public/svg/button/arrowUp.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    @include breakpoint(screen960) {
-      width: 70%;
-    }
-  } */
 
   &:hover {
     cursor: pointer;
-    background-color: $accent-green-hover;
+    background-color: $accent-green;
 
 
     & svg {
-      transform: translateY(-5px);
-      transition: transform .5s linear;
+      stroke: $white;
+      transform: translateY(-5px) rotate(180deg);
+      transition: transform .3s linear;
     }
   }
 
@@ -73,5 +68,5 @@
   opacity: 1;
   visibility: visible;
   bottom: 30px;
-  transition: all .5s linear;
+  transition: all .3s linear;
 }

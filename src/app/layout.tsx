@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { openSans, gothamPro } from '~fonts';
 import '~styles/index.scss';
 import styles from "./layout.module.scss";
-import { Footer, Header, Navbar } from '../components/03_commonBlocks/index';
 
 
 export const metadata: Metadata = {
@@ -17,6 +16,8 @@ export const metadata: Metadata = {
 import { menuList } from '~data/constant/navMenu/menuList';
 import generalContactsData from '~data/constant/generalContacts/generalContactsData';
 import { ScrollToTopButton } from '~features/index';
+import { Header, Navbar, Footer } from '~common/index';
+import { Popups } from '~features/Popups/Popups';
 
 
 
@@ -35,6 +36,7 @@ export default function RootLayout({
           <Footer listItems={menuList} generalContactsData={generalContactsData} />
           <ScrollToTopButton />
         </div>
+        <Popups/>
       </body>
     </html>
   );

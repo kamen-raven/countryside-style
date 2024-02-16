@@ -2,8 +2,9 @@ import React from 'react';
 import { ContactsBlockProps } from './ContactsMainBlock.interface';
 import styles from './ContactsMainBlock.module.scss';
 
-import { AddressElement, RequestFormComponent } from '~entities/index';
+import { AddressElement } from '~entities/index';
 import { ContactFormLayout } from '~common/QuestionFormBlock/elements';
+import { RequestFormComponent } from '~features/Forms';
 
 
 const ContactsMainBlock: React.FC<ContactsBlockProps> = ({ generalContactsData }) => {
