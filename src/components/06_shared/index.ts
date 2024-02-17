@@ -1,4 +1,4 @@
-export * from './ui-kit/Button/Button';
+export * from './Button/Button';
 export * from './Logo/Logo';
 export * from './Background/BackgroundSVGPattern';
 export * from './ArrowsButton/ArrowsButton';

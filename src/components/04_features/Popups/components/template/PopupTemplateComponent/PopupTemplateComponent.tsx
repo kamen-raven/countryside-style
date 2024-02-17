@@ -1,17 +1,30 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 import styles from './PopupTemplateComponent.module.scss';
 import { PopupTemplateComponentInterface } from './PopupTemplateComponent.interface.ts';
 
 import CloseIcon from '~svg/button/clear.svg';
 import { ContactUsFormPopup, ReviewFormPopup, ReviewFullPopup, SuccessMessagePopup } from '../../index.ts';
+import usePopupStore from '~store/usePopupStore.ts';
 
-const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({ type }) => {
+
+
+
+
+const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
+  type,
+  isOpened,
+}) => {
+  const closePopup = usePopupStore((state) => state.controls.closePopup);
+  const handleOverlayClick = usePopupStore((state) => state.controls.handleOverlayClick);
+  const handleKeyPress = usePopupStore((state) => state.controls.handleKeyPress);
 
   const popupType = {
-    contactForm: <ContactUsFormPopup/>,
-    reviewForm: <ReviewFormPopup/>,
-    successMessage: <SuccessMessagePopup/>,
-    reviewFull: <ReviewFullPopup/>
+    contactForm: <ContactUsFormPopup />,
+    reviewForm: <ReviewFormPopup />,
+    successMessage: <SuccessMessagePopup />,
+    reviewFull: <ReviewFullPopup />
   };
 
   const popupContainerStyle = {
@@ -21,46 +34,24 @@ const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({ typ
     reviewFull: styles.popupContainer_reviewFull,
   };
 
-
-
-/*   const [isOpen, setIsOpen] = useState(false); // Состояние для открытия/закрытия попапа
-  const [formData, setFormData] = useState({ name: '', email: '', question: '' }); // Состояние для данных формы
-
-  const handleOpenPopup = () => {
-    setIsOpen(true); // Открываем попап
-  };
-
-  const handleClosePopup = () => {
-    setIsOpen(false); // Закрываем попап
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value }); // Обновляем данные формы при изменении полей
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Здесь можно добавить логику для отправки данных формы на сервер
-    console.log(formData);
-    setFormData({ name: '', email: '', question: '' }); // Очищаем поля формы после отправки
-    handleClosePopup(); // Закрываем попап
-  };
-
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      handleClosePopup(); // Закрываем попап при клике на внешний слой
-    }
-  };
- */
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
 
 
 
 
   return (
-    <div className={`${styles.popupOverlay} ${styles.popup_open}`}>
+    <div className={`${styles.popupOverlay}
+                    ${isOpened ? styles.popup_open : styles.popup_close}`}
+        onClick={handleOverlayClick}
+    >
       <div className={`${styles.popupContainer} ${popupContainerStyle[type]}`}>
-        <button className={styles.popupCloseButton}>
+        <button className={styles.popupCloseButton}
+          onClick={closePopup}>
           <CloseIcon />
         </button>
         {popupType[type]}

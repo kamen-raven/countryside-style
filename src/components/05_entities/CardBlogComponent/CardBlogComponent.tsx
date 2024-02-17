@@ -3,10 +3,11 @@ import Image from 'next/image';
 
 import { CardBlogComponentProps } from './CardBlogComponent.props';
 import styles from './CardBlogComponent.module.scss';
-import { Button, ArrowsButton } from '~shared/index';
+import { ArrowsButton, Button } from '~shared/index';
 
 import CommentIcon from '~svg/blog/commentsIcon.svg';
 import TemplatePic from '~img/blog/Template.jpg';
+import Link from 'next/link';
 
 const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path }) => {
 
@@ -65,22 +66,22 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path }) => {
       </div>
 
     {/* кнопка ПОДРОБНЕЕ для перехода на страницу Блога */}
-      <Button appearance={'colored'} className={styles.button}>
+      <Link className={styles.button} href={'/'} >
         Подробнее
-      </Button>
+      </Link>
 
     {/* контейнер со стрелками для ГЛАВНОЙ СТРАНИЦЫ */}
       <ArrowsButton className={`${styles.blogArrows} ${page[path].arrows}`} />
 
     {/* компонент с кнопкой "ЗАДАТЬ СВОЙ ВОПРОС" */}
-      <button className={styles.askYourQuestion}>
+      <Button className={styles.askYourQuestion} type={'contactForm'}>
         <p className={styles.askYourQuestion__text}>
           Задать свой вопрос
         </p>
         <span className={styles.askYourQuestion__span}>
           ?
         </span>
-      </button>
+      </Button>
 
     </div>
   );

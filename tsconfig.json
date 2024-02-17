@@ -22,10 +22,11 @@
     "paths": {
       "~helpers/*": ["./src/helpers/*"],
       "~utils/*": ["./src/utils/*"],
-      //api
+      "~store/*": ["./src/store/*"],
+
       "~api/*": ["./src/api/components/*"],
       "~interfaces/*": ["./src/api/interfaces/*"],
-      //styles
+
       "~styles/*": ["./src/styles/*"],
       "~fonts": ["./src/styles/fonts/fonts.ts"],
       "~global_styles": ["./src/styles/global/globals.scss"],
@@ -34,10 +35,10 @@
       "~adaptive": ["./src/styles/mixin/_adaptive.scss"],
       "~data/*": ["./src/data/*"],
       "~hooks/*": ["./src/hooks/*"],
-      //images
+
       "~img/*": ["./public/img/*"],
       "~svg/*": ["./public/svg/*"],
-      //fsd
+
       "~app/*": ["./src/components/01_app/*"],
       "~pages/*": ["./src/components/02_pages/*"],
       "~widgets/*": ["./src/components/03_widgets/*"],
@@ -45,8 +46,7 @@
       "~features/*": ["./src/components/04_features/*"],
       "~entities/*": ["./src/components/05_entities/*"],
       "~shared/*": ["./src/components/06_shared/*"],
-      //
-/*       "~/*": ["./src/*"], */
+
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

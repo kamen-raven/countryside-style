@@ -63,6 +63,8 @@
 
 /* кнопка ПОДРОБНЕЕ для перехода на текст статьи */
 .button {
+  @include common-link;
+  @include common-button(colored);
   grid-area: button;
   justify-self: flex-start;
   min-width: 145px;
