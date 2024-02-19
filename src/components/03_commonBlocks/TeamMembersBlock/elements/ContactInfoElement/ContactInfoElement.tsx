@@ -3,6 +3,7 @@ import styles from './ContactInfoElement.module.scss';
 import { ContactInfoElementInterface } from './ContactInfoElement.interface.ts';
 
 import { ContactLink, PhoneNumber } from '~entities/index.ts';
+import { OpenPopupButton } from '~shared/index.ts';
 
 
 
@@ -33,9 +34,10 @@ const ContactInfoElement: React.FC<ContactInfoElementInterface> = ({ employeeIte
       {children}
 
       {employeeItem.contacts.phone &&
-        <button className={styles.buttonCall}>
+        <OpenPopupButton className={styles.buttonCall}
+        type={'contactForm'}>
           Оставить заявку
-        </button>
+        </OpenPopupButton>
       }
     </address>
   );

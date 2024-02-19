@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ReviewTitleComponent.module.scss';
 import { ReviewTitleComponentInterface } from './ReviewTitleComponent.interface';
 import { RatingLabelElement } from './elements/RatingLabelElement/RatingLabelElement';
+import { OpenPopupButton } from '~shared/index';
 
 const ReviewTitleComponent: React.FC<ReviewTitleComponentInterface> = ({className}) => {
   return (
@@ -12,9 +13,9 @@ const ReviewTitleComponent: React.FC<ReviewTitleComponentInterface> = ({classNam
       <div className={styles.reviewsContainer}>
         <RatingLabelElement service={'cian'} />
         <RatingLabelElement service={'yandex'} />
-        <button className={styles.buttonReview}>
+        <OpenPopupButton className={styles.buttonReview} type={'reviewForm'}>
           Оставить свой отзыв
-        </button>
+        </OpenPopupButton>
       </div>
     </div>
   );

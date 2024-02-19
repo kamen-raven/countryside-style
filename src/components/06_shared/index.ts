@@ -1,4 +1,4 @@
-export * from './Button/Button';
+export * from './OpenPopupButton/OpenPopupButton';
 export * from './Logo/Logo';
 export * from './Background/BackgroundSVGPattern';
 export * from './ArrowsButton/ArrowsButton';

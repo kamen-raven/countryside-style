@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from './ReviewFullPopup.module.scss';
-import { ReviewFullPopupInterface } from './ReviewFullPopup.interface.ts';
 import { ReviewCardFull } from '~common/ReviewsBlock/components';
 import { getAllReviews } from '~api/Reviews/getReviews.tsx';
 
 
-const ReviewFullPopup: React.FC<ReviewFullPopupInterface> = async ({  }) => {
+const ReviewFullPopup: React.FC = async () => {
 
   const reviews = await getAllReviews();
 

@@ -5,6 +5,7 @@ import CallIcon from '~svg/contacts/call.svg';
 
 import SellerPhoto from '~img/Team/Person4.jpg';
 import Image from 'next/image';
+import { OpenPopupButton } from '~shared/index.ts';
 
 const SellerElement: React.FC<PriceComponentInterface> = ({ data }) => {
 
@@ -26,12 +27,13 @@ const SellerElement: React.FC<PriceComponentInterface> = ({ data }) => {
         <p className = {styles.description}>
           Менеджер проектов
         </p>
-        <button className={`${styles.contactButton}`}>
+        <OpenPopupButton className={`${styles.contactButton}`}
+        type={'contactForm'}>
           Заказать звонок
           <span className={styles.contactButton__icon}>
             <CallIcon />
           </span>
-        </button>
+        </OpenPopupButton>
       </div>
     </div>
   );

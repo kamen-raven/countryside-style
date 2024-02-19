@@ -2,7 +2,7 @@ import React from 'react';
 import { CardInfoComponentProps } from './CardInfoComponent.props';
 import styles from './CardInfoComponent.module.scss';
 import { ArrowsButton } from '~shared/index';
-
+import Link from 'next/link';
 
 
 const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
@@ -44,9 +44,9 @@ const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
         }
       </div>
       <div className={`${styles.wrapper} ${selectedWrapper}`}>
-        <button className={styles.button}>
+        <Link className={styles.button} href={'/'}>
           {buttonText}
-        </button>
+        </Link>
         <p className={styles.description}>
           {description}
         </p>

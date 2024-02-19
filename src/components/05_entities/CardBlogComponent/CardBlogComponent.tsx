@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { CardBlogComponentProps } from './CardBlogComponent.props';
 import styles from './CardBlogComponent.module.scss';
-import { ArrowsButton, Button } from '~shared/index';
+import { ArrowsButton, OpenPopupButton } from '~shared/index';
 
 import CommentIcon from '~svg/blog/commentsIcon.svg';
 import TemplatePic from '~img/blog/Template.jpg';
@@ -74,14 +74,14 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path }) => {
       <ArrowsButton className={`${styles.blogArrows} ${page[path].arrows}`} />
 
     {/* компонент с кнопкой "ЗАДАТЬ СВОЙ ВОПРОС" */}
-      <Button className={styles.askYourQuestion} type={'contactForm'}>
+      <OpenPopupButton className={styles.askYourQuestion} type={'contactForm'}>
         <p className={styles.askYourQuestion__text}>
           Задать свой вопрос
         </p>
         <span className={styles.askYourQuestion__span}>
           ?
         </span>
-      </Button>
+      </OpenPopupButton>
 
     </div>
   );

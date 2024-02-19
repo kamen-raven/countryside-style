@@ -2,17 +2,22 @@
 
 .popup {
   &_open {
-    display: flex;
+    transition: all .5s linear;
     visibility: visible;
     opacity: 1;
     z-index: 10000;
+
   }
 
   &_close {
-    display: none;
+    transition: all .5s linear;
     visibility: hidden;
     opacity: 0;
     z-index: 0;
+  }
+
+  & * {
+    transition: all .5s linear;
   }
 }
 
@@ -27,7 +32,7 @@
   top: 0;
   left: 0;
 
-
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -76,6 +81,15 @@
     width: 17px;
     height: 17px;
     stroke: $dark;
+  }
+
+  &:hover {
+    background-color: $accent-green;
+    border: 1px solid $accent-green;
+
+    & svg {
+      stroke: $white;
+    }
   }
 }
 

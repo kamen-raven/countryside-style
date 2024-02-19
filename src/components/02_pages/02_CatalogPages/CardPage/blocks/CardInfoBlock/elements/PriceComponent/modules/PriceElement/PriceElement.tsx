@@ -4,6 +4,7 @@ import styles from './PriceElement.module.scss';
 import { PriceComponentInterface } from '../../PriceComponent.interface.ts';
 import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
 import Link from 'next/link';
+import { OpenPopupButton } from '~shared/index.ts';
 
 
 const PriceElement: React.FC<PriceComponentInterface> = ({ data }) => {
@@ -53,9 +54,10 @@ const PriceElement: React.FC<PriceComponentInterface> = ({ data }) => {
 
       {showNumber()}
 
-      <button className={`${styles.button} ${styles.button_write}`}>
+      <OpenPopupButton className={`${styles.button} ${styles.button_write}`}
+      type={'contactForm'}>
         Написать
-      </button>
+      </OpenPopupButton>
     </div>
 
     </div>

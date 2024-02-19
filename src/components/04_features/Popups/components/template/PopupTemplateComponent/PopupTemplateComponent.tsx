@@ -5,7 +5,6 @@ import styles from './PopupTemplateComponent.module.scss';
 import { PopupTemplateComponentInterface } from './PopupTemplateComponent.interface.ts';
 
 import CloseIcon from '~svg/button/clear.svg';
-import { ContactUsFormPopup, ReviewFormPopup, ReviewFullPopup, SuccessMessagePopup } from '../../index.ts';
 import usePopupStore from '~store/usePopupStore.ts';
 
 
@@ -15,17 +14,15 @@ import usePopupStore from '~store/usePopupStore.ts';
 const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
   type,
   isOpened,
+  children
 }) => {
   const closePopup = usePopupStore((state) => state.controls.closePopup);
+  //const handleOverlayClickOrKeyPress = usePopupStore((state) => state.controls.handleOverlayClickOrKeyPress);
+
   const handleOverlayClick = usePopupStore((state) => state.controls.handleOverlayClick);
   const handleKeyPress = usePopupStore((state) => state.controls.handleKeyPress);
 
-  const popupType = {
-    contactForm: <ContactUsFormPopup />,
-    reviewForm: <ReviewFormPopup />,
-    successMessage: <SuccessMessagePopup />,
-    reviewFull: <ReviewFullPopup />
-  };
+
 
   const popupContainerStyle = {
     contactForm: styles.popupContainer_form,
@@ -49,12 +46,12 @@ const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
                     ${isOpened ? styles.popup_open : styles.popup_close}`}
         onClick={handleOverlayClick}
     >
-      <div className={`${styles.popupContainer} ${popupContainerStyle[type]}`}>
+      <div className={`${styles.popupContainer} ${type && popupContainerStyle[type]}`}>
         <button className={styles.popupCloseButton}
           onClick={closePopup}>
           <CloseIcon />
         </button>
-        {popupType[type]}
+        {children}
       </div>
     </div>
   );

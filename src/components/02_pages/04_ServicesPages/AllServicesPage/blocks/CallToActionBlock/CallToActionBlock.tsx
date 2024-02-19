@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './CallToActionBlock.module.scss';
 
 import BulletIcon from '~svg/button/toggle.svg';
+import { OpenPopupButton } from '~shared/index';
 
 
 const CallToActionBlock: React.FC = () => {
@@ -34,9 +35,9 @@ const CallToActionBlock: React.FC = () => {
             </p>
           </div>
 
-          <button className={styles.button}>
+          <OpenPopupButton className={styles.button} type={'contactForm'}>
             Оставить заявку
-          </button>
+          </OpenPopupButton>
         </div>
       </div>
     </section>

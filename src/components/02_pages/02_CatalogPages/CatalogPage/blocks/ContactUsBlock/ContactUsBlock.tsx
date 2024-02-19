@@ -10,6 +10,7 @@ import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
 import Link from 'next/link';
 import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
 import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
+import { OpenPopupButton } from '~shared/index.ts';
 
 
 
@@ -63,9 +64,9 @@ const ContactUsBlock: React.FC<ContactUsBlockInterface> = ({ generalContactsData
             </ul>
           </address>
 
-          <button className={styles.buttonCall}>
+          <OpenPopupButton className={styles.buttonCall} type={'contactForm'}>
             Заказать обратный звонок
-          </button>
+          </OpenPopupButton>
         </div>
 
         <Image className={styles.image}
