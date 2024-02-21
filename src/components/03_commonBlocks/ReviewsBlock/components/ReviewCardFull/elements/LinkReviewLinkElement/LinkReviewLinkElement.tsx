@@ -36,20 +36,23 @@ const LinkReviewLinkElement: React.FC<LinkReviewLinkElementInterface> = ({ data 
   };
 
 
-    return (
-      data.link_to_src &&
-      
-        <Link className={`${styles.link} ${setButtonType(data.link_to_src) && styles.link_padding}`}
-          href={data.link_to_src}>
-          Оригинал отзыва
-          {setButtonType(data.link_to_src) &&
+  return (
+    data.link_to_src &&
 
-            <span className={`${styles.icon} ${buttonType.style[styleKey as keyof ButtonType]}`}>
-              {buttonType.logo[styleKey as keyof ButtonType]}
-            </span>
-          }
-        </Link>
-    );
+    <Link className={`${styles.link}`}
+      href={data.link_to_src}>
+      <span className = {styles.buttonText}>
+        Оригинал отзыва
+      </span>
+
+      {setButtonType(data.link_to_src) &&
+
+        <span className={`${styles.icon} ${buttonType.style[styleKey as keyof ButtonType]}`}>
+          {buttonType.logo[styleKey as keyof ButtonType]}
+        </span>
+      }
+    </Link>
+  );
 };
 
 export { LinkReviewLinkElement };

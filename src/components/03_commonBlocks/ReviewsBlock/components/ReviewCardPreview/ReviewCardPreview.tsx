@@ -2,6 +2,8 @@ import React from 'react';
 import { ReviewCardPreviewInterface } from './ReviewCardPreview.interface';
 import styles from './ReviewCardPreview.module.scss';
 import { ReviewCardInfoContainer } from '../elements/ReviewCardInfoContainer/ReviewCardInfoContainer';
+import { LinkReviewLinkElement } from '../ReviewCardFull/elements/LinkReviewLinkElement/LinkReviewLinkElement';
+import { ReviewPopupButton } from '~shared/index';
 
 
 const ReviewCardPreview: React.FC<ReviewCardPreviewInterface> = ({ data }) => {
@@ -17,12 +19,18 @@ const ReviewCardPreview: React.FC<ReviewCardPreviewInterface> = ({ data }) => {
       </div>
 
       <div className={styles.buttonsContainer}>
-        <button className={styles.button}>
+
+        {/* КНОПКА ОТКРЫТИЯ ПОПАПА ОТЗЫВА */}
+        <ReviewPopupButton className={styles.button}
+          type={'reviewFull'}
+          data={data}
+        >
           Читать весь отзыв
-        </button>
-        <button className={styles.button}>
-          Оригинал отзыва
-        </button>
+        </ReviewPopupButton>
+
+        {/* ОРИГИНАЛ ОТЗЫВА */}
+        {<LinkReviewLinkElement data={data} />}          {/* КНОПКА С ССЫЛКОЙ НА ОТЗЫВ */}
+
       </div>
     </div>
   );

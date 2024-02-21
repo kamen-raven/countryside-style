@@ -19,7 +19,7 @@ const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ reviewsDataItem }) => {
 
         <div className={styles.contentContainer}>
           <div className={`${styles.innerBlock}`}>
-            {reviewsDataItem && reviewsDataItem.reverse().map((item, index) => {
+            {reviewsDataItem.results && reviewsDataItem.results.map((item, index) => {
               return (
                 <ReviewCardPreview key={index} data={item} />
               );

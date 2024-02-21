@@ -1,8 +1,9 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
+import { MainPopupState, SupportPopupState } from '~store/useTogglePopupStore';
 
 export interface PopupTemplateComponentInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  type: 'contactForm' | 'reviewForm' | 'successMessage' | 'reviewFull' | null;
   isOpened: boolean;
-  //handleClose: () => void;
+  type: 'contactForm' | 'reviewForm' | 'successMessage' | 'reviewFull' | 'reviewImage' | "reviewImage" | "successMessage" | "privacyPolity" | null;
+  actions: MainPopupState["actions"] | SupportPopupState["actions"];
   children?: ReactNode;
 }

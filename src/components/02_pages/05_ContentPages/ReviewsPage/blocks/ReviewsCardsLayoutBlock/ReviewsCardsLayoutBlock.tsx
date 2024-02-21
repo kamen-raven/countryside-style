@@ -12,7 +12,7 @@ const ReviewsCardsLayoutBlock: React.FC<ReviewsCardsLayoutBlockInterface> = ({
   reviewsData,
   itemsPerPage }) => {
   // функция для управления пагинацией
-  const { totalPages, currentItems, currentPage, setCurrentPage } = usePaginationCounter(reviewsData, itemsPerPage);
+  const { totalPages, currentItems, currentPage, setCurrentPage } = usePaginationCounter(reviewsData.results, itemsPerPage);
 
   // реф для скролла вверх при пагинации
   const parentRef = useRef<HTMLDivElement>(null);

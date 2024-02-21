@@ -1,8 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { ReviewInterface } from '~interfaces/review.interface';
+import { ApiReviewInterface } from '~interfaces/review.interface';
 
 export interface ReviewsCardsLayoutBlockInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  reviewsData: ReviewInterface[];
+  reviewsData: ApiReviewInterface;
 
   itemsPerPage: number;
 }

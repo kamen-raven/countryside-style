@@ -19,10 +19,11 @@ const ReviewCardFull: React.FC<ReviewCardFullInterface> = ({ data }) => {
       </p>
 
       <div className={styles.buttonsContainer}>  {/* КНОПКИ И ФОТОГРАФИИ ОТЗЫВА */}
+        {/* ФОТО ОТЗЫВА */}
+        {<ImageReviewLinkElement data={data} />}
 
-        {<ImageReviewLinkElement data={data} />}       {/* ФОТО ОТЗЫВА */}
-
-        {<LinkReviewLinkElement data={data} />}          {/* КНОПКА С ССЫЛКОЙ НА ОТЗЫВ */}
+        {/* ОРИГИНАЛ ОТЗЫВА */}
+        {<LinkReviewLinkElement data={data} />} {/* КНОПКА С ССЫЛКОЙ НА ОТЗЫВ */}
 
       </div>
     </div>

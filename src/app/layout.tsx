@@ -18,8 +18,8 @@ import generalContactsData from '~data/constant/generalContacts/generalContactsD
 import { ScrollToTopButton } from '~features/index';
 import { Header, Navbar, Footer } from '~common/index';
 
-import { PopupTemplateComponent } from '~features/Popups/components';
-import { Popups } from '~features/Popups/Popups';
+import { MainPopups } from '~features/Popups/MainPopups';
+import { SupportPopups } from '~features/Popups/SupportPopups';
 
 
 
@@ -38,7 +38,8 @@ export default function RootLayout({
           <Footer listItems={menuList} generalContactsData={generalContactsData} />
           <ScrollToTopButton />
         </div>
-        <Popups />
+        <MainPopups />
+        <SupportPopups/>
       </body>
     </html>
   );

@@ -12,7 +12,7 @@ const ReviewsPage: React.FC<ReviewsPageInterface> = ({ employeesData, reviewsDat
   return (
     <main className={styles.mainContainer}>
       <ReviewsTitleBlock employeesData={employeesData} />
-      <ReviewsCardsLayoutBlock reviewsData={reviewsData.reverse()} itemsPerPage={1}/>
+      <ReviewsCardsLayoutBlock reviewsData={reviewsData} itemsPerPage={5}/>
       <ReviewsCreateFormBlock/>
     </main>
   );

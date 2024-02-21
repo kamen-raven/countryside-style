@@ -1,20 +1,16 @@
+'use client';
 import React from 'react';
 import styles from './ReviewFullPopup.module.scss';
 import { ReviewCardFull } from '~common/ReviewsBlock/components';
-import { getAllReviews } from '~api/Reviews/getReviews.tsx';
+import useReviewPopupStore from '~store/useReviewPopupStore';
 
 
-const ReviewFullPopup: React.FC = async () => {
-
-  const reviews = await getAllReviews();
-
-  const result = reviews.find(function isReview(element) {
-    return element.author_name === 'Mark Avrelii Augustin Blessed Vinsent Vag Gogue Hugo Boss Adriano Chillentano The Great';
-  });
+const ReviewFullPopup: React.FC = () => {
+  const popupData = useReviewPopupStore((state) => state.popupData);
 
     return (
         <div className = {styles.innerContainer}>
-          {result && <ReviewCardFull data={result}/>}
+          {popupData && <ReviewCardFull data={popupData}/>}
         </div>
     );
 };

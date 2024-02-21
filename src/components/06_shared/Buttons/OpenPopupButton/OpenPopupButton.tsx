@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
-import usePopupStore from '~store/usePopupStore.ts';
 
 import { OpenPopupButtonInterface } from './OpenPopupButton.interface';
+import { useToggleMainPopupStore } from '~store/useTogglePopupStore';
 
 
 const OpenPopupButton: React.FC<OpenPopupButtonInterface> = ({ type, className, children }) => {
-  const openPopup = usePopupStore((state) => state.controls.openPopup);
+  const openPopup = useToggleMainPopupStore((state) => state.actions.openPopup);
 
   const handleOpenPopup = () => {
     openPopup(type);

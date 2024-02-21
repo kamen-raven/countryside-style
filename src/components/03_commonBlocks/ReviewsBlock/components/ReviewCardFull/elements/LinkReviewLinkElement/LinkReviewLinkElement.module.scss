@@ -4,18 +4,23 @@
   @include common-link;
   @include common-button(transparent,
   $padding: 9px 0);
+}
 
-  &_padding {
-    padding-left: 25px;
+.buttonText {
+  padding: 0 25px;
+
+  @include breakpoint(screen1280) {
+    padding: 0 14px;
   }
-
 }
 
 .icon {
   box-sizing: border-box;
   width: 36.82px;
   height: 36.82px;
-  margin: 4px 4px 4px 14px;
+  min-width: 35px;
+  min-height: 35px;
+  margin: 4px 4px 4px 0;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -31,6 +36,7 @@
   }
 
   & svg {
+
     width: 80%;
     height: 80%;
     border-radius: 20%;

@@ -1,0 +1,13 @@
+@import '~global_styles';
+
+.innerContainer {
+  margin-top: 40px;
+  @include flexColumnGap($gap: 20px);
+  border: 1px solid $gray;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

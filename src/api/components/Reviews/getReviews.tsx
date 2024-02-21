@@ -1,7 +1,7 @@
 import { PATH_API } from "../../utils/path-api";
-import { ReviewInterface } from "../../interfaces/review.interface";
+import { ApiReviewInterface } from "../../interfaces/review.interface";
 
-export async function getAllReviews(): Promise<ReviewInterface[]> {
+export async function getAllReviews(): Promise<ApiReviewInterface> {
   try {
     const res = await fetch(PATH_API.reviews.allReviews, {
       method: 'GET',
