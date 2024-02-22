@@ -5,7 +5,7 @@ import { TeamMemberCardProps } from './TeamMemberCard.props';
 import styles from './TeamMemberCard.module.scss';
 import { ContactInfoElement } from '../ContactInfoElement/ContactInfoElement';
 
-const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, teamRole }) => {
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, countUsers }) => {
 
   const styleItems = {
     oddStyles: {
@@ -27,14 +27,17 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, te
 
 
   const quoteElement = (
-    <div className={styles.quoteContainer}>
-      <span className={styles.quotationMark}>
-        “
-      </span>
-      <p className={styles.quoteText}>
-        {employeeItem.quote}
-      </p>
-    </div>
+    employeeItem.description &&
+    <>
+      <div className={styles.quoteContainer}>
+        <span className={styles.quotationMark}>
+          “
+        </span>
+        <p className={styles.quoteText}>
+          {employeeItem.description}
+        </p>
+      </div>
+    </>
   );
 
 
@@ -43,20 +46,23 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, te
     <div className={`${styles.container}  ${setColor}`}>
       <div className={`${styles.innerBlock} ${setTemplate}`}>
 
-          <Image className={styles.image}
-            src={employeeItem.photo}
-            alt={employeeItem.name} />
+        <Image className={styles.image}
+          src={employeeItem.avatars[0].image}   //! сделана первая фотография сотрудника
+          alt={`${employeeItem.first_name} + ${employeeItem.last_name}`}
+          width={800}
+          height={800} />
 
         <div className={styles.infoContainer}>
           <h3 className={styles.name}>
-            {employeeItem.name}
+            {`${employeeItem.first_name} ${employeeItem.last_name}`}
           </h3>
 
           <p className={styles.jobTitle}>
-            {employeeItem.jobTitle}
+            {employeeItem.job_title}
           </p>
 
-          {(teamRole == 'employee' || teamRole == 'all') ?
+
+          {(countUsers == 'employee' || countUsers == 'all') ?
             <ContactInfoElement employeeItem={employeeItem}>
               {quoteElement}
             </ContactInfoElement>

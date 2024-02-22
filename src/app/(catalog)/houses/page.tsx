@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 
 export default async function PageType({ params }:  {params: {type: string}}) {
-  const reviews = await getAllReviews(); // запрос ОТЗЫВОВ
+  const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
 
 
 

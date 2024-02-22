@@ -12,7 +12,7 @@ const AllServicesPage: React.FC<AllServicesPageInterface> = ({ servicesListData,
       <QuestionsInfoBlock questionsList={questionsList} />
       <StatisticInfoBlock statIndicatorsList={statIndicatorsList} />
       <CallToActionBlock />
-      <TeamMembersBlock employeesData={employeesData} teamRole={'owner'} />
+      <TeamMembersBlock employeesData={employeesData} countUsers={'owner'} />
       <QuestionFormBlock contentType={'image'}
         direction={'formFirst'} />
     </main>

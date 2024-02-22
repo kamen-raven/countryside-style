@@ -6,7 +6,7 @@ import { TeamMembersBlock } from '~common/index.ts';
 
 const OurTeamBlock: React.FC<OurTeamBlockInterface> = ({ employeesData }) => {
   return (
-    <TeamMembersBlock employeesData={employeesData} teamRole={'all'}>
+    <TeamMembersBlock employeesData={employeesData} countUsers={'all'}>
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>
           Наша команда

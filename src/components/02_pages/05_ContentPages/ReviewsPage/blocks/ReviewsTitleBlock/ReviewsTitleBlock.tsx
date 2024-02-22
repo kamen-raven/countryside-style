@@ -25,10 +25,10 @@ const ReviewsTitleBlock: React.FC<ReviewsTitleBlockInterface> = ({ employeesData
         <div className={styles.ownerContainer}>
           {employeesData.slice(0, 1).map((item, index) => {
             return (
-              <TeamMemberCard key={item._id}
+              <TeamMemberCard key={item.uuid}
                 employeeItem={item}
                 index={index}
-                teamRole={"owner"} />
+                countUsers={"owner"} />
             );
           })}
         </div>

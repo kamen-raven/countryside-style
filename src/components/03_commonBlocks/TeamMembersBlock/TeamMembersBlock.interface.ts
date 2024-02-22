@@ -1,8 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersData.interface';
+import { UsersInterface } from '~interfaces/users.interface';
 
 export interface TeamMembersBlockInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  employeesData: teamMembersDataInterface[];
-  teamRole: 'owner' | 'employee' | 'all';
+  employeesData: UsersInterface[];//teamMembersDataInterface[];
+  countUsers: 'owner' | 'employee' | 'all' | 'single';
   children?: ReactNode;
 }

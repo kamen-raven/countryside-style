@@ -3,12 +3,12 @@ import { servicesDataInterface } from '~data/constant/servicesBlock/allServicesP
 import { titleBlockDataInterface } from '~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockDataInterface';
 import { typePageEnum } from '~data/constant/servicesBlock/servicesPagesFor/typePageEnum';
 import { villagesProjectsDataInterface } from '~data/constant/servicesBlock/villagesProjectsData/villagesProjectsData.interface';
-import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersData.interface';
+import { UsersInterface } from '~interfaces/users.interface';
 
 export interface ForCottageVillagesPageInterface   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   typePage: typePageEnum;
   titleBlockData: titleBlockDataInterface;
   offersListData: servicesDataInterface[];
   projectsData: villagesProjectsDataInterface[];
-  employeesData: teamMembersDataInterface[];
+  employeesData: UsersInterface[];//teamMembersDataInterface[];
 }

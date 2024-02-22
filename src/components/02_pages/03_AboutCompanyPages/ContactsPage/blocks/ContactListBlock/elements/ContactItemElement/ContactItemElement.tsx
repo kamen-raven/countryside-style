@@ -16,22 +16,24 @@ const ContactItemElement: React.FC<ContactItemElementInterface> = ({ employeeInf
   };
 
   return (
-    <div key={employeeInfo._id} className={styles.contactContainer}>
+    <div className={styles.contactContainer}>
 
       <Image
         className={styles.avatar}
-        src={employeeInfo.photo}
-        alt={employeeInfo.name} />
+        src={employeeInfo.avatars[0].image}           //! сделана первая фотография сотрудника
+        alt={`${employeeInfo.first_name} + ${employeeInfo.last_name}`}
+        width={350}
+        height={350}/>
 
       <div className={styles.infoContainer}>
         <div className={styles.infoContainer__inner}>
           <p className={styles.infoContainer__name}>
-            {employeeInfo.name}
+            {`${employeeInfo.first_name} ${employeeInfo.last_name}`}
           </p>
 
-          {employeeInfo.jobTitle &&
+          {employeeInfo.job_title &&
             <> {/* <p className={styles.infoContainer__jobTitle}>employeeInfo.jobTitle</p> */}
-              {useReactMarkdown(employeeInfo.jobTitle, markdownStyles)}
+              {useReactMarkdown(employeeInfo.job_title, markdownStyles)}
             </>
           }
 
@@ -46,7 +48,7 @@ const ContactItemElement: React.FC<ContactItemElementInterface> = ({ employeeInf
 
         </div>
 
-        {employeeInfo.contacts.phone &&
+        {employeeInfo.phone_number &&
           <PhoneNumber
             className={styles.phoneNumber}
             employeeItem={employeeInfo}
@@ -54,11 +56,11 @@ const ContactItemElement: React.FC<ContactItemElementInterface> = ({ employeeInf
         }
 
         <div className={styles.messengersContainer}>
-          {employeeInfo.contacts.telegram &&
+          {employeeInfo.telegram_link &&
             <ContactLink linkInfoData={employeeInfo} messenger={'telegram'} colorSchema={'transparent'} />
           }
 
-          {employeeInfo.contacts.whatsapp &&
+          {employeeInfo.whatsapp_link &&
             <ContactLink linkInfoData={employeeInfo} messenger={'whatsapp'} colorSchema={'transparent'} />
           }
 

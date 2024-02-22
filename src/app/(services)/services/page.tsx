@@ -1,13 +1,13 @@
 import { Metadata } from "next";
 import { AllServicesPage } from "~pages/index";
 
-// temp
-import teamMembersData from '~data/temp/employeesList/teamMembersData';
 
 // data
 import questionsForClients from '~data/constant/servicesBlock/allServicesPage/questionsForClients/questionsForClients';
 import servicesData from "~data/constant/servicesBlock/allServicesPage/servicesListData/servicesListData";
 import statisticalIndicatorsData from "~data/constant/servicesBlock/allServicesPage/statisticalIndicators/statisticalIndicators";
+import { getAllUsers } from "~api/Users/getUsers";
+import sortUsersList from "~helpers/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'Наши услуги',
@@ -17,12 +17,14 @@ export const metadata: Metadata = {
 
 
 
-export default function PageServices() {
+export default async function PageServices() {
+  const employeeInitialData = await getAllUsers(10); // берем 10 пользователей
+  const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 
   return (
     <AllServicesPage
       servicesListData={servicesData}
-      employeesData={teamMembersData}
+      employeesData={employeeData}
       questionsList={questionsForClients}
       statIndicatorsList={statisticalIndicatorsData} />
   );

@@ -11,10 +11,10 @@ const ContactListBlock: React.FC<ContactListBlockInterface> = ({ employeesList }
     <div className={styles.wrapper}>
       <div className={styles.container}>
 
-        {employeesList.map((item) => {
+      {employeesList.map((item) => {
           return (
-            (item.contacts.phone || item.contacts.telegram || item.contacts.whatsapp) && // проверяем на наличие телефона в базе и не выводим сотрудника без номера телефона
-            <ContactItemElement key={item._id} employeeInfo={item} />
+            (item.phone_number|| item.telegram_link || item.whatsapp_link ) && // проверяем на наличие телефона в базе и не выводим сотрудника без номера телефона
+            <ContactItemElement key={item.uuid} employeeInfo={item} />
           );
         })}
 

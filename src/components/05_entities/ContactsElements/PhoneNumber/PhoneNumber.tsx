@@ -38,11 +38,11 @@ const PhoneNumber: React.FC<PhoneNumberInterface> = ({ employeeItem, colorText =
 
   return (
     <Link className={`${styles.callLink} ${colorSchema[colorText].link} ${className}`}
-      href={`tel:${data.contacts.phone}`}>
+      href={`tel:${data.phone_number}`}>
       <span className={`${styles.callIcon} ${colorSchema[colorText].icon}`}>
         <CallIcon />
       </span>
-      {formatPhoneNumber(data.contacts.phone)}
+      {data.phone_number && formatPhoneNumber(data.phone_number)}
     </Link>
   );
 };

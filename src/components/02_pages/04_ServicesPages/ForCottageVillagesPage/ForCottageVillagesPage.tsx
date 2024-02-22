@@ -13,7 +13,7 @@ const ForCottageVillagesPage: React.FC<ForCottageVillagesPageInterface> = ({
   employeesData,
 }) => {
 
-  const onePartner = employeesData.slice(0, 1);
+
 
     return (
         <main className = {styles.mainContainer}>
@@ -23,7 +23,7 @@ const ForCottageVillagesPage: React.FC<ForCottageVillagesPageInterface> = ({
             <DescriptionByOffers/>
           </ServicesOffers>
           <VillagesProjectsBlock projectsData={projectsData}/>
-          <TeamMembersBlock employeesData={onePartner} teamRole={'owner'} />
+          <TeamMembersBlock employeesData={employeesData} countUsers={'single'} />
           <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''}/>
         </main>
     );

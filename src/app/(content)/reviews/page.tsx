@@ -3,7 +3,8 @@ import { ReviewsPage } from "~pages/index";
 
 // data
 import { getAllReviews } from "~api/Reviews/getReviews";
-import teamMembersData from "~data/temp/employeesList/teamMembersData";
+import { getAllUsers } from "~api/Users/getUsers";
+import sortUsersList from "~helpers/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'Отзывы | Загородный стиль',
@@ -15,13 +16,15 @@ export const metadata: Metadata = {
 
 
 export default async function PageForSellers() {
- const reviews = await getAllReviews(); // запрос ОТЗЫВОВ
+ const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
+ const employeeInitialData = await getAllUsers(10); // берем 10 пользователей
+ const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 
 
 
   return (
     <ReviewsPage
-      employeesData={teamMembersData}
+      employeesData={employeeData}
       reviewsData={reviews}
       />
   );

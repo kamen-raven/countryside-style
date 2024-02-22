@@ -43,7 +43,7 @@ const VillagesProjectCard: React.FC<VillagesProjectCardInterface> = ({ project, 
                   href={project.link.url}>
             {project.link.buttonText}
           </Link>
-          {/*           {(teamRole == 'employee' || teamRole == 'all') ?
+          {/*           {(countUsers == 'employee' || countUsers == 'all') ?
             <ContactInfoElement employeeItem={employeeItem}>
               {quoteElement}
             </ContactInfoElement>

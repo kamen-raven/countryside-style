@@ -1,8 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersData.interface';
 import { generalContactsDataInterface } from '~data/constant/generalContacts/generalContactData.interface';
+import { UsersInterface } from '~interfaces/users.interface';
 
 export interface ContactsPageInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,HTMLDivElement > {
-  employeesList: teamMembersDataInterface[];
+  employeesList: UsersInterface[];//teamMembersDataInterface[];
   generalContactsData: generalContactsDataInterface;
 }

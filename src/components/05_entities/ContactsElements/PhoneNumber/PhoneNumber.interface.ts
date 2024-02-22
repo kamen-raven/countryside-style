@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersData.interface';
+import { UsersInterface } from '~interfaces/users.interface';
 
 export interface PhoneNumberInterface extends DetailedHTMLProps<HTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
-  employeeItem?: teamMembersDataInterface;
+  employeeItem?: UsersInterface;//teamMembersDataInterface;
   colorText: 'white' | 'green' | 'gray' | 'black';
 }

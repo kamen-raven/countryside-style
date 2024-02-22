@@ -1,9 +1,22 @@
 import { PATH_API } from "../../utils/path-api";
-import { ApiReviewInterface } from "~interfaces/review.interface";
+import { ApiUsersInterface } from "~interfaces/users.interface";
 
-export async function getAllReviews(): Promise<ApiReviewInterface> {
+export async function getAllUsers(pageSize?: number, page?: number): Promise<ApiUsersInterface> {
   try {
-    const res = await fetch(PATH_API.reviews.allReviews, {
+
+    // Создаем объект URLSearchParams и добавляем параметры запроса
+    const params = new URLSearchParams();
+
+
+    pageSize && params.append('page_size', pageSize.toString());
+    page && params.append('page', page.toString());
+
+    // Формируем URL с параметрами
+    const url = `${PATH_API.users.allUsers}?${params.toString()}`;
+
+
+
+    const res = await fetch(url, {
       method: 'GET',
       headers: new Headers({
         'content-type': 'application/json'

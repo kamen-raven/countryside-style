@@ -15,17 +15,17 @@ const ContactInfoElement: React.FC<ContactInfoElementInterface> = ({ employeeIte
   return (
     <address className={styles.addressContainer} >
       <div className={styles.contactsContainer}>
-        {employeeItem.contacts.phone &&
+        {employeeItem.phone_number &&
           <PhoneNumber className={styles.phoneNumber}
             employeeItem={employeeItem}
             colorText={'white'} />
         }
 
         <div className={styles.contactsList}>
-          {employeeItem.contacts.telegram &&
+          {employeeItem.telegram_link &&
             <ContactLink linkInfoData={employeeItem} messenger={'telegram'} colorSchema={'white'} />
           }
-          {employeeItem.contacts.whatsapp &&
+          {employeeItem.whatsapp_link &&
             <ContactLink linkInfoData={employeeItem} messenger={'whatsapp'} colorSchema={'white'} />
           }
         </div>
@@ -33,7 +33,7 @@ const ContactInfoElement: React.FC<ContactInfoElementInterface> = ({ employeeIte
 
       {children}
 
-      {employeeItem.contacts.phone &&
+      {employeeItem.phone_number &&
         <OpenPopupButton className={styles.buttonCall}
         type={'contactForm'}>
           Оставить заявку

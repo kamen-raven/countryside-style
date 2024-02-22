@@ -1,8 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { teamMembersDataInterface } from '~data/temp/employeesList/teamMembersData.interface';
+import { UsersInterface } from '~interfaces/users.interface';
 
 export interface TeamMemberCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  employeeItem: teamMembersDataInterface;
-  teamRole: 'owner' | 'employee' | 'all';
+  employeeItem: UsersInterface;//teamMembersDataInterface;
+  countUsers: 'owner' | 'employee' | 'all' | 'single';
   index: number;
 }

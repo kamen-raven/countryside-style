@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 
 export default async function PageForSellers() {
-  const reviews = await getAllReviews(); // запрос ОТЗЫВОВ
+  const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
 
 
 

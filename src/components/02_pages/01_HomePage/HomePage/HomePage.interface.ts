@@ -1,7 +1,9 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { ApiReviewInterface } from '~interfaces/review.interface';
+import { ReviewInterface } from '~interfaces/review.interface';
+import { UsersInterface } from '~interfaces/users.interface';
 
 export interface HomePageInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  reviewsData: ApiReviewInterface;
+  reviewsData: ReviewInterface[];
+  employeesData: UsersInterface[];
   children?: ReactNode;
 }

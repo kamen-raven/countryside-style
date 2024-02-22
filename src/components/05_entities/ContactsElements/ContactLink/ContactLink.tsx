@@ -59,6 +59,10 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
     icon: {
       telegram: <TelegramIcon className={`${setLinkStyle[colorSchema].svgFill} `} />,
       whatsapp: <WhatsappIcon className={`${setLinkStyle[colorSchema].svgFill} `} />
+    },
+    data: {
+      telegram: data.telegram_link,
+      whatsapp: data.whatsapp_link,
     }
   };
 
@@ -66,7 +70,7 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
 
     <div className={`${styles.itemBorder} ${setLinkStyle[colorSchema].border}`}>
       <Link className={`${styles.itemLink} ${setLinkStyle[colorSchema].fontColor}`}
-        href={data.contacts[messenger]}>
+        href={setLinkType.data[messenger] && setLinkType.data[messenger]}>
         {setLinkType.text[messenger]}
         <span className={`${styles.itemIcon} ${setBackgroundColor}`}>
           {setLinkType.icon[messenger]}
