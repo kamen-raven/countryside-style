@@ -7,14 +7,11 @@ export async function getAllUsers(pageSize?: number, page?: number): Promise<Api
     // Создаем объект URLSearchParams и добавляем параметры запроса
     const params = new URLSearchParams();
 
-
     pageSize && params.append('page_size', pageSize.toString());
     page && params.append('page', page.toString());
 
     // Формируем URL с параметрами
     const url = `${PATH_API.users.allUsers}?${params.toString()}`;
-
-
 
     const res = await fetch(url, {
       method: 'GET',
@@ -27,11 +24,11 @@ export async function getAllUsers(pageSize?: number, page?: number): Promise<Api
     });
 
     if (!res.ok) { // Обработка случаев, когда запрос вернулся неуспешным статусом
-      throw new Error(`Error fetching data in getAllReviews. Status: ${res.status}`);
+      throw new Error(`Error fetching data in getAllUsers. Status: ${res.status}`);
     }
     return res.json();
   } catch (error) { // Обработка других ошибок
-    console.error('Error in getAllReviews:', error);
+    console.error('Error in getAllUsers:', error);
     throw error;
   }
 }
