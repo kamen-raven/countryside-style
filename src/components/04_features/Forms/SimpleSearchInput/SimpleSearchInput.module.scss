@@ -1,0 +1,69 @@
+@import '~global_styles';
+
+
+.container {
+  position: relative;
+  display: flex;
+
+  &:focus-within {
+    svg {
+      stroke: $accent-green;
+    }
+  }
+
+
+
+  &_header {
+    flex-shrink: 4;
+    width: 100%;
+    min-width: 240px;
+
+    @include breakpoint(screen960) {
+      display: none;
+    }
+  }
+
+  &_blog {
+    max-width: clamp(450px, 70vw, 900px);
+    width: 100%;
+  }
+
+}
+
+.input {
+  @include common-input;
+  width: 100%;
+
+  &_header {
+    line-height: 140%;
+    font-size: 0.75rem;
+    padding: 6px 40px 6px 15px;
+    height: 30px;
+  }
+
+  &_blog {
+    border: 1px solid $dark;
+    height: 45px;
+    padding: 11px 40px 11px 25px;
+    font-size: $paragraph-md;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+
+  &_header {
+    width: 19px;
+    height: 19px;
+  }
+
+  &_blog {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+}

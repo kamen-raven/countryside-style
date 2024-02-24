@@ -1,0 +1,9 @@
+@import '~global_styles';
+
+  .mainContainer {
+    @include mainPageContainer(
+      "title"
+      "blogCards"
+      "questionForm"
+      );
+  }
