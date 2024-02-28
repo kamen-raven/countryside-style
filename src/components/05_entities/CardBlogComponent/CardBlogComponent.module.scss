@@ -3,10 +3,10 @@
 /* общий компонент */
 .innerBlock {
   display: grid;
-  grid-template-columns: [pic-start] minmax(280px, 1050px) [pic-end info-start] 1fr [question-column] auto [info-end];
-  grid-template-rows: [text-start] minmax(260px, 1fr) [text-end under-text] minmax(255px, 1fr) [question-start] auto [question-end];
-  gap: 15px;
-  max-height: 600px;
+  grid-template-columns: [pic-start] minmax(280px, 850px) [pic-end info-start] 1fr [question-column] auto [info-end];
+  grid-template-rows: [text-start] minmax(auto, 1fr) [text-end under-text] minmax(auto, 1fr) [question-start] auto [question-end];
+  gap: 20px 10px;
+  max-height: 480px;
 
   &_homePage { /* шаблон для ДОМАШНЕЙ СТРАНИЦЫ */
     grid-template-areas:
@@ -37,7 +37,7 @@
 .image {
   width: 100%;
   height: 100%;
-  max-height: 600px;
+  max-height: 480px;
   object-fit: cover;
   object-position: center;
   clip-path: polygon(
@@ -55,9 +55,7 @@
   grid-area: title;
 
   @include common-title(hSmall);
-  align-self: flex-end;
-  padding-top: 40px;
-  padding-bottom: 15px;
+  padding-top: clamp(40px, 5vw ,100px);
 }
 /* ----------------- */
 
@@ -66,8 +64,13 @@
   @include common-link;
   @include common-button(colored);
   grid-area: button;
-  justify-self: flex-start;
   min-width: 145px;
+  justify-self: flex-start;
+  &_homePage {
+  }
+  &_blogPage {
+    align-self: center;
+  } /* шаблон для страницы БЛОГА */
 }
 /* ------------------- */
 

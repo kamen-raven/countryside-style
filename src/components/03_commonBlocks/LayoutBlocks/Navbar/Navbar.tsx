@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems }) => {
     <nav className={`${styles.navMenu}`}>
       <ul className={`${styles.list}`}>
         {listItems.map((item) => (
-          <li className={`${styles.listItem} ${pathname === item.link ? styles.active : ''}`} key={item.name}>
+          <li className={`${styles.listItem} ${pathname.startsWith(item.link) ? styles.active : ''}`} key={item.name}>
             <Link className={`${styles.link}`} href={`${item.link}`}>
               {item.title}
             </Link>

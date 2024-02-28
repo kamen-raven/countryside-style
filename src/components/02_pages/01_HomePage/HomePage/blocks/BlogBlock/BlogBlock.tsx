@@ -22,7 +22,7 @@ const BlogBlock: React.FC<BlogBlockProps> = ({ path }) => {
         <h2 className={styles.title}>
           Блог
         </h2>
-        <CardBlogComponent path={path}/>
+        <CardBlogComponent path={path} blogCardItem={undefined}/>
 
       </div>
     </section>

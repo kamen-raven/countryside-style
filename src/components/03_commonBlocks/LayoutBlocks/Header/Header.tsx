@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Header.module.scss';
 
-import { HeaderSearchInput, ContactComponent } from './components';
+import { ContactComponent } from './components';
 import { Logo } from '~shared/index';
+import { SimpleSearchInput } from '~features/Forms';
 
 
 const Header: React.FC = () => {
@@ -10,7 +11,8 @@ const Header: React.FC = () => {
     <header className={`${styles.header}`}>
       <div className={styles.inner}>
         <Logo />
-        <HeaderSearchInput />
+        <SimpleSearchInput innerText={'Поиск по сайту'}/>
+   {/*      <HeaderSearchInput /> */}
         <ContactComponent />
       </div>
 {/*       <nav className = {`${styles.navMenu}`}>

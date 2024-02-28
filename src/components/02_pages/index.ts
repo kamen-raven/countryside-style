@@ -21,4 +21,5 @@ export * from './04_ServicesPages/ForDevelopersPage/ForDevelopersPage';
 
 // 05_ContentPages
 export * from './05_ContentPages/BlogPage/BlogPage';
+export * from './05_ContentPages/BlogArticlePage/BlogArticlePage';
 export * from './05_ContentPages/ReviewsPage/ReviewsPage';

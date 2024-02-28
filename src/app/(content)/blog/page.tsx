@@ -11,10 +11,9 @@ export const metadata: Metadata = {
 
 
 
-export default async function PageForSellers() {
+export default async function PageBlogL() {
 
-const blogPostsData = await getBlogArticle(); // посты из блога
-
+  const blogPostsData = await getBlogArticle(); // посты из блога
 
   return (
     <BlogPage blogPostsData={blogPostsData} />

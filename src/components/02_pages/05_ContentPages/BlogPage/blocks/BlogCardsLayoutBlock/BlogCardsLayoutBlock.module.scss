@@ -1,0 +1,20 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: blogCards;
+  padding: $padding-gap;
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap($gap: 70px);
+}
+
+
+
+.cardContainer {
+  @include flexColumnGap($gap: 70px);
+
+  padding-bottom: 70px;
+  border-bottom: 2px solid $gray;
+}

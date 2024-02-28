@@ -6,6 +6,7 @@ export const PATH_API = {
     allReviews: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/reviews/'
   },
   blog: {
-    allPosts: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/blog/post/'
+    allPosts: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/blog/post/',
+    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/blog/post/'
   }
 };

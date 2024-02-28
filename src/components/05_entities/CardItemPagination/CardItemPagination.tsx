@@ -12,6 +12,8 @@ const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage
     return new Promise<void>((resolve) => {
       if (parentRef.current) {
         parentRef.current.scrollIntoView({
+          block: "start",
+          inline: "nearest",
           behavior: "smooth"
         });
         setTimeout(resolve, 650); // Подождем 500 мс (можно уточнить время)

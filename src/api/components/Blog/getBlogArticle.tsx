@@ -2,18 +2,18 @@ import { PATH_API } from "../../utils/path-api";
 import { ApiBlogInterface } from "~interfaces/blog.interface";
 
 export async function getBlogArticle(
-  author__username?: string,
   pageSize?: number,
   page?: number,
+  author__username?: string,
 ): Promise<ApiBlogInterface> {
   try {
 
     // Создаем объект URLSearchParams и добавляем параметры запроса
     const params = new URLSearchParams();
 
-    author__username && params.append('author__username', author__username.toString());
     pageSize && params.append('page_size', pageSize.toString());
     page && params.append('page', page.toString());
+    author__username && params.append('author__username', author__username);
 
     // Формируем URL с параметрами
     const url = `${PATH_API.blog.allPosts}?${params.toString()}`;
@@ -24,7 +24,7 @@ export async function getBlogArticle(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 10
+        revalidate: 6000
       }
     });
 

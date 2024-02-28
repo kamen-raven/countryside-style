@@ -1,4 +1,4 @@
-export interface ApiBlogInterface{
+export interface ApiBlogInterface {
   count: number;
   next: string | null;
   previous: string | null;
@@ -8,9 +8,10 @@ export interface ApiBlogInterface{
 export interface BlogInterface {
   uuid: string;
   tags: TagInterface[] | null;
-  author:  string | null;
+  author: string | null;
   name: string;
   body: string;
+  photos: PhotoInterface[];
 }
 
 export interface TagInterface {
@@ -22,3 +23,8 @@ export interface TagInterface {
   post: string;
 }
 
+export interface PhotoInterface {
+  uuid: string;
+  image: string;
+  post: string;
+}
