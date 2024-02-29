@@ -24,7 +24,7 @@ export async function getBlogArticle(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 6000
+        revalidate: 10
       }
     });
 

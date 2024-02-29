@@ -8,6 +8,16 @@
   gap: 20px 10px;
   max-height: 480px;
 
+  @include breakpoint(screen1440) {
+    grid-template-columns: [pic-start] minmax(280px, 700px) [pic-end info-start] 1fr [question-column] auto [info-end];
+  }
+  @include breakpoint(screen1280) {
+    grid-template-columns: [pic-start] minmax(280px, 600px) [pic-end info-start] 1fr [question-column] auto [info-end];
+  }
+  @include breakpoint(screen1024) {
+    grid-template-columns: [pic-start] minmax(280px, 500px) [pic-end info-start] 1fr [question-column] auto [info-end];
+  }
+
   &_homePage { /* шаблон для ДОМАШНЕЙ СТРАНИЦЫ */
     grid-template-areas:
     "image title title"
@@ -20,6 +30,12 @@
     "image title title"
     "image tags tags"
     "image button question";
+  }
+  &_blogCard { /* шаблон для страницы БЛОГА */
+    grid-template-areas:
+    "image title title"
+    "image tags tags"
+    "image question question";
   }
 }
 /* ------------------- */
@@ -71,6 +87,9 @@
   &_blogPage {
     align-self: center;
   } /* шаблон для страницы БЛОГА */
+  &_blogCard {
+    display: none;
+  }
 }
 /* ------------------- */
 
@@ -118,6 +137,7 @@
 /* компонент тэгов */
 .tagsContainer {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
 
 }

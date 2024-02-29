@@ -1,0 +1,36 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: blogInner;
+  padding: $padding-gap;
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap($gap: 70px);
+}
+
+
+
+.blogTextContainer {
+display: grid;
+grid-template-columns: clamp(320px, 25vw, 400px) auto;
+column-gap: 50px;
+}
+
+
+.authorContainer {
+
+}
+
+.textContainer {
+
+}
+
+.question {
+
+}
+
+.answer {
+
+}

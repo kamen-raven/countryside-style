@@ -20,6 +20,6 @@ export * from './04_ServicesPages/ForCottageVillagesPage/ForCottageVillagesPage'
 export * from './04_ServicesPages/ForDevelopersPage/ForDevelopersPage';
 
 // 05_ContentPages
-export * from './05_ContentPages/BlogPage/BlogPage';
-export * from './05_ContentPages/BlogArticlePage/BlogArticlePage';
+export * from './05_ContentPages/Blog/BlogPage/BlogPage';
+export * from './05_ContentPages/Blog/BlogArticlePage/BlogArticlePage';
 export * from './05_ContentPages/ReviewsPage/ReviewsPage';

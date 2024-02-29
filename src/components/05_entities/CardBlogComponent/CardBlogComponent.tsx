@@ -22,6 +22,12 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       arrows: styles.blogArrows_none,
       blogInfo: styles.blogInfo,
       button: styles.button_blogPage
+    },
+    blogCard: {
+      innerBlock: styles.innerBlock_blogCard,
+      arrows: styles.blogArrows_none,
+      blogInfo: styles.blogInfo,
+      button: styles.button_blogCard
     }
   };
 

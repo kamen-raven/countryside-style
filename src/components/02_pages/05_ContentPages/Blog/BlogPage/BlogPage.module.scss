@@ -3,7 +3,7 @@
   .mainContainer {
     @include mainPageContainer(
       "title"
-      "blogCards"
+      "blogInner"
       "questionForm"
       );
   }

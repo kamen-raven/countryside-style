@@ -16,7 +16,7 @@ export async function getBlogArticleByID(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 6000
+        revalidate: 1
       }
     });
 
