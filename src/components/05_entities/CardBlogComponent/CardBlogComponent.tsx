@@ -8,7 +8,7 @@ import { ArrowsButton, OpenPopupButton } from '~shared/index';
 //import CommentIcon from '~svg/blog/commentsIcon.svg';
 import Link from 'next/link';
 
-const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardItem }) => {
+const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardItem, blogPostsData }) => {
 
   const setPage = {
     home: {
@@ -81,7 +81,7 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       </Link>
 
       {/* контейнер со стрелками для ГЛАВНОЙ СТРАНИЦЫ */}
-      <ArrowsButton className={`${styles.blogArrows} ${setPage[path].arrows}`} />
+      <ArrowsButton className={`${styles.blogArrows} ${setPage[path].arrows}`} blogPostsData={blogPostsData} />
 
       {/* компонент с кнопкой "ЗАДАТЬ СВОЙ ВОПРОС" */}
       <OpenPopupButton className={styles.askYourQuestion} type={'contactForm'}>

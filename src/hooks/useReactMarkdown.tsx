@@ -58,7 +58,9 @@ export default function useReactMarkdown(
             </h3>,
           blockquote: ({ children }) =>
             <blockquote className = {markdownStyles.blockquote}>
-              {children}
+
+                {children}
+      
             </blockquote>,
           del: ({ children }) =>
             <del className = {markdownStyles.del}>

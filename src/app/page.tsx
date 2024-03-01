@@ -1,3 +1,4 @@
+import { getBlogArticle } from '~api/Blog/getBlogArticle';
 import { getAllReviews } from '~api/Reviews/getReviews';
 import { getAllUsers } from '~api/Users/getUsers';
 import sortUsersList from '~helpers/sortUsersData';
@@ -8,8 +9,12 @@ export default async function Home() {
   const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 
   const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
+  const blogPostsData = await getBlogArticle(1); // посты из блога - //! 1 статья
 
   return (
-    <HomePage reviewsData={reviews} employeesData={employeeData} />
+    <HomePage
+    reviewsData={reviews}
+    employeesData={employeeData}
+    blogPostsData={blogPostsData} />
   );
 }

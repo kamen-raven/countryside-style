@@ -10,7 +10,9 @@ import { BackgroundSVGPattern } from '~shared/index';
 import { CardBlogComponent } from '~entities/index';
 
 
-const BlogBlock: React.FC<BlogBlockProps> = ({ path }) => {
+const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData}) => {
+
+  
 
 
   return (
@@ -22,7 +24,11 @@ const BlogBlock: React.FC<BlogBlockProps> = ({ path }) => {
         <h2 className={styles.title}>
           Блог
         </h2>
-        <CardBlogComponent path={path} blogCardItem={undefined}/>
+        {blogPostsData.results.map((item) => {
+          return (
+            <CardBlogComponent path={path} blogCardItem={item}/>
+          );
+        })}
 
       </div>
     </section>

@@ -18,7 +18,11 @@ import pressData from '~data/constant/pressBlock/pressArticlesItems';
 import generalContactsData from '~data/constant/generalContacts/generalContactsData';
 
 
-const HomePage: React.FC<HomePageInterface> = ({ reviewsData, employeesData }) => {
+const HomePage: React.FC<HomePageInterface> = ({
+  reviewsData, // отзывы
+  employeesData, // сотрудники
+  blogPostsData, // блог
+}) => {
 
   const objectsForSaleItems = objectsForSaleData;
   const ourServicesItems = servicesData;
@@ -30,7 +34,7 @@ const HomePage: React.FC<HomePageInterface> = ({ reviewsData, employeesData }) =
       <ObjectsForSaleBlock objItems={objectsForSaleItems} />
       <OurServicesBlock servicesItems={ourServicesItems} />
       <PressBlock pressItems={pressInfoItems} />
-      <BlogBlock path={'home'} />
+      <BlogBlock path={'home'} blogPostsData={blogPostsData} />
       <TeamMembersBlock employeesData={employeesData} countUsers={'owner'} />
       <ReviewsBlock reviewsDataItem={reviewsData} />
       <ContactsMainBlock generalContactsData={generalContactsData} />

@@ -1,0 +1,27 @@
+@import '~global_styles';
+
+.wrapper {
+  @include mainContainer();
+  min-height: 40vh;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.title {
+  @include common-title(hSubtitle)
+}
+
+.description {
+  @include common-paragraph(pLg,
+  $font-weight: $regular);
+}
+
+.returnBtn {
+  @include common-button(colored);
+  min-height: 60px;
+  text-decoration: none;
+}

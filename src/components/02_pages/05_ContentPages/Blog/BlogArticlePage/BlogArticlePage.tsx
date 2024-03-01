@@ -2,17 +2,10 @@ import React from 'react';
 import styles from './BlogArticlePage.module.scss';
 import { BlogArticlePageInterface } from './BlogArticlePage.interface.ts';
 import { CardBlogComponent } from '~entities/index.ts';
-import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
+import { BlogTextBlock } from './blocks/index.ts';
 
 
 const BlogArticlePage: React.FC<BlogArticlePageInterface> = ({ blogArticleItem }) => {
-
-  const textStyles = {
-
-  };
-
-
-
 
   return (
     <section className={styles.wrapper}>
@@ -21,21 +14,7 @@ const BlogArticlePage: React.FC<BlogArticlePageInterface> = ({ blogArticleItem }
           path={'blogCard'}
           blogCardItem={blogArticleItem} />
 
-        <div className={styles.blogTextContainer}>
-          <div className={styles.authorContainer}>
-            <p className = {styles.author}>
-              {blogArticleItem.author}
-            </p>
-          </div>
-          <div className={styles.textContainer}>
-            {useReactMarkdown(blogArticleItem.body, textStyles)}
-
-
-
-
-          </div>
-
-        </div>
+        <BlogTextBlock blogArticleItem={blogArticleItem} />
       </div>
     </section>
   );
