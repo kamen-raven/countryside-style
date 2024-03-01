@@ -6,7 +6,7 @@ import { ContactFormLayout } from '~common/QuestionFormBlock/elements';
 import ReviewsImg from '~img/common-images/reviewsTextImg.jpg';
 import { ReviewFormComponent } from '~features/Forms/index.ts';
 
-const ReviewsCreateFormBlock: React.FC<ReviewsCreateFormBlockInterface> = ({ }) => {
+const ReviewsCreateFormBlock: React.FC<ReviewsCreateFormBlockInterface> = () => {
   return (
     <section className={styles.wrapper}>
       <ContactFormLayout contentType='image' imgContent={ReviewsImg}>
