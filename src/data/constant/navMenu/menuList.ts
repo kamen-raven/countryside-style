@@ -9,7 +9,7 @@ export const menuList: MenuItemInterface[] = [
   {
     name: "land",
     title: "Земельные участки",
-    link: '/land' // "/zemelnye-uchastki",
+    link: '/lands' // "/zemelnye-uchastki",
   },
   {
     name: "cottageSettlements",

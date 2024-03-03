@@ -34,7 +34,7 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
 
 
   return (
-    <div className={`${styles.innerBlock} ${setPage[path].innerBlock}`}>
+    <div key={blogCardItem.uuid} className={`${styles.innerBlock} ${setPage[path].innerBlock}`}>
 
       {/* изображение статьи */}
       <div className={styles.imageWrapper}>
@@ -66,7 +66,7 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
         <div className={styles.tagsContainer}>
           {blogCardItem.tags?.map((tag) => {
             return (
-              <div className={styles.tag}>
+              <div key={tag.uuid} className={styles.tag}>
                 #{tag.tag.name}
               </div>
             );

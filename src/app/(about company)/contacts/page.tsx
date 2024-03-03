@@ -6,7 +6,7 @@ import { getAllUsers } from "~api/Users/getUsers";
 // temp
 
 import generalContactsData from '~data/constant/generalContacts/generalContactsData';
-import sortUsersList from "~helpers/sortUsersData";
+import sortUsersList from "~helpers/users/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'Контакты',

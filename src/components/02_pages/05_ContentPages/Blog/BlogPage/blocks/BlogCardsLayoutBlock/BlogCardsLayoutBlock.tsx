@@ -26,9 +26,9 @@ const BlogCardsLayoutBlock: React.FC<BlogCardsLayoutBlockInterface> = ({ blogPos
   return (
     <section ref={parentRef} className={styles.wrapper}>
       <div className={styles.container}>
-          {currentItems.map((blogCard) => {
+          {currentItems.map((blogCard, index) => {
             return (
-              <div className={styles.cardContainer}>
+              <div key={index} className={styles.cardContainer}>
                 <CardBlogComponent
                   key={blogCard.uuid}
                   path={'blog'}

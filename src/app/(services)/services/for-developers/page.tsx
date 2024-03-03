@@ -10,7 +10,7 @@ import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleB
 import servicesOffersData_forDevelopers from "~data/constant/servicesBlock/servicesOffersData/servicesOffersData_forDevelopers";
 import { getAllReviews } from "~api/Reviews/getReviews";
 import { getAllUsers } from "~api/Users/getUsers";
-import sortUsersList from "~helpers/sortUsersData";
+import sortUsersList from "~helpers/users/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'Услуги | Строительным бригадам и частным застройщикам',

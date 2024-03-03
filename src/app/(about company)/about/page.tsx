@@ -6,7 +6,7 @@ import { AboutUsPage } from "~pages/index";
 import aboutUsPageAdvantages from "~data/constant/servicesBlock/advantagesList/aboutUsPage/aboutUsPageAdvantages";
 import aboutUsPageFacts from '~data/constant/servicesBlock/advantagesList/aboutUsPage/aboutUsPageFacts';
 import { getAllUsers } from "~api/Users/getUsers";
-import sortUsersList from "~helpers/sortUsersData";
+import sortUsersList from "~helpers/users/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'О компании',

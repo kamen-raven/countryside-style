@@ -10,9 +10,9 @@ const TagsListElement: React.FC<TagsListElementInterface> = ({ tagsList }) => {
   return (
     <div className={styles.container}>
 
-        {tagsList.map((tag) => {
+        {tagsList.map((tag, index) => {
           return (
-            <div className={styles.tagContainer}>
+            <div key={index} className={styles.tagContainer}>
               {`#` + tag}
             </div>
           );

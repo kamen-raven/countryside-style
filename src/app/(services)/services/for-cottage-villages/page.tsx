@@ -9,7 +9,7 @@ import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleB
 import servicesOffersData_forCottageVillages from "~data/constant/servicesBlock/servicesOffersData/servicesOffersData_forCottageVillages";
 import villagesProjectsData from "~data/constant/servicesBlock/villagesProjectsData/villagesProjectsData";
 import { getAllUsers } from "~api/Users/getUsers";
-import sortUsersList from "~helpers/sortUsersData";
+import sortUsersList from "~helpers/users/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'Услуги | Коттеджным поселкам',

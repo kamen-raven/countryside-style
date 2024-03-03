@@ -7,7 +7,7 @@ import questionsForClients from '~data/constant/servicesBlock/allServicesPage/qu
 import servicesData from "~data/constant/servicesBlock/allServicesPage/servicesListData/servicesListData";
 import statisticalIndicatorsData from "~data/constant/servicesBlock/allServicesPage/statisticalIndicators/statisticalIndicators";
 import { getAllUsers } from "~api/Users/getUsers";
-import sortUsersList from "~helpers/sortUsersData";
+import sortUsersList from "~helpers/users/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'Наши услуги',

@@ -1,14 +1,10 @@
 import { PATH_API } from "../../utils/path-api";
-import { BlogInterface } from "~interfaces/blog.interface";
+import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 
-export async function getBlogArticleByID(
-  uuid: string,
-): Promise<BlogInterface | null> {
+export async function getVillages(): Promise<RealEstateObjectInterface[]> {
   try {
-
-
     // Формируем URL с параметрами
-    const url = PATH_API.blog.byID + uuid;
+    const url = PATH_API.villages.allVillages;
 
     const res = await fetch(url, {
       method: 'GET',
@@ -21,13 +17,11 @@ export async function getBlogArticleByID(
     });
 
     if (!res.ok) { // Обработка случаев, когда запрос вернулся неуспешным статусом
-      console.log(`Error fetching data in getBlogArticleByID. Status: ${res.status}`);
-      return null;
-      //throw new Error(`Error fetching data in getBlogArticleByID. Status: ${res.status}`);
+      throw new Error(`Error fetching data in getObjects. Status: ${res.status}`);
     }
     return res.json();
   } catch (error) { // Обработка других ошибок
-    console.error('Error in getBlogArticleByID:', error);
+    console.error('Error in getObjects:', error);
     throw error;
   }
 }

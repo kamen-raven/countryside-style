@@ -12,7 +12,7 @@ import { CardBlogComponent } from '~entities/index';
 
 const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData}) => {
 
-  
+
 
 
   return (
@@ -26,7 +26,7 @@ const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData}) => {
         </h2>
         {blogPostsData.results.map((item) => {
           return (
-            <CardBlogComponent path={path} blogCardItem={item}/>
+            <CardBlogComponent key={item.uuid} path={path} blogCardItem={item}/>
           );
         })}
 

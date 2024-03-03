@@ -4,7 +4,7 @@ import { ReviewsPage } from "~pages/index";
 // data
 import { getAllReviews } from "~api/Reviews/getReviews";
 import { getAllUsers } from "~api/Users/getUsers";
-import sortUsersList from "~helpers/sortUsersData";
+import sortUsersList from "~helpers/users/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'Отзывы | Загородный стиль',
