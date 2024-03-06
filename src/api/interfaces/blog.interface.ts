@@ -8,7 +8,7 @@ export interface ApiBlogInterface {
 export interface BlogInterface {
   uuid: string;
   tags: TagInterface[] | null;
-  author: string | null;
+  author: string;
   name: string;
   body: string;
   photos: PhotoInterface[];

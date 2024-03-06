@@ -1,7 +1,7 @@
 export const PATH_API = {
   objects: {
-    allObjects: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/objects/objects/',
-    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/objects/objects/',
+    allObjects: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/objects/',
+    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/objects/',
   },
   villages: {
     allVillages: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/villages/',
@@ -12,10 +12,11 @@ export const PATH_API = {
     byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/users/profile/'
   },
   reviews: {
-    allReviews: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/reviews/'
+    allReviews: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/reviews/',
+    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/reviews/'
   },
   blog: {
-    allPosts: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/blog/post/',
-    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/blog/post/'
+    allPosts: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/post/',
+    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/post/'
   }
 };

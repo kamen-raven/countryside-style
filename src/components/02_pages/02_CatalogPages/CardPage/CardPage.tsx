@@ -5,14 +5,14 @@ import { CardPageInterface } from './CardPage.interface.ts';
 import { CardSearchBarBlock, CardInfoBlock, MoreObjectsBlock } from './blocks/index.ts';
 
 
-const CardPage: React.FC<CardPageInterface> = ({ objectsData }) => {
+const CardPage: React.FC<CardPageInterface> = ({ objectData, typePage }) => {
 
 
     return (
         <main className = {styles.mainContainer}>
           <CardSearchBarBlock  />
-          <CardInfoBlock data={objectsData} />
-          <MoreObjectsBlock commonObjectsData={objectsData} />
+          <CardInfoBlock objectData={objectData} typePage={typePage} />
+          {/* <MoreObjectsBlock commonObjectsData={objectsData} /> */}
         </main>
     );
 };

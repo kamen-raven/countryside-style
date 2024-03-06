@@ -12,7 +12,7 @@ const MapInner = ({ data }: InfoContainerInterface): JSX.Element => {
       </h3>
       <iframe
       className = {styles.map}
-      src={data.address.map.mapLink}
+      src={data.yandex_map_link}
       loading="lazy">
       </iframe>
     </>

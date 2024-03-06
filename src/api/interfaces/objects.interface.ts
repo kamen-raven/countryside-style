@@ -1,4 +1,6 @@
 export interface RealEstateObjectInterface {
+  uuid: string;
+  created_at: string;
   id: number;
   name: string;
   category: string;
@@ -41,11 +43,11 @@ export interface RealEstateObjectInterface {
   yandex_map_link: string;
   date_sale: string;
   you_tube_link: string;
-  display_engineering_services: DisplayEngineeringServiceInterface[];
-  display_agents: DisplayAgentInterface[];
+  display_engineering_services: EngineeringServiceInterface[];
+  display_agents: AgentInterface[];
   plans_images: ImageInterface[];
   photo_images: ImageInterface[];
-  display_pages: DisplayPageInterface[];
+  display_pages: DisplayPagesInterface[];
 }
 
 interface CoordinatesInterface {
@@ -54,11 +56,11 @@ interface CoordinatesInterface {
   yandex_longitude: number;
 }
 
-interface DisplayEngineeringServiceInterface {
+interface EngineeringServiceInterface {
   engineering_service: string;
 }
 
-interface DisplayAgentInterface {
+interface AgentInterface {
   employee: string;
 }
 
@@ -68,7 +70,11 @@ interface ImageInterface {
   re_object: string;
 }
 
-interface DisplayPageInterface {
-  display_page: string;
+interface DisplayPagesInterface {
+  display_pages: DisplayPageInterface[];
 }
-
+interface DisplayPageInterface {
+  uuid: string;
+  value: string;
+  type_value: string;
+}

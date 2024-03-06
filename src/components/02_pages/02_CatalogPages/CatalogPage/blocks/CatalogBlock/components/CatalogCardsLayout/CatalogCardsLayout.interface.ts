@@ -1,8 +1,8 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { objectItemInterface } from '~data/temp/objectsTemplateList/objectItem.interface';
+import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 
 export interface CatalogCardsLayoutInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  objectsData: objectItemInterface[];
-  itemsPerPage: number;
+  objectsData: RealEstateObjectInterface[];
+  typePage: 'flats' | 'lands' | 'houses-and-cottages';
   children?: ReactNode;
 }

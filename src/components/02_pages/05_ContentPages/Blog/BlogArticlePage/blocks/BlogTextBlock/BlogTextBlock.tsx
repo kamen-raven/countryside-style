@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './BlogTextBlock.module.scss';
 import { BlogTextBlockInterface } from './BlogTextBlock.interface.ts';
 import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
-import Image from 'next/image';
+
+import { AuthorElement } from './elements/index.ts';
 
 
 const BlogTextBlock: React.FC<BlogTextBlockInterface> = ({ blogArticleItem }) => {
@@ -26,17 +27,7 @@ const BlogTextBlock: React.FC<BlogTextBlockInterface> = ({ blogArticleItem }) =>
 
   return (
     <div className={styles.blogTextContainer}>
-      <div className={styles.authorContainer}>
-        <Image
-          className={styles.authorImage}
-          src={''}
-          alt={''}
-          width={100}
-          height={100} />
-        <p className={styles.authorName}>
-          {blogArticleItem.author}
-        </p>
-      </div>
+      <AuthorElement blogArticleItem={blogArticleItem} />
 
       <div className={styles.textContainer}>
         {useReactMarkdown(blogArticleItem.body, textStyles)}

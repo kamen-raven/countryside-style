@@ -1,8 +1,8 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { objectItemInterface } from '~data/temp/objectsTemplateList/objectItem.interface';
+import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 
 export interface CardPageInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,HTMLDivElement > {
-  type: string;
-  objectsData: objectItemInterface[];
+  typePage: string;
+  objectData: RealEstateObjectInterface;
   children?: ReactNode;
 }

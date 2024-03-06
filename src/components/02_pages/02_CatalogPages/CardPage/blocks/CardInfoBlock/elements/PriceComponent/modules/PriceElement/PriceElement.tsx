@@ -1,17 +1,14 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './PriceElement.module.scss';
-import { PriceComponentInterface } from '../../PriceComponent.interface.ts';
+import { PriceElementInterface } from './PriceElement.interface.ts';
 import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
 import Link from 'next/link';
 import { OpenPopupButton } from '~shared/index.ts';
 
 
-const PriceElement: React.FC<PriceComponentInterface> = ({ data }) => {
+const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData }) => {
   const [showNum, setShowNum] = useState(false);
-
-
-
 
   const showNumber = () => {
     if (!showNum) {
@@ -24,10 +21,12 @@ const PriceElement: React.FC<PriceComponentInterface> = ({ data }) => {
     } else {
       return (
         <div className={styles.numberContainer}>
+          {agentData.phone_number &&
           <Link className={styles.telNumber}
-              href={`tel: ${data.seller.contact}`}>
-            {formatPhoneNumber(data.seller.contact)}
+          href={`tel: ${agentData.phone_number}`}>    
+            {formatPhoneNumber(agentData.phone_number)}
           </Link>
+        }
           <p className={styles.telInfo}>
             Номер только для звонков, сообщения не дойдут.
             Если захотите оставить жалобу, напишите нам.
@@ -41,25 +40,23 @@ const PriceElement: React.FC<PriceComponentInterface> = ({ data }) => {
     setShowNum(!showNum);
   };
 
-
   return (
     <div className={styles.priceElement}>
       <h3 className={styles.cost}>
-        {data.cost} млн. руб.
+        {`${(objectData.price / 1000000).toLocaleString('ru-RU')}`}&nbsp;млн.&nbsp;руб.
       </h3>
       <p className={styles.idNum}>
-        ID {data.id}
+        ID {objectData.id}
       </p>
-    <div className = {styles.buttonContainer}>
+      <div className={styles.buttonContainer}>
 
-      {showNumber()}
+        {showNumber()}
 
-      <OpenPopupButton className={`${styles.button} ${styles.button_write}`}
-      type={'contactForm'}>
-        Написать
-      </OpenPopupButton>
-    </div>
-
+        <OpenPopupButton className={`${styles.button} ${styles.button_write}`}
+          type={'contactForm'}>
+          Написать
+        </OpenPopupButton>
+      </div>
     </div>
   );
 };

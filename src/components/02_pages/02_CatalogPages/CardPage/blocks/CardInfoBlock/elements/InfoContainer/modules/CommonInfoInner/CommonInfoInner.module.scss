@@ -4,25 +4,46 @@
   @include common-title(hSmall);
 }
 
-.description {
-  @include common-paragraph(p,
-  $font-weight: $regular,
-  $font-family: $ff-openSans);
 
-  &_spanAccent {
-    @extend .description;
+.p {
+  @include common-paragraph(p,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+}
+
+.strong {
+  @extend .p;
+  font-weight: $bold;
+}
+
+.li {
+  @include common-ul;
+  @include flexColumnGap($gap: 5px);
+}
+
+.ol {
+  @include common-ul;
+  padding-left: 25px;
+  @include flexColumnGap($gap: 5px);
+}
+
+ol .listItem  {
+  @include common-paragraph(p,
+  $font-family: $ff-openSans,
+  $font-weight: $regular);
+  padding-left: 10px;
+
+  &::marker {
+    color: $accent-green;
     font-weight: $bold;
   }
 }
 
-
-.list {
-  @include common-ul;
-@include flexColumnGap($gap: 5px);
-}
-
-.listItem {
+ul .listItem  {
   @include common-li;
+  @include common-paragraph(p,
+  $font-family: $ff-openSans,
+  $font-weight: $regular);
   padding-left: 25px;
   position: relative;
   display: inline-flex;
@@ -39,5 +60,46 @@
     transform: translateY(-50%);
     background-color: $accent-green;
     border-radius: 50%;
+  }
+}
+
+.em {
+  @extend .p;
+  font-style: italic;
+}
+
+.h2 {
+  @include common-paragraph(pXl,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+}
+
+.h3 {
+  @include common-paragraph(pLg,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+}
+
+.blockquote {
+  margin: 0;
+
+  & p {
+    color: $accent-green;
+  }
+}
+
+.del {
+  @extend .p;
+  text-decoration: line-through;
+}
+
+
+.a {
+  @extend .p;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: $accent-green;
   }
 }

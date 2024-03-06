@@ -24,11 +24,13 @@ export async function generateStaticParams() {
 export default async function PageBlogArticle({ params }: { params: { uuid: string } }) {
   const blogArticleItem = await getBlogArticleByID(params.uuid); // конкретная статья, переданная из запроса по id
 
+
   if (!blogArticleItem) {
     notFound();
   }
 
   return (
-    <BlogArticlePage blogArticleItem={blogArticleItem} />
+    <BlogArticlePage
+    blogArticleItem={blogArticleItem}/>
   );
 }

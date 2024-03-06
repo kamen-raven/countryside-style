@@ -1,7 +1,6 @@
-import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { objectItemInterface } from '~data/temp/objectsTemplateList/objectItem.interface';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 
 export interface InfoContainerInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,HTMLDivElement > {
-  data: objectItemInterface;
-  children?: ReactNode;
+  data: RealEstateObjectInterface;
 }

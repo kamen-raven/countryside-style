@@ -10,22 +10,30 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
   return (
     <div className={styles.titleContainer}>
       <h1 className={styles.title}>
-        {data.title}
+        {data.name}
       </h1>
-      <p className={styles.squareArea}>
-        Участок {data.characteristics.homestead?.squareArea}
-      </p>
-      <p className={styles.address}>
-        Адрес: {data.address.area}, {data.address.town}, {data.address.organization}
-      </p>
-      <div className={styles.buttonsContainer}>
-        <DistanceKADIcon />
-        <p className={styles.distanceKAD}>
-          Расстояние до КАД&nbsp;-&nbsp;
-          <span className={styles.distanceKAD_spanAccent}>
-            {data.characteristics.distanceToKad}
-          </span>
+      {data.area_plot &&
+        <p className={styles.squareArea}>
+          Участок: {data.area_plot} {data.land_area_measurement}
         </p>
+      }
+      {data.place &&
+        <p className={styles.address}>
+          Адрес: {data.place}
+        </p>
+      }
+      <div className={styles.buttonsContainer}>
+        {data.distance_CAD &&
+          <>
+            <DistanceKADIcon />
+            <p className={styles.distanceKAD}>
+              Расстояние до КАД&nbsp;-&nbsp;
+              <span className={styles.distanceKAD_spanAccent}>
+                {data.distance_CAD} км.
+              </span>
+            </p>
+          </>
+        }
         <button className={styles.downloadButton}>
           Скачать PDF
           <span className={styles.downloadButton_icon}>

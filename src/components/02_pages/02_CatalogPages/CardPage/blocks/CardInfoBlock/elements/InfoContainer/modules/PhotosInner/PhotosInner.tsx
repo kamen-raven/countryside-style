@@ -3,13 +3,9 @@ import Image from 'next/image';
 import styles from './PhotosInner.module.scss';
 import { InfoContainerInterface } from '../../InfoContainer.interface';
 
-import PlanIcon from '~svg/catalogCard/plan.svg';
-import YouTubeIcon from '~svg/catalogCard/youtubeIcon.svg';
-
-
 
 import { LabelNew } from '~shared/index';
-import Link from 'next/link';
+import { TooltipElement } from './elements';
 
 
 const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
@@ -22,33 +18,25 @@ const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
 
         <Image
           className={styles.image}
-          src={data.mainImage}
-          alt={data.title} />
+          src={data.photo_images[0].image}
+          alt={data.name}
+          width={800}
+          height={640}
+        />
 
         <LabelNew />
 
         <div className={styles.infoButtonContainer}>
-          <div className={`${styles.imageInfoButton} ${styles.imageInfoButton__plan}`}>
-            <Link className={styles.imageInfoButton__link} href={'/'}>
-              Планировка
-              <span className={styles.imageInfoButton__icon}>
-                <PlanIcon />
-              </span>
-            </Link>
-          </div>
-          {data.links?.youtube &&
-            <div className={`${styles.imageInfoButton} ${styles.imageInfoButton__youtube}`}>
-              <Link className={styles.imageInfoButton__link} href={data.links?.youtube}>
-                Видео
-                <span className={styles.imageInfoButton__icon}>
-                  <YouTubeIcon />
-                </span>
-              </Link>
-            </div>
+
+          {(data.plans_images.length > 0) &&
+            <TooltipElement data={data} type={'plan'} />
           }
+
+          {data.you_tube_link &&
+            <TooltipElement data={data} type={'youtube'} />
+          }
+
         </div>
-
-
       </div>
     </>
   );

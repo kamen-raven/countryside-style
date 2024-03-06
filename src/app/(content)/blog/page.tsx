@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { getBlogArticle } from "~api/Blog/getBlogArticle";
-import { getObjects } from "~api/Objects/getObjects";
 import { BlogPage } from "~pages/index";
 
 export const metadata: Metadata = {

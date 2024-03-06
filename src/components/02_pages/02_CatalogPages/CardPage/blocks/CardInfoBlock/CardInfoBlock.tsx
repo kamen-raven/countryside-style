@@ -4,37 +4,24 @@ import { CardInfoBlockInterface } from './CardInfoBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 
 import { InfoContainer, PriceComponent, TitleComponent } from './elements/index.ts';
-/* SVG Icons */
 
+const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage }) => {
 
-const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ data }) => {
+  return (
+    <section className={styles.wrapper}>
 
-  const currentObj = data.find((elem) => elem.status == 'current'); // потом поправить"!!!
+      <BackgroundSVGPattern positionX='right' />
+      <div className={`${styles.mainContainer}`}>
+        {/* ЗАГОЛОВОК TITLE */}
+        <TitleComponent data={objectData} />
+        {/* ОСНОВНОЙ КОНТЕЙНЕР С ИНФОРМАЦИЕЙ / INFO */}
+        <InfoContainer data={objectData} />
+        {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}
+        <PriceComponent data={objectData} />
+      </div>
 
-  if (currentObj) {//потом поправить
-
-    return (
-      <section className={styles.wrapper}>
-
-        
-        <BackgroundSVGPattern positionX='right' />
-        <div className={`${styles.mainContainer}`}>
-          {/* ЗАГОЛОВОК TITLE */}
-          <TitleComponent data={currentObj} />
-          {/* ОСНОВНОЙ КОНТЕЙНЕР С ИНФОРМАЦИЕЙ / INFO */}
-          <InfoContainer data={currentObj}/>
-
-          {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}
-          <PriceComponent data={currentObj} />
-        </div>
-
-
-
-
-      </section>
-    );
-  }
-
+    </section>
+  );
 };
 
 export { CardInfoBlock };

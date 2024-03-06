@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { objectItemInterface } from '~data/temp/objectsTemplateList/objectItem.interface';
+import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 
 export interface CatalogCardComponentInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  item: objectItemInterface
+  item: RealEstateObjectInterface;
+  typePage: 'flats' | 'lands' | 'houses-and-cottages';
 }

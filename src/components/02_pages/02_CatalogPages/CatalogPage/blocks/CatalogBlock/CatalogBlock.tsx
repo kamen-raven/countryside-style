@@ -9,8 +9,8 @@ import BackgroundPatternRight from '~svg/background/backgroundObjectsForSaleRigh
 import { CatalogCardsLayout } from './components/index.ts';
 
 
-const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData }) => {
-  const ITEMS_PER_PAGE = 6;
+const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, typePage }) => {
+
 
   return (
     <section className={styles.wrapper}>
@@ -25,7 +25,7 @@ const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData }) => {
 
 
       <div className={styles.container}>
-        <CatalogCardsLayout objectsData={objectsData} itemsPerPage={ITEMS_PER_PAGE} />
+        <CatalogCardsLayout typePage={typePage} objectsData={objectsData} />
       </div>
     </section>
   );

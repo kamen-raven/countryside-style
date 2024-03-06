@@ -14,33 +14,43 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
         <PhotosInner data={data} />
       </div>
 
-      <div className={styles.priceContainer}>
-        <PriceElement data={data} />
-        <SellerElement data={data} />
-      </div>
+      {/*       <div className={styles.priceContainer}>
+        <PriceElement objectData={undefined} agentData={undefined}  />
+        <SellerElement agentData={undefined}  />
+      </div> */}
 
 
-      {data.characteristics &&
+      {(data.area_house ||
+        data.living_area ||
+        data.area_plot ||
+        data.number_of_rooms ||
+        data.number_of_storeys ||
+        data.wall_material ||
+        data.foundation ||
+        data.display_engineering_services ||
+        data.kitchen_area ||
+        data.distance_CAD) &&
+
         <div className={styles.iconsContainer}>
           <IconsInner data={data} />
         </div>
       }
 
-
-      {data.information &&
+      {data.object_description &&
         <div className={styles.commonInfoContainer}>
           <CommonInfoInner data={data} />
         </div>
       }
 
-      {data.characteristics &&
+
+{/*       {data. &&
         <div className={styles.characteristicsContainer}>
           <CharacteristicsInner data={data} />
         </div>
-      }
+      } */}
 
 
-      {data.address.map.mapLink &&
+      {data.yandex_map_link &&
         <div className={styles.mapContainer}>
           <MapInner data={data} />
         </div>

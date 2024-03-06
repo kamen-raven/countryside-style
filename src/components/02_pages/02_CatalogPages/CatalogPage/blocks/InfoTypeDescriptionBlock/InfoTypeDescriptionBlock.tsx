@@ -7,9 +7,14 @@ import { InfoTypeDescriptionLayout } from './components/index.ts';
 
 
 
-const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({ data }) => {
+const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({ data, typePage }) => {
 
 
+  const titleText = {
+    flats: 'Квартиры',
+    lands: 'Земельные участки',
+    'houses-and-cottages': 'Дома, дачи, коттеджи'
+  };
 
 
 
@@ -19,7 +24,7 @@ const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({
       <BackgroundSVGPattern positionX={"right"} />
       <div className={styles.container}>
         <h2 className={styles.title}>
-          {data.houses.title}
+          {titleText[typePage]}
         </h2>
         <InfoTypeDescriptionLayout data={data} />
 

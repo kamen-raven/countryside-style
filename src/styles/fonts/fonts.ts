@@ -2,7 +2,7 @@ import { Open_Sans } from "next/font/google";
 import Gotham_Pro from "next/font/local";
 
 export const openSans = Open_Sans({
-  subsets: ["cyrillic", "cyrillic-ext", "latin"],
+  subsets: ["cyrillic", "latin", ],
   variable: "--openSans",
   fallback: ["sans serif"],
 });

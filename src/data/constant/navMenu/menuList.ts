@@ -4,7 +4,7 @@ export const menuList: MenuItemInterface[] = [
   {
     name: "houses",
     title: "Дома, дачи, коттеджи",
-    link: "/houses",
+    link: "/houses-and-cottages",
   },
   {
     name: "land",
