@@ -5,7 +5,7 @@ import { BackgroundSVGPattern } from '~shared/index.ts';
 
 import { InfoContainer, PriceComponent, TitleComponent } from './elements/index.ts';
 
-const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage }) => {
+const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData }) => {
 
   return (
     <section className={styles.wrapper}>
