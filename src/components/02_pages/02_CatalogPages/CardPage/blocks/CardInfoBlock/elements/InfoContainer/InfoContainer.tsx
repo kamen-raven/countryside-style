@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './InfoContainer.module.scss';
 import { InfoContainerInterface } from './InfoContainer.interface.ts';
-import { PhotosInner, CharacteristicsInner, CommonInfoInner, IconsInner, MapInner } from './modules/index.ts';
-import { PriceElement, SellerElement } from '../PriceComponent/modules/index.ts';
+import { PhotosInner, /* CharacteristicsInner, */ CommonInfoInner, IconsInner, MapInner } from './modules/index.ts';
+/* import { PriceElement, SellerElement } from '../PriceComponent/modules/index.ts'; */
 
 
 const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {

@@ -3,9 +3,9 @@ import React from 'react';
 import styles from './MoreObjectsBlock.module.scss';
 import { MoreObjectsBlockInterface } from './MoreObjectsBlock.interface.ts';
 
-import { CatalogCardComponent } from '~entities/index.ts';
+/* import { CatalogCardComponent } from '~entities/index.ts'; */
 
-const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = ({ commonObjectsData }) => {
+const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> =() => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -13,7 +13,7 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = ({ commonObjectsDa
           Похожие объекты
         </h2>
 
-        <div className={styles.cardsLayout}>
+{/*         <div className={styles.cardsLayout}>
           {commonObjectsData.map((item) => {
             if (item.status == 'available') {
               return (
@@ -21,7 +21,7 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = ({ commonObjectsDa
               );
             }
           })}
-        </div>
+        </div> */}
       </div>
     </section>
   );

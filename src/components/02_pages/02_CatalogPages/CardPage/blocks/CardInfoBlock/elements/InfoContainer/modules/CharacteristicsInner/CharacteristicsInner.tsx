@@ -28,8 +28,8 @@ const CharacteristicsInner = ({ data }: InfoContainerInterface): JSX.Element => 
       fence: 'Ограждение участка',
     }; */
 
-  const houseCharacteristics = data.characteristics.house;
-  const homestandCharacteristics = data.characteristics.homestead;
+  const houseCharacteristics = data;
+  const homestandCharacteristics = data.balcony;
 
   const charList = (chars: typeof houseChar, dataItems: typeof houseCharacteristics | typeof homestandCharacteristics) => {
     if (dataItems == undefined) {

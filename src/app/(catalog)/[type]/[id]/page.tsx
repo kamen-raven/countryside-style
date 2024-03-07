@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getObjectByID } from "~api/Objects/getObjectByID";
 import { getObjects } from "~api/Objects/getObjects";
-import objectsTemplate from "~data/temp/objectsTemplateList/objectsDataTemplate";
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 /* import { notFound } from "next/navigation"; */
 import { CardPage } from "~pages/index";
