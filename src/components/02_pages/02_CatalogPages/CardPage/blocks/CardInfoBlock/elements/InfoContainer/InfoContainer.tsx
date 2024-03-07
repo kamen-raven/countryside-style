@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './InfoContainer.module.scss';
 import { InfoContainerInterface } from './InfoContainer.interface.ts';
-import { PhotosInner, /* CharacteristicsInner, */ CommonInfoInner, IconsInner, MapInner } from './modules/index.ts';
+import { PhotosInner, CommonInfoInner, IconsInner, MapInner, CharacteristicsInner } from './modules/index.ts';
 /* import { PriceElement, SellerElement } from '../PriceComponent/modules/index.ts'; */
 
 
@@ -43,11 +43,11 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
       }
 
 
-{/*       {data. &&
+      {
         <div className={styles.characteristicsContainer}>
           <CharacteristicsInner data={data} />
         </div>
-      } */}
+      }
 
 
       {data.yandex_map_link &&

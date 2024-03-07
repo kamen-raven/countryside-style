@@ -84,6 +84,12 @@ const CharacteristicsInner = ({ data }: InfoContainerInterface): JSX.Element => 
           </div>
         }
       </div>
+        <div className={styles.blockInfo}>
+          <h4 className={styles.label}>
+            Местоположение
+          </h4>
+          {charList(houseChar, houseCharacteristics)}
+        </div>
     </>
   );
 };
