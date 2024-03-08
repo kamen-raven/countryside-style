@@ -5,7 +5,7 @@ import { BackgroundSVGPattern } from '~shared/index.ts';
 
 import { InfoContainer, PriceComponent, TitleComponent } from './elements/index.ts';
 
-const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData }) => {
+const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage }) => {
 
   return (
     <section className={styles.wrapper}>
@@ -15,7 +15,7 @@ const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData }) => {
         {/* ЗАГОЛОВОК TITLE */}
         <TitleComponent data={objectData} />
         {/* ОСНОВНОЙ КОНТЕЙНЕР С ИНФОРМАЦИЕЙ / INFO */}
-        <InfoContainer data={objectData} />
+        <InfoContainer data={objectData} typePage={typePage} />
         {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}
         <PriceComponent data={objectData} />
       </div>

@@ -41,7 +41,7 @@ const IconsInner: React.FC<InfoContainerInterface> = ({ data }) => {
         SLiving: data.living_area && `${data.living_area} кв.м.`, // жилая площадь
         SArea: data.area_plot && `${data.area_plot} ${data.land_area_measurement}`, // площадь участка
         RoomCount: data.number_of_rooms, // количество комнат
-        Floor: data.number_of_storeys, // этаж
+        Floor: data.floor, // этаж
         Material: data.wall_material, // материал стен
         Basement: data.foundation,  // фундамент
         Communications: data.display_engineering_services && `${data.display_engineering_services.map((item, index) => {

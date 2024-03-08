@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 }
 
 
-export default async function CardType({ params }:  {params: {id: string, type: string }}) {
+export default async function CardType({ params }:  {params: {id: string, type: 'flats' | 'lands' | 'houses-and-cottages' | 'cottages' }}) {
   const objects = await getObjects(); // получаем все объекты
   const uuidCurrentObj = objects.find(obj => obj.id.toString() === params.id);
 

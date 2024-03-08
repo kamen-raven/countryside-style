@@ -5,7 +5,7 @@ import { PhotosInner, CommonInfoInner, IconsInner, MapInner, CharacteristicsInne
 /* import { PriceElement, SellerElement } from '../PriceComponent/modules/index.ts'; */
 
 
-const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
+const InfoContainer: React.FC<InfoContainerInterface> = ({ data, typePage }) => {
 
 
   return (
@@ -45,7 +45,7 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data }) => {
 
       {
         <div className={styles.characteristicsContainer}>
-          <CharacteristicsInner data={data} />
+          <CharacteristicsInner data={data} typePage={typePage} />
         </div>
       }
 
