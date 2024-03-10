@@ -6,10 +6,17 @@ import { InfoContainerInterface } from '../../InfoContainer.interface';
 
 import { LabelNew } from '~shared/index';
 import { TooltipElement } from './elements';
+import { differenceInCalendarDays } from 'date-fns';
 
 
 const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
 
+  const currentDate = new Date();
+  const createDate = new Date(data.created_at);
+  const newStatus = differenceInCalendarDays(currentDate, createDate);
+
+  const newLabel = <LabelNew />;
+  const renderNewLabel = newStatus <= 30 ? newLabel : '';
 
 
   return (
@@ -24,7 +31,7 @@ const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
           height={640}
         />
 
-        <LabelNew />
+        {renderNewLabel}
 
         <div className={styles.infoButtonContainer}>
 

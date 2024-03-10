@@ -14,7 +14,7 @@ export const menuList: MenuItemInterface[] = [
   {
     name: "cottageSettlements",
     title: "Коттеджные поселки",
-    link: '/cottages' // "/kottedzhnye-poselki",
+    link: '/villages' // "/kottedzhnye-poselki",
   },
   {
     name: "apartments",

@@ -1,7 +1,7 @@
 import { PATH_API } from "../../utils/path-api";
-import { RealEstateObjectInterface } from "~interfaces/objects.interface";
+import { VillageObjectInterface } from "~interfaces/villages.interface";
 
-export async function getVillages(): Promise<RealEstateObjectInterface[]> {
+export async function getVillages(): Promise<VillageObjectInterface[]> {
   try {
     // Формируем URL с параметрами
     const url = PATH_API.villages.allVillages;
