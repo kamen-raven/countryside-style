@@ -6,10 +6,10 @@ import { CatalogBlockInterface } from './CatalogBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 import BackgroundPatternLeft from '~svg/background/backgroundObjectsForSaleLeft.svg';
 import BackgroundPatternRight from '~svg/background/backgroundObjectsForSaleRight.svg';
-import { CatalogCardsLayout } from './components/index.ts';
+import { CatalogCardsLayout, VillagesCardsLayout } from '../index.ts';
 
 
-const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, typePage }) => {
+const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, villagesData, typePage }) => {
 
 
   return (
@@ -23,10 +23,17 @@ const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, typePage }
         </BackgroundSVGPattern>
       </>
 
-
       <div className={styles.container}>
-        <CatalogCardsLayout typePage={typePage} objectsData={objectsData} />
+        {(objectsData && typePage !== 'villages') &&
+          <CatalogCardsLayout typePage={typePage} objectsData={objectsData} />
+        }
+
+        {(villagesData && typePage === 'villages') &&
+          <VillagesCardsLayout villagesData={villagesData} typePage={typePage} />
+        }
       </div>
+
+
     </section>
   );
 };

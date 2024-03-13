@@ -1,0 +1,158 @@
+@import '~global_styles';
+
+
+
+.cardWrapper {
+  box-sizing: border-box;
+  z-index: 5;
+  max-width: clamp(360px, 55vw, 540px);
+  //min-width:  calc(33.3% - 33.3px);
+  width: 100%;
+
+  height: 100%;
+
+  border: 1px solid $gray;
+
+  display: grid;
+  grid-template-rows: 310px auto; //grid-template-rows: 55% 45%;
+}
+
+
+.link {
+  display: block;
+  text-decoration: none;
+  height: 100%;
+
+  &_image {
+    width: 100%;
+  }
+
+  &_title {
+    width: fit-content;
+  }
+}
+
+// IMAGE
+.imageBlock {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+    .image {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+// INFO
+.infoBlock {
+  background-color: $white;
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .8rem;
+  min-height: 220px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.title {
+  @include common-title(hSmall);
+  cursor: pointer;
+  display: flex;
+
+  & .link {
+    text-decoration: none;
+  }
+}
+
+.statusContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  gap: 5px;
+  color: #398281;
+}
+
+.status {
+  @include common-paragraph(p,
+    $color: $accent-green,
+    $font-family: $ff-openSans);
+
+
+
+  &_bold {
+    font-weight: $bold;
+  }
+}
+
+.address {
+  @include common-paragraph(p,
+    $font-weight: $regular,
+    $font-family: $ff-openSans);
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100px;
+    height: 4px;
+    background-color: $accent-green;
+  }
+}
+
+.price {
+  @include common-paragraph(pXl,
+    $color: $accent-green);
+}
+
+.arrow {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $dark;
+  border-radius: 50%;
+  background: none;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+
+  & svg {
+    transition: transform .3s linear;
+  }
+
+  &:hover {
+    & svg {
+      transition: transform .3s linear;
+      transform: translate(10px);
+    }
+  }
+
+  &_left {
+    transform: rotate(180deg);
+  }
+
+  &_right {
+    transform: rotate(0);
+  }
+}

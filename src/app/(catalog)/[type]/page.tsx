@@ -50,13 +50,13 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
   const category = {
     flats: 'Квартиры',
     lands: 'Земельные участки',
-    'houses-and-cottages': 'Дома, дачи, коттеджи'
+    'houses-and-cottages': 'Дома, дачи, коттеджи',
   };
 
 
   //const typePage = getTypePage(params.type); // берем тип на основе params исходя из роута
   const typePage = category[params.type]; // берем тип на основе params исходя из роута
-  console.log(typePage);//!
+  //console.log(typePage);//!
 
   if (!typePage) {   // если такого нету, то возвращаем пустую страницу
     notFound();
@@ -72,7 +72,7 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
                              // в этой функции мы берем те объекты, которые соответствуют нашему пути
   const typeObjects = filterObjectsByCategory(objectsType, typePage);
   // вызываем функцию соответствия и потом передаем это в пропсы в страницу
-  console.log(typeObjects);//!
+  //console.log(typeObjects);//!
 
 
   return (

@@ -11,7 +11,7 @@ import { ContactUsBlock } from "~pages/02_CatalogPages/CatalogPage/blocks/Contac
 import housesSEOText from '~utils/constants/TypeSEOText/TypeSEOText.ts';
 import { InfoTypeDescriptionBlock, SearchBarBlock, CatalogBlock } from './blocks/index.ts';
 
-const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, objectsData, reviewsData, typePage }) => {
+const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, objectsData, villagesData, reviewsData, typePage }) => {
 
   const SEOTextData = housesSEOText;
 
@@ -20,7 +20,7 @@ const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, obje
     <main className={styles.mainContainer}>
       <InfoTypeDescriptionBlock typePage={typePage} data={SEOTextData} />
       <SearchBarBlock />
-      <CatalogBlock typePage={typePage} objectsData={objectsData} />
+      <CatalogBlock typePage={typePage} objectsData={objectsData} villagesData={villagesData} />
       <ContactUsBlock generalContactsData={generalContactsData} />
       <ReviewsBlock reviewsDataItem={reviewsData} />
     </main>

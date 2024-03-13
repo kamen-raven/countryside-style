@@ -1,6 +1,7 @@
 
 export * from './CardBlogComponent/CardBlogComponent';
 export * from './CatalogCardComponent/CatalogCardComponent';
+export * from './VillageCardComponent/VillageCardComponent';
 export * from './CardItemPagination/CardItemPagination';
 
 // contacts elements

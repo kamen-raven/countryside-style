@@ -21,15 +21,15 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
   const engineeringServicesRender = (): React.JSX.Element => {
     return (
       <>
-        <li className={styles.listItem}>
+        <li className={styles.listItem} >
           Коммуникации:&nbsp;
           {data.display_engineering_services.map((service, index) => {
             return (
-              <>
+              <React.Fragment key={index}>
                 <span className={styles.listItem__spanAccent}>
                   {`${service.engineering_service}${index + 1 < data.display_engineering_services.length ? ', ' : ''} `}
                 </span>
-              </>
+              </React.Fragment>
             );
           })}
         </li>
@@ -82,7 +82,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
             }
             <ul className={styles.list}>
               {createCharacteristicsList(houseType, data)}
-              {data.display_engineering_services && engineeringServicesRender()}
+              {data.display_engineering_services[0].engineering_service && engineeringServicesRender()}
             </ul>
           </div>
           <div className={styles.blockInfo}>
@@ -106,7 +106,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
             }
             <ul className={styles.list}>
               {createCharacteristicsList(landType, data)}
-              {data.display_engineering_services && engineeringServicesRender()}
+              {data.display_engineering_services[0] && engineeringServicesRender()}
             </ul>
           </div>
         </>

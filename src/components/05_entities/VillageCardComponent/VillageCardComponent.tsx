@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import styles from './CatalogCardComponent.module.scss';
-import { CatalogCardComponentInterface } from './CatalogCardComponent.interface.ts';
+import styles from './VillageCardComponent.module.scss';
+import { VillageCardComponentInterface } from './VillageCardComponent.interface.ts';
 import ArrowIcon from '~svg/button/arrow.svg';
-import { /* LabelNew,  */LabelNew, YoutubeLabel } from '~shared/index.ts';
+import { /* LabelNew,  */YoutubeLabel } from '~shared/index.ts';
 
 
-const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, typePage }) => {
+const VillageCardComponent: React.FC<VillageCardComponentInterface> = ({ item, typePage }) => {
 
 
   const hrefLink = `/${typePage}/${item.id}`;
@@ -18,17 +18,18 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
     <div key={item.uuid} className={styles.cardWrapper}>
       <div className={styles.imageBlock}>
         <Link className={`${styles.link} ${styles.link_image}`} href={hrefLink}>
-        {item.photo_images[0] &&
-          <Image
-            className={styles.image}
-            src={item.photo_images[0].image}
-            alt={item.name}
-            width={460}
-            height={350}
-          />}
+          {item.photo_images[0] &&
+            <Image
+              className={styles.image}
+              src={item.photo_images[0].image}
+              alt={item.name}
+              width={460}
+              height={350}
+            />
+          }
         </Link>
-        <LabelNew createdAt={item.created_at} />
-        <YoutubeLabel link={item.you_tube_link} />
+{/*         <LabelNew createdAt={item.created_at} /> */}
+      {/*   <YoutubeLabel link={item.you_tube_link} /> */}  {/* //! */}
       </div>
 
       <div className={`${styles.infoBlock}`}>
@@ -40,44 +41,35 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
           </Link>
           <div className={styles.statusContainer}>
 
-            {item.area_house &&
+            {item.area_of_plot &&
               <>
                 <p className={styles.status}>
-                  {item.type_house}&nbsp;
+                  Участки&nbsp;от&nbsp;
                   <span className={styles.status_bold}>
-                    {item.area_house}&nbsp;кв.м.
+                    {item.area_of_plot} {item.area_of_plot_measurement}
                   </span>
                 </p>
               </>
             }
 
-            {item.area_flat &&
+
+            {item.area_of_houses &&
               <>
                 <p className={styles.status}>
-                  {item.type_house}&nbsp;
+                  Площадь домов&nbsp;от&nbsp;
                   <span className={styles.status_bold}>
-                    {item.area_flat}&nbsp;кв.м.
+                    {item.area_of_houses}
                   </span>
                 </p>
               </>
             }
-
-            {((item.area_house || item.area_flat) && item.area_plot) &&
+{/*
+            {(item.area_of_houses && item.area_of_plot) &&
               <>
-                <span>|</span>
+                <span>⎯⎯⎯⎯</span>
               </>
-            }
+            } */}
 
-            {item.area_plot &&
-              <>
-                <p className={styles.status}>
-                  Участок&nbsp;
-                  <span className={styles.status_bold}>
-                    {item.area_plot} {item.land_area_measurement}
-                  </span>
-                </p>
-              </>
-            }
           </div>
 
           <p className={styles.address}>
@@ -88,7 +80,7 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
 
         <div className={styles.priceContainer}>
           <p className={styles.price}>
-            {`${(item.price / 1000000).toLocaleString('ru-RU')}`}&nbsp;млн.&nbsp;руб.
+            от {`${(item.price / 1000000).toLocaleString('ru-RU')}`}&nbsp;млн.&nbsp;руб.
           </p>
           <Link className={`${styles.arrow} ${styles.arrow_right}`} href={hrefLink}>
             <ArrowIcon />
@@ -101,4 +93,4 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
   );
 };
 
-export { CatalogCardComponent };
+export { VillageCardComponent };

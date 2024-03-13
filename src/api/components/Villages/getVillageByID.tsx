@@ -1,10 +1,12 @@
 import { PATH_API } from "../../utils/path-api";
 import { VillageObjectInterface } from "~interfaces/villages.interface";
 
-export async function getVillages(): Promise<VillageObjectInterface[]> {
+export async function getVillageByID(
+  uuid: string,
+  ): Promise<VillageObjectInterface | null> {
   try {
     // Формируем URL с параметрами
-    const url = PATH_API.villages.allVillages;
+    const url = PATH_API.villages.byID + uuid;
 
     const res = await fetch(url, {
       method: 'GET',
@@ -17,11 +19,11 @@ export async function getVillages(): Promise<VillageObjectInterface[]> {
     });
 
     if (!res.ok) { // Обработка случаев, когда запрос вернулся неуспешным статусом
-      throw new Error(`Error fetching data in getObjects. Status: ${res.status}`);
+      throw new Error(`Error fetching data in getVillageByID. Status: ${res.status}`);
     }
     return res.json();
   } catch (error) { // Обработка других ошибок
-    console.error('Error in getObjects:', error);
+    console.error('Error in getVillageByID:', error);
     throw error;
   }
 }
