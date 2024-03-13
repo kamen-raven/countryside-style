@@ -3,9 +3,15 @@ import { CharacteristicsInnerInterface } from './CharacteristicsInner.interface'
 import styles from './CharacteristicsInner.module.scss';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 
-import { houseType, landType, flatType, placeType } from '~data/constant/cardCharacteristicsList/cardCharacteristicsList';
+import { houseType, landType, flatType, villageType, villagePlotType, placeType } from '~data/constant/cardCharacteristicsList/cardCharacteristicsList';
+import { VillageObjectInterface } from '~interfaces/villages.interface';
 
 const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface): JSX.Element => {
+  function isRealEstateObject(obj: RealEstateObjectInterface | VillageObjectInterface): obj is RealEstateObjectInterface {
+    return 'land_area_measurement' in obj && 'metro' in obj;
+  }
+
+
 
   const measureInfo = {
     area_house: 'кв.м.',
@@ -15,9 +21,11 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
     ceiling_height: 'м.',
     date_foundation: 'год.',
     distance_CAD: 'км.',
-    area_plot: `${data.land_area_measurement}`
+    area_plot: `${isRealEstateObject(data) ? data.land_area_measurement : ''}`,
+    area_of_plot: `${isRealEstateObject(data) ? '': data.area_of_plot_measurement}`
   };
 
+  //* функция отрисовки инженерных систем (коммуникаций)
   const engineeringServicesRender = (): React.JSX.Element => {
     return (
       <>
@@ -42,8 +50,8 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
 
   //* функция отрисовки листа характеристик
   const createCharacteristicsList = (
-    chars: typeof houseType | typeof landType | typeof flatType | typeof placeType,
-    dataItems: RealEstateObjectInterface): ReactNode => {
+    chars: typeof houseType | typeof landType | typeof flatType | typeof placeType | typeof villageType | typeof villagePlotType,
+    dataItems: RealEstateObjectInterface | VillageObjectInterface): ReactNode => {
 
     if (!dataItems) {
       return null;
@@ -69,9 +77,10 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
   };
 
 
-  const renderCharacteristicsTypeList = (type: 'flats' | 'lands' | 'houses-and-cottages' | 'cottages' | undefined) => {
+  const renderCharacteristicsTypeList = (type: 'flats' | 'lands' | 'houses-and-cottages' | 'villages') => {
 
     if (type === 'houses-and-cottages') {
+      data = data as RealEstateObjectInterface;
       return (
         <>
           <div className={styles.blockInfo}>
@@ -96,6 +105,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
         </>
       );
     } else if (type === 'lands') {
+      data = data as RealEstateObjectInterface;
       return (
         <>
           <div className={styles.blockInfo}>
@@ -112,6 +122,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
         </>
       );
     } else if (type === 'flats') {
+      data = data as RealEstateObjectInterface;
       return (
         <>
           <div className={styles.blockInfo}>
@@ -126,8 +137,31 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
           </div>
         </>
       );
-    } else if (type === 'cottages') {
-      return null;    //! доделать для поселков!!!
+    } else if (type === 'villages') {
+      data = data as VillageObjectInterface;
+      return (
+        <>
+        <div className={styles.blockInfo}>
+
+            <h4 className={styles.label}>
+              Поселок
+            </h4>
+
+          <ul className={styles.list}>
+            {createCharacteristicsList(villageType, data)}
+            {data.display_engineering_services[0].engineering_service && engineeringServicesRender()}
+          </ul>
+        </div>
+        <div className={styles.blockInfo}>
+          <h4 className={styles.label}>
+            Участки
+          </h4>
+          <ul className={styles.list}>
+            {createCharacteristicsList(villagePlotType, data)}
+          </ul>
+        </div>
+      </>
+      );
     } else if (!type) {
       return null;
     }
@@ -145,7 +179,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
       </div>
 
       {/*  //* отображаем местоположение в характеристики - адрес, КАД и тд */}
-      {(data.place || data.distance_CAD || data.metro) &&
+      {(data.place || data.distance_CAD || (isRealEstateObject(data) ? data.metro : '')) &&
         <div className={styles.blockInfo}>
           <h4 className={styles.label}>
             Местоположение

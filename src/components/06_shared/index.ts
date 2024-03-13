@@ -1,5 +1,6 @@
 export * from './Buttons/OpenPopupButton/OpenPopupButton';
 export * from './Buttons/ReviewPopupButton/ReviewPopupButton';
+export * from './Buttons/PrintPageButton/PrintPageButton';
 
 export * from './Logo/Logo';
 export * from './Background/BackgroundSVGPattern';

@@ -1,15 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './PhotosInner.module.scss';
-import { InfoContainerInterface } from '../../InfoContainer.interface';
+import { PhotosInnerInterface } from './PhotosInner.interface.ts';
 
 
 import { LabelNew } from '~shared/index';
 import { TooltipElement } from './elements';
+import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
+import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 
 
-const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
-
+const PhotosInner = ({ data }: PhotosInnerInterface): JSX.Element => {
+  function isRealEstateObject(obj: RealEstateObjectInterface | VillageObjectInterface): obj is RealEstateObjectInterface {
+    return 'created_at' in obj;
+  }
 
 
   return (
@@ -24,9 +28,12 @@ const PhotosInner = ({ data }: InfoContainerInterface): JSX.Element => {
           height={640}
         />
 
-        <LabelNew createdAt={data.created_at} />
+        {isRealEstateObject(data) ?
+          <LabelNew createdAt={data.created_at} />
+          : ''
+        }
 
-        <div className={styles.infoButtonContainer}>
+        <div className={styles.infoButtonContainer}> {/* //! */}
 
           {(data.plans_images.length > 0) &&
             <TooltipElement data={data} type={'plan'} />

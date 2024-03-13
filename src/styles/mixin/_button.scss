@@ -22,10 +22,11 @@
   @if $appearance == colored {
     background: $accent-green;
     color: $white;
-
+    transition: all linear .2s;
 
     &:hover {
       background: $accent-green-hover;
+      transition: all linear .2s;
     }
   }
 
@@ -33,11 +34,13 @@
     border: 1px solid $gray;
     background-color: transparent;
     color: $accent-green;
+    transition: all linear .2s;
 
     &:hover {
       background: $accent-green;
       border: 1px solid $accent-green;
       color: $white;
+      transition: all linear .2s;
     }
   }
 

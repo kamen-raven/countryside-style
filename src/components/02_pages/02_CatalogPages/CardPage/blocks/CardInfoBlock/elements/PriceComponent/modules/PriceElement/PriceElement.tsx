@@ -6,9 +6,9 @@ import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
 import Link from 'next/link';
 import { OpenPopupButton } from '~shared/index.ts';
 
-
-const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData }) => {
+const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData, typePage }) => {
   const [showNum, setShowNum] = useState(false);
+
 
   const showNumber = () => {
     if (!showNum) {
@@ -22,11 +22,11 @@ const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData }
       return (
         <div className={styles.numberContainer}>
           {agentData.phone_number &&
-          <Link className={styles.telNumber}
-          href={`tel: ${agentData.phone_number}`}>    
-            {formatPhoneNumber(agentData.phone_number)}
-          </Link>
-        }
+            <Link className={styles.telNumber}
+              href={`tel: ${agentData.phone_number}`}>
+              {formatPhoneNumber(agentData.phone_number)}
+            </Link>
+          }
           <p className={styles.telInfo}>
             Номер только для звонков, сообщения не дойдут.
             Если захотите оставить жалобу, напишите нам.
@@ -42,9 +42,19 @@ const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData }
 
   return (
     <div className={styles.priceElement}>
-      <h3 className={styles.cost}>
-        {`${(objectData.price / 1000000).toLocaleString('ru-RU')}`}&nbsp;млн.&nbsp;руб.
-      </h3>
+      {/* //* ЦЕНА */}
+      {typePage !== "villages" ?
+        (objectData.price &&   /* //? для объектов */
+          <h3 className={styles.cost}>
+            {`${(objectData.price / 1000000).toLocaleString('ru-RU')}`}&nbsp;млн.&nbsp;руб.
+          </h3>)
+        :
+        (objectData.price &&  /*  //? для коттеджей */
+          <h3 className={styles.cost}>
+            от&nbsp;{`${(objectData.price / 1000000).toLocaleString('ru-RU')}`}&nbsp;млн.&nbsp;руб.
+          </h3>)
+      }
+
       <p className={styles.idNum}>
         ID {objectData.id}
       </p>

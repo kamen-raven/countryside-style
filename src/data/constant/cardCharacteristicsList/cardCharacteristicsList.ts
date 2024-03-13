@@ -46,6 +46,21 @@ const flatType = {
   wall_material: 'Материал стен',
 };
 
+const villageType = {
+  buildings_of_villages: 'Количество объектов в поселке',
+  fencing_village: 'Ограждение поселка',
+  security_village: 'Охрана поселка',
+  buildings_on_plot: 'Строения на участке',
+  //display_engineering_services: 'Коммуникации: ', //?
+};
+const villagePlotType = {
+  category_land: 'Категория земель участков',
+  //approve_usage: 'Разрешенное использование: ', //?
+  area_of_plot: 'Площадь одного участка от',
+  relief_area_plot: 'Рельеф участков',
+  //display_engineering_services: 'Коммуникации: ', //?
+};
+
 const placeType = {
   place: 'Адрес',
   distance_CAD: 'Расстояние до КАД',
@@ -55,4 +70,4 @@ const placeType = {
 
 
 
-export { houseType,  landType,  flatType,  placeType };
+export { houseType,  landType,  flatType, villageType, villagePlotType, placeType };

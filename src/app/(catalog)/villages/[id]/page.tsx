@@ -42,7 +42,7 @@ export default async function VillageType({ params }:  {params: {id: string, typ
 
   return (
     <CardPage
-    typePage={params.type}
+    typePage={'villages'}
     objectData={currentObject} />
   );
 }

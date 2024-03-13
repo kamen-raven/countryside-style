@@ -20,6 +20,7 @@ export interface VillageObjectInterface {
   object_description: string;
   buildings_on_plot: string;
   yandex_map_link: string;
+  you_tube_link: string;
   price: number;
   place: string;
 }

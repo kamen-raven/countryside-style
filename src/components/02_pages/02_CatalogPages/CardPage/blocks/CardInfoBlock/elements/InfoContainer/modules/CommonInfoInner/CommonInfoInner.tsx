@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './CommonInfoInner.module.scss';
-import { InfoContainerInterface } from '../../InfoContainer.interface';
+import { CommonInfoInnerInterface } from './CommonInfoInner.interface.ts';
 import useReactMarkdown from '~hooks/useReactMarkdown';
 
 
-const CommonInfoInner: React.FC<InfoContainerInterface> = ({ data }) => {
+const CommonInfoInner: React.FC<CommonInfoInnerInterface> = ({ data }) => {
   const markdownStyle = {
     p: styles.p,
     strong: styles.strong,
