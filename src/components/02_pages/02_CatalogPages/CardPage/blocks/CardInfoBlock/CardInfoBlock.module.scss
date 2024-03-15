@@ -16,16 +16,20 @@
   grid-template-columns: minmax(680px, 1100px) minmax(350px, 520px);
   gap: 40px;
   grid-template-areas:
-  "title title" // "title ." ???
+    "title title"
+    "photo price"
     "info price";
 
-    @include breakpoint(screen1280) {
-      grid-template-columns: auto 350px;
-    }
-    @include breakpoint(screen1024) {
-      grid-template-columns: auto;
-      grid-template-areas:
+  @include breakpoint(screen1280) {
+    grid-template-columns: auto 350px;
+  }
+
+  @include breakpoint(screen1024) {
+    grid-template-columns: auto;
+    grid-template-areas:
       "title"
+      "photo"
+      "price"
       "info";
-    }
+  }
 }

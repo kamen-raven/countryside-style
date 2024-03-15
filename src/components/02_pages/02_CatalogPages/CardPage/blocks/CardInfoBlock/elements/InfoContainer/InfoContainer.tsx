@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './InfoContainer.module.scss';
 import { InfoContainerInterface } from './InfoContainer.interface.ts';
-import { PhotosInner, CommonInfoInner, IconsInner, MapInner, CharacteristicsInner } from './modules/index.ts';
+import { CommonInfoInner, IconsInner, MapInner, CharacteristicsInner } from './modules/index.ts';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 /* import { PriceElement, SellerElement } from '../PriceComponent/modules/index.ts'; */
@@ -25,9 +25,9 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data, typePage }) => 
   return (
     <div className={styles.infoContainer}>
 
-      <div className={styles.photosContainer}>
+{/*       <div className={styles.photosContainer}>
         <PhotosInner data={data} />
-      </div>
+      </div> */}
 
 
       {/*       <div className={styles.priceContainer}>

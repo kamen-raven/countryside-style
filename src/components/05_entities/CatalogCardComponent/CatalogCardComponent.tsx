@@ -5,13 +5,13 @@ import Image from 'next/image';
 import styles from './CatalogCardComponent.module.scss';
 import { CatalogCardComponentInterface } from './CatalogCardComponent.interface.ts';
 import ArrowIcon from '~svg/button/arrow.svg';
-import { /* LabelNew,  */LabelNew, YoutubeLabel } from '~shared/index.ts';
+import { LabelNew, YoutubeLabel } from '~shared/index.ts';
+import generateObjectHrefLink from '~helpers/objects/generateObjectHrefLink.ts';
 
 
-const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, typePage }) => {
-
-
-  const hrefLink = `/${typePage}/${item.id}`;
+const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
+  const typePage = generateObjectHrefLink(item);
+  const hrefLink = typePage !== undefined ? `/${typePage}/${item.id}` : '/'; // генерируем ссылку на карточку объекта
 
 
   return (

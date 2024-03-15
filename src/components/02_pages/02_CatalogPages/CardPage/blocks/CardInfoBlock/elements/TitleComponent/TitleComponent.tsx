@@ -67,7 +67,7 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
                 </span>
               </p>
             </>)
-          : ''
+          : null
         }
 
           {/* //* Кнопка для сохранения в PDF  */}

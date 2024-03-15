@@ -51,6 +51,7 @@ const villageType = {
   fencing_village: 'Ограждение поселка',
   security_village: 'Охрана поселка',
   buildings_on_plot: 'Строения на участке',
+  infra: 'Инфраструктура'
   //display_engineering_services: 'Коммуникации: ', //?
 };
 const villagePlotType = {

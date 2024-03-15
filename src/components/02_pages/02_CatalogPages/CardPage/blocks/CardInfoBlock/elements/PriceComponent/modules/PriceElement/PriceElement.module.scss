@@ -5,10 +5,10 @@
   border-bottom: 2px solid $gray;
   @include flexColumnGap($gap: 0);
 
-  @include breakpoint(screen1024) {
+/*   @include breakpoint(screen1024) {
     border: none;
     padding-bottom: 0;
-  }
+  } */
 }
 
 .cost {

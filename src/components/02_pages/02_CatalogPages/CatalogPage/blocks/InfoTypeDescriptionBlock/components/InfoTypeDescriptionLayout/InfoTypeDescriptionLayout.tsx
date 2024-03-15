@@ -79,7 +79,7 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
                     return (
                       <React.Fragment key={index}>
                         {item}
-                        {index !== (array.length - 1) ? <><br /><br /></> : ''}
+                        {index !== (array.length - 1) ? <><br /><br /></> : null}
                       </React.Fragment>);
                   })}
                 </p>
@@ -102,7 +102,7 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
                       return (
                         <React.Fragment key={index}>
                           {item}
-                          {index !== (array.length - 1) ? <br /> : ''}
+                          {index !== (array.length - 1) ? <br /> : null}
                         </React.Fragment>);
                     })}
                   </p>
@@ -122,7 +122,7 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
                   return (
                     <React.Fragment key={index}>
                       {item}
-                      {index !== (array.length - 1) ? <><br /><br /></> : ''} {/* добавляем разрыв строки */}
+                      {index !== (array.length - 1) ? <><br /><br /></> : null} {/* добавляем разрыв строки */}
                     </React.Fragment>);
                 })}
               </p>

@@ -3,10 +3,6 @@
 .priceWrapper {
   grid-area: price;
 
-  @include breakpoint(screen1024) {
-    display: none;
-    visibility: hidden;
-  }
 }
 
 .priceContainer {
@@ -17,4 +13,8 @@
   align-self: start;
   margin: 0;
   height: auto;
+
+  @include breakpoint(screen1024) {
+
+  }
 }

@@ -14,14 +14,14 @@ const CatalogCardItem: React.FC<CatalogCardItemInterface> = ({ item }) => {
 
   const newLabel = <LabelNew />;
 
-  const renderNewLabel = item.status == 'new' ? newLabel : '';
+  const renderNewLabel = item.status == 'new' ? newLabel : null;
 
 
   const youtubeLabel = <div className={`${styles.label} ${styles.label_youtube}`}>
     <YoutubeIcon />
   </div>;
 
-  const renderYoutubeLabel = item.links?.youtube != '' ? youtubeLabel : '';
+  const renderYoutubeLabel = item.links?.youtube != '' ? youtubeLabel : null;
 
 
 

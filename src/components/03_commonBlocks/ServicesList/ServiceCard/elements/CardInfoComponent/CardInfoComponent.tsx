@@ -39,7 +39,7 @@ const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
         <h3 className={`${styles.title}`}>
           {title}
         </h3>
-        {!arrows ? '' :
+        {!arrows ? null :
           <ArrowsButton className = {styles.arrowsCardInfo}/>
         }
       </div>

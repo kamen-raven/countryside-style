@@ -23,6 +23,7 @@ export interface VillageObjectInterface {
   you_tube_link: string;
   price: number;
   place: string;
+  infra: string;
 }
 
 interface EngineeringServiceInterface {

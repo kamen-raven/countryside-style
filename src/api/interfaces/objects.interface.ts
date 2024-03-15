@@ -50,31 +50,38 @@ export interface RealEstateObjectInterface {
   display_pages: DisplayPagesInterface[];
 }
 
-export interface CoordinatesInterface {
+interface CoordinatesInterface {
   uuid: string;
   yandex_latitude: number;
   yandex_longitude: number;
 }
 
-export interface EngineeringServiceInterface {
+interface EngineeringServiceInterface {
   engineering_service: string;
 }
 
-export interface AgentInterface {
+interface AgentInterface {
   employee: string;
 }
 
-export interface ImageInterface {
+interface ImageInterface {
   uuid: string;
   image: string;
   re_object: string;
 }
 
-export interface DisplayPagesInterface {
+interface DisplayPagesInterface {
   display_pages: DisplayPageInterface[];
 }
-export interface DisplayPageInterface {
+interface DisplayPageInterface {
   uuid: string;
   value: string;
   type_value: string;
 }
+
+
+export interface ObjectsIsLikeInterface {
+  re_object: string;
+  close_re_object: string;
+}
+

@@ -21,8 +21,8 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
     ceiling_height: 'м.',
     date_foundation: 'год.',
     distance_CAD: 'км.',
-    area_plot: `${isRealEstateObject(data) ? data.land_area_measurement : ''}`,
-    area_of_plot: `${isRealEstateObject(data) ? '': data.area_of_plot_measurement}`
+    area_plot: `${isRealEstateObject(data) ? data.land_area_measurement : null}`,
+    area_of_plot: `${isRealEstateObject(data) ? null: data.area_of_plot_measurement}`
   };
 
   //* функция отрисовки инженерных систем (коммуникаций)
@@ -35,7 +35,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
             return (
               <React.Fragment key={index}>
                 <span className={styles.listItem__spanAccent}>
-                  {`${service.engineering_service}${index + 1 < data.display_engineering_services.length ? ', ' : ''} `}
+                  {`${service.engineering_service}${index + 1 < data.display_engineering_services.length ? ', ' : null} `}
                 </span>
               </React.Fragment>
             );
@@ -66,7 +66,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
               <>
                 {chars[key as keyof typeof chars]}:&nbsp;
                 <span className={styles.listItem__spanAccent}>
-                  {dataItems[key as keyof typeof chars]}&nbsp;{key as keyof typeof chars ? measureInfo[key as keyof typeof chars] : ''}
+                  {dataItems[key as keyof typeof chars]}&nbsp;{key as keyof typeof chars ? measureInfo[key as keyof typeof chars] : null}
                 </span>
               </>
             </li>
@@ -179,7 +179,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
       </div>
 
       {/*  //* отображаем местоположение в характеристики - адрес, КАД и тд */}
-      {(data.place || data.distance_CAD || (isRealEstateObject(data) ? data.metro : '')) &&
+      {(data.place || data.distance_CAD || (isRealEstateObject(data) ? data.metro : null)) &&
         <div className={styles.blockInfo}>
           <h4 className={styles.label}>
             Местоположение

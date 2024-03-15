@@ -30,7 +30,7 @@ const PhotosInner = ({ data }: PhotosInnerInterface): JSX.Element => {
 
         {isRealEstateObject(data) ?
           <LabelNew createdAt={data.created_at} />
-          : ''
+          : null
         }
 
         <div className={styles.infoButtonContainer}> {/* //! */}

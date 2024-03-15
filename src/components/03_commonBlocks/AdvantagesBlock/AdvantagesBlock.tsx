@@ -15,7 +15,7 @@ const AdvantagesBlock: React.FC<AdvantagesBlockInterface> = ({
       <>
         {background ?
           <BackgroundSVGPattern positionX='right' />
-          : ''}
+          : null}
       </>
       <div className={styles.container}>
 

@@ -2,6 +2,7 @@ export const PATH_API = {
   objects: {
     allObjects: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/objects/',
     byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/objects/',
+    isLike: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/objects_islike/',
   },
   villages: {
     allVillages: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/villages/',
