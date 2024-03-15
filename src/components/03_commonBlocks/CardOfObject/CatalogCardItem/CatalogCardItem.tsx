@@ -3,27 +3,24 @@ import styles from './CatalogCardItem.module.scss';
 import {CatalogCardItemInterface } from './CatalogCardItem.interface.ts';
 import Image from 'next/image';
 
-import YoutubeIcon from '~svg/catalogCard/youtubeIcon.svg';
-
 
 import Link from 'next/link';
-import { LabelNew } from '~shared/index.ts';
-
+ // ! доделать 
 const CatalogCardItem: React.FC<CatalogCardItemInterface> = ({ item }) => {
 
 
-  const newLabel = <LabelNew />;
-
-  const renderNewLabel = item.status == 'new' ? newLabel : null;
 
 
-  const youtubeLabel = <div className={`${styles.label} ${styles.label_youtube}`}>
+
+
+
+/*   const youtubeLabel = <div className={`${styles.label} ${styles.label_youtube}`}>
     <YoutubeIcon />
-  </div>;
+  </div>; */
 
-  const renderYoutubeLabel = item.links?.youtube != '' ? youtubeLabel : null;
+/*   const renderYoutubeLabel = item.links?.youtube != '' ? youtubeLabel : null;
 
-
+ */
 
   return (
     <div className={styles.cardWrapper}>
@@ -39,17 +36,16 @@ const CatalogCardItem: React.FC<CatalogCardItemInterface> = ({ item }) => {
 
 
 
-          {renderNewLabel}
-          {renderYoutubeLabel}
+{/*           {renderYoutubeLabel} */}
         </Link>
       </div>
       <div className={styles.infoBlock}>
         <div className={styles.infoContainer}>
-          <Link className={`${styles.link} ${styles.link_title}`} href={'/houses/card'}>
+          <div className={`${styles.link} ${styles.link_title}`}>
             <h2 className={styles.title} >
               {item.title}
             </h2>
-          </Link>
+          </div>
           <div className={styles.statusContainer}>
             <p className={styles.status}>
               {item.type}&nbsp;

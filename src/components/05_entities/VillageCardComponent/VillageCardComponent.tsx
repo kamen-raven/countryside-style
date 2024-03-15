@@ -29,7 +29,7 @@ const VillageCardComponent: React.FC<VillageCardComponentInterface> = ({ item, t
           }
         </Link>
 {/*         <LabelNew createdAt={item.created_at} /> */}
-      {/*   <YoutubeLabel link={item.you_tube_link} /> */}  {/* //! */}
+      <YoutubeLabel link={item.you_tube_link} />  
       </div>
 
       <div className={`${styles.infoBlock}`}>

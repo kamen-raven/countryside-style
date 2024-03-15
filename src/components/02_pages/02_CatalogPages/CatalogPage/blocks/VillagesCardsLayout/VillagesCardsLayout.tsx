@@ -11,7 +11,7 @@ const VillagesCardsLayout: React.FC<VillagesCardsLayoutInterface> = ({ villagesD
   return (
       <div className={styles.cardsLayout}>
         {villagesData.map((item) => (
-          <VillageCardComponent item={item} typePage={typePage}/>
+          <VillageCardComponent key={item.uuid} item={item} typePage={typePage}/>
         ))}
       </div>
   );

@@ -20,17 +20,17 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObj
         <div className={styles.cardsLayout}>
 
           {(commonObjects && typePage !== 'villages') &&
-            commonObjects.map((obj, index) => {
+            commonObjects.map((obj) => {
               return (
-                <CatalogCardComponent key={index} item={obj}  />
+                <CatalogCardComponent key={obj.uuid} item={obj}  />
               );
             })
           }
 
           {(villageObjects && typePage === 'villages') &&
-            villageObjects.map((obj, index) => {
+            villageObjects.map((obj) => {
               return (
-                <VillageCardComponent key={index} item={obj} typePage={typePage} />
+                <VillageCardComponent key={obj.uuid} item={obj} typePage={typePage} />
               );
             })
           }
