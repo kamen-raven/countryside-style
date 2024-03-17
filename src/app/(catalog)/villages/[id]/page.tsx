@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getObjectByID } from "~api/Objects/getObjectByID";
 
 import { getAllVillages } from "~api/Villages/getAllVillages";
+import { getObjectsInVillages } from "~api/Villages/getObjectsInVillages";
 import { getVillageByID } from "~api/Villages/getVillageByID";
 
 import { VillageObjectInterface } from "~interfaces/villages.interface";
@@ -30,19 +32,45 @@ export async function generateStaticParams() {
 
 export default async function VillageType({ params }:  {params: {id: string, type: 'villages' }}) {
   const villages = await getAllVillages(); // получаем все объекты
-  const uuidCurrentObj = villages.find(obj => obj.id.toString() === params.id);
+    // сравниваем и находим нужный объект из массива объектов по ID
+  const idCurrentObj = villages.find(obj => obj.id.toString() === params.id);
 
-  if (!uuidCurrentObj) {
+  // если такого нет, то кидаем 404
+  if (!idCurrentObj) {
     notFound();
   }
-  const currentObject = await getVillageByID(uuidCurrentObj.uuid);
-  if (!currentObject) {
+  // делаем запрос на сервер по uuid найденного ранее объекта и работаем с ним дальше
+  const currentVillage = await getVillageByID(idCurrentObj.uuid);
+  if (!currentVillage) {
     notFound();
   }
+
+  // Получаем массив объектов "Объекты в поселке"
+  const objectsInVillage = await getObjectsInVillages(currentVillage.uuid);
+  console.log(objectsInVillage);
+
+// Создаем массив промисов для каждого запроса getObjectByID
+const objectsInVillagePromises = objectsInVillage.map(async (obj) => {
+  const object = await getObjectByID(obj.re_object_in_villages);
+  return object;
+});
+
+// Ждем завершения всех запросов
+const allObjectsInVillage = await Promise.all(objectsInVillagePromises);
+
+// Теперь у вас есть массив объектов, которые можно отрисовать
+console.log(`allObjectsInVillage:${allObjectsInVillage}`);
+console.log(allObjectsInVillage);
+
+
+
+
+
+
 
   return (
     <CardPage
       typePage={'villages'}
-      objectData={currentObject} commonObjects={[]} />
+      objectData={currentVillage} commonObjects={allObjectsInVillage} />
   );
 }

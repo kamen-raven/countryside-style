@@ -3,10 +3,10 @@ import React from 'react';
 import styles from './MoreObjectsBlock.module.scss';
 import { MoreObjectsBlockInterface } from './MoreObjectsBlock.interface.ts';
 
-import { CatalogCardComponent, VillageCardComponent } from '~entities/index.ts';
+import { CatalogCardComponent } from '~entities/index.ts';
 
 
-const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObjects, villageObjects, typePage }) => {
+const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObjects, typePage }) => {
 
 
 
@@ -27,10 +27,11 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObj
             })
           }
 
-          {(villageObjects && typePage === 'villages') &&
-            villageObjects.map((obj) => {
+          {(commonObjects && typePage === 'villages') &&
+            commonObjects.map((obj) => {
               return (
-                <VillageCardComponent key={obj.uuid} item={obj} typePage={typePage} />
+                <CatalogCardComponent key={obj.uuid} item={obj}  />
+               /*  <VillageCardComponent key={obj.uuid} item={obj} typePage={typePage} /> */
               );
             })
           }

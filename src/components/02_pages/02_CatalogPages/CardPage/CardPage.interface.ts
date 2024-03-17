@@ -6,5 +6,5 @@ export interface CardPageInterface extends DetailedHTMLProps<HTMLAttributes<HTML
   typePage: 'flats' | 'lands' | 'houses-and-cottages' | 'villages';
   objectData: RealEstateObjectInterface | VillageObjectInterface;
   commonObjects?: RealEstateObjectInterface[];
-  villageObjects?:  VillageObjectInterface[];
+  //villageObjects?:  VillageObjectInterface[];
 }

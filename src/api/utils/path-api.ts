@@ -6,7 +6,8 @@ export const PATH_API = {
   },
   villages: {
     allVillages: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/villages/',
-    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/villages/'
+    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/villages/',
+    isLike: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/object_invillages/',
   },
   users: {
     allUsers: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/users/profile/',

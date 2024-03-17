@@ -40,3 +40,9 @@ interface ImageInterface {
 interface DisplayAgentInterface {
   employee: string;
 }
+
+export interface ObjectsInVillagesInterface {
+  village: string;
+  re_object_in_villages: string;
+}
+
