@@ -8,7 +8,6 @@ import CloseIcon from '~svg/button/clear.svg';
 
 
 
-
 const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
   isOpened, // состояния открыт/закрыт
   type, // тип попапа
@@ -22,6 +21,7 @@ const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
     reviewFull: styles.popupContainer_reviewFull,
     reviewImage: styles.popupContainer_reviewImage,
     successMessage: styles.popupContainer_form,
+    videoPopup: styles.popupContainer_video,
     privacyPolity: ''
   };
 
@@ -32,6 +32,7 @@ const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
       window.removeEventListener('keydown', actions.handleKeyPress);
     };
   }, []);
+
 
 
   return (

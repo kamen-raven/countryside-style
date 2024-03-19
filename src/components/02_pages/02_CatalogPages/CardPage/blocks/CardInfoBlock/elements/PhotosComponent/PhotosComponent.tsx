@@ -3,7 +3,7 @@ import styles from './PhotosComponent.module.scss';
 import { PhotosComponentInterface } from './PhotosComponent.interface.ts';
 import Image from 'next/image';
 import { LabelNew } from '~shared/index.ts';
-import { TooltipElement } from '../InfoContainer/modules/PhotosInner/elements/index.ts';
+import { TooltipElement, YoutubeTooltipElement } from './elements/index.ts';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 
@@ -36,7 +36,8 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
         }
 
         {data.you_tube_link &&
-          <TooltipElement data={data} type={'youtube'} />
+        <YoutubeTooltipElement data={data}/>
+/*           <TooltipElement data={data} type={'youtube'} /> */
         }
 
       </div>

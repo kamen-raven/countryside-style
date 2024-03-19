@@ -12,9 +12,11 @@
 }
 
 .contentContainer {
+  @include scrollbar($arrows: false);
   min-width: 0;
   max-width: 100%;
   overflow: auto;
+  overflow-x: scroll;
   padding-bottom: 50px;
 }
 

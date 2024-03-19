@@ -9,7 +9,7 @@ import TelegramIcon from '~svg/contacts/Telegram2.svg';
 import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
 import Link from 'next/link';
 import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
-import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
+import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
 import { OpenPopupButton } from '~shared/index.ts';
 
 

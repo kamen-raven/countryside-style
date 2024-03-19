@@ -2,8 +2,8 @@
 import React from 'react';
 
 import { ReviewPopupButtonInterface } from './ReviewPopupButton.interface';
-import useReviewPopupStore from '~store/useReviewPopupStore';
 import { useToggleMainPopupStore, useToggleSupportPopupStore } from '~store/useTogglePopupStore';
+import useReviewPopupStore from '~store/useReviewPopupStore';
 
 
 const ReviewPopupButton: React.FC<ReviewPopupButtonInterface> = ({ type, data, className, children }) => {

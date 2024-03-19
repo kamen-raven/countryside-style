@@ -3,7 +3,7 @@ import styles from './PhoneNumber.module.scss';
 import { PhoneNumberInterface } from './PhoneNumber.interface.ts';
 import CallIcon from '~svg/contacts/Phone.svg';
 import generalContactsData from '~data/constant/generalContacts/generalContactsData.ts';
-import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
+import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
 import Link from 'next/link';
 
 const PhoneNumber: React.FC<PhoneNumberInterface> = ({ employeeItem, colorText = 'gray', className }) => {

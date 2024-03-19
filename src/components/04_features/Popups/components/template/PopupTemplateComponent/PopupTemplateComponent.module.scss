@@ -53,6 +53,12 @@
     max-width: clamp(550px, 33.3%, 640px);
   }
 
+  &_video {  //?
+    height: clamp(200px, 45vw, calc(100% - 40px));
+    max-height: 80vh;
+    max-width: calc(1920px - clamp(3.125rem, 7vw, 7.5rem) * 2);
+  }
+
 }
 
 .popupCloseButton {

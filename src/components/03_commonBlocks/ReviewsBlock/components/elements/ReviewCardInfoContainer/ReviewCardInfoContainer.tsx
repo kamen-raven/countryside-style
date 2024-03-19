@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ReviewCardInfoContainer.module.scss';
 import { ReviewCardInfoContainerInterface } from './ReviewCardInfoContainer.interface.ts';
-import formatDate from '~helpers/formatDate.ts';
+import formatDate from '~helpers/formatters/formatDate.ts';
 
 
 const ReviewCardInfoContainer: React.FC<ReviewCardInfoContainerInterface> = ({ data, className }) => {

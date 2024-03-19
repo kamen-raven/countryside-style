@@ -4,3 +4,4 @@ export * from './ReviewFormPopup/ReviewFormPopup';
 export * from './ReviewFullPopup/ReviewFullPopup';
 export * from './ReviewImagePopup/ReviewImagePopup';
 export * from './SuccessMessagePopup/SuccessMessagePopup';
+export * from './VideoPopup/VideoPopup';

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ContactUsFormPopup, PopupTemplateComponent, ReviewFormPopup, ReviewFullPopup, ReviewImagePopup } from './components';
+import { ContactUsFormPopup, PopupTemplateComponent, ReviewFormPopup, ReviewFullPopup, ReviewImagePopup, VideoPopup } from './components';
 import { useToggleMainPopupStore } from '~store/useTogglePopupStore';
 
 
@@ -15,7 +15,8 @@ const MainPopups: React.FC = () => {
     contactForm: <ContactUsFormPopup />,
     reviewForm: <ReviewFormPopup />,
     reviewFull: <ReviewFullPopup />,
-    reviewImage: <ReviewImagePopup />
+    reviewImage: <ReviewImagePopup />,
+    videoPopup: <VideoPopup/>,
   };
 
 

@@ -11,6 +11,8 @@ const AwardInfoElement: React.FC = () => {
       <div className={styles.award__imgBlock}>
         <Image
           className={styles.award__image}
+          width={140}
+          height={348}
           src={Award}
           alt='Каисса - 2018' />
       </div>

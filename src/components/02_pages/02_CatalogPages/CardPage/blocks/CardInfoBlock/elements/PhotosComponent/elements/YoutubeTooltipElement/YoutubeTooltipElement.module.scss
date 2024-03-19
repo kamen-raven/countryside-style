@@ -1,0 +1,31 @@
+@import '~global_styles';
+
+.imageInfoButton {
+  max-height: 45px;
+  display: inline-flex;
+  @include common-button($appearance: youtube,
+                          $padding: 0 0 0 25px);
+  text-align: center;
+  font-size: 22px;
+  font-weight: $regular;
+  min-width: 0;
+}
+.icon {
+    width: 35px;
+    height: 35px;
+    padding: 5px 5px 5px 15px;
+    border-radius: 50%;
+    & svg {
+      background-color: $white;
+      border-radius: 50%;
+
+      &:hover {
+        transition: all .3s linear;
+        background-color: $youtube;
+        fill: $white;
+        scale: 1.55;
+      }
+    }
+  }
+
+

@@ -59,8 +59,14 @@
     &:hover {
       background: $dark;
       color: $white;
-      border: 1px solid $dark;;
+      border: 1px solid $dark;
       transition: all linear .2s;
     }
+  }
+
+  @if $appearance == youtube {
+    background: $youtube;
+    color: $white;
+    max-height: 45px;
   }
 }

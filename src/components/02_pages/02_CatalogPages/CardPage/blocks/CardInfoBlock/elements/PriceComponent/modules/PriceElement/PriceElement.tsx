@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from './PriceElement.module.scss';
 import { PriceElementInterface } from './PriceElement.interface.ts';
-import formatPhoneNumber from '~helpers/formatPhoneNumber.ts';
+import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
 import Link from 'next/link';
 import { OpenPopupButton } from '~shared/index.ts';
 

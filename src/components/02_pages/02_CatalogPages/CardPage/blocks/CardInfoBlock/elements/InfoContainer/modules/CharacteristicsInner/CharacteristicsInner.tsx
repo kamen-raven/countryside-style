@@ -19,9 +19,9 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
     living_area: 'кв.м.',
     kitchen_area: 'кв.м.',
     ceiling_height: 'м.',
-    date_foundation: 'год.',
+    date_foundation: '',
     distance_CAD: 'км.',
-    area_plot: `${isRealEstateObject(data) ? data.land_area_measurement : null}`,
+    area_plot: `${isRealEstateObject(data) ? data.land_area_measurement : ''}`,
     area_of_plot: `${isRealEstateObject(data) ? null: data.area_of_plot_measurement}`
   };
 
@@ -35,7 +35,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
             return (
               <React.Fragment key={index}>
                 <span className={styles.listItem__spanAccent}>
-                  {`${service.engineering_service}${index + 1 < data.display_engineering_services.length ? ', ' : null} `}
+                  {`${service.engineering_service}${index + 1 < data.display_engineering_services.length ? ', ' : ''} `}
                 </span>
               </React.Fragment>
             );

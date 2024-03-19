@@ -2,14 +2,33 @@
 
 .label {
   position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &_youtube {
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    & svg {
-      width: 35px;
-      height: 35px;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  cursor: pointer;
+  background-color: $white;
+  transition: background-color .3s linear;
+
+  &:hover {
+    background-color: $youtube;
+    transition: background-color .3s linear;
+  }
+
+
+  & svg {
+    width: 35px;
+    height: 35px;
+    &:hover {
+      transition: fill .3s linear;
+        fill: $white;
     }
   }
 }

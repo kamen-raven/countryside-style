@@ -5,10 +5,11 @@
 @mixin scrollbar ($arrows,
                   $border-radius: 8px,
                   $border: 1px solid $gray) {
-  scrollbar-color: $accent-green $white;
   /* «цвет ползунка» «цвет полосы скроллбара» */
+/*   scrollbar-color: $accent-green $white;
   scrollbar-width: $scrollbar-width;
-  border-radius: $border-radius;
+  border-radius: $border-radius; */
+
   &::-webkit-scrollbar {
     width: $scrollbar-width;
     /* ширина для вертикального скролла */
@@ -44,7 +45,8 @@
 
 
 
-  @if $arrows ==true {
+
+  @if $arrows == true {
     /* Стрелки */
     &::-webkit-scrollbar-button:vertical:start:decrement {
       background:
