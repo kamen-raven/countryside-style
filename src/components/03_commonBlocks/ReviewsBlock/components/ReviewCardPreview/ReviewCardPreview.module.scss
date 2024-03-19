@@ -13,7 +13,7 @@
 }
 
 
-.infoContainer {
+/* .infoContainer {
   display: flex;
   align-items: flex-start;
   gap: 30px;
@@ -52,11 +52,11 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100px; /* Ширина  бордера */
-    height: 4px; /* Толщина  бордера */
-    background-color: $accent-green; /* Цвет  бордера */
+    width: 100px; /* Ширина  бордера 
+    height: 4px; /* Толщина  бордера
+    background-color: $accent-green; /* Цвет  бордера
   }
-}
+} */
 
 .reviewContainer {
   overflow: hidden;

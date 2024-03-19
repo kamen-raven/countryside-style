@@ -21,11 +21,11 @@
     "info price";
 
   @include breakpoint(screen1280) {
-    grid-template-columns: auto 350px;
+    grid-template-columns: minmax(200px, 1100px) 350px;
   }
 
   @include breakpoint(screen1024) {
-    grid-template-columns: auto;
+    grid-template-columns: minmax(720px, 1024px);
     grid-template-areas:
       "title"
       "photo"

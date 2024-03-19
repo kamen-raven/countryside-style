@@ -9,22 +9,54 @@
   font-size: 22px;
   font-weight: $regular;
   min-width: 0;
+
+
+
+  &:hover {
+    & .icon {
+      background-color: $youtube;
+    }
+
+
+    & svg {
+      transition: background-color .3s linear, fill .3s linear, scale .3s linear;
+      fill: $white;
+      background-color: $youtube;
+      scale: 1.5;
+    }
+  }
+
+
 }
 .icon {
     width: 35px;
     height: 35px;
-    padding: 5px 5px 5px 15px;
+    margin: 5px 5px 5px 15px;
     border-radius: 50%;
-    & svg {
-      background-color: $white;
-      border-radius: 50%;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      &:hover {
+
+/*     &:hover {
+      background-color: $youtube;
+
+
+
+      & svg {
         transition: all .3s linear;
         background-color: $youtube;
         fill: $white;
-        scale: 1.55;
+        scale: 1.5;
       }
+    } */
+
+    & svg {
+      transition: background-color .3s linear, fill .3s linear, scale .3s linear;
+      background-color: $white;
+      width: 20px;
+      height: 14px;
     }
   }
 

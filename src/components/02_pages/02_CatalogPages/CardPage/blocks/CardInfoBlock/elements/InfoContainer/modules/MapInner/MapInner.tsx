@@ -1,16 +1,14 @@
 import React from 'react';
 import styles from './MapInner.module.scss';
 import { MapInnerInterface } from './MapInner.interface';
+import formatIframeSrc from '~helpers/formatters/formatIframeSrc';
 
 
 const MapInner: React.FC<MapInnerInterface> = ({ data }) => {
-
   const iframeString = data.yandex_map_link;
-  // Используем регулярное выражение для поиска значения атрибута src
-  const srcValueMatch = iframeString.match(/src="([^"]*)"/);
 
   // Получаем значение атрибута src из совпадения
-  const srcValue = srcValueMatch && srcValueMatch[1];
+  const srcValue = formatIframeSrc(iframeString);
 
   return (
     <>

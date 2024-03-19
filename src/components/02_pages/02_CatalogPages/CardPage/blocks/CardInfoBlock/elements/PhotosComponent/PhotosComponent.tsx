@@ -14,31 +14,53 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
 
   return (
-    <div className={styles.imageContainer}>
+    <div className={styles.photosContainer}>
 
-      <Image
-        className={styles.image}
-        src={data.photo_images[0].image}
-        alt={data.name}
-        width={800}
-        height={640}
-      />
+      <div className={styles.mainPhotoContainer}>
+        <Image
+          className={styles.image}
+          src={data.photo_images[0].image}
+          alt={data.name}
+          width={800}
+          height={640}
+        />
 
-      {isRealEstateObject(data) ?
-        <LabelNew createdAt={data.created_at} />
-        : null
-      }
 
-      <div className={styles.infoButtonContainer}> {/* //! */}
+        <>
+          {isRealEstateObject(data) ?
+            <LabelNew createdAt={data.created_at} />
+            : null
+          }
 
-        {(data.plans_images.length > 0) &&
-          <TooltipElement data={data} type={'plan'} />
-        }
+          <div className={styles.infoButtonContainer}> {/* //! */}
+            {(data.plans_images.length > 0) &&
+              <TooltipElement data={data} type={'plan'} />
+            }
 
-        {data.you_tube_link &&
-        <YoutubeTooltipElement data={data}/>
-/*           <TooltipElement data={data} type={'youtube'} /> */
-        }
+            {data.you_tube_link &&
+              <YoutubeTooltipElement data={data} />
+            }
+          </div>
+        </>
+      </div>
+
+      <div className={`${styles.smallPhotosContainer} ${styles.smallPhotosContainer_isScroll}`}>
+        <div className={styles.smallPhotosInner}>
+
+          {data.photo_images && data.photo_images.map((photo) => {
+            return (
+              <Image
+                key={photo.uuid}
+                className={`${styles.smallPhoto}`}
+                src={photo.image}
+                alt={photo.uuid}
+                width={110}
+                height={110}
+              />
+            );
+          })}
+        </div>
+
 
       </div>
     </div>
