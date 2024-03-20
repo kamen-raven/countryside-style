@@ -40,7 +40,10 @@ const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
           {title}
         </h3>
         {!arrows ? null :
-          <ArrowsButton className = {styles.arrowsCardInfo}/>
+        <div className = {styles.arrowsButtonContainer}>
+          <ArrowsButton className={styles.arrowsCardInfo} position={'left'}/>
+          <ArrowsButton className={styles.arrowsCardInfo} position={'right'}/>
+        </div>
         }
       </div>
       <div className={`${styles.wrapper} ${selectedWrapper}`}>

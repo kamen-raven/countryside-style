@@ -5,11 +5,23 @@ import styles from './ArrowsButton.module.scss';
 
 import ArrowIcon from '~svg/button/arrow.svg';
 
-const ArrowsButton = ({ className, ...props }: ArrowsButtonProps): JSX.Element => {
+const ArrowsButton = ({ position, className, onClick }: ArrowsButtonProps): JSX.Element => {
+
+  const setPosition = {
+    left: styles.arrow_left,
+    right: styles.arrow_right
+  };
 
 
   return (
-    <div className={`${styles.arrows} ${className}`} {...props}>
+      <button  className={`${styles.arrow} ${setPosition[position]} ${className}`}
+            onClick={onClick}>
+        <ArrowIcon />
+      </button>
+
+
+
+/*     <div className={`${styles.arrows} ${className}`} {...props}>
       <button className={`${styles.arrow} ${styles.arrow_left}`}
               >
         <ArrowIcon />
@@ -17,7 +29,7 @@ const ArrowsButton = ({ className, ...props }: ArrowsButtonProps): JSX.Element =
       <button className={`${styles.arrow} ${styles.arrow_right}`}>
         <ArrowIcon />
       </button>
-    </div>
+    </div> */
   );
 };
 

@@ -67,7 +67,8 @@ interface AgentInterface {
 interface ImageInterface {
   uuid: string;
   image: string;
-  re_object: string;
+  order: number;
+  objectModel: string;
 }
 
 interface DisplayPagesInterface {

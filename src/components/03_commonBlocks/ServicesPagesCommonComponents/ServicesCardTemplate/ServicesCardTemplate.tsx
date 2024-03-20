@@ -27,7 +27,10 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({ service
         </h3>
 
         {!arrows ? '' :
-          <ArrowsButton className={styles.arrowsCardInfo} />
+          <div className={styles.arrowsButtonContainer}>
+            <ArrowsButton className={styles.arrowsCardInfo} position={'left'} />
+            <ArrowsButton className={styles.arrowsCardInfo} position={'right'} />
+          </div>
         }
 
         <div className={styles.innerContainer}>

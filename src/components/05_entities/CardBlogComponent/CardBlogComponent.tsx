@@ -81,7 +81,10 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       </Link>
 
       {/* контейнер со стрелками для ГЛАВНОЙ СТРАНИЦЫ */}
-      <ArrowsButton className={`${styles.blogArrows} ${setPage[path].arrows}`} blogPostsData={blogPostsData} />
+      <div className={`${styles.blogArrows} ${setPage[path].arrows} ${styles.arrowsButtonContainer}`}>
+        <ArrowsButton className={`${setPage[path].arrows}`} blogPostsData={blogPostsData} position={'left'} />
+        <ArrowsButton className={`${setPage[path].arrows}`} blogPostsData={blogPostsData} position={'right'} />
+      </div>
 
       {/* компонент с кнопкой "ЗАДАТЬ СВОЙ ВОПРОС" */}
       <OpenPopupButton className={styles.askYourQuestion} type={'contactForm'}>
