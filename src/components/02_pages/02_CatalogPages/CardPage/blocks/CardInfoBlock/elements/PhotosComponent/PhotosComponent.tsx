@@ -6,7 +6,7 @@ import styles from './PhotosComponent.module.scss';
 import { PhotosComponentInterface } from './PhotosComponent.interface.ts';
 
 import { ArrowsButton, LabelNew } from '~shared/index.ts';
-import { PlanTooltipElement, TooltipElement, YoutubeTooltipElement } from './elements/index.ts';
+import { PlanTooltipElement, YoutubeTooltipElement } from './elements/index.ts';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
@@ -39,6 +39,13 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     const prevIndex = activePhoto === 0 ? picturesArray.length - 1 : activePhoto - 1;
     setActivePhoto(prevIndex);
     scrollToThumbnail(prevIndex);
+  };
+
+  // Кнопка "Планировка"
+  const handlePlanButton = () => {
+    const planPicIndex = data.photo_images.length;
+    setActivePhoto(planPicIndex);
+    scrollToThumbnail(planPicIndex);
   };
 
   // скролл
@@ -74,7 +81,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   return (
     <div className={styles.photosContainer}>
 
-      {data.photo_images.length &&
+      {picturesArray.length &&
         <div className={styles.mainPhotoContainer}>
           <Image
             className={styles.image}
@@ -109,7 +116,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
             <div className={styles.infoButtonContainer}> {/* //! */}
               {(data.plans_images.length > 0) &&
-                <PlanTooltipElement data={data}  />
+                <PlanTooltipElement  onClick={handlePlanButton} />
               }
 
               {data.you_tube_link &&
