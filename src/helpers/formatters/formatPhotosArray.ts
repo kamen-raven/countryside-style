@@ -1,4 +1,4 @@
-import { RealEstateObjectInterface } from "~interfaces/objects.interface";
+/* import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 import { VillageObjectInterface } from "~interfaces/villages.interface";
 
 const formatPhotosArray = (data: RealEstateObjectInterface | VillageObjectInterface) => {
@@ -21,3 +21,4 @@ const formatPhotosArray = (data: RealEstateObjectInterface | VillageObjectInterf
 
   return allPhotos;
 };
+ */
