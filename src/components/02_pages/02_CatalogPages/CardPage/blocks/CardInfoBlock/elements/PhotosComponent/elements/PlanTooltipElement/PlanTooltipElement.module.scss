@@ -1,41 +1,46 @@
-@import '~global_styles';
+  @import '~global_styles';
 
-.imageInfoButton {
-  border-radius: 30px;
-  max-height: 45px;
-  display: inline-flex;
-
-  &__plan {
-    background-color: $dark;
-  }
-
-  &__youtube {
-    background-color: $youtube;
-  }
-}
-.icon {
-    width: 35px;
-    height: 35px;
-    padding: 5px 5px 5px 15px;
-
-    & svg {
-      border-radius: 50%;
-    }
-  }
-
-.link {
-    display: flex;
-    align-items: center;
-
-    padding-left: 25px;
-
-    text-decoration: none;
-    color: $white;
+  .imageInfoButton {
+    max-height: 45px;
+    display: inline-flex;
+    @include common-button($appearance: dark,
+                            $padding: 0 0 0 20px);
     text-align: center;
-    font-family: $ff-openSans;
     font-size: 22px;
     font-weight: $regular;
-    line-height: 130%;
+    min-width: 0;
+
+
+
+    &:hover {
+      & svg {
+        transition: stroke .3s linear, scale .3s linear;
+        fill: $dark;
+        stroke: $white;
+        scale: 1.2;
+
+        & path:first-of-type {
+          stroke: none;
+        }
+      }
+    }
+
+
   }
+  .icon {
+      width: 35px;
+      height: 35px;
+      margin: 5px 5px 5px 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & svg {
+        transition: scale .3s linear;
+
+        border-radius: 50%;
+      }
+    }
 
 

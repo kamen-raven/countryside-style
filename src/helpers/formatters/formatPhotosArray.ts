@@ -1,24 +1,33 @@
-/* import { RealEstateObjectInterface } from "~interfaces/objects.interface";
+import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 import { VillageObjectInterface } from "~interfaces/villages.interface";
 
-const formatPhotosArray = (data: RealEstateObjectInterface | VillageObjectInterface) => {
-  const photoArr = data.photo_images.length > 0 ? data.photo_images : null;
-  const plansArr = data.plans_images.length > 0 ? data.plans_images : null;
+const formatPhotosArray = (
+  data: RealEstateObjectInterface | VillageObjectInterface
+) => {
+  const { photo_images, plans_images } = data; // 
 
+  const sortingPics = (arr: typeof photo_images | typeof plans_images) => {
+    return arr.length
+      ? arr.sort((a, b) => {
+          if (a.order === null) return 1;
+          if (b.order === null) return -1;
+          return a.order - b.order;
+        })
+      : [];
+  };
 
-  // Сортировка массива по полю "order" в порядке возрастания
-  if (photoArr) {
-    photoArr.sort((a, b) => a.order - b.order);
+  const sortedPhotoArr = sortingPics(photo_images);
+  const sortedPlansArr = sortingPics(plans_images);
+
+  if (sortedPhotoArr.length && sortedPlansArr.length) {
+    return [...sortedPhotoArr, ...sortedPlansArr];
+  } else if (sortedPhotoArr.length && !sortedPlansArr.length) {
+    return sortedPhotoArr;
+  } else if (!sortedPhotoArr.length && sortedPlansArr.length) {
+    return sortedPlansArr;
+  } else {
+    return [];
   }
-  if (plansArr) {
-    plansArr.sort((a, b) => a.order - b.order);
-  }
-
-  if (photoArr && plansArr) {
-    const allPhotos = photoArr.concat(plansArr);
-  }
-
-
-  return allPhotos;
 };
- */
+
+export default formatPhotosArray;

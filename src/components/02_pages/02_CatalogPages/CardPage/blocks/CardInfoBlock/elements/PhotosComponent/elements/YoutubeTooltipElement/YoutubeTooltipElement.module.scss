@@ -4,7 +4,7 @@
   max-height: 45px;
   display: inline-flex;
   @include common-button($appearance: youtube,
-                          $padding: 0 0 0 25px);
+                          $padding: 0 0 0 20px);
   text-align: center;
   font-size: 22px;
   font-weight: $regular;
@@ -19,7 +19,7 @@
 
 
     & svg {
-      transition: background-color .3s linear, fill .3s linear, scale .3s linear;
+      transition: background-color .3s linear, scale .3s linear;
       fill: $white;
       background-color: $youtube;
       scale: 1.5;
@@ -53,7 +53,7 @@
     } */
 
     & svg {
-      transition: background-color .3s linear, fill .3s linear, scale .3s linear;
+      transition: scale .3s linear;
       background-color: $white;
       width: 20px;
       height: 14px;

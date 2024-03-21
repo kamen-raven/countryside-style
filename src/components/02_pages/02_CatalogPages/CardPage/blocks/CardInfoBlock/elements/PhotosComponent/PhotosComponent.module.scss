@@ -8,15 +8,20 @@
 .mainPhotoContainer {
   position: relative;
   max-height: 640px;
+
+  width: auto;
+  overflow: hidden;
 }
 
 
 .image {
+
   width: 100%;
   height: 100%;
-  max-height: 640px;
+
   object-fit: cover;
-  transition: opacity .5s ease; /* Плавная смена opacity */
+  transition: opacity .5s ease;
+  /* Плавная смена opacity */
 }
 
 
@@ -47,6 +52,7 @@
 
 .smallPhotosInner {
   display: grid;
+  justify-content: start;
   grid-template-rows: 1fr;
   //grid-auto-columns: clamp(90px, calc((100% / 7) - 18px), 110px);//calc(50% - 20px);
   grid-auto-flow: column;
@@ -57,17 +63,19 @@
   box-sizing: border-box;
   object-fit: cover;
 
-  max-width: 110px;//clamp(90px, calc((100% / 7) - 18px), 110px);
-  max-height: 110px;//clamp(90px, calc((100% / 7) - 18px), 110px);
-  //border: 1px solid $gray;
-  //padding: 40px;
+
+  max-width: 110px;
+  max-height: 110px;
+
   opacity: .5;
-  transition: transform .3s ease; /* Плавное изменение масштаба при наведении */
+  transition: transform .3s ease;
+  /* Плавное изменение масштаба при наведении */
 
   &:hover {
-    transform: scale(1.05); /* Увеличение масштаба при наведении */
+    transform: scale(1.05);
+    /* Увеличение масштаба при наведении */
     opacity: .7;
-    //transition: transform .3s ease; /* Плавное изменение масштаба при наведении */
+
   }
 
 
@@ -76,16 +84,18 @@
     border: 3px solid $accent-green;
     transform: scale(1.1);
 
-    &:first-child{  // это для плавного и ровного отображения выделения активного элемента
+    &:first-child {
+      // это для плавного и ровного отображения выделения активного элемента
       margin-left: 6px;
     }
 
-    &:last-child{
+    &:last-child {
       margin-right: 8px;
     }
 
     &:hover {
-      transform: scale(1.1); /* Увеличение масштаба при наведении */
+      transform: scale(1.1);
+      /* Увеличение масштаба при наведении */
       opacity: 1;
     }
   }
@@ -109,5 +119,3 @@
     right: 30px;
   }
 }
-
-
