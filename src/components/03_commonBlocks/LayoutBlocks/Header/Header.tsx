@@ -11,13 +11,10 @@ const Header: React.FC = () => {
     <header className={`${styles.header}`}>
       <div className={styles.inner}>
         <Logo />
-        <SimpleSearchInput innerText={'Поиск по сайту'}/>
+{/*         <SimpleSearchInput innerText={'Поиск по сайту'}/> */}
    {/*      <HeaderSearchInput /> */}
         <ContactComponent />
       </div>
-{/*       <nav className = {`${styles.navMenu}`}>
-        <Navbar listItems={menuList} />
-      </nav> */}
     </header>
   );
 };

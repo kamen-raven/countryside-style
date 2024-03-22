@@ -3,7 +3,9 @@
 .award {
   flex-shrink: 1;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
+
   position: relative;
   width: 100%;
 
@@ -30,8 +32,8 @@
       height: 65%;
     }
   }
+
   &__infoBlock {
-    width: 100%;
     display: flex;
     align-items: center;
     background: $accent-green;
@@ -41,7 +43,7 @@
   &__info {
     @include common-paragraph(pXl,
       $color: $white);
-    padding: 50px 90px;
+    padding: 40px 80px;
     margin: 0;
 
 
@@ -50,5 +52,17 @@
     }
   }
 
+  &__description {
+    position: relative;
+    @include common-paragraph(pSm,
+      $font-weight: $regular,
+      $color: $white);
+    margin: 20px 20px 0 180px;
 
+    &_dot {
+      position: absolute;
+      top: 0;
+      left: -10px;
+    }
+  }
 }

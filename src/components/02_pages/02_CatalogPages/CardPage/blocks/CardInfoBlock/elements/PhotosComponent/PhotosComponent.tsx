@@ -16,6 +16,8 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     return 'created_at' in obj;
   }
 
+  // todo zustand
+
   const picturesArray = formatPhotosArray(data);
 
   const [activePhoto, setActivePhoto] = useState(0);
