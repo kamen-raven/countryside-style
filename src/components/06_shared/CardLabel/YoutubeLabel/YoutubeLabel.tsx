@@ -8,7 +8,7 @@ const YoutubeLabel: React.FC<YoutubeLabelInterface> = ({ link }) => {
   if (link != '') {
     return (
       <VideoPopupButton className={styles.label} link={link}>
-        <YoutubeIcon />
+        <YoutubeIcon/>
       </VideoPopupButton>
     );
   } else {

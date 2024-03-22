@@ -136,7 +136,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
             return (
               <Image
                 onClick={() => handleThumbnailClick(index)}
-                key={photo.uuid}
+                key={index}
                 className={`${styles.smallPhoto} ${activePhoto === index ? styles.smallPhoto_isActive : ''}`}
                 src={photo.image}
                 alt={photo.uuid}

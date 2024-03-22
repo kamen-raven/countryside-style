@@ -20,15 +20,16 @@
   &:hover {
     background-color: $youtube;
     transition: background-color .3s linear;
+
+    & svg {
+      transition: fill .3s linear;
+        fill: $white;
+    }
   }
 
 
   & svg {
-    width: 35px;
-    height: 35px;
-    &:hover {
-      transition: fill .3s linear;
-        fill: $white;
-    }
+    width: 60%;
+    height: 60%;
   }
 }
