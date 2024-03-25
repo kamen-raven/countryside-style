@@ -14,7 +14,11 @@ module.exports = {
       },
       {
         protocol: 'http',
-        hostname: 'expert-crm.ru',
+        hostname: 'admin.zagorod-style.ru',
+      },
+      {
+        protocol: 'http',
+        hostname: 'zagorod-style.ru',
       },
     ],
   },

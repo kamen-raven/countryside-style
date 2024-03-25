@@ -45,12 +45,12 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, co
   return (
     <div className={`${styles.container}  ${setColor}`}>
       <div className={`${styles.innerBlock} ${setTemplate}`}>
-
         <Image className={styles.image}
           src={employeeItem.avatars[0].image}   //! сделана первая фотография сотрудника
           alt={`${employeeItem.first_name} + ${employeeItem.last_name}`}
           width={800}
           height={800} />
+
 
         <div className={styles.infoContainer}>
           <h3 className={styles.name}>

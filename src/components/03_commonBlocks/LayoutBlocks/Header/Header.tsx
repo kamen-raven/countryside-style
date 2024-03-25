@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 
 import { ContactComponent } from './components';
 import { Logo } from '~shared/index';
-import { SimpleSearchInput } from '~features/Forms';
+//import { SimpleSearchInput } from '~features/Forms';
 
 
 const Header: React.FC = () => {

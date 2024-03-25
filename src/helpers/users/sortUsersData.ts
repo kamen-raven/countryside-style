@@ -16,10 +16,10 @@ const desiredOrder = [
 function sortUsersList(array: ApiUsersInterface) {
   //! тут убираем тестового пользователя
   const employeeData = array.results.filter(
-    (user) => (user.first_name !== "test") || (user.last_name !== "test")
+    (user) => ((user.first_name !== "admin") || (user.last_name !== "admin")) && ((user.first_name !== "test") || (user.last_name !== "test"))
   );
 
-  
+
   // Функция сравнения для сортировки объектов по порядку, указанному в desiredOrder
   function compareByDesiredOrder(a: UsersInterface, b: UsersInterface) {
     const nameA = `${a.first_name} ${a.last_name}`;
