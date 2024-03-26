@@ -48,7 +48,7 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
 
 
   const category = {
-    flats: 'Квартиры',
+    flats: 'Квартира',
     lands: 'Земельные участки',
     'houses-and-cottages': 'Дома, дачи, коттеджи',
   };
