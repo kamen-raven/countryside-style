@@ -11,7 +11,7 @@ const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({
 
 
   const titleText = {
-    flats: 'Квартира',
+    flats: 'Квартиры',
     lands: 'Земельные участки',
     'houses-and-cottages': 'Дома, дачи, коттеджи',
     villages: 'Коттеджные поселки'

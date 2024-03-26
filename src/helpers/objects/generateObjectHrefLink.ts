@@ -2,7 +2,7 @@ import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 
 function generateObjectHrefLink(object: RealEstateObjectInterface) {
   const setCategoryType = {
-    Квартира: "flats",
+    Квартиры: "flats",
     "Земельные участки": "lands",
     "Дома, дачи, коттеджи": "houses-and-cottages",
   };
