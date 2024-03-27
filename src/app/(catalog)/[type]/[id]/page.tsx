@@ -40,7 +40,7 @@ export default async function CardType({ params }: { params: { id: string, type:
 
   // Получаем массив объектов "Похожие объекты"
   const objectsIsLike = await getObjectsIsLike(currentObject.uuid);
-  console.log(objectsIsLike);
+  //console.log(objectsIsLike);
 
   // Создаем массив промисов для каждого запроса getObjectByID
   const objectsPromises = objectsIsLike.map(async (obj) => {
@@ -50,10 +50,8 @@ export default async function CardType({ params }: { params: { id: string, type:
 
   // Ждем завершения всех запросов
   const commonObjects = await Promise.all(objectsPromises);
-
-  // Теперь у вас есть массив объектов, которые можно отрисовать
-  console.log(`commonObjects:${commonObjects}`);
-  console.log(commonObjects);
+  //console.log(`commonObjects:${commonObjects}`);
+  //console.log(commonObjects);
 
 
   return (

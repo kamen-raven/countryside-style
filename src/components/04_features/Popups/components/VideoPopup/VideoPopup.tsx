@@ -2,15 +2,15 @@
 
 import React from 'react';
 import styles from './VideoPopup.module.scss';
-import useVideoPopupStore from '~store/useVideoPopupStore.ts';
-import { useToggleMainPopupStore } from '~store/useTogglePopupStore';
+import useVideoPopupStore from '~store/popupsStore/useVideoPopupStore';
+import { useToggleMainPopupStore } from '~store/popupsStore/useTogglePopupStore';
 
 
 const VideoPopup: React.FC = () => {
   const videoLink = useVideoPopupStore((state) => state.popupVideoLink);
   const isOpen = useToggleMainPopupStore((state) => state.isOpen);
 
-  console.log(videoLink);
+  //console.log(videoLink);
 
   return (
     <div className={styles.innerContainer}>

@@ -45,41 +45,39 @@ export default function useReactMarkdown(
             </span>,
           /*  */
           h1: ({ children }) =>
-            <h1 className = {markdownStyles.h1}>
+            <h1 className={markdownStyles.h1}>
               {children}
             </h1>,
           h2: ({ children }) =>
-            <h2 className = {markdownStyles.h2}>
+            <h2 className={markdownStyles.h2}>
               {children}
             </h2>,
           h3: ({ children }) =>
-            <h3 className = {markdownStyles.h3}>
+            <h3 className={markdownStyles.h3}>
               {children}
             </h3>,
           blockquote: ({ children }) =>
-            <blockquote className = {markdownStyles.blockquote}>
-
-                {children}
-      
+            <blockquote className={markdownStyles.blockquote}>
+              {children}
             </blockquote>,
           del: ({ children }) =>
-            <del className = {markdownStyles.del}>
+            <del className={markdownStyles.del}>
               {children}
             </del>,
           ul: ({ children }) =>
-            <ul className = {markdownStyles.ul}>
+            <ul className={markdownStyles.ul}>
               {children}
             </ul>,
           ol: ({ children }) =>
-            <ol className = {markdownStyles.ol}>
+            <ol className={markdownStyles.ol}>
               {children}
             </ol>,
           li: ({ children }) =>
-            <li className = {markdownStyles.li}>
+            <li className={markdownStyles.li}>
               {children}
             </li>,
           a: ({ children }) =>
-            <a className = {markdownStyles.a}>
+            <a className={markdownStyles.a}>
               {children}
             </a>,
         }} />

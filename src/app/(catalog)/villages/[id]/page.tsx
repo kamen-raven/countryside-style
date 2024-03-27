@@ -25,14 +25,14 @@ export const metadata: Metadata = {
 export async function generateStaticParams() {
   const villages = await getAllVillages(); // получаем все объекты
   /* формируем массив ID объектов для адресной строки */
-  const idList: { id: string}[] = villages.map((obj: VillageObjectInterface) => ({ id: obj.id.toString()}));
+  const idList: { id: string }[] = villages.map((obj: VillageObjectInterface) => ({ id: obj.id.toString() }));
   return idList;
 }
 
 
-export default async function VillageType({ params }:  {params: {id: string, type: 'villages' }}) {
+export default async function VillageType({ params }: { params: { id: string, type: 'villages' } }) {
   const villages = await getAllVillages(); // получаем все объекты
-    // сравниваем и находим нужный объект из массива объектов по ID
+  // сравниваем и находим нужный объект из массива объектов по ID
   const idCurrentObj = villages.find(obj => obj.id.toString() === params.id);
 
   // если такого нет, то кидаем 404
@@ -47,20 +47,18 @@ export default async function VillageType({ params }:  {params: {id: string, typ
 
   // Получаем массив объектов "Объекты в поселке"
   const objectsInVillage = await getObjectsInVillages(currentVillage.uuid);
-  console.log(objectsInVillage);
+  //console.log(objectsInVillage);
 
-// Создаем массив промисов для каждого запроса getObjectByID
-const objectsInVillagePromises = objectsInVillage.map(async (obj) => {
-  const object = await getObjectByID(obj.re_object_in_villages);
-  return object;
-});
+  // Создаем массив промисов для каждого запроса getObjectByID
+  const objectsInVillagePromises = objectsInVillage.map(async (obj) => {
+    const object = await getObjectByID(obj.re_object_in_villages);
+    return object;
+  });
 
-// Ждем завершения всех запросов
-const allObjectsInVillage = await Promise.all(objectsInVillagePromises);
-
-// Теперь у вас есть массив объектов, которые можно отрисовать
-console.log(`allObjectsInVillage:${allObjectsInVillage}`);
-console.log(allObjectsInVillage);
+  // Ждем завершения всех запросов
+  const allObjectsInVillage = await Promise.all(objectsInVillagePromises);
+  //console.log(`allObjectsInVillage:${allObjectsInVillage}`);
+  //console.log(allObjectsInVillage);
 
 
 

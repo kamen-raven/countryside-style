@@ -2,8 +2,8 @@
 import React from 'react';
 
 import { VideoPopupButtonInterface } from './VideoPopupButton.interface';
-import { useToggleMainPopupStore } from '~store/useTogglePopupStore';
-import useVideoPopupStore from '~store/useVideoPopupStore';
+import { useToggleMainPopupStore } from '~store/popupsStore/useTogglePopupStore';
+import useVideoPopupStore from '~store/popupsStore/useVideoPopupStore';
 import formatIframeSrc from '~helpers/formatters/formatIframeSrc';
 
 

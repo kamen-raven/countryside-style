@@ -20,5 +20,10 @@ export const PATH_API = {
   blog: {
     allPosts: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/post/',
     byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/post/'
+  },
+  applicationsFeedback: {
+    allApplicationsFeedback: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/applications/',
+    postApplicationFeedback: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/applications/',
+    byID: process.env.NEXT_PUBLIC_DOMAIN + '/api/v1/applications/'
   }
 };

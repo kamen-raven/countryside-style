@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { OpenPopupButtonInterface } from './OpenPopupButton.interface';
-import { useToggleMainPopupStore } from '~store/useTogglePopupStore';
+import { useToggleMainPopupStore } from '~store/popupsStore/useTogglePopupStore';
 
 
 const OpenPopupButton: React.FC<OpenPopupButtonInterface> = ({ type, className, children }) => {

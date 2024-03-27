@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './TitleHead.module.scss';
-import { differenceInYears } from 'date-fns';
+import differenceInYears from 'date-fns/differenceInYears';
 
 
 const TitleHead: React.FC = () => {

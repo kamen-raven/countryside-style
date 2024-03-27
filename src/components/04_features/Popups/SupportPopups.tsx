@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { PopupTemplateComponent, ReviewImagePopup, SuccessMessagePopup } from './components';
-import { useToggleSupportPopupStore } from '~store/useTogglePopupStore';
+import { useToggleSupportPopupStore } from '~store/popupsStore/useTogglePopupStore';
 
 
 const SupportPopups: React.FC = () => {

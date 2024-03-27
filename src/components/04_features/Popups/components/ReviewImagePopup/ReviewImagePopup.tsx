@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './ReviewImagePopup.module.scss';
-import useReviewPopupStore from '~store/useReviewPopupStore';
+import useReviewPopupStore from '~store/popupsStore/useReviewPopupStore';
 import Image from 'next/image';
 
 const ReviewImagePopup: React.FC = () => {

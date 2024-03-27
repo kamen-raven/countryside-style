@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LabelNew.module.scss';
 import { LabelNewInterface } from './LabelNew.interface.ts';
-import { differenceInCalendarDays } from 'date-fns';
+import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 
 const LabelNew: React.FC<LabelNewInterface> = ({ createdAt }) => {
   const currentDate = new Date();

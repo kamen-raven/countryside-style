@@ -1,5 +1,5 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { MainPopupState, SupportPopupState } from '~store/useTogglePopupStore';
+import { MainPopupState, SupportPopupState } from '~store/popupsStore/useTogglePopupStore';
 
 export interface PopupTemplateComponentInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   isOpened: boolean;

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ContactUsFormPopup, PopupTemplateComponent, ReviewFormPopup, ReviewFullPopup, ReviewImagePopup, VideoPopup } from './components';
-import { useToggleMainPopupStore } from '~store/useTogglePopupStore';
+import { useToggleMainPopupStore } from '~store/popupsStore/useTogglePopupStore';
 
 
 const MainPopups: React.FC = () => {

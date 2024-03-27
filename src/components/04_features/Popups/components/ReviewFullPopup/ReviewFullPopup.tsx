@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './ReviewFullPopup.module.scss';
 import { ReviewCardFull } from '~common/ReviewsBlock/components';
-import useReviewPopupStore from '~store/useReviewPopupStore';
+import useReviewPopupStore from '~store/popupsStore/useReviewPopupStore';
 
 
 const ReviewFullPopup: React.FC = () => {

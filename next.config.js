@@ -14,10 +14,18 @@ module.exports = {
       },
       {
         protocol: 'http',
-        hostname: 'admin.zagorod-style.ru',
+        hostname: '**.zagorod-style.ru',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.zagorod-style.ru',
       },
       {
         protocol: 'http',
+        hostname: 'zagorod-style.ru',
+      },
+      {
+        protocol: 'https',
         hostname: 'zagorod-style.ru',
       },
     ],
