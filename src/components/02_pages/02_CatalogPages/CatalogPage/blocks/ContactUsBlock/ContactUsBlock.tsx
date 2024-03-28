@@ -46,7 +46,10 @@ const ContactUsBlock: React.FC<ContactUsBlockInterface> = ({ generalContactsData
 
             <ul className={styles.contactsList}>
               <li className={`${styles.contactItem}`}>
-                <Link className={styles.contactItem__link} href={generalContactsData.contacts.telegram}>
+                <Link className={styles.contactItem__link}
+                  href={generalContactsData.contacts.telegram}
+                  target='_blank'
+                  rel='noopener noreferrer'>
                   Telegram
                   <span className={styles.contactItem__icon}>
                     <TelegramIcon />
@@ -54,7 +57,10 @@ const ContactUsBlock: React.FC<ContactUsBlockInterface> = ({ generalContactsData
                 </Link>
               </li>
               <li className={`${styles.contactItem}`}>
-                <Link className={styles.contactItem__link} href={generalContactsData.contacts.whatsapp}>
+                <Link className={styles.contactItem__link}
+                  href={generalContactsData.contacts.whatsapp}
+                  target='_blank'
+                  rel='noopener noreferrer'>
                   WhatsApp
                   <span className={styles.contactItem__icon}>
                     <WhatsappIcon />

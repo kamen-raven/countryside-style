@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
 
 import styles from './RequestFormComponent.module.scss';
 import { RequestFormComponentInterface } from './RequestFormComponent.interface';
@@ -8,12 +7,12 @@ import { RequestFormComponentInterface } from './RequestFormComponent.interface'
 import useFormRequestStore from '~store/formsStore/useFormRequestStore';
 import { postApplicationFeedback } from '~api/ApplicationsFeedback/postApplicationFeedback';
 import { useToggleMainPopupStore, useToggleSupportPopupStore } from '~store/popupsStore/useTogglePopupStore';
-
+import { PersonalAgreementElement } from '../elements';
 
 const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
   // Состояния для значений полей формы
   const question = useFormRequestStore((state) => state.text);
-  const setQuestion= useFormRequestStore((state) => state.actions.setText);
+  const setQuestion = useFormRequestStore((state) => state.actions.setText);
 
   const name = useFormRequestStore((state) => state.applicant);
   const setName = useFormRequestStore((state) => state.actions.setApplicant);
@@ -102,11 +101,7 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
         type={"submit"}>
         Отправить вопрос
       </button>
-      <span className={styles.agreement}>
-        Нажимая на кнопку, вы даете свое согласие&nbsp;
-        <Link className={styles.agreement} href={`/personal`}>на&nbsp;обработку персональных данных
-        </Link>
-      </span>
+      <PersonalAgreementElement/>
     </form>
   );
 };

@@ -70,7 +70,9 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
 
     <div className={`${styles.itemBorder} ${setLinkStyle[colorSchema].border}`}>
       <Link className={`${styles.itemLink} ${setLinkStyle[colorSchema].fontColor}`}
-        href={setLinkType.data[messenger] && setLinkType.data[messenger]}>
+        href={setLinkType.data[messenger] && setLinkType.data[messenger]}
+        target='_blank'
+        rel='noopener noreferrer'>
         {setLinkType.text[messenger]}
         <span className={`${styles.itemIcon} ${setBackgroundColor}`}>
           {setLinkType.icon[messenger]}

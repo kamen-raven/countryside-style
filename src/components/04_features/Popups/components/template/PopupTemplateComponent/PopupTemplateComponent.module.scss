@@ -41,6 +41,9 @@
 
   &_form {
     max-width: clamp(550px, 33.3%, 640px);
+    & a {
+      color: $dark;
+    }
   }
 
   &_reviewFull {

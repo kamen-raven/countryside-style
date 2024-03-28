@@ -23,7 +23,6 @@ const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
     successMessage: styles.popupContainer_form,
     errorMessage: styles.popupContainer_form,
     videoPopup: styles.popupContainer_video,
-    privacyPolity: ''
   };
 
 /* Навешиваем слушатель на закрытие попапа по ESC */

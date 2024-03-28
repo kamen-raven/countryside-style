@@ -40,7 +40,9 @@ const LinkReviewLinkElement: React.FC<LinkReviewLinkElementInterface> = ({ data 
     data.link_to_src &&
 
     <Link className={`${styles.link}`}
-      href={data.link_to_src}>
+      href={data.link_to_src}
+      target='_blank'
+      rel='noopener noreferrer'>
       <span className = {styles.buttonText}>
         Оригинал отзыва
       </span>

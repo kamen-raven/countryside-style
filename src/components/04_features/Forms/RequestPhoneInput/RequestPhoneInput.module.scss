@@ -29,10 +29,6 @@
   }
 
   &__agreement {
-    @include common-paragraph(pSm,
-    $color: $white,
-    $line-height: 180%,
-    $font-weight: $regular);
     grid-column: 1 / 3;
   }
 }

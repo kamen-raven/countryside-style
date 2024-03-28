@@ -3,6 +3,7 @@ import styles from './ReviewFormComponent.module.scss';
 import Link from 'next/link';
 
 import AddButtonIcon from '~svg/button/add.svg';
+import { PersonalAgreementElement } from '../elements';
 
 const ReviewFormComponent: React.FC = () => {
   return (
@@ -44,8 +45,8 @@ const ReviewFormComponent: React.FC = () => {
         <button className={styles.buttonImg}
           type={"submit"}>
           Прикрепить фото
-          <span className = {styles.icon}>
-            <AddButtonIcon/>
+          <span className={styles.icon}>
+            <AddButtonIcon />
           </span>
         </button>
         <button className={styles.buttonSubmit}
@@ -53,15 +54,7 @@ const ReviewFormComponent: React.FC = () => {
           Отправить отзыв
         </button>
       </div>
-
-
-
-      <span className={styles.agreement}>
-        Нажимая на кнопку, вы даете свое согласие&nbsp;
-        <Link className={styles.agreement} href={`/personal`}>
-          на&nbsp;обработку персональных данных
-        </Link>
-      </span>
+      <PersonalAgreementElement/>
     </form>
   );
 };

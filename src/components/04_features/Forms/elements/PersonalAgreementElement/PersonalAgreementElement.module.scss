@@ -1,0 +1,9 @@
+@import '~global_styles';
+
+.agreement {
+  display: inline-block;
+
+  @include common-paragraph(pSm,
+    $font-weight: $regular,
+    $color: $white);
+}

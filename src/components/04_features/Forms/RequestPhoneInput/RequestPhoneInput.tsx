@@ -7,6 +7,7 @@ import { RequestPhoneInputInterface } from './RequestPhoneInput.interface.ts';
 import { postApplicationFeedback } from '~api/ApplicationsFeedback/postApplicationFeedback.tsx';
 import useFormRequestStore from '~store/formsStore/useFormRequestStore.ts';
 import { useToggleSupportPopupStore } from '~store/popupsStore/useTogglePopupStore.ts';
+import { PersonalAgreementElement } from '../elements/index.ts';
 
 
 const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, nameForm }) => {
@@ -62,12 +63,7 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
       <button className={styles.requestForm__button} type={"submit"}>
         {buttonText}
       </button>
-      <p className={styles.requestForm__agreement}>
-        Нажимая на кнопку, вы даете свое согласие на&nbsp;
-        <Link className={styles.requestForm__agreement} href={`/personal`}>
-          обработку персональных данных
-        </Link>
-      </p>
+      <PersonalAgreementElement className={styles.requestForm__agreement}/>
     </form>
   );
 };

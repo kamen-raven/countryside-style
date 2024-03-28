@@ -77,11 +77,3 @@
   @include common-button(colored);
   width: fit-content;
 }
-
-.agreement {
-  display: inline-block;
-
-  @include common-paragraph(pSm,
-    $font-weight: $regular,
-    $color: $white);
-}

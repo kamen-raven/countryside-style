@@ -41,7 +41,9 @@ const ReviewsButtonsElement: React.FC = () => {
           return (
             <li key={index} className={`${styles.contactItem} ${styles.contactItem__telegram}`}>
               <Link className={styles.contactItem__link}
-                href={item.link}>
+                href={item.link}
+                target='_blank'
+                rel='noopener noreferrer'>
                 {item.text}
                 <span className={`${styles.contactItem__icon} ${buttonType.style[item.type as keyof ButtonType]}`}>
                   {setButtonType(item.type)}

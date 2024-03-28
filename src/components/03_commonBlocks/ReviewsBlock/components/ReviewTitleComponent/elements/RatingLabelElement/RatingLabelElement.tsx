@@ -12,7 +12,7 @@ const RatingLabelElement: React.FC<RatingLabelElementInterface> = ({ service }) 
 
   const setService = {
     cian: {
-      link: '',
+      link: '',   //?
       icon: <CianLogo />,
       rating: '5,0'
     },
@@ -24,7 +24,10 @@ const RatingLabelElement: React.FC<RatingLabelElementInterface> = ({ service }) 
   };
 
   return (
-    <Link href={setService[service].link} className={styles.container}>
+    <Link href={setService[service].link}
+      className={styles.container}
+      target='_blank'
+      rel='noopener noreferrer'>
       {setService[service].icon}
       <div className={styles.innerContainer}>
         <span className={styles.rating}>
@@ -33,9 +36,9 @@ const RatingLabelElement: React.FC<RatingLabelElementInterface> = ({ service }) 
         <div className={styles.rateIcon}>
           {[...Array(5)].map((_, index) => {
             return (
-            <RatingStar key={index} />
+              <RatingStar key={index} />
             );
-              })}
+          })}
         </div>
       </div>
     </Link>

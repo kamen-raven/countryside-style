@@ -22,7 +22,9 @@ const AddressElement: React.FC<AddressElementInterface> = ({ addressInfoData }) 
       <ul className={styles.contactsList}>
         <li className={`${styles.contactItem} ${styles.contactItem__telegram}`}>
           <Link className={styles.contactItem__link}
-            href={addressInfoData.contacts.telegram}>
+            href={addressInfoData.contacts.telegram}
+            target='_blank'
+            rel='noopener noreferrer'>
             Telegram
             <span className={styles.contactItem__icon}>
               <TelegramIcon />
@@ -31,7 +33,9 @@ const AddressElement: React.FC<AddressElementInterface> = ({ addressInfoData }) 
         </li>
         <li className={`${styles.contactItem} ${styles.contactItem__whatsapp}`}>
           <Link className={styles.contactItem__link}
-            href={addressInfoData.contacts.whatsapp}>
+            href={addressInfoData.contacts.whatsapp}
+            target='_blank'
+            rel='noopener noreferrer'>
             WhatsApp
             <span className={styles.contactItem__icon}>
               <WhatsappIcon />
@@ -40,7 +44,9 @@ const AddressElement: React.FC<AddressElementInterface> = ({ addressInfoData }) 
         </li>
         <li className={`${styles.contactItem} ${styles.contactItem__vkontakte}`}>
           <Link className={styles.contactItem__link}
-            href={addressInfoData.contacts.vkontakte}>
+            href={addressInfoData.contacts.vkontakte}
+            target='_blank'
+            rel='noopener noreferrer'>
             Все свежие объекты смотри в нашей группе ВК
             <span className={styles.contactItem__icon}>
               <VkontakteIcon />
