@@ -17,21 +17,30 @@ const AddressComponent: React.FC<AddressComponentInterface> = ({ data }) => {
 
       <ul className={styles.contactsList}>
         <li className={`${styles.contactItem}`}>
-          <Link className={styles.contactItem__link} href={data.contacts.telegram}>
+          <Link className={styles.contactItem__link}
+            href={data.contacts.telegram}
+            rel="noopener noreferrer"
+            target='_blank'>
             <span className={styles.contactItem__icon}>
               <TelegramIcon />
             </span>
           </Link>
         </li>
         <li className={`${styles.contactItem}`}>
-          <Link className={styles.contactItem__link} href={data.contacts.whatsapp}>
+          <Link className={styles.contactItem__link}
+            href={data.contacts.whatsapp}
+            rel="noopener noreferrer"
+            target='_blank'>
             <span className={styles.contactItem__icon}>
               <WhatsappIcon />
             </span>
           </Link>
         </li>
         <li className={`${styles.contactItem}`}>
-          <Link className={styles.contactItem__link} href={data.contacts.vkontakte}>
+          <Link className={styles.contactItem__link}
+            href={data.contacts.vkontakte}
+            rel="noopener noreferrer"
+            target='_blank'>
             <span className={styles.contactItem__icon}>
               <VkontakteIcon />
             </span>
