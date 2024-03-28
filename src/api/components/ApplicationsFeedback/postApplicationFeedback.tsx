@@ -14,20 +14,19 @@ export async function postApplicationFeedback(text: string, applicant: string, c
 
     const res = await fetch(url, {
       method: 'POST',
-      headers: {}, /*  new Headers({
-          'content-type': 'multipart/form-data'
-
-        }),  */// Не устанавливаем заголовок Content-Type, т.к. он будет автоматически установлен как multipart/form-data
+      headers: {
+        // Не устанавливаем заголовок Content-Type, т.к. он будет автоматически установлен как multipart/form-data
+      },
       body: formData,
     });
 
     if (!res.ok) { // Обработка случаев, когда запрос вернулся неуспешным статусом
-      throw new Error(`Error fetching data in postData. Status: ${res.status}`);
+      throw new Error(`Error fetching data in postApplicationFeedback. Status: ${res.status}`);
     }
 
     return res.json(); // Возвращаем JSON ответ
   } catch (error) { // Обработка других ошибок
-    console.error('Error in postData:', error);
+    console.error('Error in postApplicationFeedback:', error);
     throw error;
   }
 }

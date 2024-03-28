@@ -5,6 +5,8 @@ import CallIcon from '~svg/contacts/call.svg';
 
 import Image from 'next/image';
 import { OpenPopupButton } from '~shared/index.ts';
+import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
+import Link from 'next/link';
 
 const SellerElement: React.FC<SellerElementInterface> = ({ agentData }) => {
 
@@ -12,24 +14,30 @@ const SellerElement: React.FC<SellerElementInterface> = ({ agentData }) => {
 
   return (
     <div className={styles.sellerElement}>
-      <div className = {styles.sellerPhoto}>
+      <div className={styles.sellerPhoto}>
         <Image
-        className = {styles.sellerPhoto_img}
-        width={120}
-        height={120}
-        src={agentData.avatars[0].image}
-        alt={`${agentData.first_name} ${agentData.last_name}`} />
+          className={styles.sellerPhoto_img}
+          width={120}
+          height={120}
+          src={agentData.avatars[0].image}
+          alt={`${agentData.first_name} ${agentData.last_name}`} />
       </div>
 
       <div className={styles.sellerContainer}>
-        <p className = {styles.name}>
+        <p className={styles.name}>
           {agentData.first_name}&nbsp;{agentData.last_name}
         </p>
-        <p className = {styles.description}>
+        <p className={styles.description}>
           {agentData.job_title}    {/* //? выводить или не выводить? */}
         </p>
+        {agentData.phone_number &&
+          <Link className={styles.telNumber}
+            href={`tel: ${agentData.phone_number}`}>
+            {formatPhoneNumber(agentData.phone_number)}
+          </Link>
+        }
         <OpenPopupButton className={`${styles.contactButton}`}
-        type={'contactForm'}>
+          type={'contactForm'}>
           Заказать звонок
           <span className={styles.contactButton__icon}>
             <CallIcon />

@@ -6,22 +6,24 @@ import styles from './VillageCardComponent.module.scss';
 import { VillageCardComponentInterface } from './VillageCardComponent.interface.ts';
 import ArrowIcon from '~svg/button/arrow.svg';
 import { /* LabelNew,  */YoutubeLabel } from '~shared/index.ts';
+import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 
 
 const VillageCardComponent: React.FC<VillageCardComponentInterface> = ({ item, typePage }) => {
 
 
   const hrefLink = `/${typePage}/${item.id}`;
+  const picturesArray = formatPhotosArray(item);
 
 
   return (
     <div key={item.uuid} className={styles.cardWrapper}>
       <div className={styles.imageBlock}>
         <Link className={`${styles.link} ${styles.link_image}`} href={hrefLink}>
-          {item.photo_images[0] &&
+          {picturesArray &&
             <Image
               className={styles.image}
-              src={item.photo_images[0].image}
+              src={picturesArray[0].image}
               alt={item.name}
               width={460}
               height={350}
@@ -29,7 +31,7 @@ const VillageCardComponent: React.FC<VillageCardComponentInterface> = ({ item, t
           }
         </Link>
 {/*         <LabelNew createdAt={item.created_at} /> */}
-      <YoutubeLabel link={item.you_tube_link} />  
+      <YoutubeLabel link={item.you_tube_link} />
       </div>
 
       <div className={`${styles.infoBlock}`}>
@@ -58,7 +60,7 @@ const VillageCardComponent: React.FC<VillageCardComponentInterface> = ({ item, t
                 <p className={styles.status}>
                   Площадь домов&nbsp;от&nbsp;
                   <span className={styles.status_bold}>
-                    {item.area_of_houses}
+                    {item.area_of_houses} кв.м
                   </span>
                 </p>
               </>

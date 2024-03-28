@@ -23,11 +23,11 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
       </h1>
 
       {/* //* УЧАСТОК / УЧАСТКИ */}
-      {isRealEstateObject(data) ?
-        (data.area_plot && /* //? для домов / земельных участков */
+      {isRealEstateObject(data) ? null
+/*         (data.area_plot &&  //? для домов / земельных участков
           <p className={styles.squareArea}>
             Участок: {data.area_plot} {data.land_area_measurement}
-          </p>)
+          </p>) */
         :
         (data.area_of_plot &&  /* //? Для коттеджных поселков */
           <p className={styles.squareArea}>

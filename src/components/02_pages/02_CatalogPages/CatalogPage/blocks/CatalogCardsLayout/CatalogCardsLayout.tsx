@@ -7,7 +7,7 @@ import { CatalogCardComponent, CardItemPagination } from '~entities/index.ts';
 import usePaginationCounter from '~hooks/usePaginationCounter.ts';
 
 
-const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ objectsData }) => {
+const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ typePage, objectsData }) => {
   const itemsPerPage = 6;  //! количество объектов на странице
 
 
@@ -26,7 +26,7 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ objectsData
       <div ref={parentRef} className={styles.cardsLayout}>
 
         {currentItems.map((item) => (
-          <CatalogCardComponent key={item.id} item={item} />
+          <CatalogCardComponent key={item.id} item={item} typePage={typePage} />
         ))}
       </div>
 

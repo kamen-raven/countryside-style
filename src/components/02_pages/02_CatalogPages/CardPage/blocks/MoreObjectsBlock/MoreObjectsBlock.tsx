@@ -22,7 +22,7 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObj
           {(commonObjects && typePage !== 'villages') &&
             commonObjects.map((obj) => {
               return (
-                <CatalogCardComponent key={obj.uuid} item={obj}  />
+                <CatalogCardComponent key={obj.uuid} item={obj} typePage={typePage}  />
               );
             })
           }
@@ -30,7 +30,7 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObj
           {(commonObjects && typePage === 'villages') &&
             commonObjects.map((obj) => {
               return (
-                <CatalogCardComponent key={obj.uuid} item={obj}  />
+                <CatalogCardComponent key={obj.uuid} item={obj} typePage={'villages'}  />
                /*  <VillageCardComponent key={obj.uuid} item={obj} typePage={typePage} /> */
               );
             })

@@ -29,7 +29,7 @@ const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, villagesDa
         }
 
         {(villagesData && typePage === 'villages') &&
-          <VillagesCardsLayout villagesData={villagesData} typePage={typePage} />
+          <VillagesCardsLayout typePage={typePage} villagesData={villagesData} />
         }
       </div>
 

@@ -3,12 +3,13 @@ import Image from 'next/image';
 
 import styles from './InfoHead.module.scss';
 
-import { BackgroundSVGPattern, RequestPhoneInput } from '~shared/index';
+import { BackgroundSVGPattern } from '~shared/index';
 import SecondImg from '~img/headBlock/second.jpg';
 
 import BackgroundPatternLeft from '~svg/background/backgroundTitleHeadLeftSide.svg';
 import BackgroundPatternRight from '~svg/background/backgroundTitleHeadRightSide.svg';
 import { AwardInfoElement } from './AwardInfoElement/AwardInfoElement';
+import { RequestPhoneInput } from '~features/Forms';
 
 
 
@@ -52,7 +53,7 @@ const InfoHead: React.FC = () => {
           <p className={styles.requestForm__description}>
             Оставьте заявку<br /> на&nbsp;БЕСПЛАТНУЮ консультацию
           </p>
-          <RequestPhoneInput nameForm={''} buttonText={'Оставить заявку'} />
+          <RequestPhoneInput nameForm={'InfoHeadPhoneInput'} buttonText={'Оставить заявку'} />
         </div>
       </div>
 

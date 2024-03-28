@@ -6,22 +6,23 @@ import styles from './CatalogCardComponent.module.scss';
 import { CatalogCardComponentInterface } from './CatalogCardComponent.interface.ts';
 import ArrowIcon from '~svg/button/arrow.svg';
 import { LabelNew, YoutubeLabel } from '~shared/index.ts';
+import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 import generateObjectHrefLink from '~helpers/objects/generateObjectHrefLink.ts';
 
 
-const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item }) => {
-  const typePage = generateObjectHrefLink(item);
-  const hrefLink = typePage !== undefined ? `/${typePage}/${item.id}` : '/'; // генерируем ссылку на карточку объекта
-
+const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, typePage }) => {
+  const getType = generateObjectHrefLink(item);
+  const hrefLink = getType !== undefined ? `/${getType}/${item.id}` : '/'; // генерируем ссылку на карточку объекта
+  const picturesArray = formatPhotosArray(item);
 
   return (
     <div key={item.uuid} className={styles.cardWrapper}>
       <div className={styles.imageBlock}>
         <Link className={`${styles.link} ${styles.link_image}`} href={hrefLink}>
-        {item.photo_images[0] &&
+        {picturesArray &&
           <Image
             className={styles.image}
-            src={item.photo_images[0].image}
+            src={picturesArray[0].image}
             alt={item.name}
             width={460}
             height={350}
@@ -43,20 +44,20 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
             {item.area_house &&
               <>
                 <p className={styles.status}>
-                  {item.type_house}&nbsp;
+                  {item.type_house}
                   <span className={styles.status_bold}>
-                    {item.area_house}&nbsp;кв.м.
+                    {item.area_house}&nbsp;кв.м
                   </span>
                 </p>
               </>
             }
 
-            {item.area_flat &&
+            {(typePage === 'flats' || item.area_flat) &&
               <>
                 <p className={styles.status}>
-                  {item.type_house}&nbsp;
+                  S&nbsp;=&nbsp;
                   <span className={styles.status_bold}>
-                    {item.area_flat}&nbsp;кв.м.
+                    {item.area_flat}&nbsp;кв.м
                   </span>
                 </p>
               </>
@@ -68,7 +69,7 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item })
               </>
             }
 
-            {item.area_plot &&
+            {(item.area_plot && typePage !== 'lands') &&
               <>
                 <p className={styles.status}>
                   Участок&nbsp;

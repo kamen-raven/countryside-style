@@ -1,16 +1,15 @@
-'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './PriceElement.module.scss';
 import { PriceElementInterface } from './PriceElement.interface.ts';
-import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
+/* import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
 import Link from 'next/link';
-import { OpenPopupButton } from '~shared/index.ts';
+import { OpenPopupButton } from '~shared/index.ts'; */
 
-const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData, typePage }) => {
-  const [showNum, setShowNum] = useState(false);
+const PriceElement: React.FC<PriceElementInterface> = ({ objectData, /* agentData, */ typePage }) => {
+/*   const [showNum, setShowNum] = useState(false);
+ */
 
-
-  const showNumber = () => {
+/*   const showNumber = () => {
     if (!showNum) {
       return (
         <button className={`${styles.button} ${styles.button__call}`}
@@ -34,11 +33,11 @@ const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData, 
         </div>
       );
     }
-  };
+  }; */
 
-  const showNumberHandler = () => {
+/*   const showNumberHandler = () => {
     setShowNum(!showNum);
-  };
+  }; */
 
   return (
     <div className={styles.priceElement}>
@@ -58,7 +57,7 @@ const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData, 
       <p className={styles.idNum}>
         ID {objectData.id}
       </p>
-      <div className={styles.buttonContainer}>
+{/*       <div className={styles.buttonContainer}>
 
         {showNumber()}
 
@@ -66,7 +65,7 @@ const PriceElement: React.FC<PriceElementInterface> = ({ objectData, agentData, 
           type={'contactForm'}>
           Написать
         </OpenPopupButton>
-      </div>
+      </div> */}
     </div>
   );
 };

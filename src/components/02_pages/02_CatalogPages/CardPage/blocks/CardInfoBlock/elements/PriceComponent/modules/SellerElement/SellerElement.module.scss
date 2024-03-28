@@ -66,3 +66,8 @@
   }
 }
 
+.telNumber {
+  @include common-link;
+  @include common-paragraph(pXl,
+  $line-height: 120%);
+}

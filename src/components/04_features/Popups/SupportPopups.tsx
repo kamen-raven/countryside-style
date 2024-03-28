@@ -13,6 +13,7 @@ const SupportPopups: React.FC = () => {
   const popupType = {
     reviewImage: <ReviewImagePopup />,
     successMessage: <SuccessMessagePopup />,
+    errorMessage: <SuccessMessagePopup />,
     privacyPolity: <></>
   };
 

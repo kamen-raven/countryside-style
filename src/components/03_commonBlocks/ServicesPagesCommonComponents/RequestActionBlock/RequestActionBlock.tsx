@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './RequestActionBlock.module.scss';
 import { RequestActionBlockInterface } from './RequestActionBlock.interface.ts';
-import { RequestPhoneInput } from '~shared/index.ts';
+import { RequestPhoneInput } from '~features/Forms';
 
 
 const RequestActionBlock: React.FC<RequestActionBlockInterface> = ({ typePage, gridArea, nameForm }) => {

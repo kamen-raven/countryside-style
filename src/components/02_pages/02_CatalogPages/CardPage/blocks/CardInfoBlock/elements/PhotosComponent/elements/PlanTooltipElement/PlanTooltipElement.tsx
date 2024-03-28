@@ -11,7 +11,7 @@ const PlanTooltipElement: React.FC<PlanTooltipElementInterface> = ({ onClick }) 
 
   return (
     <button className={`${styles.imageInfoButton}`} onClick={onClick}>
-      Планировка
+      План
       <span className={styles.icon}>
         <PlanIcon />
       </span>

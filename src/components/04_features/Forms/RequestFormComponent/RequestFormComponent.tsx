@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 import styles from './RequestFormComponent.module.scss';
 import { RequestFormComponentInterface } from './RequestFormComponent.interface';
+
 import useFormRequestStore from '~store/formsStore/useFormRequestStore';
 import { postApplicationFeedback } from '~api/ApplicationsFeedback/postApplicationFeedback';
+import { useToggleMainPopupStore, useToggleSupportPopupStore } from '~store/popupsStore/useTogglePopupStore';
 
-/*
-const RequestFormComponent = ({ ...props }: RequestFormComponentProps): JSX.Element => { */
 
 const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
   // Состояния для значений полей формы
@@ -21,7 +21,13 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
   const phone = useFormRequestStore((state) => state.contact);
   const setPhone = useFormRequestStore((state) => state.actions.setContact);
 
-  const resetForm = useFormRequestStore((state) => state.actions.resetForm);
+  const resetForm = useFormRequestStore((state) => state.actions.resetForm); // сброс формы
+
+  // Состояния для попапов
+  const openSuccessPopup = useToggleSupportPopupStore((state) => state.actions.openPopup);
+  const closeContactFormPopup = useToggleMainPopupStore((state) => state.actions.closePopup);
+
+
 
 
   // Обработчик отправки формы
@@ -31,12 +37,21 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
     try {
       // Вызываем функцию отправки данных, передавая значения полей формы
       const response = await postApplicationFeedback(question, name, phone);
+
       console.log('Response:', response); // Выводим ответ сервера в консоль
       // Здесь можно добавить логику для обработки успешной отправки сообщения
-
       resetForm();
+      closeContactFormPopup();
+
+      if (response) {
+        openSuccessPopup('successMessage');
+      } else {
+        openSuccessPopup('errorMessage');
+      }
+
     } catch (error) {
       console.error('Error:', error); // Выводим ошибку в консоль
+      openSuccessPopup('errorMessage');
       // Здесь можно добавить логику для обработки ошибки при отправке сообщения
     }
   };
@@ -77,7 +92,6 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
         <label className={styles.label}>
           <textarea className={styles.textarea}
             name={'question'}
-            required
             placeholder={'Вопрос'}
             value={question}
             onChange={(e) => setQuestion(e.target.value)}>
