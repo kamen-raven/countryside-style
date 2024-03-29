@@ -1,0 +1,113 @@
+@import '~global_styles';
+
+.mainContainer {
+  @include mainPageContainer("privacyPolicy");
+}
+
+.wrapper {
+  grid-area: privacyPolicy;
+  z-index: 0;
+  position: relative;
+  padding: $padding-gap;
+}
+
+.backgroundRight {
+  opacity: .5;
+
+}
+
+.backgroundLeft {
+  opacity: .5;
+}
+
+
+.container {
+  @include mainContainer;
+  @include flexColumnGap();
+
+  z-index: 1;
+}
+
+.labelContainer {
+  display: flex;
+  align-items: baseline;
+}
+
+.label {
+  @include common-paragraph(p,
+    $color: $dark,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+  transition: all .3s linear;
+
+  &_link {
+    @extend .label;
+    text-decoration: underline;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $gray;
+      text-decoration: none;
+      transition: all .3s linear;
+    }
+  }
+
+  &_span {
+    padding: 0 .4em;
+  }
+}
+
+.title {
+  @include common-title(h1);
+}
+
+.subtitle {
+  @include common-title(hSmall);
+}
+
+.mainList {
+  @include common-ul;
+  @include flexColumnGap($gap: 1rem);
+  counter-reset: mainList;
+  list-style-type: none;
+
+
+  &__item {
+
+    @include flexColumnGap($gap: .5rem);
+    text-align: justify;
+    counter-increment: mainList;
+  & h2 {
+      &:before {
+        content: counters(mainList, ".") ". ";
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+.subList {
+  @include flexColumnGap($gap: .5rem);
+  text-align: justify;
+  counter-reset: subList;
+  list-style-type: none;
+
+  &__item {
+    @include common-paragraph(p,
+    $font-weight: $regular);
+    counter-increment: subList;
+
+    &:before {
+      content: counters(mainList, ".") "." counters(subList, ".") ". ";
+      font-weight: normal;
+    }
+  }
+}
+
+.returnLink {
+  @include common-button(colored);
+  text-decoration: none;
+  max-width: 280px;
+  margin: 0 auto;
+}

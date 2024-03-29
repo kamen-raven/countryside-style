@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './ReviewFormComponent.module.scss';
-import Link from 'next/link';
 
 import AddButtonIcon from '~svg/button/add.svg';
 import { PersonalAgreementElement } from '../elements';

@@ -8,6 +8,7 @@ export * from './02_CatalogPages/CardPage/CardPage';
 // 03_AboutCompanyPages
 export * from './03_AboutCompanyPages/AboutUsPage/AboutUsPage';
 export * from './03_AboutCompanyPages/ContactsPage/ContactsPage';
+export * from './03_AboutCompanyPages/PersonalAgreementPage/PersonalAgreementPage';
 
 
 // 04_ServicesPage

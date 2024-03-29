@@ -24,9 +24,9 @@ const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({
     <section className={styles.wrapper}>
       <BackgroundSVGPattern positionX={"right"} />
       <div className={styles.container}>
-        <h2 className={styles.title}>
+        <h1 className={styles.title}>
           {titleText[typePage]}
-        </h2>
+        </h1>
         <InfoTypeDescriptionLayout data={data} />
 
       </div>

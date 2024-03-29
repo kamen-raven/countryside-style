@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
 
 import styles from './RequestPhoneInput.module.scss';
 import { RequestPhoneInputInterface } from './RequestPhoneInput.interface.ts';

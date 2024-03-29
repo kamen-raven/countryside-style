@@ -20,7 +20,7 @@ const ReviewsTitleBlock: React.FC<ReviewsTitleBlockInterface> = ({ employeesData
       <BackgroundSVGPattern positionX='right' />
       <div className={styles.container}>
 
-        <ReviewTitleComponent className={styles.titleContainer} />
+        <ReviewTitleComponent className={styles.titleContainer} type={'review'} />
 
         <div className={styles.ownerContainer}>
           {employeesData.slice(0, 1).map((item, index) => {

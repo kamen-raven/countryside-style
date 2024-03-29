@@ -4,12 +4,18 @@ import { ReviewTitleComponentInterface } from './ReviewTitleComponent.interface'
 import { RatingLabelElement } from './elements/RatingLabelElement/RatingLabelElement';
 import { OpenPopupButton } from '~shared/index';
 
-const ReviewTitleComponent: React.FC<ReviewTitleComponentInterface> = ({className}) => {
+const ReviewTitleComponent: React.FC<ReviewTitleComponentInterface> = ({className, type}) => {
   return (
     <div className={`${styles.titleContainer} ${className}`}>
+      {type === 'review' ?
+      <h1 className={styles.title}>
+        Отзывы
+      </h1>
+      :
       <h2 className={styles.title}>
         Отзывы
       </h2>
+      }
       <div className={styles.reviewsContainer}>
         <RatingLabelElement service={'cian'} />
         <RatingLabelElement service={'yandex'} />
