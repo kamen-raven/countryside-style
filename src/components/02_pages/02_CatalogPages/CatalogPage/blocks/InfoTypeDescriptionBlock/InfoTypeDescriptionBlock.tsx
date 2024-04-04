@@ -9,7 +9,7 @@ import { InfoTypeDescriptionLayout } from './components/index.ts';
 
 import housesSEOText from '~utils/constants/TypeSEOText/TypeSEOText.ts';
 
-const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({ typePage }) => {
+const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = () => {
   const SEOTextData = housesSEOText;
 
   return (
