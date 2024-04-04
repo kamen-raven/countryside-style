@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 
 import Link from 'next/link';
- // ! доделать 
+ // ! доделать
 const CatalogCardItem: React.FC<CatalogCardItemInterface> = ({ item }) => {
 
 
@@ -51,7 +51,7 @@ const CatalogCardItem: React.FC<CatalogCardItemInterface> = ({ item }) => {
               {item.type}&nbsp;
               {/* {targetKey(item.status)}&nbsp; */}
               <span className={styles.status_bold}>
-                {item.characteristics.house?.squareHouse}&nbsp;кв.м.
+                {item.characteristics.house?.squareHouse}&nbsp;кв.м
               </span>
             </p>
             {item.characteristics.homestead?.squareArea &&

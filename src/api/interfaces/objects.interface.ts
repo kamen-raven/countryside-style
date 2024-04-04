@@ -72,7 +72,7 @@ interface ImageInterface {
 }
 
 interface DisplayPagesInterface {
-  display_pages: DisplayPageInterface[];
+  display_pages: DisplayPageInterface
 }
 interface DisplayPageInterface {
   uuid: string;

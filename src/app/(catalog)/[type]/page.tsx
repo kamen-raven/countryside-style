@@ -32,7 +32,7 @@ export async function generateStaticParams() {
 
 
 export default async function PageType({ params }: { params: { type: 'flats' | 'lands' | 'houses-and-cottages' } }) {
- /*  const getTypePage = (type: string) => { // проверяем параметры на соответствие категории объекта
+  /*  const getTypePage = (type: string) => { // проверяем параметры на соответствие категории объекта
     switch (type) {
       case 'flats':
         return 'Квартиры';
@@ -44,7 +44,7 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
         return null;
     }
   };
- */
+  */
 
 
   const category = {
@@ -64,11 +64,25 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
   const objectsType = await getObjects(); // получаем все объекты
 
 
-  const filterObjectsByCategory = (arr: RealEstateObjectInterface[], category: string) => {
-    return arr.filter(obj => obj.category === category);
-  };   // в этой функции мы берем те объекты, которые соответствуют нашему пути
-  const typeObjects = filterObjectsByCategory(objectsType, typePage);
-  // вызываем функцию соответствия и потом передаем это в пропсы в страницу
+  const filterObjectsByCategory = (arr: RealEstateObjectInterface[], category: string) => { // в этой функции мы берем те объекты, которые соответствуют нашему пути и сортируем их по стоимости от меньшей к большей
+    //* добавление по "Отображению на сайте".
+    // Используем метод filter для фильтрации массива объектов
+    const filteredObjects = arr.filter(object => {
+      // Используем метод some для проверки наличия объекта с заданной категорией в массиве display_pages
+      return object.display_pages.some(page => page.display_pages.value === category);
+    });
+    const sortedObjects = filteredObjects.sort((a, b) => a.price - b.price);  // сортируем полученный массив по стоимости от меньшей к большей
+    return sortedObjects;
+    //*
+
+    //? РАНЕЕ - Добавление сразу по категории
+    //return arr.filter(obj => obj.category === category).sort((a, b) => a.price - b.price);
+  };
+
+
+
+
+  const typeObjects = filterObjectsByCategory(objectsType, typePage); // вызываем функцию соответствия и потом передаем это в пропсы в страницу
 
 
 

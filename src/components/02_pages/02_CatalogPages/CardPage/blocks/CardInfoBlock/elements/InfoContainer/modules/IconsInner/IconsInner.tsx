@@ -50,8 +50,8 @@ const IconsInner: React.FC<IconsInnerInterface> = ({ data }) => {
   const characteristicsData: CharacteristicsInterface[] = [
     {
       objItem: {
-        SHouse: isRealEstateObject(data) ? data.area_house && `${data.area_house} кв.м.` : '', // площадь дома
-        SLiving: isRealEstateObject(data) ? data.living_area && `${data.living_area} кв.м.` : '', // жилая площадь
+        SHouse: isRealEstateObject(data) ? data.area_house && `${data.area_house} кв.м` : '', // площадь дома
+        SLiving: isRealEstateObject(data) ? data.living_area && `${data.living_area} кв.м` : '', // жилая площадь
         SArea: isRealEstateObject(data) ? data.area_plot && `${data.area_plot} ${data.land_area_measurement}` : '', // площадь участка
         RoomCount: isRealEstateObject(data) ? data.number_of_rooms : '', // количество комнат
         Floor: isRealEstateObject(data) ? data.floor : '', // этаж
@@ -60,8 +60,8 @@ const IconsInner: React.FC<IconsInnerInterface> = ({ data }) => {
         Communications: data.display_engineering_services && `${data.display_engineering_services.map((item, index) => {
           return (`${index + 1 > 1 ? ' ' : ''}${item.engineering_service}`);
         })}`,
-        SKitchen: isRealEstateObject(data) ? data.kitchen_area && `${data.kitchen_area} кв.м.` : '', // площадь кухни
-        DistanceToKad: data.distance_CAD && `${data.distance_CAD} км.`, // расстояние до КАД
+        SKitchen: isRealEstateObject(data) ? data.kitchen_area && `${data.kitchen_area} кв.м` : '', // площадь кухни
+        DistanceToKad: data.distance_CAD && `${data.distance_CAD} км`, // расстояние до КАД
       },
       icon: {
         SHouse: <icons.SHouseIcon />,  // площадь дома

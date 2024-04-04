@@ -1,50 +1,69 @@
 import React from 'react';
 import styles from './SellerElement.module.scss';
 import { SellerElementInterface } from './SellerElement.interface.ts';
-import CallIcon from '~svg/contacts/call.svg';
 
 import Image from 'next/image';
-import { OpenPopupButton } from '~shared/index.ts';
+
 import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
 import Link from 'next/link';
+import { getUserByID } from '~api/Users/getUserByID.tsx';
+import { PhoneNumber, ContactLink } from '~entities/index.ts';
 
-const SellerElement: React.FC<SellerElementInterface> = ({ agentData }) => {
+const SellerElement: React.FC<SellerElementInterface> = async ({ objectData }) => {
+  const agentData = objectData.display_agents.length > 0 ? await getUserByID(objectData.display_agents[0].employee) : undefined;
 
 
 
   return (
-    <div className={styles.sellerElement}>
-      <div className={styles.sellerPhoto}>
-        <Image
-          className={styles.sellerPhoto_img}
-          width={120}
-          height={120}
-          src={agentData.avatars[0].image}
-          alt={`${agentData.first_name} ${agentData.last_name}`} />
-      </div>
+    <>
+      {agentData &&
 
-      <div className={styles.sellerContainer}>
-        <p className={styles.name}>
-          {agentData.first_name}&nbsp;{agentData.last_name}
-        </p>
-        <p className={styles.description}>
-          {agentData.job_title}    {/* //? выводить или не выводить? */}
-        </p>
-        {agentData.phone_number &&
-          <Link className={styles.telNumber}
-            href={`tel: ${agentData.phone_number}`}>
-            {formatPhoneNumber(agentData.phone_number)}
-          </Link>
-        }
-        <OpenPopupButton className={`${styles.contactButton}`}
-          type={'contactForm'}>
-          Заказать звонок
-          <span className={styles.contactButton__icon}>
-            <CallIcon />
-          </span>
-        </OpenPopupButton>
-      </div>
-    </div>
+        <div className={styles.sellerElement}>
+
+          <div className={styles.sellerPhoto}>
+            <Image
+              className={styles.sellerPhoto_img}
+              width={120}
+              height={120}
+              src={agentData.avatars[0].image}
+              alt={`${agentData.first_name} ${agentData.last_name}`} />
+          </div>
+
+          <div className={styles.sellerContainer}>
+            <p className={styles.name}>
+              {agentData.first_name}&nbsp;{agentData.last_name}
+            </p>
+            {agentData.phone_number &&
+              <Link className={styles.telNumber}
+                href={`tel:${agentData.phone_number}`}>
+                {formatPhoneNumber(agentData.phone_number)}
+              </Link>
+            }
+
+
+
+ {/*            {agentData.phone_number &&
+              <PhoneNumber
+                className={styles.telNumber}
+                employeeItem={agentData}
+                colorText={'black'} />
+            } */}
+
+            <div className={styles.messengersContainer}>
+              {agentData.whatsapp_link &&
+                <ContactLink linkInfoData={agentData} messenger={'whatsapp'} colorSchema={'transparent'} />
+              }
+              {agentData.telegram_link &&
+                <ContactLink linkInfoData={agentData} messenger={'telegram'} colorSchema={'transparent'} />
+              }
+            </div>
+
+
+
+          </div>
+        </div>
+      }
+    </>
   );
 };
 

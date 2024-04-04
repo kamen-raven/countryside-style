@@ -8,3 +8,4 @@ export * from './Background/BackgroundSVGPattern';
 export * from './ArrowsButton/ArrowsButton';
 export * from './CardLabel/LabelNew/LabelNew';
 export * from './CardLabel/YoutubeLabel/YoutubeLabel';
+export * from './Preloader/Preloader';

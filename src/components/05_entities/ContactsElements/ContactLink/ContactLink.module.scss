@@ -46,6 +46,11 @@
   &_transparent {
     color: $dark;
   }
+
+  &:hover {
+    color: $accent-green;
+    font-weight: $medium;
+  }
 }
 
 

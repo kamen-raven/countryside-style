@@ -8,18 +8,22 @@
 .mainPhotoContainer {
   position: relative;
   max-height: 640px;
+  border: 1px $gray-light solid;
+  border-radius: $border-radius;
 
-  width: auto;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .image {
-
   width: 100%;
-  height: 100%;
 
-  object-fit: cover;
+
+
+  object-fit: contain;
   transition: opacity .5s ease;
   /* Плавная смена opacity */
 }

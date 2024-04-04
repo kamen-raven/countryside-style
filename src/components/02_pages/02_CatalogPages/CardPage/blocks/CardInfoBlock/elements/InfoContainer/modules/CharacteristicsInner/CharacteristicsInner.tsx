@@ -14,13 +14,13 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
 
 
   const measureInfo = {
-    area_house: 'кв.м.',
-    area_flat: 'кв.м.',
-    living_area: 'кв.м.',
-    kitchen_area: 'кв.м.',
-    ceiling_height: 'м.',
+    area_house: 'кв.м',
+    area_flat: 'кв.м',
+    living_area: 'кв.м',
+    kitchen_area: 'кв.м',
+    ceiling_height: 'м',
     date_foundation: '',
-    distance_CAD: 'км.',
+    distance_CAD: 'км',
     area_plot: `${isRealEstateObject(data) ? data.land_area_measurement : ''}`,
     area_of_plot: `${isRealEstateObject(data) ? null: data.area_of_plot_measurement}`
   };

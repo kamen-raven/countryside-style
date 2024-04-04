@@ -50,7 +50,7 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
             <p className={styles.distance}>
               Расстояние до КАД&nbsp;-&nbsp;
               <span className={styles.distance_spanAccent}>
-                {data.distance_CAD} км.
+                {data.distance_CAD} км
               </span>
             </p>
           </>

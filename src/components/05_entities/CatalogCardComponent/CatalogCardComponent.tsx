@@ -44,7 +44,7 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
             {item.area_house &&
               <>
                 <p className={styles.status}>
-                  {item.type_house}
+                  {item.type_house}&nbsp;
                   <span className={styles.status_bold}>
                     {item.area_house}&nbsp;кв.м
                   </span>

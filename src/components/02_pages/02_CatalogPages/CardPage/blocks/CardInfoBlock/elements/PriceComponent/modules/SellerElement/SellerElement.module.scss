@@ -70,4 +70,22 @@
   @include common-link;
   @include common-paragraph(pXl,
   $line-height: 120%);
+  margin-bottom: .5rem;
+
+  &:hover {
+    color: $accent-green;
+  }
+}
+
+.messengersContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+
+  @include breakpoint(screen1440) {
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: stretch;
+  }
 }

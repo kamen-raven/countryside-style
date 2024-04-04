@@ -89,7 +89,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
             className={styles.image}
             src={picturesArray[activePhoto].image}
             alt={data.name}
-            width={800}
+            width={878}
             height={640}
             priority={true}
           />

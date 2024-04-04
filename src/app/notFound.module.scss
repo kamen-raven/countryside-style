@@ -17,7 +17,7 @@
 
 .description {
   @include common-paragraph(pLg,
-  $font-weight: $regular);
+    $font-weight: $regular);
 }
 
 .returnBtn {

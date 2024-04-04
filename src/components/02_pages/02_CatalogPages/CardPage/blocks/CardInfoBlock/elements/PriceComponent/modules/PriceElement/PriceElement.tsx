@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from './PriceElement.module.scss';
 import { PriceElementInterface } from './PriceElement.interface.ts';
-/* import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
-import Link from 'next/link';
-import { OpenPopupButton } from '~shared/index.ts'; */
 
-const PriceElement: React.FC<PriceElementInterface> = ({ objectData, /* agentData, */ typePage }) => {
+const PriceElement: React.FC<PriceElementInterface> = ({ objectData, typePage }) => {
 /*   const [showNum, setShowNum] = useState(false);
  */
 
