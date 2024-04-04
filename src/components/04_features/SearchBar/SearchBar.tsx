@@ -21,8 +21,8 @@ const SearchBar: React.FC<SearchBarInterface> = () => {
         </div>
 
         <div className={styles.optionsContainer}>
-          <CustomSelect label={`Тип недвижимости`} options={['option1', 'option2', 'option3']} />
-          <CustomSelect label={`Район`} options={['option1', 'option2', 'option3']} />
+{/*           <CustomSelect label={`Тип недвижимости`} options={['option1', 'option2', 'option3']} />
+          <CustomSelect label={`Район`} options={['option1', 'option2', 'option3']} /> */}
           <CustomSelect label={`Цена от - до, руб.`} options={['option1', 'option2', 'option3']} />
         </div>
 

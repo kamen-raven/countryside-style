@@ -3,32 +3,22 @@ import React from 'react';
 import styles from './InfoTypeDescriptionBlock.module.scss';
 import { InfoTypeDescriptionBlockInterface } from './InfoTypeDescriptionBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
+import BackgroundOurServicesRight from '~svg/background/backgroundOurServicesRight.svg';
+
 import { InfoTypeDescriptionLayout } from './components/index.ts';
 
+import housesSEOText from '~utils/constants/TypeSEOText/TypeSEOText.ts';
 
-
-const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({ data, typePage }) => {
-
-
-  const titleText = {
-    flats: 'Квартиры',
-    lands: 'Земельные участки',
-    'houses-and-cottages': 'Дома, дачи, коттеджи',
-    villages: 'Коттеджные поселки'
-  };
-
-
-
+const InfoTypeDescriptionBlock: React.FC<InfoTypeDescriptionBlockInterface> = ({ typePage }) => {
+  const SEOTextData = housesSEOText;
 
   return (
     <section className={styles.wrapper}>
-      <BackgroundSVGPattern positionX={"right"} />
+      <BackgroundSVGPattern positionX={"right"} >
+        <BackgroundOurServicesRight/>
+      </BackgroundSVGPattern>
       <div className={styles.container}>
-        <h1 className={styles.title}>
-          {titleText[typePage]}
-        </h1>
-        <InfoTypeDescriptionLayout data={data} />
-
+        <InfoTypeDescriptionLayout data={SEOTextData} />
       </div>
     </section>
   );

@@ -17,8 +17,8 @@ const ReviewTitleComponent: React.FC<ReviewTitleComponentInterface> = ({classNam
       </h2>
       }
       <div className={styles.reviewsContainer}>
-        <RatingLabelElement service={'cian'} />
         <RatingLabelElement service={'yandex'} />
+        <RatingLabelElement service={'cian'} />
         <OpenPopupButton className={styles.buttonReview} type={'reviewForm'}>
           Оставить свой отзыв
         </OpenPopupButton>

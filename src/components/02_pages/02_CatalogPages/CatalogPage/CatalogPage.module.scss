@@ -2,9 +2,10 @@
 
 .mainContainer {
   @include mainPageContainer(
-    "description"
+    "title"
     "search-bar"
     "main-catalog"
+    "description"
     "contactUs"
     "reviews")
 }

@@ -12,14 +12,14 @@ const RatingLabelElement: React.FC<RatingLabelElementInterface> = ({ service }) 
 
   const setService = {
     cian: {
-      link: '',   //?
+      link: 'https://spb.cian.ru/agents/3097318/',
       icon: <CianLogo />,
       rating: '5,0'
     },
     yandex: {
-      link: 'yandex',
+      link: 'https://yandex.ru/maps/org/zagorodny_stil/87180195474/reviews/',
       icon: <YandexLogo />,
-      rating: '4,9'
+      rating: '5,0'
     }
   };
 

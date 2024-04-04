@@ -1,0 +1,15 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: title;
+  position: relative;
+  padding: $padding-gap;
+}
+
+.container {
+  @include mainContainer;
+}
+
+.title {
+  @include common-title(h1);
+}

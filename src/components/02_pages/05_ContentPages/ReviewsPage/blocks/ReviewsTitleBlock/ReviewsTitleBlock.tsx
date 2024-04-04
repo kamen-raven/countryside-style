@@ -7,8 +7,6 @@ import { TeamMemberCard } from '~common/TeamMembersBlock/elements/index.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 import { ReviewTitleComponent } from '~common/ReviewsBlock/components/index.ts';
 
-import { ReviewsButtonsElement } from './elements/index.ts';
-
 
 const ReviewsTitleBlock: React.FC<ReviewsTitleBlockInterface> = ({ employeesData }) => {
 
@@ -32,9 +30,7 @@ const ReviewsTitleBlock: React.FC<ReviewsTitleBlockInterface> = ({ employeesData
             );
           })}
         </div>
-
-          <ReviewsButtonsElement/>
-
+{/* <ReviewsButtonsElement/> */}
       </div>
     </section>
   );
