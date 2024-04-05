@@ -16,7 +16,8 @@ export async function postApplicationFeedback(text: string, applicant: string, c
       method: 'POST',
       headers: {
         // Не устанавливаем заголовок Content-Type, т.к. он будет автоматически установлен как multipart/form-data
-      },
+        /* 'Content-Type': 'multipart/form-data', */
+    },
       body: formData,
     });
 

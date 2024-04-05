@@ -10,7 +10,7 @@
   //cursor: pointer;
   & svg {
     display: flex;
-    width: min-content;
+    //width: min-content;
     object-fit: contain;
 
     @include breakpoint(screen1280) {

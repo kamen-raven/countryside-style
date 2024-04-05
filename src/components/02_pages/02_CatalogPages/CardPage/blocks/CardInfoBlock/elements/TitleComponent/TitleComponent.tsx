@@ -7,7 +7,7 @@ import DistanceKADIcon from '~svg/catalogCard/distanceKAD.svg';
 import MetroLogoIcon from '~svg/catalogCard/metroLogo.svg';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
-import { PrintPageButton } from '~shared/index.ts';
+import { PathLinkComponent, PrintPageButton } from '~shared/index.ts';
 
 const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
   function isRealEstateObject(obj: RealEstateObjectInterface | VillageObjectInterface): obj is RealEstateObjectInterface {
@@ -18,6 +18,7 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
 
   return (
     <div className={styles.titleContainer}>
+      <PathLinkComponent dataInfo={data.name}/>
       <h1 className={styles.title}>
         {data.name && data.name}
       </h1>

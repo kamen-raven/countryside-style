@@ -71,7 +71,7 @@
   @include common-paragraph(pXl,
   $line-height: 120%);
   margin-bottom: .5rem;
-
+  text-wrap: nowrap;
   &:hover {
     color: $accent-green;
   }

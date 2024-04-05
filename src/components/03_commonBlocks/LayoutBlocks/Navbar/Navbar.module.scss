@@ -85,6 +85,11 @@
 
   color: $white;
 
+
+  &:hover {
+    color: $accent-green;
+  }
+
   @include breakpoint(screen1280) {
     font-size: 0.745rem;
   }
@@ -96,5 +101,8 @@
 
   & .link {
     cursor: default;
+    &:hover {
+      color: $white;
+    }
   }
 }

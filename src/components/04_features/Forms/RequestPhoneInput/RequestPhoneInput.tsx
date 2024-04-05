@@ -40,7 +40,7 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
       }
 
     } catch (error) {
-      console.error('Error:', error); // Выводим ошибку в консоль
+      //console.error('Error:', error); // Выводим ошибку в консоль
       openSuccessPopup('errorMessage');
       // Здесь можно добавить логику для обработки ошибки при отправке сообщения
     }

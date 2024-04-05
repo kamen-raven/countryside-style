@@ -1,0 +1,31 @@
+@import '~global_styles';
+
+.labelContainer {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 2rem;
+}
+
+.label {
+  @include common-paragraph(p,
+  $color: $dark,
+  $font-family: $ff-openSans,
+  $font-weight: $regular);
+  transition: all .3s linear;
+
+  &_link {
+    @extend .label;
+    text-decoration: none;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $gray;
+      text-decoration: none;
+      transition: all .3s linear;
+    }
+  }
+
+  &_span {
+    padding: 0 .6em;
+  }
+}
