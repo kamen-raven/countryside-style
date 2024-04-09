@@ -1,0 +1,57 @@
+//---FONT---//
+/* font-family */
+$ff-gothamPro: var(--gothamPro);
+$ff-openSans: var(--openSans);
+
+/* font-weight: */
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$extra-bold: 900;
+
+//font-size:
+$decorate: 5rem; // 80px
+
+$h1: 4.063rem; // 65px
+
+$title: 4.063rem; // 65px
+$subtitle: 2.813rem; // 45px
+$small-title: 1.75rem; //28px
+
+$paragraph-xl: 1.75rem; //28px
+$paragraph-lg: 1.5rem; // 24px
+$paragraph-md: 1.125rem; // 18px
+$paragraph-small: 0.75rem; // 12px
+
+//font-size-768px
+$decorate-tab: 4.063rem; // 65px
+
+$h1-tab: 2.813rem; // 45px
+
+$title-tab: 2.813rem; // 45px
+$subtitle-tab: 2.25rem; // 36px
+$small-title-tab: 1.5rem; // 24px
+
+$paragraph-xl-tab:  1.5rem; // 24px
+$paragraph-lg-tab: 1.25rem; // 20px
+$paragraph-md-tab: 1rem; // 16px
+$paragraph-small-tab: 0.75rem; // 12px
+
+
+//font-size-385px
+$decorate-mob: 2.813rem; // 45px
+
+$h1-mob: 1.875rem; // 30px
+
+$title-mob: 1.875rem; // 30px
+$subtitle-mob:  1.375rem; // 22px
+$small-title-mob: 1.125rem; // 18px
+
+$paragraph-xl-mob:  1.125rem; // 18px
+$paragraph-lg-mob: 1rem; // 16px
+$paragraph-md-mob: 0.875rem; // 14px
+$paragraph-small-mob: 0.75rem; // 12px
+
+
+$fs-navLink: 0.813rem; // 13px //clamp(13px, 1vw, 16px);

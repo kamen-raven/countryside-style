@@ -1,4 +1,5 @@
 @import '~variables';
+@import './adaptive';
 
 @mixin common-title($htag,
                     $font-size: $title,
@@ -13,6 +14,13 @@
       line-height: $line-height;
       margin: $margin;
       color: $color;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($h1-tab, 6.10357vw, $h1);
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($h1-mob, 6.92969vw, $h1-tab);
+      }
     }
 
     @if $htag == hTitle {
@@ -21,6 +29,13 @@
       line-height: $line-height;
       margin: $margin;
       color: $color;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($title-tab, 6.10357vw, $title);
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($title-mob, 6.92969vw, $title-tab);
+      }
     }
 
     @if $htag == hSubtitle {
@@ -29,6 +44,14 @@
       line-height: 115%;
       margin: 0;
       color: $color;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($subtitle-tab, 4.54096vw, $subtitle);
+      }
+
+      @include breakpoint(screen768) {
+        font-size: clamp($subtitle-mob, 5.27708vw, $subtitle-tab);
+      }
     }
 
     @if $htag == hSmall {
@@ -37,5 +60,12 @@
       line-height: 128.571%;
       margin: 0;
       color: $color;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($small-title-tab, 2.92969vw, $small-title);
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($small-title-mob, 3.9625vw, $small-title-tab);
+      }
     }
 }

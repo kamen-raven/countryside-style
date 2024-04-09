@@ -40,10 +40,7 @@
 
 .link {
   @include common-link;
-  @include common-paragraph(link);
-  text-transform: uppercase;
-  text-wrap: nowrap;
-  color: $gray-dark;
+  @include special-text(link, $color: $gray-dark);
 }
 
 .active.link {

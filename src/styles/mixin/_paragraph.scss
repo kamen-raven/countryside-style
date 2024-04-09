@@ -1,9 +1,10 @@
 @import '~variables';
+@import './adaptive';
 
 @mixin common-paragraph(
                     $pTag,
                     $font-family: $ff-gothamPro,
-                    $font-size: $title,
+                    $font-size: $paragraph-md,
                     $font-weight: $medium,
                     $line-height: 110%,
                     $margin: 0,
@@ -18,6 +19,14 @@
       margin: $margin;
       color: $color;
       font-style: $font-style;
+
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($paragraph-xl-tab, 2.92969vw, $paragraph-xl);
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($paragraph-xl-mob, 3.9625vw, $paragraph-xl-tab);
+      }
     }
 
     @if $pTag == pLg {
@@ -28,6 +37,13 @@
       margin: $margin;
       color: $color;
       font-style: $font-style;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($paragraph-lg-tab, 2.47396vw, $paragraph-lg);
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($paragraph-lg-mob, 3.43542vw, $paragraph-lg-tab);
+      }
     }
 
     @if $pTag == p {
@@ -38,6 +54,13 @@
       margin: $margin;
       color: $color;
       font-style: $font-style;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($paragraph-md-tab, 1.92057vw, $paragraph-md);
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($paragraph-md-mob, 2.90833vw, $paragraph-md-tab);
+      }
     }
 
     @if $pTag == pSm {
@@ -50,7 +73,7 @@
       font-style: $font-style;
     }
 
-    @if $pTag == link {
+/*     @if $pTag == link {
       font-family: $font-family; // Gotham Pro
       font-size: $fs-navLink; // 13px
       font-weight: $font-weight; // medium - 500
@@ -58,5 +81,5 @@
       margin: $margin;
       color: $color;
       font-style: $font-style;
-    }
+    } */
 }

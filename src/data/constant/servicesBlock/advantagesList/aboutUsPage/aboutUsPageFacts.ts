@@ -12,7 +12,7 @@ const aboutUsPageFacts: advantagesItemInterface[] = [
     {
       _id: 2,
       icon: Icon,
-      title: "Рейтинг **4.9** на Яндексе",
+      title: "Рейтинг **5.0** на Яндексе",
     },
   {
     _id: 3,
@@ -22,7 +22,7 @@ const aboutUsPageFacts: advantagesItemInterface[] = [
   {
     _id: 4,
     icon: Icon,
-    title: "Более **5000** успешных сделок",
+    title: "Более **5 000** успешных сделок",
   },
   {
     _id: 5,

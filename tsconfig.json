@@ -30,7 +30,7 @@
       "~styles/*": ["./src/styles/*"],
       "~fonts": ["./src/styles/fonts/fonts.ts"],
       "~global_styles": ["./src/styles/global/globals.scss"],
-      "~variables": ["./src/styles/variables/_variables.scss"],
+      "~variables": ["./src/styles/variables/index.scss"],
       "~mixin/*": ["./src/styles/mixin/*"],
       "~adaptive": ["./src/styles/mixin/_adaptive.scss"],
       "~data/*": ["./src/data/*"],

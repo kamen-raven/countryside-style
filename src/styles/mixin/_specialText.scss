@@ -1,0 +1,44 @@
+@import '~variables';
+@import './adaptive';
+
+@mixin special-text(
+                    $tag,
+                    $font-family: $ff-gothamPro,
+                    $font-size: $paragraph-md,
+                    $font-weight: $medium,
+                    $line-height: 110%,
+                    $margin: 0,
+                    $color: $dark,
+                    $font-style: normal)  {
+
+    @if $tag == decorate {
+      font-family: $font-family; // Gotham Pro
+      font-size: $decorate;  // 80px
+      font-weight: $font-weight; // medium - 500
+      line-height: $line-height; // 110%,
+      margin: $margin;
+      color: $white;
+      font-style: $font-style;
+
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($decorate-tab, 8.13802vw, $decorate);
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($decorate-mob, 10.23044vw, $decorate-tab);
+      }
+    }
+
+
+    @if $tag == link {
+      font-family: $font-family; // Gotham Pro
+      font-size: $fs-navLink; // 13px
+      font-weight: $font-weight; // medium - 500
+      line-height: 150%;
+      margin: $margin;
+      color: $color;
+      font-style: $font-style;
+      text-transform: uppercase;
+      text-wrap: nowrap;
+    }
+}
