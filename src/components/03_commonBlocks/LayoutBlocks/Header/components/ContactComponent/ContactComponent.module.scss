@@ -6,12 +6,21 @@
   gap: 1rem;
   max-height: 38px;
 
+
+  @include breakpoint(screen768) {
+    align-items: center;
+    gap: .5rem;
+  }
 }
 
 .phoneNumber {
   font-size: 1.375rem;
   font-weight: $bold;
   line-height: 160%;
+
+  @include breakpoint(screen768) {
+    font-size: clamp(0.875rem, 3.30896vw, 1.375rem);
+  }
 }
 
 .buttonCall {
@@ -21,4 +30,14 @@
   padding: 0 15px;
   font-size: 0.8rem;
   line-height: 120%;
+
+
+  @include breakpoint(screen768) {
+    max-height: 30px;
+  }
+
+  @include breakpoint(screen640) {
+    display: none;
+
+  }
 }

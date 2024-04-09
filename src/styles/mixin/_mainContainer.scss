@@ -11,12 +11,12 @@
   padding: $padding-upDown $padding-leftRight;
   max-width: calc(1920px - ($padding-side) * 2);
 
-/*   @include breakpoint(screen1440) {
-    max-width: calc(1920px - ($padding-side / 1.2) * 2);
-    padding: $padding-upDown calc($padding-side / 1.2);
-  } */
+
   @include breakpoint(screen1280) {
-    max-width: calc(1280px - ($padding-side / 1.5) * 2);
     padding: $padding-upDown calc($padding-side / 1.5);
+    max-width: calc(1280px - ($padding-side / 1.5) * 2);  //?
+  }
+  @include breakpoint(screen768) {
+    padding: $padding-upDown $padding-side-tab;
   }
 }

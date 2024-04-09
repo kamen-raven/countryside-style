@@ -38,8 +38,8 @@ export default function RootLayout({
           <Footer listItems={menuList} generalContactsData={generalContactsData} />
           <ScrollToTopButton />
         </div>
-        <MainPopups />
-        <SupportPopups/>
+        {/*         <MainPopups />
+        <SupportPopups/> */}
       </body>
     </html>
   );

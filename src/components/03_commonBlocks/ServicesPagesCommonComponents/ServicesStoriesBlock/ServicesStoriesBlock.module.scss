@@ -3,9 +3,12 @@
 .wrapper {
   grid-area: servicesStories;
   padding: $padding-gap;
-
-
   border-bottom: 1px solid $gray;
+
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
 }
 
 .container {

@@ -25,7 +25,7 @@
   }
 
   @include breakpoint(screen1024) {
-    grid-template-columns: minmax(720px, 1024px);
+    grid-template-columns: auto;//minmax(768px, 1024px);
     grid-template-areas:
       "title"
       "photo"

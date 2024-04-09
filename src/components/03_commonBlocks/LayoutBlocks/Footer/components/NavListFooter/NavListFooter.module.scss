@@ -18,7 +18,24 @@
     ". . empty1"
     ". empty2 empty3";
 
+
+    @include breakpoint(screen960) {
+      grid-template-columns: auto auto;
+      grid-template-areas:
+      ". ."
+      ". ."
+      ". ."
+      ". ."
+      "empty1 ."
+    }
+
+
+  @include breakpoint(screen576) {
+    display: none;
+  }
 }
+
+
 
 .listItem {
   @include common-li;
@@ -30,17 +47,28 @@
   &_empty2 {
     grid-area: empty2;
     visibility: hidden;
+    @include breakpoint(screen960) {
+      display: none;
+    }
   }
 
   &_empty3 {
     grid-area: empty3;
     visibility: hidden;
+    @include breakpoint(screen960) {
+      display: none;
+    }
   }
 }
 
 .link {
   @include common-link;
   @include special-text(link, $color: $gray-dark);
+
+
+  @include breakpoint(screen768) {
+    font-size: 12px;
+  }
 }
 
 .active.link {

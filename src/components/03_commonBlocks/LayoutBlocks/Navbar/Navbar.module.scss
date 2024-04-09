@@ -12,6 +12,12 @@
   z-index: 1000;
 
   border-bottom: 1px solid gray;
+
+
+  @include breakpoint(screen1024) {
+    display: none;
+  }
+
 }
 
 .list {

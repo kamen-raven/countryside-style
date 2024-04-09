@@ -4,24 +4,66 @@
   grid-area: footer;
   border-top: 1px solid $gray;
   padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
 }
 
 .container {
   @include mainContainer();
   display: grid;
   align-items: start;
-  grid-template-rows: 60px auto;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "logo logo"
     "nav contacts";
   gap: 45px;
+
+  @include breakpoint(screen768) {
+    gap: 45px 30px;
+  }
+
+
+  @include breakpoint(screen576) {
+    gap: 30px 0;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+    "logo tel"
+    "contacts contacts";
+  }
 }
 
 
 .logoContainer {
   grid-area: logo;
+  display: block;
+
+  @include breakpoint(screen576) {
+    width: 80px;
+    & svg {
+      & path:last-of-type {
+        display: none;
+      }
+
+    }
+  }
+
 }
 
+.phone {
+  display: none;
+  @include common-paragraph(p,
+  $font-weight: $bold,
+  $color: $gray-dark);
+  text-decoration: none;
 
+
+  @include breakpoint(screen576) {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    text-wrap: nowrap;
+  }
+}
 

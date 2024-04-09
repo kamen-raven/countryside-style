@@ -12,9 +12,9 @@ const CardPage: React.FC<CardPageInterface> = ({ typePage, objectData, commonObj
     <main className={styles.mainContainer}>
       <CardSearchBarBlock />
       <CardInfoBlock objectData={objectData} typePage={typePage} />
-      {commonObjects && commonObjects.length > 0 ?
+      {/*   {commonObjects && commonObjects.length > 0 ?
         <MoreObjectsBlock commonObjects={commonObjects} typePage={typePage} />
-        : null}
+        : null} */}
     </main>
   );
 };

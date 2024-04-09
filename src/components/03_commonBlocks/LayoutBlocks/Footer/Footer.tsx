@@ -6,6 +6,8 @@ import { Logo } from '~shared/index';
 
 
 import { AddressComponent, NavListFooter } from './components';
+import Link from 'next/link';
+import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber';
 
 
 const Footer: React.FC<FooterInterface> = ({ listItems, generalContactsData }) => {
@@ -15,8 +17,12 @@ const Footer: React.FC<FooterInterface> = ({ listItems, generalContactsData }) =
         <div className={styles.logoContainer}>
           <Logo color="gray" />
         </div>
+        <Link className={styles.phone} href={`tel:${generalContactsData.contacts.phone}`}>
+            {formatPhoneNumber(generalContactsData.contacts.phone)}
+          </Link>
 
-        <NavListFooter listItems={listItems}/>
+
+        <NavListFooter listItems={listItems} />
         <AddressComponent data={generalContactsData} />
       </div>
     </footer>

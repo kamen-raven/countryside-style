@@ -5,6 +5,10 @@
   grid-area: blog;
   position: relative;
   padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
 }
 
 .container {

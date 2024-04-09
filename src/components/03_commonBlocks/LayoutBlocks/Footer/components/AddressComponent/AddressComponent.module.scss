@@ -2,6 +2,7 @@
 
 
 .addressContainer {
+  grid-area: contacts;
   font-style: normal;
   text-align: end;
   display: flex;
@@ -9,6 +10,12 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 20px;
+
+
+  @include breakpoint(screen576) {
+    align-items: flex-start;
+    gap: 1rem;
+  }
 }
 
 .phone {
@@ -16,6 +23,10 @@
   $font-weight: $bold,
   $color: $gray-dark);
   text-decoration: none;
+
+  @include breakpoint(screen576) {
+    display: none
+  }
 }
 
 
@@ -56,4 +67,7 @@
   $color: $gray-dark);
 text-align: right;
 
+@include breakpoint(screen576) {
+  text-align: start;
+}
 }

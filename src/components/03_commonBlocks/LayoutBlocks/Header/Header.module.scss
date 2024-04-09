@@ -17,6 +17,15 @@
   @include breakpoint(screen1280) {
     gap: 35px;
   }
+  @include breakpoint(screen768) {
+    padding-top: 26px;
+    padding-bottom: 26px;
+    gap: 0;
+  }
+  @include breakpoint(screen480) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 

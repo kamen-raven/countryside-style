@@ -4,7 +4,10 @@ $scrollbar-width: .8rem;
 
 
 $padding-side: clamp(3.125rem, 7vw, 7.5rem);  //clamp(50px, 7vw, 120px);
+$padding-side-tab: clamp(1.563rem, 6.58724vw, 3.125rem);  //clamp(25px, 6.58724vw, 50px);
+
 $padding-gap: 70px 0 100px;
+$padding-gap-tab: clamp(2.5rem, 5.02082vw, 4.375rem) 0 clamp(3.75rem, 7.78906vw, 6.25rem);
 
 
 $margin-side: 18.125rem; // 290px
