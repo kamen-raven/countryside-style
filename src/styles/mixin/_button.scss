@@ -1,4 +1,5 @@
 @import '~variables';
+@import './adaptive';
 
 @mixin common-button($appearance,
                       $padding: 9px 25px,
@@ -17,6 +18,18 @@
   height: $height;
   padding: $padding;
   cursor: pointer;
+
+
+  @include breakpoint(screen768) {
+    height: 40px;
+    font-size:$paragraph-md-tab;
+  }
+
+  @include breakpoint(screen576) {
+    height: 35px;
+    font-size:$paragraph-md-mob;
+  }
+
 
 
   @if $appearance == colored {

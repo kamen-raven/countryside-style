@@ -7,25 +7,40 @@
 
 .mainPhotoContainer {
   position: relative;
-  max-height: 640px;
+  height: max-content;
+  max-height: clamp(460px, 38vw, 640px);//clamp(480px, 37.82738vw, 640px);
   border: 1px $gray-light solid;
-  border-radius: $border-radius;
+  border-radius: $border-radius ;
 
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include breakpoint(screen1024) {
+    max-height: clamp(480px, 62.5vw, 640px);
+  }
+
+  @include breakpoint(screen768) {
+    max-height: clamp(240px, 64.75vw, 480px);
+  }
 }
 
 
 .image {
   width: 100%;
-
-
-
+  max-height: clamp(460px, 38vw, 640px);
   object-fit: contain;
-  transition: opacity .5s ease;
-  /* Плавная смена opacity */
+
+
+  @include breakpoint(screen1024) {
+    max-height: clamp(480px, 62.5vw, 640px);
+  }
+
+  @include breakpoint(screen768) {
+    max-height: clamp(240px, 64.75vw, 480px);
+  }
+
 }
 
 
@@ -39,6 +54,14 @@
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
+
+  @include breakpoint(screen768) {
+    bottom: 20px;
+  }
+
+  @include breakpoint(screen576) {
+    bottom: 10px;
+  }
 }
 
 
@@ -51,6 +74,10 @@
 
   &_isScroll {
     padding: 30px 0;
+
+    @include breakpoint(screen576) {
+      padding: 10px 0 20px;
+    }
   }
 }
 
@@ -60,7 +87,14 @@
   grid-template-rows: 1fr;
   //grid-auto-columns: clamp(90px, calc((100% / 7) - 18px), 110px);//calc(50% - 20px);
   grid-auto-flow: column;
-  gap: 18px;
+  gap: 1.125rem;
+
+  @include breakpoint(screen768) {
+    gap: 1rem;
+  }
+  @include breakpoint(screen576) {
+    gap: .5625rem;
+  }
 }
 
 .smallPhoto {
@@ -74,6 +108,17 @@
   opacity: .5;
   transition: transform .3s ease;
   /* Плавное изменение масштаба при наведении */
+
+  @include breakpoint(screen768) {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  @include breakpoint(screen576) {
+    max-width: 58px;
+    max-height: 58px;
+  }
+
 
   &:hover {
     transform: scale(1.05);
@@ -116,10 +161,25 @@
 
   &_left {
     left: 30px;
+
+    @include breakpoint(screen768) {
+      left: 20px;
+    }
+
+    @include breakpoint(screen576) {
+      left: 10px;
+    }
   }
 
   &_right {
-    //transform: translateY(50%);
     right: 30px;
+
+    @include breakpoint(screen768) {
+      right: 20px;
+    }
+
+    @include breakpoint(screen576) {
+      right: 10px;
+    }
   }
 }

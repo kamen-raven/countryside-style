@@ -8,7 +8,14 @@
   align-items: flex-start;
 }
   .title {
-    @include common-title(h1,  $margin: 0 0 25px);
+    @include common-title(h1,  $margin: 0 0 1.5625rem);
+
+    @include breakpoint(screen768) {
+      margin-bottom: 1rem;
+    }
+    @include breakpoint(screen480) {
+      margin-bottom: .75rem;
+    }
   }
 
   .squareArea {
@@ -24,23 +31,38 @@
     $font-weight: $regular,
     $line-height: 120%);
 
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+
+    @include breakpoint(screen768) {
+      margin-bottom: .75rem;
+    }
   }
 
   .buttonsContainer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-height: 55px;
+
     height: 100%;
+    column-gap: 40px;
+    @include breakpoint(screen640) {
+      row-gap: .75rem;
+      max-height: max-content;
+    }
+  }
+
+  .distanceContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   .distance {
-    padding-left: 15px;
-    padding-right: 40px;
+
     @include common-paragraph(p,
       $font-weight: $regular,
       $font-family: $ff-openSans);
+
 
 
     &_spanAccent {

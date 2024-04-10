@@ -24,15 +24,15 @@ const PathLinkComponent: React.FC<PathLinkComponentInterface> = ({ dataInfo }) =
         href={'/'}>
         Главная
       </Link>
-      <div className={styles.label}>
-        <span className={styles.label_span}>/</span>
-      </div>
+
+      <span className={`${styles.label} ${styles.label_span}`}>/</span>
+
       <Link className={styles.label_link}
         href={`/${typePathname}`}>
         {label[typePathname]}
       </Link>
-      <p className={styles.label}>
-        <span className={styles.label_span}>/</span>
+      <span className={`${styles.label} ${styles.label_span}`}>/</span>
+      <p className={`${styles.label} ${styles.label_name}`}>
         {dataInfo}
       </p>
     </div>

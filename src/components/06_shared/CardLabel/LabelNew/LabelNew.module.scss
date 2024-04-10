@@ -24,5 +24,15 @@
 
     text-align: center;
     text-transform: uppercase;
+
+
+    @include breakpoint(screen768) {
+      top: 14px;
+      height: 30px;
+    }
+
+    @include breakpoint(screen480) {
+      width: 60px;
+    }
   }
 }

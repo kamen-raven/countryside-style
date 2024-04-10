@@ -8,6 +8,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 20px;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
 }
 
 

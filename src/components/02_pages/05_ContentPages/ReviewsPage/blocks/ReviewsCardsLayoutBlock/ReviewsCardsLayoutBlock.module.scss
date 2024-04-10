@@ -1,8 +1,16 @@
 @import '~global_styles';
 
 .wrapper {
-  padding: $padding-gap;
   grid-area: reviewsCards;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
 }
 
 .container {

@@ -15,5 +15,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(screen768) {
+      height: 30px;
+      width: 30px;
+    }
+
+    @include breakpoint(screen576) {
+      height: 26px;
+      width: 26px;
+    }
   }
+
+  &_icon svg {
+    width: 22px;
+    height: 22px;
+
+    @include breakpoint(screen576) {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
 }

@@ -18,17 +18,17 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
 
   return (
     <div className={styles.titleContainer}>
-      <PathLinkComponent dataInfo={data.name}/>
+      <PathLinkComponent dataInfo={data.name} />
       <h1 className={styles.title}>
         {data.name && data.name}
       </h1>
 
       {/* //* УЧАСТОК / УЧАСТКИ */}
       {isRealEstateObject(data) ? null
-/*         (data.area_plot &&  //? для домов / земельных участков
-          <p className={styles.squareArea}>
-            Участок: {data.area_plot} {data.land_area_measurement}
-          </p>) */
+        /*         (data.area_plot &&  //? для домов / земельных участков
+                  <p className={styles.squareArea}>
+                    Участок: {data.area_plot} {data.land_area_measurement}
+                  </p>) */
         :
         (data.area_of_plot &&  /* //? Для коттеджных поселков */
           <p className={styles.squareArea}>
@@ -46,7 +46,7 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
       <div className={styles.buttonsContainer}>
         {/* //* Расстояние до КАД */}
         {data.distance_CAD &&
-          <>
+          <div className={styles.distanceContainer}>
             <DistanceKADIcon />
             <p className={styles.distance}>
               Расстояние до КАД&nbsp;-&nbsp;
@@ -54,12 +54,12 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
                 {data.distance_CAD} км
               </span>
             </p>
-          </>
+          </div>
         }
         {/* //* Метро */}
         {isRealEstateObject(data) ?
           (data.metro &&  /* //? для объектов  */
-            <>
+            <div className={styles.distanceContainer}>
               <MetroLogoIcon className={styles.metroIcon} />
               <p className={styles.distance}>
                 Метро&nbsp;-&nbsp;
@@ -67,11 +67,11 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
                   {data.metro}
                 </span>
               </p>
-            </>)
+            </div>)
           : null
         }
 
-          {/* //* Кнопка для сохранения в PDF  */}
+        {/* //* Кнопка для сохранения в PDF  */}
         <PrintPageButton />
       </div>
     </div>

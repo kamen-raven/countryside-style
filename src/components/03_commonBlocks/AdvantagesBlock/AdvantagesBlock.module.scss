@@ -3,8 +3,16 @@
 .wrapper {
   grid-area: advantages;
   border-bottom: 1px solid $gray;
-  padding: $padding-gap;
   position: relative;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
 }
 
 .container {

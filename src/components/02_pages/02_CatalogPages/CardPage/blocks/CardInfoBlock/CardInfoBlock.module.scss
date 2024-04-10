@@ -7,6 +7,13 @@
   border-bottom: 1px solid $gray;
   padding: $padding-gap;
 
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
 }
 
 .mainContainer {
@@ -25,11 +32,15 @@
   }
 
   @include breakpoint(screen1024) {
-    grid-template-columns: auto;//minmax(768px, 1024px);
+    grid-template-columns: minmax(240px, 1024px);
     grid-template-areas:
       "title"
       "photo"
       "price"
       "info";
+  }
+
+  @include breakpoint(screen640) {
+    gap: 30px;
   }
 }

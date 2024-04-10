@@ -15,7 +15,7 @@ const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage 
         {/* ЗАГОЛОВОК TITLE */}
         <TitleComponent data={objectData} />
         {/* ОСНОВНОЙ КОНТЕЙНЕР С ИНФОРМАЦИЕЙ / INFO */}
-{/*         <PhotosComponent data={objectData} /> */}
+        <PhotosComponent data={objectData} />
 
 {/*         <InfoContainer data={objectData} typePage={typePage} /> */}
         {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}

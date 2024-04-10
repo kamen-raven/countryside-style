@@ -16,8 +16,24 @@
   width: 45px;
   height: 45px;
 
+  @include breakpoint(screen768) {
+    height: 40px;
+    width: 40px;
+  }
+  @include breakpoint(screen576) {
+    height: 35px;
+    width: 35px;
+  }
+
   & svg {
     transition: transform .3s linear;
+    width: 22px;
+    height: 8px;
+
+    @include breakpoint(screen576) {
+      height: 50%;
+      width: 50%;
+    }
   }
 
   &:hover {

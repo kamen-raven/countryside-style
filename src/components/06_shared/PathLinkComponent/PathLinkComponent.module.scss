@@ -1,12 +1,18 @@
 @import '~global_styles';
 
 .labelContainer {
-  display: flex;
-  align-items: baseline;
+  display: inline-flex;
   padding-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: .5rem;
+  @include breakpoint(screen576) {
+    padding-bottom: 1rem;
+    row-gap: 0;
+  }
 }
 
 .label {
+  display: inline-flex;
   @include common-paragraph(p,
   $color: $dark,
   $font-family: $ff-openSans,
@@ -26,6 +32,11 @@
   }
 
   &_span {
-    padding: 0 .6em;
+
+  }
+
+  &_name {
+    text-wrap: wrap;
+    color: $accent-green;
   }
 }

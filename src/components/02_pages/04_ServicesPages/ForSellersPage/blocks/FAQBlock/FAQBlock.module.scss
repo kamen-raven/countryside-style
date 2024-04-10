@@ -3,6 +3,14 @@
 .wrapper {
   grid-area: faqBlock;
   padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
 }
 
 .container {
