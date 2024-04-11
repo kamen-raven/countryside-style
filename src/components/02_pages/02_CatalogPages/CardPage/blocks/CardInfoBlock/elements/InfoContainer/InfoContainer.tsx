@@ -25,17 +25,6 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data, typePage }) => 
   return (
     <div className={styles.infoContainer}>
 
-{/*       <div className={styles.photosContainer}>
-        <PhotosInner data={data} />
-      </div> */}
-
-
-      {/*       <div className={styles.priceContainer}>
-        <PriceElement objectData={undefined} agentData={undefined}  />
-        <SellerElement agentData={undefined}  />
-      </div> */}
-
-
       {isRealEstateObject(data) ?
         ((data.area_house ||
           data.living_area ||

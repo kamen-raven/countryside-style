@@ -3,18 +3,18 @@
 .priceElement {
   padding-bottom: 40px;
   border-bottom: 2px solid $gray;
-  @include flexColumnGap($gap: 0);
+  @include flexColumnGap($gap: 15px);
 
-/*   @include breakpoint(screen1024) {
-    border: none;
-    padding-bottom: 0;
-  } */
+  @include breakpoint(screen768) {
+    border-bottom: 1px solid $gray;
+    padding-bottom: 30px;
+    gap: 10px;
+  }
 }
 
 .cost {
   @include common-title(hSubtitle,
   $color: $accent-green);
-  margin-bottom: 15px;
 }
 
 .idNum {
@@ -23,13 +23,13 @@
   //margin-bottom: 15px;
 }
 
-.buttonContainer {
+/* .buttonContainer {
   display: flex;
   gap: 20px 10px;
   flex-wrap: wrap;
-}
+} */
 
-.button {
+/* .button {
   @include common-button(colored,
   $padding: 0 25px);
   font-size: 22px;
@@ -44,21 +44,21 @@
     flex-grow: 1;
 
   }
-}
+} */
 
 
 
 
-.telNumber {
+/* .telNumber {
   @include common-link;
   @include common-paragraph(pXl,
   $line-height: 120%);
 
   display: block;
   margin-bottom: 25px;
-}
+} */
 
-.telInfo {
+/* .telInfo {
   @include common-paragraph(p,
   $font-weight: $regular,
   $font-family: $ff-openSans);
@@ -82,3 +82,4 @@
     align-items: center;
   }
 }
+ */

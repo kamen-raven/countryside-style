@@ -15,6 +15,7 @@
   height: auto;
 
   @include breakpoint(screen1024) {
-
+    position: initial;
+    margin-top: 10px;
   }
 }
