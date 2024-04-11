@@ -3,38 +3,7 @@ import styles from './PriceElement.module.scss';
 import { PriceElementInterface } from './PriceElement.interface.ts';
 
 const PriceElement: React.FC<PriceElementInterface> = ({ objectData, typePage }) => {
-/*   const [showNum, setShowNum] = useState(false);
- */
 
-/*   const showNumber = () => {
-    if (!showNum) {
-      return (
-        <button className={`${styles.button} ${styles.button__call}`}
-          onClick={showNumberHandler}>
-          Показать номер
-        </button>
-      );
-    } else {
-      return (
-        <div className={styles.numberContainer}>
-          {agentData.phone_number &&
-            <Link className={styles.telNumber}
-              href={`tel: ${agentData.phone_number}`}>
-              {formatPhoneNumber(agentData.phone_number)}
-            </Link>
-          }
-          <p className={styles.telInfo}>
-            Номер только для звонков, сообщения не дойдут.
-            Если захотите оставить жалобу, напишите нам.
-          </p>
-        </div>
-      );
-    }
-  }; */
-
-/*   const showNumberHandler = () => {
-    setShowNum(!showNum);
-  }; */
 
   return (
     <div className={styles.priceElement}>
@@ -68,3 +37,37 @@ const PriceElement: React.FC<PriceElementInterface> = ({ objectData, typePage })
 };
 
 export { PriceElement };
+
+// кнопка
+/*   const [showNum, setShowNum] = useState(false);
+ */
+
+/*   const showNumber = () => {
+    if (!showNum) {
+      return (
+        <button className={`${styles.button} ${styles.button__call}`}
+          onClick={showNumberHandler}>
+          Показать номер
+        </button>
+      );
+    } else {
+      return (
+        <div className={styles.numberContainer}>
+          {agentData.phone_number &&
+            <Link className={styles.telNumber}
+              href={`tel: ${agentData.phone_number}`}>
+              {formatPhoneNumber(agentData.phone_number)}
+            </Link>
+          }
+          <p className={styles.telInfo}>
+            Номер только для звонков, сообщения не дойдут.
+            Если захотите оставить жалобу, напишите нам.
+          </p>
+        </div>
+      );
+    }
+  }; */
+
+/*   const showNumberHandler = () => {
+    setShowNum(!showNum);
+  }; */

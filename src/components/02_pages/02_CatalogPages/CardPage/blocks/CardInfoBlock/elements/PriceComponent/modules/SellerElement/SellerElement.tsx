@@ -31,7 +31,7 @@ const SellerElement: React.FC<SellerElementInterface> = async ({ objectData }) =
 
           <div className={styles.sellerContainer}>
             <p className={styles.name}>
-              {agentData.first_name}&nbsp;{agentData.last_name}
+              {agentData.first_name} {agentData.last_name}
             </p>
             {agentData.phone_number &&
               <Link className={styles.telNumber}
@@ -39,15 +39,6 @@ const SellerElement: React.FC<SellerElementInterface> = async ({ objectData }) =
                 {formatPhoneNumber(agentData.phone_number)}
               </Link>
             }
-
-
-
- {/*            {agentData.phone_number &&
-              <PhoneNumber
-                className={styles.telNumber}
-                employeeItem={agentData}
-                colorText={'black'} />
-            } */}
 
             <div className={styles.messengersContainer}>
               {agentData.whatsapp_link &&
@@ -57,8 +48,6 @@ const SellerElement: React.FC<SellerElementInterface> = async ({ objectData }) =
                 <ContactLink linkInfoData={agentData} messenger={'telegram'} colorSchema={'transparent'} />
               }
             </div>
-
-
 
           </div>
         </div>
