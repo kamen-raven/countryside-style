@@ -107,7 +107,10 @@ ul .listItem  {
   margin: 0;
 
   & p {
+    @extend .h3;
+    font-family: $ff-gothamPro;
     color: $accent-green;
+    font-weight: $medium;
   }
 }
 

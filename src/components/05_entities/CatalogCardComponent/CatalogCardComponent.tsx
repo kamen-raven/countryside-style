@@ -44,7 +44,11 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
             {item.area_house &&
               <>
                 <p className={styles.status}>
-                  {item.type_house}&nbsp;
+                  {item.type_house !== null ?
+                  `${item.type_house}\u00A0`
+                  :
+                  `S\u00A0=\u00A0`}
+
                   <span className={styles.status_bold}>
                     {item.area_house}&nbsp;кв.м
                   </span>
@@ -52,7 +56,7 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
               </>
             }
 
-            {(typePage === 'flats' || item.area_flat) &&
+            {(typePage === 'flats' && item.area_flat) &&
               <>
                 <p className={styles.status}>
                   S&nbsp;=&nbsp;
