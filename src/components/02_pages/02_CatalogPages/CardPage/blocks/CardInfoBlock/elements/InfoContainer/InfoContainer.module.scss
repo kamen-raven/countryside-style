@@ -14,26 +14,33 @@
     "map"; */
   gap: 50px;
 
+
+
+  @include breakpoint(screen1024) {
+    gap: 40px;
+  }
+  @include breakpoint(screen640) {
+    gap: 30px;
+  }
 }
 
 .padding-border {
   padding-bottom: 50px;
   border-bottom: 1px solid $gray;
-}
 
+  &:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 
-.priceContainer {
-  display: none;
-  visibility: hidden;
   @include breakpoint(screen1024) {
-    visibility: visible;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid $gray;
+    padding-bottom: 40px;
+  }
+  @include breakpoint(screen640) {
+    padding-bottom: 30px;
   }
 }
+
 
 .iconsContainer {
  // grid-area: icons;
@@ -42,6 +49,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 30px 20px;
+
+  @include breakpoint(screen576) {
+    gap: 20px;
+  }
 }
 
 
@@ -52,6 +63,16 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  @include breakpoint(screen1024) {
+    gap: 24px;
+  }
+  @include breakpoint(screen768) {
+    gap: 20px;
+  }
+  @include breakpoint(screen576) {
+    gap: 12px;
+  }
 }
 
 .characteristicsContainer {
@@ -59,6 +80,3 @@
   @extend .padding-border;
 }
 
-.mapContainer {
- // grid-area: map;
-}

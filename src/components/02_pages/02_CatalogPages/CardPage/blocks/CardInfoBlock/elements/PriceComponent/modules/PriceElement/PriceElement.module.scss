@@ -10,10 +10,12 @@
   }
 
   @include breakpoint(screen768) {
-    padding-bottom: 1.75rem;
     gap: 10px;
   }
 
+  @include breakpoint(screen576) {
+    padding-bottom: 30px;
+  }
 }
 
 .cost {

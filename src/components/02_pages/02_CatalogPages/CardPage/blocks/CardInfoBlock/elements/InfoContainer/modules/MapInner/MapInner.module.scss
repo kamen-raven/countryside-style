@@ -3,11 +3,27 @@
 .title {
   @include common-title(hSmall);
   margin-bottom: 30px;
+
+  @include breakpoint(screen1024) {
+    margin-bottom: 24px;
+  }
+
+
 }
 
 .map {
   width: 100%;
-  height: 470px;
-  max-height: 470px;
+  height: 480px;
+  max-height: 480px;
   border: none;
+
+  @include breakpoint(screen1024) {
+    max-height: clamp(360px, 46.875vw, 480px);
+    height: clamp(360px, 46.875vw, 480px);
+  }
+  @include breakpoint(screen768) {
+    max-height: clamp(320px, 68.4375vw, 360px);
+    height: clamp(320px, 68.4375vw, 360px);
+  }
+
 }

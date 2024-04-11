@@ -25,7 +25,7 @@ const MapBlock: React.FC<MapBlockInterface> = ({ mapInfoData }) => {
 
   const toggleMap = () => {
     setIsActive(!isActive);
-    console.log('click!');
+    //console.log('click!');
   };
 
   return (
