@@ -17,6 +17,10 @@
 .container {
   @include mainContainer();
   @include flexColumnGap;
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
 }
 
 .contentContainer {
@@ -24,8 +28,15 @@
   min-width: 0;
   max-width: 100%;
   overflow: auto;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding-bottom: 50px;
+
+  @include breakpoint(screen960) {
+    padding-bottom: 30px;
+  }
+  @include breakpoint(screen576) {
+    padding-bottom: 20px;
+  }
 }
 
 .innerBlock {
@@ -34,6 +45,10 @@
   grid-auto-columns: calc(50% - 20px);
   grid-auto-flow: column;
   grid-column-gap: 40px;
+
+  @include breakpoint(screen960) {
+    grid-auto-columns: 100%;
+  }
 }
 
 

@@ -15,12 +15,53 @@
   & svg {
     max-width: 87px;
     width: 100%;
+
+    @include breakpoint(screen768) {
+      max-width: 80px;
+    }
+
+    @include breakpoint(screen640) {
+      max-width: 60px;
+    }
+    @include breakpoint(screen480) {
+      max-width: 48px;
+    }
   }
+
+  @include breakpoint(screen960) {
+    padding: 0 10px 12px;
+  }
+
+  @include breakpoint(screen768) {
+    height: 50px;
+    padding-bottom: 10px;
+  }
+
+  @include breakpoint(screen640) {
+    height: 40px;
+    padding: 0 8px 8px;
+  }
+
+  @include breakpoint(screen480) {
+    height: 35px;
+  }
+
 }
 
 .innerContainer {
   display: flex;
   align-items: center;
+  padding-bottom: 5px;
+
+  @include breakpoint(screen960) {
+    padding-bottom: 4px;
+  }
+  @include breakpoint(screen640) {
+    padding-bottom: 2px;
+  }
+  @include breakpoint(screen480) {
+    padding-bottom: 1px;
+  }
 }
 
 .rating {
@@ -28,9 +69,42 @@
     $font-family: $ff-openSans,
     $font-weight: $regular);
   padding: 0 7px 0 17px;
+  line-height: 1;
+  @include breakpoint(screen960) {
+    padding: 0 7px 0 10px;
+  }
+
+  @include breakpoint(screen640) {
+    font-size: 14px;
+  }
+  @include breakpoint(screen480) {
+    padding: 0 5px;
+    font-size: 12px;
+  }
 }
 
 .rateIcon {
   display: flex;
   gap: 3px;
+
+  & svg {
+    width: 17px;
+    height: 16px;
+  }
+
+  @include breakpoint(screen960) {
+    gap: 1px;
+
+    & svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  @include breakpoint(screen480) {
+
+    & svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
 }

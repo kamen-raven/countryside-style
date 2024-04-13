@@ -23,7 +23,7 @@ const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, obje
       <CatalogBlock typePage={typePage} objectsData={objectsData} villagesData={villagesData} />
       <InfoTypeDescriptionBlock typePage={typePage} />
       <ContactUsBlock generalContactsData={generalContactsData} />
-      {/*       <ReviewsBlock reviewsDataItem={reviewsData} /> */}
+      <ReviewsBlock reviewsDataItem={reviewsData} />
     </main>
   );
 };

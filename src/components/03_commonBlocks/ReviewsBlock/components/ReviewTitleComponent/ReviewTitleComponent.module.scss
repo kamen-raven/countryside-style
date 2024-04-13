@@ -6,6 +6,10 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+
+  @include breakpoint(screen640) {
+    gap: 20px
+  }
 }
 
 .title {
@@ -16,9 +20,28 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @include breakpoint(screen960) {
+    gap: 10px;
+  }
+  @include breakpoint(screen768) {
+    flex-wrap: wrap;
+  }
+  @include breakpoint(screen480) {
+    column-gap: 5px;
+    row-gap: 10px;
+  }
+
 }
 
 
 .buttonReview {
   @include common-button(colored);
+
+  @include breakpoint(screen960) {
+    padding: 9px 18px;
+  }
+  @include breakpoint(screen640) {
+    padding: 16px 18px;
+  }
 }
