@@ -5,23 +5,49 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
+
+  @include breakpoint(screen960) {
+    gap: 30px;
+  }
+}
+
+.inner-common {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+
+  @include breakpoint(screen1024) {
+    gap: 40px;
+  }
+
+  @include breakpoint(screen960) {
+    grid-template-columns: auto;
+    gap: 30px;
+  }
+  @include breakpoint(screen576) {
+    gap: 20px;
+  }
 }
 
 .inner {
+
   &__initial {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    @extend .inner-common;
   }
 
   &__toggle {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    @extend .inner-common;
+
     grid-template-areas:
     "info banner"
     "info banner";
 
+    @include breakpoint(screen960) {
+      grid-template-areas:
+      "info"
+      "banner";
+    }
 
     &_hidden {
       padding-top: 0;
@@ -34,6 +60,13 @@
       padding-top: 40px;
       visibility: visible;
       height: auto;
+
+      @include breakpoint(screen960) {
+        padding-top: 30px;
+      }
+      @include breakpoint(screen576) {
+        padding-top: 20px;
+      }
     }
   }
 }
@@ -43,6 +76,14 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @include breakpoint(screen960) {
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 20px;
+  }
 }
 
 .banner {
@@ -51,6 +92,19 @@
   border-radius: $border-radius;
   padding: 40px;
   display: flex;
+  align-items: flex-start;
+
+  @include breakpoint(screen1024) {
+    padding: 32px;
+  }
+
+  @include breakpoint(screen960) {
+    padding: 24px;
+  }
+
+  @include breakpoint(screen576) {
+    padding: 16px;
+  }
 }
 
 .textBlock {
@@ -59,8 +113,8 @@
   text-align: start;
   gap: 15px;
 
-  &_banner {
-    justify-content: space-between;
+  @include breakpoint(screen768) {
+    gap: 12px;
   }
 }
 
@@ -68,8 +122,13 @@
   @include common-title(hSmall);
 
   &_banner {
-    color: $accent-green;
-    font-size: $subtitle;
+    @include common-title(hSubtitle,
+    $color: $accent-green
+    );
+
+    @include breakpoint(screen1024) {
+
+    }
   }
 }
 
@@ -90,13 +149,22 @@
   @include common-button(transparent);
 
 
-  max-width: 275px;
+  max-width: 240px;
   width: 100%;
 
   justify-content: space-between;
 
   &:hover svg {
     stroke: $white;
+  }
+
+  @include breakpoint(screen768) {
+    max-width: 200px;
+    padding: 9px 15px;
+  }
+  @include breakpoint(screen576) {
+    max-width: 180px;
+    padding: 5px 12px;
   }
 }
 

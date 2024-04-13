@@ -15,6 +15,18 @@
 
   display: grid;
   grid-template-rows: 310px auto; //grid-template-rows: 55% 45%;
+
+  @include breakpoint(screen1024) {
+    grid-template-rows: clamp(240px, 30.7617vw, 310px) auto;
+  }
+
+  @include breakpoint(screen768) {
+    max-width: none;
+  }
+
+  @media screen and (max-width: 740px) {
+    grid-template-rows: clamp(240px, 57.0443vw, 300px) auto;
+  }
 }
 
 
@@ -37,14 +49,25 @@
   position: relative;
   display: flex;
   cursor: pointer;
+
+  @include breakpoint(screen1024) {
+    height: clamp(240px, 30.7617vw, 310px);
+  }
+
+  @media screen and (max-width: 740px) {
+    height: clamp(240px, 57.0443vw, 300px);
+  }
+
+  @include breakpoint(screen640) {
+  }
 }
 
-    .image {
-      object-fit: cover;
-      object-position: center;
-      width: 100%;
-      height: 100%;
-    }
+.image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
 
 // INFO
 .infoBlock {
@@ -56,6 +79,22 @@
   justify-content: space-between;
   gap: .8rem;
   min-height: 220px;
+
+  @include breakpoint(screen1440) {
+    padding: 20px;
+  }
+
+  @include breakpoint(screen1280) {
+    padding: 25px;
+  }
+
+  @include breakpoint(screen960) {
+    padding: 20px;
+  }
+
+  @include breakpoint(screen768) {
+    min-height: 180px;
+  }
 }
 
 .infoContainer {
@@ -137,14 +176,32 @@
   width: 45px;
   height: 45px;
 
+  @include breakpoint(screen768) {
+    width: 40px;
+    height: 40px;
+  }
+  @include breakpoint(screen576) {
+    width: 35px;
+    height: 35px;
+  }
+
+
   & svg {
+    width: 22px;
+    height: 8px;
     transition: transform .3s linear;
+
+    @include breakpoint(screen576) {
+      width: 50%;
+      height: 50%;
+    }
+
   }
 
   &:hover {
     & svg {
       transition: transform .3s linear;
-      transform: translate(10px);
+      transform: translate(6px);
     }
   }
 

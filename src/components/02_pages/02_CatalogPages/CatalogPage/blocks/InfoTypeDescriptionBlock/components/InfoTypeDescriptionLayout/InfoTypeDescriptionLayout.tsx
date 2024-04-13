@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './InfoTypeDescriptionLayout.module.scss';
 import { InfoTypeDescriptionLayoutInterface } from './InfoTypeDescriptionLayout.interface.ts';
 
@@ -35,10 +35,32 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
   const [styleButton, setStyleButton] = useState(blockCondition.closed.buttonStyle);
   const [visibleText, setVisibleText] = useState(blockCondition.closed.textVisibleStyle);
 
+  const parentRef = useRef<HTMLDivElement>(null); // реф для скролла вверх при пагинации
 
 
+  const scrollToTop = async () => {
+    try {
+      if (parentRef.current) {
+        parentRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
+        await new Promise<void>((resolve) => {
+          parentRef.current?.addEventListener('scroll', () => {
+            if (parentRef.current?.scrollTop === 0) {
+              resolve();
+            }
+          });
+        });
+      }
+    } catch (error) {
+      console.error('Error scrolling to top:', error);
+    }
+  };
 
-  const handleClick = () => {
+
+  const handleClick = async () => {
     // Инвертируем состояние для открытия/закрытия текста
     setVisibleText((prevVisibleText) =>
       prevVisibleText === blockCondition.closed.textVisibleStyle
@@ -59,12 +81,19 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
         ? blockCondition.opened.buttonStyle
         : blockCondition.closed.buttonStyle
     );
+
+    if(visibleText !== blockCondition.closed.textVisibleStyle) {
+      scrollToTop();
+    } else {
+      return;
+    }
   };
 
 
 
+
   return (
-    <div className={styles.layoutContainer}>
+    <div className={styles.layoutContainer} ref={parentRef}>
       <div className={styles.inner}>
         <div className={styles.inner__initial}> {/* видимые абзацы */}
 

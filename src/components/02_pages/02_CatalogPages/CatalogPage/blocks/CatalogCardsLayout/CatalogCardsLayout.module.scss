@@ -9,8 +9,28 @@
   margin-bottom: 50px;
 
 
-  @include breakpoint(screen1280) {
+  @include breakpoint(screen1440) {
+    gap: 40px 30px;
+  }
 
+  @include breakpoint(screen1280) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px;
+  }
+
+  @include breakpoint(screen1024) {
+    gap: 40px 28px;
+  }
+
+  @include breakpoint(screen768) {
+    grid-template-columns: repeat(auto-fit,  clamp(300px, calc((100vw - (100px + 40px)) / 2) , 340px));
+  }
+
+  @media screen and (max-width: 740px) {
+    grid-template-columns: auto;
+  }
+  @include breakpoint(screen576) {
+    gap: 20px;
+    margin-bottom: 30px;
   }
 }

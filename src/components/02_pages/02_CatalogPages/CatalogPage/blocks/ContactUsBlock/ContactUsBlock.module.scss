@@ -7,24 +7,48 @@
 
 .container {
   max-width: 1920px;
-  max-height: 600px;
+
   margin: 0 auto;
 
   display: flex;
   align-items: center;
   gap: 40px;
+
+  @include breakpoint(screen960) {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @include breakpoint(screen768) {
+    align-items: stretch;
+  }
+
 }
 
 
 .image {
   flex-basis: 50%;
   object-fit: cover;
-  height: clamp(450px, 50vw, 600px);// max(350px, 600px);
+  height: clamp(450px, 50vw, 600px); // max(350px, 600px);
   width: 100%;
-/*
+  max-width: 50vw;
+
+  /*
   flex-shrink: 3;
   object-fit: cover;
   max-height: 600px; */
+  @include breakpoint(screen960) {
+    object-fit: contain;
+    max-height: 500px;
+    width: 100%;
+    max-width: 768px;
+  }
+
+  @include breakpoint(screen768) {
+    object-fit: cover;
+    max-height: clamp(250px, 62.6289vw, 450px);
+    object-position: top;
+  }
 }
 
 
@@ -41,10 +65,23 @@
   @include breakpoint(screen1280) {
     padding-left: calc($padding-side / 1.5);
   }
+
+  @include breakpoint(screen960) {
+    gap: 30px;
+    padding: clamp(30px, 8.02082vw, 60px) $padding-side-tab;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 20px;
+  }
 }
 
 .titleContainer {
   @include flexColumnGap($gap: 20px);
+
+  @include breakpoint(screen960) {
+    gap: 10px;
+  }
 }
 
 .title {
@@ -53,9 +90,9 @@
 
 .schedule {
   @include common-paragraph(pLg,
-  $font-weight: $regular,
-  $line-height: 120%,
-  $color: $white);
+    $font-weight: $regular,
+    $line-height: 120%,
+    $color: $white);
 }
 
 .addressContainer {
@@ -64,6 +101,14 @@
   gap: 60px;
   align-items: center;
   flex-wrap: wrap;
+
+  @include breakpoint(screen960) {
+    justify-content: space-between;
+  }
+
+  @include breakpoint(screen768) {
+    gap: 16px;
+  }
 
 }
 
@@ -75,8 +120,13 @@
   @include common-link;
 
   @include common-paragraph(pLg,
-  $font-weight: $bold,
-  $color: $white);
+    $font-weight: $bold,
+    $color: $white);
+
+  @include breakpoint(screen768) {
+    gap: 10px;
+  }
+
 
   & svg {
     fill: $white;
@@ -119,9 +169,23 @@
 
 .contactItem {
   @include common-li;
-  border-radius: 30px;
-  max-height: 45px;
+  @include common-button(transparent);
+  padding: 0;
   border: 1px solid $white;
+
+  @include breakpoint(screen768) {
+    min-width: 100px;
+  }
+
+  &:hover {
+    background-color: $accent-green;
+
+    & svg {
+      fill: $accent-green
+    }
+  }
+
+
 
   &__icon {
     width: 35px;
@@ -134,21 +198,42 @@
       border-radius: 50%;
       fill: $accent-gray;
     }
+
+    @include breakpoint(screen768) {
+      width: 30px;
+      height: 30px;
+
+    }
+
+    @include breakpoint(screen576) {
+      width: 25px;
+      height: 25px;
+      margin: 5px 5px 5px 10px;
+    }
   }
 
   &__link {
     display: flex;
     align-items: center;
-
     padding-left: 20px;
 
+
     @include common-paragraph(p,
-    $font-weight: $regular,
-    $color: $white,
-    $font-family: $ff-openSans);
+      $font-weight: $regular,
+      $color: $white,
+      $font-family: $ff-openSans);
 
     text-decoration: none;
     text-align: center;
+
+
+    @include breakpoint(screen768) {
+      padding-left: 12px;
+    }
+
+    @include breakpoint(screen480) {
+      padding-left: 8px;
+    }
   }
 }
 
@@ -156,8 +241,8 @@
 .buttonCall {
   @include common-button(dark);
   @include common-paragraph(p,
-  $font-weight: $regular,
-  $color: $white,
-  $line-height: 120%);
+    $font-weight: $regular,
+    $color: $white,
+    $line-height: 120%);
   width: fit-content;
 }

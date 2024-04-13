@@ -28,6 +28,7 @@
   @include breakpoint(screen576) {
     height: 35px;
     font-size:$paragraph-md-mob;
+    $padding: 6px 20px,
   }
 
 
@@ -60,6 +61,15 @@
   @if $appearance == dark {
     background: $dark;
     color: #FFF;
+    border: 1px solid $dark;
+    transition: all linear .2s;
+
+    &:hover {
+      background: $gray-light;
+      color: $dark;
+      border: 1px solid $dark;
+      transition: all linear .2s;
+    }
   }
 
   @if $appearance == light {

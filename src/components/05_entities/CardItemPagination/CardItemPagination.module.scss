@@ -4,6 +4,10 @@
   display: flex;
   justify-content: center;
   gap: 12px;
+
+  @include breakpoint(screen768) {
+    gap: 8px;
+  }
 }
 
 .buttonPagination {
@@ -24,11 +28,34 @@
   border-radius: 50%;
   background-color: $white;
 
+  @include breakpoint(screen768) {
+    font-size: $paragraph-lg-tab;
+    width: 40px;
+    height: 40px;
+  }
+  @include breakpoint(screen576) {
+    font-size: $paragraph-lg-mob;
+    width: 35px;
+    height: 35px;
+  }
 
   &__arrow {
     display: flex;
     align-items: center;
     justify-content: center;
+
+
+    & svg {
+      width: 22px;
+      height: 8px;
+      transition: transform .3s linear;
+
+      @include breakpoint(screen576) {
+        width: 60%;
+        height: 60%;
+      }
+
+    }
 
     &_prev svg {
       transform: rotate(180deg);

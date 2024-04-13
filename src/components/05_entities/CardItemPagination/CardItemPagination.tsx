@@ -8,7 +8,7 @@ import ArrowIcon from '~svg/button/arrow.svg';
 const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage, setCurrentPage, totalPages, parentRef }) => {
 
 
-  const scrollToTop = () => {
+/*   const scrollToTop = () => {
     return new Promise<void>((resolve) => {
       if (parentRef.current) {
         parentRef.current.scrollIntoView({
@@ -21,8 +21,29 @@ const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage
         resolve();
       }
     });
+  }; */
+  const scrollToTop = async () => {
+    try {
+      if (parentRef.current) {
+        parentRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
+        await new Promise<void>((resolve) => {
+          parentRef.current?.addEventListener('scroll', () => {
+            if (parentRef.current?.scrollTop === 0) {
+              resolve();
+            }
+          });
+        });
+      }
+    } catch (error) {
+      console.error('Error scrolling to top:', error);
+    }
   };
 
+  
   // функция перелистывания следующей страницы
   const handlePageChange = async (page: number) => {
     await scrollToTop();

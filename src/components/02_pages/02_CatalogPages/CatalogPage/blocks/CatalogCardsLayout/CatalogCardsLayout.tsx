@@ -30,7 +30,7 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ typePage, o
         ))}
       </div>
 
-      {currentItems.length >= itemsPerPage &&
+      {
         <CardItemPagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}

@@ -18,12 +18,12 @@ const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, obje
 
   return (
     <main className={styles.mainContainer}>
-      <TitleBlock typePage={typePage}/>
+      <TitleBlock typePage={typePage} />
       <SearchBarBlock />
       <CatalogBlock typePage={typePage} objectsData={objectsData} villagesData={villagesData} />
-      <InfoTypeDescriptionBlock typePage={typePage}/>
+      <InfoTypeDescriptionBlock typePage={typePage} />
       <ContactUsBlock generalContactsData={generalContactsData} />
-      <ReviewsBlock reviewsDataItem={reviewsData} />
+      {/*       <ReviewsBlock reviewsDataItem={reviewsData} /> */}
     </main>
   );
 };
