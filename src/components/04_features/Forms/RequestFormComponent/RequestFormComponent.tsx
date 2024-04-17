@@ -38,7 +38,7 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
       const response = await postApplicationFeedback(question, name, phone);
 
       console.log('Response:', response); // Выводим ответ сервера в консоль
-      // Здесь можно добавить логику для обработки успешной отправки сообщения
+
       resetForm();
       closeContactFormPopup();
 
@@ -51,7 +51,6 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
     } catch (error) {
       console.error('Error:', error); // Выводим ошибку в консоль
       openSuccessPopup('errorMessage');
-      // Здесь можно добавить логику для обработки ошибки при отправке сообщения
     }
   };
 
@@ -68,25 +67,27 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
         Напишите Ваше имя, телефон и&nbsp;свой вопрос. Наш&nbsp;менеджер ответит Вам в&nbsp;ближайшее время.
       </p>
       <fieldset className={styles.fieldset}>
-        <label className={styles.label}>
-          <input className={styles.input}
-            name={'name'}
-            type={'text'}
-            required
-            placeholder={'Ваше имя'}
-            value={name}
-            onChange={(e) => setName(e.target.value)} />
-        </label>
+        <div className={styles.mainForm}>
+          <label className={styles.label}>
+            <input className={styles.input}
+              name={'name'}
+              type={'text'}
+              required
+              placeholder={'Ваше имя'}
+              value={name}
+              onChange={(e) => setName(e.target.value)} />
+          </label>
 
-        <label className={styles.label}>
-          <input className={styles.input}
-            name={'phone'}
-            type={'tel'}
-            required
-            placeholder={'Ваш телефон'}
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)} />
-        </label>
+          <label className={styles.label}>
+            <input className={styles.input}
+              name={'phone'}
+              type={'tel'}
+              required
+              placeholder={'Ваш телефон'}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)} />
+          </label>
+        </div>
 
         <label className={styles.label}>
           <textarea className={styles.textarea}
@@ -101,7 +102,7 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
         type={"submit"}>
         Отправить вопрос
       </button>
-      <PersonalAgreementElement/>
+      <PersonalAgreementElement />
     </form>
   );
 };

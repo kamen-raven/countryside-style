@@ -36,12 +36,20 @@
   &_formFirst {
     flex-direction: row-reverse;
 
+    @include breakpoint(screen960) {
+      flex-direction: column-reverse;
+    }
+
     & .wrapperForm {
       margin-right: 0;
       margin-left: $padding-side;
 
       @include breakpoint(screen1280) {
         margin-left: calc($padding-side / 1.5);
+      }
+
+      @include breakpoint(screen960) {
+        margin: 0;
       }
     }
   }
@@ -74,6 +82,10 @@
   object-position: left center;
   width: 100%;
   max-height: 600px;
+
+  @include breakpoint(screen1280) {
+    object-position: center;
+  }
 
   @include breakpoint(screen960) {
     object-position: center;

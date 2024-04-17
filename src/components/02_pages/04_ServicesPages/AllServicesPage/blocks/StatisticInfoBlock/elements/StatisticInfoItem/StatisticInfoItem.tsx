@@ -4,7 +4,7 @@ import { StatisticInfoItemInterface } from './StatisticInfoItem.interface.ts';
 
 const StatisticInfoItem: React.FC<StatisticInfoItemInterface> = ({ statIndicatorItem }) => {
 
-const statIndicatorFontSize = (statIndicatorItem.statIndicator.length > 3) ? styles.statIndicator_big : styles.statIndicator_extraBig;
+const statIndicatorFontSize = (statIndicatorItem.statIndicator.length > 3) ? '' : styles.statIndicator_extraBig;
 
   return (
     <div className={styles.infoContainer}>

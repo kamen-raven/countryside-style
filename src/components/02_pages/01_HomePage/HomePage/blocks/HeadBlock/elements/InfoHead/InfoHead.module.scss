@@ -59,7 +59,8 @@
   &__num {
     @include special-text(decorate,
               $font-weight: $bold,
-              $line-height: 100%);
+              $line-height: 100%,
+              $color: $white);
     display: flex;
     width: fit-content;
     padding-bottom: 1.5rem;

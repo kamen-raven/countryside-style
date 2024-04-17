@@ -15,6 +15,12 @@
 
   @include breakpoint(screen768) {
     padding: $padding-gap-mob;
+    background-image: url('../../../../../../../public/img/common-images/backgroundCallToAction\ 768px.jpg');
+  }
+
+  @include breakpoint(screen576) {
+    margin-bottom: 10px;
+    background-image: url('../../../../../../../public/img/common-images/backgroundCallToAction\ 375px.jpg');
   }
 }
 
@@ -25,11 +31,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+
+  @include breakpoint(screen768) {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
 }
 
 .callText {
   @include common-title(hTitle,
-          $color: $white);
+    $color: $white);
 
 }
 
@@ -39,17 +50,26 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
+
+  @include breakpoint(screen480) {
+    gap: 12px;
+  }
 }
 
 .subtitle {
   @include common-paragraph(pLg,
-          $color: $white);
+    $color: $white);
+  line-height: 160%;
 }
 
 .info {
   display: flex;
   align-items: baseline;
   gap: 15px;
+
+  @include breakpoint(screen576) {
+    gap: 10px;
+  }
 
   &__bullet {
     max-width: 30px;
@@ -68,13 +88,23 @@
       stroke: $white;
       transform: rotate(-90deg) scale(0.55);
     }
+
+    @include breakpoint(screen768) {
+      max-width: 25px;
+      max-height: 25px;
+    }
+
+    @include breakpoint(screen576) {
+      max-width: 20px;
+      max-height: 20px;
+    }
   }
 
   &__text {
     @include common-paragraph(p,
-          $font-weight: $regular,
-          $color: $white,
-          $font-family: $ff-openSans);
+      $font-weight: $regular,
+      $color: $white,
+      $font-family: $ff-openSans);
   }
 }
 
@@ -82,4 +112,7 @@
 .button {
   @include common-button(light);
 
+  @include breakpoint(screen576) {
+    margin-top: 10px;
+  }
 }

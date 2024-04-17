@@ -2,16 +2,29 @@
 
 .itemContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(auto, 300px) 1fr;
   grid-template-rows: repeat(auto-fit, minmax(300px, auto));
   gap: 50px;
-  @include  breakpoint(screen1440) {
+
+  @include breakpoint(screen1440) {
     gap: 20px;
   }
 
   @include breakpoint(screen1280) {
     grid-template-columns: auto;
     grid-template-rows: 300px auto;
+    gap: 20px;
+  }
+
+  @include breakpoint(screen768) {
+    grid-template-columns: minmax(240px, 1fr) 1fr;
+    grid-template-rows: minmax(240px, 320px);
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    grid-template-columns: auto;
+    grid-template-rows: minmax(300px, 320px) auto;
     gap: 20px;
   }
 }
@@ -34,41 +47,106 @@
 }
 
 .infoContainer {
-  @include flexColumnGap($gap: 20px);
-  justify-content: space-between;
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+  grid-template-rows: auto min-content min-content;
+  grid-template-areas:
+    "title"
+    "buttonLink"
+    "description";
 
   @include breakpoint(screen1280) {
-    justify-content: flex-start;
+    align-content: space-between;
+    grid-template-columns: auto min-content;
+    grid-template-rows: min-content min-content;
+    grid-template-areas:
+      "title buttonLink"
+      "description description";
+  }
+
+  @include breakpoint(screen960) {
+    align-content: initial;
+    grid-template-columns: auto;
+    grid-template-rows: auto min-content min-content;
+    grid-template-areas:
+      "title"
+      "buttonLink"
+      "description";
+  }
+
+  @include breakpoint(screen768) {
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  @include breakpoint(screen576) {
+    align-content: space-between;
+    grid-template-columns: auto min-content;
+    grid-template-rows: min-content min-content;
+    gap: 10px;
+    grid-template-areas:
+      "title buttonLink"
+      "description description";
   }
 }
 
 .title {
   @include common-title(hSmall);
+  align-self: flex-start;
+  grid-area: title;
 
-  &_big {
-    font-size: $subtitle;
+  @include breakpoint(screen576) {
+    align-self: center;
   }
 }
 
-.innerContainer {
+/* .innerContainer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 20px;
-}
 
+  @include breakpoint(screen768) {
+  gap: 15px;
+  }
+}
+ */
 .linkButton {
   @include common-link;
   @include common-button(colored);
+  grid-area: buttonLink;
+
+
+  @include breakpoint(screen1280) {
+    align-self: baseline;
+  }
+
+  @include breakpoint(screen768) {
+    padding: 7px 20px;
+  }
+
+  @include breakpoint(screen576) {
+    align-self: center;
+    min-width: 0;
+    padding: 5px 15px;
+  }
+  @include breakpoint(screen480) {
+    padding: 5px 10px;
+  }
 }
 
 .description {
   @include common-paragraph(p,
-            $font-family: $ff-openSans,
-            $font-weight: $regular);
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+  align-self: flex-end;
+  grid-area: description;
+
 }
 
-.arrowsButtonContainer {
+/* .arrowsButtonContainer {
   display: flex;
   gap: 15px;
 }
+ */

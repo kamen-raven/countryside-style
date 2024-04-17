@@ -20,7 +20,7 @@ const statisticalIndicatorsData: statisticalIndicatorsInterface[] = [
     title: 'Сэкономили налогов',
     statIndicator: '125',
     statLabel: 'млн. руб.',
-    description: 'Законом предусмотрены способы легализации налогов с продажи недвижимости, к сожалению не все о них знают.'
+    description: 'Законом предусмотрены способы легализации налогов с продажи недвижимости, к сожалению, не все о них знают.'
   },
   {
     _id: 4,

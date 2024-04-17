@@ -16,36 +16,47 @@
 
 .container {
   @include mainContainer();
-@include flexColumnGap($gap: 30px);
+  @include flexColumnGap($gap: 30px);
+
+  @include breakpoint(screen768) {
+    gap: 20px;
+  }
+  @include breakpoint(screen576) {
+    gap: 16px;
+  }
 }
 
 .title {
   @include common-title(hTitle,
-            $color: $white);
+    $color: $white);
 }
 
 .description {
   @include common-paragraph(p,
-            $font-family: $ff-openSans,
-            $font-weight: $regular,
-            $color: $white);
-    max-width: 90%;
-    @include breakpoint(screen1280) {
-      max-width: 100%;
-    }
+    $font-family: $ff-openSans,
+    $font-weight: $regular,
+    $color: $white);
+  max-width: 90%;
+
+  @include breakpoint(screen1280) {
+    max-width: 100%;
+  }
 }
 
 .descriptionAction {
   @include common-paragraph(pXl,
-            $font-family: $ff-openSans,
-            $font-weight: $bold,
-            $line-height: 120%,
-            $color: $white);
-    max-width: 90%;
+    $font-family: $ff-openSans,
+    $font-weight: $bold,
+    $line-height: 120%,
+    $color: $white);
+  max-width: 90%;
 
-    @include breakpoint(screen1280) {
-      max-width: 100%;
-    }
+  @include breakpoint(screen1280) {
+    max-width: 100%;
+  }
+  @include breakpoint(screen768) {
+    padding-bottom: 6px;
+  }
 }
 
 
@@ -60,7 +71,12 @@
 
   @include breakpoint(screen1024) {
     grid-template-columns: auto;
-    gap: 30px;
+    gap: 24px;
+  }
+  @include breakpoint(screen640) {
+    gap: 20px;
+  }
+  @include breakpoint(screen576) {
+    gap: 16px;
   }
 }
-

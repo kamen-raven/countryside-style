@@ -16,12 +16,20 @@
   @include mainContainer();
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   gap: 50px;
 
+
   @include breakpoint(screen1024) {
-    grid-template-columns: auto;
-    justify-items: center;
+    gap: 30px;
   }
+
+  @media (max-width: 1010px) {
+    grid-template-columns: auto;
+  }
+  @include breakpoint(screen768) {
+    gap: 20px;
+  }
+
 }
 
