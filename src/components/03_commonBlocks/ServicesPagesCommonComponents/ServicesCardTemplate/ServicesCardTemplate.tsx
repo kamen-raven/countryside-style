@@ -3,10 +3,8 @@ import styles from './ServicesCardTemplate.module.scss';
 import { ServicesCardTemplateInterface } from './ServicesCardTemplate.interface.ts';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowsButton } from '~shared/index.ts';
 
-
-const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({ serviceItem, arrows = false, buttonText }) => {
+const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({ serviceItem, buttonText }) => {
 
   //const setFontSize = (serviceItem.title.length <= 7) ? styles.title_big : '';
   return (

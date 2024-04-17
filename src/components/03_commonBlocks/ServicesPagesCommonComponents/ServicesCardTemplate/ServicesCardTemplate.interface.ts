@@ -4,6 +4,6 @@ import { servicesDataInterface } from '~data/constant/servicesBlock/allServicesP
 export interface ServicesCardTemplateInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   serviceItem: servicesDataInterface;
   buttonText?: string;
-  arrows?: boolean;
+/*   arrows?: boolean; */
   children?: ReactNode;
 }
