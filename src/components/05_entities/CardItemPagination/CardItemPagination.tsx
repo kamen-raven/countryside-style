@@ -7,35 +7,31 @@ import ArrowIcon from '~svg/button/arrow.svg';
 
 const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage, setCurrentPage, totalPages, parentRef }) => {
 
-
-/*   const scrollToTop = () => {
-    return new Promise<void>((resolve) => {
+  /*
+    const scrollToTop = () => {
+      return new Promise<void>((resolve) => {
+        if (parentRef.current) {
+          parentRef.current.scrollIntoView({
+            block: "start",
+            inline: "nearest",
+            behavior: "smooth"
+          });
+          setTimeout(resolve, 650); // Подождем 500 мс (можно уточнить время)
+        } else {
+          resolve();
+        }
+      });
+    }; */
+  const scrollToTop = async () => {
+    try {
       if (parentRef.current) {
         parentRef.current.scrollIntoView({
           block: "start",
           inline: "nearest",
           behavior: "smooth"
         });
-        setTimeout(resolve, 650); // Подождем 500 мс (можно уточнить время)
-      } else {
-        resolve();
-      }
-    });
-  }; */
-  const scrollToTop = async () => {
-    try {
-      if (parentRef.current) {
-        parentRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
-        });
         await new Promise<void>((resolve) => {
-          parentRef.current?.addEventListener('scroll', () => {
-            if (parentRef.current?.scrollTop === 0) {
-              resolve();
-            }
-          });
+          setTimeout(resolve, 650); // Подождем 500 мс (можно уточнить время)
         });
       }
     } catch (error) {
@@ -43,10 +39,10 @@ const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage
     }
   };
 
-  
+
   // функция перелистывания следующей страницы
   const handlePageChange = async (page: number) => {
-    await scrollToTop();
+    scrollToTop();
     setCurrentPage(page);
   };
 

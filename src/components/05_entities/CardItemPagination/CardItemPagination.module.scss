@@ -16,8 +16,10 @@
   width: 45px;
   height: 45px;
   box-sizing: border-box;
-
-
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: $dark;
   text-align: center;
   font-size: $paragraph-lg;

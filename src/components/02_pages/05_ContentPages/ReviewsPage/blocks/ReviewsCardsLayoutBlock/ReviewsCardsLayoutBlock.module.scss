@@ -11,14 +11,27 @@
   @include breakpoint(screen768) {
     padding: $padding-gap-mob;
   }
+
 }
 
 .container {
   @include mainContainer();
+  @include breakpoint(screen480) {
+    padding: 0;
+  }
 }
 
 .contentContainer {
-  margin-bottom: 50px;
   @include flexColumnGap($gap: 40px);
+
+  @include breakpoint(screen576) {
+    gap: 30px;
+  }
 }
 
+.paginationMargin {
+  margin-bottom: 50px;
+  @include breakpoint(screen576) {
+    margin-bottom: 30px;
+  }
+}

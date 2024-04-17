@@ -30,6 +30,19 @@
     }
 
 
+    @if $tag == label {
+      font-size: $subtitle; // 45px
+      font-weight: $font-weight;// medium - 500
+      line-height: 100%;
+      margin: 0;
+      color: $color;
+
+
+      @include breakpoint(screen768) {
+        font-size: clamp($subtitle-tab, 4.54096vw, $subtitle);
+      }
+    }
+
     @if $tag == link {
       font-family: $font-family; // Gotham Pro
       font-size: $fs-navLink; // 13px

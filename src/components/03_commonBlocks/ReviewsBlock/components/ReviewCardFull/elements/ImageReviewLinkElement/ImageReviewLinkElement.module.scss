@@ -15,4 +15,16 @@
   object-fit: contain;
   width: clamp(180px, 20vw, 320px);
   height: auto;
+
+  @include breakpoint(screen768) {
+    max-width: 180px;
+    width: 100%;
+  }
+
+
+  @include breakpoint(screen640) {
+    max-width: none;
+    width: 100%;
+  }
+
 }

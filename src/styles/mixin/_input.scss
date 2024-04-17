@@ -1,4 +1,5 @@
 @import '~variables';
+@import './adaptive';
 
 @mixin common-input {
     box-sizing: border-box;
@@ -8,9 +9,17 @@
     background: $white;
     color: $gray;
     font-family: $ff-openSans;
-    font-size: 1.125rem;
+    font-size: $paragraph-md;
     font-weight: $regular;
     padding: 9px 30px;
+
+    @include breakpoint(screen1024) {
+      font-size: clamp($paragraph-md-tab, 1.92057vw, $paragraph-md);
+    }
+    @include breakpoint(screen768) {
+      font-size: clamp($paragraph-md-mob, 2.90833vw, $paragraph-md-tab);
+    }
+
 
     &:focus {
       outline: none;

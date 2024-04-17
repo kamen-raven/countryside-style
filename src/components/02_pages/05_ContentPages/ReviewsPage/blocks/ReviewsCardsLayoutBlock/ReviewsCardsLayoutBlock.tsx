@@ -23,19 +23,24 @@ const ReviewsCardsLayoutBlock: React.FC<ReviewsCardsLayoutBlockInterface> = ({
       <div className={styles.container}>
 
 
-        <div className={styles.contentContainer}>
-            {currentItems.map((item, index) => {
-              return (
-                <ReviewCardFull key={index} data={item} />
-              );
-            })}
+        <div className={`${styles.contentContainer} ${reviewsData.length > itemsPerPage ? styles.paginationMargin : null}`}>
+          {currentItems.map((item, index) => {
+            return (
+              <ReviewCardFull key={index} data={item} />
+            );
+          })}
         </div>
 
-        <CardItemPagination
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          totalPages={totalPages}
-          parentRef={parentRef} />
+
+        {reviewsData.length > itemsPerPage ?
+          <CardItemPagination
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            totalPages={totalPages}
+            parentRef={parentRef} />
+          :
+          null
+        }
 
       </div>
     </section>

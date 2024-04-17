@@ -17,21 +17,23 @@ const ReviewFormComponent: React.FC = () => {
         Напишите Ваше имя, телефон и&nbsp;свой отзыв. После модерации мы разместим его на&nbsp;нашем сайте.
       </p>
       <fieldset className={styles.fieldset}>
-        <label className={styles.label}>
-          <input className={styles.input}
-            name={'name'}
-            type={'text'}
-            required
-            placeholder={'Ваше имя'} />
-        </label>
+        <div className={styles.mainForm}>
+          <label className={styles.label}>
+            <input className={styles.input}
+              name={'name'}
+              type={'text'}
+              required
+              placeholder={'Ваше имя'} />
+          </label>
 
-        <label className={styles.label}>
-          <input className={styles.input}
-            name={'phone'}
-            type={'tel'}
-            required
-            placeholder={'Ваш телефон'} />
-        </label>
+          <label className={styles.label}>
+            <input className={styles.input}
+              name={'phone'}
+              type={'tel'}
+              required
+              placeholder={'Ваш телефон'} />
+          </label>
+        </div>
 
         <label className={styles.label}>
           <textarea className={styles.textarea}
@@ -53,7 +55,7 @@ const ReviewFormComponent: React.FC = () => {
           Отправить отзыв
         </button>
       </div>
-      <PersonalAgreementElement/>
+      <PersonalAgreementElement />
     </form>
   );
 };
