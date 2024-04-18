@@ -25,7 +25,7 @@
   @include breakpoint(screen576) {
     grid-template-columns: auto;
     grid-template-rows: minmax(300px, 320px) auto;
-    gap: 20px;
+    gap: 16px;
   }
 }
 
@@ -42,8 +42,12 @@
   max-width: 300px;
 
   @include breakpoint(screen1280) {
-    max-width: 100%;
+    max-width: none;
   }
+
+/*   @include breakpoint(screen320) {
+    aspect-ratio: 1 / 1;
+  } */
 }
 
 .infoContainer {

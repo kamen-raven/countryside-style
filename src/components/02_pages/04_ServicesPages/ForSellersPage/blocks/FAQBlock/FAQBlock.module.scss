@@ -19,25 +19,42 @@
 
 .titleContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
   padding-bottom: 50px;
   border-bottom: 2px solid $gray;
+
+  @include breakpoint(screen1024) {
+    padding-bottom: clamp(30px, 4.3957vw, 50px);
+    gap: 16px;
+  }
+
+  @include breakpoint(screen768) {
+    border-bottom: 1px solid $gray;
+  }
+
 }
 
 .title {
   @include common-title(hTitle);
 
 }
+
 .buttonAsk {
   @include common-button(colored);
   @include common-paragraph(p,
-  $color: $white,
-  $font-family: $ff-openSans,
-  $font-weight: $regular);
+    $color: $white,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
   text-align: center;
   text-wrap: nowrap;
   min-width: 220px;
   width: 220px;
+
+  @include breakpoint(screen768) {
+    min-width: 200px;
+    width: 200px;
+  }
 }

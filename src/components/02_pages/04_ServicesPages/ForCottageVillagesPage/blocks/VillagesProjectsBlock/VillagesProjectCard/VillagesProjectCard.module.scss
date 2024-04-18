@@ -30,8 +30,16 @@
     max-height: fit-content;
   }
 
+  @include breakpoint(screen1024) {
+    flex-direction: column;
+  }
+
   &_textFirst{
     flex-direction: row-reverse;
+
+    @include breakpoint(screen1024) {
+      flex-direction: column;
+    }
   }
 
 }
@@ -45,7 +53,14 @@
 .image {
   object-fit: cover;
   width: 50%;
-  height: clamp(450px, 70vw, 600px)// max(350px, 600px);
+  max-height: 600px;
+  //height: clamp(450px, 70vw, 600px);// max(350px, 600px);
+
+  @include breakpoint(screen1024) {
+    width: 100%;
+    height: clamp(240px, 64.5455vw, 500px);
+    max-height: 500px;
+  }
 }
 
 
@@ -58,15 +73,29 @@
 
   @include breakpoint(screen1280) {
     margin: 0 calc($padding-side / 1.5);
-    padding: 20px 0;
+    padding: 40px 0;
   }
 
+  @include breakpoint(screen1024) {
+    @include mainContainer($padding-upDown: clamp(2.5rem, 8.15625vw, 3.75rem));
+    gap: 24px;
+  }
 
+  @include breakpoint(screen768) {
+    gap: 16px;
+  }
 }
 
 .name {
   @include common-title(hSubtitle, $color: $white);
   margin-bottom: 20px;
+
+  @include breakpoint(screen1024) {
+margin-bottom: 16px;
+  }
+  @include breakpoint(screen768) {
+margin-bottom: 10px;
+  }
 }
 
 .description {

@@ -62,7 +62,7 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
       <button className={styles.requestForm__button} type={"submit"}>
         {buttonText}
       </button>
-      <PersonalAgreementElement className={styles.requestForm__agreement}/>
+      <PersonalAgreementElement className={styles.requestForm__agreement} />
     </form>
   );
 };

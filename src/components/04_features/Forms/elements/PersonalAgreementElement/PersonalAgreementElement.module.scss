@@ -1,7 +1,7 @@
 @import '~global_styles';
 
 .agreement {
-  display: inline-block;
+  display: inline;
 
   @include common-paragraph(pSm,
     $font-weight: $regular,

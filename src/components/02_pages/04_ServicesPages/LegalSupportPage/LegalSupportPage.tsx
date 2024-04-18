@@ -13,7 +13,7 @@ const LegalSupportPage: React.FC<LegalSupportPageInterface> = ({
   return (
     <main className={styles.mainContainer}>
       <TitleBlockTemplate pageData={titleBlockData[typePage]} />
-      <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={''} />
+      <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={'LegalSupportPageForm1'} />
       <AdvantagesBlock advantagesList={advantagesListData} title='Услуги'>
         <p className={styles.description}>
           Наши юристы проверять документы, разработают более безопасную схему проведения сделки,
@@ -22,7 +22,7 @@ const LegalSupportPage: React.FC<LegalSupportPageInterface> = ({
       </AdvantagesBlock>
 {/* TODO: <ServicesStoriesBlock/> УСЛУГИ STORIES ДОДЕЛАТЬ*/}
       <ReviewsBlock reviewsDataItem={reviewsData} />
-      <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''} />
+      <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={'LegalSupportPageForm2'} />
     </main>
   );
 };

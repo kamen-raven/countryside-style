@@ -5,10 +5,30 @@
   @include flexColumnGap($gap: 20px);
   border-top: 1px solid $gray;
   margin-bottom: 20px;
+
+  @include breakpoint(screen768) {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 .titleContainer {
-  @include mainContainer($padding-upDown: 70px);
+  @include mainContainer();
+  padding-top: 70px;
+  padding-bottom: 80px;
+  @include breakpoint(screen1280) {
+    padding-top: 70px;
+    padding-bottom: 80px;
+  }
+  @include breakpoint(screen1024) {
+    padding-top: clamp(2.5rem, 5.02082vw, 4.375rem);
+    padding-bottom: clamp(40px, 5.78906vw, 70px);
+  }
+  @include breakpoint(screen768) {
+    padding-top: clamp(1.875rem, 7.29036vw, 2.5rem);
+    padding-bottom: clamp(20px, 5.15625vw, 40px);
+  }
+
 }
 
 .title {

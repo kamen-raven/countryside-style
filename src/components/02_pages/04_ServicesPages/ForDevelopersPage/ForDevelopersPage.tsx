@@ -17,11 +17,11 @@ const ForDevelopersPage: React.FC<ForDevelopersPageInterface> = ({
     return (
         <main className = {styles.mainContainer}>
           <TitleBlockTemplate  pageData={titleBlockData[typePage]} />
-          <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={''}/>
+          <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={'ForDevelopersPageForm1'}/>
           <ServicesOffers offersListData={offersListData}/>
           <TeamMembersBlock employeesData={onePartner} countUsers={'owner'} />
           <ReviewsBlock reviewsDataItem={reviewsData}/>
-          <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={''}/>
+          <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={'ForDevelopersPageForm2'}/>
         </main>
     );
 };

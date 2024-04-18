@@ -6,29 +6,45 @@
   grid-template-rows: 45px auto;
   gap: 10px;
 
+  @include breakpoint(screen768) {
+    grid-template-rows: 40px auto;
+  }
+
+  @include breakpoint(screen576) {
+    grid-template-columns: auto;
+    grid-template-rows: 35px 35px auto;
+    grid-auto-flow: column;
+  }
 
   &__input {
     @include common-input;
     @include common-paragraph(p,
-            $color: $gray,
-            $font-family: $ff-openSans,
-            $font-weight: $regular);
+      $color: $gray,
+      $font-family: $ff-openSans,
+      $font-weight: $regular);
     width: 100%;
     //min-width: 400px;
     padding: 9px 30px;
     border-radius: $border-radius;
+
+
   }
 
   &__button {
     @include common-button(colored);
     width: 100%;
     text-wrap: nowrap;
-/*     @include breakpoint(screen1280) {
+
+    @include breakpoint(screen576) {
       max-width: 160px;
-    } */
+    }
   }
 
   &__agreement {
     grid-column: 1 / 3;
+
+    @include breakpoint(screen576) {
+      grid-column: auto;
+    }
   }
 }

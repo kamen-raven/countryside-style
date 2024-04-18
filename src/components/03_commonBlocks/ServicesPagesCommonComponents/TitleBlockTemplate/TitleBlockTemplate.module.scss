@@ -5,15 +5,27 @@
 .sellers {
   background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forSellersBG.jpg);
 }
+
 .buyers {
   background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forBuyersBG.jpg);
+
+  @include breakpoint(screen768) {
+    background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forBuyersBG768.jpg);
+  }
 }
+
 .villages {
   background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forVillagesBG.jpg);
 }
+
 .developers {
   background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forDevelopersBG.jpg);
+  @include breakpoint(screen768) {
+    background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forDevelopersBG768.jpg);
+  }
+
 }
+
 .legalSupport {
   background-image: url(../../../../../public/img/servicesPages/titleBlockBackgrounds/forLegalBG.jpg);
 }
@@ -26,11 +38,27 @@
   background-position: center;
   background-size: cover;
   padding-top: 50px;
+
+  @include breakpoint(screen1024) {
+    padding-top: clamp(30px, 3.9vw, 50px);
+  }
+
+  @include breakpoint(screen768) {
+    padding-top: clamp(20px, 4.6211vw, 30px);
+  }
 }
 
 .container {
   @include mainContainer();
   height: calc(660px - 50px);
+
+  @include breakpoint(screen1024) {
+    height: calc(clamp(500px, 64.7734vw, 660px) - clamp(30px, 3.9vw, 50px));
+  }
+
+  @include breakpoint(screen768) {
+    height: calc(clamp(330px, 76.5455vw, 500px) - clamp(20px, 4.6211vw, 30px));
+  }
 }
 
 
@@ -41,9 +69,9 @@
 
 .label {
   @include common-paragraph(p,
-  $color: $white,
-  $font-family: $ff-openSans,
-  $font-weight: $regular);
+    $color: $white,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
   transition: all .3s linear;
 
   &_link {
@@ -67,17 +95,30 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  height: 100%;
+  height: 95%;
   justify-content: center;
+
+  @include breakpoint(screen1024) {
+    gap: 20px;
+  }
+
+  @include breakpoint(screen768) {
+    gap: 16px;
+    height: 85%;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 6px;
+  }
 }
 
 .h1 {
   @include common-title(h1,
-            $color: $white);
+    $color: $white);
 }
 
 .subtitle {
   @include common-title(hSubtitle,
-            $color: $white,
-            $font-weight: $regular);
+    $color: $white,
+    $font-weight: $regular);
 }

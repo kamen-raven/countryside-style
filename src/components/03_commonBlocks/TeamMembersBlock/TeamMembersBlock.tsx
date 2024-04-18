@@ -39,7 +39,7 @@ const TeamMembersBlock: React.FC<TeamMembersBlockInterface> = ({ employeesData, 
                     countUsers={countUsers} />
                 );
     }) }
-    
+
     </section>
   );
 };

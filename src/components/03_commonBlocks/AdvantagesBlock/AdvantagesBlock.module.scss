@@ -18,6 +18,14 @@
 .container {
   @include mainContainer();
   @include flexColumnGap();
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 24px;
+  }
 }
 
 
@@ -25,8 +33,22 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
+
   @include breakpoint(screen1280) {
     gap: 40px;
+  }
+
+  @include breakpoint(screen960) {
+    grid-template-columns: auto;
+    gap: 30px;
+  }
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+  gap: 25px;
   }
 }
 
@@ -36,4 +58,12 @@
 
 .titleContainer {
   @include flexColumnGap($gap: 30px);
+
+  @include breakpoint(screen768) {
+    gap: 20px;
+  }
+
+  @include breakpoint(screen576) {
+  gap: 16px;
+  }
 }

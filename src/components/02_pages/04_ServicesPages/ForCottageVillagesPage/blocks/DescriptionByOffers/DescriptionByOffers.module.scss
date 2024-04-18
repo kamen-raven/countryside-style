@@ -3,6 +3,15 @@
 .descriptionContainer {
   padding-top: 40px;
   @include flexColumnGap($gap: 20px);
+
+  @include breakpoint(screen768) {
+    padding-top: 20px;
+    gap: 8px;
+  }
+
+  @include breakpoint(screen576) {
+    padding-top: 10px;
+  }
 }
 
 .descriptionTitle {

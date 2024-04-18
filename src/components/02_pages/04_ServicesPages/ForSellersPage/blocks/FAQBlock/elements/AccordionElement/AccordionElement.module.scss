@@ -3,24 +3,52 @@
 .container {
   padding: 40px 0;
   border-bottom: 2px solid $gray;
+
+  @include breakpoint(screen1024) {
+    padding: clamp(25px, 3.5784vw, 40px) 0;
+  }
+
+  @include breakpoint(screen768) {
+    border-bottom: 1px solid $gray;
+  }
+
+  @include breakpoint(screen480) {
+    padding: 22px 0;
+  }
 }
 
 
 .questionInner {
-display: grid;
-grid-template-columns: auto 45px;
-gap: 80px;
-cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 45px;
+  gap: 80px;
+  cursor: pointer;
 
+  @include breakpoint(screen1024) {
+    gap: 40px;
+  }
 
+  @include breakpoint(screen768) {
+    grid-template-columns: auto 40px;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 20px;
+    grid-template-columns: auto 35px;
+  }
+
+  @include breakpoint(screen480) {
+    gap: 16px;
+    grid-template-columns: auto 30px;
+  }
 }
 
 .question {
   @include common-paragraph(pXl,
-  $line-height: 120%);
+    $line-height: 120%);
   max-width: fit-content;
 
-  }
+}
 
 
 .button {
@@ -34,8 +62,38 @@ cursor: pointer;
   border: 1px solid $dark;
   transition: all 0.3s linear;
 
+  @include breakpoint(screen768) {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @include breakpoint(screen576) {
+    min-width: 35px;
+    width: 35px;
+    height: 35px;
+  }
+
+  @include breakpoint(screen480) {
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
   & svg {
     transition: all 0.3s linear;
+    width: 30px;
+    height: 30px;
+
+    @include breakpoint(screen1024) {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include breakpoint(screen480) {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   &:hover {
@@ -51,17 +109,21 @@ cursor: pointer;
 .answer {
 
   @include common-paragraph(p,
-        $font-family: $ff-openSans,
-        $font-weight: $regular);
-    max-height: 0;
-    overflow: hidden;
-    transition:  all .3s ease-out;
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+  max-height: 0;
+  overflow: hidden;
+  transition: all .3s ease-out;
 }
 
 .answerVisible {
   max-height: 1000px;
   transition: all .3s ease-out;
   padding-top: 20px;
+
+  @include breakpoint(screen480) {
+    padding-top: 16px;
+  }
 }
 
 
@@ -76,5 +138,3 @@ cursor: pointer;
     transition: all 0.3s linear;
   }
 }
-
-
