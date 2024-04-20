@@ -2,12 +2,22 @@
 
 .wrapper {
   grid-area: video;
-padding-top: 50px;
+  padding-top: 50px;
+
+  @include breakpoint(screen1024) {
+    padding-top: clamp(2.5rem, 5.02082vw, 4.375rem);
+  }
+
+  @include breakpoint(screen768) {
+    padding-top: clamp(1.875rem, 7.29036vw, 2.5rem);
+  }
 }
 
 .container {
   @include mainContainer();
-  height: clamp(400px, 45vw, 720px);
+  height: clamp(180px, 47vw, 720px);
+
+
 }
 
 .video {

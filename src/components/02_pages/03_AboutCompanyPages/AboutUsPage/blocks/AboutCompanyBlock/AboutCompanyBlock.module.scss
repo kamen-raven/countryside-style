@@ -19,6 +19,14 @@
 .container {
   @include mainContainer();
   @include flexColumnGap($gap: 50px);
+
+  @include breakpoint(screen1024) {
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+gap: 24px;
+  }
 }
 
 

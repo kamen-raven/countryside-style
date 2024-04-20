@@ -3,12 +3,29 @@
 .infoContainer {
   margin: 100px 0 45px 110px;
   box-sizing: border-box;
-  border: 3px solid $accent-green;
+
 
   display: grid;
   grid-template-columns: auto auto;
   height: 320px;
   position: relative;
+
+  @include breakpoint(screen1024) {
+    height: auto;
+    grid-template-columns: auto;
+    margin: 40px 0 40px 90px;
+  }
+
+  @include breakpoint(screen768) {
+    margin: 20px 0 20px 70px;
+  }
+  @include breakpoint(screen576) {
+    margin: 20px 0 20px 50px;
+  }
+  @include breakpoint(screen480) {
+    margin: 0;
+    margin-bottom: 20px;
+  }
 }
 
 
@@ -17,15 +34,59 @@
   position: absolute;
   bottom: -45px;
   left: -110px;
+
+
+  @include breakpoint(screen1024) {
+    bottom: -35px;
+    left: -90px;
+  }
+  @include breakpoint(screen768) {
+    bottom: -25px;
+    left: -70px;
+  }
+  @include breakpoint(screen576) {
+    bottom: -20px;
+    left: -50px;
+  }
+  @include breakpoint(screen480) {
+    bottom: -20px;
+    left: -25px;
+  }
+
 }
 
 .awardImage {
   object-fit: contain;
-  width: 75%;
-  height: 75%;
+  max-width: 180px;
+  width: 100%;
+  height: fit-content;
+
+  @include breakpoint(screen1024) {
+    max-width: 140px;
+  }
+
+  @include breakpoint(screen768) {
+    max-width: 120px;
+  }
+  @include breakpoint(screen576) {
+    max-width: 100px;
+  }
+  @include breakpoint(screen480) {
+    max-width: 80px;
+  }
+}
+
+.blockWrapper {
+  display: flex;
+  border: 3px solid $accent-green;
+
+  @include breakpoint(screen1024) {
+    flex-direction: column-reverse;
+  }
 }
 
 .awardContainer {
+  box-sizing: border-box;
   background-color: $accent-green;
   padding: 0 48px 0 100px;
   display: flex;
@@ -35,18 +96,41 @@
   @include breakpoint(screen1280) {
     padding: 0 20px 0 80px;
   }
+
+  @include breakpoint(screen1024) {
+    min-height: 150px;
+    padding: 0 60px;
+  }
+  @include breakpoint(screen768) {
+    padding: 20px 40px;
+  }
+  @include breakpoint(screen480) {
+    min-height: initial;
+    height: auto;
+    padding: 30px 30px 30px 50px;
+  }
+
+  @include breakpoint(screen320) {
+    padding: 20px 30px 20px 40px;
+  }
 }
 
 .awardDescription {
+
   @include common-paragraph(pXl,
   $color: $white);
 
   max-width: 520px;
+@include breakpoint(screen1024) {
+  text-align: center;
+}
+
 
 }
 
 //ASSOCIATION
 .associationContainer {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,6 +140,22 @@
   padding:  30px 70px 30px;
   @include breakpoint(screen1280) {
     padding:  30px 50px 30px;
+  }
+
+  @include breakpoint(screen1024) {
+    gap: 20px;
+    padding: 30px 60px;
+    align-items: center
+  }
+
+  @include breakpoint(screen768) {
+    gap: 15px;
+    padding: 20px 40px;
+  }
+
+
+  @include breakpoint(screen480) {
+    padding: 20px 30px;
   }
 }
 
@@ -67,9 +167,31 @@
     max-width: 90%;
     height: auto;
   }
+  @include breakpoint(screen1024) {
+    width: 70%;
+  }
+  @include breakpoint(screen768) {
+    max-width: none;
+    width: 90%;
+  }
+
+  @include breakpoint(screen576) {
+    width: 100%;
+  }
 }
 
 .associationDescription {
   @include common-paragraph(pLg,
   $color: $accent-green);
+
+  @include breakpoint(screen1024) {
+text-align: center;
+  }
+
+  @include breakpoint(screen480) {
+    padding: 0 15px;
+  }
+  @include breakpoint(screen320) {
+    margin-left: 0;
+  }
 }

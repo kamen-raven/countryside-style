@@ -113,6 +113,10 @@
   margin-top: 45px ;
   display: flex;
 
+  @include breakpoint(screen1024) {
+    margin-top: 35px;
+  }
+
   @include breakpoint(screen768) {
     margin-top: 25px;
   }
@@ -127,6 +131,14 @@
             $line-height: 100%,
             $color: $white);
   margin-right: 20px;
+
+  @include breakpoint(screen1024) {
+    margin-right: 16px;
+  }
+
+  @include breakpoint(screen576) {
+    margin-right: 10px;
+  }
 }
 
 .quoteText {

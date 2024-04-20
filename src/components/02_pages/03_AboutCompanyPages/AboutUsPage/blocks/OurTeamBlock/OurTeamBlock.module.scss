@@ -4,6 +4,17 @@
   @include mainContainer();
   @include flexColumnGap($gap: 40px);
   margin: 70px auto;
+  @include breakpoint(screen1024) {
+    margin: clamp(2.5rem, 5.02082vw, 4.375rem) auto;
+  }
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+    margin: clamp(1.875rem, 7.29036vw, 2.5rem) auto;
+  }
+  @include breakpoint(screen576) {
+    gap: 24px;
+  }
 
 }
 
@@ -17,4 +28,8 @@
   $font-family: $ff-openSans);
   column-count: 2;
   column-gap: 50px;
+
+  @include breakpoint(screen1024) {
+    column-count: 1;
+  }
 }

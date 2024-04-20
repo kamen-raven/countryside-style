@@ -13,7 +13,7 @@ const ContactInfoElement: React.FC<ContactInfoElementInterface> = ({ employeeIte
 
 
   return (
-    <address className={styles.addressContainer} >
+    <address className={`${styles.addressContainer} ${employeeItem.phone_number !== '' ? styles.addressContainer_margin : ''}`} >
       <div className={styles.contactsContainer}>
         {employeeItem.phone_number &&
           <PhoneNumber className={styles.phoneNumber}

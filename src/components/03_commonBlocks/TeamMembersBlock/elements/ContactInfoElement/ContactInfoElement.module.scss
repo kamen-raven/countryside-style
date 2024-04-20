@@ -8,7 +8,20 @@
   align-items: center;
   flex-wrap: wrap;
 
-  margin-top: 50px;
+
+  &_margin {
+    margin-top: 45px;
+
+    @include breakpoint(screen1024) {
+      margin-top: 35px;
+    }
+    @include breakpoint(screen768) {
+      margin-top: 30px;
+    }
+    @include breakpoint(screen576) {
+      margin-top: 25px;
+    }
+  }
 }
 
 .contactsContainer {
@@ -17,6 +30,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+
+  @include breakpoint(screen768) {
+gap: 12px;
+  }
 }
 
 .phoneNumber {
@@ -111,9 +128,18 @@
   @include common-button(light);
   max-height: 55px;
   padding: 0 25px;
-  font-size: 22px;
   line-height: 120%;
   box-sizing: border-box;
 
   margin-top: 35px;
+
+  @include breakpoint(screen1024) {
+    margin-top: 1.875rem;
+  }
+  @include breakpoint(screen768) {
+    margin-top: 30px;
+  }
+  @include breakpoint(screen576) {
+    margin-top: 25px;
+  }
 }

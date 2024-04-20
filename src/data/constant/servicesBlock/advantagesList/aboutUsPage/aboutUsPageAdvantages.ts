@@ -13,7 +13,7 @@ const aboutUsPageAdvantages: advantagesItemInterface[] = [
     _id: 1,
     icon: YearsIcon,
     title:
-      "Одни из лучших специалистов на рынке загородной недвижимости с опытом работы более 13 лет",
+      "Одни из\u00A0лучших специалистов на\u00A0рынке загородной недвижимости с\u00A0опытом работы более 13\u00A0лет",
     },
     {
       _id: 2,
@@ -28,7 +28,7 @@ const aboutUsPageAdvantages: advantagesItemInterface[] = [
   {
     _id: 4,
     icon: ContractIcon,
-    title: "Оплата услуг по факту продажи объекта",
+    title: "Оплата услуг по\u00A0факту продажи объекта",
   },
   {
     _id: 5,
@@ -38,7 +38,7 @@ const aboutUsPageAdvantages: advantagesItemInterface[] = [
   {
     _id: 6,
     icon: SafetyIcon,
-    title: "Безопасность и надежность",
+    title: "Безопасность и\u00A0надежность",
   },
 ];
 
