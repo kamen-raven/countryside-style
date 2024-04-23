@@ -75,10 +75,10 @@
 
 .infoContainer {
   margin: 0 $padding-side;
+  padding: 40px 0;
 
   @include breakpoint(screen1280) {
     margin: 0 calc($padding-side / 1.5);
-    padding: 40px 0;
   }
 
   @include breakpoint(screen768) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './AddressElement.module.scss';
 
-import TelegramIcon from '~svg/contacts/Telegram2.svg';
-import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
+import TelegramIcon from '~svg/contacts/Telegram.svg';
+import WhatsappIcon from '~svg/contacts/WhatsApp.svg';
 import VkontakteIcon from '~svg/contacts/VK.svg';
 
 import { AddressElementInterface } from './AddressElement.interface';
@@ -47,7 +47,7 @@ const AddressElement: React.FC<AddressElementInterface> = ({ addressInfoData }) 
             href={addressInfoData.contacts.vkontakte}
             target='_blank'
             rel='noopener noreferrer'>
-            Все свежие объекты смотри в нашей группе ВК
+            Все свежие объекты в&nbsp;нашей группе ВК
             <span className={styles.contactItem__icon}>
               <VkontakteIcon />
             </span>

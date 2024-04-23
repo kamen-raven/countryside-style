@@ -1,35 +1,99 @@
 @import '~global_styles';
 
 .itemBorder {
+  @include common-button(contact);
+  align-items: stretch;
   box-sizing: border-box;
   border-radius: 30px;
+  transition: all linear .2s;
+  //max-width: 155px;
+  //width: 100%;
+/*   box-sizing: border-box;
+  border-radius: 30px;
   max-height: 45px;
-  max-width: 155px;
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
+ */
 
   &_colored {
     border: 1px solid transparent;
   }
 
   &_white {
-    border: 1px solid $white;
+
+    &_telegram {
+      border: 1px solid $white;
+
+      &:hover {
+        border: 1px solid $white;
+        background-color: $white;
+        color: $telegram;
+        & svg {
+          background-color: $telegram;
+          & path {
+            fill: $white;
+          }
+        }
+
+      }
+    }
+    &_whatsapp {
+      border: 1px solid $white;
+
+      &:hover {
+        border: 1px solid $white;
+        color: $whatsapp;
+        background-color: $white;
+        & svg {
+          background-color: $whatsapp;
+          & path {
+            fill: $white;
+          }
+        }
+      }
+    }
   }
 
   &_transparent {
-    border: 1px solid $accent-gray;
+    &_telegram {
+      border: 1px solid $accent-gray;
+      &:hover {
+        border: 1px solid $telegram;
+        color: $white;
+        background-color: $telegram;
+        & svg {
+          background-color: $white;
+          & path {
+            fill: $telegram;
+          }
+        }
+
+      }
+    }
+
+    &_whatsapp {
+      border: 1px solid $accent-gray;
+      &:hover {
+        border: 1px solid $whatsapp;
+        background-color: $whatsapp;
+        color: $white;
+        & svg {
+          background-color: $white;
+          & path {
+            fill: $whatsapp;
+          }
+        }
+
+      }
+    }
   }
 
   @include breakpoint(screen768) {
     height: 40px;
+    max-width: 140px;
   }
 
   @include breakpoint(screen576) {
     height: 35px;
-    max-width: 130px;
   }
 
 }
@@ -41,6 +105,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left: 18px;
+  text-decoration: none;
+  @include common-paragraph(p,
+    $font-weight: $regular,
+    $color: $white,
+    $font-family: $ff-openSans);
+  line-height: 100%;
+  text-align: center;
+/*   display: flex;
+  align-items: center;
+
 
   @include common-paragraph(p,
     $font-weight: $regular,
@@ -50,7 +125,7 @@
   text-align: center;
 
   padding-left: 15px;
-  border-radius: 30px;
+  border-radius: 30px; */
 
   &_colored {
     color: $white;
@@ -58,24 +133,31 @@
 
   &_white {
     color: $white;
+    &:hover {
+      color: $dark;
+      font-weight: $medium;
+    }
   }
 
   &_transparent {
     color: $dark;
+
+    &:hover {
+      color: $white;
+    }
   }
 
-  &:hover {
-    color: $accent-green;
-    font-weight: $medium;
-  }
+/*    */
 }
 
 
 .itemIcon {
   border-radius: 0 30px 30px 0;
+  display: flex;
   width: 35px;
   height: 35px;
-  padding: 5px 5px 5px 15px;
+  padding-left: 14px;
+  padding-right: 4px;
 
   & svg {
     border-radius: 50%;
@@ -85,43 +167,41 @@
     background-color: $white;
   }
 
-  &_white svg {
-    background-color: $white;
+  &_white {
+    &_telegram svg {
+      background-color: $white;
+    }
+
+    &_whatsapp svg {
+      background-color: $white;
+    }
   }
 
   &_transparent {
-
     &_telegram svg {
       background-color: $telegram;
-
-      @include breakpoint(screen768) {
-        width: 100%;
-        height: 100%;
-      }
-
+      width: 100%;
+      height: 100%;
     }
 
     &_whatsapp svg {
       background-color: $whatsapp;
-
-      @include breakpoint(screen768) {
-        width: 100%;
-        height: 100%;
-      }
-
+      width: 100%;
+      height: 100%;
     }
   }
 
   @include breakpoint(screen768) {
     width: 30px;
     height: 30px;
-    padding: 5px 5px 5px 10px;
+    padding-left: 12px;
   }
 
   @include breakpoint(screen576) {
-    width: 28px;
-    height: 28px;
-    padding: 2px 5px 2px 10px;
+    width: 26px;
+    height: 26px;
+    padding-left: 6px;
+    padding-right: 3px;
   }
 
 }

@@ -34,9 +34,9 @@ const ContactsTitleBlock: React.FC<ContactsTitleBlockInterface> = ({ generalCont
             </div>
             <p className={styles.disclaimerText}>
               <span className={styles.disclaimerText_spanAccent}>
-                Вам не обязательно ехать к нам в офис, <br />
+                Вам не&nbsp;обязательно ехать к&nbsp;нам в&nbsp;офис,{' '}
               </span>
-              мы готовы встретиться с Вами в любом удобном для&nbsp;вас месте
+              мы&nbsp;готовы встретиться с&nbsp;Вами в&nbsp;любом удобном для&nbsp;вас месте
             </p>
           </div>
         </div>

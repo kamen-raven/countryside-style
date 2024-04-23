@@ -17,6 +17,18 @@
     grid-template-columns: 120px auto;
     gap: 40px;
   }
+  @include breakpoint(screen768) {
+    grid-template-columns: clamp(70px, 17.1458vw, 120px) auto;
+    max-width: none;
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 24px;
+  }
+  @include breakpoint(screen480) {
+    gap: 20px;
+  }
 }
 
 .avatar {
@@ -35,6 +47,11 @@
     max-width: 120px;
     max-height: 120px;
   }
+  @include breakpoint(screen768) {
+    width: clamp(70px, 17.1458vw, 120px);
+    height: clamp(70px, 17.1458vw, 120px);
+  }
+
 }
 
 .infoContainer {
@@ -44,10 +61,18 @@
   align-items: flex-start;
   height: 100%;
 
+  @include breakpoint(screen768) {
+    gap: 14px;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @include breakpoint(screen768) {
+      gap: 4px;
+    }
   }
 
   &__name {
@@ -82,4 +107,9 @@
 .messengersContainer {
   display: flex;
   gap: 10px;
+
+  @include breakpoint(screen480) {
+    flex-wrap: wrap;
+
+  }
 }

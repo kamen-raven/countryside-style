@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './ContactLink.module.scss';
 import { ContactLinkInterface } from './ContactLink.interface.ts';
 
-import TelegramIcon from '~svg/contacts/Telegram2.svg';
-import WhatsappIcon from '~svg/contacts/WhatsApp2.svg';
+import TelegramIcon from '~svg/contacts/Telegram.svg';
+import WhatsappIcon from '~svg/contacts/WhatsApp.svg';
 /* import VkontakteIcon from '~svg/contacts/VK.svg'; */
 import generalContactsData from '~data/constant/generalContacts/generalContactsData.ts';
 import Link from 'next/link';
@@ -22,19 +22,36 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
 
   const setLinkStyle = {
     colored: {
-      border: styles.itemBorder_colored,
+      border: {
+        telegram: styles.itemBorder_colored,
+        whatsapp: styles.itemBorder_colored
+      },
       fontColor: styles.itemLink_colored,
-      backgroundColor: styles.itemIcon_colored,
+      backgroundColor: {
+        telegram: styles.itemIcon_colored,
+        whatsapp: styles.itemIcon_colored
+      },
       svgFill: ''
     },
+
     white: {
-      border: styles.itemBorder_white,
+      border: {
+        telegram: styles.itemBorder_white_telegram,
+        whatsapp: styles.itemBorder_white_whatsapp
+      },
       fontColor: styles.itemLink_white,
-      backgroundColor: styles.itemIcon_white,
+      backgroundColor: {
+        telegram: styles.itemIcon_white_telegram,
+        whatsapp: styles.itemIcon_white_whatsapp
+      },
       svgFill: ''
     },
+
     transparent: {
-      border: styles.itemBorder_transparent,
+      border: {
+        telegram: styles.itemBorder_transparent_telegram,
+        whatsapp: styles.itemBorder_transparent_whatsapp
+      },
       fontColor: styles.itemLink_transparent,
       backgroundColor: {
         telegram: styles.itemIcon_transparent_telegram,
@@ -44,16 +61,21 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
     },
   };
 
-  const setBackgroundColor = (
+/*   const setBackgroundColor = (
     colorSchema == 'transparent' ?
       setLinkStyle[colorSchema].backgroundColor[messenger]
       :
       setLinkStyle[colorSchema].backgroundColor);
-
+  const setBorderColor = (
+    colorSchema == 'transparent' ?
+      setLinkStyle[colorSchema].border[messenger]
+      :
+      setLinkStyle[colorSchema].border);
+ */
 
   const setLinkType = {
     text: {
-      telegram: 'Telegram',
+      telegram: `Telegram\u00A0\u00A0`,
       whatsapp: 'WhatsApp'
     },
     icon: {
@@ -68,13 +90,13 @@ const ContactLink: React.FC<ContactLinkInterface> = ({ messenger, colorSchema, l
 
   return (
 
-    <div className={`${styles.itemBorder} ${setLinkStyle[colorSchema].border}`}>
+    <div className={`${styles.itemBorder} ${setLinkStyle[colorSchema].border[messenger]}`}>
       <Link className={`${styles.itemLink} ${setLinkStyle[colorSchema].fontColor}`}
         href={setLinkType.data[messenger] && setLinkType.data[messenger]}
         target='_blank'
         rel='noopener noreferrer'>
         {setLinkType.text[messenger]}
-        <span className={`${styles.itemIcon} ${setBackgroundColor}`}>
+        <span className={`${styles.itemIcon} ${setLinkStyle[colorSchema].backgroundColor[messenger]}`}>
           {setLinkType.icon[messenger]}
         </span>
       </Link>

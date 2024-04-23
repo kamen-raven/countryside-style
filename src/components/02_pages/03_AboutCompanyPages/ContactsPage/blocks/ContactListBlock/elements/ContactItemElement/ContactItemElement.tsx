@@ -4,7 +4,7 @@ import styles from './ContactItemElement.module.scss';
 import { ContactItemElementInterface } from './ContactItemElement.interface.ts';
 
 import { ContactLink, PhoneNumber } from '~entities/index.ts';
-import LocationIcon from '~svg/contacts/location.svg';
+/* import LocationIcon from '~svg/contacts/location.svg'; */
 import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
 
 const ContactItemElement: React.FC<ContactItemElementInterface> = ({ employeeInfo }) => {
@@ -36,15 +36,15 @@ const ContactItemElement: React.FC<ContactItemElementInterface> = ({ employeeInf
               {useReactMarkdown(employeeInfo.job_title, markdownStyles)}
             </>
           }
-
-          {employeeInfo.location &&
+  {/* здесь предполагается указание локации работы агента. но пока этот функционал не требуется */}
+{/*           {employeeInfo.location &&
             <p className={styles.infoContainer__location}>
               <span className={styles.infoContainer__location_icon}>
                 <LocationIcon />
               </span>
               {employeeInfo.location}
             </p>
-          }
+          } */}
 
         </div>
 

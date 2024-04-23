@@ -35,11 +35,13 @@
 
   @if $appearance == colored {
     background: $accent-green;
+    border: 1px solid $accent-green;
     color: $white;
     transition: all linear .2s;
 
     &:hover {
-      background: $accent-green-hover;
+      background: $white;
+      color: $accent-green;
       transition: all linear .2s;
     }
   }
@@ -91,5 +93,11 @@
     background: $youtube;
     color: $white;
     max-height: 45px;
+  }
+
+  @if $appearance == contact {
+    max-height: 45px;
+    min-width: 0;
+    padding: 0;
   }
 }

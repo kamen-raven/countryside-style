@@ -20,11 +20,21 @@
   gap: 90px;
 
   @include breakpoint(screen1280) {
-    gap: 90px 55px;
+    gap: 60px 40px;
   }
+
   @include breakpoint(screen1024) {
     grid-template-columns: auto;
     justify-content: center;
-    gap: 80px;
+    gap: 50px;
   }
+
+  @include breakpoint(screen768) {
+    gap: 40px;
+  }
+
+/*   @include breakpoint(screen576) {
+  gap: 25px;
+  } */
+
 }

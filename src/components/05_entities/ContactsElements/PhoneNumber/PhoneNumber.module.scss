@@ -7,23 +7,30 @@
   text-wrap: nowrap;
   @include common-link;
 
+  @include breakpoint(screen480) {
+    gap: .5rem;
+  }
 
   &_white {
     color: $white;
-    & svg {
-      fill: $white;
+    & .callIcon {
+      border-radius: 50%;
+      background-color: $white;
+      border: 1px solid $white;
+      transition: all 0.2s linear;
     }
+
     &:hover {
       transition: all 0.2s linear;
       color: $gray-light;
       & svg {
-        fill: $white;
+        fill: $gray-light;
       }
 
       & .callIcon {
-        border: 1px solid $accent-green;
-        background-color: $accent-green;
-        transition: all 0.3s linear;
+        border: 1px solid $gray-light;
+        background-color: transparent;
+        transition: all 0.2s linear;
       }
     }
   }
@@ -42,7 +49,7 @@
       & .callIcon {
         border: 1px solid $accent-green;
         background-color: $accent-green;
-        transition: all 0.3s linear
+        transition: all 0.2s linear
       }
     }
   }
@@ -64,7 +71,7 @@
       & .callIcon {
         border: 2px solid $accent-green;
         background-color: $accent-green;
-        transition: all 0.3s linear;
+        transition: all 0.2s linear;
       }
     }
   }
@@ -86,7 +93,7 @@
       & .callIcon {
         border: 1px solid $accent-green;
         background-color: $accent-green;
-        transition: all 0.3s linear;
+        transition: all 0.2s linear;
       }
     }
   }
@@ -98,7 +105,7 @@
   box-sizing: border-box;
   display: inline-flex;
   background-color: transparent;
-  transition: background-color 0.3s linear;
+  transition: background-color 0.2s linear;
 
   & svg {
     width: 30px;
