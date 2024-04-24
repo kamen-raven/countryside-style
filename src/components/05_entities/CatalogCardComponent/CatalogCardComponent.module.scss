@@ -26,7 +26,7 @@
   }
 
   @media screen and (max-width: 740px) {
-    grid-template-rows: clamp(240px, 57.0443vw, 300px) auto;
+    grid-template-rows: clamp(240px, 59.3424vw, 420px) auto;
   }
 
 }
@@ -57,7 +57,7 @@
   }
 
   @media screen and (max-width: 740px) {
-    height: clamp(240px, 57.0443vw, 300px);
+    height: clamp(240px, 59.3424vw, 420px);
   }
 
   @include breakpoint(screen640) {

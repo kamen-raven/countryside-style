@@ -1,43 +1,44 @@
-'use client';
+/* 'use client'; */
 
-import React, { useRef } from 'react';
+import React from 'react';
 import styles from './CatalogCardsLayout.module.scss';
 import { CatalogCardsLayoutInterface } from './CatalogCardsLayout.interface.ts';
-import { CatalogCardComponent, CardItemPagination } from '~entities/index.ts';
-import usePaginationCounter from '~hooks/usePaginationCounter.ts';
+import { CatalogCardComponent, /* CardItemPagination */ } from '~entities/index.ts';
+/* import usePaginationCounter from '~hooks/usePaginationCounter.ts';
+ */
 
+const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ typePage, objectsData, /* itemsPerPage */ }) => {
 
-const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ typePage, objectsData }) => {
-  const itemsPerPage = 6;  //! количество объектов на странице
-
-
-  const {
+  // функция для управления пагинацией
+/*   const {
     totalPages,
     currentItems,
     currentPage,
     setCurrentPage
-  } = usePaginationCounter(objectsData, itemsPerPage); // функция пагинации
-
-
-  const parentRef = useRef<HTMLDivElement>(null); // реф для скролла вверх при пагинации
+  } = usePaginationCounter(objectsData, itemsPerPage);
+ */
+  // реф для скролла вверх при пагинации
+/*   const parentRef = useRef<HTMLDivElement>(null); */
 
   return (
     <>
-      <div ref={parentRef} className={styles.cardsLayout}>
+      <div /* ref={parentRef}  */className={`${styles.cardsLayout}`}> {/*  ${objectsData.length > itemsPerPage ? styles.paginationMargin : null}` */}
 
-        {currentItems.map((item) => (
+        {objectsData.map((item) => ( //currentItems
           <CatalogCardComponent key={item.id} item={item} typePage={typePage} />
         ))}
       </div>
-
-      {
+{/*
+      {objectsData.length > itemsPerPage ?
         <CardItemPagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           totalPages={totalPages}
           parentRef={parentRef}
         />
-      }
+        :
+        null
+      } */}
     </>
   );
 };

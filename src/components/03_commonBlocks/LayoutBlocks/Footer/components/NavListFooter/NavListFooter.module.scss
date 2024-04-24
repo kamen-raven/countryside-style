@@ -65,6 +65,9 @@
   @include common-link;
   @include special-text(link, $color: $gray-dark);
 
+  &:hover {
+    color: $accent-green;
+  }
 
   @include breakpoint(screen768) {
     font-size: 12px;
@@ -74,5 +77,5 @@
 .active.link {
   color: $accent-green;
   cursor: default;
-
+  font-weight: $bold;
 }

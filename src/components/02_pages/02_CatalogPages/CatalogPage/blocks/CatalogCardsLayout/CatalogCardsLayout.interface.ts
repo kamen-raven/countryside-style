@@ -5,4 +5,5 @@ export interface CatalogCardsLayoutInterface extends DetailedHTMLProps<HTMLAttri
   objectsData: RealEstateObjectInterface[];
   typePage: 'flats' | 'lands' | 'houses-and-cottages';
   children?: ReactNode;
+/*   itemsPerPage: number; */
 }

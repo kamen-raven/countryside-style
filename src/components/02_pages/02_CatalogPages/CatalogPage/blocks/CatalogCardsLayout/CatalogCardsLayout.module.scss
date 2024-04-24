@@ -6,7 +6,6 @@
   grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px clamp(35px, 2.5vw, 40px);
-  margin-bottom: 50px;
 
 
   @include breakpoint(screen1440) {
@@ -31,6 +30,12 @@
   }
   @include breakpoint(screen576) {
     gap: 20px;
+  }
+}
+
+.paginationMargin {
+  margin-bottom: 50px;
+  @include breakpoint(screen576) {
     margin-bottom: 30px;
   }
 }

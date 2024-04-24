@@ -9,7 +9,7 @@ import BackgroundPatternRight from '~svg/background/backgroundObjectsForSaleRigh
 import { CatalogCardsLayout, VillagesCardsLayout } from '../index.ts';
 
 
-const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, villagesData, typePage }) => {
+const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, villagesData, typePage, /* itemsPerPage */ }) => {
 
 
   return (
@@ -25,10 +25,10 @@ const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, villagesDa
 
       <div className={styles.container}>
         {(objectsData && typePage !== 'villages') &&
-          <CatalogCardsLayout typePage={typePage} objectsData={objectsData} />
+          <CatalogCardsLayout typePage={typePage} objectsData={objectsData} /* itemsPerPage={itemsPerPage} */ />
         }
 
-        {(villagesData && typePage === 'villages') &&
+        {(villagesData && typePage === 'villages') &&  ///сделать отображение страниц пагинации по аналогии с карточками объектов
           <VillagesCardsLayout typePage={typePage} villagesData={villagesData} />
         }
       </div>

@@ -6,4 +6,5 @@ export interface CatalogBlockInterface extends DetailedHTMLProps<HTMLAttributes<
   objectsData?: RealEstateObjectInterface[];
   villagesData?: VillageObjectInterface[];
   typePage: 'flats' | 'lands' | 'houses-and-cottages' | 'villages';
+/*   itemsPerPage: number; */
 }
