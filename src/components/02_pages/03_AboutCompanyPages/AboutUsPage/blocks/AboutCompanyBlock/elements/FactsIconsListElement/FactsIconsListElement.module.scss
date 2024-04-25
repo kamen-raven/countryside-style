@@ -25,15 +25,21 @@
   align-content: space-between;
   grid-template-columns: 100px auto;
   gap: 28px;
-  @include breakpoint(screen768) {
+/*   @include breakpoint(screen768) {
     grid-template-columns: 80px auto;
     gap: 20px;
   }
   @include breakpoint(screen576) {
     grid-template-columns: 65px auto;
     gap: 16px;
+  } */
+  @include breakpoint(screen768) {
+    grid-template-columns: clamp(80px, 17.8281vw, 110px) auto;
+    gap: 1rem;
   }
-
+  @include breakpoint(screen576) {
+    grid-template-columns: clamp(70px, 15.8281vw, 80px) auto;
+  }
 }
 
 .iconContainer {
@@ -46,15 +52,22 @@
   align-items: center;
   justify-content: center;
 
-
   @include breakpoint(screen768) {
+    width: clamp(80px, 17.8281vw, 110px);
+    height: clamp(80px, 17.8281vw, 110px);
+  }
+  @include breakpoint(screen576) {
+    width: clamp(70px, 15.8281vw, 80px);
+    height: clamp(70px, 15.8281vw, 80px);
+  }
+/*   @include breakpoint(screen768) {
     width: 80px;
     height: 80px;
   }
   @include breakpoint(screen576) {
     width: 65px;
     height: 65px;
-  }
+  } */
 
   & svg {
     width: 55%;
@@ -69,8 +82,9 @@
 }
 
 .text {
-  @include common-paragraph(pLg,
-    $line-height: 130%);
+  @include common-title($htag: hSmall);
+/*   @include common-paragraph(pLg,
+    $line-height: 130%); */
 
 
 
@@ -79,5 +93,3 @@
     font-weight: $extra-bold;
   }
 }
-
-//////////

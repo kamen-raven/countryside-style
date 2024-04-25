@@ -3,19 +3,21 @@
 /* общий компонент */
 .innerBlock {
   display: grid;
-  grid-template-columns: [pic-start] minmax(280px, 850px) [pic-end info-start] 1fr [question-column] auto [info-end];
   grid-template-rows: [text-start] minmax(auto, 1fr) [text-end under-text] minmax(auto, 1fr) [question-start] auto [question-end];
-  gap: 20px 10px;
+  grid-template-columns: [pic-start] clamp(700px, 49.4792vw, 850px) [pic-end info-start] 1fr [question-column] auto [info-end];
+  //gap: 20px 10px;
   max-height: 480px;
 
-  @include breakpoint(screen1440) {
+/*   @include breakpoint(screen1440) {
     grid-template-columns: [pic-start] minmax(280px, 700px) [pic-end info-start] 1fr [question-column] auto [info-end];
-  }
+  } */
   @include breakpoint(screen1280) {
-    grid-template-columns: [pic-start] minmax(280px, 600px) [pic-end info-start] 1fr [question-column] auto [info-end];
+    grid-template-columns: [pic-start] clamp(500px, 47.8516vw, 600px) [pic-end info-start] 1fr [question-column] auto [info-end];
   }
   @include breakpoint(screen1024) {
-    grid-template-columns: [pic-start] minmax(280px, 500px) [pic-end info-start] 1fr [question-column] auto [info-end];
+    grid-template-columns: 1fr auto;
+    grid-template-rows: minmax(320px, 480px) 1fr auto auto;
+    //grid-template-columns: [pic-start] minmax(280px, 500px) [pic-end info-start] 1fr [question-column] auto [info-end];
   }
 
   &_homePage { /* шаблон для ДОМАШНЕЙ СТРАНИЦЫ */
@@ -30,12 +32,30 @@
     "image title title"
     "image tags tags"
     "image button question";
+
+    @include breakpoint(screen1024) {
+      max-height: none;
+      grid-template-areas:
+      "image image "
+      "title title"
+      "tags tags"
+      "button question";
+    }
   }
   &_blogCard { /* шаблон для страницы БЛОГА */
     grid-template-areas:
     "image title title"
     "image tags tags"
     "image question question";
+
+    @include breakpoint(screen1024) {
+      max-height: none;
+      grid-template-areas:
+      "image image "
+      "title title"
+      "tags tags"
+      "button question";
+    }
   }
 }
 /* ------------------- */
@@ -60,9 +80,14 @@
     0% 100%,
     0% 0%,
     100% 0%,
-    calc(100% - 50px) 50px,
-    calc(100% - 50px) 100%
+    calc(100% - 60px) 70px,
+    calc(100% - 60px) 100%
   );
+
+  @include breakpoint(screen1024) {
+    max-height: none;
+    clip-path: none;
+  }
 }
 /* ------------------- */
 
@@ -71,7 +96,12 @@
   grid-area: title;
 
   @include common-title(hSmall);
-  padding-top: clamp(40px, 5vw ,100px);
+  padding-top: 70px;//clamp(40px, 5vw ,100px);
+  padding-bottom: 20px;
+
+  @include breakpoint(screen1024) {
+    padding-top: 30px;
+  }
 }
 /* ----------------- */
 
@@ -97,16 +127,15 @@
 .blogArrows {
   grid-area: arrows;
   //margin-top: 210px;
+  display: flex;
+  gap: 15px;
 
   &_none { /* отключаем отображение на странице БЛОГА */
     display: none;
+    visibility: hidden;
   }
 }
 
-.arrowsButtonContainer {
-  display: flex;
-  gap: 15px;
-}
 /* -------------------------- */
 
 /* контейнер для тэгов и количества комментариев */
@@ -121,22 +150,22 @@
 }
 
 /* контейнер с количеством комментариев */
-.commentsContainer {
+/* .commentsContainer {
   display: inline-flex;
   align-items: center;
   flex-wrap: nowrap;
   gap: 10px;
   color: $black;
   margin-bottom: 30px;
-}
+} */
 
-.commentsCount {
+/* .commentsCount {
   margin: 0;
   font-family: $ff-openSans;
   font-size: $fs-navLink;
   font-weight: $regular;
   line-height: 150%;
-}
+} */
 /* ------------------------------ */
 
 /* компонент тэгов */
@@ -145,12 +174,14 @@
   flex-wrap: wrap;
   gap: 15px;
 
+  @include breakpoint(screen1024) {
+    padding-bottom: 24px;
+  }
 }
 
 .tag {
-  font-family: $ff-openSans;
-  font-size: $paragraph-md;
-  font-weight: $regular;
+  @include common-paragraph(p,
+    $font-family: $ff-openSans);
   line-height: 135%;
 }
 /* -------------------------- */
@@ -158,23 +189,26 @@
 /* контейнер с кнопкой для ПОП-АПА "Задать вопрос" */
 .askYourQuestion {
   grid-area: question;
-  align-self: flex-end;
-
+  align-self: center;
   cursor: pointer;
   background-color: transparent;
   border: none;
-
   font-family: $ff-openSans;
   padding: 0;
-  margin: 10px 0;
-
+  //margin: 10px 0;
+  margin-left: 10px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   max-height: 35px;
 
+  @include breakpoint(screen1024) {
+    justify-content: flex-end;
+  }
+
   &__text {
+    @include common-paragraph(p,
+    $font-family: $ff-openSans);
     margin: 0;
     text-wrap: nowrap;
     text-decoration: underline;
@@ -192,6 +226,12 @@
     justify-content: center;
     align-items: center;
     padding: 16px;
+
+    @include breakpoint(screen768) {
+      padding: 14px;
+      height: 30px;
+      width: 30px;
+    }
   }
 }
 

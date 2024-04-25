@@ -1,9 +1,37 @@
 @import '~global_styles';
 
-  .mainContainer {
-    @include mainPageContainer(
-      "title"
-      "blogInner"
-      "questionForm"
-      );
+.wrapper {
+  grid-area: blogInner;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
   }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap($gap: 70px);
+
+  @include breakpoint(screen1024) {
+    gap: clamp(50px, 6.5vw, 70px);
+  }
+}
+
+
+
+.cardContainer {
+  //@include flexColumnGap($gap: 70px);
+
+  padding-bottom: 70px;
+  border-bottom: 2px solid $gray;
+
+  @include breakpoint(screen1024) {
+    border-bottom: 1px solid $gray;
+    padding-bottom: clamp(50px, 6.5vw, 70px);
+  }
+}

@@ -26,8 +26,8 @@ const SimpleSearchInput: React.FC<SimpleSearchInputInterface> = ({ innerText, pl
   return (
     <div className={`${styles.container} ${setStyle.container[place]}`} >
       <input className={`${styles.input} ${setStyle.input[place]}`} placeholder={innerText} />
-      <div className={`${styles.icon} ${setStyle.icon[place]}`}>
-        <SearchIcon />
+      <div className={`${styles.icon} ${setStyle.icon[place]}`}> {/* onClick */}
+        <SearchIcon  />
       </div>
     </div>
   );

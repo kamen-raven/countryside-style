@@ -39,10 +39,10 @@
       font-style: $font-style;
 
       @include breakpoint(screen1024) {
-        font-size: clamp($paragraph-lg-tab, 2.47396vw, $paragraph-lg);
+        font-size: clamp($paragraph-lg-tab, 2.47396vw, $paragraph-lg);// 20px 24px
       }
       @include breakpoint(screen768) {
-        font-size: clamp($paragraph-lg-mob, 3.43542vw, $paragraph-lg-tab);
+        font-size: clamp($paragraph-lg-mob, 3.43542vw, $paragraph-lg-tab);// 16px 20px
       }
     }
 
@@ -56,10 +56,10 @@
       font-style: $font-style;
 
       @include breakpoint(screen1024) {
-        font-size: clamp($paragraph-md-tab, 1.92057vw, $paragraph-md);
+        font-size: clamp($paragraph-md-tab, 1.92057vw, $paragraph-md);  // 16px 18px
       }
       @include breakpoint(screen768) {
-        font-size: clamp($paragraph-md-mob, 2.90833vw, $paragraph-md-tab);
+        font-size: clamp($paragraph-md-mob, 2.90833vw, $paragraph-md-tab);  //14px 16px
       }
     }
 

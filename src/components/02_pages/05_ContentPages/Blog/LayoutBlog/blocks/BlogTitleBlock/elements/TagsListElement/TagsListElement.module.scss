@@ -6,6 +6,11 @@
   gap: 10px;
   justify-content: flex-start;
   align-items: center;
+
+  @include breakpoint(screen576) {
+    gap: 7px;
+    margin-bottom: 10px;
+  }
 }
 
 .tagContainer {
@@ -16,7 +21,7 @@
   transition: all .3s linear;
 
   height: 45px;
-  padding: 11px 25px;
+  padding: 0 25px;
 
   text-align: center;
   display: flex;
@@ -35,4 +40,14 @@
 
     transition: all .3s linear;
   }
+
+  @include breakpoint(screen768) {
+    height: 40px;
+    padding: 0 20px;
+  }
+  @include breakpoint(screen576) {
+    height: 35px;
+    padding: 0 14px;
+  }
+
 }

@@ -11,10 +11,12 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, co
     oddStyles: {
       color: styles.green,
       template: '',
+      infoContainer: '',
     },
     evenStyles: {
       color: styles.gray,
-      template: styles.innerBlock_textFirst
+      template: styles.innerBlock_textFirst,
+      infoContainer: styles.infoContainer_textFirst,
     }
   };
 
@@ -24,6 +26,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, co
 
   const setColor = isOdd(index + 1) ? styleItems.oddStyles.color : styleItems.evenStyles.color;
   const setTemplate = isOdd(index + 1) ? styleItems.oddStyles.template : styleItems.evenStyles.template;
+  const setInfoContainer = isOdd(index + 1) ? styleItems.oddStyles.infoContainer : styleItems.evenStyles.infoContainer;
 
 
   const quoteElement = (
@@ -52,7 +55,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, co
           height={800} />
 
 
-        <div className={styles.infoContainer}>
+        <div className={`${styles.infoContainer} ${setInfoContainer}`}>
           <h3 className={styles.name}>
             {`${employeeItem.first_name} ${employeeItem.last_name}`}
           </h3>

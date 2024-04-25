@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './BlogTitleBlock.module.scss';
 import { BlogTitleBlockInterface } from './BlogTitleBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
-import { BlogSearchInputElement, TagsListElement } from './elements/index.ts';
+import { TagsListElement } from './elements/index.ts';
+import { SimpleSearchInput } from '~features/Forms/index.ts';
 
 
 const BlogTitleBlock: React.FC<BlogTitleBlockInterface> = ({ tagsList }) => {
@@ -15,7 +16,7 @@ const BlogTitleBlock: React.FC<BlogTitleBlockInterface> = ({ tagsList }) => {
         </h1>
 
         <TagsListElement tagsList={tagsList} />
-        <BlogSearchInputElement />
+        <SimpleSearchInput innerText={'Поиск по ключевому слову'} place={'blog'} />
       </div>
     </section>
   );

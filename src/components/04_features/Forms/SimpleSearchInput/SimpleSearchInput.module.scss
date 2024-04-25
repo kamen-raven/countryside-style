@@ -26,6 +26,10 @@
   &_blog {
     max-width: clamp(450px, 70vw, 900px);
     width: 100%;
+
+    @include breakpoint(screen768) {
+      max-width: none;
+    }
   }
 
 }
@@ -45,7 +49,18 @@
     border: 1px solid $dark;
     height: 45px;
     padding: 11px 40px 11px 25px;
-    font-size: $paragraph-md;
+    line-height: 100%;
+    @include breakpoint(screen768) {
+      height: 40px;
+      padding: 6px 40px 6px 20px;
+    }
+    @include breakpoint(screen576) {
+      height: 35px;
+      padding-left: 14px;
+    }
+
+
+
   }
 }
 
@@ -64,6 +79,15 @@
   &_blog {
     width: 1.5rem;
     height: 1.5rem;
+
+    @include breakpoint(screen768) {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    @include breakpoint(screen576) {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 
 }

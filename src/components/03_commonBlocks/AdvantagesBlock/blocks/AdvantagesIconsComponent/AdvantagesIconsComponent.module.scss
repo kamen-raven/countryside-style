@@ -66,9 +66,9 @@
 .title {
   @include common-title(hSmall);
 
-  @include breakpoint(screen1024) {
+/*   @include breakpoint(screen1024) {
     font-size: $paragraph-lg;
-  }
+  } */
 }
 
 .description {

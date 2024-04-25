@@ -9,12 +9,7 @@ import { CatalogPage } from "~pages/index";
 import generalContactsData from "~data/constant/generalContacts/generalContactsData";
 import { getAllVillages } from "~api/Villages/getAllVillages";
 
-/* interface paths {
-  type: string,
-  alias: string
-}
 
- */
 export const metadata: Metadata = {
   title: 'VILLAGES',
   description: 'CATALOG PAGE',

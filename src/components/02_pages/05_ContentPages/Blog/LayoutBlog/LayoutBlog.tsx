@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './LayoutBlog.module.scss';
 import { LayoutBlogInterface } from './LayoutBlog.interface.ts';
 import { QuestionFormBlock } from '~common/index.ts';
-import { BlogTitleBlock } from '../BlogPage/blocks/index.ts';
+import { BlogTitleBlock } from './blocks/index.ts';
 import gettingUniqueTagName from '~helpers/blog/gettingUniqueTagName.ts';
 
 

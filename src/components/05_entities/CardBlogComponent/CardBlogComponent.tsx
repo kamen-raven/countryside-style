@@ -44,7 +44,6 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
           alt={''}
           width={850}
           height={480}
-          /* fill={true} */
           sizes={'(max-width: 1920px) 100%'}
         />
       </div>
@@ -55,25 +54,29 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       </h3>
 
       {/* контейнер с разделом количества комментариев и тэгами статьи */}
-      <div className={`${styles.blogInfo} ${setPage[path].blogInfo}`}>
-        {/*  //! тут реализовано отображение комментариев */}
-        {/*        <div className={styles.commentsContainer}>
+      {path !== 'home' ?
+        <div className={`${styles.blogInfo} ${setPage[path].blogInfo}`}>
+          {/*  //! тут реализовано отображение комментариев */}
+          {/*        <div className={styles.commentsContainer}>
           <CommentIcon className={styles.commentsIcon} />
           <p className={styles.commentsCount}>
             {blogCardItem.author}
           </p>
         </div> */}
-        <div className={styles.tagsContainer}>
-          {blogCardItem.tags?.map((tag) => {
-            return (
-              <div key={tag.uuid} className={styles.tag}>
-                #{tag.tag.name}
-              </div>
-            );
-          })}
+          <div className={styles.tagsContainer}>
+            {blogCardItem.tags?.map((tag) => {
+              return (
+                <div key={tag.uuid} className={styles.tag}>
+                  #{tag.tag.name}
+                </div>
+              );
+            })}
 
+          </div>
         </div>
-      </div>
+        :
+        null
+      }
 
       {/* кнопка ПОДРОБНЕЕ для перехода на страницу Блога */}
       <Link className={`${styles.button} ${setPage[path].button}`} href={`/blog/${blogCardItem.uuid}`} >
@@ -81,10 +84,14 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       </Link>
 
       {/* контейнер со стрелками для ГЛАВНОЙ СТРАНИЦЫ */}
-      <div className={`${styles.blogArrows} ${setPage[path].arrows} ${styles.arrowsButtonContainer}`}>
-        <ArrowsButton className={`${setPage[path].arrows}`} blogPostsData={blogPostsData} position={'left'} />
-        <ArrowsButton className={`${setPage[path].arrows}`} blogPostsData={blogPostsData} position={'right'} />
-      </div>
+      {path === 'home' ?
+        <div className={`${styles.blogArrows} ${setPage[path].arrows}`}>
+          <ArrowsButton className={`${setPage[path].arrows}`} blogPostsData={blogPostsData} position={'left'} />
+          <ArrowsButton className={`${setPage[path].arrows}`} blogPostsData={blogPostsData} position={'right'} />
+        </div>
+        :
+        null
+      }
 
       {/* компонент с кнопкой "ЗАДАТЬ СВОЙ ВОПРОС" */}
       <OpenPopupButton className={styles.askYourQuestion} type={'contactForm'}>

@@ -1,0 +1,27 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: title;
+  position: relative;
+  padding-top: 70px;
+
+  @include breakpoint(screen1024) {
+    padding-top: clamp(2.5rem, 5.02082vw, 4.375rem);
+  }
+  @include breakpoint(screens768) {
+    padding-top: clamp(1.875rem, 7.29036vw, 2.5rem);
+  }
+}
+
+.container {
+  @include flexColumnGap($gap: 30px);
+  @include mainContainer();
+
+  @include breakpoint(screen576) {
+    gap: 10px;
+  }
+}
+
+.title {
+  @include common-title(h1);
+}
