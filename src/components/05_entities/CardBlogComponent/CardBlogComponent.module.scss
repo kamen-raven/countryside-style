@@ -15,9 +15,12 @@
     grid-template-columns: [pic-start] clamp(500px, 47.8516vw, 600px) [pic-end info-start] 1fr [question-column] auto [info-end];
   }
   @include breakpoint(screen1024) {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: minmax(320px, 480px) 1fr auto auto;
-    //grid-template-columns: [pic-start] minmax(280px, 500px) [pic-end info-start] 1fr [question-column] auto [info-end];
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: clamp(480px, 62.5vw, 640px) 1fr auto auto;
+  }
+  @include breakpoint(screen768) {
+    column-gap: 10px;
+    grid-template-rows: clamp(240px, 62.75vw, 480px) 1fr auto auto;
   }
 
   &_homePage { /* шаблон для ДОМАШНЕЙ СТРАНИЦЫ */
@@ -102,6 +105,10 @@
   @include breakpoint(screen1024) {
     padding-top: 30px;
   }
+
+  @include breakpoint(screen576) {
+    padding-top: 20px
+  }
 }
 /* ----------------- */
 
@@ -119,6 +126,11 @@
   } /* шаблон для страницы БЛОГА */
   &_blogCard {
     display: none;
+  }
+
+  @include breakpoint(screen768) {
+    min-width: 0;
+    padding: 0 15px;
   }
 }
 /* ------------------- */
@@ -177,6 +189,9 @@
   @include breakpoint(screen1024) {
     padding-bottom: 24px;
   }
+  @include breakpoint(screen768) {
+    padding-bottom: 20px;
+  }
 }
 
 .tag {
@@ -190,6 +205,7 @@
 .askYourQuestion {
   grid-area: question;
   align-self: center;
+  justify-self: flex-end;
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -206,16 +222,43 @@
     justify-content: flex-end;
   }
 
+  @include breakpoint(screen768) {
+    gap: 7px;
+    margin-left: 0;
+  }
+
+  &:hover {
+    & span {
+      background-color: $accent-green;
+      color: $white;
+      transition: all .2s linear;
+    }
+
+    & p {
+      color: $accent-green;
+      text-decoration: none;
+      transition: text-decoration .2s linear;
+    }
+  }
+
+
+
+
   &__text {
     @include common-paragraph(p,
     $font-family: $ff-openSans);
     margin: 0;
-    text-wrap: nowrap;
+    text-wrap: wrap;
     text-decoration: underline;
     line-height: 100%;
+    text-align: end;
+    transition: text-decoration .2s linear;
   }
 
   &__span {
+    @include common-paragraph(p,
+    $font-family: $ff-openSans);
+    line-height: 100%;
     box-sizing: border-box;
     height: 35px;
     width: 35px;
@@ -226,12 +269,20 @@
     justify-content: center;
     align-items: center;
     padding: 16px;
+    transition: all .2s linear;
 
     @include breakpoint(screen768) {
       padding: 14px;
       height: 30px;
       width: 30px;
     }
+    @include breakpoint(screen576) {
+      padding: 11px;
+      height: 24px;
+      width: 24px;
+    }
+
+
   }
 }
 
