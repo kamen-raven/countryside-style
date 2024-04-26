@@ -79,9 +79,13 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       }
 
       {/* кнопка ПОДРОБНЕЕ для перехода на страницу Блога */}
+      {path !== 'blogCard' ?
       <Link className={`${styles.button} ${setPage[path].button}`} href={`/blog/${blogCardItem.uuid}`} >
         Подробнее
       </Link>
+      :
+      null
+      }
 
       {/* контейнер со стрелками для ГЛАВНОЙ СТРАНИЦЫ */}
       {path === 'home' ?

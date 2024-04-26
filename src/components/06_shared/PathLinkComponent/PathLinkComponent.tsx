@@ -16,6 +16,7 @@ const PathLinkComponent: React.FC<PathLinkComponentInterface> = ({ dataInfo }) =
     lands: 'Земельные участки',
     flats: 'Квартиры',
     villages: 'Коттеджные поселки',
+    blog: 'Блог'
   } as { [key: string]: string };
 
   return (

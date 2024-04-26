@@ -14,6 +14,7 @@ const BlogArticlePage: React.FC<BlogArticlePageInterface> = ({ blogArticleItem }
           path={'blogCard'}
           blogCardItem={blogArticleItem} />
 
+
         <BlogTextBlock blogArticleItem={blogArticleItem} />
       </div>
     </section>
