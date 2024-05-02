@@ -1,0 +1,5 @@
+@import '~global_styles';
+
+.pathContainer {
+  @include mainContainer();
+}

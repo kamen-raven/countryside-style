@@ -22,10 +22,10 @@
 
 
       @include breakpoint(screen1024) {
-        font-size: clamp($paragraph-xl-tab, 2.92969vw, $paragraph-xl);
+        font-size: clamp($paragraph-xl-tab, 2.92969vw, $paragraph-xl); // 24px 28px
       }
       @include breakpoint(screen768) {
-        font-size: clamp($paragraph-xl-mob, 3.9625vw, $paragraph-xl-tab);
+        font-size: clamp($paragraph-xl-mob, 3.9625vw, $paragraph-xl-tab);   // 18px 24px
       }
     }
 

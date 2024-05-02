@@ -3,8 +3,9 @@
 .labelContainer {
   display: inline-flex;
   padding-bottom: 2rem;
-  flex-wrap: wrap;
+
   gap: .5rem;
+  max-width: 80vw;
   @include breakpoint(screen576) {
     padding-bottom: 1rem;
     row-gap: 0;
@@ -12,11 +13,11 @@
 }
 
 .label {
-  display: inline-flex;
+
   @include common-paragraph(p,
-  $color: $dark,
-  $font-family: $ff-openSans,
-  $font-weight: $regular);
+    $color: $dark,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
   transition: all .3s linear;
 
   &_link {
@@ -31,12 +32,12 @@
     }
   }
 
-  &_span {
-
-  }
+  &_span {}
 
   &_name {
-    text-wrap: wrap;
     color: $accent-green;
+    overflow: hidden; /* Обрезает содержимое, которое не помещается */
+    text-overflow: ellipsis; /* Добавляет многоточие в конце обрезанного текста */
+    white-space: nowrap; /* Предотвращает перенос текста на новую строку */
   }
 }

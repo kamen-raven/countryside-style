@@ -15,19 +15,25 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       innerBlock: styles.innerBlock_homePage,
       arrows: '',
       blogInfo: styles.blogInfo_none,
-      button: styles.button_homePage
+      button: styles.button_homePage,
+      askQuestion: '',
+      tagsContainer: ''
     },
     blog: {
       innerBlock: styles.innerBlock_blogPage,
       arrows: styles.blogArrows_none,
       blogInfo: styles.blogInfo,
-      button: styles.button_blogPage
+      button: styles.button_blogPage,
+      askQuestion: '',
+      tagsContainer: ''
     },
     blogCard: {
       innerBlock: styles.innerBlock_blogCard,
       arrows: styles.blogArrows_none,
       blogInfo: styles.blogInfo,
-      button: styles.button_blogCard
+      button: styles.button_blogCard,
+      askQuestion: styles.askYourQuestion_blogPage,
+      tagsContainer: styles.tagsContainer_blogPage
     }
   };
 
@@ -63,7 +69,7 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
             {blogCardItem.author}
           </p>
         </div> */}
-          <div className={styles.tagsContainer}>
+          <div className={`${styles.tagsContainer} ${setPage[path].tagsContainer}`}>
             {blogCardItem.tags?.map((tag) => {
               return (
                 <div key={tag.uuid} className={styles.tag}>
@@ -98,7 +104,7 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       }
 
       {/* компонент с кнопкой "ЗАДАТЬ СВОЙ ВОПРОС" */}
-      <OpenPopupButton className={styles.askYourQuestion} type={'contactForm'}>
+      <OpenPopupButton className={`${styles.askYourQuestion} ${setPage[path].askQuestion}`} type={'contactForm'}>
         <p className={styles.askYourQuestion__text}>
           Задать свой вопрос
         </p>

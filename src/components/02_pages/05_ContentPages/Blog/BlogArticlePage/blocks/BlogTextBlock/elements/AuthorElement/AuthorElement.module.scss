@@ -16,10 +16,14 @@
     width: 80px;
     height: 80px;
   }
+  @include breakpoint(screen576) {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 .authorName {
-  @include common-paragraph(pLg,
+  @include common-paragraph(pXl,
     $font-weight: $bold,
   );
 }
