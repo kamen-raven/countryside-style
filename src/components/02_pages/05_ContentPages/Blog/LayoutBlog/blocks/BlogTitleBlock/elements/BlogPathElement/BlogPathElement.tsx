@@ -2,13 +2,13 @@
 
 import React from 'react';
 import styles from './BlogPathElement.module.scss';
-import { BlogPathElementInterface } from './BlogPathElement.interface.ts';
+
 import { PathLinkComponent } from '~shared/index.ts';
 import { usePathname } from 'next/navigation';
 import useBlogArticleTitleStore from '~store/blogStore/useBlogArticleTitleStore.ts';
 
 
-const BlogPathElement: React.FC<BlogPathElementInterface> = ({ }) => {
+const BlogPathElement: React.FC = () => {
   const pathname = usePathname().split('/');
 
   const useBlogArticleTitle = useBlogArticleTitleStore((state) => state.blogArticleTitle);
