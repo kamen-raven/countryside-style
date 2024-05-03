@@ -19,6 +19,7 @@
   }
 
   @include breakpoint(screen576) {
+    gap: 16px;
     min-height: 100px;
   }
   &__avatar {
@@ -46,7 +47,11 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+
+    @include breakpoint(screen768) {
+gap: 8px;
+    }
   }
 
   &__name {

@@ -53,6 +53,12 @@
       }
     }
   }
+
+  &_mapLayout {
+    @include breakpoint(screen960) {
+      flex-direction: column;
+    }
+  }
 }
 
 .wrapperInner {
@@ -60,6 +66,10 @@
   max-height: 600px;
   height: 100%;
   display: flex;
+
+  &_map {
+    width: 100%;
+  }
 
   @include breakpoint(screen960) {
     flex-basis: auto;

@@ -17,9 +17,16 @@
 
 .container {
   @include mainContainer();
-@include flexColumnGap;
+  @include flexColumnGap;
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
+  @include breakpoint(screen576) {
+    gap: 24px;
+  }
 }
 
 .title {
-  @include common-title(hTitle);;
+  @include common-title(hTitle);
 }

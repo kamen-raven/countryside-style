@@ -15,23 +15,26 @@ const PressBlock: React.FC<PressBlockProps> = ({ pressItems }) => {
             Пресса
           </h2>
           <p className={styles.description}>
-            Наши комментарии о рынке недвижимости в СМИ
+            Наши комментарии о&nbsp;рынке недвижимости в&nbsp;СМИ
           </p>
         </div>
         <div className={styles.innerBlock__articles}>
 
           {pressItems && pressItems.map(m => (
-            <Link key={m._id}
-              className={styles.link}
-              href={m.link}
-              target='_blank'
-              rel='noopener noreferrer'>
-              <Image
-                className={styles.logo}
-                src={m.logo}
-                alt={m.journal}
-              />
-            </Link>
+            <div className = {styles.linkContainer}>
+
+              <Link key={m._id}
+                className={styles.link}
+                href={m.link}
+                target='_blank'
+                rel='noopener noreferrer'>
+                <Image
+                  className={styles.logo}
+                  src={m.logo}
+                  alt={m.journal}
+                />
+              </Link>
+            </div>
           ))}
 
         </div>

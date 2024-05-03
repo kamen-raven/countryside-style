@@ -7,6 +7,7 @@
   grid-template-columns: [pic-start] clamp(700px, 49.4792vw, 850px) [pic-end info-start] 1fr [question-column] auto [info-end];
   //gap: 20px 10px;
   max-height: 480px;
+  position: relative;
 
 /*   @include breakpoint(screen1440) {
     grid-template-columns: [pic-start] minmax(280px, 700px) [pic-end info-start] 1fr [question-column] auto [info-end];
@@ -28,6 +29,14 @@
     "image title title"
     "image button ."
     "image arrows question";
+
+    @include breakpoint(screen1024) {
+      max-height: none;
+      grid-template-areas:
+      "image image"
+      "title title"
+      "button question";
+    }
   }
 
   &_blogPage { /* шаблон для страницы БЛОГА */
@@ -70,6 +79,10 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
+
+  @include breakpoint(screen1024) {
+    position: relative;
+  }
 }
 
 .image {
@@ -142,11 +155,47 @@
   display: flex;
   gap: 15px;
 
-  &_none { /* отключаем отображение на странице БЛОГА */
+
+  @include breakpoint(screen1024) {
+/*     position: absolute;
+    top: 40%;
+    width: 100%;
+    justify-content: space-between; */
     display: none;
     visibility: hidden;
   }
 }
+
+.arrow {
+  background-color: $white;
+
+  @include breakpoint(screen1024) {
+    position: absolute;
+    top: 45%;
+
+  }
+
+  &_left {
+    display: none;
+    visibility: hidden;
+    @include breakpoint(screen1024) {
+      display: flex;
+      visibility: visible;
+      left: 20px;
+    }
+  }
+
+  &_right {
+    display: none;
+    visibility: hidden;
+    @include breakpoint(screen1024) {
+      display: flex;
+      visibility: visible;
+      right: 20px;
+    }
+  }
+}
+
 
 /* -------------------------- */
 

@@ -5,11 +5,29 @@
   border-top: 1px solid $gray;
   padding-top: 70px;
   @include flexColumnGap(4.375rem); //70px
+
+  @include breakpoint(screen1024) {
+    padding-top: clamp(2.5rem, 5.02082vw, 4.375rem);
+    gap: clamp(2.5rem, 5.02082vw, 4.375rem);
+  }
+
+  @include breakpoint(screen768) {
+    padding-top: clamp(1.875rem, 7.29036vw, 2.5rem);
+    gap: clamp(1.875rem, 7.29036vw, 2.5rem);
+  }
 }
 
 .containerInfo {
   @include mainContainer();
-  @include flexColumnGap;
+  @include flexColumnGap();
+
+  @include breakpoint(screen1024) {
+    gap: 30px
+  }
+
+  @include breakpoint(screen576) {
+    gap: 24px;
+  }
 }
 
 .title {

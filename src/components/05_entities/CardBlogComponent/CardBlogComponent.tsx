@@ -13,7 +13,6 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
   const setPage = {
     home: {
       innerBlock: styles.innerBlock_homePage,
-      arrows: '',
       blogInfo: styles.blogInfo_none,
       button: styles.button_homePage,
       askQuestion: '',
@@ -21,7 +20,6 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
     },
     blog: {
       innerBlock: styles.innerBlock_blogPage,
-      arrows: styles.blogArrows_none,
       blogInfo: styles.blogInfo,
       button: styles.button_blogPage,
       askQuestion: '',
@@ -29,7 +27,6 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
     },
     blogCard: {
       innerBlock: styles.innerBlock_blogCard,
-      arrows: styles.blogArrows_none,
       blogInfo: styles.blogInfo,
       button: styles.button_blogCard,
       askQuestion: styles.askYourQuestion_blogPage,
@@ -52,6 +49,18 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
           height={480}
           sizes={'(max-width: 1920px) 100%'}
         />
+
+        <>
+          <ArrowsButton
+            position={'left'}
+            className={`${styles.arrow} ${styles.arrow_left}`}
+          />
+          <ArrowsButton
+            position={'right'}
+            className={`${styles.arrow} ${styles.arrow_right}`}
+          />
+        </>
+
       </div>
 
       {/* заголовок статьи */}
@@ -86,21 +95,20 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
 
       {/* кнопка ПОДРОБНЕЕ для перехода на страницу Блога */}
       {path !== 'blogCard' ?
-      <Link className={`${styles.button} ${setPage[path].button}`} href={`/blog/${blogCardItem.uuid}`} >
-        Подробнее
-      </Link>
-      :
-      null
+        <Link className={`${styles.button} ${setPage[path].button}`} href={`/blog/${blogCardItem.uuid}`} >
+          Подробнее
+        </Link>
+        :
+        null
       }
 
       {/* контейнер со стрелками для ГЛАВНОЙ СТРАНИЦЫ */}
       {path === 'home' ?
-        <div className={`${styles.blogArrows} ${setPage[path].arrows}`}>
-          <ArrowsButton className={`${setPage[path].arrows}`} blogPostsData={blogPostsData} position={'left'} />
-          <ArrowsButton className={`${setPage[path].arrows}`} blogPostsData={blogPostsData} position={'right'} />
+        <div className={`${styles.blogArrows}`}>
+          <ArrowsButton className={`${styles.arrow}`} position={'left'} />
+          <ArrowsButton className={`${styles.arrow}`} position={'right'} />
         </div>
-        :
-        null
+        : null
       }
 
       {/* компонент с кнопкой "ЗАДАТЬ СВОЙ ВОПРОС" */}

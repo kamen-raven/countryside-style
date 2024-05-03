@@ -5,6 +5,7 @@ import styles from './ContactFormLayout.module.scss';
 import { ContactFormLayoutInterface } from './ContactFormLayout.interface.ts';
 
 import ContactImg from '~img/common-images/contactUsImg.jpg';
+import { MapActiveContainer } from '~features/index.ts';
 
 
 const ContactFormLayout: React.FC<ContactFormLayoutInterface> = ({
@@ -21,10 +22,19 @@ const ContactFormLayout: React.FC<ContactFormLayoutInterface> = ({
   };
   const setDirection = (direction == 'formFirst') ? formDirection.formFirst : formDirection.formSecond;
 
+  const mapLayout = {
+    image: '',
+    map: styles.container_mapLayout
+  };
+
+
   /* определяем НАПОЛНЕНИЕ контента - это будет картинка или карта */
   const content = {
-    image: imgContent && <Image className = {styles.image} src={imgContent} alt={'Задать вопрос'} />,
-    map: mapContent && <iframe className={styles.yandexMap} src={mapContent} ></iframe>
+    image: imgContent && <Image className={styles.image} src={imgContent} alt={'Задать вопрос'} />,
+    map: mapContent && (
+      <MapActiveContainer className = {styles.wrapperInner_map}>
+        <iframe className={styles.yandexMap} src={mapContent} ></iframe>
+      </MapActiveContainer>)
   };
   const setContent = (contentType == 'image') ? content.image : content.map;
 
@@ -32,7 +42,7 @@ const ContactFormLayout: React.FC<ContactFormLayoutInterface> = ({
 
   return (
     <div className={styles.wrapper}>
-      <div className={`${styles.container} ${setDirection}`}>
+      <div className={`${styles.container} ${setDirection} ${mapLayout[contentType]}`}>
         {/* MAP || IMAGE */}
         <div className={styles.wrapperInner}>
           {setContent}
