@@ -4,45 +4,58 @@ import { ServicesCardTemplateInterface } from './ServicesCardTemplate.interface.
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({ serviceItem, buttonText }) => {
+const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
+  serviceItem,
+  buttonText,
+  page = "other"
+}) => {
 
-  //const setFontSize = (serviceItem.title.length <= 7) ? styles.title_big : '';
+  // Для главной страницы для селекторов больших карточек
+  let bigContainer, bigPicture, bigInfoContainer, textFirst, bigText;
+  if (page === 'home') {
+    bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : '';
+    bigInfoContainer = (serviceItem._id > 2) ? styles.infoContainer_bigSize : '';
+    bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : '';
+    textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : '';
+    bigText = styles.title_bigText;
+  }
+
+
+
+
+
+
   return (
-    <div className={styles.itemContainer}>
+    <div className={`${styles.itemContainer} ${bigContainer} ${textFirst}`}>
       <div className={styles.imageContainer}>
         {serviceItem.image &&
           <Image
-            className={styles.image}
+            className={`${styles.image} ${bigPicture}`}
             src={serviceItem.image}
             alt={serviceItem.title}
 
-            />
+          />
         }
       </div>
 
 
-      <div className={styles.infoContainer}>
-        <h3 className={`${styles.title} `}>{/* ${setFontSize} */}
+      <div className={`${styles.infoContainer} ${bigInfoContainer}`}>
+        <h3 className={`${styles.title} ${bigText}`}>{/* ${setFontSize} */}
           {serviceItem.title}
         </h3>
 
-{/*         {!arrows ? '' :
-          <div className={styles.arrowsButtonContainer}>
-            <ArrowsButton className={styles.arrowsCardInfo} position={'left'} />
-            <ArrowsButton className={styles.arrowsCardInfo} position={'right'} />
-          </div>
-        } */}
-{/*
+
+        {/*
         <div className={styles.innerContainer}> */}
-          {buttonText &&
-            <Link href={serviceItem.link} className={styles.linkButton} >
-              {buttonText}
-            </Link>
-          }
-          <p className={styles.description}>
-            {serviceItem.description}
-          </p>
-{/*         </div> */}
+        {buttonText &&
+          <Link href={serviceItem.link} className={styles.linkButton} >
+            {buttonText}
+          </Link>
+        }
+        <p className={styles.description}>
+          {serviceItem.description}
+        </p>
+        {/*         </div> */}
       </div>
 
     </div>

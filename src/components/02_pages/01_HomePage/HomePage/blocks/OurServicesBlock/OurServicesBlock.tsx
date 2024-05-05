@@ -4,7 +4,7 @@ import styles from './OurServicesBlock.module.scss';
 import BackgroundPatternLeft from '~svg/background/backgroundOurServicesLeft.svg';
 import BackgroundPatternRight from '~svg/background/backgroundOurServicesRight.svg';
 import { BackgroundSVGPattern } from '~shared/index';
-import { ServiceCard } from '~common/index';
+import { ServicesCardTemplate } from '~common/index';
 
 const OurServicesBlock: React.FC<OurServicesBlockProps> = ({ servicesItems }) => {
 
@@ -24,18 +24,9 @@ const OurServicesBlock: React.FC<OurServicesBlockProps> = ({ servicesItems }) =>
         </h2>
         <div className={styles.innerBlock}>
 
-          {servicesItems && servicesItems.map(m => {
-            return (
-              <ServiceCard
-                key={m.title}
-                title={m.title}
-                description={m.description}
-                image={m.image}
-                arrows={m.arrows}
-                buttonText={m.buttonText}
-                containerTemplate={m.containerTemplate}
-                containerSize={m.containerSize}
-              />
+          {servicesItems && servicesItems.map((item) => {
+            return(
+              <ServicesCardTemplate key={item._id} serviceItem={item} buttonText={'Перейти'} page={'home'} />
             );
           })}
 

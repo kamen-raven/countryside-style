@@ -27,7 +27,37 @@
     grid-template-rows: minmax(300px, 320px) auto;
     gap: 16px;
   }
+
+
+  // для главной страницы
+  &_bigSize {
+    grid-column: 1 / 3;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(300px, 450px);
+    @include breakpoint(screen768) {
+      grid-column: auto;
+      grid-template-columns: minmax(240px, 1fr) 1fr;
+      grid-template-rows: minmax(240px, 320px);
+      gap: 30px;
+    }
+    @include breakpoint(screen576) {
+      grid-template-columns: auto;
+      grid-template-rows: minmax(300px, 320px) auto;
+      gap: 16px;
+    }
+  }
+
+  &_textFirst {
+    direction: rtl;  /* Это переворачивает направление оси */
+    text-align: end;
+    @include breakpoint(screen768) {
+      direction: ltr;
+      text-align: start;
+    }
+  }
 }
+
+
 
 .imageContainer {
   width: 100%;
@@ -45,7 +75,10 @@
     max-width: none;
   }
 
-/*   @include breakpoint(screen320) {
+  &_bigSize {
+    max-width: none;
+  }
+  /*   @include breakpoint(screen320) {
     aspect-ratio: 1 / 1;
   } */
 }
@@ -59,6 +92,8 @@
     "title"
     "buttonLink"
     "description";
+
+
 
   @include breakpoint(screen1280) {
     align-content: space-between;
@@ -93,16 +128,53 @@
       "title buttonLink"
       "description description";
   }
+
+  &_bigSize {
+    @include breakpoint(screen1280) {
+      grid-template-columns: auto;
+      grid-template-rows: auto min-content min-content;
+      align-content: stretch;
+      grid-template-areas:
+      "title"
+      "buttonLink"
+      "description";
+    }
+    @include breakpoint(screen768) {
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    @include breakpoint(screen576) {
+      align-content: space-between;
+      grid-template-columns: auto min-content;
+      grid-template-rows: min-content min-content;
+      gap: 10px;
+      grid-template-areas:
+        "title buttonLink"
+        "description description";
+    }
+
+  }
 }
 
 .title {
   @include common-title(hSmall);
   align-self: flex-start;
   grid-area: title;
-
+  direction: ltr;
   @include breakpoint(screen576) {
     align-self: center;
   }
+
+  &_bigText {
+    @include common-title(hSubtitle);
+
+
+    @include breakpoint(screen768) {
+      @include common-title(hSmall);
+    }
+  }
+
 }
 
 /* .innerContainer {
@@ -135,6 +207,7 @@
     min-width: 0;
     padding: 5px 15px;
   }
+
   @include breakpoint(screen480) {
     padding: 5px 10px;
   }
@@ -146,7 +219,7 @@
     $font-weight: $regular);
   align-self: flex-end;
   grid-area: description;
-
+  direction: ltr;
 }
 
 /* .arrowsButtonContainer {

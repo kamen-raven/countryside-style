@@ -20,30 +20,38 @@
 
 .container {
   @include mainContainer();
+  @include flexColumnGap;
   z-index: 1;
-@include flexColumnGap;
 
-
-
+  @include breakpoint(screen1024) {
+    gap: 30px;
+  }
 }
 
 
 .title {
   @include common-title(hTitle);
-
 }
 
 
 .innerBlock {
   display: grid;
-  grid-template-rows: 300px repeat(2, clamp(300px, 30vw, 475px)) ;
+ // grid-template-rows: 300px repeat(2, clamp(300px, 30vw, 475px));
   grid-template-columns: repeat(2, 1fr);
-  gap: 100px 50px;
+  gap: 80px 50px;
 
   @include breakpoint(screen1440) {
     gap: 80px 30px;
   }
-  @include breakpoint(screen1280) {
-    gap: 80px 30px;
+
+  @include breakpoint(screen768) {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 50px;
   }
+
+  @include breakpoint(screen576) {
+    gap: 32px;
+  }
+
 }

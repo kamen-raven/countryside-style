@@ -12,10 +12,11 @@ import {
 import { ReviewsBlock, TeamMembersBlock } from '~common/index';
 
 import objectsForSaleData from "~utils/temp/objectsForSaleData/objectsForSaleItems";
-import servicesData from "~utils/temp/OurServicesData/servicesItems";
+
 import pressData from '~data/constant/pressBlock/pressArticlesItems';
 
 import generalContactsData from '~data/constant/generalContacts/generalContactsData';
+import homePageServicesItems from '~data/constant/servicesBlock/homePage/homePageServicesItems';
 
 
 const HomePage: React.FC<HomePageInterface> = ({
@@ -25,7 +26,7 @@ const HomePage: React.FC<HomePageInterface> = ({
 }) => {
 
   const objectsForSaleItems = objectsForSaleData;
-  const ourServicesItems = servicesData;
+  const ourServicesItems = homePageServicesItems;
   const pressInfoItems = pressData;
 
   return (
