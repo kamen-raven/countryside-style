@@ -43,6 +43,9 @@
   @include breakpoint(screen1440) {
     gap: 80px 30px;
   }
+  @include breakpoint(screen1280) {
+    gap: 60px 30px;
+  }
 
   @include breakpoint(screen768) {
     grid-template-columns: auto;

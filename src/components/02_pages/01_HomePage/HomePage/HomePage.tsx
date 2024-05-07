@@ -31,8 +31,8 @@ const HomePage: React.FC<HomePageInterface> = ({
 
   return (
     <main className={styles.mainContainer}>
-{/*       <HeadBlock /> */}
-{/*       <ObjectsForSaleBlock objItems={objectsForSaleItems} /> */}
+      <HeadBlock />
+      <ObjectsForSaleBlock objItems={objectsForSaleItems} />
       <OurServicesBlock servicesItems={ourServicesItems} />
       <PressBlock pressItems={pressInfoItems} />
       <BlogBlock path={'home'} blogPostsData={blogPostsData} />

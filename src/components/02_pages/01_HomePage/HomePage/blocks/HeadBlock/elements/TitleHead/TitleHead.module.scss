@@ -14,9 +14,8 @@
 
 .container {
   @include mainContainer();
+  @include flexColumnGap($gap: 0);
   position: relative;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
 }
@@ -25,7 +24,10 @@
   margin: clamp(9rem, 15vw, 11.875rem) auto;
 
   @include breakpoint(screen1280) {
-    margin: clamp(7rem, 12vw, 10rem) auto;
+    margin: clamp(7.5rem, 12vw, 10rem) auto;
+  }
+  @include breakpoint(screen640) {
+    margin: clamp(48px, 14.2125vw, 120px) auto;
   }
 }
 
@@ -46,6 +48,13 @@
     $color: $white);
   text-align: center;
   margin-top: 1.25rem;
+
+  @include breakpoint(screen768) {
+    margin-top: .75rem;
+  }
+  @include breakpoint(screen480) {
+    margin-top: .4rem;
+  }
 }
 
 .description {
@@ -54,44 +63,11 @@
     $color: $white,
     $line-height: 130%);
   margin-top: 2rem;
-}
 
-
-
-.info {
-  grid-area: container;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  width: 125px;
-  height: 125px;
-  background-color: $accent-gray;
-  border-radius: 50%;
-  position: absolute;
-  top: 60px;
-  right: $padding-side;
-
-  @include breakpoint(screen1280) {
-    right: calc($padding-side / 1.5);
-
+  @include breakpoint(screen768) {
+    margin-top: 1.25rem;
   }
-
-  &__text {
-    @include common-paragraph(pSm,
-      $font-family: $ff-openSans,
-      $color: $white,
-      $line-height: 135%);
-  }
-
-  &__years {
-    font-family: $ff-openSans;
-    font-size: $h1;
-    font-weight: $bold;
-    line-height: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
+  @include breakpoint(screen480) {
+    margin-top: .75rem;
   }
 }

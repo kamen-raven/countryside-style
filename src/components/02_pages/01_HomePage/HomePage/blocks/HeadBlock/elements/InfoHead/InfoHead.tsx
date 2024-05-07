@@ -14,6 +14,10 @@ import { RequestPhoneInput } from '~features/Forms';
 
 
 const InfoHead: React.FC = () => {
+  const currentDate = new Date().getFullYear();
+  const reportYear = currentDate - 1;
+
+
 
   return (
     <div className={`${styles.wrapper}`}  >
@@ -32,20 +36,22 @@ const InfoHead: React.FC = () => {
             <span className={styles.countInfo__num}>
               256
             </span>
-            Проданных объектов загородной недвижимости в&nbsp;2023 году
+            Проданных объектов загородной недвижимости в&nbsp;{reportYear}&nbsp;году
           </h3>
           <p className={styles.countInfo__description}>
             Мы продаем только те&nbsp;объекты, которые видели своими глазами
           </p>
         </div>
 
-        <div className={styles.img}>
+        <div className={styles.imgContainer}>
           <Image
-            className={styles.img__image}
+            className={styles.imgContainer__image}
             src={SecondImg}
             alt='Загородный дом' />
         </div>
       </div>
+
+
       <div className={`${styles.container} ${styles.container_second}`}>
         <AwardInfoElement />
 
@@ -53,7 +59,7 @@ const InfoHead: React.FC = () => {
           <p className={styles.requestForm__description}>
             Оставьте заявку<br /> на&nbsp;БЕСПЛАТНУЮ консультацию
           </p>
-          <RequestPhoneInput nameForm={'InfoHeadPhoneInput'} buttonText={'Оставить заявку'} />
+          <RequestPhoneInput nameForm={'InfoHeadPhoneInput'} buttonText={'Оставить заявку'} className={styles.phoneInput} />
         </div>
       </div>
 

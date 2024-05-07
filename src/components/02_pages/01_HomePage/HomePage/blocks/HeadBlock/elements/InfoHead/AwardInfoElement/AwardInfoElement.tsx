@@ -22,8 +22,8 @@ const AwardInfoElement: React.FC = () => {
         </p>
       </div>
       <p className={styles.award__description}>
-        <span className = {styles.award__description_dot}>*</span>
-      Победитель премии КАИССА-2018 Ассоциации риэлторов
+        <span className={styles.award__description_dot}>*</span>
+        Победитель премии КАИССА-2018 Ассоциации риэлторов
         Санкт-Петербурга и&nbsp;Ленинградской области в&nbsp;номинации «Лучшая риэлтерская компания на&nbsp;рынке загородной недвижимости»
       </p>
     </div>

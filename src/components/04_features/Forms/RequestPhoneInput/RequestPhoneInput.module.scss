@@ -11,6 +11,7 @@
   }
 
   @include breakpoint(screen576) {
+    max-width: 576px;
     grid-template-columns: auto;
     grid-template-rows: 35px 35px auto;
     grid-auto-flow: column;

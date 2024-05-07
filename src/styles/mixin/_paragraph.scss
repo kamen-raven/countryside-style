@@ -71,6 +71,10 @@
       margin: $margin;
       color: $color;
       font-style: $font-style;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($paragraph-small-tab, 1.1vw, $paragraph-small);  // 16px 18px
+      }
     }
 
 /*     @if $pTag == link {

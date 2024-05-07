@@ -6,6 +6,10 @@
   flex-direction: column;
   align-items: flex-start;
 
+  @include breakpoint(screen1280) {
+    flex-basis: 90%;
+  }
+
   position: relative;
   width: 100%;
 
@@ -15,9 +19,24 @@
     left: 0;
 
     @include breakpoint(screen1280) {
-      top: -100px;
+      top: -60px;
       left: 0;
     }
+
+    @include breakpoint(screen960) {
+      top: -90px;
+    }
+
+    @include breakpoint(screen640) {
+      top: -70px;
+    }
+
+    @include breakpoint(screen576) {
+      top: -50px;
+    }
+/*     @include breakpoint(screen480) {
+      top: -30px;
+    } */
   }
 
   &__image {
@@ -28,8 +47,27 @@
     @include breakpoint(screen1280) {
       max-width: none;
       max-height: none;
-      width: 65%;
-      height: 65%;
+      width: 55%;
+      height: 55%;
+    }
+
+    @include breakpoint(screen1024) {
+      width: 60%;
+      height: 60%;
+    }
+
+    @include breakpoint(screen960) {
+      max-width: 120px;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include breakpoint(screen768) {
+      max-width: clamp(100px, 18vw, 120px);
+    }
+
+    @include breakpoint(screen576) {
+      max-width: clamp(80px, 18vw, 100px);
     }
   }
 
@@ -38,11 +76,16 @@
     align-items: center;
     background: $accent-green;
     margin-left: 90px;
+
+    @include breakpoint(screen640) {
+      margin-left: 60px;
+    }
   }
 
   &__info {
     @include common-paragraph(pXl,
       $color: $white);
+    line-height: 120%;
     padding: 40px 80px;
     margin: 0;
 
@@ -50,6 +93,17 @@
     @include breakpoint(screen1280) {
       padding: 50px 70px;
     }
+
+    @include breakpoint(screen768) {
+      padding: 40px 10px 40px 40px;
+    }
+    @include breakpoint(screen640) {
+      padding-left: 60px;
+    }
+    @include breakpoint(screen480) {
+      padding: 25px 40px;
+    }
+
   }
 
   &__description {
@@ -57,7 +111,24 @@
     @include common-paragraph(pSm,
       $font-weight: $regular,
       $color: $white);
-    margin: 20px 20px 0 180px;
+    margin: 16px 20px 0 180px;
+
+    @include breakpoint(screen1280) {
+      margin-top: 16px;
+      margin-right: 0;
+      margin-left: 50px;
+    }
+
+    @include breakpoint(screen960) {
+      margin-left: clamp(120px, 22vw, 160px);
+      margin-top: 10px;
+    }
+    @include breakpoint(screen480) {
+      margin-left: 10px;
+      margin-top: 24px;
+    }
+
+
 
     &_dot {
       position: absolute;

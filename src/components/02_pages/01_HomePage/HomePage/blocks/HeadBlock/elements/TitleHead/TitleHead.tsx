@@ -1,14 +1,10 @@
 import React from 'react';
 
 import styles from './TitleHead.module.scss';
-import differenceInYears from 'date-fns/differenceInYears';
+import { YearInfoElement } from './YearInfoElement/YearInfoElement';
 
 
 const TitleHead: React.FC = () => {
-  // создаем переменные для расчета даты в информационном блоке "XX ЛЕТ НА РЫНКЕ" //
-  const currentDate = new Date();
-  const startData = new Date(2011, 0, 0);
-  const years = differenceInYears(currentDate, startData);
 
 
   return (
@@ -25,14 +21,7 @@ const TitleHead: React.FC = () => {
             Лучшая риэлтерская компания на&nbsp;рынке загородной недвижимости 2018&nbsp;года
           </p>
         </div>
-        <div className={styles.info}>
-          <p className={styles.info__text}>
-            <span className={styles.info__years}>
-              {years}
-            </span>
-            лет на рынке
-          </p>
-        </div>
+        <YearInfoElement />
       </div>
     </div>
   );

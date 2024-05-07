@@ -21,10 +21,6 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
   }
 
 
-
-
-
-
   return (
     <div className={`${styles.itemContainer} ${bigContainer} ${textFirst}`}>
       <div className={styles.imageContainer}>
@@ -33,17 +29,14 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
             className={`${styles.image} ${bigPicture}`}
             src={serviceItem.image}
             alt={serviceItem.title}
-
           />
         }
       </div>
-
 
       <div className={`${styles.infoContainer} ${bigInfoContainer}`}>
         <h3 className={`${styles.title} ${bigText}`}>{/* ${setFontSize} */}
           {serviceItem.title}
         </h3>
-
 
         {/*
         <div className={styles.innerContainer}> */}
@@ -57,7 +50,6 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
         </p>
         {/*         </div> */}
       </div>
-
     </div>
   );
 };

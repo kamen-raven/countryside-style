@@ -1,0 +1,53 @@
+@import '~global_styles';
+
+.info {
+  grid-area: container;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 125px;
+  height: 125px;
+  background-color: $accent-gray;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  right: $padding-side;
+
+  @include breakpoint(screen1280) {
+    right: calc($padding-side / 1.5);
+    width: clamp(90px, 10.7426vw, 125px);
+    height: clamp(90px, 10.7426vw, 125px);
+  }
+  @include breakpoint(screen1024) {
+    top: 30px;
+  }
+
+  @include breakpoint(screen768) {
+    right: clamp(1.563rem, 6.58724vw, 3.125rem);
+  }
+
+  @include breakpoint(screen640) {
+    display: none;
+    visibility: hidden;
+  }
+
+  &__text {
+    @include common-paragraph(pSm,
+      $font-family: $ff-openSans,
+      $color: $white,
+      $line-height: 135%);
+  }
+
+  &__years {
+    @include common-title(hTitle,
+      $font-weight: $bold,
+      $color: $white);
+    font-family: $ff-openSans;
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

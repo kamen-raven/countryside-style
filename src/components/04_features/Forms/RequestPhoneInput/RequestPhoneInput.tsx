@@ -9,7 +9,7 @@ import { useToggleSupportPopupStore } from '~store/popupsStore/useTogglePopupSto
 import { PersonalAgreementElement } from '../elements/index.ts';
 
 
-const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, nameForm }) => {
+const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, nameForm, className }) => {
   // Состояния для значений полей формы
   const phone = useFormRequestStore((state) => state.contact);
   const setPhone = useFormRequestStore((state) => state.actions.setContact);
@@ -51,7 +51,7 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
 
   return (
     <form name={nameForm}
-      className={styles.requestForm}
+      className={`${styles.requestForm} ${className}`}
       onSubmit={handleSubmit}>
       <input className={styles.requestForm__input}
         placeholder='Ваш телефон'

@@ -7,11 +7,13 @@
   position: relative;
 
 }
+
 .backgroundRight {
   @include breakpoint(screen1440) {
     width: 80%;
   }
 }
+
 .backgroundLeft {
   @include breakpoint(screen1440) {
     width: 60%;
@@ -27,9 +29,16 @@
   justify-content: space-between;
   gap: 60px;
 
-    @include breakpoint(screen1280) {
-      gap: 20px;
-    }
+  @include breakpoint(screen1280) {
+    gap: 20px;
+  }
+
+  @include breakpoint(screen960) {
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 60px;
+  }
+
 
   &_first {
     @extend .container;
@@ -39,6 +48,30 @@
   &_second {
     @extend .container;
     padding-bottom: 50px;
+
+    @include breakpoint(screen1440) {
+      margin-top: 40px;
+    }
+
+    @include breakpoint(screen1280) {
+      margin-top: 10px;
+    }
+
+    @include breakpoint(screen960) {
+      margin-top: 40px;
+    }
+
+    @include breakpoint(screen768) {
+      padding-bottom: clamp(2.5rem, 10.15625vw, 3.75rem);
+    }
+
+    @include breakpoint(screen640) {
+      margin-top: 20px;
+    }
+
+    @include breakpoint(screen576) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -48,45 +81,99 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  flex-shrink: 3;
+  flex-basis: 35%;
+  gap: 24px;
   margin-top: 50px;
+
+  @include breakpoint(screen1024) {
+    gap: 16px;
+  }
+
+  @include breakpoint(screen960) {
+    max-width: none;
+    margin-top: clamp(2.5rem, 5.02082vw, 4.375rem);
+  }
+
+  @include breakpoint(screen768) {
+    margin-top: clamp(1.875rem, 7.29036vw, 2.5rem);
+  }
+
+  @include breakpoint(screen576) {
+    gap: 12px;
+  }
 
   &__title {
     @include common-title(hSmall,
-    $color: $white);
-    margin-bottom: 24px;
+      $color: $white);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include breakpoint(screen1024) {
+      gap: 16px;
+    }
+
+    @include breakpoint(screen960) {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    @include breakpoint(screen480) {
+      flex-direction: column;
+      gap: 8px;
+    }
   }
 
   &__num {
     @include special-text(decorate,
-              $font-weight: $bold,
-              $line-height: 100%,
-              $color: $white);
+      $font-weight: $bold,
+      $line-height: 100%,
+      $color: $white);
     display: flex;
     width: fit-content;
-    padding-bottom: 1.5rem;
   }
 
   &__description {
     @include common-paragraph(p,
-        $font-weight: $regular,
-        $color: $white);
+      $font-weight: $regular,
+      $color: $white);
 
     padding-left: 20px;
     border-left: 4px solid $white;
+
+    @include breakpoint(screen960) {
+      margin-left: clamp(150px, 18.6111vw, 174px);
+      padding-left: 1rem;
+    }
+
+    @include breakpoint(screen576) {
+      margin-left: 0;
+      border-left: 3px solid $white;
+    }
   }
 }
 
 
-.img {
+.imgContainer {
   max-width: clamp(375px, 55%, 780px);
   width: 100%;
   height: calc(clamp(270px, 40vw, 450px) - 40px);
   position: relative;
+  flex-grow: 3;
+  flex-basis: 65%;
 
   @include breakpoint(screen1440) {
     height: clamp(270px, 40vw, 370px);
   }
 
+  @include breakpoint(screen1280) {
+    max-width: none;
+  }
+
+  @include breakpoint(screen960) {
+    max-height: 400px;
+  }
 
   &__image {
     object-fit: contain;
@@ -98,6 +185,20 @@
 
     width: 100%;
     height: 100%;
+
+    @include breakpoint(screen1280) {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include breakpoint(screen960) {
+      position: initial;
+      max-height: 400px;
+    }
+
+    @include breakpoint(screen768) {
+      max-height: 330px;
+    }
   }
 }
 
@@ -107,13 +208,48 @@
 .requestForm {
   flex-shrink: 1;
   width: 100%;
-  &__description{
+
+  &__description {
     @include common-paragraph(pXl,
-    $color: $white,
-    $margin: 35px 0 25px);
+      $color: $white,
+      $margin: 40px 0 25px);
+
+
+    @include breakpoint(screen1440) {
+      flex-shrink: 1.2;
+    }
+
+    @include breakpoint(screen1280) {
+      margin-top: 50px;
+    }
+
+    @include breakpoint(screen960) {
+      margin-top: 16px;
+    }
+
+    @include breakpoint(screen768) {
+      margin-top: 24px;
+    }
+    @include breakpoint(screen640) {
+      margin-top: 16px;
+    }
+  }
+}
+
+.phoneInput {
+  & input {
+    @include breakpoint(screen1024) {
+      grid-column: 1/3;
+    }
+
+    @include breakpoint(screen960) {
+      grid-column: auto;
+    }
   }
 
-  @include breakpoint(screen1440) {
-    flex-shrink: 1.2;
+  & button {
+    @include breakpoint(screen1024) {
+      width: fit-content;
+    }
   }
 }
