@@ -93,48 +93,41 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
 
 
 
-  const photoGeneral =
-
-    <Image
-      className={styles.photoGeneral__image}
-      src={getCurrentPhoto()}
-      alt={'title'}
-      /* fill={true} */
-      width={300}
-      height={300}
-      sizes={`(max-width: 1920px) 830px`} />;
-
-
-  const photoSecondary =
-    <Image
-      className={styles.photoSecondary__image}
-      src={getCurrentSecondaryPhoto()}
-      alt={'title'}
-      /* fill={true} */
-      width={300}
-      height={300}
-      sizes={`(max-width: 1920px) 410px`}
-    />;
-
-
 
   return (
     <div className={`${styles.container} ${setContainer} `}>
 
-
       <div className={styles.photoSecondary}>
-        {photoSecondary
-        }
+        <Image
+          className={styles.photoSecondary__image}
+          src={getCurrentSecondaryPhoto()}
+          alt={category[linkToCatalog]}
+          width={300}
+          height={300}
+        />
       </div>
-
 
       <div className={styles.photoGeneral}>
-        {photoGeneral
-        }
+        <Image
+          className={styles.photoGeneral__image}
+          src={getCurrentPhoto()}
+          alt={category[linkToCatalog]}
+          width={680}
+          height={490} />
+
+        {objectItemsList.length > 1 &&
+        <>
+          <ArrowsButton
+            onClick={handlePrevPhoto}
+            className={`${styles.arrowNavigate} ${styles.arrowNavigate_left}`}
+            position={'left'} />
+          <ArrowsButton
+            onClick={handleNextPhoto}
+            className={`${styles.arrowNavigate} ${styles.arrowNavigate_right}`}
+            position={'right'} />
+        </>
+          }
       </div>
-
-
-
 
       <div className={`${styles.innerBlock} ${setInnerBlock} `}>
         <div className={`${styles.infoContainer} ${setInfoContainer}`}>
@@ -142,7 +135,7 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
             {category[linkToCatalog]} {/* title */}
           </h3>
           {objectItemsList.length > 1 &&
-            <div className={styles.arrowsButtonContainer}>
+            <div className={`${styles.arrowsButtonContainer} ${styles.arrowsButtonContainer_desktop}`}>
               <ArrowsButton
                 onClick={containerTemplate === 'picFirst' ? handlePrevPhoto : handleNextPhoto}
                 className={styles.arrowsCardInfo}
@@ -153,10 +146,13 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
                 position={'right'} />
             </div>
           }
+          <Link className={`${styles.link} ${styles.link_mobile}`} href={`/${linkToCatalog}`}>
+            Перейти
+          </Link>
         </div>
 
         <div className={`${styles.infoContainer} ${setInfoContainer}`}>
-          <Link className={styles.link} href={`/${linkToCatalog}`}>
+          <Link className={`${styles.link} ${styles.link_desktop}`} href={`/${linkToCatalog}`}>
             Перейти
           </Link>
           <p className={styles.description}>

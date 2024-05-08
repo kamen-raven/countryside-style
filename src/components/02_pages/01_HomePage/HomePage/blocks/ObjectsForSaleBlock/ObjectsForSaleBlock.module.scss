@@ -15,15 +15,6 @@
   }
 }
 
-/* .backgroundRight  {
-  opacity: .5;
-
-}
-.backgroundLeft  {
-  opacity: .5;
-}
- */
-
 .container {
   @include mainContainer();
   @include flexColumnGap;
@@ -50,4 +41,9 @@
   @include breakpoint(screen1280) {
     gap: 60px;
   }
+
+  @include breakpoint(screen1024) {
+    gap: clamp(30px, 4.3957vw, 50px);
+  }
+
 }

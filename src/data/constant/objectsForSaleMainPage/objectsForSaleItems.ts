@@ -29,45 +29,4 @@ const objectsForSalePhotoTemplate = {
 };
 
 
-
-/* const objectsForSaleData = [
-
-  {
-    title: 'Дома, дачи, коттеджи',
-    buttonText: 'Перейти',
-    description: 'Мы продаем только те объекты, которые видели своими глазами',
-    arrows: true,
-    containerTemplate: 'picFirst',
-    photoGeneral: HouseGen,
-    photoSecondary: HouseSm,
-  },
-  {
-    title: 'Земельные участки',
-    buttonText: 'Перейти',
-    description: 'Мы продаем только те объекты, которые видели своими глазами',
-    arrows: true,
-    containerTemplate: 'textFirst',
-    photoGeneral: LandGen,
-    photoSecondary: LandSm,
-  },
-  {
-    title: 'Коттеджные поселки',
-    buttonText: 'Перейти',
-    description: 'Мы продаем только те объекты, которые видели своими глазами',
-    arrows: true,
-    containerTemplate: 'picFirst',
-    photoGeneral: CottageGen,
-    photoSecondary: CottageSm,
-    },
-    {
-      title: 'Квартиры',
-      buttonText: 'Перейти',
-      description: 'Мы продаем только те объекты, которые видели своими глазами',
-      arrows: true,
-      containerTemplate: 'textFirst',
-      photoGeneral: FlatGen,
-      photoSecondary: FlatSm,
-    },
-];
- */
 export default objectsForSalePhotoTemplate;

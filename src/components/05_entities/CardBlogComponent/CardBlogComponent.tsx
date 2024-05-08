@@ -8,7 +8,7 @@ import { ArrowsButton, OpenPopupButton } from '~shared/index';
 //import CommentIcon from '~svg/blog/commentsIcon.svg';
 import Link from 'next/link';
 
-const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardItem, blogPostsData }) => {
+const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardItem }) => {
 
   const setPage = {
     home: {

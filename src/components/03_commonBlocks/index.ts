@@ -8,7 +8,6 @@ export * from './TeamMembersBlock/TeamMembersBlock';
 export * from './AdvantagesBlock/AdvantagesBlock';
 export * from './ReviewsBlock/ReviewsBlock';
 
-export * from './ServicesList/ServiceCard/ServiceCard';
 
 
 export * from './CardOfObject/CatalogCardItem/CatalogCardItem';
