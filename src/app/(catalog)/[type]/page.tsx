@@ -34,7 +34,7 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
   };
 
   const typePage = category[params.type]; // берем тип на основе params исходя из роута
-
+  
   if (!typePage) {   // если такого нету, то возвращаем пустую страницу
     notFound();
   }

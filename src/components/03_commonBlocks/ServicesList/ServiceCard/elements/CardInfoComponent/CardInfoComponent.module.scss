@@ -6,7 +6,8 @@
   display: grid;
   align-content: space-between;
   row-gap: 2rem;
-
+  max-width: 410px;
+  
   &_left {
     justify-self: flex-start;
   }
@@ -14,16 +15,16 @@
   &_right {
     justify-self: flex-end;
   }
-
+/*
   &__block {
     &_objects {
-      max-width: 410px;
+
     }
 
     &_services {
       max-width: 530px;
     }
-  }
+  } */
 }
 
 .wrapper {

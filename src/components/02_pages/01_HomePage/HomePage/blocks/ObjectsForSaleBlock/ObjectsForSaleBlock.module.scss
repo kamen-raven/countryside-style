@@ -14,19 +14,24 @@
     padding: $padding-gap-mob;
   }
 }
-.backgroundRight  {
+
+/* .backgroundRight  {
   opacity: .5;
 
 }
 .backgroundLeft  {
   opacity: .5;
 }
-
+ */
 
 .container {
   @include mainContainer();
-@include flexColumnGap;
+  @include flexColumnGap;
   z-index: 1;
+
+  @include breakpoint(screen1024) {
+    gap: 30px;
+  }
 }
 
 .title {
@@ -41,6 +46,7 @@
   @include breakpoint(screen1440) {
     gap: 80px;
   }
+
   @include breakpoint(screen1280) {
     gap: 60px;
   }

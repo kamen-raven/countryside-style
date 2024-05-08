@@ -1,4 +1,3 @@
-import { ObjectForSaleProps } from "~pages/01_HomePage/HomePage/blocks/ObjectsForSaleBlock/elements/ObjectForSale/ObjectForSale.props";
 
 import HouseGen from '~img/objectsForSaleBlock/DachaGen.jpg';
 import HouseSm from '~img/objectsForSaleBlock/DachaSm.jpg';
@@ -10,8 +9,29 @@ import FlatGen from '~img/objectsForSaleBlock/KvartiryGen.jpg';
 import FlatSm from '~img/objectsForSaleBlock/KvartirySm.jpg';
 
 
+const objectsForSalePhotoTemplate = {
+  'houses-and-cottages': {
+    photoGeneral: HouseGen,
+    photoSecondary: HouseSm,
+  },
+  lands: {
+    photoGeneral: LandGen,
+    photoSecondary: LandSm,
+  },
+  villages: {
+    photoGeneral: CottageGen,
+    photoSecondary: CottageSm,
+  },
+  flats: {
+    photoGeneral: FlatGen,
+    photoSecondary: FlatSm,
+  },
+};
 
-const objectsForSaleData: ObjectForSaleProps[] = [
+
+
+/* const objectsForSaleData = [
+
   {
     title: 'Дома, дачи, коттеджи',
     buttonText: 'Перейти',
@@ -49,5 +69,5 @@ const objectsForSaleData: ObjectForSaleProps[] = [
       photoSecondary: FlatSm,
     },
 ];
-
-export default objectsForSaleData;
+ */
+export default objectsForSalePhotoTemplate;

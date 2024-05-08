@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import Image from 'next/image';
 
 import { ServiceCardProps } from './ServiceCard.props';
@@ -46,7 +46,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   const setImageSizeContainer = sizes.image[containerSize];
   /* const setImageSize = sizes.sizes[containerSize]; */
 
-
+/*
   return (
     <div className={`${styles.container} ${setContainerSize} ${selectedContainerType} `}>
 
@@ -58,8 +58,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             alt={title}
     /*         width={100}
             height={100}
-            sizes={setImageSize} */ />}
-      </div>
+            sizes={setImageSize} */ /* />} */
+/*       </div>
 
       <CardInfoComponent
         title={title}
@@ -75,3 +75,4 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 };
 
 export { ServiceCard };
+/*  */ 

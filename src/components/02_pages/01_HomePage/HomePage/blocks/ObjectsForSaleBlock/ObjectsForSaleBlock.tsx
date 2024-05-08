@@ -6,8 +6,19 @@ import BackgroundPatternRight from '~svg/background/backgroundObjectsForSaleRigh
 
 import { ObjectForSale } from './elements/ObjectForSale/ObjectForSale';
 import { BackgroundSVGPattern } from '~shared/index';
+import filteredObjectsByCategory from '~helpers/objects/filteredObjectsByCategory';
 
-const ObjectsForSaleBlock: React.FC<ObjectsForSaleBlockProps> = ({ objItems }) => {
+const ObjectsForSaleBlock: React.FC<ObjectsForSaleBlockProps> = ({
+  objectsData, // объекты
+  villagesData // поселки
+}) => {
+
+
+  const landsData = filteredObjectsByCategory(objectsData, 'Земельные участки');
+  const flatsData = filteredObjectsByCategory(objectsData, 'Квартиры');
+  const housesData = filteredObjectsByCategory(objectsData, 'Дома, дачи, коттеджи');
+
+
 
   return (
     <section className={styles.wrapper}>
@@ -21,23 +32,37 @@ const ObjectsForSaleBlock: React.FC<ObjectsForSaleBlockProps> = ({ objItems }) =
       </>
       <div className={styles.container}>
         <h2 className={styles.title}>
-          Объекты в продаже
+          Объекты в&nbsp;продаже
         </h2>
 
         <div className={styles.innerBlock}>
-          {objItems && objItems.map(m => {
-            return (
-              <ObjectForSale
-                key={m.title}
-                title={m.title}
-                buttonText={m.buttonText}
-                description={m.description}
-                arrows={m.arrows}
-                containerTemplate={m.containerTemplate}
-                photoGeneral={m.photoGeneral}
-                photoSecondary={m.photoSecondary} />
-            );
-          })}
+          {/* houses */}
+          <>
+            {
+              <ObjectForSale objectItemsList={housesData} linkToCatalog={'houses-and-cottages'} containerTemplate={'picFirst'} />
+            }
+          </>
+
+          {/* lands */}
+          <>
+            {
+              <ObjectForSale objectItemsList={landsData} linkToCatalog={'lands'} containerTemplate={'textFirst'} />
+            }
+          </>
+
+          {/* villages */}
+          <>
+            {
+              <ObjectForSale objectItemsList={villagesData} linkToCatalog={'villages'} containerTemplate={'picFirst'} />
+            }
+          </>
+
+          {/* flats */}
+          <>
+            {
+              <ObjectForSale objectItemsList={flatsData} linkToCatalog={'flats'} containerTemplate={'textFirst'} />
+            }
+          </>
         </div>
 
       </div>

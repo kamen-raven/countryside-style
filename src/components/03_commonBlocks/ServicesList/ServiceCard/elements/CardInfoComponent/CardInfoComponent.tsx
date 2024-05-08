@@ -1,17 +1,12 @@
 import React from 'react';
-import { CardInfoComponentProps } from './CardInfoComponent.props';
+import { CardInfoComponentInterface } from './CardInfoComponent.interface';
 import styles from './CardInfoComponent.module.scss';
 import { ArrowsButton } from '~shared/index';
 import Link from 'next/link';
 
-
-const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
+const CardInfoComponent: React.FC<CardInfoComponentInterface> = ({
   containerTemplate,
-  title,
-  arrows,
-  buttonText,
-  description,
-  block
+  title
 }) => {
 
   const setTemplate = {
@@ -23,35 +18,32 @@ const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
       picFirst: styles.wrapper_left,
       textFirst: styles.wrapper_right,
     },
-    block: {
-      objects: styles.container__block_objects,
-      services: styles.container__block_services,
-    }
+
 
   };
   const selectedWrapper = setTemplate.wrapper[containerTemplate];
   const selectedContainer = setTemplate.container[containerTemplate];
-  const selectedBlock = block && setTemplate.block[block];
+
 
   return (
-    <div className={`${styles.container} ${selectedContainer} ${selectedBlock}`}>
+    <div className={`${styles.container} ${selectedContainer} `}>
       <div className={`${styles.wrapper} ${selectedWrapper}`}>
         <h3 className={`${styles.title}`}>
           {title}
         </h3>
-        {!arrows ? null :
-        <div className = {styles.arrowsButtonContainer}>
-          <ArrowsButton className={styles.arrowsCardInfo} position={'left'}/>
-          <ArrowsButton className={styles.arrowsCardInfo} position={'right'}/>
-        </div>
+        {
+          <div className={styles.arrowsButtonContainer}>
+            <ArrowsButton className={styles.arrowsCardInfo} position={'left'} />
+            <ArrowsButton className={styles.arrowsCardInfo} position={'right'} />
+          </div>
         }
       </div>
       <div className={`${styles.wrapper} ${selectedWrapper}`}>
         <Link className={styles.button} href={'/'}>
-          {buttonText}
+          Перейти
         </Link>
         <p className={styles.description}>
-          {description}
+          Мы продаем только те объекты, которые видели своими глазами
         </p>
       </div>
     </div>
@@ -59,3 +51,4 @@ const CardInfoComponent: React.FC<CardInfoComponentProps> = ({
 };
 
 export { CardInfoComponent };
+

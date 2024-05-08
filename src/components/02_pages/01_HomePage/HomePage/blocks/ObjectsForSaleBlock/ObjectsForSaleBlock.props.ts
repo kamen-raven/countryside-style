@@ -1,6 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { ObjectForSaleProps } from './elements/ObjectForSale/ObjectForSale.props';
+import { RealEstateObjectInterface } from '~interfaces/objects.interface';
+import { VillageObjectInterface } from '~interfaces/villages.interface';
 
 export interface ObjectsForSaleBlockProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  objItems: ObjectForSaleProps[];
+  objectsData: RealEstateObjectInterface[];
+  villagesData: VillageObjectInterface[];
 }
