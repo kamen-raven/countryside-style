@@ -26,7 +26,7 @@
 .contentContainer {
   @include scrollbar($arrows: false);
   min-width: 0;
-/*   max-width: 100%; */
+  max-width: 100%;
   overflow: auto;
   overflow-x: auto;
   padding-bottom: 50px;
@@ -48,7 +48,6 @@
 
   @include breakpoint(screen960) {
     grid-auto-columns: 100%;
-    grid-template-columns: repeat(auto-fit, 100%);
   }
 }
 
