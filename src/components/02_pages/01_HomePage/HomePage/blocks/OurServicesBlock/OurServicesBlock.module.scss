@@ -39,7 +39,7 @@
  // grid-template-rows: 300px repeat(2, clamp(300px, 30vw, 475px));
   grid-template-columns: repeat(2, 1fr);
   gap: 80px 50px;
-
+  height: 100%;
   @include breakpoint(screen1440) {
     gap: 80px 30px;
   }
@@ -48,7 +48,6 @@
   }
 
   @include breakpoint(screen768) {
-    grid-auto-rows: 1fr;
     grid-template-columns: auto;
     gap: 50px;
   }
