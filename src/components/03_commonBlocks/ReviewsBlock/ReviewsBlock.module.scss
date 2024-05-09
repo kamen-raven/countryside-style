@@ -48,6 +48,7 @@
 
   @include breakpoint(screen960) {
     grid-auto-columns: 100%;
+    grid-template-columns: repeat(auto-fit, 100%);
   }
 }
 
