@@ -121,8 +121,9 @@
 
   @include breakpoint(screen576) {
     align-content: space-between;
+    justify-content: initial;
     grid-template-columns: auto min-content;
-    grid-template-rows: min-content min-content;
+    grid-template-rows: auto auto;
     gap: 10px;
     grid-template-areas:
       "title buttonLink"
@@ -145,9 +146,10 @@
     }
 
     @include breakpoint(screen576) {
+      justify-content: initial;
       align-content: space-between;
       grid-template-columns: auto min-content;
-      grid-template-rows: min-content min-content;
+      grid-template-rows: auto auto;
       gap: 10px;
       grid-template-areas:
         "title buttonLink"
