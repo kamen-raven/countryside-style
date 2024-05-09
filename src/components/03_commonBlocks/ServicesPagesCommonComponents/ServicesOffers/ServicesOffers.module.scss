@@ -31,7 +31,6 @@
 .cardsLayout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 1fr;
   gap: 60px 50px;
 
   @include breakpoint(screen1280) {
