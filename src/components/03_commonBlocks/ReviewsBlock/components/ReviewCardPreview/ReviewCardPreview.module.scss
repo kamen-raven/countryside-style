@@ -5,6 +5,7 @@
 
 
   min-width: calc(50% - 25px);
+  max-width: calc(100vw - 25px);
   border: 1px solid $gray;
   padding: 40px;
   display: flex;
@@ -12,7 +13,7 @@
   gap: 20px;
 
   @include breakpoint(screen960) {
-    width: 100%;
+    /* width: 100%; */
   }
 
   @include breakpoint(screen576) {

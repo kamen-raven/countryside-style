@@ -1,12 +1,12 @@
 import React from 'react';
 import { ReviewsBlockProps } from './ReviewsBlock.props';
 import styles from './ReviewsBlock.module.scss';
-import {/*  ReviewCardPreview,  */ReviewTitleComponent } from './components';
+import { ReviewCardPreview, ReviewTitleComponent } from './components';
 
 
 
 
-const ReviewsBlock: React.FC<ReviewsBlockProps> = (/* { reviewsDataItem } */) => {
+const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ reviewsDataItem }) => {
 
 
 
@@ -17,7 +17,7 @@ const ReviewsBlock: React.FC<ReviewsBlockProps> = (/* { reviewsDataItem } */) =>
 
         <ReviewTitleComponent />
 
-{/*         <div className={styles.contentContainer}>
+        <div className={styles.contentContainer}>
           <div className={`${styles.innerBlock}`}>
             {reviewsDataItem && reviewsDataItem.map((item, index) => {
               return (
@@ -25,7 +25,7 @@ const ReviewsBlock: React.FC<ReviewsBlockProps> = (/* { reviewsDataItem } */) =>
               );
             })}
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );
