@@ -47,6 +47,7 @@
   grid-column-gap: 40px;
 
   @include breakpoint(screen960) {
+    max-width: calc(100vw - clamp(1.563rem, 6.58724vw, 3.125rem));
     grid-auto-columns: 100%;
   }
 }

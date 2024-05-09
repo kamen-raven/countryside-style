@@ -42,7 +42,9 @@
   }
 
   @include breakpoint(screen768) {
-    grid-template-columns: auto;
+    //grid-template-columns: auto;
+    grid-template-columns: none;
+    grid-auto-rows: auto;
     gap: 50px;
   }
 
