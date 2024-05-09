@@ -24,7 +24,7 @@
 
   @include breakpoint(screen576) {
     grid-template-columns: auto;
-    grid-template-rows: auto min-content;
+    grid-template-rows: minmax(240px, 280px) min-content;
     gap: 16px;
   }
 
@@ -42,7 +42,7 @@
     }
     @include breakpoint(screen576) {
       grid-template-columns: auto;
-      grid-template-rows: auto min-content;
+      grid-template-rows: minmax(240px, 280px) min-content;
       gap: 16px;
     }
   }
@@ -65,7 +65,7 @@
   display: flex;
 
   @include breakpoint(screen576) {
-    max-height: 300px;
+    max-height: 280px;
   }
 
 }
@@ -82,11 +82,15 @@
   }
 
   @include breakpoint(screen576) {
-    max-height: 300px;
+    max-height: 280px;
   }
 
   &_bigSize {
     max-width: none;
+
+    @include breakpoint(screen576) {
+      max-height: 280px;
+    }
   }
   /*   @include breakpoint(screen320) {
     aspect-ratio: 1 / 1;

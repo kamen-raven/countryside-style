@@ -13,10 +13,10 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
   // Для главной страницы для селекторов больших карточек
   let bigContainer, bigPicture, bigInfoContainer, textFirst, bigText;
   if (page === 'home') {
-    bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : '';
-    bigInfoContainer = (serviceItem._id > 2) ? styles.infoContainer_bigSize : '';
-    bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : '';
-    textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : '';
+    bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : null;
+    bigInfoContainer = (serviceItem._id > 2) ? styles.infoContainer_bigSize : null;
+    bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : null;
+    textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : null;
     bigText = styles.title_bigText;
   }
 
