@@ -64,6 +64,10 @@
   height: 100%;
   display: flex;
 
+  @include breakpoint(screen576) {
+    max-height: 300px;
+  }
+
 }
 
 .image {
