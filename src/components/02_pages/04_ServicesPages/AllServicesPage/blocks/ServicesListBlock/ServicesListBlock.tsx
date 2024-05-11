@@ -17,7 +17,8 @@ const ServicesListBlock: React.FC<ServicesListBlockInterface> = ({ servicesListD
 
           {servicesListData && servicesListData.map((item) => {
             return(
-              <ServicesCardTemplate key={item._id} serviceItem={item} buttonText={'Подробнее'} />
+<div>{item._id}</div>
+/*               <ServicesCardTemplate key={item._id} serviceItem={item} buttonText={'Подробнее'} /> */
             );
           })}
 
