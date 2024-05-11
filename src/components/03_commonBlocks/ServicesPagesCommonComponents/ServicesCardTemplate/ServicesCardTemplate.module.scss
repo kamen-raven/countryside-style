@@ -12,7 +12,7 @@
 
   @include breakpoint(screen1280) {
     grid-template-columns: auto;
-    grid-template-rows: 300px auto;
+    grid-template-rows: auto auto;
     gap: 20px;
   }
 
@@ -22,13 +22,13 @@
 
   @include breakpoint(screen768) {
     grid-template-columns: minmax(240px, 1fr) 1fr;
-    grid-template-rows: 300px; //minmax(240px, 300px);
+    grid-template-rows: auto; //minmax(240px, 300px);
     gap: 30px;
   }
 
   @include breakpoint(screen576) {
     grid-template-columns: auto;
-    grid-template-rows: 280px min-content;//minmax(240px, 280px) min-content;
+    grid-template-rows: auto auto;//minmax(240px, 280px) min-content;
     gap: 16px;
   }
 
@@ -40,20 +40,19 @@
     grid-template-rows: 450px; //minmax(300px, 450px);
 
     @include breakpoint(screen1024) {
-      grid-template-rows:  300px; //minmax(240px, 300px);
-
+      grid-template-rows:  auto; //minmax(240px, 300px);
     }
 
     @include breakpoint(screen768) {
       grid-column: auto;
       grid-template-columns: minmax(240px, 1fr) 1fr;
-      grid-template-rows: 300px; //minmax(240px, 300px);
+      grid-template-rows: auto; //minmax(240px, 300px);
       gap: 30px;
     }
 
     @include breakpoint(screen576) {
       grid-template-columns: auto;
-      grid-template-rows: 280px min-content;//minmax(240px, 280px) min-content;
+      grid-template-rows: auto min-content;//minmax(240px, 280px) min-content;
       gap: 16px;
     }
   }
@@ -74,7 +73,7 @@
 
 .imageContainer {
   width: 100%;
-  height: 100%;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
