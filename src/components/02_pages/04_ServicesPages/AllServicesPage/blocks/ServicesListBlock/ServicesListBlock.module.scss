@@ -17,15 +17,19 @@
 
 .container {
   @include mainContainer();
-  @include flexColumnGap;
+  @include flexColumnGap($gap: 0);
 
-  @include breakpoint(screen1024) {
+/*   @include breakpoint(screen1024) {
     gap: 0;
-  }
+  } */
 }
 
 .title {
   @include common-title(h1);
+  margin-bottom: 3.125rem;
+  @include breakpoint(screen1024) {
+    margin-bottom: 30px;
+  }
 }
 
 .cardsLayout {
