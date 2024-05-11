@@ -31,24 +31,32 @@
 .cardsLayout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  row-gap:60px;
+  column-gap: 50px;
 
   @include breakpoint(screen1280) {
-    gap: 40px;
+    //gap: 40px;
+    row-gap: 40px;
+    column-gap: 40px;
   }
 
   @include breakpoint(screen1024) {
-    gap: 30px;
+    //gap: 30px;
+    row-gap: 0;
+    column-gap: 0;
     align-items: start;
   }
 
   @include breakpoint(screen768) {
     grid-template-columns: auto;
-    gap: 50px;
+    row-gap: 50px;
+    column-gap: 50px;
   }
 
   @include breakpoint(screen576) {
-    gap: 32px;
+    //gap: 32px;
+    row-gap: 32px;
+    column-gap: 32px;
   }
 
 }
