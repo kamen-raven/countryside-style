@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './ServicesListBlock.module.scss';
 import { ServicesListBlockInterface } from './ServicesListBlock.interface';
 import { BackgroundSVGPattern } from '~shared/index.ts';
-import { ServicesCardTemplate } from '~common/index.ts';
-
+/* import { ServicesCardTemplate } from '~common/index.ts';
+ */
 
 const ServicesListBlock: React.FC<ServicesListBlockInterface> = ({ servicesListData }) => {
   return (
@@ -17,7 +17,8 @@ const ServicesListBlock: React.FC<ServicesListBlockInterface> = ({ servicesListD
 
           {servicesListData && servicesListData.map((item) => {
             return(
-              <ServicesCardTemplate key={item._id} serviceItem={item} buttonText={'Подробнее'} />
+              <div>{item.description}</div>
+/*               <ServicesCardTemplate key={item._id} serviceItem={item} buttonText={'Подробнее'} /> */
             );
           })}
 
