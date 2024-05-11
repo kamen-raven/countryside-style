@@ -17,50 +17,52 @@
 
 .container {
   @include mainContainer();
-  @include flexColumnGap($gap: 0);
+  @include flexColumnGap();
 
-/*   @include breakpoint(screen1024) {
-    gap: 0;
-  } */
+  @include breakpoint(screen1024) {
+    gap: 30px;
+  }
 }
 
 .title {
   @include common-title(h1);
-  margin-bottom: 3.125rem;
+/*   margin-bottom: 3.125rem;
   @include breakpoint(screen1024) {
     margin-bottom: 30px;
-  }
+  } */
 }
 
 .cardsLayout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap:60px;
-  column-gap: 50px;
+  gap: 60px 50px;
+/*   row-gap:60px;
+  column-gap: 50px; */
 
   @include breakpoint(screen1280) {
-    //gap: 40px;
-    row-gap: 40px;
-    column-gap: 40px;
+    gap: 40px;
+/*     row-gap: 40px;
+    column-gap: 40px; */
   }
 
   @include breakpoint(screen1024) {
-    //gap: 30px;
-    row-gap: 0;
-    column-gap: 0;
+    gap: 30px;
+/*     row-gap: 0;
+    column-gap: 0; */
     align-items: start;
   }
 
   @include breakpoint(screen768) {
     grid-template-columns: auto;
-    row-gap: 50px;
-    column-gap: 50px;
+    gap: 50px;
+/*     row-gap: 50px;
+    column-gap: 50px; */
   }
 
   @include breakpoint(screen576) {
-    //gap: 32px;
-    row-gap: 32px;
-    column-gap: 32px;
+    gap: 32px;
+/*     row-gap: 32px;
+    column-gap: 32px; */
   }
 
 }

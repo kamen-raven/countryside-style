@@ -11,12 +11,16 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
 }) => {
 
   // Для главной страницы для селекторов больших карточек
-  let bigContainer, bigPicture, bigInfoContainer, textFirst, bigText;
+  let bigContainer = '';
+  let bigPicture = '';
+  let bigInfoContainer = '';
+  let textFirst = '';
+  let bigText = '';
   if (page === 'home') {
-    bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : null;
-    bigInfoContainer = (serviceItem._id > 2) ? styles.infoContainer_bigSize : null;
-    bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : null;
-    textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : null;
+    bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : '';
+    bigInfoContainer = (serviceItem._id > 2) ? styles.infoContainer_bigSize : '';
+    bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : '';
+    textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : '';
     bigText = styles.title_bigText;
   }
 
@@ -38,8 +42,6 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
           {serviceItem.title}
         </h3>
 
-        {/*
-        <div className={styles.innerContainer}> */}
         {buttonText &&
           <Link href={serviceItem.link} className={styles.linkButton} >
             {buttonText}
@@ -48,7 +50,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
         <p className={styles.description}>
           {serviceItem.description}
         </p>
-        {/*         </div> */}
+
       </div>
     </div>
   );
