@@ -30,7 +30,7 @@
 
 .cardsLayout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   gap: 60px 50px;
 
   @include breakpoint(screen1280) {
@@ -39,6 +39,7 @@
 
   @include breakpoint(screen1024) {
     gap: 30px;
+    align-items: start;
   }
 
   @include breakpoint(screen768) {

@@ -16,6 +16,10 @@
     gap: 20px;
   }
 
+  @include breakpoint(screen1024) {
+    gap: 16px;
+  }
+
   @include breakpoint(screen768) {
     grid-template-columns: minmax(240px, 1fr) 1fr;
     grid-template-rows: minmax(240px, 320px);
@@ -116,6 +120,10 @@
     grid-template-areas:
       "title buttonLink"
       "description description";
+  }
+
+  @include breakpoint(screen1024) {
+    gap: 16px;
   }
 
   @include breakpoint(screen960) {
