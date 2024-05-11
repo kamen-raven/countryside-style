@@ -20,7 +20,7 @@
   @include flexColumnGap;
 
   @include breakpoint(screen1024) {
-    gap: 30px;
+    gap: 0;
   }
 }
 
