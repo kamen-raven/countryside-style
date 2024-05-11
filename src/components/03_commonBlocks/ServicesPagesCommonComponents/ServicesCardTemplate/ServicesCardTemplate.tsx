@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ServicesCardTemplate.module.scss';
 import { ServicesCardTemplateInterface } from './ServicesCardTemplate.interface.ts';
-/* import Image from 'next/image'; */
+import Image from 'next/image';
 import Link from 'next/link';
 
 const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
@@ -11,22 +11,22 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
 }) => {
 
   // Для главной страницы для селекторов больших карточек
-/*   let bigContainer = '';
-  let bigPicture = ''; */
+  let bigContainer = '';
+  let bigPicture = '';
   let bigInfoContainer = '';
-/*   let textFirst = ''; */
+  let textFirst = '';
   let bigText = '';
   if (page === 'home') {
-/*     bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : ''; */
+    bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : '';
     bigInfoContainer = (serviceItem._id > 2) ? styles.infoContainer_bigSize : '';
-/*     bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : '';
-    textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : ''; */
+    bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : '';
+    textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : '';
     bigText = styles.title_bigText;
   }
 
 
   return (
-/*     <div className={`${styles.itemContainer} ${bigContainer} ${textFirst}`}>
+    <div className={`${styles.itemContainer} ${bigContainer} ${textFirst}`}>
       <div className={styles.imageContainer}>
         {serviceItem.image &&
           <Image
@@ -35,7 +35,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
             alt={serviceItem.title}
           />
         }
-      </div> */
+      </div>
 
       <div className={`${styles.infoContainer} ${bigInfoContainer}`}>
         <h3 className={`${styles.title} ${bigText}`}>{/* ${setFontSize} */}
@@ -52,7 +52,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
         </p>
 
       </div>
-/*     </div> */
+    </div>
   );
 };
 

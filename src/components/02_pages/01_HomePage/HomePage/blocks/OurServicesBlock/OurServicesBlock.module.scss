@@ -47,6 +47,10 @@
     gap: 60px 30px;
   }
 
+  @include breakpoint(screen1024) {
+    align-items: start;
+  }
+
   @include breakpoint(screen768) {
     grid-template-columns: auto;
     gap: 50px;
