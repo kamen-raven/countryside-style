@@ -86,6 +86,7 @@
   }
 
   @include breakpoint(screen768) {
+    height: clamp(240px, 55.4375vw, 450px);
     max-width: none;
   }
 }

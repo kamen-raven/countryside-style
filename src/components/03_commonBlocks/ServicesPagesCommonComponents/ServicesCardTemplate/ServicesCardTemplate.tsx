@@ -13,12 +13,14 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
   // Для главной страницы для селекторов больших карточек
   let bigContainer = '';
   let bigPicture = '';
+  let bigPictureContainer = '';
   let bigInfoContainer = '';
   let textFirst = '';
   let bigText = '';
   if (page === 'home') {
     bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : '';
     bigInfoContainer = (serviceItem._id > 2) ? styles.infoContainer_bigSize : '';
+    bigPictureContainer = (serviceItem._id > 2) ? styles.imageContainer_bigSize : '';
     bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : '';
     textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : '';
     bigText = styles.title_bigText;
@@ -27,7 +29,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
 
   return (
     <div className={`${styles.itemContainer} ${bigContainer} ${textFirst}`}>
-      <div className={styles.imageContainer}>
+      <div className={`${styles.imageContainer} ${bigPictureContainer}`}>
         {serviceItem.image &&
           <Image
             className={`${styles.image} ${bigPicture}`}

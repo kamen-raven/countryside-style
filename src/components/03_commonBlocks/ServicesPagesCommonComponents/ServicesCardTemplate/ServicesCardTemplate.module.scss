@@ -82,6 +82,21 @@
     max-height: 280px;
   }
 
+  &_bigSize {
+    height: 450px;
+
+    @include breakpoint(screen1024) {
+      max-height: 350px;
+    }
+
+    @include breakpoint(screen768) {
+      max-height: 300px;
+    }
+
+    @include breakpoint(screen576) {
+      max-height: 280px;
+    }
+  }
 }
 
 .image {
