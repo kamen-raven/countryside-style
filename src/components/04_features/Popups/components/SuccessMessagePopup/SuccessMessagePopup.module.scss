@@ -2,6 +2,10 @@
 
 .innerContainer {
   @include flexColumnGap($gap: 20px);
+
+  @include breakpoint(screen576) {
+    margin-right: 30px;
+  }
 }
 
 .title {

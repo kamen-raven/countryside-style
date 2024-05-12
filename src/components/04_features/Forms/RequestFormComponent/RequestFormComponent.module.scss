@@ -77,8 +77,8 @@
   @include common-button(colored);
   width: fit-content;
 
-  @include breakpoint(screen576) {
-    padding: 6px 15px;
+  @include breakpoint(screen768) {
+    padding: 7px 20px;
   }
 }
 

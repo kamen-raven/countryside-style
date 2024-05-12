@@ -132,8 +132,8 @@
   grid-area: button;
   min-width: 145px;
   justify-self: flex-start;
-  &_homePage {
-  }
+/*   &_homePage {
+  } */
   &_blogPage {
     align-self: center;
   } /* шаблон для страницы БЛОГА */
@@ -143,7 +143,7 @@
 
   @include breakpoint(screen768) {
     min-width: 0;
-    padding: 0 15px;
+    padding: 7px 20px;
   }
 }
 /* ------------------- */

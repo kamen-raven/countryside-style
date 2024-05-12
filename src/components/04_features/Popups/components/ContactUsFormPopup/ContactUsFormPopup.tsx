@@ -6,7 +6,7 @@ import { RequestFormComponent } from '~features/Forms/index.ts';
 const ContactUsFormPopup = () => {
   return (
     <div className={styles.innerContainer}>
-      <RequestFormComponent />
+      <RequestFormComponent className={styles.popupForm} />
     </div>
   );
 };

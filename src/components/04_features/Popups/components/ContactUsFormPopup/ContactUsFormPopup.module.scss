@@ -6,3 +6,9 @@
 .innerContainer span * {
   color: $dark
 }
+
+.popupForm {
+  @include breakpoint(screen960) {
+    flex-direction: column !important;
+  }
+}

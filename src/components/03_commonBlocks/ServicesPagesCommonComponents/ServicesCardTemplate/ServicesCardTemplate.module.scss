@@ -267,11 +267,11 @@
   @include breakpoint(screen576) {
     align-self: center;
     min-width: 0;
-    padding: 5px 15px;
+/*     padding: 5px 15px; */
   }
 
   @include breakpoint(screen480) {
-    padding: 5px 10px;
+/*     padding: 5px 10px; */
   }
 }
 

@@ -9,7 +9,7 @@ import { postApplicationFeedback } from '~api/ApplicationsFeedback/postApplicati
 import { useToggleMainPopupStore, useToggleSupportPopupStore } from '~store/popupsStore/useTogglePopupStore';
 import { PersonalAgreementElement } from '../elements';
 
-const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
+const RequestFormComponent: React.FC<RequestFormComponentInterface> = ({ className }) => {
   // Состояния для значений полей формы
   const question = useFormRequestStore((state) => state.text);
   const setQuestion = useFormRequestStore((state) => state.actions.setText);
@@ -67,7 +67,7 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = () => {
         Напишите Ваше имя, телефон и&nbsp;свой вопрос. Наш&nbsp;менеджер ответит Вам в&nbsp;ближайшее время.
       </p>
       <fieldset className={styles.fieldset}>
-        <div className={styles.mainForm}>
+        <div className={`${className} ${styles.mainForm} `}>
           <label className={styles.label}>
             <input className={styles.input}
               name={'name'}

@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './ReviewFormComponent.module.scss';
+import { ReviewFormComponentInterface } from './ReviewFormComponent.interface';
 
 import AddButtonIcon from '~svg/button/add.svg';
 import { PersonalAgreementElement } from '../elements';
 
-const ReviewFormComponent: React.FC = () => {
+const ReviewFormComponent: React.FC<ReviewFormComponentInterface> = ({ className }) => {
   return (
     <form className={styles.form}
       action={''}
@@ -17,7 +18,7 @@ const ReviewFormComponent: React.FC = () => {
         Напишите Ваше имя, телефон и&nbsp;свой отзыв. После модерации мы разместим его на&nbsp;нашем сайте.
       </p>
       <fieldset className={styles.fieldset}>
-        <div className={styles.mainForm}>
+        <div className={`${styles.mainForm} ${className}`}>
           <label className={styles.label}>
             <input className={styles.input}
               name={'name'}
