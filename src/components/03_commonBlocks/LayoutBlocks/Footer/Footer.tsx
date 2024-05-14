@@ -23,7 +23,7 @@ const Footer: React.FC<FooterInterface> = ({ listItems, generalContactsData }) =
 
 
         <NavListFooter listItems={listItems} />
-        <AddressComponent data={generalContactsData} />
+        <AddressComponent data={generalContactsData} type={'footer'} />
       </div>
     </footer>
   );

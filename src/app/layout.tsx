@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={` ${styles.page}`}>
         <div className={styles.container} >
           <Header />
-          <Navbar listItems={menuList} />
+          <Navbar listItems={menuList} generalContactsData={generalContactsData} />
           {children}
           <Footer listItems={menuList} generalContactsData={generalContactsData} />
           <ScrollToTopButton />

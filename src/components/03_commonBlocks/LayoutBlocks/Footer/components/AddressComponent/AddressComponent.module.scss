@@ -6,10 +6,24 @@
   font-style: normal;
   text-align: end;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+
   justify-content: space-between;
   gap: 20px;
+
+  &_footer {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &_nav {
+    flex-direction: row-reverse;
+
+    @include breakpoint(screen576) {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
 
 
   @include breakpoint(screen576) {
@@ -20,13 +34,15 @@
 
 .phone {
   @include common-paragraph(p,
-  $font-weight: $bold,
-  $color: $gray-dark);
+    $font-weight: $bold,
+    $color: $gray-dark);
   text-decoration: none;
 
   @include breakpoint(screen576) {
     display: none
   }
+
+
 }
 
 
@@ -41,15 +57,26 @@
   @include common-li;
   border-radius: 30px;
 
+  & svg {
+    transition: all linear .2s;
+    fill: $accent-gray;
+    background-color: transparent;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    & svg {
+      transition: all linear .2s;
+      fill: $white;
+    }
+  }
+  
   &__icon {
     display: flex;
-
-
-    & svg {
-      fill: none;
-      width: 35px;
-      height: 35px;
-    }
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid $accent-gray;
   }
 
   &__link {
@@ -58,16 +85,64 @@
 
     text-decoration: none;
   }
+
+
+  &__telegram {
+
+
+    & :hover {
+      color: $telegram;
+
+      & svg {
+        background-color: $telegram;
+      }
+    }
+  }
+
+  &__whatsapp {
+
+
+    & :hover {
+      color: $whatsapp;
+
+      & svg {
+        background-color: $whatsapp;
+      }
+    }
+  }
+
+  &__vkontakte {
+
+
+    & :hover {
+      color: $vkontakte;
+
+      & svg {
+        background-color: $vkontakte;
+      }
+    }
+  }
 }
 
 
 .address {
   @include common-paragraph(pSm,
-  $font-weight: $regular,
-  $color: $gray-dark);
-text-align: right;
+    $font-weight: $regular,
+    $color: $gray-dark);
 
-@include breakpoint(screen576) {
-  text-align: start;
-}
+  &_footer {
+    text-align: right;
+    @include breakpoint(screen576) {
+      text-align: start;
+    }
+  }
+
+  &_nav {
+    text-align: start;
+flex-shrink: 3;
+
+    @include breakpoint(screen576) {
+      order: -1;
+    }
+  }
 }

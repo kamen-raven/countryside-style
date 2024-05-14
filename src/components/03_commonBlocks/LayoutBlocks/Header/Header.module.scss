@@ -4,6 +4,8 @@
   grid-area: header;
   display: flex;
   flex-direction: column;
+  z-index: 1000;
+  background-color: white;
 }
 
 .inner {
@@ -13,6 +15,7 @@
   align-items: center;
   justify-items: stretch;
   gap: 50px;
+
 
   @include breakpoint(screen1280) {
     gap: 35px;

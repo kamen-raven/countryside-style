@@ -8,13 +8,17 @@
   justify-content: space-between;
   background-color: $dark;
   //padding: 16px 0;
-
+  height: auto;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 
   border-bottom: 1px solid gray;
 
+  @include breakpoint(screen1023) {
+    flex-direction: column;
+
+  }
 }
 
 
@@ -35,25 +39,64 @@
 
 .listContainer {
   width: 100%;
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  height: max-content;
 
-  @media (max-width: 1023px) {
-    transform: scale(0);
+
+  @include breakpoint(screen1024) {
+
+}
+  @include breakpoint(screen1023) {
+    visibility: hidden;
     opacity: 0;
-    transition: all .2s linear;
+    position: absolute;
+    z-index: 11;
+    top: 100%;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    background-color: $dark;
+    //transition: all .2s linear;
+    transform: translateY(-100%);
+    flex-direction: column;
   }
 
-  &_mobile {
-    visibility: visible;
-    opacity: 1;
-    display: flex;
+/*   &_mobile {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    background-color: $dark;
+    z-index: -10000;
+    top: -100%;
 
-    transform: scale(1);
-    transition: all .2s linear;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    background-color: $dark;
+    //transition: all .2s linear;
+
+    flex-direction: column;
+  } */
+
+  &_mobileShow {
+
+    @include breakpoint(screen1023) {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+      top: 45px;
+      z-index: 1;
+      transition: all .2s linear;
+
+      padding: 50px calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5) 50px calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5);
+      height: 100vh;
+    }
+
+    @include breakpoint(screen768) {
+      padding: clamp(1.875rem, 7.29036vw, 2.5rem) clamp(1.563rem, 6.58724vw, 3.125rem) 30px clamp(1.563rem, 6.58724vw, 3.125rem);
+    }
   }
 }
 
@@ -69,8 +112,27 @@
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 1023px) {
+
+
+/*   @include breakpoint(screen1280) {
+    padding: 0;
+  } */
+
+  @include breakpoint(screen1023) {
     flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-height: 192px;
+    gap: 18px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $gray;
+  }
+
+  @include breakpoint(screen576) {
+    max-height: none;
+    flex-wrap: nowrap;
+    padding-bottom: 25px;
   }
 
 
@@ -90,6 +152,10 @@
       @include breakpoint(screen1280) {
         margin-left: .5rem;
       }
+
+      @include breakpoint(screen1023) {
+        margin-left: 0;
+      }
     }
 
     &:last-of-type {
@@ -106,13 +172,14 @@
       @include breakpoint(screen1280) {
         margin-right: .5rem;
       }
+
+      @include breakpoint(screen1023) {
+        margin-right: 0;
+      }
     }
   }
 
 
-  @include breakpoint(screen1280) {
-    padding: 0;
-  }
 }
 
 .listItem {
@@ -130,6 +197,11 @@
   @include breakpoint(screen1280) {
     padding: 12px 8px;
   }
+
+  @include breakpoint(screen1023) {
+    padding: 0;
+  }
+
 }
 
 .link {
@@ -142,6 +214,10 @@
 
   @include breakpoint(screen1280) {
     font-size: 0.745rem;
+  }
+
+  @include breakpoint(screen1023) {
+    font-size: 1rem;
   }
 }
 
@@ -158,15 +234,31 @@
       color: $white;
     }
   }
+
+  @include breakpoint(screen1023) {
+    background-color: transparent;
+
+    & .link {
+      color: $accent-green;
+      text-decoration: underline $accent-green 2px;
+      text-underline-offset: 4px;
+      line-height: 110%;
+      &:hover {
+        color: $accent-green;
+      }
+    }
+  }
 }
 
 
-
-.burgerMenu {
+// BURGER MENU
+.burgerContainer {
   display: none;
-  @media (max-width: 1023px) {
+
+  @include breakpoint(screen1023) {
     display: flex;
-    z-index: 10;
+    z-index: 1;
+    opacity: .999999;
   }
 
   &__container {
@@ -199,4 +291,68 @@
     }
   }
 
+}
+
+
+
+.mobileMenuInfo {
+  display: none;
+
+  @include breakpoint(screen1023) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 40px;
+  }
+
+  @include breakpoint(screen576) {
+    padding-top: 25px;
+    gap: 25px;
+  }
+}
+
+
+.contactContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @include breakpoint(screen576) {
+    gap: 16px;
+  }
+}
+
+.phoneNumber {
+  font-size: $subtitle-mob;
+  font-weight: $bold;
+  line-height: 160%;
+
+  @include breakpoint(screen320) {
+    font-size: $paragraph-lg-tab;
+  }
+
+  &  span {
+    background-color: transparent !important;
+    & svg {
+      fill: $white;
+    }
+  }
+
+  &:hover {
+    &  span {
+      background-color: $white !important;
+      & svg {
+        fill: $accent-green;
+      }
+    }
+  }
+}
+
+.buttonCall {
+  @include common-button(colored);
+  width: max-content;
+  padding: 0 15px;
+  font-size: 0.8rem;
+  line-height: 120%;
 }

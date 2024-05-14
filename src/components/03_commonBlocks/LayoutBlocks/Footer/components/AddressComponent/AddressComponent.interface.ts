@@ -3,4 +3,5 @@ import { generalContactsDataInterface } from '~data/constant/generalContacts/gen
 
 export interface AddressComponentInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   data: generalContactsDataInterface;
+  type: 'footer' | 'nav';
 }

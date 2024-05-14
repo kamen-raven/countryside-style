@@ -3,7 +3,7 @@
 .wrapper {
   grid-area: aboutUs;
   position: relative;
-  z-index: 1;
+/*   z-index: 1; */
   padding: $padding-gap;
 
   @include breakpoint(screen1024) {

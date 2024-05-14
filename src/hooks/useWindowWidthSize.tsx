@@ -15,7 +15,7 @@ export function useWindowWidthSize() {
 /*     window.addEventListener("resize", () => {
       setTimeout(() => handleResize(), 10);
     }); */
-    
+
     window.addEventListener("resize",handleResize);
 
     return () => {
@@ -23,7 +23,5 @@ export function useWindowWidthSize() {
     };
   }, []);
 
-
-  console.log(widthSize);
   return widthSize;
 }
