@@ -85,12 +85,12 @@
   &_video {
     //?
 
-    height:  clamp(180px, 57vw, 720px);
+    height: clamp(180px, 57vw, 720px);
     max-height: 80vh;
     max-width: calc(1920px - clamp(3.125rem, 7vw, 7.5rem) * 2);
 
     @include breakpoint(screen768) {
-      height:  clamp(300px,63.0625vw, 600px);
+      height: clamp(300px, 63.0625vw, 600px);
     }
 
     @include breakpoint(screen576) {
@@ -130,7 +130,6 @@
   & svg {
     width: 17px;
     height: 17px;
-    stroke: $dark;
 
     @include breakpoint(screen576) {
       width: 15px;
@@ -138,12 +137,16 @@
     }
   }
 
+  & path {
+    stroke: $dark;
+  }
+
   &:hover {
     background-color: $accent-green;
     border: 1px solid $accent-green;
     transition: all .2s linear;
 
-    & svg {
+    & path {
       stroke: $white;
     }
   }

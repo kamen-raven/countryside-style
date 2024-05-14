@@ -1,0 +1,131 @@
+@import '~global_styles';
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 27px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+
+  margin-right: calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5);
+
+  @include breakpoint(screen768) {
+    margin-right: clamp(1.563rem, 6.58724vw, 3.125rem);
+    ;
+  }
+
+  & span {
+    width: 27px;
+    height: 3px;
+    background: #EFFFFA;
+    //border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 100%;
+    &:first-child {
+      width: 27px;
+      transform: rotate(0);
+    }
+
+    &:nth-child(2) {
+      opacity: 1;
+      width: 27px;
+      transform: translateX(0);
+    }
+
+    &:nth-child(3) {
+      width: 27px;
+      transform: rotate(0);
+    }
+
+  }
+
+  &_opened {
+
+    & span {
+
+      &:first-child {
+        width: 25px;
+        transform: rotate(-45deg); //: 'rotate(0)'};
+      }
+
+      &:nth-child(2) {
+        transform-origin: center;
+        opacity: 0; //'1'};
+        width: 0px;
+        transform: rotate(90deg);; //'translateX(0)'};
+      }
+
+      &:nth-child(3) {
+        width: 25px;
+        transform: rotate(45deg); // : 'rotate(0)'};
+      }
+
+    }
+  }
+}
+
+/*
+
+.burgerButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+
+  margin-right:  calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5) ;
+
+  & svg {
+    width: 26px;
+    height: 21px;
+  }
+
+  @include breakpoint(screen768) {
+    margin-right: clamp(1.563rem, 6.58724vw, 3.125rem);;
+  }
+
+  &_open {
+    transition: all 0.5s ease;
+    animation: menu-spin 0.4s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &_close {
+    animation: menu-spin-back 0.4s ease-in-out;
+    animation-fill-mode: forwards;
+
+    & path {
+      stroke: $white;
+    }
+  }
+}
+
+
+@keyframes menu-spin {
+
+
+  100% {
+
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes menu-spin-back {
+
+  100% {
+    border-radius: 0;
+    transform: rotate(360deg);
+  }
+}
+
+
+ */

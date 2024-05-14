@@ -3,20 +3,27 @@
 import { useState, useEffect } from "react";
 
 export function useWindowWidthSize() {
-  const [widthSize, setWidthSize] = useState([window.innerWidth]);
-
-  function handleResize() {
-    setWidthSize([window.innerWidth]);
-  }
+  const [widthSize, setWidthSize] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setTimeout(() => handleResize(), 1000);
-    });
+    setWidthSize(window.innerWidth);
+
+    function handleResize() {
+      setWidthSize(window.innerWidth);
+    }
+
+/*     window.addEventListener("resize", () => {
+      setTimeout(() => handleResize(), 10);
+    }); */
+    
+    window.addEventListener("resize",handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  },[]);
+  }, []);
+
+
+  console.log(widthSize);
   return widthSize;
 }
