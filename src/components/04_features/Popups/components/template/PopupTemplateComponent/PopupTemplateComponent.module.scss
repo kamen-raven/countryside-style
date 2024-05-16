@@ -40,6 +40,8 @@
   width: 100%;
   padding: 40px 90px 40px 40px; //40px;
   margin: 20px;
+  overflow-y: auto;
+
 
   @include breakpoint(screen768) {
     padding: 40px 75px 40px 40px; //40px;
@@ -52,7 +54,7 @@
 
   &_form {
     max-width: 640px; //clamp(550px, 33.3%, 640px);
-
+    max-height: 70vh;
     @include breakpoint(screen768) {
       max-width: 550px; //40px;
     }
@@ -66,7 +68,7 @@
     padding: 40px; //40px;
     max-height: 90vh;
     max-width: calc(1920px - clamp(3.125rem, 7vw, 7.5rem) * 2);
-    overflow-y: auto;
+    max-height: 90vh;
 
     @include breakpoint(screen576) {
       padding: 30px;
@@ -76,7 +78,7 @@
   &_reviewImage {
     max-width: 640px; //clamp(550px, 33.3%, 640px);
     padding: 40px; //40px;
-
+    max-height: 90vh;
     @include breakpoint(screen576) {
       padding: 30px;
     }
@@ -88,7 +90,7 @@
     height: clamp(180px, 57vw, 720px);
     max-height: 80vh;
     max-width: calc(1920px - clamp(3.125rem, 7vw, 7.5rem) * 2);
-
+    overflow-y: hidden;
     @include breakpoint(screen768) {
       height: clamp(300px, 63.0625vw, 600px);
     }
@@ -118,28 +120,21 @@
   align-items: center;
   transition: all .2s linear;
 
-  @include breakpoint(screen576) {
-    width: 35px;
-    height: 35px;
-
-    right: 15px;
-    top: 15px;
-  }
 
 
   & svg {
     width: 17px;
     height: 17px;
 
-/*     @include breakpoint(screen576) {
+    /*     @include breakpoint(screen576) {
       width: 15px;
       height: 15px;
     } */
+    & path {
+      stroke: $dark;
+    }
   }
 
-  & path {
-    stroke: $dark;
-  }
 
   &:hover {
     background-color: $accent-green;
@@ -148,6 +143,23 @@
 
     & path {
       stroke: $white;
+    }
+  }
+
+
+  @include breakpoint(screen576) {
+    right: 15px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
+
+    & svg {
+      width: 15px;
+      height: 15px;
+
+      & path {
+        stroke: $dark;
+      }
     }
   }
 }

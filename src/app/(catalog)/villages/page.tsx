@@ -21,6 +21,10 @@ export default async function PageVillages() {
 
   const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
   const villagesObjects = await getAllVillages();
+
+
+/*   const typeObjects = filteredObjectsByCategory(objectsType, typePage); // вызываем функцию сортировки и потом передаем это в пропсы в страницу
+ */
   if (!villagesObjects) {   // если такого нету, то возвращаем пустую страницу
     notFound();
   }

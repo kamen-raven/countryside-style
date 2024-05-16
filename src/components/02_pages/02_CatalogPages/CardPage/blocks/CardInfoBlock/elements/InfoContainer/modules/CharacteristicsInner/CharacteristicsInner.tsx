@@ -22,7 +22,7 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
     date_foundation: '',
     distance_CAD: 'км',
     area_plot: `${isRealEstateObject(data) ? data.land_area_measurement : ''}`,
-    area_of_plot: `${isRealEstateObject(data) ? null: data.area_of_plot_measurement}`
+    area_of_plot: `${isRealEstateObject(data) ? null : data.area_of_plot_measurement}`
   };
 
   //* функция отрисовки инженерных систем (коммуникаций)
@@ -141,26 +141,26 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
       data = data as VillageObjectInterface;
       return (
         <>
-        <div className={styles.blockInfo}>
+          <div className={styles.blockInfo}>
 
             <h4 className={styles.label}>
               Поселок
             </h4>
 
-          <ul className={styles.list}>
-            {createCharacteristicsList(villageType, data)}
-            {data.display_engineering_services[0].engineering_service && engineeringServicesRender()}
-          </ul>
-        </div>
-        <div className={styles.blockInfo}>
-          <h4 className={styles.label}>
-            Участки
-          </h4>
-          <ul className={styles.list}>
-            {createCharacteristicsList(villagePlotType, data)}
-          </ul>
-        </div>
-      </>
+            <ul className={styles.list}>
+              {createCharacteristicsList(villageType, data)}
+              {data.display_engineering_services[0].engineering_service && engineeringServicesRender()}
+            </ul>
+          </div>
+          <div className={styles.blockInfo}>
+            <h4 className={styles.label}>
+              Участки
+            </h4>
+            <ul className={styles.list}>
+              {createCharacteristicsList(villagePlotType, data)}
+            </ul>
+          </div>
+        </>
       );
     } else if (!type) {
       return null;
@@ -171,7 +171,11 @@ const CharacteristicsInner = ({ data, typePage }: CharacteristicsInnerInterface)
   return (
     <>
       <h3 className={styles.title}>
-        Характеристики объекта
+        {typePage !== 'villages' ?
+          'Характеристики объекта'
+          :
+          'Характеристики'
+        }
       </h3>
 
       <div className={styles.inner}>

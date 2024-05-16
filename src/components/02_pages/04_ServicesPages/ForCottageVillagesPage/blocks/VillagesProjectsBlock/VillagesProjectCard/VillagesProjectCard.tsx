@@ -40,7 +40,10 @@ const VillagesProjectCard: React.FC<VillagesProjectCardInterface> = ({ project, 
             {project.description}
           </p>
           <Link className={styles.buttonLink}
-                  href={project.link.url}>
+                  href={project.link.url}
+                  target='_blank'
+                  rel="noopener noreferrer"
+                  >
             {project.link.buttonText}
           </Link>
           {/*           {(countUsers == 'employee' || countUsers == 'all') ?

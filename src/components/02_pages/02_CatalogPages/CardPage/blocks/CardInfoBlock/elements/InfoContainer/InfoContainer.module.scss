@@ -28,7 +28,7 @@
   padding-bottom: 50px;
   border-bottom: 1px solid $gray;
 
-  &:last-of-type {
+  &:last-child {
     padding-bottom: 0;
     border-bottom: none;
   }
@@ -77,6 +77,17 @@
 
 .characteristicsContainer {
  // grid-area: char;
-  @extend .padding-border;
+ @extend .padding-border;
 }
 
+.mapContainer {
+  @extend .padding-border;
+
+}
+
+
+
+.webPageLink {
+  @include common-link;
+  @include common-button(light);
+}

@@ -2,6 +2,8 @@
 
 .navMenu {
   grid-area: navbar;
+  align-self: start;
+
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -63,6 +65,8 @@
     //transition: all .2s linear;
     transform: translateY(-100%);
     flex-direction: column;
+
+
   }
 
 /*   &_mobile {
@@ -92,6 +96,8 @@
 
       padding: 50px calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5) 50px calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5);
       height: calc(100vh + 45px);
+
+      overflow-y: auto;
     }
 
     @include breakpoint(screen768) {
