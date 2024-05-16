@@ -25,6 +25,13 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
     flats: 'Квартиры',
   };
 
+  const descriptionText = {
+    'houses-and-cottages': 'Подберите лучший вариант: от\u00A0дачных домиков до\u00A0современных коттеджей',
+    lands: 'Земельные участки: от\u00A0нескольких соток до\u00A0десятков гектар',
+    villages: 'В\u00A0этом разделе представлены коттеджные поселки, которые реализует наша компания',
+    flats: 'Мы продаем только те\u00A0объекты, которые видели своими глазами',
+  };
+
   // Определяем тип расположения контента - текст располагается справа или слева
   const templateType = {
     container: {
@@ -116,17 +123,17 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
           height={490} />
 
         {objectItemsList.length > 1 &&
-        <>
-          <ArrowsButton
-            onClick={handlePrevPhoto}
-            className={`${styles.arrowNavigate} ${styles.arrowNavigate_left}`}
-            position={'left'} />
-          <ArrowsButton
-            onClick={handleNextPhoto}
-            className={`${styles.arrowNavigate} ${styles.arrowNavigate_right}`}
-            position={'right'} />
-        </>
-          }
+          <>
+            <ArrowsButton
+              onClick={handlePrevPhoto}
+              className={`${styles.arrowNavigate} ${styles.arrowNavigate_left}`}
+              position={'left'} />
+            <ArrowsButton
+              onClick={handleNextPhoto}
+              className={`${styles.arrowNavigate} ${styles.arrowNavigate_right}`}
+              position={'right'} />
+          </>
+        }
       </div>
 
       <div className={`${styles.innerBlock} ${setInnerBlock} `}>
@@ -156,7 +163,7 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
             Перейти
           </Link>
           <p className={styles.description}>
-            Мы продаем только те объекты, которые видели своими глазами
+            {descriptionText[linkToCatalog]} {/* description */}
           </p>
         </div>
       </div>

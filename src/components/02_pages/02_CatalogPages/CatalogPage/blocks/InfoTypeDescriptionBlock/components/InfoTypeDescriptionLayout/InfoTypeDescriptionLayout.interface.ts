@@ -1,7 +1,5 @@
-import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
-import { housesSEOTextInterface } from '~utils/constants/TypeSEOText/TypeSEOText';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export interface InfoTypeDescriptionLayoutInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  data: housesSEOTextInterface,
-  children?: ReactNode;
+  typePage: 'flats' | 'lands' | 'houses-and-cottages' | 'villages';
 }

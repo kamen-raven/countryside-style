@@ -4,10 +4,11 @@ import styles from './InfoTypeDescriptionLayout.module.scss';
 import { InfoTypeDescriptionLayoutInterface } from './InfoTypeDescriptionLayout.interface.ts';
 
 import ToggleIcon from '~svg/button/toggle.svg';
+import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
+import TypeSEOText from '~data/constant/TypeSEOText/TypeSEOText.ts';
 
-
-const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = ({ data }) => {
-  const textArray = data.houses.SEOText;
+const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = ({ typePage }) => {
+  const textArray = TypeSEOText[typePage]; // берем нужный текст из массива
 
   const blockCondition = {
     closed: {
@@ -20,14 +21,6 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
       buttonStyle: styles.active,
       textVisibleStyle: styles.inner__toggle_visible,
     },
-/*     text: {
-      closed: 'Читать весь текст',
-      opened: 'Свернуть текст',
-    },
-    activationClass: {
-      closed: '',
-      opened: styles.active,
-    } */
   };
 
 
@@ -82,14 +75,27 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
         : blockCondition.closed.buttonStyle
     );
 
-    if(visibleText !== blockCondition.closed.textVisibleStyle) {
+    if (visibleText !== blockCondition.closed.textVisibleStyle) {
       scrollToTop();
     } else {
       return;
     }
   };
 
-
+/* styles of common text */
+  const markdownCommonStyle = {
+    h2: styles.subtitle,
+    p: styles.paragraph,
+    a: styles.link,
+    ul: styles.list,
+    li: styles.listItem
+  };
+/* styles of banner text */
+  const markdownBannerStyle = {
+    h2: styles.subtitleBanner,
+    p: styles.paragraphBanner,
+    a: styles.linkBanner,
+  };
 
 
   return (
@@ -100,41 +106,23 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
           {textArray.common.slice(0, 2).map((item, key) => { /* берем только первые два абзаца из массива для видимой части */
             return (
               <div key={key} className={styles.textBlock}>
-                <h2 className={styles.subtitle}>
-                  {item.span}
-                </h2>
-                <p className={styles.paragraph}>
-                  {item.text.split('\n\n').map((item, index, array) => {
-                    return (
-                      <React.Fragment key={index}>
-                        {item}
-                        {index !== (array.length - 1) ? <><br /><br /></> : null}
-                      </React.Fragment>);
-                  })}
-                </p>
+                <>
+                  {useReactMarkdown(item, markdownCommonStyle)}
+                </>
               </div>
             );
           })}
         </div>
 
-          {/* скрываемая часть */}
+        {/* скрываемая часть */}
         <div className={`${styles.inner__toggle} ${visibleText} `}>
           <div className={styles.toggleWrapper}>
             {textArray.common.slice(2).map((item, key) => { /* берем оставшиеся абзацы из массива для скрываемой части */
               return (
                 <div key={key} className={styles.textBlock}>
-                  <h2 className={styles.subtitle}>
-                    {item.span}
-                  </h2>
-                  <p className={styles.paragraph}>
-                    {item.text.split('\n\n').map((item, index, array) => {
-                      return (
-                        <React.Fragment key={index}>
-                          {item}
-                          {index !== (array.length - 1) ? <br /> : null}
-                        </React.Fragment>);
-                    })}
-                  </p>
+                  <>
+                    {useReactMarkdown(item, markdownCommonStyle)}
+                  </>
                 </div>
               );
             })}
@@ -143,29 +131,18 @@ const InfoTypeDescriptionLayout: React.FC<InfoTypeDescriptionLayoutInterface> = 
           {/* баннер */}
           <div className={styles.banner}>
             <div className={`${styles.textBlock} ${styles.textBlock_banner}`}>
-              <h2 className={`${styles.subtitle} ${styles.subtitle_banner}`}>
-                {textArray.banner.span}
-              </h2>
-              <p className={`${styles.paragraph} ${styles.paragraph_banner}`}>
-                {textArray.banner.text.split('\n\n').map((item, index, array) => {
-                  return (
-                    <React.Fragment key={index}>
-                      {item}
-                      {index !== (array.length - 1) ? <><br /><br /></> : null} {/* добавляем разрыв строки */}
-                    </React.Fragment>);
-                })}
-              </p>
+              <>
+                {useReactMarkdown(textArray.banner, markdownBannerStyle)}
+              </>
             </div>
           </div>
-
         </div>
       </div>
 
-
       <button className={`${styles.toggleButton} ${styleButton}`}
-              onClick={handleClick}>
+        onClick={handleClick}>
         {textButton}
-        <ToggleIcon/>
+        <ToggleIcon />
       </button>
     </div>
   );

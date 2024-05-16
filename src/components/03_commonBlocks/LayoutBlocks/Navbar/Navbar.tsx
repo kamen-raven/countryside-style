@@ -55,9 +55,9 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
                       ${styles.burgerContainer__container}
                       ${deskWidth ? styles.hidden : styles.visible}
                       ${showMobileMenu ? styles.burgerContainer__container_active : ''}`}>
-        <p className={`${styles.burgerContainer} ${styles.burgerContainer__menuLabel}`}>
+        <div  onClick={() => setShowMobileMenu(!showMobileMenu)} className={`${styles.burgerContainer} ${styles.burgerContainer__menuLabel}`}>
           МЕНЮ
-        </p>
+        </div>
         <BurgerMenuButton className={styles.burgerContainer}
           onClick={() => setShowMobileMenu(!showMobileMenu)}
           buttonStatus={showMobileMenu} />

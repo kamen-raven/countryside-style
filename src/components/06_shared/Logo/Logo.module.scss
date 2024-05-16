@@ -1,29 +1,71 @@
 @import '~global_styles';
 
 .logo {
-  flex-shrink: 2;
+  flex-shrink: 3;
   display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 20px;
 
+  @include breakpoint(screen1024) {
+    gap: 10px;
+  }
 
-  //height: 60px;
-  //margin-top: 35px;
-  //cursor: pointer;
   & svg {
     display: flex;
-    //width: min-content;
+    width: min-content;
     object-fit: contain;
+    height: 60px;
 
-/*     @include breakpoint(screen1280) {
-      max-width: 80px;
-    } */
-    @include breakpoint(screen960) {
-      width: 100%;
+    @include breakpoint(screen1280) {
+      max-width: 60px;
     }
   }
 
-  &_gray  {
+
+
+  &_gray {
     & svg {
       fill: $gray;
+    }
+  }
+}
+
+
+.name {
+  @include common-paragraph(pLg,
+    $color: $accent-green,
+    $font-weight: $bold,
+    $font-family: $ff-openSans);
+  text-decoration: none;
+  text-wrap: wrap;
+  max-width: 190px;
+
+  @include breakpoint(screen1024) {
+    gap: 10px;
+    font-size: 16px;
+    max-width: 120px;
+  }
+
+  @include breakpoint(screen768) {
+    display: none;
+  }
+
+  &_gray {
+    color: $gray;
+
+    & svg  {
+
+      & path:first-of-type {
+        fill: $gray;
+    }
+  }
+    @include breakpoint(screen768) {
+      display: inline;
+    }
+
+    @include breakpoint(screen480) {
+      display: none;
     }
   }
 }

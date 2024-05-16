@@ -3,6 +3,8 @@ export interface RealEstateObjectInterface {
   created_at: string;
   id: number;
   name: string;
+  isbook: boolean,   //* новые правки
+  pdf: string,    //* новые правки
   category: string;
   place: string;
   distance_CAD: number;

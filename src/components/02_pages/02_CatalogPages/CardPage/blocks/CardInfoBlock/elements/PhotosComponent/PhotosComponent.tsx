@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from './PhotosComponent.module.scss';
 import { PhotosComponentInterface } from './PhotosComponent.interface.ts';
 
-import { ArrowsButton, LabelNew } from '~shared/index.ts';
+import { ArrowsButton, LabelNew, LabelReserved } from '~shared/index.ts';
 import { PlanTooltipElement, YoutubeTooltipElement } from './elements/index.ts';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
@@ -13,7 +13,10 @@ import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 
 const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   function isRealEstateObject(obj: RealEstateObjectInterface | VillageObjectInterface): obj is RealEstateObjectInterface {
-    return 'created_at' in obj;
+    return (
+      'created_at' in obj &&
+      'isbook' in obj
+    );
   }
 
   // todo zustand
@@ -97,6 +100,11 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
           <>
             {isRealEstateObject(data) ?
+              <LabelReserved isBook={data.isbook} />
+              : null
+            }
+
+            {isRealEstateObject(data) ?
               <LabelNew createdAt={data.created_at} />
               : null
             }
@@ -118,7 +126,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
             <div className={styles.infoButtonContainer}> {/* //! */}
               {(data.plans_images.length > 0) &&
-                <PlanTooltipElement  onClick={handlePlanButton} />
+                <PlanTooltipElement onClick={handlePlanButton} />
               }
 
               {data.you_tube_link &&

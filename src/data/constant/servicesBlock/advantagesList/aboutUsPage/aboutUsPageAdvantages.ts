@@ -33,7 +33,7 @@ const aboutUsPageAdvantages: advantagesItemInterface[] = [
   {
     _id: 5,
     icon: GuardIcon,
-    title: "Страхование ответственности",
+    title: "Профессиональная ответственность агентства недвижимости застрахована",
   },
   {
     _id: 6,

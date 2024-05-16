@@ -5,9 +5,18 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
+  padding-top: 70px;
+
+
+  @include breakpoint(screen1024) {
+    padding-top: clamp(2.5rem, 5.02082vw, 4.375rem);
+  }
 
   @include breakpoint(screen960) {
     gap: 30px;
+  }
+  @include breakpoint(screen768) {
+    padding-top: clamp(1.875rem, 7.29036vw, 2.5rem);
   }
 }
 
@@ -21,10 +30,13 @@
     gap: 40px;
   }
 
+
+
   @include breakpoint(screen960) {
     grid-template-columns: auto;
     gap: 30px;
   }
+
   @include breakpoint(screen576) {
     gap: 20px;
   }
@@ -40,13 +52,13 @@
     @extend .inner-common;
 
     grid-template-areas:
-    "info banner"
-    "info banner";
+      "info banner"
+      "info banner";
 
     @include breakpoint(screen960) {
       grid-template-areas:
-      "info"
-      "banner";
+        "info"
+        "banner";
     }
 
     &_hidden {
@@ -64,6 +76,7 @@
       @include breakpoint(screen960) {
         padding-top: 30px;
       }
+
       @include breakpoint(screen576) {
         padding-top: 20px;
       }
@@ -120,30 +133,56 @@
 
 .subtitle {
   @include common-title(hSmall);
-
-  &_banner {
-    @include common-title(hSubtitle,
-    $color: $accent-green
-    );
-
-    @include breakpoint(screen1024) {
-
-    }
+  @include breakpoint(screen768) {
+    text-align: justify;
   }
+}
+
+.subtitleBanner {
+  @include common-title(hSubtitle,
+    $color: $accent-green );
+    @include breakpoint(screen576) {
+      text-align: justify;
+    }
 }
 
 .paragraph {
   @include common-paragraph(p,
-  $font-weight: $regular);
+    $font-weight: $regular);
 
-  &_banner {
-    color: $accent-green;
-    font-family: $ff-openSans;
-  }
+    @include breakpoint(screen576) {
+      text-align: justify;
+    }
 }
 
+.paragraphBanner {
+  @extend .paragraph;
+  color: $accent-green;
+  font-family: $ff-openSans;
+}
 
+.link {
+  @extend .paragraph;
+}
 
+.linkBanner {
+  @extend .paragraphBanner;
+
+  //text-decoration: none;
+
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.listItem {
+  @extend .paragraph;
+}
 
 .toggleButton {
   @include common-button(transparent);
@@ -162,6 +201,7 @@
     max-width: 200px;
     padding: 9px 15px;
   }
+
   @include breakpoint(screen576) {
     max-width: 180px;
     padding: 5px 12px;

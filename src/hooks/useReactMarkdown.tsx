@@ -76,10 +76,10 @@ export default function useReactMarkdown(
             <li className={markdownStyles.li}>
               {children}
             </li>,
-          a: ({ children }) =>
-            <a className={markdownStyles.a}>
-              {children}
-            </a>,
+          a: (props) =>
+            <a className={markdownStyles.a} href={props.href} >
+              {props.children}
+            </a>
         }} />
     </>
   );

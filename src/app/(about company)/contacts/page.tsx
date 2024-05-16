@@ -10,7 +10,7 @@ import sortUsersList from "~helpers/users/sortUsersData";
 
 export const metadata: Metadata = {
   title: 'Контакты',
-  description: 'Агентство недвижимости «Загородный Стиль». Санкт-Петербург, пр. Просвещения, дом 80, к. 1, ТЦ «Прометей», 3 этаж, офис 3.1',
+  description: 'Агентство недвижимости «Загородный Стиль». Санкт-Петербург, пр. Просвещения, дом 80, к. 1, «Прометей», 3 этаж, офис 3.1',
 };
 
 export default async function PageContacts() {

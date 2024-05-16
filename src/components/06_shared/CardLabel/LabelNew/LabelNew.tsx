@@ -8,7 +8,7 @@ const LabelNew: React.FC<LabelNewInterface> = ({ createdAt }) => {
   const createDate = new Date(createdAt);
   const newStatus = differenceInCalendarDays(currentDate, createDate);
 
-  if (newStatus <= 30) {
+  if (newStatus <= 90) {
     return (
       <div className={`${styles.label} ${styles.label_new}`}>
       NEW

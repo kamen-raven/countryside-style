@@ -18,7 +18,7 @@ const AboutUsInfoElement: React.FC = () => {
       <div className={styles.blockWrapper}>
         <div className={styles.awardContainer}>
           <p className={styles.awardDescription}>
-            Лучшая риэлтерская компания на&nbsp;рынке загородной недвижимости 2018&nbsp;года
+            Лучшая риэлторская компания на&nbsp;рынке загородной недвижимости 2018&nbsp;года
           </p>
         </div>
         <div className={styles.associationContainer}>

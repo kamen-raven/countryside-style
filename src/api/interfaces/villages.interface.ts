@@ -1,6 +1,7 @@
 export interface VillageObjectInterface {
   uuid: string;
   id: number;
+  pdf: string;  //* new
   name: string;
   distance_CAD: number;
   area_of_houses: string;
@@ -24,6 +25,7 @@ export interface VillageObjectInterface {
   price: number;
   place: string;
   infra: string;
+  web_page_link: string;   //* new
 }
 
 interface EngineeringServiceInterface {

@@ -64,7 +64,7 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = ({ classNa
         Задать вопрос
       </h3>
       <p className={styles.description}>
-        Напишите Ваше имя, телефон и&nbsp;свой вопрос. Наш&nbsp;менеджер ответит Вам в&nbsp;ближайшее время.
+        Напишите Ваше имя, телефон и&nbsp;свой вопрос. Наши&nbsp;специалисты ответят Вам в&nbsp;ближайшее время.
       </p>
       <fieldset className={styles.fieldset}>
         <div className={`${className} ${styles.mainForm} `}>

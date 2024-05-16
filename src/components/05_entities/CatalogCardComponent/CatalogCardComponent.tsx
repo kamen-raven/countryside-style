@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from './CatalogCardComponent.module.scss';
 import { CatalogCardComponentInterface } from './CatalogCardComponent.interface.ts';
 import ArrowIcon from '~svg/button/arrow.svg';
-import { LabelNew, YoutubeLabel } from '~shared/index.ts';
+import { LabelNew, LabelReserved, YoutubeLabel } from '~shared/index.ts';
 import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 import generateObjectHrefLink from '~helpers/objects/generateObjectHrefLink.ts';
 
@@ -28,6 +28,7 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
             height={350}
           />}
         </Link>
+        <LabelReserved isBook={item.isbook} />
         <LabelNew createdAt={item.created_at} />
         <YoutubeLabel link={item.you_tube_link} />
       </div>

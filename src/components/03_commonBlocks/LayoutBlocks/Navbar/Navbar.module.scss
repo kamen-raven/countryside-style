@@ -17,7 +17,7 @@
 
   @include breakpoint(screen1023) {
     flex-direction: column;
-
+    height: 45px;
   }
 }
 
@@ -91,7 +91,7 @@
       transition: all .2s linear;
 
       padding: 50px calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5) 50px calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5);
-      height: 100vh;
+      height: calc(100vh + 45px);
     }
 
     @include breakpoint(screen768) {

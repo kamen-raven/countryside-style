@@ -4,19 +4,18 @@ import Link from 'next/link';
 import { LogoInterface } from './Logo.interface';
 import styles from './Logo.module.scss';
 
-import LogoIcon from '~svg/logo/logo.svg';
+//import LogoIcon from '~svg/logo/logo.svg';
+import LogoIcon from '~svg/logo/logoTemporary.svg';
 
 const Logo: React.FC<LogoInterface> = ({ color }) => {
-  const logoColor = {
-    gray: styles.logo_gray
-  };
-
-  const setLogoColor = color ? logoColor[color] : '';
 
     return (
       <>
-        <Link className = {`${styles.logo}  ${setLogoColor}`} href={'/'}>
+        <Link className = {`${styles.logo}  ${color === 'gray' ? styles.logo_gray : null}`} href={'/'}>
           <LogoIcon />
+          <p className = {`${styles.name}  ${color === 'gray' ? styles.name_gray : null}`}>
+          ЗАГОРОДНЫЙ СТИЛЬ
+          </p>
         </Link>
       </>
     );

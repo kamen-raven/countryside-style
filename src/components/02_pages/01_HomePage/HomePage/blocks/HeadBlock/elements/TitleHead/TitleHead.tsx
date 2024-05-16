@@ -17,9 +17,9 @@ const TitleHead: React.FC = () => {
               в&nbsp;Санкт-Петербурге и&nbsp;Ленинградской&nbsp;области
             </span>
           </h1>
-          <p className={styles.description}>
+{/*           <p className={styles.description}>
             Лучшая риэлтерская компания на&nbsp;рынке загородной недвижимости 2018&nbsp;года
-          </p>
+          </p> */}
         </div>
         <YearInfoElement />
       </div>
