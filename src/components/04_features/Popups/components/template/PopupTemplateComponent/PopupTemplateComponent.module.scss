@@ -119,8 +119,15 @@
   justify-content: center;
   align-items: center;
   transition: all .2s linear;
+  padding: 0;
 
+  @include breakpoint(screen576) {
+    right: 15px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
 
+  }
 
   & svg {
     width: 17px;
@@ -147,19 +154,4 @@
   }
 
 
-  @include breakpoint(screen576) {
-    right: 15px;
-    top: 15px;
-    width: 35px;
-    height: 35px;
-
-/*     & svg {
-      width: 15px;
-      height: 15px;
-
-      & path {
-        stroke: $dark;
-      }
-    } */
-  }
 }
