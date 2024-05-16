@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
         <ul className={`${styles.list}`}>
           {listItems.map((item) => (
             <li className={`${styles.listItem} ${pathname.startsWith(item.link) ? styles.activeLink : ''}`} key={item.name}>
-              <Link className={`${styles.link}`} href={`${item.link}`} onClick={() => setShowMobileMenu(!showMobileMenu)}>
+              <Link className={`${styles.link}`} href={`${item.link}`} onClick={() => setShowMobileMenu(false)}>
                 {item.title}
               </Link>
             </li>
