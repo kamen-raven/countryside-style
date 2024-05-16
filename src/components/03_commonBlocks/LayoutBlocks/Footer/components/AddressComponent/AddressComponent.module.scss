@@ -42,6 +42,9 @@
     display: none
   }
 
+  &:hover {
+    color: $accent-green;
+  }
 
 }
 
@@ -70,7 +73,7 @@
       fill: $white;
     }
   }
-  
+
   &__icon {
     display: flex;
     width: 35px;

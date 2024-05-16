@@ -17,18 +17,12 @@
     object-fit: contain;
     height: 60px;
 
-    @include breakpoint(screen1280) {
+    @include breakpoint(screen1024) {
       max-width: 60px;
+      height: 40px;
     }
   }
 
-
-
-  &_gray {
-    & svg {
-      fill: $gray;
-    }
-  }
 }
 
 
@@ -39,12 +33,14 @@
     $font-family: $ff-openSans);
   text-decoration: none;
   text-wrap: wrap;
-  max-width: 190px;
+  //max-width: 240px;
+
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
 
   @include breakpoint(screen1024) {
-    gap: 10px;
     font-size: 16px;
-    max-width: 120px;
   }
 
   @include breakpoint(screen768) {
@@ -56,16 +52,36 @@
 
     & svg  {
 
-      & path:first-of-type {
+      & path {
         fill: $gray;
     }
   }
     @include breakpoint(screen768) {
-      display: inline;
+      display: block;
+      width: max-content;
+      //transform: scale(.9);
     }
 
     @include breakpoint(screen480) {
       display: none;
     }
+  }
+}
+
+.span {
+  font-size: 12px;
+  font-weight: $light;
+  color: $accent-gray;
+  line-height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+  letter-spacing: 6px;
+
+  @include breakpoint(screen1024) {
+    letter-spacing: 2px;
+  }
+  @include breakpoint(screen960) {
+letter-spacing: 1px;
   }
 }

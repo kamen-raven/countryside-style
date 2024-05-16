@@ -33,9 +33,15 @@
     gap: 30px 0;
     grid-template-columns: auto auto;
     grid-template-areas:
-    "logo tel"
-    "contacts contacts";
+      "logo tel"
+      "nav nav"
+      "contacts contacts";
   }
+
+  @include breakpoint(screen480) {
+    gap: 24px;
+  }
+
 }
 
 
@@ -43,25 +49,23 @@
   grid-area: logo;
   display: block;
 
-  @include breakpoint(screen576) {
-    width: 80px;
-    & svg {
-      & path:last-of-type {
-        display: none;
-      }
-
+  & svg {
+    & path:first-of-type {
+      fill: $accent-gray;
     }
   }
 
+  @include breakpoint(screen576) {
+    width: 80px;
+  }
 }
 
 .phone {
   display: none;
   @include common-paragraph(p,
-  $font-weight: $bold,
-  $color: $gray-dark);
+    $font-weight: $bold,
+    $color: $gray-dark);
   text-decoration: none;
-
 
   @include breakpoint(screen576) {
     display: flex;
@@ -69,5 +73,9 @@
     align-self: center;
     text-wrap: nowrap;
   }
-}
 
+  &:hover {
+    color: $accent-green;
+  }
+
+}

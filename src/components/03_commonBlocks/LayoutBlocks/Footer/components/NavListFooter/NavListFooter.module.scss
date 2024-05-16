@@ -20,6 +20,8 @@
 
 
     @include breakpoint(screen960) {
+      gap: 10px 20px;
+      justify-content: space-between;
       grid-template-columns: auto auto;
       grid-template-areas:
       ". ."
@@ -28,11 +30,10 @@
       ". ."
       "empty1 ."
     }
+    @include breakpoint(screen576) {
+      justify-content: normal;
+    }
 
-
-  @include breakpoint(screen576) {
-    display: none;
-  }
 }
 
 
@@ -78,4 +79,7 @@
   color: $accent-green;
   cursor: default;
   font-weight: $bold;
+  text-decoration: underline $accent-green 2px;
+  text-underline-offset: 4px;
+  line-height: 110%;
 }

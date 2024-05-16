@@ -7,8 +7,9 @@
   text-wrap: nowrap;
   @include common-link;
 
-  @include breakpoint(screen480) {
+  @include breakpoint(screen576) {
     gap: .5rem;
+
   }
 
   &_white {
@@ -114,6 +115,13 @@
     align-items: center;
     justify-content: center;
   }
+
+@include breakpoint(screen576) {
+  & svg {
+    width: 25px;
+    height: 25px;
+  }
+}
 
   &_white {
     border: 1px $white solid;

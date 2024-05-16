@@ -131,10 +131,10 @@
     width: 17px;
     height: 17px;
 
-    @include breakpoint(screen576) {
+/*     @include breakpoint(screen576) {
       width: 15px;
       height: 15px;
-    }
+    } */
   }
 
   & path {
