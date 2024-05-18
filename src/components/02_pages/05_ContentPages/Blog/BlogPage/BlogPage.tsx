@@ -8,7 +8,7 @@ import usePaginationCounter from '~hooks/usePaginationCounter.ts';
 import { BlogPageInterface } from './BlogPage.interface.ts';
 
 const BlogPage: React.FC<BlogPageInterface> = ({ blogPostsData }) => {
-  const itemsPerPage: number = 2; //?
+  const itemsPerPage: number = 10; //?
 
 
   const {
@@ -25,17 +25,21 @@ const BlogPage: React.FC<BlogPageInterface> = ({ blogPostsData }) => {
   return (
     <section ref={parentRef} className={styles.wrapper}>
       <div className={styles.container}>
-          {currentItems.map((blogCard, index) => {
-            return (
-              <div key={index} className={styles.cardContainer}>
-                <CardBlogComponent
-                  key={blogCard.uuid}
-                  path={'blog'}
-                  blogCardItem={blogCard} />
-              </div>
-            );
-          })}
-        <CardItemPagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} parentRef={parentRef} />
+        {currentItems.map((blogCard, index) => {
+          return (
+            <div key={index} className={styles.cardContainer}>
+              <CardBlogComponent
+                key={blogCard.uuid}
+                path={'blog'}
+                blogCardItem={blogCard} />
+            </div>
+          );
+        })}
+
+        {blogPostsData.results.length > itemsPerPage ?
+          <CardItemPagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} parentRef={parentRef} />
+          : null}
+
       </div>
     </section>
   );

@@ -50,8 +50,8 @@
 }
 
 .input {
-  width: 100%;
   @include common-input;
+  width: 100%;
   padding: 10px 30px;
   height: 45px;
 

@@ -61,6 +61,10 @@
       @include breakpoint(screen768) {
         font-size: clamp($paragraph-md-mob, 2.90833vw, $paragraph-md-tab);  //14px 16px
       }
+
+      @include breakpoint(screen480) {
+        text-align: justify;
+      }
     }
 
     @if $pTag == pSm {

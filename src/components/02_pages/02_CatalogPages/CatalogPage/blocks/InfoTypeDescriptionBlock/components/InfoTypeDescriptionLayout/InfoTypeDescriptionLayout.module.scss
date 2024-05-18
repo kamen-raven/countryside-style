@@ -133,7 +133,7 @@
 
 .subtitle {
   @include common-title(hSmall);
-  @include breakpoint(screen768) {
+  @include breakpoint(screen480) {
     text-align: justify;
   }
 }
@@ -141,7 +141,7 @@
 .subtitleBanner {
   @include common-title(hSubtitle,
     $color: $accent-green );
-    @include breakpoint(screen576) {
+    @include breakpoint(screen480) {
       text-align: justify;
     }
 }
@@ -150,7 +150,7 @@
   @include common-paragraph(p,
     $font-weight: $regular);
 
-    @include breakpoint(screen576) {
+    @include breakpoint(screen480) {
       text-align: justify;
     }
 }

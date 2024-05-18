@@ -10,9 +10,9 @@
     color: $gray;
     font-family: $ff-openSans;
     font-size: $paragraph-md;
-    font-weight: $regular;
+    font-weight: $medium;
     padding: 9px 30px;
-
+    caret-color: $accent-green;
     @include breakpoint(screen1024) {
       font-size: clamp($paragraph-md-tab, 1.92057vw, $paragraph-md);
     }
@@ -21,33 +21,40 @@
     }
 
 
+
     &:focus {
-      outline: none;
+      outline: 1px solid $accent-green;
       border: 1px solid $accent-green;
     }
 
     &::placeholder {
-      color: $gray;
+      font-weight: $light;
+      color: rgba($color: $gray, $alpha: .6);
     }
 
     &::-webkit-input-placeholder {
-      color: $gray;
+      font-weight: $light;
+      color: rgba($color: $gray, $alpha: .6);
     }
 
     &:-moz-placeholder {
-      color: $gray;
+      font-weight: $light;
+      color: rgba($color: $gray, $alpha: .6);
     }
 
     &::-moz-placeholder {
-      color: $gray;
+      font-weight: $light;
+      color: rgba($color: $gray, $alpha: .6);
     }
 
     &:-ms-input-placeholder {
-      color: $gray;
+      font-weight: $light;
+      color: rgba($color: $gray, $alpha: .6);
     }
 
     &::-ms-input-placeholder {
-      color: $gray;
+      font-weight: $light;
+      color: rgba($color: $gray, $alpha: .6);
     }
 }
 

@@ -146,6 +146,11 @@
   text-indent: 1.5rem;
   padding-bottom: .5rem;
 
+  @include breakpoint(screen480) {
+    text-indent: 0;
+  }
+
+
   &:last-child {
     padding-bottom: 0;
   }

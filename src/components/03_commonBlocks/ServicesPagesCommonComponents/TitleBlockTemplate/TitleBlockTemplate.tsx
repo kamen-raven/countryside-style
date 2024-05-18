@@ -15,8 +15,8 @@ const TitleBlockTemplate: React.FC<TitleBlockTemplateInterface> = ({ pageData })
             href={'/services'}>
             Услуги
           </Link>
+          <span className={styles.label_span}>|</span>
           <p className={styles.label}>
-            <span className={styles.label_span}>|</span>
             {pageData.label}
           </p>
         </div>

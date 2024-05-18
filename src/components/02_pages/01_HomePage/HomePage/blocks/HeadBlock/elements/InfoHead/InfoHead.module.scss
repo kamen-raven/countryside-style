@@ -251,5 +251,8 @@
     @include breakpoint(screen1024) {
       width: min-content;
     }
+    @include breakpoint(screen768) {
+      width: auto;
+    }
   }
 }

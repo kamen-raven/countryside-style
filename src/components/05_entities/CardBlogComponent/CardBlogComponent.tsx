@@ -50,17 +50,19 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
           sizes={'(max-width: 1920px) 100%'}
         />
 
-        <>
-          <ArrowsButton
-            position={'left'}
-            className={`${styles.arrow} ${styles.arrow_left}`}
-          />
-          <ArrowsButton
-            position={'right'}
-            className={`${styles.arrow} ${styles.arrow_right}`}
-          />
-        </>
-
+        {path === 'home' ?
+          <>
+            <ArrowsButton
+              position={'left'}
+              className={`${styles.arrow} ${styles.arrow_left}`}
+            />
+            <ArrowsButton
+              position={'right'}
+              className={`${styles.arrow} ${styles.arrow_right}`}
+            />
+          </>
+          : null
+        }
       </div>
 
       {/* заголовок статьи */}
