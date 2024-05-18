@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './MapInner.module.scss';
 import { MapInnerInterface } from './MapInner.interface';
 import formatIframeSrc from '~helpers/formatters/formatIframeSrc';
+import { MapActiveContainer } from '~features/index';
 
 
 const MapInner: React.FC<MapInnerInterface> = ({ data }) => {
@@ -16,11 +17,12 @@ const MapInner: React.FC<MapInnerInterface> = ({ data }) => {
         На карте
       </h3>
       {srcValue &&
-        <iframe
-          className={styles.map}
-          src={srcValue}
-          loading="lazy">
-        </iframe>
+
+        <MapActiveContainer>
+          <iframe className={styles.map}
+            src={srcValue}
+            loading="lazy" />
+        </MapActiveContainer>
       }
     </>
   );

@@ -125,10 +125,12 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
         {objectItemsList.length > 1 &&
           <>
             <ArrowsButton
+              type={'inImg'}
               onClick={handlePrevPhoto}
               className={`${styles.arrowNavigate} ${styles.arrowNavigate_left}`}
               position={'left'} />
             <ArrowsButton
+              type={'inImg'}
               onClick={handleNextPhoto}
               className={`${styles.arrowNavigate} ${styles.arrowNavigate_right}`}
               position={'right'} />

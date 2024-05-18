@@ -253,42 +253,33 @@
   visibility: hidden;
 
   @include breakpoint(screen768) {
-    display: flex;
-    visibility: visible;
-    background-color: $white;
     position: absolute;
-    top: 50%;
-    translate: 0, 0;
-    opacity: .6;
-    transition: opacity .3s linear;
+    visibility: visible;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
-    &:hover {
-      opacity: 1;
+    & span {
+      background-color: $white;
+      opacity: .6;
       transition: opacity .3s linear;
+
+      &:focus {
+        outline: auto;
+      }
+
+      &:hover {
+        opacity: 1;
+        transition: opacity .3s linear;
+      }
     }
   }
 
   &_left {
-    left: 30px;
-
-    @include breakpoint(screen768) {
-      left: 20px;
-    }
-
-    @include breakpoint(screen576) {
-      left: 10px;
-    }
+    left: 0;
   }
 
   &_right {
-    right: 30px;
-
-    @include breakpoint(screen768) {
-      right: 20px;
-    }
-
-    @include breakpoint(screen576) {
-      right: 10px;
-    }
+    right: 0;
   }
 }

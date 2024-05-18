@@ -25,6 +25,10 @@
     &:focus {
       outline: 1px solid $accent-green;
       border: 1px solid $accent-green;
+
+      @include breakpoint(screen768) {
+        outline: none;
+      }
     }
 
     &::placeholder {

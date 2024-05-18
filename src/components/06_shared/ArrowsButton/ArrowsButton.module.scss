@@ -1,29 +1,67 @@
 @import '~global_styles';
 
-.arrows {
+/* .arrows {
   display: flex;
   gap: 15px;
-}
+} */
 
 .arrow {
+  border: none;
+  background: none;
+  padding: 0;
+
+
+  &__inImg {
+    background-color: transparent;
+    height: 100%;
+
+    &:focus-visible {
+      outline: transparent;
+      & span {
+          outline: auto;
+      }
+    }
+  }
+
+
+
+  &_left {
+    & svg {
+      transform: rotate(180deg);
+    }
+
+      &:hover {
+        & svg {
+          transition: transform .3s linear;
+          transform: rotate(180deg) translate(5px);
+        }
+      }
+
+  }
+
+  &_right {
+    & svg {
+      transform: rotate(0);
+    }
+    &:hover {
+      & svg {
+        transition: transform .3s linear;
+        transform: translate(5px);
+      }
+    }
+  }
+}
+
+
+.arrowDesign {
+  width: 45px;
+  height: 45px;
+  border: 1px solid $dark;
+  border-radius: 50%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid $dark;
-  border-radius: 50%;
-  background: none;
-  padding: 0;
-  width: 45px;
-  height: 45px;
 
-  @include breakpoint(screen768) {
-    height: 40px;
-    width: 40px;
-  }
-  @include breakpoint(screen576) {
-    height: 35px;
-    width: 35px;
-  }
 
   & svg {
     transition: transform .3s linear;
@@ -36,19 +74,39 @@
     }
   }
 
-  &:hover {
-    & svg {
-      transition: transform .3s linear;
-      transform: translate(5px);
-    }
-  }
-  &_left  {
-    transform: rotate(180deg);
+  @include breakpoint(screen768) {
+    height: 40px;
+    width: 40px;
   }
 
-  &_right {
-    transform: rotate(0);
+  @include breakpoint(screen576) {
+    height: 35px;
+    width: 35px;
   }
 }
 
+.arrow_left.arrow__inImg {
+  padding-left: 30px;
+  padding-right: 60px;
 
+  @include breakpoint(screen768) {
+    padding-left: 20px;
+  }
+
+  @include breakpoint(screen576) {
+    padding-left: 10px;
+  }
+}
+
+.arrow_right.arrow__inImg {
+  padding-right: 30px;
+  padding-left: 60px;
+
+  @include breakpoint(screen768) {
+    padding-right: 20px;
+  }
+
+  @include breakpoint(screen576) {
+    padding-right: 10px;
+  }
+}

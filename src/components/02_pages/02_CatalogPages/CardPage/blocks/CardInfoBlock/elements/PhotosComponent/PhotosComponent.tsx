@@ -112,11 +112,13 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
             {(picturesArray.length > 0) &&
               <>
                 <ArrowsButton
+                  type='inImg'
                   position={'left'}
                   onClick={handlePrev}
                   className={`${styles.arrowNavigate} ${styles.arrowNavigate_left}`}
                 />
                 <ArrowsButton
+                  type='inImg'
                   position={'right'}
                   onClick={handleNext}
                   className={`${styles.arrowNavigate} ${styles.arrowNavigate_right}`}

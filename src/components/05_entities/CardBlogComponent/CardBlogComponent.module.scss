@@ -170,9 +170,25 @@
   background-color: $white;
 
   @include breakpoint(screen1024) {
+    background-color: transparent;
     position: absolute;
-    top: 45%;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    & span {
+      background-color: $white;
+      opacity: .6;
+      transition: opacity .3s linear;
 
+      &:focus {
+        outline: auto;
+      }
+
+      &:hover {
+        opacity: 1;
+        transition: opacity .3s linear;
+      }
+    }
   }
 
   &_left {
@@ -181,7 +197,7 @@
     @include breakpoint(screen1024) {
       display: flex;
       visibility: visible;
-      left: 20px;
+      left: 0;
     }
   }
 
@@ -191,11 +207,10 @@
     @include breakpoint(screen1024) {
       display: flex;
       visibility: visible;
-      right: 20px;
+      right: 0;
     }
   }
 }
-
 
 /* -------------------------- */
 

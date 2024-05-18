@@ -53,10 +53,12 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
         {path === 'home' ?
           <>
             <ArrowsButton
-              position={'left'}
-              className={`${styles.arrow} ${styles.arrow_left}`}
+            type='inImg'
+            position={'left'}
+            className={`${styles.arrow} ${styles.arrow_left}`}
             />
             <ArrowsButton
+            type='inImg'
               position={'right'}
               className={`${styles.arrow} ${styles.arrow_right}`}
             />
