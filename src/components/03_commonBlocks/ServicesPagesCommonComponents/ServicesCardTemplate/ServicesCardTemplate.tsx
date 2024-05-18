@@ -17,6 +17,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
   let bigInfoContainer = '';
   let textFirst = '';
   let bigText = '';
+  let homeDescription = '';
   if (page === 'home') {
     bigContainer = (serviceItem._id > 2) ? styles.itemContainer_bigSize : '';
     bigInfoContainer = (serviceItem._id > 2) ? styles.infoContainer_bigSize : '';
@@ -24,6 +25,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
     bigPicture = (serviceItem._id > 2) ? styles.image_bigSize : '';
     textFirst = (serviceItem._id == 4) ? styles.itemContainer_textFirst : '';
     bigText = styles.title_bigText;
+    homeDescription = styles.description_homePage;
   }
 
 
@@ -41,7 +43,9 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
 
       <div className={`${styles.infoContainer} ${bigInfoContainer}`}>
         <h3 className={`${styles.title} ${bigText}`}>{/* ${setFontSize} */}
-          {serviceItem.title}
+          <Link className = {styles.title_link} href={serviceItem.link}>
+            {serviceItem.title}
+          </Link>
         </h3>
 
         {buttonText &&
@@ -49,7 +53,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
             {buttonText}
           </Link>
         }
-        <p className={styles.description}>
+        <p className={`${styles.description} ${homeDescription}`}>
           {serviceItem.description}
         </p>
 

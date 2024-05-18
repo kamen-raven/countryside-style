@@ -26,7 +26,7 @@
     gap: 30px;
   }
 
-  @include breakpoint(screen576) {
+  @include breakpoint(screen640) {
     grid-template-columns: auto;
     grid-template-rows: auto auto;//minmax(240px, 280px) min-content;
     gap: 16px;
@@ -45,12 +45,12 @@
 
     @include breakpoint(screen768) {
       grid-column: auto;
-      grid-template-columns: minmax(240px, 1fr) 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-template-rows: auto; //minmax(240px, 300px);
       gap: 30px;
     }
 
-    @include breakpoint(screen576) {
+    @include breakpoint(screen640) {
       grid-template-columns: auto;
       grid-template-rows: auto min-content;//minmax(240px, 280px) min-content;
       gap: 16px;
@@ -78,7 +78,7 @@
   justify-content: center;
   align-items: center;
 
-  @include breakpoint(screen576) {
+  @include breakpoint(screen640) {
     max-height: 280px;
   }
 
@@ -93,7 +93,7 @@
       max-height: 300px;
     }
 
-    @include breakpoint(screen576) {
+    @include breakpoint(screen640) {
       max-height: 280px;
     }
   }
@@ -111,7 +111,11 @@
     max-width: none;
   }
 
-  @include breakpoint(screen576) {
+  @include breakpoint(screen768) {
+    min-width: 230px;
+  }
+
+  @include breakpoint(screen640) {
     max-height: 280px;
   }
 
@@ -126,8 +130,7 @@
     @include breakpoint(screen768) {
       max-height: 300px;
     }
-
-    @include breakpoint(screen576) {
+    @include breakpoint(screen640) {
       max-height: 280px;
     }
   }
@@ -177,7 +180,7 @@
     gap: 15px;
   }
 
-  @include breakpoint(screen576) {
+  @include breakpoint(screen640) {
     align-content: space-between;
     justify-content: initial;
     grid-template-columns: auto min-content;
@@ -204,7 +207,7 @@
       gap: 15px;
     }
 
-    @include breakpoint(screen576) {
+    @include breakpoint(screen640) {
       justify-content: initial;
       align-content: space-between;
       grid-template-columns: auto min-content;
@@ -231,12 +234,18 @@
   &_bigText {
     @include common-title(hSubtitle);
 
-
+/*
     @include breakpoint(screen768) {
       @include common-title(hSmall);
+    } */
+  }
+  &_link {
+    color: $dark;
+    text-decoration: none;
+    &:focus {
+      outline: none;
     }
   }
-
 }
 
 /* .innerContainer {
@@ -264,7 +273,7 @@
     padding: 7px 20px;
   }
 
-  @include breakpoint(screen576) {
+  @include breakpoint(screen640) {
     align-self: center;
     min-width: 0;
 /*     padding: 5px 15px; */

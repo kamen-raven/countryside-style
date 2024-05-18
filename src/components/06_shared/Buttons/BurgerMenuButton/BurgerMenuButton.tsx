@@ -4,7 +4,7 @@ import { BurgerMenuButtonInterface } from './BurgerMenuButton.interface';
 
 
 
-const BurgerMenuButton: React.FC<BurgerMenuButtonInterface> = ({ onClick, buttonStatus, className }) => {
+const BurgerMenuButton: React.FC<BurgerMenuButtonInterface> = ({ buttonStatus, className }) => {
 
 
 
@@ -12,7 +12,7 @@ const BurgerMenuButton: React.FC<BurgerMenuButtonInterface> = ({ onClick, button
 
 
   return (
-    <button onClick={onClick}
+    <button
       className={`${className} ${styles.button} ${buttonStatus ?  styles.button_opened : ''}`}>
       <span></span>
       <span></span>

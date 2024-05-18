@@ -47,9 +47,8 @@
   height: max-content;
 
 
-  @include breakpoint(screen1024) {
+  @include breakpoint(screen1024) {}
 
-}
   @include breakpoint(screen1023) {
     visibility: hidden;
     opacity: 0;
@@ -69,7 +68,7 @@
 
   }
 
-/*   &_mobile {
+  /*   &_mobile {
     position: absolute;
     z-index: -10000;
     top: -100%;
@@ -120,7 +119,7 @@
 
 
 
-/*   @include breakpoint(screen1280) {
+  /*   @include breakpoint(screen1280) {
     padding: 0;
   } */
 
@@ -249,6 +248,7 @@
       text-decoration: underline $accent-green 2px;
       text-underline-offset: 4px;
       line-height: 110%;
+
       &:hover {
         color: $accent-green;
       }
@@ -274,7 +274,7 @@
       width: 100%;
       align-items: center;
       justify-content: space-between;
-
+      height: 45px;
       transition: background-color .2s linear;
     }
 
@@ -288,15 +288,45 @@
   &__menuLabel {
     @include special-text(link, $color: $white);
     line-height: 100%;
-    padding: 16px 0;
+    padding: 13.5px 0;
     margin-left: calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5);
+    cursor: pointer;
+    visibility: hidden;
+    align-items: center;
 
     @include breakpoint(screen768) {
       margin-left: clamp(1.563rem, 6.58724vw, 3.125rem);
-      ;
+    }
+
+    @include breakpoint(screen480) {
+      font-size: 11px;
+      padding: 14.5px 0;
+    }
+
+    &_show {
+      visibility: visible;
+
+      & svg {
+        display: flex;
+        width: min-content;
+        object-fit: contain;
+        height: 18px;
+        padding-right: 10px;
+
+        @include breakpoint(screen480) {
+          height: 16px;
+        }
+      }
     }
   }
 
+
+  &__buttonContainer {
+    padding-left: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 
 
@@ -338,16 +368,18 @@
     font-size: $paragraph-lg-tab;
   }
 
-  &  span {
+  & span {
     background-color: transparent !important;
+
     & svg {
       fill: $white;
     }
   }
 
   &:hover {
-    &  span {
+    & span {
       background-color: $white !important;
+
       & svg {
         fill: $accent-green;
       }

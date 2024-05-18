@@ -16,6 +16,8 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
   linkToCatalog,
   containerTemplate,
 }) => {
+/*   const windowWidth = useWindowWidthSize();
+ */
 
   // объект для формирования заголовков title
   const category = {
@@ -111,6 +113,7 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
           alt={category[linkToCatalog]}
           width={300}
           height={300}
+          onClick={containerTemplate === 'picFirst' ? handlePrevPhoto : handleNextPhoto}
         />
       </div>
 
@@ -120,7 +123,9 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
           src={getCurrentPhoto()}
           alt={category[linkToCatalog]}
           width={680}
-          height={490} />
+          height={490}
+          onClick={containerTemplate === 'picFirst' ? handlePrevPhoto : handleNextPhoto}
+          />
 
         {objectItemsList.length > 1 &&
           <>
@@ -141,7 +146,9 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
       <div className={`${styles.innerBlock} ${setInnerBlock} `}>
         <div className={`${styles.infoContainer} ${setInfoContainer}`}>
           <h3 className={`${styles.title}`}>
-            {category[linkToCatalog]} {/* title */}
+            <Link className = {styles.title_link} href={`/${linkToCatalog}`}>
+              {category[linkToCatalog]} {/* title */}
+            </Link>
           </h3>
           {objectItemsList.length > 1 &&
             <div className={`${styles.arrowsButtonContainer} ${styles.arrowsButtonContainer_desktop}`}>

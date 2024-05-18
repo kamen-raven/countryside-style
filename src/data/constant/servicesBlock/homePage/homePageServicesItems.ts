@@ -29,7 +29,7 @@ const homePageServicesItems: servicesDataInterface[] = [
   },
   {
     _id: 4,
-    title: `Отдел продаж «под ключ»`,
+    title: `Отдел продаж «под\u00A0ключ»`,
     description: `Требуется помощь в\u00A0оптимизации процесса продаж существующего коттеджного поселка или организации продаж поселка «с\u00A0нуля»? Звоните\u00A0–\u00A0поможем!`,
     link: 'services/for-cottage-villages',
     image: Key

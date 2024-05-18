@@ -12,6 +12,9 @@ import { useWindowWidthSize } from '~hooks/useWindowWidthSize';
 
 import { PhoneNumber } from '~entities/index';
 import { AddressComponent } from '../Footer/components';
+import LogoIcon from '~svg/logo/logoTemporary.svg';
+
+
 
 const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) => {
   const pathname = usePathname();
@@ -47,6 +50,33 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
   }, []);
 
 
+
+
+  // для отображения кнопки заголовка-логотипа
+  const scrollPX = 90;
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > scrollPX;
+      setIsVisible(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Плавная прокрутка
+    });
+  };
+
+
+
   return (
     <nav className={`${styles.navMenu}`}>
 
@@ -55,12 +85,20 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
                       ${styles.burgerContainer__container}
                       ${deskWidth ? styles.hidden : styles.visible}
                       ${showMobileMenu ? styles.burgerContainer__container_active : ''}`}>
-        <div  onClick={() => setShowMobileMenu(!showMobileMenu)} className={`${styles.burgerContainer} ${styles.burgerContainer__menuLabel}`}>
-          МЕНЮ
+
+
+        <div onClick={scrollToTop}  className={`${styles.burgerContainer} ${styles.burgerContainer__menuLabel}  ${isVisible ? styles.burgerContainer__menuLabel_show : ''}`}>
+        <LogoIcon />
+        Загородный стиль
         </div>
-        <BurgerMenuButton className={styles.burgerContainer}
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-          buttonStatus={showMobileMenu} />
+
+
+
+        <div className={styles.burgerContainer__buttonContainer}
+              onClick={() => setShowMobileMenu(!showMobileMenu)}>
+          <BurgerMenuButton className={styles.burgerContainer}
+            buttonStatus={showMobileMenu} />
+        </div>
       </div>
 
 
