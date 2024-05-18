@@ -249,7 +249,7 @@
 
   & button {
     @include breakpoint(screen1024) {
-      width: fit-content;
+      width: min-content;
     }
   }
 }

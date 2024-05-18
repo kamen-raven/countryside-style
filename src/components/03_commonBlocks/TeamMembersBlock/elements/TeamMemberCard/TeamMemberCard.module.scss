@@ -26,7 +26,7 @@
 
 .innerBlock {
   display: flex;
-  max-height: 600px;
+  max-height: 720px;
   margin: 0 auto;
   align-items: center;
   max-width: 1920px;
@@ -73,7 +73,7 @@
 .image {
   object-fit: cover;
   width: 50%;
-  max-height: 600px;
+  max-height: 720px;
   // height: clamp(450px, 70vw, 600px);// max(350px, 600px);
 
   @include breakpoint(screen768) {

@@ -4,6 +4,7 @@ import styles from './AccordionElement.module.scss';
 import { AccordionElementInterface } from './AccordionElement.interface.ts';
 
 import ToggleIcon from '~svg/button/accordion.svg';
+import useReactMarkdown from '~hooks/useReactMarkdown.tsx';
 
 const AccordionElement: React.FC<AccordionElementInterface> = ({ faqItem }) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -15,6 +16,23 @@ const AccordionElement: React.FC<AccordionElementInterface> = ({ faqItem }) => {
 
   const openedButtonStyle = isOpened ? styles.isOpened : '';
   const answerStyle = isOpened ? styles.answerVisible : '';
+
+  const markdownStyle = {
+    p: styles.p,
+    strong: styles.strong,
+    em: styles.em,
+    h1: styles.title,
+    h2: styles.h2,
+    h3: styles.h3,
+    blockquote: styles.blockquote,
+    del: styles.del,
+    ul: styles.li,
+    ol: styles.ol,
+    li: styles.listItem,
+    a: styles.a,
+  };
+
+
 
   return (
     <div className={styles.container}>
@@ -28,9 +46,9 @@ const AccordionElement: React.FC<AccordionElementInterface> = ({ faqItem }) => {
         </button>
       </div>
 
-      <p className={`${styles.answer} ${answerStyle}`}>
-        {faqItem.answer}
-      </p>
+      <div className={`${styles.answer} ${answerStyle}`}>
+        {useReactMarkdown(faqItem.answer, markdownStyle)}
+      </div>
 
     </div>
   );

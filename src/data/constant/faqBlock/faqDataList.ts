@@ -4,37 +4,37 @@ const faqDataList: faqDataListInterface[] = [
   {
     _id: 1,
     question: "Если Вы планируете продать быстро, значит, будете продавать дешево?",
-    answer: "Dolore consequat voluptate occaecat officia enim Lorem nulla excepteur ad. Irure elit exercitation ea laboris eiusmod et eu commodo esse id commodo est excepteur do. Cupidatat sunt laborum qui voluptate Lorem elit excepteur fugiat minim. Nisi ad fugiat minim excepteur amet id. In id duis mollit tempor ea ex et fugiat aute aliqua Lorem. In occaecat deserunt aute sint proident commodo esse cillum esse do."
+    answer: `Вопреки устоявшемуся мнению клиентов, продать быстро\u00A0– не значит продать дешево. В\u00A090% случаев быстрая продажа происходит по\u00A0рыночной цене или цене выше рыночной. За\u00A0счет чего это достигается:\r\n\r\n- «Свежий» объект вызывает больше интереса у\u00A0покупателей, при\u00A0правильном позиционировании у\u00A0них создается впечатление, что «надо купить быстрее, пока другие не\u00A0нашли этот вариант».\r\n- Совсем наоборот, если объект уже давно и\u00A0безрезультатно «висит» в\u00A0рекламе, он начинает отпугивать клиентов\u00A0– они думают, что с\u00A0объектом что-то\u00A0не\u00A0так (какие-то проблемы, завышена цена\u00A0и\u00A0т.д.), раз его еще никто не\u00A0купил. Именно поэтому грамотно организованная быстрая продажа (с\u00A0правильной стартовой ценой, качественной рекламой и\u00A0предпродажной подготовкой объекта) в\u00A0подавляющем большинстве случаев гораздо более выгодна, чем простое прозябание объекта в\u00A0листингах агентства недвижимости или бесплатной рекламе.`
   },
   {
     _id: 2,
-    question: "Мне некуда торопиться, я готов ждать год и больше, пока дом (участок) не продастся",
-    answer: "Non ipsum quis veniam reprehenderit ex duis consequat quis id. Reprehenderit in laborum veniam velit irure aliquip nulla sint minim. Ut dolor pariatur dolore exercitation cillum nulla eu. Quis consequat cupidatat sunt fugiat amet enim id laborum. Ea incididunt quis consectetur non anim deserunt nostrud veniam sint. Nostrud magna sunt dolor veniam esse dolor quis nulla. Ullamco laborum aliquip quis cupidatat nisi culpa."
+    question: "Мне некуда торопиться, я готов ждать год и\u00A0больше, пока дом (участок) не\u00A0продастся",
+    answer: `Если долго продавать объект, есть большая вероятность, что придется продать его по\u00A0цене, ниже рыночной\u00A0– как залежавшийся товар, который не\u00A0пользуется спросом. Кроме того, надо учитывать инфляцию. Поэтому 5\u00A0млн. сегодня лучше, чем 5,5\u00A0млн. через 2\u00A0года.`
   },
   {
     _id: 3,
-    question: "Я и сам могу разместить объявление. Чем вы лучше?",
-    answer: "Id nostrud est irure laboris quis culpa ullamco duis ad. Do do duis cillum enim. Lorem ex nulla aliqua aute aute enim dolor aliquip."
+    question: "Я и\u00A0сам могу разместить объявление. Чем\u00A0вы\u00A0лучше?",
+    answer: `С\u00A0развитием интернета разместить рекламу объекта недвижимости стало проще простого. Но при\u00A0самостоятельной продаже можно потерять достаточно много денег. Это как ввязываться в\u00A0судебный процесс без поддержки адвоката, надеясь только на\u00A0бесплатные советы в\u00A0сети и\u00A0помощь друзей.\r\n\r\nПосмотрите самые частые ошибки при\u00A0самостоятельной продаже:\r\n\r\n- Грамотный покупатель при\u00A0поддержке своего агента запросто «продавливают» самостоятельного продавца на\u00A0существенную скидку на объект, предлагают невыгодные и\u00A0изначально рискованные для продавца варианты взаиморасчетов (например, сейфовая ячейка с одновременным доступом, оплата после сделки и др ).\r\n- Вас в данной ситуации некому защитить, а Вы сами не можете знать все нюансы и\u00A0тонкости организации сделки.\r\n- Часто размер скидки, которую ВЫ предоставляете покупателю, существенно выше агентской комиссии.\r\n- Плохая подача объекта в\u00A0рекламе. Часто самостоятельные продавцы размещают объявление о\u00A0продаже на 2-3\u00A0рекламных площадках и\u00A0ждут звонков. К\u00A0сожалению, звонят по\u00A0таким объектам редко. Для качественной продажи рекламы объекта должно быть в\u00A010 раз больше (мы задействуем 20-30\u00A0площадок, информация на\u00A0которых постоянно обновляется). Кроме того, мы можем «переключить» клиента с\u00A0другого объекта, который по\u00A0каким-то причинам ему не\u00A0понравился. Таким образом, на\u00A0продажу Вашего объекта работает не\u00A0только Ваша реклама, но\u00A0и\u00A0реклама всех других похожих объектов.`
   },
   {
     _id: 4,
-    question: "Почему вы считаете, что ваша оценка моей недвижимости правильная?",
-    answer: "Deserunt dolor duis id non dolore esse dolor incididunt fugiat qui aliqua est ad. Esse enim ad excepteur proident excepteur elit consequat ex do. Ipsum exercitation reprehenderit ea mollit aute consectetur aliqua quis irure consequat cillum proident. Enim enim ut veniam ex exercitation. Nulla eiusmod ullamco ipsum in sint nostrud id consequat aute."
+    question: "Почему вы\u00A0считаете, что\u00A0ваша оценка моей недвижимости правильная?",
+    answer: `При\u00A0оценке недвижимости мы ориентируемся не\u00A0на\u00A0рекламные цены похожих объектов, а\u00A0на\u00A0цены реальных сделок. Мы достоверно знаем, за\u00A0какие деньги продавались похожие объекты, сколько они\u00A0до\u00A0этого стояли в\u00A0рекламе, а\u00A0значит, мы можем с\u00A0высокой долей вероятности оценить, за\u00A0сколько будет продана Ваша недвижимость`
   },
   {
     _id: 5,
-    question: "Почему вы настаиваете на заключении эксклюзивного договора? Другие агентства работают вообще без договора?",
-    answer: "Nostrud laborum occaecat voluptate tempor aliquip laboris laboris non. Fugiat ea nostrud sit ullamco cillum dolore laboris mollit excepteur ullamco quis aliqua. Exercitation incididunt aute sint irure non officia laborum et voluptate adipisicing deserunt. Aute commodo minim est non eu aute laborum cillum sit sint sint."
+    question: "Почему вы\u00A0настаиваете на\u00A0заключении эксклюзивного договора? Другие агентства работают вообще без\u00A0договора?",
+    answer: `Мы отвечаем за\u00A0результат своей работы и\u00A0не\u00A0боимся этой ответственности. Поэтому со\u00A0всеми нашими клиентами мы подписываем договор на\u00A0оказание услуг, в\u00A0котором четко прописаны условия нашей с\u00A0вами работы и\u00A0наша ответственность. Мы вкладываем время, силы и\u00A0деньги для\u00A0того, чтобы быстро и\u00A0выгодно для\u00A0Вас продать Вашу недвижимость.`
   },
   {
     _id: 6,
-    question: "Я хочу одновременно работать с несколькими агентствами. Так будет лучше.",
-    answer: "Labore magna nisi pariatur irure aute commodo fugiat nisi aliqua ut sunt magna. Culpa est velit officia dolore Lorem adipisicing consectetur. Lorem velit veniam sunt sit nisi nisi consequat sint proident deserunt voluptate consectetur ut. Incididunt aute aute pariatur anim et adipisicing ad. Dolor in commodo velit officia reprehenderit nulla in deserunt ullamco consequat fugiat magna. Minim aliquip reprehenderit do ullamco elit anim dolor est."
+    question: "Я хочу одновременно работать с\u00A0несколькими агентствами. Так будет лучше.",
+    answer: `Обычно работа с\u00A0несколькими агентствами или\u00A0агентами приводит к\u00A0обратному результату. Когда нет ответственного за\u00A0продажу, объект продается долго и\u00A0в\u00A0итоге намного дешевле рыночной цены. «У\u00A0семи нянек дитя без глазу».\r\n\r\nКроме этого, большинство людей относятся подозрительно к\u00A0недвижимости, которая рекламируется через несколько агентств. Клиент видит, что\u00A0от\u00A0дома или участка очень хотят избавиться, и\u00A0это\u00A0его отпугивает.`
   },
   {
     _id: 7,
     question: "Другие агентства мне предложили услуги дешевле.",
-    answer: "Ad proident qui magna velit dolor amet mollit dolore incididunt aliquip occaecat. Qui voluptate exercitation nisi nostrud sunt ullamco nostrud ut anim officia nulla tempor. Voluptate esse est sunt velit labore."
+    answer: `Мы никогда не\u00A0говорим, что\u00A0у\u00A0нас самые низкие цены. Наш приоритет\u00A0– качество оказания услуг и\u00A0высокий профессионализм специалистов.\r\n\r\nНа\u00A0рынке всегда кто-то продает товар или\u00A0услугу дешевле. Часто так\u00A0продаются услуги низкого качества. Выбор всегда за\u00A0клиентом. Мы за\u00A0качество по разумной цене.\r\n\r\nЕсли клиент разумно походит к\u00A0вопросу экономии, мы предлагаем ему\u00A0различные формы взаимодействия, при\u00A0которых комиссия агентства будет ниже. Но\u00A0не\u00A0за\u00A0счет качества оказываемых услуг, а\u00A0за\u00A0счет их\u00A0количества.`
   },
 ];
 

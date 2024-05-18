@@ -2,13 +2,20 @@
 
 .labelContainer {
   display: inline-flex;
+  align-items: center;
+
   padding-bottom: 2rem;
 
   gap: .5rem;
   max-width: 80vw;
+
   @include breakpoint(screen576) {
     padding-bottom: 1rem;
     row-gap: 0;
+  }
+
+  @include breakpoint(screen480) {
+    flex-wrap: wrap;
   }
 }
 
@@ -24,6 +31,10 @@
     @extend .label;
     text-decoration: none;
     transition: all .3s linear;
+    width: max-content;
+    flex-basis:content;
+    flex-grow: 4;
+    text-wrap: nowrap;
 
     &:hover {
       color: $gray;
@@ -35,9 +46,13 @@
   &_span {}
 
   &_name {
+    flex-shrink: 4;
     color: $accent-green;
-    overflow: hidden; /* Обрезает содержимое, которое не помещается */
-    text-overflow: ellipsis; /* Добавляет многоточие в конце обрезанного текста */
-    white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+    overflow: hidden;
+    /* Обрезает содержимое, которое не помещается */
+    text-overflow: ellipsis;
+    /* Добавляет многоточие в конце обрезанного текста */
+    white-space: nowrap;
+    /* Предотвращает перенос текста на новую строку */
   }
 }
