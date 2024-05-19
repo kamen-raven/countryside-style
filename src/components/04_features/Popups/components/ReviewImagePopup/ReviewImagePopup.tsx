@@ -18,7 +18,7 @@ const ReviewImagePopup: React.FC = () => {
           key={index}
           className = {styles.image}
           src={photo.image}
-          alt={photo.review}
+          alt={photo.uuid}
           width={350}
           height={350} />
         );
