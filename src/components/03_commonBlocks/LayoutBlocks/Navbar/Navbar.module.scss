@@ -287,12 +287,15 @@
 
   &__menuLabel {
     @include special-text(link, $color: $white);
+    text-decoration: none;
     line-height: 100%;
     padding: 13.5px 0;
     margin-left: calc(clamp(3.125rem, 7vw, 7.5rem) / 1.5);
     cursor: pointer;
-    visibility: hidden;
     align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s linear;
 
     @include breakpoint(screen768) {
       margin-left: clamp(1.563rem, 6.58724vw, 3.125rem);
@@ -303,20 +306,23 @@
       padding: 14.5px 0;
     }
 
+    & svg {
+/*         display: flex;
+      width: min-content;
+      object-fit: contain; */
+      height: 18px;
+      padding-right: 10px;
+
+      @include breakpoint(screen480) {
+        height: 16px;
+      }
+
+
+    }
     &_show {
       visibility: visible;
-
-      & svg {
-        display: flex;
-        width: min-content;
-        object-fit: contain;
-        height: 18px;
-        padding-right: 10px;
-
-        @include breakpoint(screen480) {
-          height: 16px;
-        }
-      }
+      opacity: 1;
+      transition: all .3s linear;
     }
   }
 

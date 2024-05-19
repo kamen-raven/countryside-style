@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
 
 
   // для отображения кнопки заголовка-логотипа
-  const scrollPX = 90;
+  const scrollPX = 100;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -68,14 +68,15 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
   }, []);
 
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // Плавная прокрутка
-    });
-  };
+  /*   const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth' // Плавная прокрутка
+      });
+    };
 
-
+   */
 
   return (
     <nav className={`${styles.navMenu}`}>
@@ -87,15 +88,19 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
                       ${showMobileMenu ? styles.burgerContainer__container_active : ''}`}>
 
 
-        <div onClick={scrollToTop}  className={`${styles.burgerContainer} ${styles.burgerContainer__menuLabel}  ${isVisible ? styles.burgerContainer__menuLabel_show : ''}`}>
-        <LogoIcon />
-        Загородный стиль
-        </div>
+        <Link href={'/'}
+              onClick={() => setShowMobileMenu(false)}
+              className={`${styles.burgerContainer}
+                          ${styles.burgerContainer__menuLabel}
+                          ${isVisible ? styles.burgerContainer__menuLabel_show : ''}`} >
+          <LogoIcon />
+          Загородный стиль
+        </Link>
 
 
 
         <div className={styles.burgerContainer__buttonContainer}
-              onClick={() => setShowMobileMenu(!showMobileMenu)}>
+          onClick={() => setShowMobileMenu(!showMobileMenu)}>
           <BurgerMenuButton className={styles.burgerContainer}
             buttonStatus={showMobileMenu} />
         </div>
