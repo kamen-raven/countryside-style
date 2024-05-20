@@ -7,7 +7,7 @@ const aboutUsPageFacts: advantagesItemInterface[] = [
     _id: 1,
     icon: Icon,
     title:
-      "Более **13 лет** на рынке (год основания 2011 г.)",
+      "Более **13 лет** на рынке (основано в 2011 г.)",
     },
     {
       _id: 2,
@@ -17,12 +17,12 @@ const aboutUsPageFacts: advantagesItemInterface[] = [
   {
     _id: 3,
     icon: Icon,
-    title: "**1000+** положительных отзывов",
+    title: "**100+** положительных отзывов",
   },
   {
     _id: 4,
     icon: Icon,
-    title: "Более **5 000** успешных сделок",
+    title: "Более **3 000** успешных сделок",
   },
   {
     _id: 5,

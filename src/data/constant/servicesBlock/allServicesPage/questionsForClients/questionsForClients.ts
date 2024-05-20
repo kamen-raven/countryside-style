@@ -3,7 +3,7 @@ import { questionsForClientsInterface } from "./questionsForClients.interface";
 const questionsForClients: questionsForClientsInterface[] = [
   {
     _id: 1,
-    question: 'Как продать подороже и\u00A0купить подешевле?'
+    question: 'Как выгодно продать и\u00A0купить недвижимость?'
   },
   {
     _id: 2,

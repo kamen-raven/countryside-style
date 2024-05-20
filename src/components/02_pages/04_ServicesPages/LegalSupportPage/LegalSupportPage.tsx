@@ -16,8 +16,8 @@ const LegalSupportPage: React.FC<LegalSupportPageInterface> = ({
       <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={'LegalSupportPageForm1'} />
       <AdvantagesBlock advantagesList={advantagesListData} title='Услуги'>
         <p className={styles.description}>
-          Наши юристы проверять документы, разработают более безопасную схему проведения сделки,
-          проконсультируют по налогам, проведут переговоры с продавцами и покупателя.
+          Наши юристы проверят документы, разработают более безопасную схему проведения сделки,
+          проконсультируют по налогам, проведут переговоры с продавцами и покупателями.
         </p>
       </AdvantagesBlock>
 {/* TODO: <ServicesStoriesBlock/> УСЛУГИ STORIES ДОДЕЛАТЬ*/}
