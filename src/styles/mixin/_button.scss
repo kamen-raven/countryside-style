@@ -46,6 +46,19 @@
     }
   }
 
+  @if $appearance == coloredReverse {
+    background: $white;
+    border: 1px solid $accent-green;
+    color: $accent-green;
+    transition: all linear .2s;
+
+    &:hover {
+      background: $accent-green;
+      color: $white;
+      transition: all linear .2s;
+    }
+  }
+
   @if $appearance == transparent {
     border: 1px solid $gray;
     background-color: transparent;

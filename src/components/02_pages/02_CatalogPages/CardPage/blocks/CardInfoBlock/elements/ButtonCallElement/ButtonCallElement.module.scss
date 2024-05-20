@@ -1,0 +1,93 @@
+@import '~global_styles';
+
+.container {
+  display: none;
+  @include mainContainer();
+
+  @include breakpoint(screen1024) {
+
+
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &_open {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+
+
+.buttonCall {
+  @include common-button(coloredReverse);
+  margin-bottom: 20px;
+
+  transition: all .2s linear;
+
+
+  &:hover {
+    opacity: 1;
+    transition: all .2s linear;
+  }
+
+
+
+}
+
+
+.sellerContainer {
+  width: 100%;
+  background-color: $white;
+  position: relative;
+}
+
+.sellerContainer>div {
+  border-top: 1px solid $gray;
+
+  padding: 20px $padding-side;
+
+
+  @include breakpoint(screen1280) {
+    padding: 20px calc($padding-side / 1.5);
+  }
+
+  @include breakpoint(screen768) {
+    padding: 20px $padding-side-tab;
+  }
+}
+
+
+.toggleIcon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform .3s linear;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+
+  & svg {
+    width: 28px;
+    height: 16px;
+  }
+
+
+  &:hover {
+    transform: translateY(5px) translateX(-50%);
+    transition: transform .3s linear;
+  }
+
+  @include breakpoint(screen576) {
+    left: auto;
+    right: calc($padding-side-tab - $padding-side-tab - $padding-side-tab);
+  }
+}

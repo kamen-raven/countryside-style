@@ -3,9 +3,9 @@ import styles from './CardInfoBlock.module.scss';
 import { CardInfoBlockInterface } from './CardInfoBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 
-import { InfoContainer, PhotosComponent, PriceComponent, TitleComponent } from './elements/index.ts';
+import { ButtonCallElement, InfoContainer, PhotosComponent, PriceComponent, TitleComponent } from './elements/index.ts';
 
-const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage }) => {
+const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage, agentData }) => {
 
   return (
     <section className={styles.wrapper}>
@@ -19,10 +19,10 @@ const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage 
 
         <InfoContainer data={objectData} typePage={typePage} />
         {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}
-        <PriceComponent data={objectData} typePage={typePage} />
+        <PriceComponent data={objectData} typePage={typePage} agentData={agentData} />
 
+        <ButtonCallElement  agentData={agentData} />
 
-        
       </div>
 
     </section>

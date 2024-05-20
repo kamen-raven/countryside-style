@@ -6,13 +6,13 @@ import Image from 'next/image';
 
 import formatPhoneNumber from '~helpers/formatters/formatPhoneNumber.ts';
 import Link from 'next/link';
-import { getUserByID } from '~api/Users/getUserByID.tsx';
+/* import { getUserByID } from '~api/Users/getUserByID.tsx'; */
 import { ContactLink } from '~entities/index.ts';
 
-const SellerElement: React.FC<SellerElementInterface> = async ({ objectData }) => {
-  const agentData = objectData.display_agents.length > 0 ? await getUserByID(objectData.display_agents[0].employee) : undefined;
+const SellerElement: React.FC<SellerElementInterface> = ({ agentData  }) => {
+/*   const agentData = objectData.display_agents.length > 0 ? await getUserByID(objectData.display_agents[0].employee) : undefined;
 
-
+ */
 
   return (
     <>

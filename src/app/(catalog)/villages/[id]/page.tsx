@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getObjectByID } from "~api/Objects/getObjectByID";
+import { getUserByID } from "~api/Users/getUserByID";
 
 import { getAllVillages } from "~api/Villages/getAllVillages";
 import { getObjectsInVillages } from "~api/Villages/getObjectsInVillages";
@@ -60,6 +61,9 @@ export default async function VillageType({ params }: { params: { id: string, ty
   //console.log(`allObjectsInVillage:${allObjectsInVillage}`);
   //console.log(allObjectsInVillage);
 
+  // получаем агента данного объекта
+  const agentData = currentVillage.display_agents.length > 0 ? await getUserByID(currentVillage.display_agents[0].employee) : undefined;
+
 
 
 
@@ -69,6 +73,6 @@ export default async function VillageType({ params }: { params: { id: string, ty
   return (
     <CardPage
       typePage={'villages'}
-      objectData={currentVillage} commonObjects={allObjectsInVillage} />
+      objectData={currentVillage} commonObjects={allObjectsInVillage} agentData={agentData} />
   );
 }

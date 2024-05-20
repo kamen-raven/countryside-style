@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getObjectByID } from "~api/Objects/getObjectByID";
 import { getObjects } from "~api/Objects/getObjects";
 import { getObjectsIsLike } from "~api/Objects/getObjectsIsLike";
+import { getUserByID } from "~api/Users/getUserByID";
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 /* import { notFound } from "next/navigation"; */
 import { CardPage } from "~pages/index";
@@ -53,11 +54,16 @@ export default async function CardType({ params }: { params: { id: string, type:
   //console.log(`commonObjects:${commonObjects}`);
   //console.log(commonObjects);
 
+  // получаем агента данного объекта
+  const agentData = currentObject.display_agents.length > 0 ? await getUserByID(currentObject.display_agents[0].employee) : undefined;
+
 
   return (
     <CardPage
       typePage={params.type}
       objectData={currentObject}
-      commonObjects={commonObjects} />
+      commonObjects={commonObjects}
+      agentData={agentData}
+      />
   );
 }

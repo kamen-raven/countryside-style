@@ -4,14 +4,14 @@ import { PriceComponentInterface } from './PriceComponent.interface.ts';
 import { PriceElement, SellerElement } from './modules/index.ts';
 
 
-const  PriceComponent: React.FC<PriceComponentInterface> = ({ data, typePage }) => {
+const  PriceComponent: React.FC<PriceComponentInterface> = ({ data, typePage, agentData }) => {
 
   return (
     <div className={styles.priceWrapper}>
       <div className={styles.priceContainer}>
         <>
         <PriceElement objectData={data} typePage={typePage}  />
-        <SellerElement objectData={data}  />
+        <SellerElement agentData={agentData} />
         </>
       </div>
     </div>
