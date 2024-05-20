@@ -1,15 +1,17 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 import styles from './PhotosComponent.module.scss';
 import { PhotosComponentInterface } from './PhotosComponent.interface.ts';
 
-import { ArrowsButton, LabelNew, LabelReserved } from '~shared/index.ts';
+import { ArrowsButton, ObjectImagePopupButton, LabelNew, LabelReserved } from '~shared/index.ts';
 import { PlanTooltipElement, YoutubeTooltipElement } from './elements/index.ts';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
+import useObjectPhotoStore from '~store/objectsCardStore/useObjectPhotoStore.ts';
+
 
 const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   function isRealEstateObject(obj: RealEstateObjectInterface | VillageObjectInterface): obj is RealEstateObjectInterface {
@@ -19,12 +21,22 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     );
   }
 
-  // todo zustand
 
+  // весь массив фотографий и планов объекта
   const picturesArray = formatPhotosArray(data);
-
-  const [activePhoto, setActivePhoto] = useState(0);
+  // объявляем реф для прокрутки миниатюр фото
   const smallPhotosContainerRef = useRef<HTMLDivElement>(null);
+
+  // Получение текущего фото и действий из хранилища ZUSTAND
+  const { activePhoto,
+    actions: {
+      setActivePhoto,
+      nextPhoto,
+      prevPhoto,
+      setPlanPhoto
+    }
+  } = useObjectPhotoStore();
+
 
   // клик на превью картинки
   const handleThumbnailClick = (index: number) => {
@@ -34,22 +46,20 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
   // кнопка "Вперед"
   const handleNext = () => {
-    const nextIndex = activePhoto === picturesArray.length - 1 ? 0 : activePhoto + 1;
-    setActivePhoto(nextIndex);
-    scrollToThumbnail(nextIndex);
+    nextPhoto(picturesArray.length);
+    scrollToThumbnail(activePhoto === picturesArray.length - 1 ? 0 : activePhoto + 1);
   };
 
   // кнопка "Назад"
   const handlePrev = () => {
-    const prevIndex = activePhoto === 0 ? picturesArray.length - 1 : activePhoto - 1;
-    setActivePhoto(prevIndex);
-    scrollToThumbnail(prevIndex);
+    prevPhoto(picturesArray.length);
+    scrollToThumbnail(activePhoto === 0 ? picturesArray.length - 1 : activePhoto - 1);
   };
 
   // Кнопка "Планировка"
   const handlePlanButton = () => {
     const planPicIndex = data.photo_images.length;
-    setActivePhoto(planPicIndex);
+    setPlanPhoto(planPicIndex);
     scrollToThumbnail(planPicIndex);
   };
 
@@ -61,6 +71,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
       thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   };
+
 
 
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -88,14 +99,19 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
       {picturesArray.length &&
         <div className={styles.mainPhotoContainer}>
-          <Image
-            className={styles.image}
-            src={picturesArray[activePhoto].image}
-            alt={data.name}
-            width={878}
-            height={640}
-            priority={true}
-          />
+
+          <ObjectImagePopupButton className={styles.image__popupButton}
+                                  picData={picturesArray}>
+            <Image
+              className={styles.image}
+              src={picturesArray[activePhoto].image}
+              alt={data.name}
+              width={878}
+              height={640}
+              priority={true}
+            /*               onClick={() => console.log('click photo!!')} */
+            />
+          </ObjectImagePopupButton>
 
 
           <>

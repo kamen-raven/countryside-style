@@ -3,7 +3,7 @@ import { MainPopupState, SupportPopupState } from '~store/popupsStore/useToggleP
 
 export interface PopupTemplateComponentInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   isOpened: boolean;
-  type: 'contactForm' | 'reviewForm' | 'successMessage' | 'errorMessage' | 'reviewFull' | 'reviewImage' | "reviewImage" | "videoPopup" | "successMessage" |  null;
+  type: 'contactForm' | 'reviewForm' | 'successMessage' | 'errorMessage' | 'reviewFull' | 'reviewImage' | "reviewImage" | "videoPopup" | "successMessage" | "objectImage" | null;
   actions: MainPopupState["actions"] | SupportPopupState["actions"];
   children?: ReactNode;
 }

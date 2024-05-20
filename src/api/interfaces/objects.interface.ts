@@ -1,3 +1,5 @@
+import { ImageInterface } from "./objectImage.interface";
+
 export interface RealEstateObjectInterface {
   uuid: string;
   created_at: string;
@@ -66,12 +68,12 @@ interface AgentInterface {
   employee: string;
 }
 
-interface ImageInterface {
+/* interface ImageInterface {
   uuid: string;
   image: string;
   order: number;
   objectModel: string;
-}
+} */
 
 interface DisplayPagesInterface {
   display_pages: DisplayPageInterface

@@ -1,3 +1,5 @@
+import { ImageInterface } from "./objectImage.interface";
+
 export interface VillageObjectInterface {
   uuid: string;
   id: number;
@@ -32,13 +34,13 @@ interface EngineeringServiceInterface {
   engineering_service: string;
 }
 
-interface ImageInterface {
+/* interface ImageInterface {
   uuid: string;
   image: string;
   order: number;
   objectModel: string;
 }
-
+ */
 interface DisplayAgentInterface {
   employee: string;
 }

@@ -41,6 +41,15 @@
     max-height: clamp(240px, 64.75vw, 480px);
   }
 
+
+  &__popupButton {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 

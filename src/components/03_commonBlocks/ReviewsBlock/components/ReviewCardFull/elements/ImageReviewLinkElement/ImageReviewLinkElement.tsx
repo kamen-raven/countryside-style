@@ -15,7 +15,7 @@ const ImageReviewLinkElement: React.FC<ImageReviewLinkElementInterface> = ({ dat
         >
           <Image className={styles.image}
             src={photo.image}
-            alt={'Оригинал отзыва'}
+            alt={'Отзыв'}
             width={320}
             height={320} />
         </ReviewPopupButton>

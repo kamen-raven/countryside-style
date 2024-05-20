@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 export interface MainPopupState {
   isOpen: boolean;
-  type: "contactForm" | "reviewForm" | "reviewFull" | "reviewImage" | "videoPopup";
+  type: "contactForm" | "reviewForm" | "reviewFull" | "reviewImage" | "videoPopup" | "objectImage";
   actions: {
     openPopup: (popupType: MainPopupState["type"]) => void;
     closePopup: () => void;
