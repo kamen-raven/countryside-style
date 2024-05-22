@@ -8,12 +8,12 @@ import Link from 'next/link';
 const VillagesProjectCard: React.FC<VillagesProjectCardInterface> = ({ project, index }) => {
   const styleItems = {
     oddStyles: {
-      color: styles.green,
-      template: '',
-    },
-    evenStyles: {
       color: styles.gray,
       template: styles.innerBlock_textFirst
+    },
+    evenStyles: {
+      color: styles.green,
+      template: '',
     }
   };
 
@@ -39,13 +39,15 @@ const VillagesProjectCard: React.FC<VillagesProjectCardInterface> = ({ project, 
           <p className={styles.description}>
             {project.description}
           </p>
-          <Link className={styles.buttonLink}
-                  href={project.link.url}
-                  target='_blank'
-                  rel="noopener noreferrer"
-                  >
-            {project.link.buttonText}
-          </Link>
+          {project.link.url &&
+            <Link className={styles.buttonLink}
+              href={project.link.url}
+              target='_blank'
+              rel="noopener noreferrer"
+            >
+              {project.link.buttonText}
+            </Link>
+          }
           {/*           {(countUsers == 'employee' || countUsers == 'all') ?
             <ContactInfoElement employeeItem={employeeItem}>
               {quoteElement}
