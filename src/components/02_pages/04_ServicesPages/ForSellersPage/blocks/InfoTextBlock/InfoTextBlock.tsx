@@ -3,7 +3,7 @@ import styles from './InfoTextBlock.module.scss';
 
 import Image from 'next/image';
 
-import AvatarImage from '~img/Team/Person2.jpg';
+import AvatarImage from '~img/Team/Petr.jpg';
 
 const InfoTextBlock: React.FC = () => {
   return (

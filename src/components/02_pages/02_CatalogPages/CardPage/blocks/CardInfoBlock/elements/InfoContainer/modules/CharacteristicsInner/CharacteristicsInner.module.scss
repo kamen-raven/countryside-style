@@ -72,6 +72,10 @@
     $font-weight: $regular,
     $font-family: $ff-openSans);
 
+    @include breakpoint(screen480) {
+      text-align: start;
+    }
+
   &__spanAccent {
     font-weight: $bold;
   }

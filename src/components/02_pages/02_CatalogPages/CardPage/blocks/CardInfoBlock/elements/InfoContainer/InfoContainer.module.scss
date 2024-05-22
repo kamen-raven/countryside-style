@@ -6,7 +6,7 @@
   height: auto;
 
   display: grid;
-/*   grid-template-areas:
+  /*   grid-template-areas:
     "photos"
     "icons"
     "common-info"
@@ -19,12 +19,13 @@
   @include breakpoint(screen1024) {
     gap: 40px;
   }
+
   @include breakpoint(screen640) {
     gap: 30px;
   }
 }
 
-.padding-border {
+.padding-border-bottom {
   padding-bottom: 50px;
   border-bottom: 1px solid $gray;
 
@@ -36,15 +37,34 @@
   @include breakpoint(screen1024) {
     padding-bottom: 40px;
   }
+
   @include breakpoint(screen640) {
     padding-bottom: 30px;
   }
 }
 
+.padding-border-top {
+  padding-top: 50px;
+  border-top: 1px solid $gray;
+
+  /*   &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  } */
+
+  @include breakpoint(screen1024) {
+    padding-top: 40px;
+  }
+
+  @include breakpoint(screen640) {
+    padding-top: 30px;
+  }
+}
+
 
 .iconsContainer {
- // grid-area: icons;
-  @extend .padding-border;
+  // grid-area: icons;
+  @extend .padding-border-bottom;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -58,7 +78,7 @@
 
 .commonInfoContainer {
   //grid-area: common-info;
-  @extend .padding-border;
+  @extend .padding-border-bottom;
 
   display: flex;
   flex-direction: column;
@@ -67,27 +87,41 @@
   @include breakpoint(screen1024) {
     gap: 24px;
   }
+
   @include breakpoint(screen768) {
     gap: 20px;
   }
+
   @include breakpoint(screen576) {
     gap: 12px;
   }
 }
 
 .characteristicsContainer {
- // grid-area: char;
- @extend .padding-border;
+  // grid-area: char;
+  @extend .padding-border-bottom;
 }
 
-.mapContainer {
-  @extend .padding-border;
-
+.mapContainer + .webPageLinkContainer {
+  @extend .padding-border-top;
 }
-
-
 
 .webPageLink {
   @include common-link;
   @include common-button(light);
+}
+
+.sellerContainer {
+  display: none;
+  @include breakpoint(screen1024) {
+    display: block;
+
+
+    & > div {
+      padding: 0;
+      border-bottom: none;
+    }
+  }
+
+  @extend .padding-border-top;
 }

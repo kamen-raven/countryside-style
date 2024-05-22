@@ -5,10 +5,11 @@ import { CommonInfoInner, IconsInner, MapInner, CharacteristicsInner } from './m
 import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 import Link from 'next/link';
+import { SellerElement } from '../PriceComponent/modules/index.ts';
 /* import { PriceElement, SellerElement } from '../PriceComponent/modules/index.ts'; */
 
 
-const InfoContainer: React.FC<InfoContainerInterface> = ({ data, typePage }) => {
+const InfoContainer: React.FC<InfoContainerInterface> = ({ data, typePage, agentData }) => {
 
   function isRealEstateObject(obj: RealEstateObjectInterface | VillageObjectInterface): obj is RealEstateObjectInterface {
     return (
@@ -80,12 +81,19 @@ const InfoContainer: React.FC<InfoContainerInterface> = ({ data, typePage }) => 
 
       {isVillageEstateObject(data) ?
         data.web_page_link &&
+        <div className={styles.webPageLinkContainer}>
           <Link className={styles.webPageLink} href={data.web_page_link} target='_blank' rel="noopener noreferrer">
             Перейти на сайт поселка
           </Link>
+        </div>
         : null
       }
 
+      {agentData &&
+        <div className={styles.sellerContainer}>
+          <SellerElement agentData={agentData} />
+        </div>
+      }
     </div>
   );
 };

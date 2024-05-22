@@ -22,7 +22,7 @@ const aboutUsPageFacts: advantagesItemInterface[] = [
   {
     _id: 4,
     icon: Icon,
-    title: "Более **3 000** успешных сделок",
+    title: "Более **2 000** успешных сделок",
   },
   {
     _id: 5,

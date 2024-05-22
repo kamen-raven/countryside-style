@@ -4,7 +4,7 @@ const statisticalIndicatorsData: statisticalIndicatorsInterface[] = [
   {
     _id: 1,
     title: 'Продали объектов',
-    statIndicator: '3 000',
+    statIndicator: '2 000',
     statLabel: 'объектов',
     description: ''
   },
