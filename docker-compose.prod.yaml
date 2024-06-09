@@ -20,10 +20,8 @@ services:
     volumes:
       - nginx_data:/data
       - nginx_letsencrypt:/etc/letsencrypt
-    depends_on:
-      - backend
     networks:
-      - dashboard_networks
+      - front_end
 
 volumes:
   nginx_data:
