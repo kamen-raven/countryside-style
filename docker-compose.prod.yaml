@@ -5,6 +5,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     expose:
       - "3000"
     networks:
@@ -17,6 +23,8 @@ services:
       - '80:80'
       - '81:81'
       - '443:443'
+    depends_on:
+      - frontend
     volumes:
       - nginx_data:/data
       - nginx_letsencrypt:/etc/letsencrypt
