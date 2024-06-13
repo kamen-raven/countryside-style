@@ -1,7 +1,9 @@
+
+import teamMembersOrder from "~data/constant/teamInfo/teamMembersOrder";
 import { ApiUsersInterface, UsersInterface } from "~interfaces/users.interface";
 
 // Указываете порядок, в котором вы хотите упорядочить объекты
-const desiredOrder = [
+/* const desiredOrder = [
   "Павел Соколов",
   "Пётр Манько",
   "Дарья Власова",
@@ -11,7 +13,7 @@ const desiredOrder = [
   "Анастасия Соколова",
   "Анастасия Каменева",
 ];
-
+ */
 // Функция сравнения для метода sort
 function sortUsersList(array: ApiUsersInterface) {
   //! тут убираем тестового пользователя
@@ -24,8 +26,8 @@ function sortUsersList(array: ApiUsersInterface) {
   function compareByDesiredOrder(a: UsersInterface, b: UsersInterface) {
     const nameA = `${a.first_name} ${a.last_name}`;
     const nameB = `${b.first_name} ${b.last_name}`;
-    const indexA = desiredOrder.indexOf(nameA);
-    const indexB = desiredOrder.indexOf(nameB);
+    const indexA = teamMembersOrder.indexOf(nameA);
+    const indexB = teamMembersOrder.indexOf(nameB);
     return indexA - indexB;
   }
 

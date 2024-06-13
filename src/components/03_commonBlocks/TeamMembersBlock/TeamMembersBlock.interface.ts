@@ -4,5 +4,6 @@ import { UsersInterface } from '~interfaces/users.interface';
 export interface TeamMembersBlockInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   employeesData: UsersInterface[];//teamMembersDataInterface[];
   countUsers: 'owner' | 'employee' | 'all' | 'single';
+  page: 'main'| 'about' | 'services' | 'reviews' | 'noSpecialText';
   children?: ReactNode;
 }

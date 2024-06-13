@@ -23,7 +23,7 @@ const ForCottageVillagesPage: React.FC<ForCottageVillagesPageInterface> = ({
             <DescriptionByOffers/>
           </ServicesOffers>
           <VillagesProjectsBlock projectsData={projectsData}/>
-          <TeamMembersBlock employeesData={employeesData} countUsers={'single'} />
+          <TeamMembersBlock employeesData={employeesData} countUsers={'single'} page={'services'} />
           <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={'ForCottageVillagesPageForm2'}/>
         </main>
     );

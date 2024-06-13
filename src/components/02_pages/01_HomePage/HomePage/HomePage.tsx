@@ -36,7 +36,7 @@ const HomePage: React.FC<HomePageInterface> = ({
       <OurServicesBlock servicesItems={ourServicesItems} />
       <PressBlock pressItems={pressInfoItems} />
       <BlogBlock path={'home'} blogPostsData={blogPostsData} />
-      <TeamMembersBlock employeesData={employeesData} countUsers={'owner'} />
+      <TeamMembersBlock employeesData={employeesData} countUsers={'owner'} page={'main'} />
       <ReviewsBlock reviewsDataItem={reviewsData} />
       <ContactsMainBlock generalContactsData={generalContacts} />
     </main>
