@@ -8,6 +8,8 @@
   align-items: flex-end;
   padding: 0 17px 12px;
   background-color: $white;
+  outline: none;
+  transition: border .2s, outline .2s;
 
   cursor: pointer;
   @include common-link;
@@ -23,9 +25,16 @@
     @include breakpoint(screen640) {
       max-width: 60px;
     }
+
     @include breakpoint(screen480) {
       max-width: 48px;
     }
+  }
+
+  &:hover {
+    border: 1px solid $accent-green;
+    outline: 1px solid $accent-green;
+    transition: border .2s, outline .2s;
   }
 
   @include breakpoint(screen960) {
@@ -56,9 +65,11 @@
   @include breakpoint(screen960) {
     padding-bottom: 4px;
   }
+
   @include breakpoint(screen640) {
     padding-bottom: 2px;
   }
+
   @include breakpoint(screen480) {
     padding-bottom: 1px;
   }
@@ -70,6 +81,7 @@
     $font-weight: $regular);
   padding: 0 7px 0 17px;
   line-height: 1;
+
   @include breakpoint(screen960) {
     padding: 0 7px 0 10px;
   }
@@ -77,6 +89,7 @@
   @include breakpoint(screen640) {
     font-size: 14px;
   }
+
   @include breakpoint(screen480) {
     padding: 0 5px;
     font-size: 12px;
@@ -100,6 +113,7 @@
       height: 14px;
     }
   }
+
   @include breakpoint(screen480) {
 
     & svg {

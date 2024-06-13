@@ -2,7 +2,7 @@
 
 .agreement {
   display: inline;
-
+  text-decoration-skip-ink: none;
   @include common-paragraph(pSm,
     $font-weight: $regular,
     $color: $white);

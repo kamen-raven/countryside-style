@@ -5,7 +5,7 @@ import { LogoInterface } from './Logo.interface';
 import styles from './Logo.module.scss';
 
 //import LogoIcon from '~svg/logo/logo.svg';
-import LogoIcon from '~svg/logo/logoTemporary.svg';
+import LogoIcon from '~svg/logo/logo.svg';
 
 const Logo: React.FC<LogoInterface> = ({ color }) => {
 

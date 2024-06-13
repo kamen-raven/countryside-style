@@ -12,7 +12,7 @@ import { useWindowWidthSize } from '~hooks/useWindowWidthSize';
 
 import { PhoneNumber } from '~entities/index';
 import { AddressComponent } from '../Footer/components';
-import LogoIcon from '~svg/logo/logoTemporary.svg';
+import LogoIcon from '~svg/logo/logo.svg';
 
 
 
@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
 
 
   // для отображения кнопки заголовка-логотипа
-  const scrollPX = 100;
+  const scrollPX = 92;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -92,7 +92,8 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
               onClick={() => setShowMobileMenu(false)}
               className={`${styles.burgerContainer}
                           ${styles.burgerContainer__menuLabel}
-                          ${isVisible ? styles.burgerContainer__menuLabel_show : ''}`} >
+                          ${isVisible ? styles.burgerContainer__menuLabel_show : ''}
+                          ${(showMobileMenu && isVisible) ? styles.burgerContainer__menuLabel_opened : ''}`} >
           <LogoIcon />
           Загородный стиль
         </Link>
