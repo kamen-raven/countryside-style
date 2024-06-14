@@ -11,7 +11,7 @@ import useBlogArticleTitleStore from '~store/blogStore/useBlogArticleTitleStore.
 const BlogPathElement: React.FC = () => {
   const pathname = usePathname().split('/');
 
-  const useBlogArticleTitle = useBlogArticleTitleStore((state) => state.blogArticleTitle);
+  const blogArticleTitle = useBlogArticleTitleStore((state) => state.blogArticleTitle);
 
 
 
@@ -21,7 +21,7 @@ const BlogPathElement: React.FC = () => {
         null
         :
         <div className={styles.pathContainer}>
-          <PathLinkComponent dataInfo={useBlogArticleTitle} />
+          <PathLinkComponent dataInfo={blogArticleTitle} />
         </div>
       }
     </>

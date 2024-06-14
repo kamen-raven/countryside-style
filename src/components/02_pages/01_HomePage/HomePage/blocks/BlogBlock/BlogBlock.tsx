@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 
 
 import { BlogBlockProps } from './BlogBlock.props';
@@ -8,10 +10,34 @@ import BackgroundPattern from '~svg/background/backgroundBlog.svg';
 
 import { BackgroundSVGPattern } from '~shared/index';
 import { CardBlogComponent } from '~entities/index';
+import getPostsForMainPage from '~helpers/blog/getPostsForMainPage';
 
 
-const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData}) => {
+const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData }) => {
+  // фильтруем посты для главной страницы
+  const blogPosts = getPostsForMainPage(blogPostsData.results);
 
+
+  const [currentPost, setCurrentPost] = useState(0);
+
+
+  const handleNextPost = () => { /* ArrowNext */
+        if (currentPost < blogPosts.length - 1) {
+          setCurrentPost(currentPost + 1);
+        } else {
+          setCurrentPost(0);
+        }
+    console.log('click Next!');
+  };
+
+  const handlePrevPost = () => { /* ArrowPreviously */
+        if (currentPost > 0) {
+          setCurrentPost(currentPost - 1);
+        } else {
+          setCurrentPost(blogPosts.length - 1);
+        }
+    console.log('click Prev!');
+  };
 
 
 
@@ -24,11 +50,14 @@ const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData}) => {
         <h2 className={styles.title}>
           Блог
         </h2>
-        {blogPostsData.results.map((item) => {
+
+        <CardBlogComponent path={path} blogCardItem={blogPosts[currentPost]} nextBtn={handleNextPost} prevBtn={handlePrevPost} />
+
+        {/*         {blogPosts.map((item) => {
           return (
-            <CardBlogComponent key={item.uuid} path={path} blogCardItem={item}/>
+            <CardBlogComponent key={item.uuid} path={path} blogCardItem={item} nextBtn={handleNextPost} prevBtn={handlePrevPost}/>
           );
-        })}
+        })} */}
 
       </div>
     </section>

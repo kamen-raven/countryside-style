@@ -7,8 +7,9 @@ import { ArrowsButton, OpenPopupButton } from '~shared/index';
 
 //import CommentIcon from '~svg/blog/commentsIcon.svg';
 import Link from 'next/link';
+import filterMainPageTags from '~helpers/blog/filterMainPageTags';
 
-const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardItem }) => {
+const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardItem, nextBtn, prevBtn }) => {
 
   const setPage = {
     home: {
@@ -34,6 +35,8 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
     }
   };
 
+  const tagList = filterMainPageTags(blogCardItem.tags);
+
 
 
   return (
@@ -53,12 +56,14 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
         {path === 'home' ?
           <>
             <ArrowsButton
-            type='inImg'
-            position={'left'}
-            className={`${styles.arrow} ${styles.arrow_left}`}
+              type='inImg'
+              onClick={prevBtn}
+              position={'left'}
+              className={`${styles.arrow} ${styles.arrow_left}`}
             />
             <ArrowsButton
-            type='inImg'
+              type='inImg'
+              onClick={nextBtn}
               position={'right'}
               className={`${styles.arrow} ${styles.arrow_right}`}
             />
@@ -83,7 +88,7 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
           </p>
         </div> */}
           <div className={`${styles.tagsContainer} ${setPage[path].tagsContainer}`}>
-            {blogCardItem.tags?.map((tag) => {
+            {tagList && tagList.map((tag) => {
               return (
                 <div key={tag.uuid} className={styles.tag}>
                   #{tag.tag.name}
@@ -109,8 +114,16 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       {/* контейнер со стрелками для ГЛАВНОЙ СТРАНИЦЫ */}
       {path === 'home' ?
         <div className={`${styles.blogArrows}`}>
-          <ArrowsButton className={`${styles.arrow}`} position={'left'} />
-          <ArrowsButton className={`${styles.arrow}`} position={'right'} />
+          <ArrowsButton
+            className={`${styles.arrow}`}
+            position={'left'}
+            onClick={prevBtn}
+          />
+          <ArrowsButton
+            className={`${styles.arrow}`}
+            position={'right'}
+            onClick={nextBtn}
+          />
         </div>
         : null
       }

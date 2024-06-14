@@ -1,6 +1,7 @@
 import { BlogInterface } from "~interfaces/blog.interface";
 
-function gettingUniqueTagName (dataArray: BlogInterface[]) {
+// функция для формирования списка уникальных тэгов на странице БЛОГА в поиске
+function getUniqueTagName (dataArray: BlogInterface[]) {
 // Создаем пустой массив для хранения уникальных значений
 const uniqueTagNames: string[] = [];
 
@@ -10,7 +11,8 @@ dataArray.forEach((post) => {
   post.tags && post.tags.forEach(item => {
     // Получаем имя тега и проверяем, есть ли оно уже в списке уникальных имен
     const tagName = item.tag.name;
-    if (!uniqueTagNames.includes(tagName)) {
+    // убираем технический тэг главной страницы "@mainPage"
+    if (tagName !== "@mainPage" && !uniqueTagNames.includes(tagName)) {
       // Если имени тега нет в списке, добавляем его
       uniqueTagNames.push(tagName);
     }
@@ -20,4 +22,4 @@ dataArray.forEach((post) => {
 return uniqueTagNames;
 }
 
-export default gettingUniqueTagName;
+export default getUniqueTagName;

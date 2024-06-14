@@ -1,14 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SetBlogArticleTitleInterface } from './SetBlogArticleTitle.interface.ts';
 import useBlogArticleTitleStore from '~store/blogStore/useBlogArticleTitleStore.ts';
 
 
 const SetBlogArticleTitle: React.FC<SetBlogArticleTitleInterface> = ({ title }) => {
-  const getBlogArticleTitle = useBlogArticleTitleStore((state) => state.currentTitle.setBlogArticleTitle);
+  const setBlogArticleTitle = useBlogArticleTitleStore((state) => state.currentTitle.setBlogArticleTitle);
 
-  getBlogArticleTitle(title);
+  useEffect(() => {
+    setBlogArticleTitle(title);
+  }, [title, setBlogArticleTitle]);
 
   return null;
 };
