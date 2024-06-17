@@ -76,6 +76,18 @@
   justify-content: center;
   align-items: center;
 
+  &__link {
+    display: block;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+
+    &_noHref {
+      cursor: default;
+      
+    }
+  }
+
   &__image {
     object-fit: cover;
     width: 100%;
@@ -221,8 +233,8 @@
 
 .description {
   @include common-paragraph(p,
-  $font-family: $ff-openSans,
-  $font-weight: $regular);
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
 
 
   line-height: 130%;
@@ -252,7 +264,7 @@
     }
   }
 
-/*   &_mobile {
+  /*   &_mobile {
     display: none;
     visibility: hidden;
   } */

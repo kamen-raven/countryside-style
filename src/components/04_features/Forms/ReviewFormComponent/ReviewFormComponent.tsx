@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ReviewFormComponent.module.scss';
 import { ReviewFormComponentInterface } from './ReviewFormComponent.interface';
 
-import AddButtonIcon from '~svg/button/add.svg';
+/* import AddButtonIcon from '~svg/button/add.svg'; */
 import { PersonalAgreementElement } from '../elements';
 
 const ReviewFormComponent: React.FC<ReviewFormComponentInterface> = ({ className }) => {
@@ -44,13 +44,13 @@ const ReviewFormComponent: React.FC<ReviewFormComponentInterface> = ({ className
         </label>
       </fieldset>
       <div className={styles.buttonContainer}>
-        <button className={styles.buttonImg}
+{/*         <button className={styles.buttonImg}
           type={"submit"}>
           Прикрепить фото
           <span className={styles.icon}>
             <AddButtonIcon />
           </span>
-        </button>
+        </button> */}
         <button className={styles.buttonSubmit}
           type={"submit"}>
           Отправить отзыв

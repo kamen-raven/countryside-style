@@ -57,7 +57,7 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
 
 
   // берем первое фото из списка фотографий по order для отображения на главной странице
-  const getFirstPhotoImage = (photos: ImageInterface[])  => {
+  const getFirstPhotoImage = (photos: ImageInterface[]) => {
     // Найти первый объект с order === 1
     const firstPhoto = photos.find(photo => photo.order === 1);
     // Если найден, вернуть его image
@@ -140,14 +140,18 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
       </div>
 
       <div className={styles.photoGeneral}>
-        <Image
-          className={styles.photoGeneral__image}
-          src={getCurrentPhoto()}
-          alt={category[linkToCatalog]}
-          width={680}
-          height={490}
-          onClick={containerTemplate === 'picFirst' ? handlePrevPhoto : handleNextPhoto}
-        />
+        <Link className={`${styles.photoGeneral__link} ${objectItemsList.length > 0 ? '' : styles.photoGeneral__link_noHref}`}
+
+              href={objectItemsList.length > 0 ? `/${linkToCatalog}/${objectItemsList[currentPhotoIndex].id}` : ''}>
+          <Image
+            className={styles.photoGeneral__image}
+            src={getCurrentPhoto()}
+            alt={category[linkToCatalog]}
+            width={680}
+            height={490}
+            /* onClick={containerTemplate === 'picFirst' ? handlePrevPhoto : handleNextPhoto} */
+          />
+        </Link>
 
         {objectItemsList.length > 1 &&
           <>

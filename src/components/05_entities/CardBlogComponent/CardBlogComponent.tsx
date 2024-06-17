@@ -47,7 +47,7 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
         <Image
           className={styles.image}
           src={blogCardItem.photos[0].image}
-          alt={''}
+          alt={blogCardItem.name}
           width={850}
           height={480}
           sizes={'(max-width: 1920px) 100%'}

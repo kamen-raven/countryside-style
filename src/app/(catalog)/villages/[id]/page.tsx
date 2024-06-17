@@ -6,6 +6,7 @@ import { getUserByID } from "~api/Users/getUserByID";
 import { getAllVillages } from "~api/Villages/getAllVillages";
 import { getObjectsInVillages } from "~api/Villages/getObjectsInVillages";
 import { getVillageByID } from "~api/Villages/getVillageByID";
+import filteredVillagesByVisible from "~helpers/objects/filteredVillagesByVisible";
 
 import { VillageObjectInterface } from "~interfaces/villages.interface";
 /* import { notFound } from "next/navigation"; */
@@ -33,8 +34,11 @@ export async function generateStaticParams() {
 
 export default async function VillageType({ params }: { params: { id: string, type: 'villages' } }) {
   const villages = await getAllVillages(); // получаем все объекты
+  const visibleVillages = filteredVillagesByVisible(villages); // отображаем только те поселки, которые необходимо по условиям их видимости на сайте
+
+
   // сравниваем и находим нужный объект из массива объектов по ID
-  const idCurrentObj = villages.find(obj => obj.id.toString() === params.id);
+  const idCurrentObj = visibleVillages.find(obj => obj.id.toString() === params.id);
 
   // если такого нет, то кидаем 404
   if (!idCurrentObj) {
