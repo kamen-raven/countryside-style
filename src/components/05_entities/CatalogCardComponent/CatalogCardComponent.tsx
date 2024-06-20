@@ -10,7 +10,7 @@ import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 import generateObjectHrefLink from '~helpers/objects/generateObjectHrefLink.ts';
 
 
-const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, typePage }) => {
+const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item/* , typePage */ }) => {
   const getType = generateObjectHrefLink(item);
   const hrefLink = getType !== undefined ? `/${getType}/${item.id}` : '/'; // генерируем ссылку на карточку объекта
   const picturesArray = formatPhotosArray(item);
@@ -42,6 +42,8 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
           </Link>
           <div className={styles.statusContainer}>
 
+
+          {/* дачи дома коттеджи */}
             {item.area_house &&
               <>
                 <p className={styles.status}>
@@ -57,7 +59,8 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
               </>
             }
 
-            {(typePage === 'flats' && item.area_flat) &&
+            {/* квартиры */}
+            {(item.category === 'Квартиры' && item.area_flat) /* (typePage === 'flats' && item.area_flat) */ &&
               <>
                 <p className={styles.status}>
                   S&nbsp;=&nbsp;
@@ -74,7 +77,19 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = ({ item, t
               </>
             }
 
-            {(item.area_plot && typePage !== 'lands') &&
+            {(item.area_plot && item.category !== 'Земельные участки' /* typePage !== 'lands' */) &&
+              <>
+                <p className={styles.status}>
+                  Участок&nbsp;
+                  <span className={styles.status_bold}>
+                    {item.area_plot} {item.land_area_measurement}
+                  </span>
+                </p>
+              </>
+            }
+
+            {/* земельные участки */}
+            {(item.area_plot && item.category === 'Земельные участки'/* && typePage === 'lands' */) &&
               <>
                 <p className={styles.status}>
                   Участок&nbsp;

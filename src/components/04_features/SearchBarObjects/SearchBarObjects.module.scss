@@ -126,6 +126,13 @@
 .button {
   flex-basis: clamp(130px, 20vw, 180px);
   @include common-button(colored);
+  cursor: default;
+
+  &:disabled {
+    background-color: $white;
+    color: $gray;
+    border: $gray 1px solid;
+  }
 
   @include breakpoint(screen768) {
     height: 40px;
@@ -135,6 +142,10 @@
     min-width: 0;
     width: 130px;
     padding: 0;
+  }
+
+  &_active {
+    cursor: pointer;
   }
 }
 
@@ -149,11 +160,24 @@
     $font-weight: $regular,
     $font-family: $ff-openSans,
     $line-height: 120%);
-  text-decoration-line: underline;
 
-  padding: 0;
-  background-color: transparent;
+    padding: 0;
+    background-color: transparent;
   border: none;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+
+  &:disabled {
+    visibility: hidden;
+  }
+
+  &:hover {
+    text-decoration-line: underline;
+    transform: scale(1.07);
+    transition: transform 0.2s ease;
+  }
+
 
   & svg {
     width: 15px;

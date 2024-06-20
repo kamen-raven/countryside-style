@@ -1,0 +1,63 @@
+@import '~global_styles';
+
+.wrapper {
+  overflow: hidden;
+  grid-area: search-layout;
+  z-index: 0;
+  position: relative;
+  border-bottom: 1px solid $gray;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  z-index: 1;
+}
+
+.cardsLayout {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px clamp(35px, 2.5vw, 40px);
+
+
+  @include breakpoint(screen1440) {
+    gap: 40px 30px;
+  }
+
+  @include breakpoint(screen1280) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px;
+  }
+
+  @include breakpoint(screen1024) {
+    gap: 40px 28px;
+  }
+
+  @include breakpoint(screen768) {
+    grid-template-columns: repeat(auto-fit,  clamp(300px, calc((100vw - (100px + 40px)) / 2) , 340px));
+  }
+
+  @media screen and (max-width: 740px) {
+    grid-template-columns: auto;
+  }
+  @include breakpoint(screen576) {
+    gap: 20px;
+  }
+}
+
+.paginationMargin {
+  margin-bottom: 50px;
+  @include breakpoint(screen576) {
+    margin-bottom: 30px;
+  }
+}

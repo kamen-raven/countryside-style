@@ -10,7 +10,8 @@ const TitleBlock: React.FC<TitleBlockInterface> = ({ typePage }) => {
     flats: 'Квартиры',
     lands: 'Земельные участки',
     'houses-and-cottages': 'Дома, дачи, коттеджи',
-    villages: 'Коттеджные поселки'
+    villages: 'Коттеджные поселки',
+    search: 'Результаты поиска'
   };
 
 

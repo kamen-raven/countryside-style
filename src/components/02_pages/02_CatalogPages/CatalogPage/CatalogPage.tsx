@@ -9,7 +9,8 @@ import { ContactUsBlock } from "~pages/02_CatalogPages/CatalogPage/blocks/Contac
 
 
 
-import { InfoTypeDescriptionBlock, SearchBarBlock, CatalogBlock, TitleBlock } from './blocks/index.ts';
+import { InfoTypeDescriptionBlock, CatalogBlock, TitleBlock } from './blocks/index.ts';
+import { SearchBarObjects } from '~features/index.ts';
 
 const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, objectsData, villagesData, reviewsData, typePage }) => {
 
@@ -20,7 +21,7 @@ const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, obje
   return (
     <main className={styles.mainContainer}>
       <TitleBlock typePage={typePage} />
-      <SearchBarBlock />
+      <SearchBarObjects typePage={typePage} /* objectsData={objectsData} villagesData={villagesData} */ />
       <CatalogBlock typePage={typePage} objectsData={objectsData} villagesData={villagesData} /* itemsPerPage={itemsPerPage} *//>
       <InfoTypeDescriptionBlock typePage={typePage} />
       <ContactUsBlock generalContactsData={generalContactsData} />
