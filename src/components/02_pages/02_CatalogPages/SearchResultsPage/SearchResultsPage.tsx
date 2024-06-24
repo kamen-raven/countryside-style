@@ -7,12 +7,16 @@ import { ContactUsBlock, TitleBlock } from '../CatalogPage/blocks/index.ts';
 import { SearchResultsLayoutBlock } from './blocks/index.ts';
 
 
-const SearchResultsPage: React.FC<SearchResultsPageInterface> = ({ searchTerm, searchData }) => {
+const SearchResultsPage: React.FC<SearchResultsPageInterface> = ({
+  searchTerm,
+  searchType,
+  searchData
+}) => {
   return (
     <main className={styles.mainContainer}>
       <TitleBlock typePage={'search'} />
       <SearchBarObjects searchTerm={searchTerm} typePage={'search'} />
-      <SearchResultsLayoutBlock searchData={searchData}/>
+      <SearchResultsLayoutBlock searchData={searchData} />
       <ContactUsBlock generalContactsData={generalContactsData} />
     </main>
   );

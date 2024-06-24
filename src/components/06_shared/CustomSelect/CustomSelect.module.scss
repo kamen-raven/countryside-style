@@ -18,7 +18,6 @@
 
   &_opened {
     border-radius: $border-radius $border-radius 0;
-
   }
 
 
@@ -29,6 +28,11 @@
     height: 35px;
     min-width: 240px;
   }
+
+  &_selected {
+    border: 1px solid $accent-green;
+  }
+
 }
 
 .selectSelected {
@@ -38,9 +42,14 @@
   padding-left: 22px;
   height: 100%;
   color: $gray;
-  ;
+
   cursor: pointer;
   position: relative;
+
+
+  &_selected:first-of-type {
+    color: $dark;
+  }
 }
 
 /* .selectSelected:after {
@@ -54,7 +63,9 @@
   position: absolute;
   right: -1px;
   top: 100%;
+  min-width: 50%;
   background-color: $white;
+  color: $gray;
 
 
   overflow-y: auto;
@@ -63,6 +74,8 @@
   z-index: 1;
   box-sizing: border-box;
   transition: all .3s linear;
+
+
 }
 
 .selectItems div {

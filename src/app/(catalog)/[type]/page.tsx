@@ -6,7 +6,9 @@ import { getAllReviews } from "~api/Reviews/getReviews";
 import { CatalogPage } from "~pages/index";
 
 import generalContactsData from "~data/constant/generalContacts/generalContactsData";
-import filterObjectsByPrice from "~helpers/objects/filteredObjectsByPrice";
+import filteredObjectsByCategory from "~helpers/objects/filteredObjectsByCategory";
+import sortedObjectsByPrice from "~helpers/objects/sortedObjectsByPrice";
+import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 
 
 export const metadata: Metadata = {
@@ -34,7 +36,7 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
   };
 
   const typePage = category[params.type]; // берем тип на основе params исходя из роута
-  
+
   if (!typePage) {   // если такого нету, то возвращаем пустую страницу
     notFound();
   }
@@ -42,12 +44,20 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
   const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
   const objectsType = await getObjects(); // получаем все объекты
 
-  const typeObjects = filterObjectsByPrice(objectsType, typePage); // вызываем функцию сортировки и потом передаем это в пропсы в страницу
+
+// вызываем функцию сортировки и потом передаем это в пропсы в страницу
+  const sortingObjects = (arr: RealEstateObjectInterface[], type: string) => {
+      const filteredArr = filteredObjectsByCategory(arr, type); // фильтруем изначальный массив по типу страницы
+      const sortedArr = sortedObjectsByPrice(filteredArr);  // сортируем полученный массив по стоимости от меньшей к большей
+      return sortedArr;
+  };
+
+  const sortedObjects = sortingObjects(objectsType, typePage);
 
   return (
     <CatalogPage typePage={params.type}
       generalContactsData={generalContactsData}
-      objectsData={typeObjects}
+      objectsData={sortedObjects}
       reviewsData={reviews}
     />
   );

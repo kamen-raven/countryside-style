@@ -10,15 +10,15 @@ import { CatalogCardComponent } from '~entities/index.ts';
 
 const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({ searchData }) => {
   // функция для управления пагинацией
-/*   const {
-    totalPages,
-    currentItems,
-    currentPage,
-    setCurrentPage
-  } = usePaginationCounter(objectsData, itemsPerPage);
- */
+  /*   const {
+      totalPages,
+      currentItems,
+      currentPage,
+      setCurrentPage
+    } = usePaginationCounter(objectsData, itemsPerPage);
+   */
   // реф для скролла вверх при пагинации
-/*   const parentRef = useRef<HTMLDivElement>(null); */
+  /*   const parentRef = useRef<HTMLDivElement>(null); */
 
 
 
@@ -38,13 +38,19 @@ const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({
 
       <div className={styles.container}>
 
-        <div /* ref={parentRef}  */ className={`${styles.cardsLayout}`}> {/*  ${objectsData.length > itemsPerPage ? styles.paginationMargin : null}` */}
-
-        {searchData.map((item) => ( //currentItems
-          <CatalogCardComponent key={item.id} item={item}/*  typePage={typePage} */ />
-        ))}
-
-        </div>
+        <>
+          {searchData.length > 0 ?
+            <div /* ref={parentRef}  */ className={`${styles.cardsLayout}`}> {/*  ${objectsData.length > itemsPerPage ? styles.paginationMargin : null}` */}
+              {searchData.map((item) => ( //currentItems
+                <CatalogCardComponent key={item.id} item={item}/*  typePage={typePage} */ />
+              ))}
+            </div>
+            :
+            <p className={styles.errorMessage}>
+              По вашему запросу ничего не&nbsp;найдено
+            </p>
+          }
+        </>
         {/*
       {objectsData.length > itemsPerPage ?
         <CardItemPagination

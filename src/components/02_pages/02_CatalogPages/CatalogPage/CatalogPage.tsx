@@ -14,15 +14,15 @@ import { SearchBarObjects } from '~features/index.ts';
 
 const CatalogPage: React.FC<CatalogPageInterface> = ({ generalContactsData, objectsData, villagesData, reviewsData, typePage }) => {
 
-/*   const itemsPerPage = objectsData?.length + 1;  //! количество объектов на странице //*пока не отображаем
- */
+  /*   const itemsPerPage = objectsData?.length + 1;  //! количество объектов на странице //*пока не отображаем
+   */
 
 
   return (
     <main className={styles.mainContainer}>
       <TitleBlock typePage={typePage} />
-      <SearchBarObjects typePage={typePage} /* objectsData={objectsData} villagesData={villagesData} */ />
-      <CatalogBlock typePage={typePage} objectsData={objectsData} villagesData={villagesData} /* itemsPerPage={itemsPerPage} *//>
+        <SearchBarObjects typePage={typePage} /* objectsData={objectsData} villagesData={villagesData} */ />
+      <CatalogBlock typePage={typePage} objectsData={objectsData} villagesData={villagesData} /* itemsPerPage={itemsPerPage} */ />
       <InfoTypeDescriptionBlock typePage={typePage} />
       <ContactUsBlock generalContactsData={generalContactsData} />
       <ReviewsBlock reviewsDataItem={reviewsData} />
