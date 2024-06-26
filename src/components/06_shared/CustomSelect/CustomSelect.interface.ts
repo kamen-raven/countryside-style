@@ -1,8 +1,9 @@
-import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface CustomSelectInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export interface CustomSelectInterface
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   options: string[];
   label: string;
-  children?: ReactNode;
+  selectedOption: string;
+  handleSelect: (option: string) => void;
 }
-

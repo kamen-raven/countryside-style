@@ -100,6 +100,10 @@
     @include breakpoint(screen576) {
       padding-left: 40px;
     }
+
+    &_selected {
+      border: 1px solid $accent-green;
+    }
   }
 
 }
@@ -110,12 +114,45 @@
   gap: 10px;
 
 
-  @include breakpoint(screen1280) {
+  @include breakpoint(screen1024) {
     flex-grow: 2;
   }
   @include breakpoint(screen768) {
     flex-wrap: wrap;
   }
+}
+
+.priceInput {
+  height: 45px;
+
+   @include common-input;
+    @include common-paragraph(p,
+      $font-weight: $regular,
+      $font-family: $ff-openSans);
+
+    width: 100%;
+    max-width: 150px;
+    padding: 10px 15px 10px 22px;
+
+
+    @include breakpoint(screen1024) {
+      max-width: none;
+      min-width: 200px;
+    }
+    @include breakpoint(screen768) {
+      height: 40px;
+    }
+    @include breakpoint(screen576) {
+      height: 35px;
+    }
+
+
+    &:focus-within {
+      svg {
+        stroke: $accent-green;
+      }
+    }
+
 }
 
 .buttonContainer {

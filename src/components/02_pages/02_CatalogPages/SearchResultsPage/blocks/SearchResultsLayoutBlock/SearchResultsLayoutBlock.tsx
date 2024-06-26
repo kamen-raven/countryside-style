@@ -8,7 +8,7 @@ import BackgroundPatternRight from '~svg/background/backgroundObjectsForSaleRigh
 import { CatalogCardComponent } from '~entities/index.ts';
 
 
-const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({ searchData }) => {
+const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({ filteredData }) => {
   // функция для управления пагинацией
   /*   const {
       totalPages,
@@ -39,9 +39,9 @@ const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({
       <div className={styles.container}>
 
         <>
-          {searchData.length > 0 ?
+          {filteredData.length > 0 ?
             <div /* ref={parentRef}  */ className={`${styles.cardsLayout}`}> {/*  ${objectsData.length > itemsPerPage ? styles.paginationMargin : null}` */}
-              {searchData.map((item) => ( //currentItems
+              {filteredData.map((item) => ( //currentItems
                 <CatalogCardComponent key={item.id} item={item}/*  typePage={typePage} */ />
               ))}
             </div>

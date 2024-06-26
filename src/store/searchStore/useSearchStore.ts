@@ -2,38 +2,52 @@
 // stores/searchStore.ts
 import { create } from 'zustand';
 import { getObjects } from '~api/Objects/getObjects';
+import sortedObjectsByPrice from '~helpers/objects/sortedObjectsByPrice';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 
 
 interface SearchStateInterface {
   searchTerm: string;
-  searchPrice: number;
+  searchPriceMin: number;
+  searchPriceMax: number;
   searchType: 'all' | 'flats' | 'lands' | 'houses-and-cottages';
   searchTypeLabel: string;
   dataForSearch: RealEstateObjectInterface[];
+  initialData: RealEstateObjectInterface[];
   actions: {
     setSearchTerm: (term: string) => void;
-    setSearchPrice: (price: number) => void;
+    setSearchPriceMin: (price: number) => void;
+    setSearchPriceMax: (price: number) => void;
     setSearchType: (type: 'all' | 'flats' | 'lands' | 'houses-and-cottages') => void;
     setSearchTypeLabel: (label: string) => void;
-
+    setDataForSearch: (data:  RealEstateObjectInterface[]) => void
     fetchDataForSearch: () => Promise<void>;
   }
 }
 
 export const useSearchStore = create<SearchStateInterface>((set) => ({
   searchTerm: '',
-  searchPrice: 0,
+
+  searchPriceMin: 0,
+  searchPriceMax: 0,
+
   searchType: 'all',
   searchTypeLabel: '',
 
   dataForSearch: [],
+  initialData: [],
 
   actions: {
     setSearchTerm: (term) => set({ searchTerm: term }),
-    setSearchPrice: (price) => set({ searchPrice: price }),
+
+    setSearchPriceMin: (price) => set({ searchPriceMin: price }),
+    setSearchPriceMax: (price) => set({ searchPriceMax: price }),
+
     setSearchType: (type) => set({ searchType: type }),
     setSearchTypeLabel: (label) => set({searchTypeLabel: label}),
+
+    setDataForSearch: (data) => set({ dataForSearch: data }),
+
 
     fetchDataForSearch: async () => {
       try {
@@ -44,45 +58,17 @@ export const useSearchStore = create<SearchStateInterface>((set) => ({
             (page) => page.display_pages.value !== 'Архив'
           ));
 
-          console.log(filteredData); //*
+          sortedObjectsByPrice(filteredData);
 
-        set({ dataForSearch: filteredData });
+          console.log(`fetchDataForSearch ${filteredData}`); //*
+
+        set({ dataForSearch: filteredData, initialData: filteredData });
       }
       catch (error) {
         console.error('Failed to fetch data:', error);
         // Сбрасываем данные в случае ошибки
-        set({ dataForSearch: [] });
+        set({ dataForSearch: [], initialData: [] });
       }
     }
   }
 }));
-
-
-/* export const useSearchStore = create<SearchStateInterface>((set) => ({
-  searchTerm: '',
-  allData: [],
-  filteredData: [],
-  actions: {
-
-    setSearchTerm: (term) => set({ searchTerm: term }),
-    setData: (data) => set({ filteredData: data }),
-
-    fetchFilteredData: async (term) => {
-      try {
-        const data = await getObjects();
-        set({ allData: data }); // все данные объектов
-
-        const filteredData = data.filter((item: RealEstateObjectInterface) =>
-          item.name.toLowerCase().includes(term.toLowerCase())
-        );
-        set({ filteredData: filteredData });
-      }
-      catch (error) {
-        console.error('Failed to fetch data:', error);
-        // Сбрасываем данные в случае ошибки
-        set({ allData: [] });
-        set({ filteredData: [] });
-      }
-    }
-  }
-})); */

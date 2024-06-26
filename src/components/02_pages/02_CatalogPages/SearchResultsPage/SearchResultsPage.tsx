@@ -8,15 +8,14 @@ import { SearchResultsLayoutBlock } from './blocks/index.ts';
 
 
 const SearchResultsPage: React.FC<SearchResultsPageInterface> = ({
-  searchTerm,
-  searchType,
-  searchData
+  searchStore,
+  filteredData
 }) => {
   return (
     <main className={styles.mainContainer}>
       <TitleBlock typePage={'search'} />
-      <SearchBarObjects searchTerm={searchTerm} typePage={'search'} />
-      <SearchResultsLayoutBlock searchData={searchData} />
+      <SearchBarObjects searchStore={searchStore} filteredData={filteredData} typePage={'search'} />
+      <SearchResultsLayoutBlock filteredData={filteredData} />
       <ContactUsBlock generalContactsData={generalContactsData} />
     </main>
   );

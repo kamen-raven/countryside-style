@@ -98,7 +98,7 @@
 .addressContainer {
   font-style: normal;
   display: flex;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
   flex-wrap: wrap;
 
@@ -114,6 +114,7 @@
 
 .callLink {
   display: flex;
+
   align-items: center;
   gap: 20px;
 
@@ -153,10 +154,21 @@
   border-radius: 50%;
   max-width: 38px;
   max-height: 38px;
+  width: 35px;
+  height: 35px;
   box-sizing: border-box;
   display: inline-flex;
   background-color: transparent;
   transition: background-color 0.3s linear;
+
+  @include breakpoint(screen768) {
+    width: 30px;
+    height: 30px;
+  }
+  @include breakpoint(screen480) {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 
