@@ -1,4 +1,4 @@
-import sortedObjectsByPrice from "~helpers/objects/sortedObjectsByPrice";
+//import sortedObjectsByPrice from "~helpers/objects/sortedObjectsByPrice";
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 
 function searchObjectsByName(data: RealEstateObjectInterface[], term: string) {
@@ -13,14 +13,14 @@ function searchObjectsByName(data: RealEstateObjectInterface[], term: string) {
   );
 
   // сортируем полученный массив по стоимости от меньшей к большей
-  const sortedObjects = sortedObjectsByPrice(filteredData);
+  //const sortedObjects = sortedObjectsByPrice(filteredData);
   // ?
   /*   // и затем все получившиеся объекты сортируем по дате от самых новых к самым старым
   const sortedObjects = filteredData.sort(
     (a, b) =>
       new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
   ); */
-  return sortedObjects;
+  return filteredData;
 }
 
 export default searchObjectsByName;

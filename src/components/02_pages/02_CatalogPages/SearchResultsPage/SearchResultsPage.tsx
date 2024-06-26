@@ -14,7 +14,7 @@ const SearchResultsPage: React.FC<SearchResultsPageInterface> = ({
   return (
     <main className={styles.mainContainer}>
       <TitleBlock typePage={'search'} />
-      <SearchBarObjects searchStore={searchStore} filteredData={filteredData} typePage={'search'} />
+      <SearchBarObjects searchStore={searchStore} typePage={'search'} />
       <SearchResultsLayoutBlock filteredData={filteredData} />
       <ContactUsBlock generalContactsData={generalContactsData} />
     </main>

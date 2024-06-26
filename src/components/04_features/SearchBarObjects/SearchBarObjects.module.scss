@@ -134,6 +134,9 @@
     max-width: 150px;
     padding: 10px 15px 10px 22px;
 
+    &_selected {
+      border: 1px solid $accent-green;
+    }
 
     @include breakpoint(screen1024) {
       max-width: none;
@@ -152,8 +155,16 @@
         stroke: $accent-green;
       }
     }
-
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
 }
+
 
 .buttonContainer {
   display: flex;

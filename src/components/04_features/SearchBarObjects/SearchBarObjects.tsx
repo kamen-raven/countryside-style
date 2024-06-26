@@ -10,18 +10,18 @@ import ClearIcon from '~svg/button/clear.svg';
 import { CustomSelect } from '~shared/CustomSelect/CustomSelect.tsx';
 import { useSearchStore } from '~store/searchStore/useSearchStore.ts';
 import { useRouter } from 'next/navigation';
-import searchObjectsByCategory from '~helpers/searchObjects/searchObjectsByCategory.ts';
-import sortedObjectsByPrice from '~helpers/objects/sortedObjectsByPrice.ts';
 
 
-const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, filteredData, typePage }) => {
+const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, typePage }) => {
 
   // Деструктуризация объекта searchStore с значениями по умолчанию
   const {
     searchTerm = '',
+    searchPriceMin = NaN,
+    searchPriceMax = NaN,
     searchType = 'all',
     searchTypeLabel = '',
-    dataForSearch = [],
+    //dataForSearch = [],
     initialData = [],
   } = searchStore || {};
 
@@ -29,6 +29,7 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, fi
   // объект действий с состояниями
   const searchActions = {
     setSearchTerm: useSearchStore((state) => state.actions.setSearchTerm),
+    setSearchPriceMin: useSearchStore((state) => state.actions.setSearchPriceMin),
     setSearchPriceMax: useSearchStore((state) => state.actions.setSearchPriceMax),
     setSearchType: useSearchStore((state) => state.actions.setSearchType),
     setSearchTypeLabel: useSearchStore((state) => state.actions.setSearchTypeLabel),
@@ -36,11 +37,12 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, fi
     fetchDataForSearch: useSearchStore((state) => state.actions.fetchDataForSearch),
   };
 
-  // используемые данные - или уже ранее полученные отфильтрованные или те, которые мы получим
-  const objectsList = filteredData ? filteredData : dataForSearch;
 
   // временный стейт импута чтобы не переписывать зустанд каждый раз при изменении, а только при отправки запроса
-  const [tempSearchTerm, setTempSearchTerm] = useState(searchTerm);  // данные инпута
+  const [tempSearchTerm, setTempSearchTerm] = useState(searchTerm);  // данные инпута основного поиска
+
+  const [tempSearchPriceMin, setTempSearchPriceMin] = useState(searchPriceMin);  // данные инпута минимальной цены
+  const [tempSearchPriceMax, setTempSearchPriceMax] = useState(searchPriceMax);  // данные инпута максимальной цены
 
   const [isClearBtnDisabled, setIsClearBtnDisabled] = useState(true);  // состояние кнопки "отчистить"
   // роутер для перехода на страницу с результатами поиска
@@ -52,7 +54,13 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, fi
     setTempSearchTerm(event.target.value);
   };
 
+  const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTempSearchPriceMin(Number(event.target.value));
+  };
 
+  const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTempSearchPriceMax(Number(event.target.value));
+  };
 
 
   // CustomSelect TYPE - DATA
@@ -92,10 +100,26 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, fi
         searchActions.setSearchType(tempSearchType);
       }
 
-      await searchActions.fetchDataForSearch();
+      if (!Number.isNaN(tempSearchPriceMin) && tempSearchPriceMin > 0) {
+        searchActions.setSearchPriceMin(tempSearchPriceMin);
+      }
+
+      if (!Number.isNaN(tempSearchPriceMax) && tempSearchPriceMax > 0) {
+        searchActions.setSearchPriceMax(tempSearchPriceMax);
+      }
+
+      if (initialData.length > 0) {
+        searchActions.setDataForSearch(initialData);
+        console.log('catch!')
+      } else {
+        await searchActions.fetchDataForSearch();
+        console.log('fetch!');
+      }
+
 
       if (typePage !== 'search') {
         router.push('search-results');
+        console.log('push!');
       }
 
     } catch (error) {
@@ -109,10 +133,14 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, fi
     event.preventDefault();
     setTempSearchTerm('');
     setTempSearchType('all');
+    setTempSearchPriceMin(NaN);
+    setTempSearchPriceMax(NaN);
     setTempSearchTypeLabel(selectLabel);
     searchActions.setSearchTerm('');
     searchActions.setSearchType('all');
     searchActions.setSearchTypeLabel(selectLabel);
+    searchActions.setSearchPriceMin(NaN);
+    searchActions.setSearchPriceMax(NaN);
     searchActions.setDataForSearch(initialData);
     /*     if (typePage !== 'search') {
           setTempSearchTerm('');
@@ -124,14 +152,12 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, fi
   };
 
   useEffect(() => {
-    if (tempSearchTerm.trim()) {
-      setIsClearBtnDisabled((false));
-    } else if (tempSearchTypeLabel !== selectLabel) {
+    if (tempSearchTerm.trim() || tempSearchTypeLabel !== selectLabel || !Number.isNaN(tempSearchPriceMin) || !Number.isNaN(tempSearchPriceMax)) {
       setIsClearBtnDisabled((false));
     } else {
       setIsClearBtnDisabled((true));
     }
-  }, [tempSearchTerm, tempSearchTypeLabel]);
+  }, [tempSearchTerm, tempSearchTypeLabel, tempSearchPriceMin, tempSearchPriceMax]);
 
 
 
@@ -145,39 +171,41 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, fi
           <div className={styles.inputContainer__icon}>
             <SearchIcon />
           </div>
-          <input className={`${styles.inputContainer__input} ${tempSearchTerm !== '' ? styles.inputContainer__input_selected :''}`}
+          <input className={`${styles.inputContainer__input} ${tempSearchTerm !== '' ? styles.inputContainer__input_selected : ''}`}
             placeholder={`Введите поисковой запрос`}
             value={tempSearchTerm}
             onChange={handleSearch} />
         </div>
 
         <div className={styles.optionsContainer}>
-          {/*           <input
-
-            placeholder="Цена от"
-            onChange={handleMinPriceChange}
-            className={styles.priceInput}
-          />
           <input
-
+            type='number'
+            min={0}
+            placeholder="Цена от"
+            //value={tempSearchPriceMin.toString()}
+            onChange={handleMinPriceChange}
+            className={`${styles.priceInput} ${!Number.isNaN(tempSearchPriceMin) ? styles.priceInput_selected : ''}`}
+            />
+          <input
+            type='number'
+            min={0}
             placeholder="Цена до"
+            //value={tempSearchPriceMax.toString()}
             onChange={handleMaxPriceChange}
-            className={styles.priceInput}
-          /> */}
+            className={`${styles.priceInput} ${!Number.isNaN(tempSearchPriceMax) ? styles.priceInput_selected : ''}`}
+          />
           <CustomSelect
             label={selectLabel}
             options={selectOptions}
             selectedOption={tempSearchTypeLabel}
             handleSelect={handleSelect}
           />
-          {/*           <CustomSelect label={`Цена от , руб.`} options={['option1', 'option2', 'option3']} />
-          <CustomSelect label={`Цена до, руб.`} options={['option1', 'option2', 'option3']} /> */}
         </div>
 
         <div className={styles.buttonContainer}>
 
-          <button className={`${styles.button} ${!tempSearchTerm.trim() ? '' : styles.button_active} `}
-            disabled={!tempSearchTerm.trim()}
+          <button className={`${styles.button} ${isClearBtnDisabled ? '' : styles.button_active} `}
+            disabled={isClearBtnDisabled}//{!tempSearchTerm.trim()}
             type="submit">
             Подобрать
           </button>

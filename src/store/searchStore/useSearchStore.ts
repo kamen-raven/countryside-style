@@ -28,8 +28,8 @@ interface SearchStateInterface {
 export const useSearchStore = create<SearchStateInterface>((set) => ({
   searchTerm: '',
 
-  searchPriceMin: 0,
-  searchPriceMax: 0,
+  searchPriceMin: NaN,
+  searchPriceMax: NaN,
 
   searchType: 'all',
   searchTypeLabel: '',
@@ -60,7 +60,7 @@ export const useSearchStore = create<SearchStateInterface>((set) => ({
 
           sortedObjectsByPrice(filteredData);
 
-          console.log(`fetchDataForSearch ${filteredData}`); //*
+          //console.log(`fetchDataForSearch ${filteredData}`); //*
 
         set({ dataForSearch: filteredData, initialData: filteredData });
       }

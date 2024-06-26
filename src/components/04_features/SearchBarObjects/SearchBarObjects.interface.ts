@@ -6,14 +6,13 @@ export interface SearchBarObjectsInterface
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   searchStore?: {
     searchTerm: string;
-/*     searchPriceMin: number;
-    searchPriceMax: number; */
+    searchPriceMin: number;
+    searchPriceMax: number;
     searchType: "all" | "flats" | "lands" | "houses-and-cottages";
     searchTypeLabel: string;
     dataForSearch: RealEstateObjectInterface[];
     initialData: RealEstateObjectInterface[];
   };
-  filteredData?: RealEstateObjectInterface[];
   typePage: "flats" | "lands" | "houses-and-cottages" | "villages" | "search";
   /*   villagesData?: VillageObjectInterface[]; */
 }
