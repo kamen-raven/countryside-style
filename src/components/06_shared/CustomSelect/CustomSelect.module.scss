@@ -13,8 +13,8 @@
   border-radius: $border-radius;
 
   @include common-paragraph(p,
-    $font-weight: $regular,
-    $font-family: $ff-openSans);
+  $font-weight: $regular,
+  $font-family: $ff-openSans);
 
   &_opened {
     border-radius: $border-radius $border-radius 0;
@@ -41,14 +41,16 @@
   text-align: center;
   padding-left: 22px;
   height: 100%;
-  color: $gray;
+  color: rgba($color: $gray, $alpha: .6);
+  font-weight: $light;
 
   cursor: pointer;
   position: relative;
 
-
   &_selected:first-of-type {
     color: $dark;
+    font-weight: $regular;
+    opacity: 1;
   }
 }
 
@@ -75,7 +77,9 @@
   box-sizing: border-box;
   transition: all .3s linear;
 
-
+  &:first-of-type {
+    color:rgba($color: $gray, $alpha: .6)
+  }
 }
 
 .selectItems div {

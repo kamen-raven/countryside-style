@@ -10,6 +10,7 @@ import ClearIcon from '~svg/button/clear.svg';
 import { CustomSelect } from '~shared/CustomSelect/CustomSelect.tsx';
 import { useSearchStore } from '~store/searchStore/useSearchStore.ts';
 import { useRouter } from 'next/navigation';
+import { formatNumber, parseFormattedNumber } from '~helpers/formatters/formatCostNumber.ts';
 
 
 const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, typePage }) => {
@@ -43,6 +44,9 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
   const [tempSearchPriceMin, setTempSearchPriceMin] = useState(searchPriceMin);  // данные инпута минимальной цены
   const [tempSearchPriceMax, setTempSearchPriceMax] = useState(searchPriceMax);  // данные инпута максимальной цены
+  const [displayMinPrice, setDisplayMinPrice] = useState(formatNumber(searchPriceMin));
+  const [displayMaxPrice, setDisplayMaxPrice] = useState(formatNumber(searchPriceMax));
+
 
   const [isClearBtnDisabled, setIsClearBtnDisabled] = useState(true);  // состояние кнопки "отчистить"
   // роутер для перехода на страницу с результатами поиска
@@ -54,14 +58,34 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     setTempSearchTerm(event.target.value);
   };
 
+
   const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setTempSearchPriceMin(parseFormattedNumber(value));
+    setDisplayMinPrice(value);
+  };
+
+  const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setTempSearchPriceMax(parseFormattedNumber(value));
+    setDisplayMaxPrice(value);
+  };
+  useEffect(() => {
+    setDisplayMinPrice(formatNumber(tempSearchPriceMin));
+  }, [tempSearchPriceMin]);
+
+  useEffect(() => {
+    setDisplayMaxPrice(formatNumber(tempSearchPriceMax));
+  }, [tempSearchPriceMax]);
+
+/*   const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTempSearchPriceMin(Number(event.target.value));
   };
 
   const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTempSearchPriceMax(Number(event.target.value));
   };
-
+ */
 
   // CustomSelect TYPE - DATA
   const selectLabel = 'Тип объекта';
@@ -110,7 +134,7 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
       if (initialData.length > 0) {
         searchActions.setDataForSearch(initialData);
-        console.log('catch!')
+        console.log('catch!');
       } else {
         await searchActions.fetchDataForSearch();
         console.log('fetch!');
@@ -135,6 +159,8 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     setTempSearchType('all');
     setTempSearchPriceMin(NaN);
     setTempSearchPriceMax(NaN);
+    setDisplayMinPrice(formatNumber(NaN));
+    setDisplayMaxPrice(formatNumber(NaN));
     setTempSearchTypeLabel(selectLabel);
     searchActions.setSearchTerm('');
     searchActions.setSearchType('all');
@@ -179,18 +205,20 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
         <div className={styles.optionsContainer}>
           <input
-            type='number'
+            type='text'
             min={0}
-            placeholder="Цена от"
-            //value={tempSearchPriceMin.toString()}
+            step={0.01}
+            placeholder="Цена от, руб."
+            value={displayMinPrice}
             onChange={handleMinPriceChange}
             className={`${styles.priceInput} ${!Number.isNaN(tempSearchPriceMin) ? styles.priceInput_selected : ''}`}
             />
           <input
-            type='number'
+            type='text'
             min={0}
-            placeholder="Цена до"
-            //value={tempSearchPriceMax.toString()}
+            step={0.01}
+            placeholder="Цена до, руб."
+            value={displayMaxPrice}
             onChange={handleMaxPriceChange}
             className={`${styles.priceInput} ${!Number.isNaN(tempSearchPriceMax) ? styles.priceInput_selected : ''}`}
           />

@@ -11,6 +11,7 @@ const SearchResultsPage: React.FC<SearchResultsPageInterface> = ({
   searchStore,
   filteredData
 }) => {
+
   return (
     <main className={styles.mainContainer}>
       <TitleBlock typePage={'search'} />

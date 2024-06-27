@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useRouter } from 'next/navigation';
+//import { useRouter } from 'next/navigation';
 import React from 'react';
 import searchObjectsByCategory from '~helpers/searchObjects/searchObjectsByCategory';
 import searchObjectsByMaxPrice from '~helpers/searchObjects/searchObjectsByMaxPrice';
@@ -12,7 +12,7 @@ import { SearchResultsPage } from '~pages/index';
 import { useSearchStore } from '~store/searchStore/useSearchStore';
 
 export default function SearchResults() {
-  const router = useRouter();
+ // const router = useRouter();
 
   // объект состояний
   const searchStore = {
@@ -24,13 +24,22 @@ export default function SearchResults() {
     dataForSearch: useSearchStore((state) => state.dataForSearch),
     initialData: useSearchStore((state) => state.initialData),
   };
+  /*     searchTerm: useSearchStore.getState().searchTerm,
+      searchPriceMin: useSearchStore.getState().searchPriceMin,
+      searchPriceMax: useSearchStore.getState().searchPriceMax,
+      searchType: useSearchStore.getState().searchType,
+      searchTypeLabel: useSearchStore.getState().searchTypeLabel,
+      dataForSearch: useSearchStore.getState().dataForSearch,
+      initialData: useSearchStore.getState().initialData, */
 
 
 
 
-    if (searchStore.initialData.length < 1) {
+
+
+/*     if (searchStore.initialData.length < 1) {
       router.back();
-    }
+    } */
 
 
   const filterData = (

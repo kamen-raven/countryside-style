@@ -1,10 +1,16 @@
-const formatNumber = (num: number) => {
-  return num.toLocaleString('ru-RU');
+const toRub = new Intl.NumberFormat('ru-RU', {
+  style: 'currency',
+  currency: 'RUB',
+  minimumFractionDigits: 0
+});
+
+
+const parseFormattedNumber = (value: string): number => {
+  return parseFloat(value.replace(/\s/g, '').replace('₽', ''));
 };
 
-/* const formatNumber = (value: string) => {
-  const numberString = value.replace(/\D/g, ''); // Удаляем все, кроме цифр
-  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ' '); // Добавляем пробелы каждые три цифры
-}; */
+const formatNumber = (value: number): string => {
+  return Number.isNaN(value) ? '' : toRub.format(value);
+};
 
-export default formatNumber;
+export  {formatNumber, parseFormattedNumber};
