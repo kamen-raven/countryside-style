@@ -116,21 +116,21 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     event.preventDefault();
 
     try {
-      if (tempSearchTerm !== '') {
+      //if (tempSearchTerm !== '') {
         searchActions.setSearchTerm(tempSearchTerm);
-      }
+      //}
 
-      if (tempSearchType !== 'all') {
+      //if (tempSearchType !== 'all') {
         searchActions.setSearchType(tempSearchType);
-      }
+      //}
 
-      if (!Number.isNaN(tempSearchPriceMin) && tempSearchPriceMin > 0) {
+      //if (!Number.isNaN(tempSearchPriceMin) && tempSearchPriceMin > 0) {
         searchActions.setSearchPriceMin(tempSearchPriceMin);
-      }
+      //}
 
-      if (!Number.isNaN(tempSearchPriceMax) && tempSearchPriceMax > 0) {
+     // if (!Number.isNaN(tempSearchPriceMax) && tempSearchPriceMax > 0) {
         searchActions.setSearchPriceMax(tempSearchPriceMax);
-      }
+      //}
 
       if (initialData.length > 0) {
         searchActions.setDataForSearch(initialData);
@@ -198,6 +198,7 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
             <SearchIcon />
           </div>
           <input className={`${styles.inputContainer__input} ${tempSearchTerm !== '' ? styles.inputContainer__input_selected : ''}`}
+            type={'search'}
             placeholder={`Введите поисковой запрос`}
             value={tempSearchTerm}
             onChange={handleSearch} />
