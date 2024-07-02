@@ -4,14 +4,14 @@ const statisticalIndicatorsData: statisticalIndicatorsInterface[] = [
   {
     _id: 1,
     title: 'Продали объектов',
-    statIndicator: '2 000',
+    statIndicator: '2\u00A0000',
     statLabel: 'объектов',
     description: ''
   },
   {
     _id: 2,
     title: 'Сэкономили клиентам времени',
-    statIndicator: '100 000',
+    statIndicator: '100\u00A0000',
     statLabel: 'часов',
     description: 'Клиенты не тратили время на прием звонков, показы, согласование сделки и подготовку документов.'
   },

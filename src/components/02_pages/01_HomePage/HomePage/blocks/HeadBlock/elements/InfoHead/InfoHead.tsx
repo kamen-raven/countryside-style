@@ -10,7 +10,7 @@ import BackgroundPatternLeft from '~svg/background/backgroundTitleHeadLeftSide.s
 import BackgroundPatternRight from '~svg/background/backgroundTitleHeadRightSide.svg';
 import { AwardInfoElement } from './AwardInfoElement/AwardInfoElement';
 import { RequestPhoneInput } from '~features/Forms';
-
+import { OdometerCounter } from '~shared/OdometerCounter/OdometerCounter';
 
 
 const InfoHead: React.FC = () => {
@@ -33,9 +33,9 @@ const InfoHead: React.FC = () => {
 
         <div className={styles.countInfo}>
           <h3 className={styles.countInfo__title}>
-            <span className={styles.countInfo__num}>
+            <OdometerCounter className={styles.countInfo__num} tag={'div'}>
               256
-            </span>
+            </OdometerCounter>
             Проданных объектов загородной недвижимости в&nbsp;{reportYear}&nbsp;году
           </h3>
           <p className={styles.countInfo__description}>

@@ -1,24 +1,31 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import styles from './SearchResultsLayoutBlock.module.scss';
 import { SearchResultsLayoutBlockInterface } from './SearchResultsLayoutBlock.interface.ts';
 
 import { BackgroundSVGPattern } from '~shared/index.ts';
 import BackgroundPatternLeft from '~svg/background/backgroundObjectsForSaleLeft.svg';
 import BackgroundPatternRight from '~svg/background/backgroundObjectsForSaleRight.svg';
-import { CatalogCardComponent } from '~entities/index.ts';
+import { CardItemPagination, CatalogCardComponent } from '~entities/index.ts';
+import usePaginationCounter from '~hooks/usePaginationCounter.ts';
 
 
 const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({ filteredData }) => {
+  const itemsPerPage = 12;//filteredData?.length + 1;  //! количество объектов на странице //*пока не отображаем
+
+
+
   // функция для управления пагинацией
-  /*   const {
+    const {
       totalPages,
       currentItems,
       currentPage,
       setCurrentPage
-    } = usePaginationCounter(objectsData, itemsPerPage);
-   */
+    } = usePaginationCounter(filteredData, itemsPerPage);
+
   // реф для скролла вверх при пагинации
-  /*   const parentRef = useRef<HTMLDivElement>(null); */
+    const parentRef = useRef<HTMLDivElement>(null);
 
 
 
@@ -28,7 +35,7 @@ const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({
   return (
     <section className={styles.wrapper}>
       <>
-        <BackgroundSVGPattern positionX='right' positionY='top' >
+        <BackgroundSVGPattern positionX='right' positionY='bottom' >
           <BackgroundPatternRight className={styles.backgroundRight} />
         </BackgroundSVGPattern>
         <BackgroundSVGPattern positionX='left' positionY='bottom'>
@@ -40,8 +47,8 @@ const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({
 
         <>
           {filteredData.length > 0 ?
-            <div /* ref={parentRef}  */ className={`${styles.cardsLayout}`}> {/*  ${objectsData.length > itemsPerPage ? styles.paginationMargin : null}` */}
-              {filteredData.map((item) => ( //currentItems
+            <div ref={parentRef}  className={`${styles.cardsLayout} { ${filteredData.length > itemsPerPage ? styles.paginationMargin : null}`}>
+              {currentItems.map((item) => ( //currentItems
                 <CatalogCardComponent key={item.id} item={item}/*  typePage={typePage} */ />
               ))}
             </div>
@@ -51,8 +58,8 @@ const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({
             </p>
           }
         </>
-        {/*
-      {objectsData.length > itemsPerPage ?
+
+      {filteredData.length > itemsPerPage ?
         <CardItemPagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
@@ -61,7 +68,7 @@ const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({
         />
         :
         null
-      } */}
+      }
 
       </div>
 

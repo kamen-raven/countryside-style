@@ -13,3 +13,4 @@ export * from './CardLabel/LabelReserved/LabelReserved';
 export * from './CardLabel/YoutubeLabel/YoutubeLabel';
 export * from './Preloader/Preloader';
 export * from './PathLinkComponent/PathLinkComponent';
+export * from './OdometerCounter/OdometerCounter';
