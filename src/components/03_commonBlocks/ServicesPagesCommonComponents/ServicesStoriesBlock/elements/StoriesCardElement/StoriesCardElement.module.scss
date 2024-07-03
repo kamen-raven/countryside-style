@@ -1,6 +1,185 @@
 @import '~global_styles';
 
 .storyContainer {
+  box-sizing: border-box;
+
+  //max-width: clamp(360px, 55vw, 540px);
+  //min-width:  calc(33.3% - 33.3px);
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid $gray;
+
   position: relative;
-  background-color: lightblue;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint(screen768) {
+    max-width: none;
+  }
+
+
+
+  &>.image {
+    opacity: .6;
+    transition: opacity .2s linear;
+  }
+
+  &:hover {
+    & .image {
+      opacity: 1;
+      transition: opacity .2s linear;
+    }
+  }
+}
+
+
+.image {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+
+
+}
+
+.arrowNavigate {
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  & span {
+    background-color: $white;
+    opacity: .6;
+    transition: opacity .3s linear;
+
+    &:focus {
+      outline: auto;
+    }
+
+    &:hover {
+      opacity: 1;
+      transition: opacity .3s linear;
+    }
+  }
+
+
+  &_left {
+    left: 0;
+  }
+
+  &_right {
+    right: 0;
+  }
+}
+
+.progressContainer {
+  position: absolute;
+
+  top: 16px;
+  left: 0;
+  width: calc(100% - 60px);
+  padding: 0 30px;
+
+  display: grid;
+  gap: 4px;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 5px;
+  grid-auto-flow: column;
+
+  @include breakpoint(screen768) {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+
+  @include breakpoint(screen480) {
+    top: 10px;
+  }
+
+}
+
+.progressBar {
+
+  height: 5px;
+  width: 100%;
+  border-radius: 3px;
+  background: $white;
+  opacity: .35;
+
+
+  &_isActive {
+    opacity: 1;
+  }
+}
+
+
+.labelContainer {
+  position: absolute;
+
+  top: 40px;
+  left: 0;
+  width: calc(100% - 60px);
+  padding: 0 30px;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  @include breakpoint(screen768) {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+
+  @include breakpoint(screen480) {
+    top: 28px;
+  }
+
+}
+
+.label {
+  width: 38px;
+  height: 38px;
+  background-color: $accent-green;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(screen768) {
+    width: 35px;
+    height: 35px;
+  }
+
+  @include breakpoint(screen480) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.labelLogo {
+  width: 20px;
+  height: 20px;
+
+  & path {
+    fill: $gray;
+  }
+
+  & path:nth-child(2) {
+    fill: $dark;
+  }
+
+  & path:nth-child(3) {
+    fill: $white;
+  }
+
+  padding-bottom: 3px;
+}
+
+.labelDescription {
+  @include common-paragraph(p,
+    $color: $white);
 }

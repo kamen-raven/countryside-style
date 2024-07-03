@@ -4,7 +4,7 @@ import { ServicesStoriesBlockInterface } from './ServicesStoriesBlock.interface.
 import { StoriesCardElement } from './elements/index.ts';
 
 
-const ServicesStoriesBlock: React.FC<ServicesStoriesBlockInterface> = () => {
+const ServicesStoriesBlock: React.FC<ServicesStoriesBlockInterface> = ({ servicesCardsData }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -13,11 +13,9 @@ const ServicesStoriesBlock: React.FC<ServicesStoriesBlockInterface> = () => {
         </h2>
 
         <div className={styles.innerContainer}>
-          <StoriesCardElement />
-          <StoriesCardElement />
-          <StoriesCardElement />
-
-
+          {servicesCardsData.map((card) => (
+            <StoriesCardElement key={card._id} servicesCard={card} />
+          ))}
         </div>
       </div>
     </section>

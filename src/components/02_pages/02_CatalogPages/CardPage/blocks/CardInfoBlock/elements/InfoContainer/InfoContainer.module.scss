@@ -67,7 +67,7 @@
   @extend .padding-border-bottom;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px 20px;
 
   @include breakpoint(screen576) {

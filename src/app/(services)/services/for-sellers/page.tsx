@@ -6,6 +6,8 @@ import { ForSellersPage } from "~pages/index";
 // data
 import forSellersPageAdvantages from "~data/constant/servicesBlock/advantagesList/forSellersPage/forSellersPageAdvantages";
 import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
+import servicesCardsForSellers from "~data/constant/servicesBlock/servicesCards/forSellersPage/servicesCardsForSellers";
+
 import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
 //import reviews from "~data/temp/reviewsData/reviewsData";
 import objectsTemplate from "~data/temp/objectsTemplateList/objectsDataTemplate";
@@ -34,6 +36,7 @@ export default async function PageForSellers() {
       recentObjectsData={objectsTemplate}
       reviewsData={reviews}
       faqData={faqDataList}
-      />
+      servicesCardsData={servicesCardsForSellers}
+    />
   );
 }

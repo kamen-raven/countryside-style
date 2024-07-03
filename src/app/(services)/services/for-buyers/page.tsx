@@ -7,6 +7,8 @@ import { ForBuyersPage } from "~pages/index";
 import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
 import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
 import forBuyersPageAdvantages from "~data/constant/servicesBlock/advantagesList/forBuyersPage/forBuyersPageAdvantages";
+import servicesCardsForBuyers from "~data/constant/servicesBlock/servicesCards/forBuyersPage/servicesCardsForBuyers";
+
 import { getAllReviews } from "~api/Reviews/getReviews";
 
 export const metadata: Metadata = {
@@ -28,6 +30,7 @@ export default async function PageForBuyers() {
       titleBlockData={titleBlockData}
       advantagesListData={forBuyersPageAdvantages}
       reviewsData={reviews}
+      servicesCardsData={servicesCardsForBuyers}
       />
   );
 }

@@ -91,6 +91,11 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
 
 
+  // для задания первой фотографии при первичном рендере карточки объекта
+  useEffect(() => {
+    setActivePhoto(0);
+  }, []);
+
 
 
 
