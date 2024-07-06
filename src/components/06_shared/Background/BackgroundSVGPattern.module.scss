@@ -17,6 +17,8 @@
     overflow: hidden;
     z-index: -10;
   }
+
+  @include print(none);
 }
 
 .background_top svg {

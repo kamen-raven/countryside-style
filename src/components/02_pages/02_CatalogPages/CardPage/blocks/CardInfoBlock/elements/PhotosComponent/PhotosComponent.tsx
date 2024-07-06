@@ -183,6 +183,22 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
       </div>
 
 
+      {picturesArray.length &&
+        <div className={styles.printPhotoContainer}>
+            <Image
+              className={styles.imagePrint}
+              src={picturesArray[0].image}
+              alt={data.name}
+              width={400}
+              height={360}
+              priority={true}
+            /*               onClick={() => console.log('click photo!!')} */
+            />
+        </div>
+      }
+
+
+
     </div>
   );
 };

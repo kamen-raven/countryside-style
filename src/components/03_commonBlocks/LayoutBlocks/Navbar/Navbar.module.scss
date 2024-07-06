@@ -21,6 +21,9 @@
     flex-direction: column;
     height: 45px;
   }
+
+
+  @include print(none);
 }
 
 

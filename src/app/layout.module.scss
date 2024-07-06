@@ -1,5 +1,10 @@
 @import '~global_styles';
 
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
 .page {
   @include scrollbar ($arrows: true);
 

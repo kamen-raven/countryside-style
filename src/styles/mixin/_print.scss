@@ -1,0 +1,13 @@
+@mixin print($point) {
+
+  @if  $point == none {
+    @media print {
+      display: none;
+    }
+  }
+
+  @else if $point == print {
+    @media print {@content;}
+  }
+}
+

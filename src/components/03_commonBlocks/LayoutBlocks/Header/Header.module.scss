@@ -6,6 +6,8 @@
   flex-direction: column;
   z-index: 1000;
   background-color: white;
+
+  @include print(none);
 }
 
 .inner {

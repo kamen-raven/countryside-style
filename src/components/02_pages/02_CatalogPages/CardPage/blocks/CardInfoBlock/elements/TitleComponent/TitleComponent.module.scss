@@ -7,73 +7,98 @@
   flex-direction: column;
   align-items: flex-start;
 }
-  .title {
-    @include common-title(h1,  $margin: 0 0 1.5625rem);
 
-    @include breakpoint(screen768) {
-      margin-bottom: 1rem;
-    }
-    @include breakpoint(screen480) {
-      margin-bottom: .75rem;
-    }
+.title {
+  @include common-title(h1, $margin: 0 0 1.5625rem);
+
+  @include breakpoint(screen768) {
+    margin-bottom: 1rem;
   }
 
-  .squareArea {
-    @include common-paragraph(pXl,
-      $font-weight: $bold,
-      $line-height: 120%);
-
-    margin-bottom: 10px;
+  @include breakpoint(screen480) {
+    margin-bottom: .75rem;
   }
 
-  .address {
-    @include common-paragraph(pXl,
+  @include print(print) {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+}
+
+.squareArea {
+  @include common-paragraph(pXl,
+    $font-weight: $bold,
+    $line-height: 120%);
+
+  margin-bottom: 10px;
+
+
+  @include print(none);
+}
+
+.address {
+  @include common-paragraph(pXl,
     $font-weight: $regular,
     $line-height: 120%);
 
-    margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 
-    @include breakpoint(screen768) {
-      margin-bottom: .75rem;
-    }
+  @include breakpoint(screen768) {
+    margin-bottom: .75rem;
   }
 
-  .buttonsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
 
-    height: 100%;
-    column-gap: 40px;
-    row-gap: .75rem;
-    @include breakpoint(screen640) {
-      max-height: max-content;
-    }
+  @include print(print) {
+    font-size: 1rem;
+  };
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  height: 100%;
+  column-gap: 40px;
+  row-gap: .75rem;
+
+  @include breakpoint(screen640) {
+    max-height: max-content;
   }
 
-  .distanceContainer {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+
+  @include print(none);
+}
+
+.distanceContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+
+  @include print(none);
+}
+
+.distance {
+
+  @include common-paragraph(p,
+    $font-weight: $regular,
+    $font-family: $ff-openSans);
+
+
+
+  &_spanAccent {
+    color: $accent-green;
+    font-weight: $bold;
   }
-
-  .distance {
-
-    @include common-paragraph(p,
-      $font-weight: $regular,
-      $font-family: $ff-openSans);
-
-
-
-    &_spanAccent {
-      color: $accent-green;
-      font-weight: $bold;
-    }
-  }
+}
 
 
 
 .metroIcon {
   height: 26px;
   width: 26px;
+
+
+  @include print(none);
 }

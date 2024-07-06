@@ -17,6 +17,9 @@
   @include breakpoint(screen480) {
     flex-wrap: wrap;
   }
+
+
+  @include print(none);
 }
 
 .label {

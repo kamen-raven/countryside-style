@@ -14,6 +14,10 @@
   @include breakpoint(screen768) {
     padding: $padding-gap-mob;
   }
+
+  @include print(print) {
+    padding: 0;
+  }
 }
 
 .mainContainer {
@@ -43,4 +47,16 @@
   @include breakpoint(screen640) {
     gap: 30px;
   }
+
+
+  @include print(print) {
+    padding: 0.5in;
+    gap: .5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "photo price"
+      "info info";
+
+  };
 }

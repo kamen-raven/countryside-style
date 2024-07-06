@@ -12,6 +12,8 @@
   @include breakpoint(screen768) {
     padding: $padding-gap-mob;
   }
+
+  @include print(none);
 }
 
 .container {
