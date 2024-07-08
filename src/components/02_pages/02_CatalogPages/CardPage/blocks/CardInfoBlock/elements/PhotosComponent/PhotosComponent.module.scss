@@ -199,39 +199,3 @@
 }
 
 
-.printPhotoContainer {
-  display: none;
-  visibility: hidden;
-
-  @include print(print) {
-    display: flex;
-    visibility: visible;
-
-    position: relative;
-    height: auto; //clamp(480px, 37.82738vw, 640px);
-    width: 50%;
-    border: 1px $gray-light solid;
-    border-radius: $border-radius ;
-
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-}
-
-.imagePrint {
-  display: none;
-  visibility: hidden;
-
-  @include print(print) {
-    display: flex;
-    visibility: visible;
-
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-
-  }
-}

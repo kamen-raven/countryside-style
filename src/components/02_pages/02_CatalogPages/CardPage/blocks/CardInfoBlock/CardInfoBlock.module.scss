@@ -52,11 +52,5 @@
   @include print(print) {
     padding: 0.5in;
     gap: .5rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "title title"
-      "photo price"
-      "info info";
-
   };
 }

@@ -3,7 +3,7 @@ import styles from './CardInfoBlock.module.scss';
 import { CardInfoBlockInterface } from './CardInfoBlock.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 
-import { ButtonCallElement, InfoContainer, PhotosComponent, PriceComponent, TitleComponent } from './elements/index.ts';
+import { ButtonCallElement, InfoContainer, PhotosComponent, PriceComponent, PrintPhotoComponent, TitleComponent } from './elements/index.ts';
 
 const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage, agentData }) => {
 
@@ -16,6 +16,9 @@ const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage,
         <TitleComponent data={objectData} />
         {/* ОСНОВНОЙ КОНТЕЙНЕР С ИНФОРМАЦИЕЙ / INFO */}
         <PhotosComponent data={objectData} />
+        
+        {/* ФОТО КОНТЕЙНЕР ДЛЯ ПЕЧАТНОЙ КАРТОЧКИ */}
+        <PrintPhotoComponent data={objectData}/>
 
         <InfoContainer data={objectData} typePage={typePage} agentData={agentData} />
         {/* КОНТЕЙНЕР С ЦЕНОЙ / PRICE */}

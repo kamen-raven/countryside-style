@@ -106,7 +106,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
         <div className={styles.mainPhotoContainer}>
 
           <ObjectImagePopupButton className={styles.image__popupButton}
-                                  picData={picturesArray}>
+            picData={picturesArray}>
             <Image
               className={styles.image}
               src={picturesArray[activePhoto].image}
@@ -181,24 +181,6 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
         </div>
       </div>
-
-
-      {picturesArray.length &&
-        <div className={styles.printPhotoContainer}>
-            <Image
-              className={styles.imagePrint}
-              src={picturesArray[0].image}
-              alt={data.name}
-              width={400}
-              height={360}
-              priority={true}
-            /*               onClick={() => console.log('click photo!!')} */
-            />
-        </div>
-      }
-
-
-
     </div>
   );
 };
