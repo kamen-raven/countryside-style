@@ -5,6 +5,7 @@ export * from './01_HomePage/HomePage/HomePage';
 export * from './02_CatalogPages/CatalogPage/CatalogPage';
 export * from './02_CatalogPages/CardPage/CardPage';
 export * from './02_CatalogPages/SearchResultsPage/SearchResultsPage';
+export * from './02_CatalogPages/PrintPage/PrintPage';
 
 // 03_AboutCompanyPages
 export * from './03_AboutCompanyPages/AboutUsPage/AboutUsPage';

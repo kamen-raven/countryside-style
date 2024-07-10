@@ -1,0 +1,32 @@
+@import '~global_styles';
+
+.mainContainer {
+  @include mainPageContainer(
+    "info"
+    "card"
+  );
+
+  gap: 60px;
+
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+
+  @include print(print) {
+    padding: 0;
+  }
+}
+
+.printContainer {
+  padding: 0 1rem;
+
+  @include print(print) {
+    padding: 0;
+  }
+}

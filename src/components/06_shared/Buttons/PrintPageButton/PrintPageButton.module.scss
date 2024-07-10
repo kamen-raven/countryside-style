@@ -1,7 +1,7 @@
 @import '~global_styles';
 
 .downloadButton {
-  @include common-button(transparent, $padding: 0);
+  @include common-button(light, $padding: 0);
   padding: 5px 5px 5px 22px;
   color: $dark;
   gap: 12px;

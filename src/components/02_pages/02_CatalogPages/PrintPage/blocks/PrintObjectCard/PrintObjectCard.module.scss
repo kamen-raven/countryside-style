@@ -1,0 +1,66 @@
+@import '~global_styles';
+
+
+.outsideContainer {
+  width: 100%;
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: auto; /* для центровки страницы */
+  page-break-after: always; /* для начала следующего элемента с новой страницы */
+  outline: 1px solid $dark;
+
+  display: grid;
+  grid-template-columns: auto;
+  gap: 20px;
+
+
+  @include breakpoint(screen640) {
+    gap: 30px;
+  }
+
+
+  @include print(print) {
+    outline: none;
+    padding:0;
+    gap: .5rem;
+  };
+}
+
+.innerContainer {
+  padding: 0.5in;
+
+  @include print(print) {
+    outline: none;
+    padding: 0.5in;
+    gap: .5rem;
+  };
+}
+
+.commonInfoContainer {
+  //grid-area: common-info;
+  padding-bottom: 50px;
+  border-bottom: 1px solid $gray;
+
+  text-align: justify;
+
+  @include breakpoint(screen1024) {
+    padding-bottom: 40px;
+  }
+
+  @include breakpoint(screen640) {
+    padding-bottom: 30px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 15x;
+
+  @include breakpoint(screen768) {
+    gap: 12px;
+  }
+
+
+  @include print(print) {
+    gap: 8px;
+  }
+}

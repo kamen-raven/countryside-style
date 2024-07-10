@@ -3,6 +3,8 @@
 @page {
   size: A4 portrait;
   margin: 0;
+  display: flex;
+  justify-content: start;
 }
 
 
@@ -27,9 +29,13 @@
   //justify-content: center;
   grid-template-rows: auto;
   grid-template-areas:
-  "header"
-  "navbar"
-  "main"
-  "footer";
-}
+    "header"
+    "navbar"
+    "main"
+    "footer";
 
+  @include print(print) {
+    grid-template-areas:
+      "main";
+  }
+}
