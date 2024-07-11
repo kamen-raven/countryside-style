@@ -65,6 +65,13 @@
     @include breakpoint(screen480) {
       display: none;
     }
+    @include print(print) {
+      display: inline;
+    }
+  }
+
+  @include print(print) {
+    display: inline;
   }
 }
 

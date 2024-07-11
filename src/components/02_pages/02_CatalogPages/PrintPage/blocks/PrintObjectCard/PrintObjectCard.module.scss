@@ -2,65 +2,65 @@
 
 
 .outsideContainer {
+  position: relative;
   width: 100%;
   max-width: 210mm;
+  height: 100%;
   min-height: 297mm;
-  margin: auto; /* для центровки страницы */
-  page-break-after: always; /* для начала следующего элемента с новой страницы */
+  margin: auto;
+  /* для центровки страницы */
   outline: 1px solid $dark;
 
-  display: grid;
-  grid-template-columns: auto;
-  gap: 20px;
+  @include print(print) {
 
-
-  @include breakpoint(screen640) {
-    gap: 30px;
+    margin: auto;
+    padding: 0;
   }
 
-
-  @include print(print) {
-    outline: none;
-    padding:0;
-    gap: .5rem;
-  };
 }
 
 .innerContainer {
-  padding: 0.5in;
-
-  @include print(print) {
-    outline: none;
-    padding: 0.5in;
-    gap: .5rem;
-  };
-}
-
-.commonInfoContainer {
-  //grid-area: common-info;
-  padding-bottom: 50px;
-  border-bottom: 1px solid $gray;
-
-  text-align: justify;
-
-  @include breakpoint(screen1024) {
-    padding-bottom: 40px;
-  }
-
-  @include breakpoint(screen640) {
-    padding-bottom: 30px;
-  }
+  padding: 2rem;
 
   display: flex;
   flex-direction: column;
-  gap: 15x;
+  gap: 16px;
 
-  @include breakpoint(screen768) {
-    gap: 12px;
+  @include print(print) {
+    padding: 10mm;
+    padding-bottom: 15mm;
+    gap: 12pt;
   }
+}
+
+.logoContainer {
+  position: absolute;
+  top: 2mm;
+  right: 10px;
+  transform-origin: right top;
+  scale: .65;
+
+  @include print(print) {
+    top: 4mm;
+    right: 10mm;
+  }
+}
+
+.commonInfoContainer {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid $gray;
+  border-top: 1px solid $gray;
+
+  text-align: justify;
+
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
 
 
   @include print(print) {
-    gap: 8px;
+    padding: 12pt 0;
+    gap: 8pt;
+
   }
 }

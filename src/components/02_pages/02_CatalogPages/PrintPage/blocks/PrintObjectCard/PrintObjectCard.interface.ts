@@ -1,9 +1,9 @@
-import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 import { UsersInterface } from '~interfaces/users.interface';
-import { VillageObjectInterface } from '~interfaces/villages.interface';
+/* import { VillageObjectInterface } from '~interfaces/villages.interface'; */
 
 export interface PrintObjectCardInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,HTMLDivElement > {
-  objectData: RealEstateObjectInterface | VillageObjectInterface;
+  objectData: RealEstateObjectInterface;
   agentData: UsersInterface;
 }

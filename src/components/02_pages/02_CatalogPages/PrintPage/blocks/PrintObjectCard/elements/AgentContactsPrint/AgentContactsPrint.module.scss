@@ -1,0 +1,120 @@
+@import '~global_styles';
+
+@import '~global_styles';
+
+.sellerElement {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+
+  @include print(print) {
+
+    gap: 12pt;
+  }
+}
+
+
+.sellerPhoto {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+@include print(print) {
+      gap: 18pt;
+}
+
+  &_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 80%;
+
+    @include print(print) {
+      width: 18mm;
+      height: 18mm;
+    }
+  }
+}
+
+.sellerContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  @include print(print) {
+    gap: 10pt;
+  }
+}
+
+.name {
+  font-weight: $bold;
+  font-size: 24px;
+  margin: 0;
+
+  @include print(print) {
+    font-size: 18pt;
+  }
+}
+
+.telNumber {
+  font-size: 24px;
+  font-weight: $medium;
+  margin: 0;
+
+  @include print(print) {
+    font-size: 18pt;
+  }
+}
+
+.description {
+  @include common-paragraph(p,
+    $font-weight: $regular,
+    $font-family: $ff-openSans);
+}
+
+.contactButton {
+  @include common-button(transparent,
+    $padding: 0 0 0 20px);
+  border-radius: 30px;
+  max-height: 55px;
+  max-width: 225px;
+
+  @include common-paragraph(p,
+    $color: $dark,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+    padding: 5px 5px 5px 10px;
+
+    & svg {
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+
+
+.messengersContainer {
+  display: flex;
+
+  flex-wrap: wrap;
+
+
+  @include breakpoint(screen1024) {
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: start;
+    grid-row: 1 / 3;
+  }
+
+  @include breakpoint(screen576) {
+    grid-row: unset;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}

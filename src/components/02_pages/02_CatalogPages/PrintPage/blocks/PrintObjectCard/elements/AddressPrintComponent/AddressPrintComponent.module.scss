@@ -1,0 +1,36 @@
+@import '~global_styles';
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+
+  @include print(print) {
+    gap: 8pt;
+    margin-bottom: 4pt;
+  }
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: $medium;
+  margin: 0;
+
+  @include print(print) {
+    font-size: 20pt;
+  }
+}
+
+
+
+.address {
+  font-weight: $regular;
+  line-height: 120%;
+  font-size: 1.5rem;
+  margin: 0;
+
+  @include print(print) {
+    font-size: 16pt;
+  }
+}

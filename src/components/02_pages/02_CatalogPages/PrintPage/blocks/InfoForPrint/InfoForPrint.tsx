@@ -24,6 +24,8 @@ const InfoForPrint: React.FC = () => {
       </h2>
 
       <div className={styles.disclaimerWrapper}>
+        <div className = {styles.disclaimerInner}>
+
         <div className={styles.disclaimerContainer}>
           <div className={styles.disclaimerIcon}>
             <AttentionDisclaimerIcon />
@@ -42,6 +44,7 @@ const InfoForPrint: React.FC = () => {
             вернуться к объекту
             <ArrowIcon />
           </button>
+        </div>
         </div>
       </div>
 

@@ -1,0 +1,102 @@
+@import '~global_styles';
+
+.marginContainer {
+  position: absolute;
+  bottom: .5rem;
+  left: 0;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: calc(100% - 64px);
+  margin: 0 2rem;
+}
+
+.labelContainer {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: $regular;
+
+  @include print(print) {
+    font-size: 10pt;
+  }
+}
+
+.logoContainer {
+/*   transform-origin: right;
+  scale: .7;
+ */
+  @include print(print) {
+    font-size: 10pt;
+  }
+}
+
+
+.logo {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 10px;
+
+
+  & svg {
+    display: flex;
+    object-fit: contain;
+    max-width: 40px;
+    height: 25px;
+  }
+}
+
+
+.name {
+  color: $accent-green;
+  text-decoration: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  text-wrap: nowrap;
+  gap: 4px;
+  font-size: 1rem;
+  font-weight: $bold;
+  font-family: $ff-openSans;
+
+  @include print(print) {
+    font-size: 14pt;
+    gap: 4pt;
+  }
+}
+
+.span {
+  font-size: .6rem;
+  font-weight: $light;
+  color: $accent-gray;
+  line-height: 100%;
+  margin: 0;
+  text-align: justify;
+  letter-spacing: 1.5px;
+
+  @include print(print) {
+    font-size: 8pt;
+  }
+}
+
+
+.phoneContainer {
+  justify-self: flex-start;
+}
+
+.phoneNumber {
+  font-weight: $bold;
+  font-size: 1rem;
+  gap: .5rem;
+
+  @include print(print) {
+    gap: 8pt;
+  }
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
+}

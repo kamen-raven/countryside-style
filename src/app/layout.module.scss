@@ -1,12 +1,12 @@
 @import '~global_styles';
 
-@page {
+/* @page {
   size: A4 portrait;
   margin: 0;
   display: flex;
   justify-content: start;
 }
-
+ */
 
 .page {
   @include scrollbar ($arrows: true);

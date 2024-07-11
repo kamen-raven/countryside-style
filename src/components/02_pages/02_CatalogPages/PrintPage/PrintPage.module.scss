@@ -1,8 +1,15 @@
 @import '~global_styles';
 
+@page {
+  size: A4 portrait;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+}
+
+
 .mainContainer {
-  @include mainPageContainer(
-    "info"
+  @include mainPageContainer("info"
     "card"
   );
 
@@ -20,6 +27,7 @@
 
   @include print(print) {
     padding: 0;
+    gap: 0;
   }
 }
 

@@ -73,6 +73,10 @@
 
 .disclaimerWrapper {
   background-color: $accent-green;
+
+}
+
+.disclaimerInner {
   @include mainContainer($padding-upDown: 80px);
 
   display: flex;

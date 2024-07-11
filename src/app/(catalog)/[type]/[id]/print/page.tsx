@@ -11,6 +11,7 @@ import { PrintPage } from "~pages/index";
 
 import { useDataForPrintStore } from "~store/objectsCardStore/useDataForPrintStore";
 import Loading from "../../../../loading";
+import Head from "next/head";
 
 
 export default function PagePrint() {
@@ -30,12 +31,18 @@ export default function PagePrint() {
   const [error, setError] = useState(false); // стейт для отображения страницы 404
 
   useEffect(() => {
-  // если у нас идет прямой переход по ссылке или что-то не записалось в стейт -
-  //  мы запрашиваем информацию об объекте с сервера
+    // если у нас идет прямой переход по ссылке или что-то не записалось в стейт -
+    //  мы запрашиваем информацию об объекте с сервера
     if (!objectData || !agentData) {
       const getObjectData = async () => {
         const objectID = pathname.split('/')[2]; // берем поле ID
+        if (!objectID) {
+          setError(true);
+          return;
+        }
 
+
+        try {
         // получаем все объекты
         const objects = await getObjects();
 
@@ -64,11 +71,17 @@ export default function PagePrint() {
         // записываем новые данные в стейт для дальнейшей работы
         setObjectData(currentObject);
         agent && setAgentData(agent);
-      };
+      } catch (e) {
+        setError(true);
+      }
+    };
 
+
+    if (!objectData || !agentData) {
       getObjectData();
     }
-  }, [objectData, agentData, pathname]);
+    }
+  }, [objectData, agentData, pathname, setObjectData, setAgentData]);
 
 
   // отображение страницы 404 если нет данных на сервере
@@ -84,13 +97,15 @@ export default function PagePrint() {
 
 
 
-
-
   return (
     <>
-      {(objectData ) &&
+      <Head>
+        <title>{objectData.name}</title>
+        <meta name="description" content={objectData.name} />
+      </Head>
+
         <PrintPage objectData={objectData} agentData={agentData} />
-      }
+
     </>
 
   );
