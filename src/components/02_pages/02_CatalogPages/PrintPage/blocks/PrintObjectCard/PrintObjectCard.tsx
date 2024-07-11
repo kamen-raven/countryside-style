@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './PrintObjectCard.module.scss';
 import { PrintObjectCardInterface } from './PrintObjectCard.interface';
 import { CommonInfoInner } from '~pages/02_CatalogPages/CardPage/blocks/CardInfoBlock/elements/InfoContainer/modules';
-import { AddressPrintComponent, AgentContactsPrint, MarginPrintComponent, PhotoForPrintComponent } from './elements';
+import { AddressPrintComponent, CharacteristicsPrintComponent, MarginPrintComponent, PhotoForPrintComponent } from './elements';
 
 
 const PrintObjectCard: React.FC<PrintObjectCardInterface> = ({ objectData, agentData }) => {
@@ -12,9 +12,9 @@ const PrintObjectCard: React.FC<PrintObjectCardInterface> = ({ objectData, agent
 
 
         <AddressPrintComponent objectData={objectData} />
-        <PhotoForPrintComponent objectData={objectData}  />
-
-        <AgentContactsPrint agentData={agentData}/>
+        <PhotoForPrintComponent objectData={objectData} agentData={agentData} />
+        <CharacteristicsPrintComponent objectData={objectData}/>
+{/*         <AgentContactsPrint agentData={agentData}/> */}
 
 
         {objectData.object_description &&

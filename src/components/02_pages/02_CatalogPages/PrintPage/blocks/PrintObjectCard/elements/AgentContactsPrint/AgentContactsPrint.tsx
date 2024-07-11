@@ -20,12 +20,13 @@ const AgentContactsPrint: React.FC<AgentContactsPrintInterface> = ({ agentData }
               height={120}
               src={agentData.avatars[0].image}
               alt={`${agentData.first_name} ${agentData.last_name}`} />
-            <p className={styles.name}>
-              {agentData.first_name} {agentData.last_name}
-            </p>
+
           </div>
 
-          <div className={styles.sellerContainer}>
+          <div className={styles.sellerInfo}>
+          <p className={styles.name}>
+              {agentData.first_name} {agentData.last_name}
+            </p>
             {agentData.phone_number &&
               <div className={styles.telNumber}>
                 {formatPhoneNumber(agentData.phone_number)}

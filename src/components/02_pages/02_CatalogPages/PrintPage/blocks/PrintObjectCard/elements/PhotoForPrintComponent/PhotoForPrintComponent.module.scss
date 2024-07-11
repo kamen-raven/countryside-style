@@ -44,15 +44,7 @@
   }
 }
 
-.characteristicContainer {
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
 
-  @include print(print) {
-    gap: 8pt;
-  }
-}
 
 .address {
   font-weight: $regular;
@@ -66,20 +58,6 @@
 }
 
 
-.info {
-  font-weight: $regular;
-  line-height: 120%;
-  font-size: 1rem;
-  margin: 0;
-
-  &_span {
-    font-weight: $medium;
-  }
-
-  @include print(print) {
-    font-size: 13pt;
-  }
-}
 
 
 

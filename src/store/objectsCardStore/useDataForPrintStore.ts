@@ -3,14 +3,14 @@ import { create } from "zustand";
 
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 import { UsersInterface } from "~interfaces/users.interface";
-/* import { VillageObjectInterface } from "~interfaces/villages.interface"; */
+import { VillageObjectInterface } from "~interfaces/villages.interface";
 
 interface useDataForPrintStateInterface {
-  objectData: RealEstateObjectInterface | null;
+  objectData: RealEstateObjectInterface | VillageObjectInterface | null;
   agentData: UsersInterface | null;
   actions: {
     setObjectData: (
-      data: RealEstateObjectInterface
+      data: RealEstateObjectInterface | VillageObjectInterface
     ) => void;
     setAgentData: (agent: UsersInterface) => void;
   };

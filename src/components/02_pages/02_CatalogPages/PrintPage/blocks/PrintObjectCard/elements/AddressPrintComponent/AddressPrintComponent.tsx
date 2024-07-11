@@ -10,11 +10,11 @@ const AddressPrintComponent: React.FC<AddressPrintComponentInterface> = ({ objec
           {objectData.name && objectData.name}
         </h1>
         {/* //* АДРЕС */}
-{/*         {objectData.place &&
+        {objectData.place &&
           <p className={styles.address}>
             Адрес: {objectData.place}
           </p>
-        } */}
+        }
       </div>
     );
 };

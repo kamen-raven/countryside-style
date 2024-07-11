@@ -3,8 +3,8 @@
 @import '~global_styles';
 
 .sellerElement {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+
   gap: 8px;
 
   @include print(print) {
@@ -37,9 +37,10 @@
   }
 }
 
-.sellerContainer {
+.sellerInfo {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   gap: 1rem;
   @include print(print) {
     gap: 10pt;

@@ -25,8 +25,24 @@ export async function generateStaticParams() {
 export default async function CardType({ params }: { params: { id: string, type: 'flats' | 'lands' | 'houses-and-cottages' | 'villages' } }) {
   // получаем все объекты
   const objects = await getObjects();
+
+/*   const category = {
+    flats: 'Квартиры',
+    lands: 'Земельные участки',
+    'houses-and-cottages': 'Дома, дачи, коттеджи',
+    'villages': 'Коттеджные поселки'
+  };
+
+  const typePage = category[params.type]; // берем тип на основе params исходя из роута
+
+
+
+    if (!typePage) {   // если такого нету, то возвращаем пустую страницу
+      notFound();
+    } */
   // сравниваем и находим нужный объект из массива объектов по ID
   const idCurrentObj = objects.find(obj => obj.id.toString() === params.id);
+
 
   // если такого нет, то кидаем 404
   if (!idCurrentObj) {

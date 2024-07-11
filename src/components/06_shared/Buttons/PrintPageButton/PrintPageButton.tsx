@@ -30,7 +30,7 @@ const PrintPageButton: React.FC<PrintPageButtonInterface> = ({ data, agentData, 
       agentData && setAgentData(agentData);
 
       /*     const printWindow = window.open(`${pathname}/print`); */
-      router.replace(`${pathname}/print`);
+      router.push(`${pathname}/print`);
       //printWindow && printWindow.focus();
     };
   }
