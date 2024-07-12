@@ -1,6 +1,5 @@
 @import '~global_styles';
 
-@import '~global_styles';
 
 .sellerElement {
   display: flex;
@@ -8,7 +7,6 @@
   gap: 8px;
 
   @include print(print) {
-
     gap: 12pt;
   }
 }
@@ -40,7 +38,7 @@
 .sellerInfo {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 1rem;
   @include print(print) {
     gap: 10pt;
@@ -109,7 +107,7 @@
   @include breakpoint(screen1024) {
     flex-direction: column;
     align-items: flex-end;
-    align-self: start;
+    align-self: flex-start;
     grid-row: 1 / 3;
   }
 

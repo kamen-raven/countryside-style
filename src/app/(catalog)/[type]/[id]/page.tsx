@@ -18,6 +18,7 @@ export async function generateStaticParams() {
   const objects = await getObjects(); // получаем все объекты
   /* формируем массив ID объектов для адресной строки */
   const idList: { id: string }[] = objects.map((obj: RealEstateObjectInterface) => ({ id: obj.id.toString() }));
+
   return idList;
 }
 
@@ -26,7 +27,7 @@ export default async function CardType({ params }: { params: { id: string, type:
   // получаем все объекты
   const objects = await getObjects();
 
-/*   const category = {
+  const category = {
     flats: 'Квартиры',
     lands: 'Земельные участки',
     'houses-and-cottages': 'Дома, дачи, коттеджи',
@@ -39,7 +40,7 @@ export default async function CardType({ params }: { params: { id: string, type:
 
     if (!typePage) {   // если такого нету, то возвращаем пустую страницу
       notFound();
-    } */
+    }
   // сравниваем и находим нужный объект из массива объектов по ID
   const idCurrentObj = objects.find(obj => obj.id.toString() === params.id);
 
