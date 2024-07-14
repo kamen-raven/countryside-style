@@ -1,0 +1,25 @@
+@import '~global_styles';
+
+.errorContainer {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: fit-content;
+  max-width: 40%;
+  display: flex;
+  align-items: center;
+  background-color: rgba($color: $gray-light, $alpha: .2);
+
+  border-radius: 0 $border-radius $border-radius 0;
+}
+
+.error {
+  @include common-paragraph(pSm);
+  font-weight: $light;
+  padding: 0 6px;
+  color: $youtube;
+  margin: 0;
+  text-wrap: wrap;
+}
