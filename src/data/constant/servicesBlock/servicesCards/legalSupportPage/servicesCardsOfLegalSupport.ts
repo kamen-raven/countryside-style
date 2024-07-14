@@ -1,11 +1,3 @@
-
-
-import Service1_1 from '~img/servicesPages/template/1 (1).png';
-import Service1_2 from '~img/servicesPages/template/1 (2).png';
-import Service1_3 from '~img/servicesPages/template/1 (3).png';
-import Service1_4 from '~img/servicesPages/template/1 (4).png';
-import Service1_5 from '~img/servicesPages/template/1 (5).png';
-
 import Service2_1 from '~img/servicesPages/template/2 (1).png';
 import Service2_2 from '~img/servicesPages/template/2 (2).png';
 import Service2_3 from '~img/servicesPages/template/2 (3).png';
