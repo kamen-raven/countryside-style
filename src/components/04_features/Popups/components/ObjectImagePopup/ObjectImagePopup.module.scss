@@ -98,6 +98,7 @@
   @include common-paragraph(pLg,
   $font-family: $ff-openSans,
   $font-weight: $medium,
+  $color: $white  // new
   );
   line-height: 100%;
 }
