@@ -10,16 +10,16 @@ interface SearchStateInterface {
   searchTerm: string;
   searchPriceMin: number;
   searchPriceMax: number;
-  searchType: 'all' | 'flats' | 'lands' | 'houses-and-cottages';
-  searchTypeLabel: string;
+  searchTypes:("flats" | "lands" | "houses-and-cottages" | "all")[];// 'all' | 'flats' | 'lands' | 'houses-and-cottages';
+  searchTypeLabels: string[];
   dataForSearch: RealEstateObjectInterface[];
   initialData: RealEstateObjectInterface[];
   actions: {
     setSearchTerm: (term: string) => void;
     setSearchPriceMin: (price: number) => void;
     setSearchPriceMax: (price: number) => void;
-    setSearchType: (type: 'all' | 'flats' | 'lands' | 'houses-and-cottages') => void;
-    setSearchTypeLabel: (label: string) => void;
+    setSearchTypes: (type:  ("flats" | "lands" | "houses-and-cottages" | "all")[]) => void; // 'all' | 'flats' | 'lands' | 'houses-and-cottages') => void;
+    setSearchTypeLabels: (label: string[]) => void;
     setDataForSearch: (data:  RealEstateObjectInterface[]) => void
     fetchDataForSearch: () => Promise<void>;
   }
@@ -31,8 +31,8 @@ export const useSearchStore = create<SearchStateInterface>((set) => ({
   searchPriceMin: NaN,
   searchPriceMax: NaN,
 
-  searchType: 'all',
-  searchTypeLabel: '',
+  searchTypes: ['all'],
+  searchTypeLabels: [],
 
   dataForSearch: [],
   initialData: [],
@@ -43,8 +43,8 @@ export const useSearchStore = create<SearchStateInterface>((set) => ({
     setSearchPriceMin: (price) => set({ searchPriceMin: price }),
     setSearchPriceMax: (price) => set({ searchPriceMax: price }),
 
-    setSearchType: (type) => set({ searchType: type }),
-    setSearchTypeLabel: (label) => set({searchTypeLabel: label}),
+    setSearchTypes: (types) => set({ searchTypes: types }),
+    setSearchTypeLabels: (labels) => set({searchTypeLabels: labels}),
 
     setDataForSearch: (data) => set({ dataForSearch: data }),
 

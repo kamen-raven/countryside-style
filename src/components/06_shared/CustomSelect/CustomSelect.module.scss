@@ -2,7 +2,7 @@
 
 
 .customSelect {
-  min-width: 200px;
+  min-width: 280px;
   height: 45px;
   width: 100%;
   position: relative;
@@ -13,8 +13,8 @@
   border-radius: $border-radius;
 
   @include common-paragraph(p,
-  $font-weight: $regular,
-  $font-family: $ff-openSans);
+    $font-weight: $regular,
+    $font-family: $ff-openSans);
 
   &_opened {
     border-radius: $border-radius $border-radius 0;
@@ -24,6 +24,7 @@
   @include breakpoint(screen768) {
     height: 40px;
   }
+
   @include breakpoint(screen576) {
     height: 35px;
     min-width: 240px;
@@ -78,7 +79,7 @@
   transition: all .3s linear;
 
   &:first-of-type {
-    color:rgba($color: $gray, $alpha: .6)
+    color: rgba($color: $gray, $alpha: .6)
   }
 }
 
@@ -87,6 +88,9 @@
   cursor: pointer;
   user-select: none;
   border-bottom: 1px solid $gray;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
 
   &:last-child {
     border-bottom: none;
@@ -96,8 +100,11 @@
 .selectItems div:hover {
   background-color: $accent-green;
   color: $white;
-}
 
+  &>.checkbox:checked {
+    background-color: $accent-green-hover-light;
+  }
+}
 
 
 .toggleIcon {
@@ -110,5 +117,81 @@
   &_opened {
     transform: rotate(180deg) translateY(50%) scaleX(-1);
     transition: transform .3s linear;
+  }
+}
+
+
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+
+  border: 1px solid $gray;
+  border-radius: 5px;
+
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  position: relative;
+  margin: 0;
+
+  cursor: pointer;
+  background: $white;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+
+
+
+  @include breakpoint(screen768) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  .checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:after {
+      content: '';
+      transition: transform 0.3s ease, opacity 0.2s;
+
+      width: 5px;
+      height: 9px;
+
+      border: 2px solid $white;
+      border-top: 0;
+      border-left: 0;
+
+      opacity: 0;
+      transform: rotate(20deg);
+
+      @include breakpoint(screen768) {
+        width: 2.5px;
+        height: 6px;
+      }
+    }
+
+    &:checked {
+      background: $accent-green;
+      border-color: $white;
+      transition: transform 0.6s cubic-bezier(0.2, 0.85, 0.32, 1.2), opacity 0.3s;
+    }
+
+    &:checked:after {
+      opacity: 1;
+      transform: rotate(43deg);
+    }
+
+    &:hover:not(:checked) {
+      border-color: $dark;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px $black;
+    }
   }
 }

@@ -19,8 +19,8 @@ export default function SearchResults() {
     searchTerm: useSearchStore((state) => state.searchTerm),
     searchPriceMin: useSearchStore((state) => state.searchPriceMin),
     searchPriceMax: useSearchStore((state) => state.searchPriceMax),
-    searchType: useSearchStore((state) => state.searchType),
-    searchTypeLabel: useSearchStore((state) => state.searchTypeLabel),
+    searchTypes: useSearchStore((state) => state.searchTypes),
+    searchTypeLabels: useSearchStore((state) => state.searchTypeLabels),
     dataForSearch: useSearchStore((state) => state.dataForSearch),
     initialData: useSearchStore((state) => state.initialData),
   };
@@ -45,7 +45,7 @@ export default function SearchResults() {
   const filterData = (
     data: RealEstateObjectInterface[],
     term: string,
-    type: 'all' | 'flats' | 'lands' | 'houses-and-cottages',
+    types: ('all' | 'flats' | 'lands' | 'houses-and-cottages')[],
     priceMin: number,
     priceMax: number
   ) => {
@@ -55,8 +55,8 @@ export default function SearchResults() {
       filteredData = searchObjectsByName(filteredData, term);
     }
 
-    if (type !== 'all') {
-      filteredData = searchObjectsByCategory(filteredData, type);
+    if (types.length > 0) {
+      filteredData = searchObjectsByCategory(filteredData, types);
     }
 
     if (!Number.isNaN(priceMin) && priceMin > 0) {
@@ -75,7 +75,7 @@ export default function SearchResults() {
   const filteredData = filterData(
     searchStore.dataForSearch,
     searchStore.searchTerm,
-    searchStore.searchType,
+    searchStore.searchTypes,
     searchStore.searchPriceMin,
     searchStore.searchPriceMax,
   );
@@ -83,11 +83,11 @@ export default function SearchResults() {
 
 
 
+  console.log(`Type: ${searchStore.searchTypes}`);
 
 /*   console.log(`dataSearch: ${searchStore.dataForSearch.length}`);
   console.log(`filteredData: ${filteredData.length}`);
   console.log(`Term: ${searchStore.searchTerm}`);
-  console.log(`Type: ${searchStore.searchType}`);
   console.log(`min: ${searchStore.searchPriceMin}`);
   console.log(`max: ${searchStore.searchPriceMax}`); */
 

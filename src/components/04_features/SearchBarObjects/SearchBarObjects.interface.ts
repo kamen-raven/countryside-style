@@ -8,8 +8,8 @@ export interface SearchBarObjectsInterface
     searchTerm: string;
     searchPriceMin: number;
     searchPriceMax: number;
-    searchType: "all" | "flats" | "lands" | "houses-and-cottages";
-    searchTypeLabel: string;
+    searchTypes: ("all" | "flats" | "lands" | "houses-and-cottages")[];
+    searchTypeLabels: string[];
     dataForSearch: RealEstateObjectInterface[];
     initialData: RealEstateObjectInterface[];
   };

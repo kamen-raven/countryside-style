@@ -34,12 +34,12 @@
   }
 
   &:hover {
-    scrollbar-color: $accent-green-hover;
+    scrollbar-color: $accent-green-hover-dark;
     /* Изменение цвета полосы прокрутки при наведении */
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background-color: $accent-green-hover ;
+    background-color: $accent-green-hover-dark;
     /* Изменение цвета полосы прокрутки при наведении в Chrome и Safari */
   }
 

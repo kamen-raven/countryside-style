@@ -20,8 +20,8 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     searchTerm = '',
     searchPriceMin = NaN,
     searchPriceMax = NaN,
-    searchType = 'all',
-    searchTypeLabel = '',
+    searchTypes = ['all'],
+    searchTypeLabels = [],
     //dataForSearch = [],
     initialData = [],
   } = searchStore || {};
@@ -32,8 +32,8 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     setSearchTerm: useSearchStore((state) => state.actions.setSearchTerm),
     setSearchPriceMin: useSearchStore((state) => state.actions.setSearchPriceMin),
     setSearchPriceMax: useSearchStore((state) => state.actions.setSearchPriceMax),
-    setSearchType: useSearchStore((state) => state.actions.setSearchType),
-    setSearchTypeLabel: useSearchStore((state) => state.actions.setSearchTypeLabel),
+    setSearchTypes: useSearchStore((state) => state.actions.setSearchTypes),
+    setSearchTypeLabels: useSearchStore((state) => state.actions.setSearchTypeLabels),
     setDataForSearch: useSearchStore((state) => state.actions.setDataForSearch),
     fetchDataForSearch: useSearchStore((state) => state.actions.fetchDataForSearch),
   };
@@ -70,6 +70,7 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     setTempSearchPriceMax(parseFormattedNumber(value));
     setDisplayMaxPrice(value);
   };
+
   useEffect(() => {
     setDisplayMinPrice(formatNumber(tempSearchPriceMin));
   }, [tempSearchPriceMin]);
@@ -78,36 +79,36 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     setDisplayMaxPrice(formatNumber(tempSearchPriceMax));
   }, [tempSearchPriceMax]);
 
-/*   const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTempSearchPriceMin(Number(event.target.value));
-  };
+  /*   const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setTempSearchPriceMin(Number(event.target.value));
+    };
 
-  const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTempSearchPriceMax(Number(event.target.value));
-  };
- */
+    const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setTempSearchPriceMax(Number(event.target.value));
+    };
+   */
 
   // CustomSelect TYPE - DATA
-  const selectLabel = 'Тип объекта';
+  const selectLabel = 'Выберите тип объекта';
   const selectOptions = ['Дом', 'Участок', 'Квартира'];
 
-  const [tempSearchType, setTempSearchType] = useState(searchType);  // данные селекта
-  const [tempSearchTypeLabel, setTempSearchTypeLabel] = useState(searchTypeLabel === '' ? selectLabel : searchTypeLabel); // временный стейт выбранной опции
+  const [tempSearchTypes, setTempSearchTypes] = useState(searchTypes);  // данные селекта
+  const [tempSearchTypeLabels, setTempSearchTypeLabels] = useState(searchTypeLabels.length === 0 ? [] : searchTypeLabels); // временный стейт выбранной опции
 
   /// функция для управления выбором ТИПА ОБъЕКТА
-  const handleSelect = (option: string) => {
+  const handleSelect = (options: string[]) => {
     const optionToSearchType: { [key: string]: 'all' | 'flats' | 'lands' | 'houses-and-cottages' } = {
       'Дом': 'houses-and-cottages',
       'Участок': 'lands',
       'Квартира': 'flats'
     };
 
-    const getType = optionToSearchType[option] || 'all';
+    const getTypes = options.map(option => optionToSearchType[option]);
 
-    setTempSearchTypeLabel(option);
-    setTempSearchType(getType);
-    //searchActions.setSearchType(getType);
-    searchActions.setSearchTypeLabel(option);
+    setTempSearchTypeLabels(options);
+    setTempSearchTypes(getTypes);
+    searchActions.setSearchTypeLabels(options);
+    //searchActions.setSearchTypes(getTypes);
   };
 
 
@@ -117,20 +118,20 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
     try {
       //if (tempSearchTerm !== '') {
-        searchActions.setSearchTerm(tempSearchTerm);
+      searchActions.setSearchTerm(tempSearchTerm);
+      //}
+      //if (!Number.isNaN(tempSearchPriceMin) && tempSearchPriceMin > 0) {
+      searchActions.setSearchPriceMin(tempSearchPriceMin);
+      //}
+
+      // if (!Number.isNaN(tempSearchPriceMax) && tempSearchPriceMax > 0) {
+      searchActions.setSearchPriceMax(tempSearchPriceMax);
       //}
 
       //if (tempSearchType !== 'all') {
-        searchActions.setSearchType(tempSearchType);
+      searchActions.setSearchTypes(tempSearchTypes);
       //}
 
-      //if (!Number.isNaN(tempSearchPriceMin) && tempSearchPriceMin > 0) {
-        searchActions.setSearchPriceMin(tempSearchPriceMin);
-      //}
-
-     // if (!Number.isNaN(tempSearchPriceMax) && tempSearchPriceMax > 0) {
-        searchActions.setSearchPriceMax(tempSearchPriceMax);
-      //}
 
       if (initialData.length > 0) {
         searchActions.setDataForSearch(initialData);
@@ -156,34 +157,31 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
   const handleClear = (event: React.FormEvent) => {
     event.preventDefault();
     setTempSearchTerm('');
-    setTempSearchType('all');
+    setTempSearchTypes(['all']);
     setTempSearchPriceMin(NaN);
     setTempSearchPriceMax(NaN);
     setDisplayMinPrice(formatNumber(NaN));
     setDisplayMaxPrice(formatNumber(NaN));
-    setTempSearchTypeLabel(selectLabel);
+    setTempSearchTypeLabels([]);
     searchActions.setSearchTerm('');
-    searchActions.setSearchType('all');
-    searchActions.setSearchTypeLabel(selectLabel);
+    searchActions.setSearchTypes(['all']);
+    searchActions.setSearchTypeLabels([]);
     searchActions.setSearchPriceMin(NaN);
     searchActions.setSearchPriceMax(NaN);
     searchActions.setDataForSearch(initialData);
-    /*     if (typePage !== 'search') {
-          setTempSearchTerm('');
-          setSearchTerm('');
-        } else {
-          setTempSearchTerm('');
-          setSearchTerm('');
-        } */
+
+    if (typePage == 'search') {
+      router.back();
+    }
   };
 
   useEffect(() => {
-    if (tempSearchTerm.trim() || tempSearchTypeLabel !== selectLabel || !Number.isNaN(tempSearchPriceMin) || !Number.isNaN(tempSearchPriceMax)) {
+    if (tempSearchTerm.trim() || tempSearchTypeLabels.length > 0 || !Number.isNaN(tempSearchPriceMin) || !Number.isNaN(tempSearchPriceMax)) {
       setIsClearBtnDisabled((false));
     } else {
       setIsClearBtnDisabled((true));
     }
-  }, [tempSearchTerm, tempSearchTypeLabel, tempSearchPriceMin, tempSearchPriceMax]);
+  }, [tempSearchTerm, tempSearchTypeLabels, tempSearchPriceMin, tempSearchPriceMax]);
 
 
 
@@ -206,16 +204,16 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
         <div className={styles.optionsContainer}>
           <input
-            type='text'
+            type={'search'}
             min={0}
             step={0.01}
             placeholder="Цена от, руб."
             value={displayMinPrice}
             onChange={handleMinPriceChange}
             className={`${styles.priceInput} ${!Number.isNaN(tempSearchPriceMin) ? styles.priceInput_selected : ''}`}
-            />
+          />
           <input
-            type='text'
+            type={'search'}
             min={0}
             step={0.01}
             placeholder="Цена до, руб."
@@ -226,13 +224,12 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
           <CustomSelect
             label={selectLabel}
             options={selectOptions}
-            selectedOption={tempSearchTypeLabel}
+            selectedOptions={tempSearchTypeLabels}
             handleSelect={handleSelect}
           />
         </div>
 
         <div className={styles.buttonContainer}>
-
           <button className={`${styles.button} ${isClearBtnDisabled ? '' : styles.button_active} `}
             disabled={isClearBtnDisabled}//{!tempSearchTerm.trim()}
             type="submit">
