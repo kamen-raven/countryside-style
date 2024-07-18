@@ -112,6 +112,7 @@
 .blogTitle {
   grid-area: title;
   width: fit-content;
+  height: fit-content;
   margin-top: 70px;//clamp(40px, 5vw ,100px);
   margin-bottom: 24px;
 
@@ -123,12 +124,28 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  &_link {
-    text-decoration: none;
+
+  &__title {
+    @include common-title(hSmall);
+
+    &_blogCard {
+      padding-top: 70px;//clamp(40px, 5vw ,100px);
+      padding-bottom: 24px;
+
+      @include breakpoint(screen1024) {
+        padding-top: 30px;
+      }
+
+      @include breakpoint(screen576) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+    }
   }
 
-  &_title {
-    @include common-title(hSmall);
+  &__link {
+    text-decoration: none;
   }
 }
 /* ----------------- */
@@ -344,8 +361,10 @@
     text-wrap: wrap;
     text-decoration: underline;
     line-height: 100%;
-    text-align: end;
+    text-align: end !important;
     transition: text-decoration .2s linear;
+
+
   }
 
   &__span {

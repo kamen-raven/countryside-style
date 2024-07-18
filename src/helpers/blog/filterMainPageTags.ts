@@ -8,7 +8,7 @@ function filterMainPageTags(dataArray: TagInterface[] | null) {
   }
 
   const resultTagsArray = dataArray.filter(
-    (tag) => tag.tag.name !== "@mainPage"
+    (tag) => (tag.tag.name !== "@mainPage") && (tag.tag.name !== "")
   );
 
   return resultTagsArray;

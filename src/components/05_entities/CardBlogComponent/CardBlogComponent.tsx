@@ -73,12 +73,20 @@ const CardBlogComponent: React.FC<CardBlogComponentProps> = ({ path, blogCardIte
       </div>
 
       {/* заголовок статьи */}
-      <Link className={`${styles.blogTitle} ${styles.blogTitle_link}`} href={`/blog/${blogCardItem.uuid}`}>
-        <h3 className={`${styles.blogTitle_title}`}>
-          {blogCardItem.name}
-        </h3>
-      </Link>
+      <>
+        {path !== 'blogCard' ?
+          <Link className={`${styles.blogTitle} ${styles.blogTitle__link}`} href={`/blog/${blogCardItem.uuid}`}>
+            <h3 className={`${styles.blogTitle__title}`}>
+              {blogCardItem.name}
+            </h3>
+          </Link>
+          :
+          <h3 className={`${styles.blogTitle} ${styles.blogTitle__title} ${styles.blogTitle__title_blogCard}`}>
+            {blogCardItem.name}
+          </h3>
+        }
 
+      </>
 
 
       {/* контейнер с разделом количества комментариев и тэгами статьи */}

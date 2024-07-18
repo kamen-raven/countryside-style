@@ -8,7 +8,7 @@ import usePaginationCounter from '~hooks/usePaginationCounter.ts';
 import { BlogPageInterface } from './BlogPage.interface.ts';
 
 const BlogPage: React.FC<BlogPageInterface> = ({ blogPostsData }) => {
-  const itemsPerPage: number = 10; //?
+  const itemsPerPage: number = 12; //?
 
 
   const {
