@@ -20,6 +20,8 @@ const BlogTextBlock: React.FC<BlogTextBlockInterface> = ({ blogArticleItem }) =>
     ol: styles.ol,
     li: styles.li,
     a: styles.a,
+    imgContainer: styles.imgContainer,
+    img: styles.img
   };
 
 
