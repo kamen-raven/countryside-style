@@ -6,7 +6,7 @@ export default async function BlogLayout({
 }: {
   children: React.ReactNode,
 }) {
-  const blogPostsData = await getBlogArticle(); // посты из блога
+  const blogPostsData = (await getBlogArticle()).results.reverse(); // посты из блога   //* fix reverse
 
   return (
     <LayoutBlog blogPostsData={blogPostsData}>

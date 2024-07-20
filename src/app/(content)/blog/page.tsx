@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getBlogArticle } from "~api/Blog/getBlogArticle";
+
 import { BlogPage } from "~pages/index";
 
 export const metadata: Metadata = {
@@ -11,11 +11,14 @@ export const metadata: Metadata = {
 
 
 
-export default async function PageBlogL() {
+export default function PageBlog() {
 
-  const blogPostsData = await getBlogArticle(); // посты из блога
+/*   const blogPostsData = (await getBlogArticle()).results; // посты из блога
+ */
+
+
 
   return (
-    <BlogPage blogPostsData={blogPostsData} />
+    <BlogPage /* blogPostsData={blogPostsData} */ />
   );
 }

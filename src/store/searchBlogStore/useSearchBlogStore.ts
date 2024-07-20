@@ -13,7 +13,7 @@ interface SearchBlogStateInterface {
     setSearchBlogTag: (tags: string[]) => void;
     setDataForBlogSearch: (data: BlogInterface[]) => void;
     setInitialBlogData: (data: BlogInterface[]) => void;
-    fetchDataForBlogSearch: () => Promise<void>;
+/*     fetchDataForBlogSearch: () => Promise<void>; */
   };
 }
 
@@ -30,7 +30,7 @@ export const useSearchBlogStore = create<SearchBlogStateInterface>((set) => ({
     setDataForBlogSearch: (data) => set({ dataForBlogSearch: data }),
     setInitialBlogData: (data) => set({ initialBlogData: data }),
 
-    fetchDataForBlogSearch: async () => {
+  /*   fetchDataForBlogSearch: async () => {
       try {
         const data = (await getBlogArticle()).results.reverse();
 
@@ -42,6 +42,6 @@ export const useSearchBlogStore = create<SearchBlogStateInterface>((set) => ({
         // Сбрасываем данные в случае ошибки
         set({ dataForBlogSearch: [], initialBlogData: [] });
       }
-    },
+    }, */
   },
 }));

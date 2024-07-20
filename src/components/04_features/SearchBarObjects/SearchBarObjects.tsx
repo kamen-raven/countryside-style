@@ -5,12 +5,12 @@ import styles from './SearchBarObjects.module.scss';
 import { SearchBarObjectsInterface } from './SearchBarObjects.interface.ts';
 
 import SearchIcon from "~svg/search/searchIcon.svg";
-import ClearIcon from '~svg/button/clear.svg';
 
 import { CustomSelect } from '~shared/CustomSelect/CustomSelect.tsx';
 import { useSearchObjectsStore } from '~store/searchObjectsStore/useSearchObjectsStore.ts';
 import { useRouter } from 'next/navigation';
 import { formatNumber, parseFormattedNumber } from '~helpers/formatters/formatCostNumber.ts';
+import { SearchClearButton } from '~shared/index.ts';
 
 
 const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, typePage }) => {
@@ -175,6 +175,7 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     }
   };
 
+  // обработка проверки пустоты поля для дезактивации кнопки отправки запроса
   useEffect(() => {
     if (tempSearchTerm.trim() || tempSearchTypeLabels.length > 0 || !Number.isNaN(tempSearchPriceMin) || !Number.isNaN(tempSearchPriceMax)) {
       setIsClearBtnDisabled((false));
@@ -199,7 +200,8 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
             type={'search'}
             placeholder={`Введите поисковой запрос`}
             value={tempSearchTerm}
-            onChange={handleSearch} />
+            onChange={handleSearch}
+          />
         </div>
 
         <div className={styles.optionsContainer}>
@@ -235,14 +237,10 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
             type="submit">
             Подобрать
           </button>
-
-          <button className={styles.clearButton}
-            type="button"
+          <SearchClearButton
+            onClick={handleClear}
             disabled={isClearBtnDisabled}
-            onClick={handleClear}>
-            сбросить
-            <ClearIcon />
-          </button>
+            innerText='сбросить' />
         </div>
       </form>
 

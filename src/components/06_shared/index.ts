@@ -4,6 +4,7 @@ export * from './Buttons/PrintPageButton/PrintPageButton';
 export * from './Buttons/VideoPopupButton/VideoPopupButton';
 export * from './Buttons/BurgerMenuButton/BurgerMenuButton';
 export * from './Buttons/ObjectImagePopupButton/ObjectImagePopupButton';
+export * from './Buttons/SearchClearButton/SearchClearButton';
 
 export * from './Logo/Logo';
 export * from './Background/BackgroundSVGPattern';
