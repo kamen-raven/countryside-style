@@ -8,7 +8,7 @@ import SearchIcon from "~svg/search/searchIcon.svg";
 import ClearIcon from '~svg/button/clear.svg';
 
 import { CustomSelect } from '~shared/CustomSelect/CustomSelect.tsx';
-import { useSearchStore } from '~store/searchStore/useSearchStore.ts';
+import { useSearchObjectsStore } from '~store/searchObjectsStore/useSearchObjectsStore.ts';
 import { useRouter } from 'next/navigation';
 import { formatNumber, parseFormattedNumber } from '~helpers/formatters/formatCostNumber.ts';
 
@@ -29,13 +29,13 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
   // объект действий с состояниями
   const searchActions = {
-    setSearchTerm: useSearchStore((state) => state.actions.setSearchTerm),
-    setSearchPriceMin: useSearchStore((state) => state.actions.setSearchPriceMin),
-    setSearchPriceMax: useSearchStore((state) => state.actions.setSearchPriceMax),
-    setSearchTypes: useSearchStore((state) => state.actions.setSearchTypes),
-    setSearchTypeLabels: useSearchStore((state) => state.actions.setSearchTypeLabels),
-    setDataForSearch: useSearchStore((state) => state.actions.setDataForSearch),
-    fetchDataForSearch: useSearchStore((state) => state.actions.fetchDataForSearch),
+    setSearchTerm: useSearchObjectsStore((state) => state.actions.setSearchTerm),
+    setSearchPriceMin: useSearchObjectsStore((state) => state.actions.setSearchPriceMin),
+    setSearchPriceMax: useSearchObjectsStore((state) => state.actions.setSearchPriceMax),
+    setSearchTypes: useSearchObjectsStore((state) => state.actions.setSearchTypes),
+    setSearchTypeLabels: useSearchObjectsStore((state) => state.actions.setSearchTypeLabels),
+    setDataForSearch: useSearchObjectsStore((state) => state.actions.setDataForSearch),
+    fetchDataForSearch: useSearchObjectsStore((state) => state.actions.fetchDataForSearch),
   };
 
 

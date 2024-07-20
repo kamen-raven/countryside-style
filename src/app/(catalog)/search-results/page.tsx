@@ -9,28 +9,29 @@ import searchObjectsByMinPrice from '~helpers/searchObjects/searchObjectsByMinPr
 import searchObjectsByName from '~helpers/searchObjects/searchObjectsByName';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 import { SearchResultsPage } from '~pages/index';
-import { useSearchStore } from '~store/searchStore/useSearchStore';
+import { useSearchObjectsStore } from '~store/searchObjectsStore/useSearchObjectsStore';
+
 
 export default function SearchResults() {
  // const router = useRouter();
 
   // объект состояний
   const searchStore = {
-    searchTerm: useSearchStore((state) => state.searchTerm),
-    searchPriceMin: useSearchStore((state) => state.searchPriceMin),
-    searchPriceMax: useSearchStore((state) => state.searchPriceMax),
-    searchTypes: useSearchStore((state) => state.searchTypes),
-    searchTypeLabels: useSearchStore((state) => state.searchTypeLabels),
-    dataForSearch: useSearchStore((state) => state.dataForSearch),
-    initialData: useSearchStore((state) => state.initialData),
+    searchTerm: useSearchObjectsStore((state) => state.searchTerm),
+    searchPriceMin: useSearchObjectsStore((state) => state.searchPriceMin),
+    searchPriceMax: useSearchObjectsStore((state) => state.searchPriceMax),
+    searchTypes: useSearchObjectsStore((state) => state.searchTypes),
+    searchTypeLabels: useSearchObjectsStore((state) => state.searchTypeLabels),
+    dataForSearch: useSearchObjectsStore((state) => state.dataForSearch),
+    initialData: useSearchObjectsStore((state) => state.initialData),
   };
-  /*     searchTerm: useSearchStore.getState().searchTerm,
-      searchPriceMin: useSearchStore.getState().searchPriceMin,
-      searchPriceMax: useSearchStore.getState().searchPriceMax,
-      searchType: useSearchStore.getState().searchType,
-      searchTypeLabel: useSearchStore.getState().searchTypeLabel,
-      dataForSearch: useSearchStore.getState().dataForSearch,
-      initialData: useSearchStore.getState().initialData, */
+  /*     searchTerm: useSearchObjectsStore.getState().searchTerm,
+      searchPriceMin: useSearchObjectsStore.getState().searchPriceMin,
+      searchPriceMax: useSearchObjectsStore.getState().searchPriceMax,
+      searchType: useSearchObjectsStore.getState().searchType,
+      searchTypeLabel: useSearchObjectsStore.getState().searchTypeLabel,
+      dataForSearch: useSearchObjectsStore.getState().dataForSearch,
+      initialData: useSearchObjectsStore.getState().initialData, */
 
 
 
