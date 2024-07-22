@@ -7,10 +7,12 @@ function getLetterForAvatar(author: string) {
 
   // Проходим по каждому слову
   words.forEach((word) => {
-    // Берём первую букву слова и добавляем её в массив в верхнем регистре
-    initials.push(word.charAt(0).toUpperCase());
+    // Проверяем, чтобы слово не было маленькой буквой 'и'
+    if (word !== 'и') {
+      // Берём первую букву слова и добавляем её в массив в верхнем регистре
+      initials.push(word.charAt(0).toUpperCase());
+    }
   });
-
   // Объединяем все буквы в строку и возвращаем
   return initials.join("");
 }

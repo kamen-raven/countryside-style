@@ -156,3 +156,17 @@ ul .listItem {
     color: $accent-green;
   }
 }
+
+.imgContainer {
+  display: inline-flex;
+  width: 100%;
+}
+
+.img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid $gray-light;
+  border-radius: $border-radius;
+}

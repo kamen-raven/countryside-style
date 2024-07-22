@@ -18,7 +18,7 @@ interface markdownStylesInterface {
   li?: string;
   a?: string;
   /* IMG tags */
-  imgContainer: string;
+  imgContainer?: string;
   img?: string;
 }
 

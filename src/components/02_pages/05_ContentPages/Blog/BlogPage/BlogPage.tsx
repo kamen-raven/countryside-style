@@ -5,17 +5,18 @@ import styles from './BlogPage.module.scss';
 
 import { CardBlogComponent, CardItemPagination } from '~entities/index.ts';
 import usePaginationCounter from '~hooks/usePaginationCounter.ts';
-import { BlogPageInterface } from './BlogPage.interface.ts';
+
 import { useSearchBlogStore } from '~store/searchBlogStore/useSearchBlogStore.ts';
 import Loading from '../../../../../app/loading.tsx';
 import searchBlogByKey from '~helpers/searchBlog/searchBlogByKey.ts';
 import { BlogInterface } from '~interfaces/blog.interface.ts';
+import searchBlogByTags from '~helpers/searchBlog/searchBlogByTags.ts';
 
-const BlogPage: React.FC<BlogPageInterface> = ({ /* blogPostsData */ }) => {
+const BlogPage: React.FC = () => {
   // Инициализация сторов Зустанда с помощью деструктуризации
   const {
     searchBlogKey,
-    searchBlogTag,
+    searchBlogTags,
     dataForBlogSearch,
     initialBlogData,
   } = useSearchBlogStore();
@@ -25,6 +26,7 @@ const BlogPage: React.FC<BlogPageInterface> = ({ /* blogPostsData */ }) => {
   const filterData = (
     data: BlogInterface[],
     term: string,
+    tags: string[],
   ) => {
     let filteredData = data;
 
@@ -32,10 +34,15 @@ const BlogPage: React.FC<BlogPageInterface> = ({ /* blogPostsData */ }) => {
       filteredData = searchBlogByKey(filteredData, term);
     }
 
+    if (tags.length > 0) {
+      filteredData = searchBlogByTags(filteredData, tags);
+    }
+
+
     return filteredData;
   };
 
-  const blogData = filterData(dataForBlogSearch, searchBlogKey);
+  const blogData = filterData(dataForBlogSearch, searchBlogKey, searchBlogTags);
 
 
 

@@ -51,3 +51,13 @@
   }
 
 }
+
+
+.selected {
+  cursor: pointer;
+  background-color: $accent-green;
+  color: $white;
+  border: 1px solid $accent-green;
+
+  transition: all .3s linear;
+}

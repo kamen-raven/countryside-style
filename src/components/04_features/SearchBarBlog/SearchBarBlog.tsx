@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { SearchBarBlogInterface } from './SearchBarBlog.interface';
 import { useSearchBlogStore } from '~store/searchBlogStore/useSearchBlogStore';
-import Loading from '../../../app/loading';
+
 import { TagsListElement, SimpleSearchInput } from './elements';
 
 
@@ -11,12 +11,9 @@ const SearchBarBlog: React.FC<SearchBarBlogInterface> = ({ blogPostsData }) => {
   // Инициализация сторов Зустанда с помощью деструктуризации
   const {
     searchBlogKey,
-    searchBlogTag,
-    dataForBlogSearch,
     initialBlogData,
     actions: {
       setSearchBlogKey,
-      setSearchBlogTag,
       setDataForBlogSearch,
       setInitialBlogData
     },
@@ -35,24 +32,18 @@ const SearchBarBlog: React.FC<SearchBarBlogInterface> = ({ blogPostsData }) => {
   }, [blogPostsData, initialBlogData.length]);
 
 
-
-
-
-
-
-
-
-
-
-
-
   if (!initialBlogData.length) {
     return null;
   } else {
     return (
       <>
+
         <TagsListElement blogPostsData={initialBlogData} />
-        <SimpleSearchInput searchBlogKey={searchBlogKey} setSearchBlogKey={setSearchBlogKey} />
+
+        <SimpleSearchInput
+          searchBlogKey={searchBlogKey}
+          setSearchBlogKey={setSearchBlogKey}
+        />
       </>
     );
   }

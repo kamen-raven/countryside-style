@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './BlogArticlePage.module.scss';
 import { BlogArticlePageInterface } from './BlogArticlePage.interface.ts';
 import { CardBlogComponent } from '~entities/index.ts';
-import { BlogTextBlock, SetBlogArticleTitle } from './blocks/index.ts';
+import { BlogTextBlock } from './blocks/index.ts';
+import { ResetSearchBlogStore, SetBlogArticleTitle } from './useClientHooks/index.ts';
 
 
 const BlogArticlePage: React.FC<BlogArticlePageInterface> = ({ blogArticleItem }) => {
@@ -22,6 +23,7 @@ const BlogArticlePage: React.FC<BlogArticlePageInterface> = ({ blogArticleItem }
           <BlogTextBlock blogArticleItem={blogArticleItem} />
       </div>
       <SetBlogArticleTitle title={blogArticleItem.name} />
+      <ResetSearchBlogStore/>
     </section>
   );
 };

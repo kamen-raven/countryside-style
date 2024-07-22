@@ -37,6 +37,14 @@ const SimpleSearchInput: React.FC<SimpleSearchInputInterface> = ({ searchBlogKey
     setTempSearchTerm(event.target.value);
   };
 
+
+  useEffect(() => {
+
+    if (pathname.length > 2) {
+      setTempSearchTerm(searchBlogKey);
+    }
+  }, [pathname]);
+
   // слушатель отправки запроса
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -83,18 +91,3 @@ const SimpleSearchInput: React.FC<SimpleSearchInputInterface> = ({ searchBlogKey
 };
 
 export { SimpleSearchInput };
-
-{/* <form className={`${styles.container} ${styles.container_blog}`} onSubmit={handleSubmit}>
-<input
-  className={`${styles.input} ${styles.input_blog}`}
-  placeholder={'Поиск по ключевому слову'}
-  type={'search'}
-  value={tempSearchTerm}
-  onChange={handleSearch}
-/>
-<button className={`${styles.buttonSearch} ${styles.icon} ${styles.icon_blog}`}
-  type="submit"
-  disabled={isBtnDisabled}>
-  <SearchIcon />
-</button>
-</form> */}
