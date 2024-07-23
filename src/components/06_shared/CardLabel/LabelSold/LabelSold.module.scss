@@ -3,14 +3,14 @@
 .label {
   position: absolute;
 
-  &_reserved {
+  &_sold {
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 
 
 
-    width: 40%;
+    width: 50%;
     min-width: 150px;
     height: 60px;
     border-radius: 27px;
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
 
-    background-color: rgba($color: $accent-green, $alpha: .6);
+    background-color: rgba($color: $accent-green, $alpha: .85);
 
     @include common-paragraph(p,
       $font-weight: $bold,

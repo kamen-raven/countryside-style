@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from './PhotosComponent.module.scss';
 import { PhotosComponentInterface } from './PhotosComponent.interface.ts';
 
-import { ArrowsButton, ObjectImagePopupButton, LabelNew, LabelReserved } from '~shared/index.ts';
+import { ArrowsButton, ObjectImagePopupButton, LabelNew, LabelReserved, LabelSold } from '~shared/index.ts';
 import { PlanTooltipElement, YoutubeTooltipElement } from './elements/index.ts';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
@@ -97,6 +97,26 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   }, []);
 
 
+  // функция установления шильдика проданного объекта
+  const setLabelSold = (data: RealEstateObjectInterface) => {
+    const isArchive = data.display_pages.some(page => page.display_pages.value === 'Архив');
+    const isSold = data.date_sale;
+    const isBooked = data.isbook;
+
+    if (isArchive || isSold) {
+      return (
+        /* Значок ПРОДАНО */
+        <LabelSold isSold={isSold} isArchived={isArchive} />
+      );
+    } else if (isBooked) {
+      return (
+        /* Значок ЗАБРОНИРОВАНО */
+        <LabelReserved isBook={isBooked} />
+      );
+    } else {
+      return null;
+    }
+  };
 
 
   return (
@@ -120,13 +140,15 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
 
           <>
+            {/* шильдик NEW */}
             {isRealEstateObject(data) ?
-              <LabelReserved isBook={data.isbook} />
+              <LabelNew createdAt={data.created_at} />
               : null
             }
 
+            {/* шильдик БРОНИ И ПРОДАЖИ */}
             {isRealEstateObject(data) ?
-              <LabelNew createdAt={data.created_at} />
+              setLabelSold(data)
               : null
             }
 

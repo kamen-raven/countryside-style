@@ -18,6 +18,10 @@
 .container {
   @include mainContainer();
   @include flexColumnGap();
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
 }
 
 
@@ -27,10 +31,21 @@
 
 
 .contentContainer {
+  @include scrollbar($arrows: false);
   min-width: 0;
   max-width: 100%;
   overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 50px;
+
+  @include breakpoint(screen960) {
+    padding-bottom: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    padding-bottom: 20px;
+  }
 }
 
 .innerBlock {
@@ -41,7 +56,21 @@
   grid-column-gap: 40px;
 
   @include breakpoint(screen1280) {
-    grid-auto-columns: calc(50% - 20px);
+    grid-auto-columns: calc(50% - calc(42px/2));
+  }
+
+  @include breakpoint(screen1024) {
+    gap: 30px;
+  }
+
+  @media screen and (max-width: 740px) {
+    max-width: calc(100vw - clamp(3.563rem, 6.58724vw,  6.125rem));
+    /* grid-auto-columns: 100%; */
+    grid-auto-columns: 60%;
+  }
+
+  @include breakpoint(screen576) {
+    grid-auto-columns: 100%;
   }
 }
 

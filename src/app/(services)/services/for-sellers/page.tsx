@@ -9,10 +9,12 @@ import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleB
 import servicesCardsForSellers from "~data/constant/servicesBlock/servicesCards/forSellersPage/servicesCardsForSellers";
 
 import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
-//import reviews from "~data/temp/reviewsData/reviewsData";
-import objectsTemplate from "~data/temp/objectsTemplateList/objectsDataTemplate";
+
 import faqDataList from "~data/constant/faqBlock/faqDataList";
 import { getAllReviews } from "~api/Reviews/getReviews";
+import { getObjects } from "~api/Objects/getObjects";
+import filteredArchiveObjects from "~helpers/objects/filteredArchiveObjects";
+import sortArchiveObjectsBySoldDate from "~helpers/objects/sortArchiveObjectsBySoldDate";
 
 export const metadata: Metadata = {
   title: 'Услуги | Продавцам',
@@ -25,15 +27,16 @@ export const metadata: Metadata = {
 
 export default async function PageForSellers() {
   const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
-
-
+  const objects = await getObjects(); // получаем все объекты
+  const archiveObjects = filteredArchiveObjects(objects);
+  const sortedArchiveObjects = sortArchiveObjectsBySoldDate(archiveObjects).slice(0, 10);
 
   return (
     <ForSellersPage
       typePage={typePageEnum.sellers}
       titleBlockData={titleBlockData}
       advantagesListData={forSellersPageAdvantages}
-      recentObjectsData={objectsTemplate}
+      archiveObjectsData={sortedArchiveObjects}
       reviewsData={reviews}
       faqData={faqDataList}
       servicesCardsData={servicesCardsForSellers}

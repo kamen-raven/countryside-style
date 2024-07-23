@@ -11,6 +11,7 @@ export * from './Background/BackgroundSVGPattern';
 export * from './ArrowsButton/ArrowsButton';
 export * from './CardLabel/LabelNew/LabelNew';
 export * from './CardLabel/LabelReserved/LabelReserved';
+export * from './CardLabel/LabelSold/LabelSold';
 export * from './CardLabel/YoutubeLabel/YoutubeLabel';
 export * from './Preloader/Preloader';
 export * from './PathLinkComponent/PathLinkComponent';

@@ -54,6 +54,7 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
 
   const sortedObjects = sortingObjects(objectsType, typePage);
 
+
   return (
     <CatalogPage typePage={params.type}
       generalContactsData={generalContactsData}

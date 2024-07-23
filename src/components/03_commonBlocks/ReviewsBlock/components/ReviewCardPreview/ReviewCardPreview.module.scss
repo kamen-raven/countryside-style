@@ -14,7 +14,7 @@
 
   @include breakpoint(screen960) {
     width: 100%;
-    max-width: 100vw;
+    //max-width:  calc(100vw - $padding-side*2);
   }
 
   @include breakpoint(screen576) {

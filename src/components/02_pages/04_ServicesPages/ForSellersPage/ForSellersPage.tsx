@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ForSellersPage.module.scss';
 import { ForSellersPageInterface } from './ForSellersPage.interface.ts';
-import { FAQBlock, InfoTextBlock/* , RecentlySoldObjectsBlock */ } from './blocks/index.ts';
+import { FAQBlock, InfoTextBlock , RecentlySoldObjectsBlock } from './blocks/index.ts';
 import { AdvantagesBlock, RequestActionBlock, ReviewsBlock, ServicesStoriesBlock, TitleBlockTemplate } from '~common/index.ts';
 
 
@@ -10,7 +10,7 @@ const ForSellersPage: React.FC<ForSellersPageInterface> = ({
   typePage,
   titleBlockData,
   advantagesListData,
-  /*   recentObjectsData, */
+  archiveObjectsData,
   reviewsData,
   faqData,
   servicesCardsData
@@ -21,7 +21,7 @@ const ForSellersPage: React.FC<ForSellersPageInterface> = ({
       <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={'ForSellersPageForm1'} />
       <AdvantagesBlock advantagesList={advantagesListData} />
       <ServicesStoriesBlock servicesCardsData={servicesCardsData} />
-      {/* //*TODO: <RecentlySoldObjectsBlock recentObjectsData={recentObjectsData}/> */}
+      <RecentlySoldObjectsBlock archiveObjectsData={archiveObjectsData}/>
       <ReviewsBlock reviewsDataItem={reviewsData} />
       <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={'ForSellersPageForm2'} />
       <FAQBlock faqData={faqData} />

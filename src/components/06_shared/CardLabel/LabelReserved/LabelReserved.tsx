@@ -8,7 +8,7 @@ const LabelReserved: React.FC<LabelReservedInterface> = ({ isBook }) => {
 
   if (isBook) {
     return (
-      <div className={`${styles.label} ${styles.label_new}`}>
+      <div className={`${styles.label} ${styles.label_reserved}`}>
       Внесен аванс
     </div>
     );

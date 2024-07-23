@@ -3,7 +3,7 @@ import { ReviewInterface } from "~interfaces/review.interface";
 // Функция для получения и сортировки всех отзывов по дате от старых к новым
 function sortReviewsByDate(data: ReviewInterface[]) {
   return data.sort((a, b) => {
-    // Проверяем, если дата продажи отсутствует, чтобы избежать ошибок при преобразовании даты
+    // Проверяем, если дата отсутствует, чтобы избежать ошибок при преобразовании даты
     if (!a.date_sale) return 1;
     if (!b.date_sale) return -1;
 
