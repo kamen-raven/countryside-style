@@ -113,8 +113,8 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
 
   // слушатель отправки запроса
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = async (event?: React.FormEvent) => {
+    event && event.preventDefault();
 
     try {
       //if (tempSearchTerm !== '') {
@@ -154,8 +154,8 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
 
   // слушатель кнопки "отчистить"
-  const handleClear = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleClear = (event?: React.FormEvent) => {
+    event && event.preventDefault();
     setTempSearchTerm('');
     setTempSearchTypes(['all']);
     setTempSearchPriceMin(NaN);
@@ -185,6 +185,31 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
   }, [tempSearchTerm, tempSearchTypeLabels, tempSearchPriceMin, tempSearchPriceMax]);
 
 
+  // Обработчик для нажатия клавиши Enter
+  useEffect(() => {
+    const handleEnterKeyDown = (event: KeyboardEvent) => {
+      if (!isClearBtnDisabled && event.key === 'Enter') {
+        handleSubmit();
+      }
+    };
+
+    const handleEscKeyDown = (event: KeyboardEvent) => {
+      if (!isClearBtnDisabled && event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+        handleClear();
+      }
+    };
+
+
+    document.addEventListener('keydown', handleEnterKeyDown);
+    document.addEventListener('keydown', handleEscKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleEnterKeyDown);
+      document.removeEventListener('keydown', handleEscKeyDown);
+    };
+  }, [isClearBtnDisabled]);
 
 
 

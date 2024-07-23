@@ -56,7 +56,7 @@ export default function SearchResults() {
       filteredData = searchObjectsByName(filteredData, term);
     }
 
-    if (types.length > 0) {
+    if (!types.includes('all')) {
       filteredData = searchObjectsByCategory(filteredData, types);
     }
 

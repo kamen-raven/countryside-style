@@ -45,9 +45,11 @@ const SimpleSearchInput: React.FC<SimpleSearchInputInterface> = ({ searchBlogKey
     }
   }, [pathname]);
 
+
+
   // слушатель отправки запроса
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = async (event?: React.FormEvent) => {
+    event && event.preventDefault();
     setSearchBlogKey(tempSearchTerm);
     console.log('click');
 
@@ -59,11 +61,39 @@ const SimpleSearchInput: React.FC<SimpleSearchInputInterface> = ({ searchBlogKey
 
 
   // слушатель кнопки "отчистить"
-  const handleClear = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleClear = (event?: React.FormEvent) => {
+    event && event.preventDefault();
     setTempSearchTerm('');
     setSearchBlogKey('');
   };
+
+
+
+  // Обработчик для нажатия клавиши Enter
+  useEffect(() => {
+    const handleEnterKeyDown = (event: KeyboardEvent) => {
+      if (!isBtnDisabled && event.key === 'Enter') {
+        handleSubmit();
+      }
+    };
+
+    const handleEscKeyDown = (event: KeyboardEvent) => {
+      if (!isBtnDisabled && event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+        handleClear();
+      }
+    };
+
+    document.addEventListener('keydown', handleEnterKeyDown);
+    document.addEventListener('keydown', handleEscKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleEnterKeyDown);
+      document.removeEventListener('keydown', handleEscKeyDown);
+    };
+  }, [isBtnDisabled]);
+
 
 
   return (
