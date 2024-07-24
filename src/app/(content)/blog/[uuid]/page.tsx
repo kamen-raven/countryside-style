@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 
 export async function generateStaticParams() {
-  const apiBlogData = await getBlogArticle(100); //! 100 чтобы бралось максимально много для отрисовки
+  const apiBlogData = await getBlogArticle(500); //! 100 чтобы бралось максимально много для отрисовки
   const uuidArray: { uuid: string }[] = apiBlogData.results.map((blog: BlogInterface) => ({ uuid: blog.uuid }));
   return uuidArray;
 }

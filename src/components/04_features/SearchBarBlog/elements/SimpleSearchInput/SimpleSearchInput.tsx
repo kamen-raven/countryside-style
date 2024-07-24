@@ -32,18 +32,20 @@ const SimpleSearchInput: React.FC<SimpleSearchInputInterface> = ({ searchBlogKey
 
 
 
+/*   useEffect(() => {
+
+    if (pathname.length > 2) {
+      setTempSearchTerm(searchBlogKey);
+    }
+  }, [pathname]);
+
+ */
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTempSearchTerm(event.target.value);
   };
 
 
-  useEffect(() => {
-
-    if (pathname.length > 2) {
-      setTempSearchTerm(searchBlogKey);
-    }
-  }, [pathname]);
 
 
 
