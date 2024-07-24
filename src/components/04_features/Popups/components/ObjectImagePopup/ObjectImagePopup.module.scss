@@ -14,11 +14,12 @@
 
 .imageContainer {
   position: relative;
-  height: max-content;
-  max-height: calc(80vh - (40px * 2));//clamp(480px, 37.82738vw, 640px);
-  height: max-content;
+
+  max-height: calc(100vh - (40px * 2));// calc(80vh - (40px * 2)) //clamp(480px, 37.82738vw, 640px);
+  height: 100%;
   width: 100%;
-  max-width: 90vw;
+
+  //max-width: 90vw;
 
   overflow: hidden;
   display: flex;
@@ -37,10 +38,14 @@
 
 .image {
   width: 100%;
-  height: max-content;
-  max-height: calc(80vh - (40px * 2));
+  //height: auto;
+  max-height: calc(100vh - (40px * 2));// calc(80vh - (40px * 2))
   object-fit: contain;
 
+
+  @include breakpoint(screen1024) {
+    height: max-content;
+  }
 /*
   @include breakpoint(screen1024) {
     max-height: clamp(480px, 62.5vw, 640px);

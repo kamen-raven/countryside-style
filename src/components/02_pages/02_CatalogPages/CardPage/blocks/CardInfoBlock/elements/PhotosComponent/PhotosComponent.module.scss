@@ -31,8 +31,12 @@
 
 .image {
   width: 100%;
-  max-height: clamp(460px, 38vw, 640px);
+  //max-height: clamp(460px, 38vw, 640px); //
   object-fit: contain;
+
+  max-height: 720px; // 640px; // new
+  height: 100%;  // new
+
 
 
   @include breakpoint(screen1024) {
