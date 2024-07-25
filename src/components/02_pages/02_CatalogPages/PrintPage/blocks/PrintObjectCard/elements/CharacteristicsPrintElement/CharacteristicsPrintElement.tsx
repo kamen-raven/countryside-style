@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './CharacteristicsPrintComponent.module.scss';
-import { CharacteristicsPrintComponentInterface } from './CharacteristicsPrintComponent.interface';
+import styles from './CharacteristicsPrintElement.module.scss';
+import { CharacteristicsPrintElementInterface } from './CharacteristicsPrintElement.interface';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 import { VillageObjectInterface } from '~interfaces/villages.interface';
 
 
-const CharacteristicsPrintComponent: React.FC<CharacteristicsPrintComponentInterface> = ({ objectData }) => {
+const CharacteristicsPrintElement: React.FC<CharacteristicsPrintElementInterface> = ({ objectData }) => {
   function isRealEstateObject(obj: RealEstateObjectInterface | VillageObjectInterface): obj is RealEstateObjectInterface {
     return (
       'land_area_measurement' in obj &&
@@ -96,4 +96,4 @@ const CharacteristicsPrintComponent: React.FC<CharacteristicsPrintComponentInter
   );
 };
 
-export { CharacteristicsPrintComponent };
+export { CharacteristicsPrintElement };

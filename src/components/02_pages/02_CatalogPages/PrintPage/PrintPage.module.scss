@@ -3,6 +3,7 @@
 @page {
   size: A4 portrait;
   margin: 0;
+  
   display: flex;
   justify-content: flex-start;
 }
@@ -28,6 +29,7 @@
   @include print(print) {
     padding: 0;
     gap: 0;
+
   }
 }
 

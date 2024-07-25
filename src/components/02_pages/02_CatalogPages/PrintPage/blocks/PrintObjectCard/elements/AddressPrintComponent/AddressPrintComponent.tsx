@@ -4,8 +4,9 @@ import { AddressPrintComponentInterface } from './AddressPrintComponent.interfac
 
 
 const AddressPrintComponent: React.FC<AddressPrintComponentInterface> = ({ objectData }) => {
+
     return (
-      <div className={styles.titleContainer}>
+      <td className={styles.titleContainer}>
         <h1 className={styles.title}>
           {objectData.name && objectData.name}
         </h1>
@@ -15,7 +16,7 @@ const AddressPrintComponent: React.FC<AddressPrintComponentInterface> = ({ objec
             Адрес: {objectData.place}
           </p>
         }
-      </div>
+      </td>
     );
 };
 

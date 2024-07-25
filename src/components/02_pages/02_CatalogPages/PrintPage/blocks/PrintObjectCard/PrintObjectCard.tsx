@@ -7,26 +7,53 @@ import { AddressPrintComponent, CharacteristicsPrintComponent, MarginPrintCompon
 
 const PrintObjectCard: React.FC<PrintObjectCardInterface> = ({ objectData, agentData }) => {
   return (
-    <div className={`${styles.outsideContainer}`}>
-      <div className={styles.innerContainer}>
 
-
-        <AddressPrintComponent objectData={objectData} />
-        <PhotoForPrintComponent objectData={objectData} agentData={agentData} />
-        <CharacteristicsPrintComponent objectData={objectData}/>
-{/*         <AgentContactsPrint agentData={agentData}/> */}
-
-
-        {objectData.object_description &&
-          <div className={styles.commonInfoContainer}>
-            <CommonInfoInner data={objectData} />
-          </div>
-        }
-
+    <table className={styles.outsideContainer}>
+      <thead className={styles.printTableHeader}>
         <MarginPrintComponent />
-      </div>
-    </div>
+      </thead>
+      <tbody className={styles.innerContainer}>
+        <tr>
+            <AddressPrintComponent objectData={objectData} />
+        </tr>
+        <tr>
+
+            <PhotoForPrintComponent objectData={objectData} agentData={agentData} />
+
+        </tr>
+        {objectData.object_description && (
+          <tr className={styles.commonInfoTr}>
+            <td className={styles.commonInfoContainer}>
+
+              <CommonInfoInner data={objectData} />
+
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+
   );
 };
 
 export { PrintObjectCard };
+{/* <div className={`${styles.outsideContainer}`}>
+<MarginPrintComponent />
+<div className={styles.innerContainer}>
+
+
+<AddressPrintComponent objectData={objectData} />
+<PhotoForPrintComponent objectData={objectData} agentData={agentData} />
+<CharacteristicsPrintComponent objectData={objectData} />
+{/*         <AgentContactsPrint agentData={agentData}/> */}
+
+/*
+{objectData.object_description &&
+  <div className={styles.commonInfoContainer}>
+    <CommonInfoInner data={objectData} />
+  </div>
+}
+
+</div>
+</div>
+ */

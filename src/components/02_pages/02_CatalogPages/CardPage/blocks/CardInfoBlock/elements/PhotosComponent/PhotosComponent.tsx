@@ -131,8 +131,8 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
               className={styles.image}
               src={picturesArray[activePhoto].image}
               alt={data.name}
-              width={878}
-              height={640}
+              width={980}
+              height={740}
               priority={true}
             /*               onClick={() => console.log('click photo!!')} */
             />

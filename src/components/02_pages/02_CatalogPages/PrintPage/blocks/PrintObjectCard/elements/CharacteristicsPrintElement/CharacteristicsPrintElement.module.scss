@@ -14,10 +14,8 @@
   line-height: 120%;
   font-size: 1rem;
   margin: 0;
+  font-weight: $bold;
 
-  &_span {
-    font-weight: $medium;
-  }
 
   @include print(print) {
     font-size: 13pt;

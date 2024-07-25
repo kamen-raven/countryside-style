@@ -1,0 +1,10 @@
+@import '~global_styles';
+
+.price {
+  font-family: $ff-gothamPro;
+  font-size: 34px;
+  font-weight: $medium;
+  line-height: 110%;
+  margin: 0;
+  color: $accent-green;
+}

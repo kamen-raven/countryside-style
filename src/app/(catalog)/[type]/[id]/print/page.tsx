@@ -11,7 +11,6 @@ import { PrintPage } from "~pages/index";
 
 import { useDataForPrintStore } from "~store/objectsCardStore/useDataForPrintStore";
 import Loading from "../../../../loading";
-import Head from "next/head";
 
 
 export default function PagePrint() {
@@ -99,14 +98,7 @@ export default function PagePrint() {
 
   return (
     <>
-      <Head>
-        <title>{objectData.name}</title>
-        <meta name="description" content={objectData.name} />
-      </Head>
-
         <PrintPage objectData={objectData} agentData={agentData} />
-
     </>
-
   );
 }

@@ -8,30 +8,26 @@
 
 .infoContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
 
   @include print(print) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10pt;
+    grid-template-columns: 2fr 1fr;
+    gap: 6mm;
   }
 }
 
-.imageContainer {}
+
 
 .image {
   display: flex;
   overflow: hidden;
   border: 1px $gray-light solid;
-  border-radius: $border-radius ;
-
   width: 100%;
-  max-width: 460px;
-  max-height: 360px;
+  max-width: 500px;
+  max-height: 400px;
   height: auto;
   object-fit: contain;
-
-
 }
 
 .innerContainer {
@@ -40,7 +36,7 @@
   justify-content: space-between;
 
   @include print(print) {
-    gap: 12pt;
+    gap: 8pt;
   }
 }
 
@@ -61,15 +57,14 @@
 
 
 
-.price {
-  font-size: 1.8rem;
-  color: $accent-green;
-
-  font-weight: $regular;
-  line-height: 115%;
-  margin: 0;
+.sellerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid $gray;
 
   @include print(print) {
-    font-size: 20pt;
+    gap: 10pt;
   }
 }

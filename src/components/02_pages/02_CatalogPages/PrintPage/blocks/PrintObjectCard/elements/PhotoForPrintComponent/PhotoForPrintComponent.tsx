@@ -6,7 +6,8 @@ import styles from './PhotoForPrintComponent.module.scss';
 import { PhotoForPrintComponentInterface } from './PhotoForPrintComponent.interface';
 import formatPhotosArray from '~helpers/formatters/formatPhotosArray';
 import { usePathname } from 'next/navigation';
-import { AgentContactsPrint } from '../AgentContactsPrint/AgentContactsPrint';
+import { AgentContactsPrintElement } from '../AgentContactsPrintElement/AgentContactsPrintElement';
+import { PricePrintElement } from '../PricePrintElement/PricePrintElement';
 
 
 const PhotoForPrintComponent: React.FC<PhotoForPrintComponentInterface> = ({ objectData, agentData }) => {
@@ -18,10 +19,9 @@ const PhotoForPrintComponent: React.FC<PhotoForPrintComponentInterface> = ({ obj
 
   return (
     <>
-      {picturesArray.length &&
-        <div className={`${styles.infoContainer}`}>
+      <td className={`${styles.infoContainer}`}>
+        {picturesArray.length &&
           <div className={styles.imageContainer}>
-
             <Image
               className={`${styles.image}`}
               src={picturesArray[0].image}
@@ -32,32 +32,19 @@ const PhotoForPrintComponent: React.FC<PhotoForPrintComponentInterface> = ({ obj
             /*               onClick={() => console.log('click photo!!')} */
             />
           </div>
-          <div className={`${styles.innerContainer}`}>
-
-            <AgentContactsPrint agentData={agentData}/>
-
-
-            <p className={styles.price}>
-              {/* //* ЦЕНА */}
-              {typePage !== "villages" ?
-                (objectData.price &&   /* //? для объектов */
-                  <>
-                    Цена:&nbsp;
-                    <span className={styles.info_span}>
-                    {`${(objectData.price / 1000000).toLocaleString('ru-RU')}`}&nbsp;млн.&nbsp;руб.
-                    </span>
-                  </>)
-                :
-                (objectData.price &&  /*  //? для коттеджей */
-                  <>
-                    от&nbsp;{`${(objectData.price / 1000000).toLocaleString('ru-RU')}`}&nbsp;млн.&nbsp;руб.
-                  </>)
-              }
-            </p>
-
+        }
+        <div className={`${styles.innerContainer}`}>
+          <div className={styles.sellerInfo}>
+            <AgentContactsPrintElement agentData={agentData} />
+            <PricePrintElement objectData={objectData} typePage={typePage} />
           </div>
+
+
+          {/*  <CharacteristicsPrintElement objectData={objectData} /> */}
+
         </div>
-      }
+      </td>
+
     </>
 
   );

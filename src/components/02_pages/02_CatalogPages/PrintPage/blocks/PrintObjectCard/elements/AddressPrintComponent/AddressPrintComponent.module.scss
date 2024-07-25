@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
+  gap: 10px;
 
   @include print(print) {
     gap: 8pt;
@@ -27,10 +27,10 @@
 .address {
   font-weight: $regular;
   line-height: 120%;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0;
 
   @include print(print) {
-    font-size: 16pt;
+    font-size: 15pt;
   }
 }
