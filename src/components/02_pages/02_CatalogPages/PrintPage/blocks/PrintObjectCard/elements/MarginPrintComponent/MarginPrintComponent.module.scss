@@ -15,14 +15,12 @@
   border-bottom: 1px solid #000;
 
   @media print {
-/*     position: fixed; // фиксируем его всегда сверху и посередине
-    top: 0; */
-
     width: auto;
-    max-width: calc(210mm - (15mm * 2));
-    height: 25mm; // Высота колонтитула
+    max-width: calc(210mm - (12mm * 2));
+    height: 23mm; // Высота колонтитула
     padding: 0;
-    margin: 0 15mm;
+    margin: 0 12mm;
+    margin-bottom: 5mm;
   }
 }
 

@@ -14,11 +14,9 @@
   @include print(print) {
     margin: auto;
     padding: 0;
-
+    outline: none;
   }
 }
-
-
 
 .innerContainer {
   padding: 2rem;
@@ -29,24 +27,8 @@
 
   @include print(print) {
     //height: calc(297mm - (32mm * 2));
-    padding: 7mm 12mm 15mm;
-    gap: 8pt;
-/*     & tr {
-      page-break-inside: auto;
-
-    }
-
-    & td {
-      padding-bottom: 5mm; // Adjust this value as needed
-    } */
-
-/*     &::after {
-      content: "";
-      display: block;
-      height: 20mm; // Adjust this value as needed
-      page-break-after: avoid;
-    } */
-   // page-break-inside: avoid;
+    padding: 0 12mm 15mm;
+    gap: 5mm;
   }
 }
 
@@ -63,17 +45,8 @@
   }
 }
 
-.commonInfoTr {
-  @include print(print) {
-
-      page-break-inside: auto;
-      padding-bottom: 5mm;
-
-  }
-}
 .commonInfoContainer {
   padding: 1.5rem 0;
-  border-bottom: 1px solid $gray;
   border-top: 1px solid $gray;
 
   text-align: justify;
@@ -84,7 +57,8 @@
 
 
   @include print(print) {
-    padding: 12pt 0;
+    padding: 0;
+    padding-top: 6mm;
     gap: 8pt;
     //padding-bottom: 5mm; // Adjust this value as needed
   }

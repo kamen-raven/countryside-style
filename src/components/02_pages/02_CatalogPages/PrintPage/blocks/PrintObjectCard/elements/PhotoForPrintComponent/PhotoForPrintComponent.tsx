@@ -8,7 +8,7 @@ import formatPhotosArray from '~helpers/formatters/formatPhotosArray';
 import { usePathname } from 'next/navigation';
 import { AgentContactsPrintElement } from '../AgentContactsPrintElement/AgentContactsPrintElement';
 import { PricePrintElement } from '../PricePrintElement/PricePrintElement';
-
+import { CharacteristicsPrintElement } from '../CharacteristicsPrintElement/CharacteristicsPrintElement';
 
 const PhotoForPrintComponent: React.FC<PhotoForPrintComponentInterface> = ({ objectData, agentData }) => {
   const pathname = usePathname();
@@ -26,8 +26,8 @@ const PhotoForPrintComponent: React.FC<PhotoForPrintComponentInterface> = ({ obj
               className={`${styles.image}`}
               src={picturesArray[0].image}
               alt={objectData.name}
-              width={320}
-              height={240}
+              width={640}
+              height={480}
               priority={true}
             /*               onClick={() => console.log('click photo!!')} */
             />
@@ -40,7 +40,7 @@ const PhotoForPrintComponent: React.FC<PhotoForPrintComponentInterface> = ({ obj
           </div>
 
 
-          {/*  <CharacteristicsPrintElement objectData={objectData} /> */}
+          <CharacteristicsPrintElement objectData={objectData} />
 
         </div>
       </td>

@@ -1,11 +1,5 @@
 @import '~global_styles';
 
-
-@import '~global_styles';
-
-
-
-
 .infoContainer {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -13,11 +7,10 @@
 
   @include print(print) {
     grid-template-columns: 2fr 1fr;
-    gap: 6mm;
+    gap: 7mm;
+    padding-bottom: 3mm;
   }
 }
-
-
 
 .image {
   display: flex;
@@ -33,14 +26,7 @@
 .innerContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  @include print(print) {
-    gap: 8pt;
-  }
 }
-
-
 
 .address {
   font-weight: $regular;
@@ -53,10 +39,6 @@
   }
 }
 
-
-
-
-
 .sellerInfo {
   display: flex;
   flex-direction: column;
@@ -66,5 +48,6 @@
 
   @include print(print) {
     gap: 10pt;
+    padding-bottom: 15pt;
   }
 }

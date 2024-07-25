@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 const PrintPage: React.FC<PrintPageInterface> = ({ objectData, agentData }) => {
 
 
-/*     const router = useRouter();
+    const router = useRouter();
 
         useEffect(() => {
           const handleAfterPrint = () => {
@@ -28,7 +28,7 @@ const PrintPage: React.FC<PrintPageInterface> = ({ objectData, agentData }) => {
             window.onafterprint = null;
           };
         }, []);
- */
+
 
   return (
     <main className={styles.mainContainer}>
