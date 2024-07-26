@@ -10,24 +10,23 @@ import { useRouter } from 'next/navigation';
 const PrintPage: React.FC<PrintPageInterface> = ({ objectData, agentData }) => {
 
 
-    const router = useRouter();
+  const router = useRouter();
 
-        useEffect(() => {
-          const handleAfterPrint = () => {
-            router.back();
-          };
-
-          // Устанавливаем обработчик события
-          window.onafterprint = handleAfterPrint;
-
-          // Инициируем печать
-          window.print();
-
-          // Очищаем обработчик при размонтировании компонента
-          return () => {
-            window.onafterprint = null;
-          };
-        }, []);
+  useEffect(() => {
+    const handleAfterPrint = () => {
+      router.back();
+    };
+    // устанавливаем название файла
+    document.title = `${objectData.name}\u00A0(${objectData.id})`;
+    // Устанавливаем обработчик события
+    window.onafterprint = handleAfterPrint;
+    // Инициируем печать
+    window.print();
+    // Очищаем обработчик при размонтировании компонента
+    return () => {
+      window.onafterprint = null;
+    };
+  }, []);
 
 
   return (

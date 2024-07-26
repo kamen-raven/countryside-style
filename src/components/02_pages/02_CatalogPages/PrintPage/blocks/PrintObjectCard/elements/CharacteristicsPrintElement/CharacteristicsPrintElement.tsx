@@ -46,7 +46,7 @@ const CharacteristicsPrintElement: React.FC<CharacteristicsPrintElementInterface
         SLiving: isRealEstateObject(objectData) ? objectData.living_area && `${objectData.living_area} кв.м` : '', // жилая площадь
         SArea: isRealEstateObject(objectData) ? objectData.area_plot && `${objectData.area_plot} ${objectData.land_area_measurement}` : '', // площадь участка
         SKitchen: isRealEstateObject(objectData) ? objectData.kitchen_area && `${objectData.kitchen_area} кв.м` : '', // площадь кухни
-        RoomCount: isRealEstateObject(objectData) ? objectData.number_of_rooms : '', // количество комнат
+        RoomCount: (isRealEstateObject(objectData) && objectData.category === 'Квартиры') ? objectData.number_of_rooms : '', // количество комнат
         DistanceToKad: objectData.distance_CAD && `${objectData.distance_CAD} км`, // расстояние до КАД
       },
       icon: {
@@ -91,89 +91,88 @@ const CharacteristicsPrintElement: React.FC<CharacteristicsPrintElementInterface
   };
 
   return (
-    characteristicsData.map((item , index) => {
+    characteristicsData.map((item, index) => {
       return (
-        <div className={styles.characteristicContainer}>
+        <div key={index} className={styles.characteristicContainer}>
 
-        <React.Fragment key={index}>
           {characteristicsList.map((innerItem, innerIndex) => {
             return (
               iconTemplate(item, innerItem, innerIndex)
             );
           })}
-        </React.Fragment>
-          </div>
+
+        </div>
       );
     })
   );
 };
 
 export { CharacteristicsPrintElement };
- // <div className={styles.characteristicContainer}>
- //   {/* площадь дома */}
- //   <> {(isRealEstateObject(objectData) ? objectData.area_house &&
- //     <p className={styles.info}>
- //       Площадь дома:&nbsp;
- //       <span className={styles.info_span}>
- //         {objectData.area_house}&nbsp;кв.м
- //       </span>
- //     </p> : null)}
+// <div className={styles.characteristicContainer}>
+//   {/* площадь дома */}
+//   <> {(isRealEstateObject(objectData) ? objectData.area_house &&
+//     <p className={styles.info}>
+//       Площадь дома:&nbsp;
+//       <span className={styles.info_span}>
+//         {objectData.area_house}&nbsp;кв.м
+//       </span>
+//     </p> : null)}
 
- //     {/* площадь участка */}
- //     <> {(isRealEstateObject(objectData) ? (objectData.area_plot && objectData.land_area_measurement) &&
- //       <p className={styles.info}>
- //         Площадь участка:&nbsp;
- //         <span className={styles.info_span}>
- //           {objectData.area_plot}&nbsp;{objectData.land_area_measurement}
- //         </span>
- //       </p> : null)}
- //     </>
- //   </>
+//     {/* площадь участка */}
+//     <> {(isRealEstateObject(objectData) ? (objectData.area_plot && objectData.land_area_measurement) &&
+//       <p className={styles.info}>
+//         Площадь участка:&nbsp;
+//         <span className={styles.info_span}>
+//           {objectData.area_plot}&nbsp;{objectData.land_area_measurement}
+//         </span>
+//       </p> : null)}
+//     </>
+//   </>
 
 
 
- //   {/* площадь квартиры */}
- //   <> {(isRealEstateObject(objectData) ? objectData.area_flat &&
- //     <p className={styles.info}>
- //       Площадь:&nbsp;
- //       <span className={styles.info_span}>
- //         {objectData.area_flat} кв.м
- //       </span>
- //     </p> : null)}
- //   </>
- //   <> {(isRealEstateObject(objectData) ? objectData.living_area &&
- //     <p className={styles.info}>
- //       Жилая площадь:&nbsp;
- //       <span className={styles.info_span}>
- //         {objectData.living_area} кв.м
- //       </span>
- //     </p> : null)}
- //   </>
- //   <>{(isRealEstateObject(objectData) ? objectData.kitchen_area &&
- //     <p className={styles.info}>
- //       Площадь кухни:&nbsp;
- //       <span className={styles.info_span}>
- //         {objectData.kitchen_area} кв.м
- //       </span>
- //     </p> : null)}
- //   </>
+//   {/* площадь квартиры */}
+//   <> {(isRealEstateObject(objectData) ? objectData.area_flat &&
+//     <p className={styles.info}>
+//       Площадь:&nbsp;
+//       <span className={styles.info_span}>
+//         {objectData.area_flat} кв.м
+//       </span>
+//     </p> : null)}
+//   </>
+//   <> {(isRealEstateObject(objectData) ? objectData.living_area &&
+//     <p className={styles.info}>
+//       Жилая площадь:&nbsp;
+//       <span className={styles.info_span}>
+//         {objectData.living_area} кв.м
+//       </span>
+//     </p> : null)}
+//   </>
+//   <>{(isRealEstateObject(objectData) ? objectData.kitchen_area &&
+//     <p className={styles.info}>
+//       Площадь кухни:&nbsp;
+//       <span className={styles.info_span}>
+//         {objectData.kitchen_area} кв.м
+//       </span>
+//     </p> : null)}
+//   </>
 
- //   {/* расстояние до КАД */}
- //   <> {objectData.distance_CAD &&
- //     <p className={styles.info}>
- //       Расстояние до КАД:&nbsp;
- //       <span className={styles.info_span}>
- //         {objectData.distance_CAD} км
- //       </span>
- //     </p>}
- //   </>
- //   {/* метро */}
- //   <> {(isRealEstateObject(objectData) ? objectData.metro &&
- //     <p className={styles.info}>
- //       Метро:&nbsp;
- //       <span className={styles.info_span}>
- //         {objectData.metro}
- //       </span>
- //     </p> : null)}
- //   </>
- // </div>
+//   {/* расстояние до КАД */}
+//   <> {objectData.distance_CAD &&
+//     <p className={styles.info}>
+//       Расстояние до КАД:&nbsp;
+//       <span className={styles.info_span}>
+//         {objectData.distance_CAD} км
+//       </span>
+//     </p>}
+//   </>
+//   {/* метро */}
+//   <> {(isRealEstateObject(objectData) ? objectData.metro &&
+//     <p className={styles.info}>
+//       Метро:&nbsp;
+//       <span className={styles.info_span}>
+//         {objectData.metro}
+//       </span>
+//     </p> : null)}
+//   </>
+// </div>

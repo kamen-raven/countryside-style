@@ -6,6 +6,7 @@ import { PrintPageButtonInterface } from './PrintPageButton.interface.ts';
 import DownloadPDFIcon from '~svg/catalogCard/downloadPDF.svg';
 import { usePathname, useRouter } from 'next/navigation';
 import { useDataForPrintStore } from '~store/objectsCardStore/useDataForPrintStore.ts';
+import Link from 'next/link';
 
 
 const PrintPageButton: React.FC<PrintPageButtonInterface> = ({ data, agentData, func }) => {
@@ -42,17 +43,27 @@ const PrintPageButton: React.FC<PrintPageButtonInterface> = ({ data, agentData, 
   }
 
 
+  if (!data?.pdf) {
+    return (
+      <button onClick={handlePrint} className={styles.downloadButton}>
+        Скачать PDF
+        <span className={styles.downloadButton_icon}>
+          <DownloadPDFIcon />
+        </span>
+      </button>
+    );
+  } else {
+    return (
+      <Link className={styles.downloadButton} target='_blank' download={`${data.name}`} href={`${data.pdf}`}>
+        Скачать PDF
+        <span className={styles.downloadButton_icon}>
+          <DownloadPDFIcon />
+        </span>
+      </Link>
+    );
+  }
 
 
-
-  return (
-    <button onClick={handlePrint} className={styles.downloadButton}>
-      Скачать PDF
-      <span className={styles.downloadButton_icon}>
-        <DownloadPDFIcon />
-      </span>
-    </button>
-  );
 };
 
 export { PrintPageButton };
