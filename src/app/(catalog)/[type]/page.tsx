@@ -9,12 +9,35 @@ import generalContactsData from "~data/constant/generalContacts/generalContactsD
 import filteredObjectsByCategory from "~helpers/objects/filteredObjectsByCategory";
 import sortedObjectsByPrice from "~helpers/objects/sortedObjectsByPrice";
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
+import { metaCatalogPage } from "~meta/metadataPages";
 
 
-export const metadata: Metadata = {
-  title: 'HOUSES',
-  description: 'CATALOG PAGE',
-};
+export async function generateMetadata({ params }: { params: { type: 'flats' | 'lands' | 'houses-and-cottages' } }): Promise<Metadata> {
+  const typePage = metaCatalogPage[params.type]; // берем тип на основе params исходя из роута
+
+  return {
+    title: `${typePage.category} | ${typePage.title}`,
+    description: typePage.description,
+    keywords: typePage.keywords,
+    openGraph: {
+      title: `${typePage.category} ${typePage.title}`,
+      description: typePage.description,
+      siteName: typePage.title,
+      url: `https://${typePage.openGraph.url}/${params.type}`,
+      type: "website",
+      images: [
+        {
+          url: typePage.openGraph.images.url,
+          width: typePage.openGraph.images.width,
+          height:typePage.openGraph.images.height,
+          alt: typePage.openGraph.images.alt,
+        }
+      ]
+    },
+  };
+}
+
+
 
 export async function generateStaticParams() {
   const paths = [
@@ -45,11 +68,11 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
   const objectsType = await getObjects(); // получаем все объекты
 
 
-// вызываем функцию сортировки и потом передаем это в пропсы в страницу
+  // вызываем функцию сортировки и потом передаем это в пропсы в страницу
   const sortingObjects = (arr: RealEstateObjectInterface[], type: string) => {
-      const filteredArr = filteredObjectsByCategory(arr, type); // фильтруем изначальный массив по типу страницы
-      const sortedArr = sortedObjectsByPrice(filteredArr);  // сортируем полученный массив по стоимости от меньшей к большей
-      return sortedArr;
+    const filteredArr = filteredObjectsByCategory(arr, type); // фильтруем изначальный массив по типу страницы
+    const sortedArr = sortedObjectsByPrice(filteredArr);  // сортируем полученный массив по стоимости от меньшей к большей
+    return sortedArr;
   };
 
   const sortedObjects = sortingObjects(objectsType, typePage);

@@ -7,7 +7,13 @@ import filteredObjectsByCategory from '~helpers/objects/filteredObjectsByCategor
 import filteredVillagesByVisible from '~helpers/objects/filteredVillagesByVisible';
 import sortReviewsByDate from '~helpers/reviews/sortReviewsByDate';
 import sortUsersList from '~helpers/users/sortUsersData';
+
 import { HomePage } from '~pages/01_HomePage/HomePage/HomePage';
+
+
+
+
+
 
 export default async function Home() {
   const objectsType = await getObjects(); // получаем все объекты

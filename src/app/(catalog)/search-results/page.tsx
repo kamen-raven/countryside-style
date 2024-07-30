@@ -12,6 +12,8 @@ import { SearchResultsPage } from '~pages/index';
 import { useSearchObjectsStore } from '~store/searchObjectsStore/useSearchObjectsStore';
 
 
+
+
 export default function SearchResults() {
  // const router = useRouter();
 

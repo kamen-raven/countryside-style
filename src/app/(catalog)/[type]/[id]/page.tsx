@@ -5,14 +5,37 @@ import { getObjects } from "~api/Objects/getObjects";
 import { getObjectsIsLike } from "~api/Objects/getObjectsIsLike";
 import { getUserByID } from "~api/Users/getUserByID";
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
-/* import { notFound } from "next/navigation"; */
+import { metaCatalogPage } from "~meta/metadataPages";
 import { CardPage } from "~pages/index";
 
 
-export const metadata: Metadata = {
-  title: 'CARD',
-  description: 'CARD PAGE',
-};
+
+
+export async function generateMetadata({ params }: { params: { id: string, type: 'flats' | 'lands' | 'houses-and-cottages' | 'villages' } }): Promise<Metadata> {
+  const typePage = metaCatalogPage[params.type]; // берем тип на основе params исходя из роута
+
+
+
+  // получаем все объекты
+  const objects = await getObjects();
+
+  // сравниваем и находим нужный объект из массива объектов по ID
+  const idCurrentObj = objects.find(obj => obj.id.toString() === params.id);
+
+  // делаем запрос на сервер по uuid найденного ранее объекта и работаем с ним дальше
+  const currentObject = idCurrentObj &&  await getObjectByID(idCurrentObj.uuid);
+
+  return {
+    title: `${typePage.category} ${currentObject?.name}`,
+    description: currentObject?.place,
+/*     openGraph: {
+      title: `${typePage.category} ${currentObject?.name}`,
+      url:
+    } */
+  };
+}
+
+
 
 export async function generateStaticParams() {
   const objects = await getObjects(); // получаем все объекты
