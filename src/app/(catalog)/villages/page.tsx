@@ -11,13 +11,12 @@ import { getAllVillages } from "~api/Villages/getAllVillages";
 import filteredVillagesByVisible from "~helpers/objects/filteredVillagesByVisible";
 import { metaCatalogPage } from "~meta/metadataPages";
 
-
 export const metadata: Metadata = {
   title: `${metaCatalogPage.villages.category} | ${metaCatalogPage.villages.title}`,
   description: metaCatalogPage.villages.description,
   keywords: metaCatalogPage.villages.keywords,
   openGraph: {
-    title: `${metaCatalogPage.villages.category} ${metaCatalogPage.villages.title}`,
+    title: `${metaCatalogPage.villages.category} | ${metaCatalogPage.villages.title}`,
     description: metaCatalogPage.villages.description,
     siteName: metaCatalogPage.villages.title,
     url: `https://${metaCatalogPage.villages.openGraph.url}/villages/`,

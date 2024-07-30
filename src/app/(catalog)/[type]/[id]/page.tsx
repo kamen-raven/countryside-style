@@ -13,14 +13,19 @@ import { CardPage } from "~pages/index";
 
 export async function generateMetadata({ params }: { params: { id: string, type: 'flats' | 'lands' | 'houses-and-cottages' | 'villages' } }): Promise<Metadata> {
   const typePage = metaCatalogPage[params.type]; // берем тип на основе params исходя из роута
-
-
+  if (!typePage) {   // если такого нету, то возвращаем пустую страницу
+    notFound();
+  }
 
   // получаем все объекты
   const objects = await getObjects();
 
   // сравниваем и находим нужный объект из массива объектов по ID
   const idCurrentObj = objects.find(obj => obj.id.toString() === params.id);
+  // если такого нет, то кидаем 404
+  if (!idCurrentObj) {
+    notFound();
+  }
 
   // делаем запрос на сервер по uuid найденного ранее объекта и работаем с ним дальше
   const currentObject = idCurrentObj &&  await getObjectByID(idCurrentObj.uuid);
@@ -28,10 +33,13 @@ export async function generateMetadata({ params }: { params: { id: string, type:
   return {
     title: `${typePage.category} ${currentObject?.name}`,
     description: currentObject?.place,
-/*     openGraph: {
-      title: `${typePage.category} ${currentObject?.name}`,
-      url:
-    } */
+    openGraph: {
+      title: `${typePage.category} | ${currentObject?.name}`,
+      description: currentObject?.place,
+      siteName: typePage.title,
+      url: `https://${typePage.openGraph.url}/${params.type}/${params.id}`,
+      type: "website",
+    },
   };
 }
 
@@ -59,14 +67,13 @@ export default async function CardType({ params }: { params: { id: string, type:
 
   const typePage = category[params.type]; // берем тип на основе params исходя из роута
 
-
-
     if (!typePage) {   // если такого нету, то возвращаем пустую страницу
       notFound();
     }
+
+
   // сравниваем и находим нужный объект из массива объектов по ID
   const idCurrentObj = objects.find(obj => obj.id.toString() === params.id);
-
 
   // если такого нет, то кидаем 404
   if (!idCurrentObj) {
@@ -75,7 +82,9 @@ export default async function CardType({ params }: { params: { id: string, type:
 
   // делаем запрос на сервер по uuid найденного ранее объекта и работаем с ним дальше
   const currentObject = await getObjectByID(idCurrentObj.uuid);
-  if (!currentObject) {
+
+  // проверка типа объекта на соответствие раздела каталога
+  if (!currentObject || currentObject.category !== typePage) {
     notFound();
   }
 

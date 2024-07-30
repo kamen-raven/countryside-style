@@ -2,7 +2,7 @@ import { openSans, gothamPro } from '~fonts';
 import '~styles/index.scss';
 import styles from "./layout.module.scss";
 import { Metadata } from 'next';
-import { metaLayout } from '~meta/metadataPages';
+
 
 import { menuList } from '~data/constant/navMenu/menuList';
 import generalContactsData from '~data/constant/generalContacts/generalContactsData';
@@ -11,12 +11,17 @@ import { Header, Navbar, Footer } from '~common/index';
 
 import { MainPopups } from '~features/Popups/MainPopups';
 import { SupportPopups } from '~features/Popups/SupportPopups';
+import { metaLayout } from '~meta/metadataPages';
 
 
 export const metadata: Metadata = {
   title: metaLayout.title,
   description: metaLayout.description,
   keywords: metaLayout.keywords,
+  metadataBase: new URL(`https://${metaLayout.openGraph.url}/`),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: metaLayout.openGraph.title,
     description: metaLayout.openGraph.description,

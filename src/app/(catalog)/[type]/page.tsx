@@ -15,12 +15,16 @@ import { metaCatalogPage } from "~meta/metadataPages";
 export async function generateMetadata({ params }: { params: { type: 'flats' | 'lands' | 'houses-and-cottages' } }): Promise<Metadata> {
   const typePage = metaCatalogPage[params.type]; // берем тип на основе params исходя из роута
 
+  if (!typePage) {   // если такого нету, то возвращаем пустую страницу
+    notFound();
+  }
+
   return {
     title: `${typePage.category} | ${typePage.title}`,
     description: typePage.description,
     keywords: typePage.keywords,
     openGraph: {
-      title: `${typePage.category} ${typePage.title}`,
+      title: `${typePage.category} | ${typePage.title}`,
       description: typePage.description,
       siteName: typePage.title,
       url: `https://${typePage.openGraph.url}/${params.type}`,

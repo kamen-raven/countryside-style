@@ -124,7 +124,6 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
       {picturesArray.length &&
         <div className={styles.mainPhotoContainer}>
-
           <ObjectImagePopupButton className={styles.image__popupButton}
             picData={picturesArray}>
             <Image

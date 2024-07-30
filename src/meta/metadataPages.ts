@@ -3,7 +3,7 @@
 /* URL */
 const baseURL = "countryside-style.vercel.app";
 /* Изображение */
-const baseImg = "../../../public/img/meta/metaImg.png";
+const baseImg = '../../public/img/meta/opengraph-image.png';
 /* Заголовок */
 const baseTitle = `Агентство недвижимости "Загородный стиль"`;
 /* OpenGraph */
