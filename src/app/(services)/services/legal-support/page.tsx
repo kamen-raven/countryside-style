@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: metaServicesLegalSupport.openGraph.url,
     images: [
       {
-        url: '../../opengraph-image.png',
+        url: '../../../opengraph-image.png',
         width:  metaServicesLegalSupport.openGraph.images.width,
         height:  metaServicesLegalSupport.openGraph.images.height,
         alt:  metaServicesLegalSupport.openGraph.images.alt,

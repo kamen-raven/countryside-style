@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: metaServicesForCottageVillages.openGraph.url,
     images: [
       {
-        url: '../../opengraph-image.png',
+        url: '../../../opengraph-image.png',
         width:  metaServicesForCottageVillages.openGraph.images.width,
         height:  metaServicesForCottageVillages.openGraph.images.height,
         alt:  metaServicesForCottageVillages.openGraph.images.alt,

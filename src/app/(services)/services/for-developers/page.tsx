@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: metaServicesForDevelopers.openGraph.url,
     images: [
       {
-        url: '../../opengraph-image.png',
+        url: '../../../opengraph-image.png',
         width:  metaServicesForDevelopers.openGraph.images.width,
         height:  metaServicesForDevelopers.openGraph.images.height,
         alt:  metaServicesForDevelopers.openGraph.images.alt,
