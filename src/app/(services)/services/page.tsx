@@ -8,11 +8,29 @@ import servicesData from "~data/constant/servicesBlock/allServicesPage/servicesL
 import statisticalIndicatorsData from "~data/constant/servicesBlock/allServicesPage/statisticalIndicators/statisticalIndicators";
 import { getAllUsers } from "~api/Users/getUsers";
 import sortUsersList from "~helpers/users/sortUsersData";
+import { metaServices } from "~meta/metadataPages";
 
 export const metadata: Metadata = {
-  title: 'Наши услуги',
-  description: 'Мы предоставляем полный комплекс услуг в сфере продажи и покупки загородных участков, домов и коттеджей в Ленинградской области.',
+  title: metaServices.title,
+  description: metaServices.description,
+  keywords: metaServices.keywords,
+  openGraph: {
+    title: metaServices.title,
+    description: metaServices.description,
+    siteName: metaServices.openGraph.siteName,
+    type: 'website',
+    url: metaServices.openGraph.url,
+    images: [
+      {
+        url: '../../opengraph-image.png',
+        width:  metaServices.openGraph.images.width,
+        height:  metaServices.openGraph.images.height,
+        alt:  metaServices.openGraph.images.alt,
+      },
+    ],
+  },
 };
+
 
 
 

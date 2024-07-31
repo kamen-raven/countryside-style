@@ -1,10 +1,14 @@
 import { Metadata } from "next";
+import { metaPersonalAgreement } from "~meta/metadataPages";
 import { PersonalAgreementPage } from "~pages/index";
 
 export const metadata: Metadata = {
-  title: 'Политика обработки персональных данных',
-  description: 'Агентство недвижимости «Загородный Стиль». Санкт-Петербург, пр. Просвещения, дом 80, к. 1, «Прометей», 3 этаж, офис 3.1',
+  title: metaPersonalAgreement.title,
+  description: metaPersonalAgreement.description,
+  keywords: metaPersonalAgreement.keywords,
 };
+
+
 export default function PagePersonalAgreement() {
 
   return (

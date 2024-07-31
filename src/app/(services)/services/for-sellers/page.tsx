@@ -15,10 +15,29 @@ import { getAllReviews } from "~api/Reviews/getReviews";
 import { getObjects } from "~api/Objects/getObjects";
 import filteredArchiveObjects from "~helpers/objects/filteredArchiveObjects";
 import sortArchiveObjectsBySoldDate from "~helpers/objects/sortArchiveObjectsBySoldDate";
+import { metaServicesForSellers } from "~meta/metadataPages";
+
+
 
 export const metadata: Metadata = {
-  title: 'Услуги | Продавцам',
-  description: 'Продадим Ваш дом или участок по максимальной цене в кратчайший срок',
+  title: metaServicesForSellers.title,
+  description: metaServicesForSellers.description,
+  keywords: metaServicesForSellers.keywords,
+  openGraph: {
+    title: metaServicesForSellers.title,
+    description: metaServicesForSellers.description,
+    siteName: metaServicesForSellers.openGraph.siteName,
+    type: 'website',
+    url: metaServicesForSellers.openGraph.url,
+    images: [
+      {
+        url: '../../opengraph-image.png',
+        width:  metaServicesForSellers.openGraph.images.width,
+        height:  metaServicesForSellers.openGraph.images.height,
+        alt:  metaServicesForSellers.openGraph.images.alt,
+      },
+    ],
+  },
 };
 
 

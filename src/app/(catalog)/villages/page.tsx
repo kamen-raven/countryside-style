@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: metaCatalogPage.villages.openGraph.images.url,
+        url: '../../opengraph-image.png',
         width: metaCatalogPage.villages.openGraph.images.width,
         height: metaCatalogPage.villages.openGraph.images.height,
         alt: metaCatalogPage.villages.openGraph.images.alt,

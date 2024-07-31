@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: { params: { id: string, type:
   const currentObject = idCurrentObj &&  await getObjectByID(idCurrentObj.uuid);
 
   return {
-    title: `${typePage.category} ${currentObject?.name}`,
+    title: `${typePage.category} | ${currentObject?.name}`,
     description: currentObject?.place,
     openGraph: {
-      title: `${typePage.category} | ${currentObject?.name}`,
+      title: `${currentObject?.name} | ${typePage.category}`,
       description: currentObject?.place,
       siteName: typePage.title,
       url: `https://${typePage.openGraph.url}/${params.type}/${params.id}`,

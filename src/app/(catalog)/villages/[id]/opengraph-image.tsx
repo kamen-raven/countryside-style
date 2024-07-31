@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { ImageResponse } from "next/og";
-import { getObjectByID } from "~api/Objects/getObjectByID";
-import { getObjects } from "~api/Objects/getObjects";
+import { getAllVillages } from "~api/Villages/getAllVillages";
+import { getVillageByID } from "~api/Villages/getVillageByID";
 import formatPhotosArray from "~helpers/formatters/formatPhotosArray";
 
 export const size = {
@@ -10,38 +10,27 @@ export const size = {
 };
 
 export const alt = 'Агентство недвижимости "Загородный стиль"';
+export const contentType = 'image/png';
 
-
-export default async function Image({ params }: { params: { id: string, type: 'flats' | 'lands' | 'houses-and-cottages' | 'villages' } }) {
-  // получаем все объекты
-  const objects = await getObjects();
-
-  const category = {
-    flats: 'Квартиры',
-    lands: 'Земельные участки',
-    'houses-and-cottages': 'Дома, дачи, коттеджи',
-    'villages': 'Коттеджные поселки'
-  };
-
-  const typePage = category[params.type]; // берем тип на основе params исходя из роута
-
-  if (!typePage) {   // если такого нету, то возвращаем пустую страницу
-    notFound();
-  }
-
+export default async function Image({ params }: { params: { id: string, type: 'villages' } }) {
+  const villages = await getAllVillages(); // получаем все объекты
 
   // сравниваем и находим нужный объект из массива объектов по ID
-  const idCurrentObj = objects.find(obj => obj.id.toString() === params.id);
+  const idCurrentObj = villages.find(obj => obj.id.toString() === params.id);
 
   // если такого нет, то кидаем 404
   if (!idCurrentObj) {
     notFound();
   }
-
   // делаем запрос на сервер по uuid найденного ранее объекта и работаем с ним дальше
-  const currentObject = await getObjectByID(idCurrentObj.uuid);
+  const currentVillage = await getVillageByID(idCurrentObj.uuid);
+  if (!currentVillage) {
+    notFound();
+  }
+
+
   // весь массив фотографий и планов объекта
-  const picturesArray = formatPhotosArray(currentObject);
+  const picturesArray = formatPhotosArray(currentVillage);
 
   return new ImageResponse(
     (
@@ -60,7 +49,7 @@ export default async function Image({ params }: { params: { id: string, type: 'f
           style={{
             objectFit: 'cover',
             maxWidth: '968px',
-            maxHeight: '504px'
+            maxHeight: '504px',
           }}
           width='100%'
           height="100%"

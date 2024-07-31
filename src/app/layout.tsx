@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: `https://${metaLayout.openGraph.url}/`,
     images: [
       {
-        url: metaLayout.openGraph.images.url,
+        url: './opengraph-image.png',
         width:  metaLayout.openGraph.images.width,
         height:  metaLayout.openGraph.images.height,
         alt:  metaLayout.openGraph.images.alt,

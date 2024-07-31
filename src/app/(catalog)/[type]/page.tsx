@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: { params: { type: 'flats' | '
       type: "website",
       images: [
         {
-          url: typePage.openGraph.images.url,
-          width: typePage.openGraph.images.width,
-          height:typePage.openGraph.images.height,
-          alt: typePage.openGraph.images.alt,
+          url: '../../opengraph-image.png',
+          width: metaCatalogPage.villages.openGraph.images.width,
+          height: metaCatalogPage.villages.openGraph.images.height,
+          alt: metaCatalogPage.villages.openGraph.images.alt,
         }
       ]
     },
