@@ -58,7 +58,9 @@ gap: 50px; */
   }
 
   @media screen and (max-width: 740px) {
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
+    //grid-template-columns: auto;
   }
 
   @include breakpoint(screen576) {
