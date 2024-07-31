@@ -35,7 +35,7 @@ gap: 50px; */
   display: grid;
   grid-auto-flow: row;
 
-  grid-auto-rows: auto;
+  //grid-auto-rows: 1fr;  //new
   grid-template-columns: repeat(3, 1fr);
   gap: 50px clamp(35px, 2.5vw, 40px);
 
