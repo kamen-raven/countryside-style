@@ -108,8 +108,45 @@
 
 /* заголовок статьи */
 
+.blogTitle {
+  grid-area: title;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 70px;//clamp(40px, 5vw ,100px);
+  margin-bottom: 24px;
 
-юж
+  @include breakpoint(screen1024) {
+    margin-top: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    @include common-title(hSmall);
+
+    &_blogCard {
+      padding-top: 70px;//clamp(40px, 5vw ,100px);
+      padding-bottom: 24px;
+
+      @include breakpoint(screen1024) {
+        padding-top: 30px;
+      }
+
+      @include breakpoint(screen576) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
 /* ----------------- */
 
 /* кнопка ПОДРОБНЕЕ для перехода на текст статьи */
