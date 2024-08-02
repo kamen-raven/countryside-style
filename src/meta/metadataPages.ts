@@ -300,11 +300,11 @@ const metaServicesForBuyers = {
 
 const metaServicesForSellers = {
   title: `Продавцам | ${baseTitle}`,
-  description: 'Поможем продать вашу загородную недвижимость, в короткий срок по максимальной цене',
+  description: 'Поможем продать вашу загородную недвижимость в короткий срок по максимальной цене',
   keywords: ``,
   openGraph: {
     title: `Продавцам | ${baseTitle}`,
-    description: 'Поможем продать вашу загородную недвижимость, в короткий срок по максимальной цене',
+    description: 'Поможем продать вашу загородную недвижимость в короткий срок по максимальной цене',
     siteName: baseOpenGraph.siteName,
     url: `/services/for-sellers`,
     type: "website",

@@ -3,7 +3,7 @@ import { statisticalIndicatorsInterface } from "./statisticalIndicators.interfac
 const statisticalIndicatorsData: statisticalIndicatorsInterface[] = [
   {
     _id: 1,
-    title: 'Продали объектов',
+    title: 'Продано',
     statIndicator: '2\u00A0000',
     statLabel: 'объектов',
     description: ''
