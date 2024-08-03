@@ -7,21 +7,6 @@ import ArrowIcon from '~svg/button/arrow.svg';
 
 const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage, setCurrentPage, totalPages, parentRef }) => {
 
-  /*
-    const scrollToTop = () => {
-      return new Promise<void>((resolve) => {
-        if (parentRef.current) {
-          parentRef.current.scrollIntoView({
-            block: "start",
-            inline: "nearest",
-            behavior: "smooth"
-          });
-          setTimeout(resolve, 650); // Подождем 500 мс (можно уточнить время)
-        } else {
-          resolve();
-        }
-      });
-    }; */
   const scrollToTop = async () => {
     try {
       if (parentRef.current) {
@@ -123,7 +108,7 @@ const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage
 
 
 
-  
+
   return (
     <div className={styles.paginationContainer}>
       <button className={`${styles.buttonPagination} ${styles.buttonPagination__arrow} ${styles.buttonPagination__arrow_prev} ${arrowButtonCondition().prev}`}
