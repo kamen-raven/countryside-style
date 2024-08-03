@@ -22,6 +22,10 @@
     $color: $white,
     $font-family: $ff-openSans);
 
+
+    @include breakpoint(screen480) {
+      text-align: start;
+    }
 }
 
 .fieldset {

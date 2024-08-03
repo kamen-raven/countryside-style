@@ -61,8 +61,69 @@ const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage
   };
 
 
+  const generatePaginationButtons = () => {
+    const buttons = [];
+    const startPage = Math.max(2, currentPage - 1);
+    const endPage = Math.min(totalPages - 1, currentPage + 1);
+
+    buttons.push(
+      <button
+        key={1}
+        onClick={() => handlePageChange(1)}
+        className={`${paginationButtonCondition(0)} ${styles.buttonPagination}`}
+      >
+        1
+      </button>
+    );
+
+    if (startPage > 2) {
+      buttons.push(
+        <div key="start-ellipsis" className={styles.ellipsisContainer}>
+          <span  className={` ${styles.ellipsis}`}>
+          ···
+          </span>
+        </div>
+      );
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      buttons.push(
+        <button
+          key={i}
+          onClick={() => handlePageChange(i)}
+          className={`${paginationButtonCondition(i - 1)} ${styles.buttonPagination}`}
+        >
+          {i}
+        </button>
+      );
+    }
+
+    if (endPage < totalPages - 1) {
+      buttons.push(
+        <div key="end-ellipsis" className={styles.ellipsisContainer}>
+          <span  className={` ${styles.ellipsis}`}>
+          ···
+          </span>
+        </div>
+      );
+    }
+
+    buttons.push(
+      <button
+        key={totalPages}
+        onClick={() => handlePageChange(totalPages)}
+        className={`${paginationButtonCondition(totalPages - 1)} ${styles.buttonPagination}`}
+      >
+        {totalPages}
+      </button>
+    );
+
+    return buttons;
+  };
 
 
+
+  
   return (
     <div className={styles.paginationContainer}>
       <button className={`${styles.buttonPagination} ${styles.buttonPagination__arrow} ${styles.buttonPagination__arrow_prev} ${arrowButtonCondition().prev}`}
@@ -71,8 +132,8 @@ const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage
         <ArrowIcon />
       </button>
 
-
-      {Array.from({ length: totalPages }).map((m, index) => (
+      {generatePaginationButtons()}
+      {/*       {Array.from({ length: totalPages }).map((m, index) => (
         <button
           key={index}
           onClick={() => handlePageChange(index + 1)}
@@ -80,7 +141,7 @@ const CardItemPagination: React.FC<CardItemPaginationInterface> = ({ currentPage
         >
           {index + 1}
         </button>
-      ))}
+      ))} */}
 
       <button className={`${styles.buttonPagination} ${styles.buttonPagination__arrow} ${styles.buttonPagination__arrow_next} ${arrowButtonCondition().next}`}
         onClick={() => handlePageChange(currentPage + 1)}

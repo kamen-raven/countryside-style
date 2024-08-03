@@ -50,7 +50,7 @@ const BlogPage: React.FC = () => {
 
 
   // данные для пагинации
-  const itemsPerPage: number = 12; //?
+  const itemsPerPage: number = 10; //?
   const {
     totalPages,
     currentItems,
