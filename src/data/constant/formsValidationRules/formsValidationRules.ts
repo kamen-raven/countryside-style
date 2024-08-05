@@ -28,4 +28,11 @@ const questionValidationRules: ValidationRule = {
   },
 };
 
-export { phoneValidationRules, nameValidationRules, questionValidationRules };
+const reviewValidationRules: ValidationRule = {
+  required: {
+    value: true,
+    errMessage: "Отзыв обязателен",
+  },
+};
+
+export { phoneValidationRules, nameValidationRules, questionValidationRules, reviewValidationRules };

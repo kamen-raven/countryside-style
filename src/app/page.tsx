@@ -27,7 +27,7 @@ export default async function Home() {
 
   const reviews = sortReviewsByDate((await getAllReviews(10)).results); // запрос ОТЗЫВОВ
 
-  const blogPostsData = await getBlogArticle(); // посты из блога
+  const blogPostsData = await getBlogArticle(300); // посты из блога
 
   return (
     <HomePage

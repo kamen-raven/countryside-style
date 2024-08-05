@@ -43,7 +43,7 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
 
     try {
       // Вызываем функцию отправки данных, передавая значения полей формы
-      const response = await postApplicationFeedback('', '-', phone);
+      const response = await postApplicationFeedback('-', 'форма без имени', phone);
 
       console.log('Response:', response); // Выводим ответ сервера в консоль
       // Здесь можно добавить логику для обработки успешной отправки сообщения

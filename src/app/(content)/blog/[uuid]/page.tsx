@@ -14,8 +14,19 @@ export async function generateMetadata({ params }: { params: { uuid: string } })
     notFound();
   }
 
-  const authorData =  await getUserByID(blogArticleItem.author);
+  //const authorData =  await getUserByID(blogArticleItem.author);
 /*   const tags = (blogArticleItem.tags !== null) ? `${blogArticleItem.tags.map((i) => i.tag.name)}` : ''; */
+
+
+let authorData;
+if (blogArticleItem.author !== null) {
+  authorData = await getUserByID(blogArticleItem.author);
+} else {
+  authorData = {
+    first_name: 'Агентство недвижимости',
+    last_name: `"Загородный стиль"`
+  };
+}
 
   return {
     title: `${blogArticleItem.name} | ${metaBlogArticle.title}`,

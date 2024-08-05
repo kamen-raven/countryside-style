@@ -16,6 +16,7 @@ import getPostsForMainPage from '~helpers/blog/getPostsForMainPage';
 const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData }) => {
   // фильтруем посты для главной страницы
   const blogPosts = getPostsForMainPage(blogPostsData.results);
+  console.log(blogPosts.length);
 
 
   const [currentPost, setCurrentPost] = useState(0);

@@ -55,9 +55,12 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = ({ classNa
 
         try {
           // Вызываем функцию отправки данных, передавая значения полей формы
-          const response = await postApplicationFeedback(question, name, phone);
+          const response = await postApplicationFeedback(
+            `${question}`,
+            `ЗАЯВКА ${name}`,
+            `${phone}`);
 
-          console.log('Response:', response); // Выводим ответ сервера в консоль
+          //console.log('Response:', response); // Выводим ответ сервера в консоль
 
           resetForm();
           closeContactFormPopup();

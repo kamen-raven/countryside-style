@@ -22,6 +22,7 @@ const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
     reviewImage: styles.popupContainer_reviewImage,
     objectImage: styles.popupContainer_objectImage,
     successMessage: styles.popupContainer_form,
+    reviewSuccessMessage: styles.popupContainer_form,
     errorMessage: styles.popupContainer_form,
     videoPopup: styles.popupContainer_video,
   };
