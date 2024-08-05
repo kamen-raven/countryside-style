@@ -11,28 +11,28 @@ const servicesOffersData_forDevelopers: servicesDataInterface[]= [
     _id: 1,
     title: 'Строительство загородных домов',
     description: '',
-    link: '',
+    link: null,
     image: BuildImg,
   },
   {
     _id: 2,
     title: 'Приобретение или строительство загородных объектов',
-    description: 'Для долгосрочной или краткосрочной аренды.',
-    link: '',
+    description: 'Для долгосрочной или\u00A0краткосрочной аренды.',
+    link:  null,
     image: PurchaseImg
   },
   {
     _id: 3,
     title: 'Приобретение земельных массивов (оптом)',
-    description: 'C целью последующей перепродажи в розницу.',
-    link: '',
+    description: 'C\u00A0целью последующей перепродажи в\u00A0розницу.',
+    link:  null,
     image: LandsImg
   },
   {
     _id: 4,
-    title: 'Приобретение участка «на вырост»',
-    description: 'Покупка участка на старте продаж коттеджного поселка с целью дальнейшей перепродажи',
-    link: '',
+    title: 'Приобретение участка «на\u00A0вырост»',
+    description: 'Покупка участка на\u00A0старте продаж коттеджного поселка с\u00A0целью дальнейшей перепродажи',
+    link:  null,
     image: GrowImg
   },
 ];

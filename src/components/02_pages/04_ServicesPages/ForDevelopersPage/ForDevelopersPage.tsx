@@ -18,7 +18,7 @@ const ForDevelopersPage: React.FC<ForDevelopersPageInterface> = ({
         <main className = {styles.mainContainer}>
           <TitleBlockTemplate  pageData={titleBlockData[typePage]} />
           <RequestActionBlock typePage={typePage} gridArea={'first'} nameForm={'ForDevelopersPageForm1'}/>
-          <ServicesOffers offersListData={offersListData}/>
+          <ServicesOffers offersListData={offersListData} page='invest'/>
           <TeamMembersBlock employeesData={onePartner} countUsers={'owner'} page={'services'} />
           <ReviewsBlock reviewsDataItem={reviewsData}/>
           <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={'ForDevelopersPageForm2'}/>

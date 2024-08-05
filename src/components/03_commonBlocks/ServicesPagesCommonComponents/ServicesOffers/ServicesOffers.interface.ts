@@ -3,5 +3,6 @@ import { servicesDataInterface } from '~data/constant/servicesBlock/allServicesP
 
 export interface ServicesOffersInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   offersListData: servicesDataInterface[];
+  page?: string | 'invest';
   children?: ReactNode;
 }
