@@ -7,7 +7,7 @@ import Link from 'next/link';
 const PersonalAgreementElement: React.FC<PersonalAgreementElementInterface> = ({ className }) => {
   return (
     <p className={`${styles.agreement} ${className}`}>
-      Нажимая на кнопку, вы даете свое согласие&nbsp;
+      Нажимая на кнопку, Вы даете свое согласие&nbsp;
       <Link className={`${styles.agreement} ${className}`}
         href={`/personal-agreement`}
         target='_blank'

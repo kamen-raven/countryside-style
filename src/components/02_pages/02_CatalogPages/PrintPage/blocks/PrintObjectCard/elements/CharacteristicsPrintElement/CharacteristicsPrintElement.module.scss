@@ -1,0 +1,45 @@
+@import '~global_styles';
+
+.characteristicContainer {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  padding-top: 1.5rem;
+
+  @include print(print) {
+    gap: 8pt;
+    padding-top: 15pt;
+  }
+}
+
+.iconContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.icon {
+  display: flex;
+
+  & svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.info {
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-family: $ff-openSans);
+
+  &_accent {
+    font-weight: $bold;
+  }
+
+  @include print(print) {
+    font-size: 11pt;
+  }
+}

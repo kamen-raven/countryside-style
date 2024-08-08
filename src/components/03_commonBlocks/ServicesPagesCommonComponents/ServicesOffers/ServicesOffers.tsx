@@ -5,7 +5,7 @@ import { BackgroundSVGPattern } from '~shared/index.ts';
 import { ServicesCardTemplate } from '~common/index.ts';
 
 
-const ServicesOffers: React.FC<ServicesOffersInterface> = ({ offersListData, children }) => {
+const ServicesOffers: React.FC<ServicesOffersInterface> = ({ offersListData, page, children }) => {
 
 
 
@@ -14,7 +14,11 @@ const ServicesOffers: React.FC<ServicesOffersInterface> = ({ offersListData, chi
       <BackgroundSVGPattern positionX='right' />
       <div className={styles.container}>
         <h2 className={styles.title}>
-          Что мы предлагаем
+          {page === 'invest' ?
+            `Варианты инвестиций`
+            :
+            `Что мы предлагаем`
+          }
         </h2>
         <div className={styles.cardsLayout}>
 
@@ -27,7 +31,7 @@ const ServicesOffers: React.FC<ServicesOffersInterface> = ({ offersListData, chi
         </div>
 
         {children}
-        
+
       </div>
 
     </section>

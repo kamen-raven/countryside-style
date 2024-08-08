@@ -6,8 +6,14 @@
   @include breakpoint(screen768) {
     margin-bottom: 4px;
   }
+
   @include breakpoint(screen576) {
-    margin-bottom:  12px;
+    margin-bottom: 12px;
+  }
+
+  @include print(print) {
+    font-size: 20pt;
+    margin-bottom: 0;
   }
 }
 
@@ -16,6 +22,10 @@
   @include common-paragraph(p,
     $font-family: $ff-openSans,
     $font-weight: $regular);
+
+    @include print(print) {
+      font-size: 12pt;
+    }
 }
 
 .strong {
@@ -26,31 +36,42 @@
 .li {
   @include common-ul;
   @include flexColumnGap($gap: 5px);
+
+
+  @include print(print) {
+    list-style: square;
+  }
 }
 
 .ol {
   @include common-ul;
   padding-left: 25px;
   @include flexColumnGap($gap: 5px);
+
 }
 
-ol .listItem  {
+ol .listItem {
   @include common-paragraph(p,
-  $font-family: $ff-openSans,
-  $font-weight: $regular);
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
   padding-left: 10px;
 
   &::marker {
     color: $accent-green;
     font-weight: $bold;
   }
+
+
+  @include print(print) {
+    list-style: square;
+  }
 }
 
-ul .listItem  {
+ul .listItem {
   @include common-li;
   @include common-paragraph(p,
-  $font-family: $ff-openSans,
-  $font-weight: $regular);
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
   padding-left: 25px;
   position: relative;
   display: inline-flex;
@@ -58,12 +79,13 @@ ul .listItem  {
   @include breakpoint(screen768) {
     padding-left: 20px;
   }
+
   @include breakpoint(screen576) {
     padding-left: 16px;
   }
 
   &::before {
-    content:'';
+    content: '';
     display: block;
     position: absolute;
     color: $accent-green;
@@ -79,10 +101,15 @@ ul .listItem  {
       width: 7px;
       height: 7px;
     }
+
     @include breakpoint(screen576) {
       width: 5px;
       height: 5px;
     }
+  }
+
+  @include print(print) {
+    list-style: square;
   }
 }
 
@@ -128,4 +155,18 @@ ul .listItem  {
   &:hover {
     color: $accent-green;
   }
+}
+
+.imgContainer {
+  display: inline-flex;
+  width: 100%;
+}
+
+.img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid $gray-light;
+  border-radius: $border-radius;
 }

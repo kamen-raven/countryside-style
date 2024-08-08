@@ -17,11 +17,11 @@
   }
   @include breakpoint(screen1024) {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: clamp(480px, 62.5vw, 640px) 1fr auto auto;
+    grid-template-rows: auto 1fr auto auto;//clamp(480px, 62.5vw, 640px) 1fr auto auto;
   }
   @include breakpoint(screen768) {
     column-gap: 10px;
-    grid-template-rows: clamp(240px, 62.75vw, 480px) 1fr auto auto;
+    grid-template-rows: auto auto auto auto; //clamp(240px, 62.75vw, 480px) 1fr auto auto;
   }
 
   &_homePage { /* шаблон для ДОМАШНЕЙ СТРАНИЦЫ */
@@ -78,7 +78,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  //height: 100%;
 
   @include breakpoint(screen1024) {
     position: relative;
@@ -87,7 +87,7 @@
 
 .image {
   width: 100%;
-  height: 100%;
+  height: auto;
   max-height: 480px;
   object-fit: cover;
   object-position: center;
@@ -107,20 +107,44 @@
 /* ------------------- */
 
 /* заголовок статьи */
+
 .blogTitle {
   grid-area: title;
-
-  @include common-title(hSmall);
-  padding-top: 70px;//clamp(40px, 5vw ,100px);
-  padding-bottom: 24px;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 70px;//clamp(40px, 5vw ,100px);
+  margin-bottom: 24px;
 
   @include breakpoint(screen1024) {
-    padding-top: 30px;
+    margin-top: 30px;
   }
 
   @include breakpoint(screen576) {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    @include common-title(hSmall);
+
+    &_blogCard {
+      padding-top: 70px;//clamp(40px, 5vw ,100px);
+      padding-bottom: 24px;
+
+      @include breakpoint(screen1024) {
+        padding-top: 30px;
+      }
+
+      @include breakpoint(screen576) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+    }
+  }
+
+  &__link {
+    text-decoration: none;
   }
 }
 /* ----------------- */
@@ -336,8 +360,10 @@
     text-wrap: wrap;
     text-decoration: underline;
     line-height: 100%;
-    text-align: end;
+    text-align: end !important;
     transition: text-decoration .2s linear;
+
+
   }
 
   &__span {

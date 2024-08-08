@@ -1,0 +1,127 @@
+@import '~global_styles';
+
+.cardWrapper {
+  box-sizing: border-box;
+
+  min-width: calc(33.3% - calc(80px/3));
+  //min-width:  calc(33.3% - 33.3px);
+  width: 100%;
+
+
+  border: 1px solid $gray;
+
+  display: grid;
+  grid-template-rows: 310px auto;
+
+  @include breakpoint(screen1280) {
+    min-width: calc(50% - calc(80px/2));
+  }
+
+  @include breakpoint(screen1024) {
+    grid-template-rows: 260px auto;
+  }
+
+
+  @media screen and (max-width: 740px) {
+    min-width: 100%;
+    grid-template-rows: 240px auto;
+  }
+
+  @include breakpoint(screen576) {
+    grid-template-rows: 220px auto;
+
+  }
+
+}
+
+
+
+// IMAGE
+.imageBlock {
+  display: flex;
+
+  @include breakpoint(screen1024) {
+    height: 260px;
+  }
+
+  @media screen and (max-width: 740px) {
+    max-width: none;
+    height: 240px;
+  }
+
+  @include breakpoint(screen576) {
+    height: 210px;
+  }
+
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+// INFO
+.infoBlock {
+  background-color: $white;
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .8rem;
+
+
+  @include breakpoint(screen1440) {
+    padding: 20px;
+  }
+
+  @include breakpoint(screen1280) {
+    padding: 25px;
+  }
+
+  @include breakpoint(screen960) {
+    padding: 20px;
+  }
+
+/*   @include breakpoint(screen768) {
+    min-height: 180px;
+  } */
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  @include common-paragraph(pLg);
+}
+
+.statusContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  color: #398281;
+}
+
+.status {
+  @include common-paragraph(p,
+    $color: $accent-green,
+    $font-family: $ff-openSans);
+
+
+
+  &_bold {
+    font-weight: $bold;
+  }
+}
+
+.address {
+  @include common-paragraph(p,
+    $font-weight: $regular,
+    $font-family: $ff-openSans);
+}
+

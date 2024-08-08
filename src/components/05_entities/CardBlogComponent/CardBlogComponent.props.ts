@@ -6,5 +6,7 @@ export interface CardBlogComponentProps extends DetailedHTMLProps<HTMLAttributes
   blogCardItem: BlogInterface;
 
   blogPostsData?: ApiBlogInterface;
+  nextBtn?: () => void;
+  prevBtn?: () => void;
   children?: ReactNode;
 }

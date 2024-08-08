@@ -25,7 +25,7 @@ const CatalogBlock: React.FC<CatalogBlockInterface> = ({ objectsData, villagesDa
 
       <div className={styles.container}>
         {(objectsData && typePage !== 'villages') &&
-          <CatalogCardsLayout typePage={typePage} objectsData={objectsData} /* itemsPerPage={itemsPerPage} */ />
+          <CatalogCardsLayout /* typePage={typePage} */ objectsData={objectsData} /* itemsPerPage={itemsPerPage} */ />
         }
 
         {(villagesData && typePage === 'villages') &&  ///сделать отображение страниц пагинации по аналогии с карточками объектов

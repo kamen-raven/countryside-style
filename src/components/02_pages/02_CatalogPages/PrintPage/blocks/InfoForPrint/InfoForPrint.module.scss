@@ -1,0 +1,151 @@
+@import '~global_styles';
+
+
+.wrapper {
+
+
+  grid-area: info;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 26px;
+
+  @include breakpoint(screen480) {
+    gap: 12px;
+  }
+
+
+  @include print(none);
+}
+
+.title {
+  @include common-title(hSubtitle);
+  @include mainContainer();
+}
+
+
+.btnContainer {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include breakpoint(screen480) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+
+.returnBtn {
+  @include common-button(colored);
+
+  text-decoration: none;
+  align-items: baseline;
+  & svg {
+
+    margin-left: 12px;
+    width: 25px;
+    fill: $white;
+
+    & path:first-of-type {
+      stroke: $white;
+    }
+
+  }
+
+  &:hover {
+    color: $dark;
+    & svg {
+      margin-left: 12px;
+      width: 25px;
+      fill: $dark;
+
+      & path:first-of-type {
+        stroke: $dark;
+      }
+    }
+  }
+}
+
+
+.disclaimerWrapper {
+  background-color: $accent-green;
+
+}
+
+.disclaimerInner {
+  @include mainContainer($padding-upDown: 80px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.disclaimerContainer {
+  display: flex;
+  gap: 35px;
+
+  @include breakpoint(screen576) {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+
+.disclaimerIcon {
+  & svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  @include breakpoint(screen768) {
+    & svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @include breakpoint(screen576) {
+    & svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.disclaimerText {
+  @include common-paragraph(pXl,
+    $font-weight: $regular,
+    $color: $white);
+  line-height: 140%;
+  width: auto;
+  display: inline-flex;
+  flex-direction: column;
+
+  @include breakpoint(screen768) {
+    display: inline;
+    text-align: justify;
+  }
+
+}
+
+.disclaimerText_spanAccent {
+  @extend .disclaimerText;
+  font-weight: $bold;
+}

@@ -13,7 +13,7 @@ const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage,
       <BackgroundSVGPattern positionX='right' />
       <div className={`${styles.mainContainer}`}>
         {/* ЗАГОЛОВОК TITLE */}
-        <TitleComponent data={objectData} />
+        <TitleComponent data={objectData} agentData={agentData} />
         {/* ОСНОВНОЙ КОНТЕЙНЕР С ИНФОРМАЦИЕЙ / INFO */}
         <PhotosComponent data={objectData} />
 

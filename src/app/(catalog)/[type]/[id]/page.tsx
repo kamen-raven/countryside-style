@@ -5,19 +5,51 @@ import { getObjects } from "~api/Objects/getObjects";
 import { getObjectsIsLike } from "~api/Objects/getObjectsIsLike";
 import { getUserByID } from "~api/Users/getUserByID";
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
-/* import { notFound } from "next/navigation"; */
+import { metaCatalogPage } from "~meta/metadataPages";
 import { CardPage } from "~pages/index";
 
 
-export const metadata: Metadata = {
-  title: 'CARD',
-  description: 'CARD PAGE',
-};
+
+
+export async function generateMetadata({ params }: { params: { id: string, type: 'flats' | 'lands' | 'houses-and-cottages' | 'villages' } }): Promise<Metadata> {
+  const typePage = metaCatalogPage[params.type]; // берем тип на основе params исходя из роута
+  if (!typePage) {   // если такого нету, то возвращаем пустую страницу
+    notFound();
+  }
+
+  // получаем все объекты
+  const objects = await getObjects();
+
+  // сравниваем и находим нужный объект из массива объектов по ID
+  const idCurrentObj = objects.find(obj => obj.id.toString() === params.id);
+  // если такого нет, то кидаем 404
+  if (!idCurrentObj) {
+    notFound();
+  }
+
+  // делаем запрос на сервер по uuid найденного ранее объекта и работаем с ним дальше
+  const currentObject = idCurrentObj &&  await getObjectByID(idCurrentObj.uuid);
+
+  return {
+    title: `${typePage.category} | ${currentObject?.name}`,
+    description: currentObject?.place,
+    openGraph: {
+      title: `${currentObject?.name} | ${typePage.category}`,
+      description: currentObject?.place,
+      siteName: typePage.title,
+      url: `https://${typePage.openGraph.url}/${params.type}/${params.id}`,
+      type: "website",
+    },
+  };
+}
+
+
 
 export async function generateStaticParams() {
   const objects = await getObjects(); // получаем все объекты
   /* формируем массив ID объектов для адресной строки */
   const idList: { id: string }[] = objects.map((obj: RealEstateObjectInterface) => ({ id: obj.id.toString() }));
+
   return idList;
 }
 
@@ -25,6 +57,21 @@ export async function generateStaticParams() {
 export default async function CardType({ params }: { params: { id: string, type: 'flats' | 'lands' | 'houses-and-cottages' | 'villages' } }) {
   // получаем все объекты
   const objects = await getObjects();
+
+  const category = {
+    flats: 'Квартиры',
+    lands: 'Земельные участки',
+    'houses-and-cottages': 'Дома, дачи, коттеджи',
+    'villages': 'Коттеджные поселки'
+  };
+
+  const typePage = category[params.type]; // берем тип на основе params исходя из роута
+
+    if (!typePage) {   // если такого нету, то возвращаем пустую страницу
+      notFound();
+    }
+
+
   // сравниваем и находим нужный объект из массива объектов по ID
   const idCurrentObj = objects.find(obj => obj.id.toString() === params.id);
 
@@ -35,7 +82,9 @@ export default async function CardType({ params }: { params: { id: string, type:
 
   // делаем запрос на сервер по uuid найденного ранее объекта и работаем с ним дальше
   const currentObject = await getObjectByID(idCurrentObj.uuid);
-  if (!currentObject) {
+
+  // проверка типа объекта на соответствие раздела каталога
+  if (!currentObject || currentObject.category !== typePage) {
     notFound();
   }
 

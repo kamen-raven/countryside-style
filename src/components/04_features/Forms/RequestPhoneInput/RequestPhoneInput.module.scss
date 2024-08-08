@@ -27,16 +27,20 @@
     //min-width: 400px;
     padding: 9px 30px;
     border-radius: $border-radius;
-
-
   }
+
+  &__label {
+      width: 100%;
+      position: relative;
+  }
+
 
   &__button {
     @include common-button(colored);
     width: 100%;
     text-wrap: nowrap;
     font-weight: $regular;
-    
+
     @include breakpoint(screen576) {
       max-width: 180px;
     }

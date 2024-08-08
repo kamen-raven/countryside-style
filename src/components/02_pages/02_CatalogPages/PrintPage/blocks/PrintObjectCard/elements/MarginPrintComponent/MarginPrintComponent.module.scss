@@ -1,0 +1,106 @@
+@import '~global_styles';
+
+.marginContainer {
+  display: grid;
+  align-items: center;
+  justify-items: flex-end;
+  gap: 1.2rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: auto;
+  margin: 0 32px;
+
+
+  background-color: white; // Белый фон для печати
+  padding: 16px 0;
+  border-bottom: 1px solid #000;
+
+  @media print {
+    width: auto;
+    max-width: calc(210mm - (12mm * 2));
+    height: 23mm; // Высота колонтитула
+    padding: 0;
+    margin: 0 12mm;
+    margin-bottom: 5mm;
+  }
+}
+
+.logoContainer {
+  @include print(print) {
+    font-size: 10pt;
+  }
+}
+
+
+.logo {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 10px;
+
+  & svg {
+    display: flex;
+    object-fit: contain;
+    max-width: 40px;
+    height: 25px;
+  }
+
+  &__name {
+    color: $accent-green;
+    text-decoration: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-wrap: nowrap;
+    gap: 4px;
+    font-size: .8rem;
+    font-weight: $extra-bold;
+    font-family: $ff-openSans;
+
+    @include print(print) {
+      font-size: 11.5pt;
+      gap: 4pt;
+    }
+
+
+    &_span {
+      font-size: .5rem;
+      font-weight: $light;
+      color: $accent-gray;
+      line-height: 100%;
+      margin: 0;
+      text-align: justify;
+      letter-spacing: 2.2px;
+
+      @include print(print) {
+        font-size: 7.5pt;
+      }
+    }
+  }
+}
+
+.phoneNumber {
+  font-weight: $bold;
+  font-size: 1rem;
+  gap: .5rem;
+
+  @include print(print) {
+    gap: 10pt;
+
+  }
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.labelContainer {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: $bold;
+  color: $accent-green;
+
+  @include print(print) {
+
+  }
+}

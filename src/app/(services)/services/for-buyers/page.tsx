@@ -7,13 +7,32 @@ import { ForBuyersPage } from "~pages/index";
 import { typePageEnum } from "~data/constant/servicesBlock/servicesPagesFor/typePageEnum";
 import titleBlockData from "~data/constant/servicesBlock/servicesPagesFor/titleBlockData/titleBlockData";
 import forBuyersPageAdvantages from "~data/constant/servicesBlock/advantagesList/forBuyersPage/forBuyersPageAdvantages";
+import servicesCardsForBuyers from "~data/constant/servicesBlock/servicesCards/forBuyersPage/servicesCardsForBuyers";
+
 import { getAllReviews } from "~api/Reviews/getReviews";
+import { metaServicesForBuyers } from "~meta/metadataPages";
+
 
 export const metadata: Metadata = {
-  title: 'Услуги | Покупателям',
-  description: 'Вы собирайтесь купить недвижимость? Поможем с выбором и сопроводим сделку',
+  title: metaServicesForBuyers.title,
+  description: metaServicesForBuyers.description,
+  keywords: metaServicesForBuyers.keywords,
+  openGraph: {
+    title: metaServicesForBuyers.title,
+    description: metaServicesForBuyers.description,
+    siteName: metaServicesForBuyers.openGraph.siteName,
+    type: 'website',
+    url: metaServicesForBuyers.openGraph.url,
+    images: [
+      {
+        url: '../../../opengraph-image.png',
+        width:  metaServicesForBuyers.openGraph.images.width,
+        height:  metaServicesForBuyers.openGraph.images.height,
+        alt:  metaServicesForBuyers.openGraph.images.alt,
+      },
+    ],
+  },
 };
-
 
 
 
@@ -28,6 +47,7 @@ export default async function PageForBuyers() {
       titleBlockData={titleBlockData}
       advantagesListData={forBuyersPageAdvantages}
       reviewsData={reviews}
+      servicesCardsData={servicesCardsForBuyers}
       />
   );
 }

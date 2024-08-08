@@ -7,10 +7,27 @@ import aboutUsPageAdvantages from "~data/constant/servicesBlock/advantagesList/a
 import aboutUsPageFacts from '~data/constant/servicesBlock/advantagesList/aboutUsPage/aboutUsPageFacts';
 import { getAllUsers } from "~api/Users/getUsers";
 import sortUsersList from "~helpers/users/sortUsersData";
+import { metaAboutUs } from "~meta/metadataPages";
 
 export const metadata: Metadata = {
-  title: 'О компании',
-  description: 'Загородный стиль – это специализированное агентство по загородной недвижимости.',
+  title: metaAboutUs.title,
+  description: metaAboutUs.description,
+  keywords: metaAboutUs.keywords,
+  openGraph: {
+    title: metaAboutUs.title,
+    description: metaAboutUs.description,
+    siteName: metaAboutUs.openGraph.siteName,
+    type: 'website',
+    url: metaAboutUs.openGraph.url,
+    images: [
+      {
+        url: '../../opengraph-image.png',
+        width:  metaAboutUs.openGraph.images.width,
+        height:  metaAboutUs.openGraph.images.height,
+        alt:  metaAboutUs.openGraph.images.alt,
+      },
+    ],
+  },
 };
 
 

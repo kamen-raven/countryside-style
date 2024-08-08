@@ -9,7 +9,7 @@ const homePageServicesItems: servicesDataInterface[] = [
   {
     _id: 1,
     title: 'Продажа',
-    description: 'Поможем продать вашу загородную недвижимость, в\u00A0короткий срок по\u00A0максимальной цене',
+    description: 'Поможем продать вашу загородную недвижимость в\u00A0короткий срок по\u00A0максимальной цене',
     link: 'services/for-sellers',
     image: Sale
   },

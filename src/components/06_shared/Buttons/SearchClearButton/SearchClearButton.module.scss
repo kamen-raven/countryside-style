@@ -1,0 +1,36 @@
+@import '~global_styles';
+
+.clearButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 6px;
+
+  @include common-paragraph(pSm,
+    $font-weight: $regular,
+    $font-family: $ff-openSans,
+    $line-height: 120%);
+
+    padding: 0;
+    background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+
+  &:disabled {
+    visibility: hidden;
+  }
+
+  &:hover {
+    text-decoration-line: underline;
+    transform: scale(1.07);
+    transition: transform 0.2s ease;
+  }
+
+
+  & svg {
+    width: 15px;
+    height: 15px;
+  }
+}

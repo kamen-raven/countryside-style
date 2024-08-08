@@ -7,7 +7,7 @@ import { CatalogCardComponent, /* CardItemPagination */ } from '~entities/index.
 /* import usePaginationCounter from '~hooks/usePaginationCounter.ts';
  */
 
-const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ typePage, objectsData, /* itemsPerPage */ }) => {
+const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ /* typePage, */ objectsData, /* itemsPerPage */ }) => {
 
   // функция для управления пагинацией
 /*   const {
@@ -25,7 +25,7 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ typePage, o
       <div /* ref={parentRef}  */className={`${styles.cardsLayout}`}> {/*  ${objectsData.length > itemsPerPage ? styles.paginationMargin : null}` */}
 
         {objectsData.map((item) => ( //currentItems
-          <CatalogCardComponent key={item.id} item={item} typePage={typePage} />
+          <CatalogCardComponent key={item.id} item={item}/*  typePage={typePage} */ />
         ))}
       </div>
 {/*

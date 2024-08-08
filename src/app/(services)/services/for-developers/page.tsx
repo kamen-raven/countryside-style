@@ -11,10 +11,27 @@ import servicesOffersData_forDevelopers from "~data/constant/servicesBlock/servi
 import { getAllReviews } from "~api/Reviews/getReviews";
 import { getAllUsers } from "~api/Users/getUsers";
 import sortUsersList from "~helpers/users/sortUsersData";
+import { metaServicesForDevelopers } from "~meta/metadataPages";
 
 export const metadata: Metadata = {
-  title: 'Услуги | Строительным бригадам и частным застройщикам',
-  description: 'Инвестиции в загородную недвижимость',
+  title: metaServicesForDevelopers.title,
+  description: metaServicesForDevelopers.description,
+  keywords: metaServicesForDevelopers.keywords,
+  openGraph: {
+    title: metaServicesForDevelopers.title,
+    description: metaServicesForDevelopers.description,
+    siteName: metaServicesForDevelopers.openGraph.siteName,
+    type: 'website',
+    url: metaServicesForDevelopers.openGraph.url,
+    images: [
+      {
+        url: '../../../opengraph-image.png',
+        width:  metaServicesForDevelopers.openGraph.images.width,
+        height:  metaServicesForDevelopers.openGraph.images.height,
+        alt:  metaServicesForDevelopers.openGraph.images.alt,
+      },
+    ],
+  },
 };
 
 

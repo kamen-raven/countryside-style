@@ -1,5 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import Image from 'next/image';
+
 
 interface markdownStylesInterface {
   p?: string;
@@ -15,6 +17,9 @@ interface markdownStylesInterface {
   ol?: string;
   li?: string;
   a?: string;
+  /* IMG tags */
+  imgContainer?: string;
+  img?: string;
 }
 
 export default function useReactMarkdown(
@@ -29,16 +34,37 @@ export default function useReactMarkdown(
         children={markdownText}
         remarkPlugins={[remarkGfm]}
         components={{
-          p: ({ children }) =>
-            <p className={markdownStyles.p}>
-              {children}
-            </p>,
+          p: ({ node, children }) => {
 
+            /* Для корректного отображения изображения https://amirardalan.com/blog/use-next-image-with-react-markdown */
+            const firstChild = node && node.children[0];
+            if (firstChild && 'tagName' in firstChild && firstChild.tagName === 'img') {
+              const image = firstChild;
+              const alt = image.properties.alt;
+              return (
+                <div className={markdownStyles.imgContainer}>
+                  <Image
+                    src={`https://admin.zagorod-style.ru/${image.properties.src}`}  //?
+                    width={768}
+                    height={432}
+                    className={markdownStyles.img}
+                    alt={`${alt ? alt : 'imageBlog'}`}
+                  />
+                </div>
+              );
+            }
+
+            /* непосредственно параграф p */
+            return (
+              <p className={markdownStyles.p}>
+                {children}
+              </p>
+            );
+          },
           strong: ({ children }) =>
             <span className={markdownStyles.strong}>
               {children}
             </span>,
-
           em: ({ children }) =>
             <span className={markdownStyles.em}>
               {children}
@@ -79,7 +105,7 @@ export default function useReactMarkdown(
           a: (props) =>
             <a className={markdownStyles.a} href={props.href} >
               {props.children}
-            </a>
+            </a>,
         }} />
     </>
   );

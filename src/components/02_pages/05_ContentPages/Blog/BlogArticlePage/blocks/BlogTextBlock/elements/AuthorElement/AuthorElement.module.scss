@@ -12,13 +12,31 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
+
   @include breakpoint(screen1280) {
     width: 80px;
     height: 80px;
   }
+
   @include breakpoint(screen576) {
     width: 70px;
     height: 70px;
+  }
+}
+
+.authorImageCommon {
+
+  @extend .authorImage;
+  border: 1px solid $gray;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    width: 70%;
+    padding-bottom: 5px;
   }
 }
 

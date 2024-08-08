@@ -3,16 +3,13 @@ import styles from './LayoutBlog.module.scss';
 import { LayoutBlogInterface } from './LayoutBlog.interface.ts';
 import { QuestionFormBlock } from '~common/index.ts';
 import { BlogTitleBlock } from './blocks/index.ts';
-import gettingUniqueTagName from '~helpers/blog/gettingUniqueTagName.ts';
-
 
 const LayoutBlog: React.FC<LayoutBlogInterface> = ({ blogPostsData, children }) => {
 
-  const uniqueTags = gettingUniqueTagName(blogPostsData.results);  // создаем массив уникальных тэгов
 
   return (
     <main className={styles.mainContainer}>
-      <BlogTitleBlock tagsList={uniqueTags} />
+      <BlogTitleBlock blogPostsData={blogPostsData} />
       {children}
       <QuestionFormBlock contentType={'image'}
         direction={'formFirst'} />

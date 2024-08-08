@@ -12,7 +12,7 @@ export async function getObjects(): Promise<RealEstateObjectInterface[]> {
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 1000
+        revalidate: 10
       }
     });
 
@@ -25,3 +25,4 @@ export async function getObjects(): Promise<RealEstateObjectInterface[]> {
     throw error;
   }
 }
+

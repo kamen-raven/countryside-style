@@ -23,6 +23,7 @@
       "~helpers/*": ["./src/helpers/*"],
       "~utils/*": ["./src/utils/*"],
       "~store/*": ["./src/store/*"],
+      "~meta/*": ["./src/meta/*"],
 
       "~api/*": ["./src/api/components/*"],
       "~interfaces/*": ["./src/api/interfaces/*"],

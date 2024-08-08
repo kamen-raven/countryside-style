@@ -15,7 +15,7 @@ export interface MainPopupState {
 
 export interface SupportPopupState {
     isOpen: boolean;
-    type: "reviewImage" | "successMessage" | "errorMessage" | null;
+    type: "reviewImage" | "successMessage" | "errorMessage" | "reviewSuccessMessage" | null;
     actions: {
       openPopup: (popupType: SupportPopupState["type"]) => void;
       closePopup: () => void;

@@ -3,6 +3,7 @@ import { ImageInterface } from "./objectImage.interface";
 export interface VillageObjectInterface {
   uuid: string;
   id: number;
+  visible_on_site: boolean | null; //* new
   pdf: string;  //* new
   name: string;
   distance_CAD: number;

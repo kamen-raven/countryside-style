@@ -3,7 +3,7 @@ import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 
 export interface CatalogCardsLayoutInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   objectsData: RealEstateObjectInterface[];
-  typePage: 'flats' | 'lands' | 'houses-and-cottages';
+/*   typePage: 'flats' | 'lands' | 'houses-and-cottages'; */
   children?: ReactNode;
 /*   itemsPerPage: number; */
 }

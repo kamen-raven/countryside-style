@@ -10,8 +10,6 @@ const OpenPopupButton: React.FC<OpenPopupButtonInterface> = ({ type, className, 
 
   const handleOpenPopup = () => {
     openPopup(type);
-
-    console.log('click!');
   };
 
   return (

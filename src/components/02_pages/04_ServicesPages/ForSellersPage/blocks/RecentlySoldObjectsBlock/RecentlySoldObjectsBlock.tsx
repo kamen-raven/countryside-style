@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './RecentlySoldObjectsBlock.module.scss';
 import { RecentlySoldObjectsBlockInterface } from './RecentlySoldObjectsBlock.interface.ts';
 
-import { CatalogCardItem } from '~common/index.ts';
-//import { CatalogCardComponent } from '~entities/index.ts';
+import { RecentlySoldObjectCard } from './elements/index.ts';
 
 
-const RecentlySoldObjectsBlock: React.FC<RecentlySoldObjectsBlockInterface> = ({ recentObjectsData }) => {
+
+const RecentlySoldObjectsBlock: React.FC<RecentlySoldObjectsBlockInterface> = ({ archiveObjectsData }) => {
 
   /*  const setLimit = recentObjectsData.slice(-5); ///// */
 
@@ -28,12 +28,12 @@ const RecentlySoldObjectsBlock: React.FC<RecentlySoldObjectsBlockInterface> = ({
               }
             })} */}
 
-            {recentObjectsData.map((item) => {
-              if (item.status == 'sold') {
+            {archiveObjectsData.map((item) => {
+
                 return (
-                  <CatalogCardItem key={item.id} item={item} />
+                  <RecentlySoldObjectCard key={item.id} item={item} />
                 );
-              }
+
             })}
 
           </div>

@@ -9,7 +9,7 @@ import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 import { PathLinkComponent, PrintPageButton } from '~shared/index.ts';
 
-const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
+const TitleComponent: React.FC<TitleComponentInterface> = ({ data, agentData }) => {
   function isRealEstateObject(obj: RealEstateObjectInterface | VillageObjectInterface): obj is RealEstateObjectInterface {
     return 'area_plot' in obj && 'land_area_measurement' in obj;
   }
@@ -72,7 +72,7 @@ const TitleComponent: React.FC<TitleComponentInterface> = ({ data }) => {
         }
 
         {/* //* Кнопка для сохранения в PDF  */}
-        <PrintPageButton />
+        <PrintPageButton data={data} agentData={agentData} func={'push'} />
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ const legalSupportServices: advantagesItemInterface[] = [
     {
       _id: 2,
       icon: ConsultIcon,
-      title: "Консультация по налогам",
+      title: "Консультация по\u00A0налогам",
       description: ''
     },
   {
@@ -30,7 +30,7 @@ const legalSupportServices: advantagesItemInterface[] = [
   {
     _id: 4,
     icon: NegotiationsIcon,
-    title: "Проведение переговорам с продавцами и покупателями",
+    title: "Проведение переговоров с\u00A0продавцами и\u00A0покупателями",
     description: ''
   },
 ];

@@ -11,17 +11,15 @@ import useBlogArticleTitleStore from '~store/blogStore/useBlogArticleTitleStore.
 const BlogPathElement: React.FC = () => {
   const pathname = usePathname().split('/');
 
-  const useBlogArticleTitle = useBlogArticleTitleStore((state) => state.blogArticleTitle);
-
-
+  const blogArticleTitle = useBlogArticleTitleStore((state) => state.blogArticleTitle);
 
   return (
     <>
-      {pathname.length < 3 ?
+      {(pathname.length < 3) || (pathname.some((path) => path === 'search')) ?
         null
         :
         <div className={styles.pathContainer}>
-          <PathLinkComponent dataInfo={useBlogArticleTitle} />
+          <PathLinkComponent dataInfo={blogArticleTitle} />
         </div>
       }
     </>

@@ -1,0 +1,53 @@
+@import '~global_styles';
+
+.infoContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+
+  @include print(print) {
+    grid-template-columns: 2fr 1fr;
+    gap: 7mm;
+    padding-bottom: 3mm;
+  }
+}
+
+.image {
+  display: flex;
+  overflow: hidden;
+  border: 1px $gray-light solid;
+  width: 100%;
+  max-width: 500px;
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.address {
+  font-weight: $regular;
+  line-height: 120%;
+  font-size: 1.5rem;
+  margin: 0;
+
+  @include print(print) {
+    font-size: 16pt;
+  }
+}
+
+.sellerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid $gray;
+
+  @include print(print) {
+    gap: 10pt;
+    padding-bottom: 15pt;
+  }
+}

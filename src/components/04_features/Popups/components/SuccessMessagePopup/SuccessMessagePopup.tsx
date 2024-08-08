@@ -13,7 +13,10 @@ const SuccessMessagePopup: React.FC = () => {
         {type === 'successMessage' ?
         'Ваше сообщение отправлено!' :
         type === 'errorMessage' ?
-        'Ошибка!' : ''}
+        'Ошибка!' :
+        type === 'reviewSuccessMessage' ?
+        'Благодарим Вас за отзыв о нашей работе!' :
+        ''}
       </h3>
       <p className={styles.subtitle}>
       {type === 'successMessage' ?
@@ -22,7 +25,11 @@ const SuccessMessagePopup: React.FC = () => {
         Вас вопросу.` :
         type === 'errorMessage' ?
         `Попробуйте перезагрузить страницу
-        и\u00A0отправить форму снова.` : ''}
+        и\u00A0отправить форму снова.` :
+        type === 'reviewSuccessMessage' ?
+        'Ваш отзыв успешно отправлен. После модерации мы разместим его на нашем сайте.'
+        : ''
+        }
       </p>
     </div>
   );

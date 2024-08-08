@@ -29,6 +29,7 @@
   max-width: 100%;
   overflow: auto;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 50px;
 
   @include breakpoint(screen960) {
@@ -37,6 +38,8 @@
   @include breakpoint(screen576) {
     padding-bottom: 20px;
   }
+
+  scroll-snap-type: x mandatory;  // new swipe
 }
 
 .innerBlock {
@@ -45,10 +48,18 @@
   grid-auto-columns: calc(50% - 20px);
   grid-auto-flow: column;
   grid-column-gap: 40px;
+  max-width: calc(100vw - 120px);//clamp(1.563rem, 6.58724vw, 3.125rem));
+
+
 
   @include breakpoint(screen960) {
-    max-width: calc(100vw - clamp(1.563rem, 6.58724vw, 3.125rem));
-    grid-auto-columns: 100%;
+    grid-auto-columns:  calc(100vw - $padding-side*2.5);
+    max-width:  calc(100vw - $padding-side*2.5);
+  }
+
+  @include breakpoint(screen768) {
+    grid-auto-columns:  calc(100vw - $padding-side-tab*2.5);
+    max-width:  calc(100vw - $padding-side-tab*2.5);
   }
 }
 

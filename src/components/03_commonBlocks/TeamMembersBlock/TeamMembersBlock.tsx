@@ -5,22 +5,22 @@ import { TeamMemberCard } from './elements/index.ts';
 import { UsersInterface } from '~interfaces/users.interface.ts';
 
 
-const TeamMembersBlock: React.FC<TeamMembersBlockInterface> = ({ employeesData, countUsers, children }) => {
+const TeamMembersBlock: React.FC<TeamMembersBlockInterface> = ({ employeesData, countUsers, page, children }) => {
 
   const setGridArea = {
     owner: styles.ownersArea,
     employee: styles.employeesArea,
-    all:  styles.allArea,
+    all: styles.allArea,
     single: styles.ownersArea,
   };
 
-  const sortedData = (data:  UsersInterface[]) => {
+  const sortedData = (data: UsersInterface[]) => {
     if (countUsers === 'owner') {
-      return data.slice(0,2);
+      return data.slice(0, 2);
     } else if (countUsers === 'employee') {
       return data.slice(3);
     } else if (countUsers === 'single') {
-      return data.slice(0,1);
+      return data.slice(0, 1);
     } else {
       return data;
     }
@@ -31,14 +31,15 @@ const TeamMembersBlock: React.FC<TeamMembersBlockInterface> = ({ employeesData, 
     <section className={`${styles.wrapper} ${setGridArea[countUsers]}`}>
       {children}
 
-    {sortedData(employeesData).map((item, index) => {
-                return (
-                  <TeamMemberCard key={item.uuid}
-                    employeeItem={item}
-                    index={index}
-                    countUsers={countUsers} />
-                );
-    }) }
+      {sortedData(employeesData).map((item, index) => {
+        return (
+          <TeamMemberCard key={item.uuid}
+            employeeItem={item}
+            index={index}
+            countUsers={countUsers}
+            page={page} />
+        );
+      })}
 
     </section>
   );

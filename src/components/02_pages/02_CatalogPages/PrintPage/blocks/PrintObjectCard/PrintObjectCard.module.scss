@@ -1,0 +1,65 @@
+@import '~global_styles';
+
+.outsideContainer {
+  position: relative;
+  width: 100%;
+  max-width: 210mm;
+  height: 100%;
+  min-height: 297mm;
+  margin: auto;
+  /* для центровки страницы */
+  outline: 1px solid $dark;
+  border-collapse: collapse;
+
+  @include print(print) {
+    margin: auto;
+    padding: 0;
+    outline: none;
+  }
+}
+
+.innerContainer {
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include print(print) {
+    //height: calc(297mm - (32mm * 2));
+    padding: 0 12mm 15mm;
+    gap: 5mm;
+  }
+}
+
+.logoContainer {
+  position: absolute;
+  top: 2mm;
+  right: 10px;
+  transform-origin: right top;
+  scale: .65;
+
+  @include print(print) {
+    top: 4mm;
+    right: 10mm;
+  }
+}
+
+.commonInfoContainer {
+  padding: 1.5rem 0;
+  border-top: 1px solid $gray;
+
+  text-align: justify;
+
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+
+
+  @include print(print) {
+    padding: 0;
+    padding-top: 6mm;
+    gap: 8pt;
+    //padding-bottom: 5mm; // Adjust this value as needed
+  }
+}

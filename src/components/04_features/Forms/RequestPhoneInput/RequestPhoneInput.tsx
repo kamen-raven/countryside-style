@@ -6,10 +6,17 @@ import { RequestPhoneInputInterface } from './RequestPhoneInput.interface.ts';
 import { postApplicationFeedback } from '~api/ApplicationsFeedback/postApplicationFeedback.tsx';
 import useFormRequestStore from '~store/formsStore/useFormRequestStore.ts';
 import { useToggleSupportPopupStore } from '~store/popupsStore/useTogglePopupStore.ts';
-import { PersonalAgreementElement } from '../elements/index.ts';
+import { InputErrorMessageElement, PersonalAgreementElement } from '../elements/index.ts';
+import { phoneValidationRules } from '~data/constant/formsValidationRules/formsValidationRules.ts';
+import useFormValidation from '~hooks/useFormValidation.ts';
 
 
 const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, nameForm, className }) => {
+  const validationRules = {
+    phone: phoneValidationRules,
+  };
+
+
   // Состояния для значений полей формы
   const phone = useFormRequestStore((state) => state.contact);
   const setPhone = useFormRequestStore((state) => state.actions.setContact);
@@ -19,19 +26,29 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
   // Состояния для попапов
   const openSuccessPopup = useToggleSupportPopupStore((state) => state.actions.openPopup);
 
-
+  // Хук валидации
+  const { errors, validateField, validateAllFields, clearFieldError } = useFormValidation(validationRules);
 
   // Обработчик отправки формы
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Предотвращаем действие по умолчанию
 
+
+    // Проверка всех полей перед отправкой
+    const isValid = validateAllFields({ phone });
+    if (!isValid) {
+      return;
+    }
+
+
     try {
       // Вызываем функцию отправки данных, передавая значения полей формы
-      const response = await postApplicationFeedback('', '-', phone);
+      const response = await postApplicationFeedback('-', 'форма без имени', phone);
 
       console.log('Response:', response); // Выводим ответ сервера в консоль
       // Здесь можно добавить логику для обработки успешной отправки сообщения
       resetForm();
+      clearFieldError('phone');
 
       if (response) {
         openSuccessPopup('successMessage');
@@ -53,12 +70,22 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
     <form name={nameForm}
       className={`${styles.requestForm} ${className}`}
       onSubmit={handleSubmit}>
-      <input className={styles.requestForm__input}
-        placeholder='Ваш телефон'
-        type='tel'
-        value={phone}
-        required
-        onChange={(e) => setPhone(e.target.value)} />
+      <label className={styles.requestForm__label}>
+
+        <input className={styles.requestForm__input}
+          placeholder='Ваш телефон'
+          name={'phone'}
+          type={'tel'}
+          value={phone}
+          //required
+          onChange={(e) => setPhone(e.target.value)}
+          onBlur={(e) => validateField('phone', e.target.value)}
+          onFocus={() => clearFieldError('phone')}
+        />
+        {errors.phone &&
+          <InputErrorMessageElement error={errors.phone} />
+        }
+      </label>
       <button className={styles.requestForm__button} type={"submit"}>
         {buttonText}
       </button>
@@ -68,3 +95,4 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
 };
 
 export { RequestPhoneInput };
+

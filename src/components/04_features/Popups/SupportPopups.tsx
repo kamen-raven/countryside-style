@@ -14,6 +14,7 @@ const SupportPopups: React.FC = () => {
     reviewImage: <ReviewImagePopup />,
     successMessage: <SuccessMessagePopup />,
     errorMessage: <SuccessMessagePopup />,
+    reviewSuccessMessage: <SuccessMessagePopup />,
   };
 
 

@@ -21,6 +21,9 @@
     flex-direction: column;
     height: 45px;
   }
+
+
+  @include print(none);
 }
 
 
@@ -328,6 +331,20 @@
       visibility: visible;
       opacity: 1;
       transition: all .3s linear;
+    }
+
+    &_opened {
+      & svg {
+        & path:nth-child(1) {
+          fill: $dark;
+        }
+        & path:nth-child(2) {
+          fill: $dark;
+        }
+        & path:nth-child(3) {
+          fill: $accent-gray;
+        }
+      }
     }
   }
 

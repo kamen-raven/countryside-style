@@ -1,0 +1,38 @@
+@import '~global_styles';
+
+.label {
+  position: absolute;
+
+  &_sold {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+
+
+    width: 50%;
+    min-width: 150px;
+    height: 60px;
+    border-radius: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba($color: $accent-green, $alpha: .85);
+
+    @include common-paragraph(p,
+      $font-weight: $bold,
+      $color: $white,
+      $font-family: $ff-openSans,
+      $line-height: 110%);
+
+    text-align: center;
+    text-transform: uppercase;
+
+
+    @include breakpoint(screen768) {
+/*       top: 14px; */
+      height: 50px;
+    }
+  }
+}

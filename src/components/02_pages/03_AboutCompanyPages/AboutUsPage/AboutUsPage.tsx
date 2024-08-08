@@ -15,7 +15,7 @@ const AboutUsPage: React.FC<AboutUsPageInterface> = ({
   return (
     <main className={styles.mainContainer}>
       <AboutCompanyBlock aboutUsPageFacts={aboutUsPageFacts} />
-      <TeamMembersBlock employeesData={employeesData} countUsers={'owner'} />
+      <TeamMembersBlock employeesData={employeesData} countUsers={'owner'} page={'about'} />
       <VideoBlock />
       <AdvantagesBlock title='Наши преимущества'
         background={false}

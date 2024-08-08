@@ -18,7 +18,7 @@ export async function getObjectsIsLike(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 1000
+        revalidate: 10
       }
     });
 

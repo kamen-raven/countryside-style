@@ -43,12 +43,16 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
 
       <div className={`${styles.infoContainer} ${bigInfoContainer}`}>
         <h3 className={`${styles.title} ${bigText}`}>{/* ${setFontSize} */}
+          {serviceItem.link ?
           <Link className = {styles.title_link} href={serviceItem.link}>
             {serviceItem.title}
           </Link>
+          :
+            serviceItem.title
+          }
         </h3>
 
-        {buttonText &&
+        {(buttonText && serviceItem.link) &&
           <Link href={serviceItem.link} className={styles.linkButton} >
             {buttonText}
           </Link>

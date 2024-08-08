@@ -7,11 +7,30 @@ import { getAllUsers } from "~api/Users/getUsers";
 
 import generalContactsData from '~data/constant/generalContacts/generalContactsData';
 import sortUsersList from "~helpers/users/sortUsersData";
+import { metaContacts } from "~meta/metadataPages";
 
 export const metadata: Metadata = {
-  title: 'Контакты',
-  description: 'Агентство недвижимости «Загородный Стиль». Санкт-Петербург, пр. Просвещения, дом 80, к. 1, «Прометей», 3 этаж, офис 3.1',
+  title: metaContacts.title,
+  description: metaContacts.description,
+  keywords: metaContacts.keywords,
+  openGraph: {
+    title: metaContacts.title,
+    description: metaContacts.description,
+    siteName: metaContacts.openGraph.siteName,
+    type: 'website',
+    url: metaContacts.openGraph.url,
+    images: [
+      {
+        url: '../../opengraph-image.png',
+        width:  metaContacts.openGraph.images.width,
+        height:  metaContacts.openGraph.images.height,
+        alt:  metaContacts.openGraph.images.alt,
+      },
+    ],
+  },
 };
+
+
 
 export default async function PageContacts() {
   const employeeInitialData = await getAllUsers(10); // берем 10 пользователей

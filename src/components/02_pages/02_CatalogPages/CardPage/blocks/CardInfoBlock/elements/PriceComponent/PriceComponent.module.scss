@@ -3,6 +3,7 @@
 .priceWrapper {
   grid-area: price;
 
+  @include print(none);
 }
 
 .priceContainer {

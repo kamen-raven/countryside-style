@@ -17,9 +17,11 @@
 
 .container {
   @include mainContainer();
+  @include flexColumnGap;
 
-  @include flexColumnGap($gap: 50px);
-
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
 }
 
 .title {
@@ -27,8 +29,41 @@
 }
 
 .innerContainer {
+  /*   display: grid;
+grid-template-columns: repeat(3, minmax(320px, 1fr));
+gap: 50px; */
   display: grid;
-  grid-template-columns: repeat(3, minmax(320px, 1fr));
-  grid-auto-rows: minmax(400px, 640px);
-  gap: 50px;
+  grid-auto-flow: row;
+
+  //grid-auto-rows: 1fr;  //new
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px clamp(35px, 2.5vw, 40px);
+
+
+  @include breakpoint(screen1440) {
+    gap: 40px 30px;
+  }
+
+  @include breakpoint(screen1280) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px;
+  }
+
+  @include breakpoint(screen1024) {
+    gap: 40px 28px;
+  }
+
+  @include breakpoint(screen768) {
+    grid-template-columns: repeat(auto-fit, clamp(300px, calc((100vw - (100px + 40px)) / 2), 340px));
+  }
+
+  @media screen and (max-width: 740px) {
+    display: flex;
+    flex-direction: column;
+    //grid-template-columns: auto;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 20px;
+  }
 }

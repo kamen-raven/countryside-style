@@ -9,6 +9,7 @@ import { ObjectForSaleInterface } from './ObjectForSale.interface';
 import styles from './ObjectForSale.module.scss';
 import { ArrowsButton } from '~shared/index';
 import objectsForSalePhotoTemplate from '~data/constant/objectsForSaleMainPage/objectsForSaleItems';
+import { ImageInterface } from '~interfaces/objectImage.interface';
 
 
 const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
@@ -16,8 +17,8 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
   linkToCatalog,
   containerTemplate,
 }) => {
-/*   const windowWidth = useWindowWidthSize();
- */
+  /*   const windowWidth = useWindowWidthSize();
+   */
 
   // объект для формирования заголовков title
   const category = {
@@ -55,6 +56,22 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
   const setInfoContainer = templateType.infoContainer[containerTemplate];
 
 
+  // берем первое фото из списка фотографий по order для отображения на главной странице
+  const getFirstPhotoImage = (photos: ImageInterface[]) => {
+    // Найти первый объект с order === 1
+    const firstPhoto = photos.find(photo => photo.order === 1);
+    // Если найден, вернуть его image
+    if (firstPhoto) {
+      return firstPhoto.image;
+    }
+    // Если не найден, вернуть image первого элемента массива
+    if (photos.length > 0) {
+      return photos[0].image;
+    }
+    // Если массив пуст, вернуть пустую строку
+    return '';
+  };
+
 
 
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
@@ -79,7 +96,7 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
 
   const getCurrentPhoto = () => {
     if (objectItemsList.length > 0) {
-      return objectItemsList[currentPhotoIndex].photo_images[0].image;
+      return getFirstPhotoImage(objectItemsList[currentPhotoIndex].photo_images);//objectItemsList[currentPhotoIndex].photo_images[0].image;
     } else {
       // Если массив пустой, используем данные из objectsForSalePhotoTemplate
       return objectsForSalePhotoTemplate[linkToCatalog].photoGeneral;
@@ -87,9 +104,14 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
   };
 
   const getCurrentSecondaryPhoto = () => {
+    /*
     if (objectItemsList.length > 1) {
-      return objectItemsList[currentPhotoIndex === 0 ? 1 :
-        (currentPhotoIndex < objectItemsList.length - 1 ? currentPhotoIndex + 1 : 0)].photo_images[0].image;
+          return objectItemsList[currentPhotoIndex === 0 ? 1 :
+            (currentPhotoIndex < objectItemsList.length - 1 ? currentPhotoIndex + 1 : 0)].photo_images[0].image;
+        } */
+    if (objectItemsList.length > 1) {
+      const nextPhotoIndex = currentPhotoIndex === 0 ? 1 : (currentPhotoIndex < objectItemsList.length - 1 ? currentPhotoIndex + 1 : 0);
+      return getFirstPhotoImage(objectItemsList[nextPhotoIndex].photo_images);
     } else {
       // Если массив пустой или содержит только один элемент,
       // используем данные из objectsForSalePhotoTemplate
@@ -118,14 +140,18 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
       </div>
 
       <div className={styles.photoGeneral}>
-        <Image
-          className={styles.photoGeneral__image}
-          src={getCurrentPhoto()}
-          alt={category[linkToCatalog]}
-          width={680}
-          height={490}
-          onClick={containerTemplate === 'picFirst' ? handlePrevPhoto : handleNextPhoto}
+        <Link className={`${styles.photoGeneral__link} ${objectItemsList.length > 0 ? '' : styles.photoGeneral__link_noHref}`}
+
+              href={objectItemsList.length > 0 ? `/${linkToCatalog}/${objectItemsList[currentPhotoIndex].id}` : ''}>
+          <Image
+            className={styles.photoGeneral__image}
+            src={getCurrentPhoto()}
+            alt={category[linkToCatalog]}
+            width={680}
+            height={490}
+            /* onClick={containerTemplate === 'picFirst' ? handlePrevPhoto : handleNextPhoto} */
           />
+        </Link>
 
         {objectItemsList.length > 1 &&
           <>
@@ -146,7 +172,7 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
       <div className={`${styles.innerBlock} ${setInnerBlock} `}>
         <div className={`${styles.infoContainer} ${setInfoContainer}`}>
           <h3 className={`${styles.title}`}>
-            <Link className = {styles.title_link} href={`/${linkToCatalog}`}>
+            <Link className={styles.title_link} href={`/${linkToCatalog}`}>
               {category[linkToCatalog]} {/* title */}
             </Link>
           </h3>

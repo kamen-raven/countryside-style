@@ -1,0 +1,281 @@
+@import '~global_styles';
+
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  max-width: clamp(450px, 70vw, 900px);
+  width: 100%;
+
+  @include breakpoint(screen768) {
+    max-width: none;
+  }
+
+}
+
+.innerContainer {
+  position: relative;
+  width: 100%;
+  height: 45px;
+
+
+  @include breakpoint(screen768) {
+    max-width: none;
+    height: 40px;
+  }
+  @include breakpoint(screen576) {
+    height: 35px;
+  }
+
+
+
+    & :not(:disabled) {
+      svg {
+        stroke: $accent-green;
+      }
+    }
+/*   border: 1px solid $gray;
+  border-radius: 50px;
+  box-sizing: border-box; */
+}
+
+.input {
+  @include common-input;
+  width: 100%;
+  height: 100%;
+  padding: 11px 55px 11px 25px;
+
+  @include breakpoint(screen768) {
+    padding: 6px 55px 6px 20px;
+  }
+
+  @include breakpoint(screen576) {
+    padding-left: 14px;
+    padding-right: 50px;
+  }
+
+
+}
+
+.buttonSearch {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: $white;
+  padding: 0;
+  border: none;
+  transition: .3s linear background-color;
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  &:not(:disabled) {
+    border: 1px solid $accent-green;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $accent-green;
+    transition: .3s linear background-color;
+
+    & svg {
+      stroke: $white;
+    }
+  }
+
+
+  @include breakpoint(screen768) {
+    width: 30px;
+    height: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    width: 27px;
+    height: 27px;
+  }
+
+}
+
+.icon {
+  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+
+
+
+  &_blog {
+    & svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include breakpoint(screen768) {
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @include breakpoint(screen576) {
+      right: 4px;
+
+      & svg {
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+
+}
+
+/*
+.container {
+  position: relative;
+  display: flex;
+
+
+    & :not(:disabled) {
+      svg {
+        stroke: $accent-green;
+      }
+    }
+
+
+
+
+  &_blog {
+    max-width: clamp(450px, 70vw, 900px);
+    width: 100%;
+
+    @include breakpoint(screen768) {
+      max-width: none;
+    }
+  }
+
+}
+
+.input {
+  @include common-input;
+  width: 100%;
+
+
+
+  &_blog {
+    border: 1px solid $dark;
+    height: 45px;
+    padding: 11px 55px 11px 25px;
+    line-height: 100%;
+
+    @include breakpoint(screen768) {
+      height: 40px;
+      padding: 6px 55px 6px 20px;
+    }
+
+    @include breakpoint(screen576) {
+      height: 35px;
+      padding-left: 14px;
+      padding-right: 50px;
+    }
+
+
+
+  }
+}
+
+.buttonSearch {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: $white;
+  padding: 0;
+  border: none;
+  transition: .3s linear background-color;
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  &:not(:disabled) {
+    border: 1px solid $accent-green;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $accent-green;
+    transition: .3s linear background-color;
+
+    & svg {
+      stroke: $white;
+    }
+  }
+
+
+  @include breakpoint(screen768) {
+    width: 30px;
+    height: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    width: 27px;
+    height: 27px;
+  }
+
+}
+
+.icon {
+  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+
+
+
+
+  &_header {
+    & svg {
+      width: 19px;
+      height: 19px;
+    }
+  }
+
+  &_blog {
+    & svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include breakpoint(screen768) {
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @include breakpoint(screen576) {
+      right: 4px;
+
+      & svg {
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+
+}
+ */

@@ -10,10 +10,28 @@ import servicesOffersData_forCottageVillages from "~data/constant/servicesBlock/
 import villagesProjectsData from "~data/constant/servicesBlock/villagesProjectsData/villagesProjectsData";
 import { getAllUsers } from "~api/Users/getUsers";
 import sortUsersList from "~helpers/users/sortUsersData";
+import { metaServicesForCottageVillages } from "~meta/metadataPages";
+
 
 export const metadata: Metadata = {
-  title: 'Услуги | Коттеджным поселкам',
-  description: 'Организуем маркетинг и продажи вашего коттеджного поселка',
+  title: metaServicesForCottageVillages.title,
+  description: metaServicesForCottageVillages.description,
+  keywords: metaServicesForCottageVillages.keywords,
+  openGraph: {
+    title: metaServicesForCottageVillages.title,
+    description: metaServicesForCottageVillages.description,
+    siteName: metaServicesForCottageVillages.openGraph.siteName,
+    type: 'website',
+    url: metaServicesForCottageVillages.openGraph.url,
+    images: [
+      {
+        url: '../../../opengraph-image.png',
+        width:  metaServicesForCottageVillages.openGraph.images.width,
+        height:  metaServicesForCottageVillages.openGraph.images.height,
+        alt:  metaServicesForCottageVillages.openGraph.images.alt,
+      },
+    ],
+  },
 };
 
 
