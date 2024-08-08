@@ -7,8 +7,9 @@
 
 .mainPhotoContainer {
   position: relative;
-  height: max-content;
-  max-height: clamp(460px, 38vw, 640px); //clamp(480px, 37.82738vw, 640px);
+  width: 100%;
+  height: fit-content;
+  max-height: clamp(420px, 38vw, 640px); //clamp(480px, 37.82738vw, 640px);
   border: 1px $gray-light solid;
   border-radius: $border-radius ;
 
@@ -17,47 +18,72 @@
   justify-content: center;
   align-items: center;
 
+
+
   @include breakpoint(screen1024) {
-    max-height: clamp(480px, 62.5vw, 640px);
+    max-height: clamp(420px, 62.5vw, 640px);
   }
 
   @include breakpoint(screen768) {
-    max-height: clamp(240px, 64.75vw, 480px);
+    max-height: clamp(240px, 64.75vw, 420px);
   }
 
   @include print(none);
 }
 
 
-.image {
+.imageContainer {
   width: 100%;
-  //max-height: clamp(460px, 38vw, 640px); //
-  object-fit: contain;
 
-  max-height: 720px; // 640px; // new
-  height: 100%;  // new
+  height: auto;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
 
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
 
-  @include breakpoint(screen1024) {
-    max-height: clamp(480px, 62.5vw, 640px);
-  }
-
-  @include breakpoint(screen768) {
-    max-height: clamp(240px, 64.75vw, 480px);
-  }
-
-
-  &__popupButton {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
+
+
+.image {
+  width: 100%;
+  min-width: 100%;
+  max-height: clamp(420px, 38vw, 640px); //
+  height: auto;
+  object-fit: contain;
+
+  //max-height: 720px; // 640px; // new
+  //height: auto;// 100%;  // new
+
+  background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
+  background-size: 40px; // new
+
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+/*   @include breakpoint(screen1024) {
+   // max-height: clamp(480px, 62.5vw, 640px);
+  } */
+
+/*   @include breakpoint(screen768) {
+    //max-height: clamp(240px, 64.75vw, 480px);
+  } */
+
+
+
+}
 
 
 
@@ -95,6 +121,8 @@
     }
   }
 
+  scroll-snap-type: x mandatory;
+
   @include print(none);
 }
 
@@ -119,6 +147,7 @@
   box-sizing: border-box;
   object-fit: cover;
 
+  transition: all .5s linear;
 
   max-width: 110px;
   max-height: 110px;
@@ -126,6 +155,10 @@
   opacity: .5;
   transition: transform .3s ease;
   /* Плавное изменение масштаба при наведении */
+  background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
+  background-size: 25px; // new
+
+  scroll-snap-align: start;
 
   @include breakpoint(screen768) {
     max-width: 100px;
@@ -150,6 +183,7 @@
     opacity: 1;
     border: 3px solid $accent-green;
     transform: scale(1.1);
+    transition: all .5s linear;
 
     &:first-child {
       // это для плавного и ровного отображения выделения активного элемента

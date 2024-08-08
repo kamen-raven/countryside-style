@@ -11,6 +11,7 @@ import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 import useObjectPhotoStore from '~store/objectsCardStore/useObjectPhotoStore.ts';
+import useUpdateActiveIndex from '~hooks/useUpdateActiveIndex.ts';
 
 
 const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
@@ -20,12 +21,6 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
       'isbook' in obj
     );
   }
-
-
-  // весь массив фотографий и планов объекта
-  const picturesArray = formatPhotosArray(data);
-  // объявляем реф для прокрутки миниатюр фото
-  const smallPhotosContainerRef = useRef<HTMLDivElement>(null);
 
   // Получение текущего фото и действий из хранилища ZUSTAND
   const { activePhoto,
@@ -37,23 +32,45 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     }
   } = useObjectPhotoStore();
 
+  // весь массив фотографий и планов объекта
+  const picturesArray = formatPhotosArray(data);
+
+  // создаем реф для скролла большой текущей фотографии
+  const currentActiveImageRef = useRef<HTMLDivElement>(null);
+  // объявляем реф для прокрутки миниатюр фото
+  const smallPhotosContainerRef = useRef<HTMLDivElement>(null);
+
+
+  // кастомный хук для управления свайпа - в него передаем наши рефы и данные стейта
+  const scrollActiveIndex = useUpdateActiveIndex(currentActiveImageRef, activePhoto, setActivePhoto);
+
+  // обновляем текущий индекс на основе данных хука по контролю индекса
+  useEffect(() => {
+    setActivePhoto(scrollActiveIndex);
+  }, [scrollActiveIndex]);
+
 
   // клик на превью картинки
   const handleThumbnailClick = (index: number) => {
     setActivePhoto(index);
+    scrollToImage(index);
     scrollToThumbnail(index);
   };
 
   // кнопка "Вперед"
   const handleNext = () => {
     nextPhoto(picturesArray.length);
-    scrollToThumbnail(activePhoto === picturesArray.length - 1 ? 0 : activePhoto + 1);
+    const nextIndex = activePhoto === picturesArray.length - 1 ? 0 : activePhoto + 1;
+    scrollToImage(nextIndex);
+    scrollToThumbnail(nextIndex);
   };
 
   // кнопка "Назад"
   const handlePrev = () => {
     prevPhoto(picturesArray.length);
-    scrollToThumbnail(activePhoto === 0 ? picturesArray.length - 1 : activePhoto - 1);
+    const prevIndex = activePhoto === 0 ? picturesArray.length - 1 : activePhoto - 1;
+    scrollToImage(prevIndex);
+    scrollToThumbnail(prevIndex);
   };
 
   // Кнопка "Планировка"
@@ -61,18 +78,41 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     const planPicIndex = data.photo_images.length;
     setPlanPhoto(planPicIndex);
     scrollToThumbnail(planPicIndex);
+    scrollToImage(planPicIndex);
   };
 
-  // скролл
+  // скролл до миниатюры
   const scrollToThumbnail = (index: number) => {
     const container = smallPhotosContainerRef.current;
     if (container) {
       const thumbnail = container.children[index];
-      thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
     }
   };
 
+  // скролл до изображения
+  const scrollToImage = (index: number) => {
+    const currentNode = currentActiveImageRef.current;
 
+    if (!currentNode) {
+      return;
+    }
+    setActivePhoto(index);
+
+    const dataContainer = currentNode.getBoundingClientRect();
+    currentNode.scrollTo({
+      left: index * dataContainer.width,
+      behavior: 'smooth'
+
+    });
+  };
+  /*     if (container) {
+        const image = container.children[index] as HTMLDivElement;
+        container.scrollTo({
+          left: image.offsetLeft,
+          behavior: 'smooth',
+        });
+      } */
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'ArrowLeft') {
@@ -95,6 +135,11 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   useEffect(() => {
     setActivePhoto(0);
   }, []);
+
+    // Прокручивать миниатюры при изменении активного фото
+    useEffect(() => {
+      scrollToThumbnail(activePhoto);
+    }, [activePhoto]);
 
 
   // функция установления шильдика проданного объекта
@@ -124,17 +169,33 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
       {picturesArray.length &&
         <div className={styles.mainPhotoContainer}>
-          <ObjectImagePopupButton className={styles.image__popupButton}
-            picData={picturesArray}>
-            <Image
+          <ObjectImagePopupButton className={styles.imageContainer}
+            picData={picturesArray}
+            ref={currentActiveImageRef}
+          >
+            {picturesArray.map((pic) => (
+
+              <Image
+                key={pic.uuid}
+                className={styles.image}
+                src={pic.image}
+                alt={data.name}
+                width={980}
+                height={740}
+                priority={true}
+              />
+
+            ))}
+
+
+            {/*             <Image
               className={styles.image}
               src={picturesArray[activePhoto].image}
               alt={data.name}
               width={980}
               height={740}
               priority={true}
-            /*               onClick={() => console.log('click photo!!')} */
-            />
+            /> */}
           </ObjectImagePopupButton>
 
 
@@ -191,7 +252,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
               <Image
                 onClick={() => handleThumbnailClick(index)}
                 key={index}
-                className={`${styles.smallPhoto} ${activePhoto === index ? styles.smallPhoto_isActive : ''}`}
+                className={`${styles.smallPhoto}  ${activePhoto === index ? styles.smallPhoto_isActive : ''}`}
                 src={photo.image}
                 alt={photo.uuid}
                 width={110}

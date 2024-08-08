@@ -38,6 +38,8 @@
   @include breakpoint(screen576) {
     padding-bottom: 20px;
   }
+
+  scroll-snap-type: x mandatory;  // new swipe
 }
 
 .innerBlock {
@@ -47,6 +49,8 @@
   grid-auto-flow: column;
   grid-column-gap: 40px;
   max-width: calc(100vw - 120px);//clamp(1.563rem, 6.58724vw, 3.125rem));
+
+
 
   @include breakpoint(screen960) {
     grid-auto-columns:  calc(100vw - $padding-side*2.5);

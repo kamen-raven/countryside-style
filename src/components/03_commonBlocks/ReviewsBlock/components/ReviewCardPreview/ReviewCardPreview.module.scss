@@ -20,6 +20,9 @@
   @include breakpoint(screen576) {
     padding: 20px;
   }
+
+  scroll-snap-align: start; // new swipe
+  scroll-snap-stop: always;
 }
 
 
