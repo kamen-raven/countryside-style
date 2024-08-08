@@ -12,6 +12,7 @@ import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 import useObjectPhotoStore from '~store/objectsCardStore/useObjectPhotoStore.ts';
 import useUpdateActiveIndex from '~hooks/useUpdateActiveIndex.ts';
+import useArrowsKeysEvents from '~hooks/useArrowsKeysEvents.ts';
 
 
 const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
@@ -31,6 +32,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
       setPlanPhoto
     }
   } = useObjectPhotoStore();
+
 
   // весь массив фотографий и планов объекта
   const picturesArray = formatPhotosArray(data);
@@ -97,7 +99,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     if (!currentNode) {
       return;
     }
-    setActivePhoto(index);
+   // setActivePhoto(index);
 
     const dataContainer = currentNode.getBoundingClientRect();
     currentNode.scrollTo({
@@ -113,7 +115,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
           behavior: 'smooth',
         });
       } */
-
+/*
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'ArrowLeft') {
       handlePrev();
@@ -129,6 +131,17 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     };
   }, [handleNext, handlePrev]);
 
+ */
+
+  // для переключений слайдов по стрелкам
+  useArrowsKeysEvents((key) => {
+    if (key === 'ArrowLeft') {
+      handlePrev();
+    }
+    if (key === 'ArrowRight') {
+      handleNext();
+    }
+});
 
 
   // для задания первой фотографии при первичном рендере карточки объекта

@@ -211,6 +211,11 @@
   justify-content: center;
   align-items: center;
 
+  @include breakpoint(screen768) {
+    margin: auto 0;
+    max-height: 80px;
+  }
+
   & span {
     background-color: $white;
     opacity: .6;

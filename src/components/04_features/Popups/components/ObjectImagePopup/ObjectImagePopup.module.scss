@@ -4,7 +4,6 @@
   margin-top: 40px;
   position: relative;
   @include flexColumnGap($gap: 20px);
-  border: 1px solid $gray;
 
   @include breakpoint(screen576) {
     margin-top: 30px;
@@ -13,6 +12,7 @@
 
 
 .imageContainer {
+  border: 1px solid $gray;
   position: relative;
 
   max-height: calc(100vh - (40px * 2));// calc(80vh - (40px * 2)) //clamp(480px, 37.82738vw, 640px);
@@ -20,11 +20,19 @@
   width: 100%;
 
   //max-width: 90vw;
-
+  box-sizing: border-box;
   overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
 /*   @include breakpoint(screen1024) {
     max-height: clamp(480px, 62.5vw, 640px);
@@ -38,9 +46,12 @@
 
 .image {
   width: 100%;
-  //height: auto;
-  max-height: calc(100vh - (40px * 2));// calc(80vh - (40px * 2))
+  min-width: 100%;
+  height: auto;
+ max-height: calc(100vh - (40px * 2));// calc(80vh - (40px * 2))
   object-fit: contain;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
 
   @include breakpoint(screen1024) {
