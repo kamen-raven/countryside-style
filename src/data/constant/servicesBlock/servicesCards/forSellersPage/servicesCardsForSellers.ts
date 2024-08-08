@@ -50,7 +50,7 @@ const servicesCardsForSellers: servicesCardsInterface[] = [
   },
   {
     _id: 2,
-    title: 'Реклама и поиск',
+    title: 'Реклама и поиск покупателя',
     images: [
       {
         _id: 1,
@@ -81,7 +81,7 @@ const servicesCardsForSellers: servicesCardsInterface[] = [
 
   {
     _id: 3,
-    title: 'Сопровождение',
+    title: 'Юридическое сопровождение сделки',
     images: [
       {
         _id: 1,
