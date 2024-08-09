@@ -88,9 +88,12 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     const container = smallPhotosContainerRef.current;
     if (container) {
       const thumbnail = container.children[index];
-      thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      if (thumbnail) {
+        thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      }
     }
   };
+
 
   // скролл до изображения
   const scrollToImage = (index: number) => {
@@ -99,7 +102,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     if (!currentNode) {
       return;
     }
-   // setActivePhoto(index);
+    // setActivePhoto(index);
 
     const dataContainer = currentNode.getBoundingClientRect();
     currentNode.scrollTo({
@@ -115,23 +118,23 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
           behavior: 'smooth',
         });
       } */
-/*
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'ArrowLeft') {
-      handlePrev();
-    } else if (event.key === 'ArrowRight') {
-      handleNext();
-    }
-  };
-  // для переключений слайдов по стрелкам
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+  /*
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        handlePrev();
+      } else if (event.key === 'ArrowRight') {
+        handleNext();
+      }
     };
-  }, [handleNext, handlePrev]);
+    // для переключений слайдов по стрелкам
+    useEffect(() => {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [handleNext, handlePrev]);
 
- */
+   */
 
   // для переключений слайдов по стрелкам
   useArrowsKeysEvents((key) => {
@@ -141,7 +144,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     if (key === 'ArrowRight') {
       handleNext();
     }
-});
+  });
 
 
   // для задания первой фотографии при первичном рендере карточки объекта
@@ -149,10 +152,10 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     setActivePhoto(0);
   }, []);
 
-    // Прокручивать миниатюры при изменении активного фото
-    useEffect(() => {
-      scrollToThumbnail(activePhoto);
-    }, [activePhoto]);
+  // Прокручивать миниатюры при изменении активного фото
+  useEffect(() => {
+    scrollToThumbnail(activePhoto);
+  }, [activePhoto]);
 
 
   // функция установления шильдика проданного объекта
@@ -180,7 +183,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   return (
     <div className={styles.photosContainer}>
 
-      {picturesArray.length &&
+      {(picturesArray.length > 0) &&
         <div className={styles.mainPhotoContainer}>
           <ObjectImagePopupButton className={styles.imageContainer}
             picData={picturesArray}
@@ -256,26 +259,29 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
       }
 
 
+      {(picturesArray.length > 0) &&
+        <div className={`${styles.smallPhotosContainer} ${styles.smallPhotosContainer_isScroll}`}>
+          <div ref={smallPhotosContainerRef} className={styles.smallPhotosInner}>
 
-      <div className={`${styles.smallPhotosContainer} ${styles.smallPhotosContainer_isScroll}`}>
-        <div ref={smallPhotosContainerRef} className={styles.smallPhotosInner}>
+            {picturesArray && picturesArray.map((photo, index) => {
+              return (
+                <Image
+                  onClick={() => handleThumbnailClick(index)}
+                  key={index}
+                  className={`${styles.smallPhoto}  ${activePhoto === index ? styles.smallPhoto_isActive : ''}`}
+                  src={photo.image}
+                  alt={photo.uuid}
+                  width={110}
+                  height={110}
+                />
+              );
+            })}
 
-          {picturesArray && picturesArray.map((photo, index) => {
-            return (
-              <Image
-                onClick={() => handleThumbnailClick(index)}
-                key={index}
-                className={`${styles.smallPhoto}  ${activePhoto === index ? styles.smallPhoto_isActive : ''}`}
-                src={photo.image}
-                alt={photo.uuid}
-                width={110}
-                height={110}
-              />
-            );
-          })}
-
+          </div>
         </div>
-      </div>
+      }
+
+
     </div>
   );
 };
