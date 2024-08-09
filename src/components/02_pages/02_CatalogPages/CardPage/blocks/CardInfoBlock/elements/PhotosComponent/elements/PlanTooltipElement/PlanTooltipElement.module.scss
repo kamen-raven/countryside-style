@@ -19,7 +19,7 @@
         transition: stroke .3s linear, scale .3s ease;
         fill: $dark;
         stroke: $white;
-        scale: 1.2;
+        scale: 1.1;
 
         & path:first-of-type {
           stroke: none;
@@ -49,8 +49,8 @@
 
 
         @include breakpoint(screen768) {
-          width: 30px;
-          height: 30px;
+          width: 26px;
+          height: 26px;
         }
       }
     }

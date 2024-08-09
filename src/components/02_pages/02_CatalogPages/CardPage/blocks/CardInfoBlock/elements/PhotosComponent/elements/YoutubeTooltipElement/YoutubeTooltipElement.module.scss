@@ -50,8 +50,8 @@
 
     @include breakpoint(screen768) {
       margin: 5px 5px 5px 10px;
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
     }
 
 /*     &:hover {
@@ -75,6 +75,8 @@
 
 
       @include breakpoint(screen768) {
+        width: 18px;
+        height: 12px;
 
       }
     }
