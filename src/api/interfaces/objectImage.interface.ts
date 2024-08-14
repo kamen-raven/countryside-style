@@ -3,4 +3,5 @@ export interface ImageInterface {
   image: string;
   order: number;
   objectModel: string;
+  blurredDataUrl?: string;
 }

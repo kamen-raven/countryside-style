@@ -9,7 +9,7 @@ import Link from 'next/link';
 /* import { getUserByID } from '~api/Users/getUserByID.tsx'; */
 import { ContactLink } from '~entities/index.ts';
 
-const SellerElement: React.FC<SellerElementInterface> = ({ agentData  }) => {
+const SellerElement: React.FC<SellerElementInterface>  = async ({ agentData  }) => {
 /*   const agentData = objectData.display_agents.length > 0 ? await getUserByID(objectData.display_agents[0].employee) : undefined;
 
  */
@@ -26,7 +26,8 @@ const SellerElement: React.FC<SellerElementInterface> = ({ agentData  }) => {
               width={120}
               height={120}
               src={agentData.avatars[0].image}
-              alt={`${agentData.first_name} ${agentData.last_name}`} />
+              alt={`${agentData.first_name} ${agentData.last_name}`}
+              />
           </div>
 
           <div className={styles.sellerContainer}>

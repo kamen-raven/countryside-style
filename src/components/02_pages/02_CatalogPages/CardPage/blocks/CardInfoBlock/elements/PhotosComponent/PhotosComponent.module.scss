@@ -153,8 +153,8 @@
   max-height: 110px;
 
   opacity: .5;
-  transition: transform .3s ease;
-  /* Плавное изменение масштаба при наведении */
+  transition: transform .3s ease; // Плавное изменение масштаба при наведении
+  
   background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
   background-size: 25px; // new
 

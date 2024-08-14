@@ -10,7 +10,6 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObj
 
 
 
-
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -19,22 +18,14 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObj
         </h2>
         <div className={styles.cardsLayout}>
 
-          {(commonObjects && typePage !== 'villages') &&
-            commonObjects.map((obj) => {
+          {commonObjects &&
+            commonObjects.map((obj, index, ) => {
               return (
-                <CatalogCardComponent key={obj.uuid} item={obj}/*  typePage={typePage}  */ />
+                <CatalogCardComponent key={obj.uuid} item={obj} index={index} place='moreObj' />
               );
             })
           }
 
-          {(commonObjects && typePage === 'villages') &&
-            commonObjects.map((obj) => {
-              return (
-                <CatalogCardComponent key={obj.uuid} item={obj}/*  typePage={'villages'} */  />
-               /*  <VillageCardComponent key={obj.uuid} item={obj} typePage={typePage} /> */
-              );
-            })
-          }
 
         </div>
       </div>
@@ -43,3 +34,13 @@ const MoreObjectsBlock: React.FC<MoreObjectsBlockInterface> = async ({ commonObj
 };
 
 export { MoreObjectsBlock };
+
+//        {(commonObjects && typePage === 'villages') &&
+//          commonObjects.map((obj) => {
+//            return (
+//              <CatalogCardComponent key={obj.uuid} item={obj}/*  typePage={'villages'} */  />
+//             /*  <VillageCardComponent key={obj.uuid} item={obj} typePage={typePage} /> */
+//            );
+//          })
+//        }
+//

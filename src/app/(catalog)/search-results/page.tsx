@@ -86,9 +86,10 @@ export default function SearchResults() {
 
 
 
-  console.log(`Type: ${searchStore.searchTypes}`);
 
-/*   console.log(`dataSearch: ${searchStore.dataForSearch.length}`);
+  /*
+  console.log(`Type: ${searchStore.searchTypes}`);
+  console.log(`dataSearch: ${searchStore.dataForSearch.length}`);
   console.log(`filteredData: ${filteredData.length}`);
   console.log(`Term: ${searchStore.searchTerm}`);
   console.log(`min: ${searchStore.searchPriceMin}`);

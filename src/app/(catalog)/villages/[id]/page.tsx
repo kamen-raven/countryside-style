@@ -94,10 +94,8 @@ export default async function VillageType({ params }: { params: { id: string, ty
   const agentData = currentVillage.display_agents.length > 0 ? await getUserByID(currentVillage.display_agents[0].employee) : undefined;
 
 
-
-
-
-
+  // создаем base64 миниатюры для фотографий и добавляем их к данным объекта
+/*   const currentVillageWithBlur = await addBlurImgToObject(currentVillage); */
 
   return (
     <CardPage

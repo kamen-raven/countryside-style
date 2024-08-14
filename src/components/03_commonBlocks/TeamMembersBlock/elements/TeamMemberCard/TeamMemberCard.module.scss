@@ -76,6 +76,10 @@
   max-height: 720px;
   // height: clamp(450px, 70vw, 600px);// max(350px, 600px);
 
+  background: url('../../../../../../public/svg/loader.gif') center center no-repeat; // new
+  background-size: 40px;
+
+
   @include breakpoint(screen768) {
     width: 100%;
     height: clamp(240px, 64.5455vw, 500px);

@@ -5,7 +5,7 @@ import BackgroundPatternLeft from '~svg/background/backgroundOurServicesLeft.svg
 import BackgroundPatternRight from '~svg/background/backgroundOurServicesRight.svg';
 import { BackgroundSVGPattern } from '~shared/index';
 import { ServicesCardTemplate } from '~common/index';
-
+/* УСЛУГИ НА ГЛАВНОЙ СТРАНИЦЕ */
 const OurServicesBlock: React.FC<OurServicesBlockProps> = ({ servicesItems }) => {
 
   return (
@@ -24,9 +24,9 @@ const OurServicesBlock: React.FC<OurServicesBlockProps> = ({ servicesItems }) =>
         </h2>
         <div className={styles.innerBlock}>
 
-          {servicesItems && servicesItems.map((item) => {
+          {servicesItems && servicesItems.map((item, index) => {
             return(
-              <ServicesCardTemplate key={item._id} serviceItem={item} buttonText={'Перейти'} page={'home'} />
+              <ServicesCardTemplate key={item._id} serviceItem={item} buttonText={'Перейти'} page={'home'} index={index} />
             );
           })}
 

@@ -60,7 +60,8 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ employeeItem, index, co
           src={employeeItem.avatars[0].image}   //! сделана первая фотография сотрудника
           alt={`${employeeItem.first_name} + ${employeeItem.last_name}`}
           width={800}
-          height={800} />
+          height={800}
+          />
 
 
         <div className={`${styles.infoContainer} ${setInfoContainer}`}>

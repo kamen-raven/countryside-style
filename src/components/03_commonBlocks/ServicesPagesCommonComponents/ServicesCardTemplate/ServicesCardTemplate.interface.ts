@@ -3,8 +3,9 @@ import { servicesDataInterface } from '~data/constant/servicesBlock/allServicesP
 
 export interface ServicesCardTemplateInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   serviceItem: servicesDataInterface;
+  index: number;
   buttonText?: string;
-  page?: 'home' | 'other';
+  page?: 'home' | 'services' | 'other';
 /*   arrows?: boolean; */
   children?: ReactNode;
 }

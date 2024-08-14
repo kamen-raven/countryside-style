@@ -7,7 +7,9 @@ export * from './Buttons/ObjectImagePopupButton/ObjectImagePopupButton';
 export * from './Buttons/SearchClearButton/SearchClearButton';
 
 export * from './Logo/Logo';
-export * from './Background/BackgroundSVGPattern';
+export * from './Background/BackgroundSVG/BackgroundSVGPattern';
+export * from './Background/BackgroundImage/BackgroundImage';
+
 export * from './ArrowsButton/ArrowsButton';
 export * from './CardLabel/LabelNew/LabelNew';
 export * from './CardLabel/LabelReserved/LabelReserved';

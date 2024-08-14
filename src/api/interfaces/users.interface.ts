@@ -23,4 +23,5 @@ export interface AvatarInterface {
   uuid: string;
   profile: string;
   image: string;
+  blurredDataUrl?: string;
 }

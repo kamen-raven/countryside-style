@@ -10,7 +10,6 @@ import { CardPage } from "~pages/index";
 
 
 
-
 export async function generateMetadata({ params }: { params: { id: string, type: 'flats' | 'lands' | 'houses-and-cottages' | 'villages' } }): Promise<Metadata> {
   const typePage = metaCatalogPage[params.type]; // берем тип на основе params исходя из роута
   if (!typePage) {   // если такого нету, то возвращаем пустую страницу
@@ -106,6 +105,12 @@ export default async function CardType({ params }: { params: { id: string, type:
   // получаем агента данного объекта
   const agentData = currentObject.display_agents.length > 0 ? await getUserByID(currentObject.display_agents[0].employee) : undefined;
 
+
+
+  // создаем base64 миниатюры для фотографий и добавляем их к данным объекта
+/*   const currentObjectWithBlur = await addBlurImgToObject(currentObject); */
+/*   const commonObjectsWithBlur = await addBlurImgToObjects(commonObjects); */
+/*   const agentDataWithBlur = agentData && await addBlurImgToUser(agentData); */
 
   return (
     <CardPage

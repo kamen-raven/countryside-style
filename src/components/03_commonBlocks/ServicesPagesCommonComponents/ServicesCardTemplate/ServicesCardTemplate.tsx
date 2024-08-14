@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
   serviceItem,
+  index,
   buttonText,
   page = "other"
 }) => {
@@ -29,6 +30,25 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
   }
 
 
+  // функция установки приоритетности загрузки фото
+  const setPriority = () => {
+    if(page === 'services') {
+      return (index < 2 ? true : false);
+    } else {
+      return (false);
+    }
+  };
+  // функция установки приоритетности загрузки фото
+  const setLoading = () => {
+    if(page === 'services') {
+      return (index < 2 ? 'eager' : 'lazy');
+    } else {
+      return ('lazy');
+    }
+  };
+
+
+
   return (
     <div className={`${styles.itemContainer} ${bigContainer} ${textFirst}`}>
       <div className={`${styles.imageContainer} ${bigPictureContainer}`}>
@@ -37,6 +57,9 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
             className={`${styles.image} ${bigPicture}`}
             src={serviceItem.image}
             alt={serviceItem.title}
+            placeholder={'blur'}
+            priority={setPriority()}
+            loading={setLoading()}
           />
         }
       </div>

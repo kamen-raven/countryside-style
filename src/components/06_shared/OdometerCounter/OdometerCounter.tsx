@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { OdometerCounterInterface } from './OdometerCounter.interface';
 import styles from './OdometerCounter.module.scss';
+import { useWindowWidthSize } from '~hooks/useWindowWidthSize';
 
 
 const OdometerCounter: React.FC<OdometerCounterInterface> = ({
@@ -106,6 +107,10 @@ const OdometerCounter: React.FC<OdometerCounterInterface> = ({
   const formattedNumber = count.toLocaleString('ru-RU');//.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0'); // добавляем неразрывный пробел после каждого третьего символа
 
 
+  const windowSize = useWindowWidthSize();
+
+
+
   // выбираем тэг для отображения информации - SPAN / P / DIV
   const setTag = (t: typeof tag) => {
     if (t == 'span') {
@@ -134,11 +139,18 @@ const OdometerCounter: React.FC<OdometerCounterInterface> = ({
   };
 
 
-  return (
 
-    setTag(tag)
-
-  );
+  if (windowSize >= 768) {
+    return (
+      setTag(tag)
+    );
+  } else {
+    return (
+      <div className={className}>
+        {children}
+      </div>
+    );
+  }
 };
 
 

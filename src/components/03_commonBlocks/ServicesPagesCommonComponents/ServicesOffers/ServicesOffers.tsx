@@ -4,7 +4,7 @@ import { ServicesOffersInterface } from './ServicesOffers.interface.ts';
 import { BackgroundSVGPattern } from '~shared/index.ts';
 import { ServicesCardTemplate } from '~common/index.ts';
 
-
+/* УСЛУГИ НА СТРАНИЦЕ внутри услуг*/
 const ServicesOffers: React.FC<ServicesOffersInterface> = ({ offersListData, page, children }) => {
 
 
@@ -22,9 +22,9 @@ const ServicesOffers: React.FC<ServicesOffersInterface> = ({ offersListData, pag
         </h2>
         <div className={styles.cardsLayout}>
 
-          {offersListData && offersListData.map((item) => {
+          {offersListData && offersListData.map((item, index) => {
             return (
-              <ServicesCardTemplate key={item._id} serviceItem={item} />
+              <ServicesCardTemplate key={item._id} serviceItem={item} index={index} />
             );
           })}
 

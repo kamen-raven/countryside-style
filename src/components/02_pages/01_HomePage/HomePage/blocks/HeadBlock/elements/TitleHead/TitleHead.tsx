@@ -2,15 +2,17 @@ import React from 'react';
 
 import styles from './TitleHead.module.scss';
 import { YearInfoElement } from './YearInfoElement/YearInfoElement';
-
+import { BackgroundImage } from '~shared/index';
+import BackgroundImg from '~img/headBlock/mainBackground.jpg';
 
 const TitleHead: React.FC = () => {
 
 
   return (
-    <div className={`${styles.wrapper} ${styles.wrapper__bg}`}>
+    <div className={`${styles.wrapper}`}> {/*  ${styles.wrapper__bg} */}
       <div className={styles.container}>
         <div className={styles.titleContainer}>
+          <BackgroundImage image={BackgroundImg} alt={'Загородный стиль'}/>
           <h1 className={styles.title}>
             Агентство<br /> загородной недвижимости
             <span className={styles.subtitle}>
