@@ -47,7 +47,9 @@ const InfoHead: React.FC = () => {
           <Image
             className={styles.imgContainer__image}
             src={SecondImg}
-            alt='Загородный дом' />
+            alt='Загородный дом'
+            placeholder={'blur'}
+            />
         </div>
       </div>
 

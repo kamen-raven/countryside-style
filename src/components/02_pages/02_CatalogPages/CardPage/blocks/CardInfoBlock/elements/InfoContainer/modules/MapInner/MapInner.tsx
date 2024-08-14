@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styles from './MapInner.module.scss';
 import { MapInnerInterface } from './MapInner.interface';
 import formatIframeSrc from '~helpers/formatters/formatIframeSrc';
@@ -17,11 +17,13 @@ const MapInner: React.FC<MapInnerInterface> = ({ data }) => {
         На карте
       </h3>
       {srcValue &&
-
         <MapActiveContainer>
-          <iframe className={styles.map}
-            src={srcValue}
-            loading="lazy" />
+          <Suspense fallback={<p>Загрузка Яндекс.Карт</p>}>
+            <iframe className={styles.map}
+              src={srcValue}
+              loading="lazy"
+            />
+          </Suspense>
         </MapActiveContainer>
       }
     </>

@@ -14,7 +14,9 @@ const AwardInfoElement: React.FC = () => {
           width={140}
           height={348}
           src={Award}
-          alt='Каисса - 2018' />
+          alt='Каисса - 2018'
+          placeholder={'blur'}
+          />
       </div>
       <div className={styles.award__infoBlock}>
         <p className={styles.award__info}>

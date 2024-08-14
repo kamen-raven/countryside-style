@@ -84,7 +84,7 @@
 
     &_noHref {
       cursor: default;
-      
+
     }
   }
 
@@ -95,6 +95,9 @@
     max-width: 830px;
     max-height: 475px;
     min-height: 240px;
+
+    background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
+    background-size: 40px;
   }
 
   @include breakpoint(screen768) {
@@ -118,6 +121,9 @@
     max-width: 410px;
     max-height: 600px;
     filter: opacity(.5);
+
+    background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
+    background-size: 40px;
   }
 
   @include breakpoint(screen1024) {

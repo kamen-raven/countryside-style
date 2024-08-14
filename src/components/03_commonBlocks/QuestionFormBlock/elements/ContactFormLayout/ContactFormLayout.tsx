@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Image from 'next/image';
 
 import styles from './ContactFormLayout.module.scss';
@@ -30,10 +30,12 @@ const ContactFormLayout: React.FC<ContactFormLayoutInterface> = ({
 
   /* определяем НАПОЛНЕНИЕ контента - это будет картинка или карта */
   const content = {
-    image: imgContent && <Image className={styles.image} src={imgContent} alt={'Задать вопрос'} />,
+    image: imgContent && <Image className={styles.image} src={imgContent} alt={'Задать вопрос'} placeholder={'blur'} />,
     map: mapContent && (
-      <MapActiveContainer className = {styles.wrapperInner_map}>
-        <iframe className={styles.yandexMap} src={mapContent} ></iframe>
+      <MapActiveContainer className={styles.wrapperInner_map}>
+        <Suspense fallback={<p>Загрузка Яндекс.Карт</p>}>
+          <iframe className={styles.yandexMap} src={mapContent} loading={'lazy'} ></iframe>
+        </Suspense>
       </MapActiveContainer>)
   };
   const setContent = (contentType == 'image') ? content.image : content.map;

@@ -5,7 +5,7 @@ import { BackgroundSVGPattern } from '~shared/index.ts';
 
 import { ButtonCallElement, InfoContainer, PhotosComponent, PriceComponent, TitleComponent } from './elements/index.ts';
 
-const CardInfoBlock: React.FC<CardInfoBlockInterface> = ({ objectData, typePage, agentData }) => {
+const CardInfoBlock: React.FC<CardInfoBlockInterface> = async ({ objectData, typePage, agentData }) => {
 
   return (
     <section className={styles.wrapper}>

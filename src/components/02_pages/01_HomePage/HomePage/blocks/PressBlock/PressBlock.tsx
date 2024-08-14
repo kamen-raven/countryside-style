@@ -21,9 +21,9 @@ const PressBlock: React.FC<PressBlockProps> = ({ pressItems }) => {
         <div className={styles.innerBlock__articles}>
 
           {pressItems && pressItems.map(m => (
-            <div className = {styles.linkContainer}>
+            <div key={m._id} className = {styles.linkContainer}>
 
-              <Link key={m._id}
+              <Link
                 className={styles.link}
                 href={m.link}
                 target='_blank'

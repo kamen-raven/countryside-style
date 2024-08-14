@@ -9,7 +9,6 @@ import useObjectPhotoStore from '~store/objectsCardStore/useObjectPhotoStore';
 import useObjectImagePopupStore from '~store/popupsStore/useObjectImagePopupStore.ts';
 import { ArrowsButton } from '~shared/index';
 import useUpdateActiveIndex from '~hooks/useUpdateActiveIndex';
-import useArrowsKeysEvents from '~hooks/useArrowsKeysEvents';
 import { useToggleMainPopupStore } from '~store/popupsStore/useTogglePopupStore';
 
 
@@ -77,7 +76,7 @@ const ObjectImagePopup: React.FC = () => {
 
   };
 
-  useArrowsKeysEvents((key) => {
+/*   useArrowsKeysEvents((key) => {
     if (key === 'ArrowLeft') {
       handlePrev();
     }
@@ -85,8 +84,23 @@ const ObjectImagePopup: React.FC = () => {
     if (key === 'ArrowRight') {
       handleNext();
     }
-  });
+  }); */
 
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'ArrowLeft') {
+      handlePrev();
+    } else if (event.key === 'ArrowRight') {
+      handleNext();
+    }
+  };
+  // для переключений слайдов по стрелкам
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleNext, handlePrev, isOpen]);
 
 
   // для задания первой фотографии при первичном рендере карточки объекта
@@ -116,7 +130,7 @@ const ObjectImagePopup: React.FC = () => {
                 alt={`Photo ${pic.uuid}`}
                 width={880}
                 height={740}
-                priority={true}
+               // priority={true}
               />
             );
           })}

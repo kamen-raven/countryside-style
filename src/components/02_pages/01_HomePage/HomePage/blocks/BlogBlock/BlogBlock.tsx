@@ -16,7 +16,7 @@ import getPostsForMainPage from '~helpers/blog/getPostsForMainPage';
 const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData }) => {
   // фильтруем посты для главной страницы
   const blogPosts = getPostsForMainPage(blogPostsData.results);
-  console.log(blogPosts.length);
+  //console.log(blogPosts.length);
 
 
   const [currentPost, setCurrentPost] = useState(0);
@@ -28,7 +28,7 @@ const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData }) => {
         } else {
           setCurrentPost(0);
         }
-    console.log('click Next!');
+    //console.log('click Next!');
   };
 
   const handlePrevPost = () => { /* ArrowPreviously */
@@ -37,7 +37,7 @@ const BlogBlock: React.FC<BlogBlockProps> = ({ path, blogPostsData }) => {
         } else {
           setCurrentPost(blogPosts.length - 1);
         }
-    console.log('click Prev!');
+    //console.log('click Prev!');
   };
 
 

@@ -77,7 +77,9 @@ const ContactUsBlock: React.FC<ContactUsBlockInterface> = ({ generalContactsData
 
         <Image className={styles.image}
           src={Person4}
-          alt={'Ответим на все ваши вопросы'} />
+          alt={'Ответим на все ваши вопросы'}
+          placeholder={'blur'}
+          />
 
       </div>
     </section>

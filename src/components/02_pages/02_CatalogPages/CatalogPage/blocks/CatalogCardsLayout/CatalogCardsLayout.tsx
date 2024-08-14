@@ -24,8 +24,8 @@ const CatalogCardsLayout: React.FC<CatalogCardsLayoutInterface> = ({ /* typePage
     <>
       <div /* ref={parentRef}  */className={`${styles.cardsLayout}`}> {/*  ${objectsData.length > itemsPerPage ? styles.paginationMargin : null}` */}
 
-        {objectsData.map((item) => ( //currentItems
-          <CatalogCardComponent key={item.id} item={item}/*  typePage={typePage} */ />
+        {objectsData.map((item, index) => ( //currentItems
+          <CatalogCardComponent key={item.id} item={item} index={index}/*  typePage={typePage} */ />
         ))}
       </div>
 {/*

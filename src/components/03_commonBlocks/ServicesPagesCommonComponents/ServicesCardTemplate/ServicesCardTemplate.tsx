@@ -37,6 +37,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
             className={`${styles.image} ${bigPicture}`}
             src={serviceItem.image}
             alt={serviceItem.title}
+            placeholder={'blur'}
           />
         }
       </div>

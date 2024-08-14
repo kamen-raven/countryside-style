@@ -88,9 +88,11 @@
 .image {
   width: 100%;
   height: auto;
+  min-height: 100%;
   max-height: 480px;
   object-fit: cover;
   object-position: center;
+  border: solid 1px $gray-light;
   clip-path: polygon(
     0% 100%,
     0% 0%,
@@ -99,8 +101,14 @@
     calc(100% - 60px) 100%
   );
 
+  background: url('../../../../public/svg/loader.gif') center center no-repeat; // new
+  background-size: 40px;
+
+
+
   @include breakpoint(screen1024) {
     max-height: none;
+    min-height: 0;
     clip-path: none;
   }
 }

@@ -4,12 +4,13 @@
   width: 100%;
   color: $white;
 
-  &__bg {
+
+/*   &__bg {
     background-image: url('../../../../../../../../../public/img/headBlock/mainBackground.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+  } */
 }
 
 .container {
@@ -18,26 +19,44 @@
   position: relative;
   align-items: center;
   text-align: center;
+
+  @include breakpoint(screen480) {
+    align-items: normal;
+    padding: 0;
+  }
 }
 
 .titleContainer {
-  margin: clamp(9rem, 15vw, 11.875rem) auto;
+  position: relative;
+  width: 100vw;
 
+
+  padding: clamp(9rem, 15vw, 11.875rem)0;
   @include breakpoint(screen1280) {
-    margin: clamp(7.5rem, 12vw, 10rem) auto;
+    padding: clamp(7.5rem, 12vw, 10rem) 0;
   }
   @include breakpoint(screen640) {
-    margin: clamp(48px, 14.2125vw, 120px) auto;
+    padding: clamp(48px, 14.2125vw, 120px) 0;
   }
+
+
 }
 
 
 .title {
   @include common-title(h1, $color: $white, );
-
   display: inline-flex;
   flex-direction: column;
   text-align: center;
+
+  padding: 0 $padding-side;
+
+  @include breakpoint(screen1280) {
+    padding: 0 calc($padding-side / 1.5);
+  }
+  @include breakpoint(screen768) {
+    padding: 0 $padding-side-tab;
+  }
 }
 
 .subtitle {

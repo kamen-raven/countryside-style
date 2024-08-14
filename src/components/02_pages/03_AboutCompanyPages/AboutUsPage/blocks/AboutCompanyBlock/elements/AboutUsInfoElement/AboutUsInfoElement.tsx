@@ -12,7 +12,9 @@ const AboutUsInfoElement: React.FC = () => {
         <Image
           className={styles.awardImage}
           src={AwardImg}
-          alt={'Премия КАИССА 2018'} />
+          alt={'Премия КАИССА 2018'}
+          placeholder={'blur'}
+          />
       </div>
 
       <div className={styles.blockWrapper}>
@@ -25,7 +27,9 @@ const AboutUsInfoElement: React.FC = () => {
           <Image
             className={styles.associationImage}
             src={AssociationLabel}
-            alt={'Ассоциация риэлторов СПб и ЛО'} />
+            alt={'Ассоциация риэлторов СПб и ЛО'}
+            placeholder={'blur'}
+            />
           <p className={styles.associationDescription}>
             Состоим в&nbsp;Ассоциации риэлторов <br />Санкт-Петербурга и&nbsp;Ленинградской области
           </p>

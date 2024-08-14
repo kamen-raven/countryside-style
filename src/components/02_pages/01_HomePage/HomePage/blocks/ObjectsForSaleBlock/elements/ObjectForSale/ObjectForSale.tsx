@@ -82,7 +82,7 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
     } else {
       setCurrentPhotoIndex(0);
     }
-    console.log('click!');
+    //console.log('click!');
   };
 
   const handlePrevPhoto = () => { /* ArrowPreviously */
@@ -91,7 +91,7 @@ const ObjectForSale: React.FC<ObjectForSaleInterface> = ({
     } else {
       setCurrentPhotoIndex(objectItemsList.length - 1);
     }
-    console.log('click!');
+    //console.log('click!');
   };
 
   const getCurrentPhoto = () => {

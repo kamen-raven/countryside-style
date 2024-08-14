@@ -20,6 +20,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     return (
       'created_at' in obj &&
       'isbook' in obj
+      //'blurredDataUrl' in obj.photo_images
     );
   }
 
@@ -189,8 +190,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
             picData={picturesArray}
             ref={currentActiveImageRef}
           >
-            {picturesArray.map((pic) => (
-
+            {picturesArray.map((pic, index) => (
               <Image
                 key={pic.uuid}
                 className={styles.image}
@@ -198,20 +198,12 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                 alt={data.name}
                 width={980}
                 height={740}
-                priority={true}
+                placeholder={'blur'}
+                blurDataURL={pic.blurredDataUrl}
+                loading={index < 10 ? 'eager' : 'lazy'}
+                priority={index < 10 ? true : false}
               />
-
             ))}
-
-
-            {/*             <Image
-              className={styles.image}
-              src={picturesArray[activePhoto].image}
-              alt={data.name}
-              width={980}
-              height={740}
-              priority={true}
-            /> */}
           </ObjectImagePopupButton>
 
 
@@ -273,6 +265,10 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                   alt={photo.uuid}
                   width={110}
                   height={110}
+                  placeholder={'blur'}
+                  blurDataURL={photo.blurredDataUrl}
+                  loading={index < 4 ? 'eager' : 'lazy'}
+                  priority={index < 4 ? true : false}
                 />
               );
             })}

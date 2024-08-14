@@ -7,7 +7,7 @@ import { getUserByID } from "~api/Users/getUserByID";
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 import { metaCatalogPage } from "~meta/metadataPages";
 import { CardPage } from "~pages/index";
-
+import { addBlurImgToObject } from "~utils/addBlurImgToObjects";
 
 
 
@@ -107,10 +107,17 @@ export default async function CardType({ params }: { params: { id: string, type:
   const agentData = currentObject.display_agents.length > 0 ? await getUserByID(currentObject.display_agents[0].employee) : undefined;
 
 
+
+  // создаем base64 миниатюры для фотографий и добавляем их к данным объекта
+  const currentObjectWithBlur = await addBlurImgToObject(currentObject);
+/*   const commonObjectsWithBlur = await addBlurImgToObjects(commonObjects); */
+
+/*   const agentDataWithBlur = agentData && await addBlurImgToUser(agentData); */
+
   return (
     <CardPage
       typePage={params.type}
-      objectData={currentObject}
+      objectData={currentObjectWithBlur}
       commonObjects={commonObjects}
       agentData={agentData}
       />

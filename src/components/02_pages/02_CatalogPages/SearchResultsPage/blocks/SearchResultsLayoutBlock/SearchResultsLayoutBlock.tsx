@@ -48,8 +48,8 @@ const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({
         <>
           {filteredData.length > 0 ?
             <div ref={parentRef}  className={`${styles.cardsLayout} { ${filteredData.length > itemsPerPage ? styles.paginationMargin : null}`}>
-              {currentItems.map((item) => ( //currentItems
-                <CatalogCardComponent key={item.id} item={item}/*  typePage={typePage} */ />
+              {currentItems.map((item, index) => ( //currentItems
+                <CatalogCardComponent key={item.id} item={item} index={index} />
               ))}
             </div>
             :

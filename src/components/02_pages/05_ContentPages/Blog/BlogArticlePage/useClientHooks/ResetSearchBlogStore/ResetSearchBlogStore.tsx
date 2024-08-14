@@ -10,7 +10,7 @@ const ResetSearchBlogStore: React.FC = () => {
   useEffect(() => {
     resetSearchBlogStore();
 
-    console.log('reset');
+    //console.log('reset');
 
   }, [resetSearchBlogStore]);
 
