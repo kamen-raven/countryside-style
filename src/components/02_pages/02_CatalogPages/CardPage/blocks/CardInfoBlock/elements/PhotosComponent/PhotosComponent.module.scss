@@ -66,8 +66,8 @@
   //max-height: 720px; // 640px; // new
   //height: auto;// 100%;  // new
 
-/*   background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
-  background-size: 40px; // new */
+  background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
+  background-size: 40px; // new
 
 
   scroll-snap-align: start;
@@ -153,11 +153,11 @@
   max-height: 110px;
 
   opacity: .5;
-  transition: transform .3s ease;
-  /* Плавное изменение масштаба при наведении */
-/*   background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
+  transition: transform .3s ease; // Плавное изменение масштаба при наведении
+  
+  background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
   background-size: 25px; // new
- */
+
   scroll-snap-align: start;
 
   @include breakpoint(screen768) {

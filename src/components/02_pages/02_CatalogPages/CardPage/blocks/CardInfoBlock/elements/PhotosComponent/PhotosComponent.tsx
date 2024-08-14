@@ -198,10 +198,10 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                 alt={data.name}
                 width={980}
                 height={740}
-                placeholder={'blur'}
-                blurDataURL={pic.blurredDataUrl}
                 loading={index < 10 ? 'eager' : 'lazy'}
                 priority={index < 10 ? true : false}
+                /* placeholder={'blur'}
+                blurDataURL={pic.blurredDataUrl} */
               />
             ))}
           </ObjectImagePopupButton>
@@ -265,10 +265,10 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                   alt={photo.uuid}
                   width={110}
                   height={110}
-                  placeholder={'blur'}
-                  blurDataURL={photo.blurredDataUrl}
                   loading={index < 4 ? 'eager' : 'lazy'}
                   priority={index < 4 ? true : false}
+                  /*  placeholder={'blur'}
+                   blurDataURL={photo.blurredDataUrl} */
                 />
               );
             })}

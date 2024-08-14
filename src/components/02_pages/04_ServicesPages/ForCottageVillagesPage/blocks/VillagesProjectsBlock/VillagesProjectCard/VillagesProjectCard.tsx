@@ -28,7 +28,10 @@ const VillagesProjectCard: React.FC<VillagesProjectCardInterface> = ({ project, 
       <div className={`${styles.innerBlock} ${setTemplate}`}>
         <Image className={styles.image}
           src={project.image}
-          alt={project.name} />
+          alt={project.name}
+          placeholder={'blur'}
+          
+          />
 
 
         <div className={styles.infoContainer}>

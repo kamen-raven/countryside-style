@@ -12,7 +12,7 @@ import { VillageObjectInterface } from "~interfaces/villages.interface";
 import { metaCatalogPage } from "~meta/metadataPages";
 
 import { CardPage } from "~pages/index";
-import { addBlurImgToObject } from "~utils/addBlurImgToObjects";
+
 
 export async function generateMetadata({ params }: { params: { id: string, type: 'villages' } }): Promise<Metadata> {
   const villages = await getAllVillages(); // получаем все объекты
@@ -95,11 +95,11 @@ export default async function VillageType({ params }: { params: { id: string, ty
 
 
   // создаем base64 миниатюры для фотографий и добавляем их к данным объекта
-  const currentVillageWithBlur = await addBlurImgToObject(currentVillage);
+/*   const currentVillageWithBlur = await addBlurImgToObject(currentVillage); */
 
   return (
     <CardPage
       typePage={'villages'}
-      objectData={currentVillageWithBlur} commonObjects={allObjectsInVillage} agentData={agentData} />
+      objectData={currentVillage} commonObjects={allObjectsInVillage} agentData={agentData} />
   );
 }

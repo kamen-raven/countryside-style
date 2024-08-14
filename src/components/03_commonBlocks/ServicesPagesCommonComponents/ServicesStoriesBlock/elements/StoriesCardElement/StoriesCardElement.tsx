@@ -64,7 +64,7 @@ const StoriesCardElement: React.FC<StoriesCardElementInterface> = ({ servicesCar
         alt={servicesCard.title}
         width={480}
         height={580}
-        priority={true}
+        placeholder={'blur'}
       />
 
       {/* прогрессбар */}
