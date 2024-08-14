@@ -34,7 +34,7 @@
 .wrapper {
   box-sizing: border-box;
   grid-area: titleBlock;
-  background-color: $dark;
+  //background-color: $dark;
   background-position: center;
   background-size: cover;
   padding-top: 50px;
@@ -51,6 +51,7 @@
 .container {
   @include mainContainer();
   height: calc(660px - 50px);
+
 
   @include breakpoint(screen1024) {
     height: calc(clamp(500px, 64.7734vw, 660px) - clamp(30px, 3.9vw, 50px));
