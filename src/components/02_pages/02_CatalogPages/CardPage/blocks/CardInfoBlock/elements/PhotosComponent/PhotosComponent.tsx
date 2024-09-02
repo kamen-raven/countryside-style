@@ -13,6 +13,7 @@ import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 import useObjectPhotoStore from '~store/objectsCardStore/useObjectPhotoStore.ts';
 import useUpdateActiveIndex from '~hooks/useUpdateActiveIndex.ts';
 import useArrowsKeysEvents from '~hooks/useArrowsKeysEvents.ts';
+import { useToggleMainPopupStore } from '~store/popupsStore/useTogglePopupStore.ts';
 
 
 const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
@@ -34,6 +35,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     }
   } = useObjectPhotoStore();
 
+  const { isOpen } = useToggleMainPopupStore();  // стейт открытия попапа
 
   // весь массив фотографий и планов объекта
   const picturesArray = formatPhotosArray(data);
@@ -66,6 +68,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     const nextIndex = activePhoto === picturesArray.length - 1 ? 0 : activePhoto + 1;
     scrollToImage(nextIndex);
     scrollToThumbnail(nextIndex);
+    //console.log(`active photo: ${activePhoto}`);
   };
 
   // кнопка "Назад"
@@ -138,15 +141,16 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
    */
 
   // для переключений слайдов по стрелкам
-  useArrowsKeysEvents((key) => {
+useArrowsKeysEvents((key) => {
+  if (!isOpen) { // если попап закрыт, срабатывают стрелки в PhotosComponent
     if (key === 'ArrowLeft') {
       handlePrev();
     }
     if (key === 'ArrowRight') {
       handleNext();
     }
-  });
-
+  }
+});
 
   // для задания первой фотографии при первичном рендере карточки объекта
   useEffect(() => {
@@ -179,6 +183,10 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
       return null;
     }
   };
+
+
+  //console.log(`picArray: ${picturesArray.length}`);
+
 
 
   return (
