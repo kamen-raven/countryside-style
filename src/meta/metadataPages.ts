@@ -4,7 +4,7 @@ import generalContactsData from "~data/constant/generalContacts/generalContactsD
 import formatPhoneNumber from "~helpers/formatters/formatPhoneNumber";
 
 /* URL */
-const baseURL = "countryside-style.vercel.app";
+const baseURL = "zagorod-style.ru";
 /* Изображение */
 const baseImg = "../../opengraph-image.png";
 /* Заголовок */

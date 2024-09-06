@@ -33,7 +33,7 @@ export default function useUpdateActiveIndex(
       }
 
       const shift = firstElementData.left - dataContainer.left;
-      setCurrentImg(Math.abs(Math.round(shift / dataContainer.width)));
+      setCurrentImg(Math.abs(Math.round(shift / (dataContainer.width + 10))));
     };
 
     currentNode.addEventListener('scroll', scroll);
@@ -45,46 +45,4 @@ export default function useUpdateActiveIndex(
 
   return currentImg;
   }
-
-
-
-
-/*   useEffect(() => {
-    const currentSecondNode = smallContainerRef?.current;
-
-    if (!currentSecondNode) {
-      return;
-    }
-
-    const secondScroll = () => { */
-/*       const dataContainer = currentNode.getBoundingClientRect();
-      const firstElementData = currentNode.firstElementChild?.getBoundingClientRect();
-
-      if (!firstElementData) {
-        return;
-      }
-
-      const shift = firstElementData.left - dataContainer.left;
-      setCurrentImg(Math.abs(Math.round(shift / dataContainer.width)));
-      console.log(currentImg); */
-
-      //const container = smallContainerRef && smallContainerRef.current;
-
-/*         const thumbnail = currentSecondNode.children[currentImg];
-        thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-
-    };
-
-
-
-
-      currentSecondNode.addEventListener('scroll', secondScroll);
-
-    return () => {
-      currentSecondNode.removeEventListener('scroll', secondScroll);
-    };
-  }, [ smallContainerRef ]); */
-
-  // скролл
-
 

@@ -69,7 +69,7 @@ const ObjectImagePopup: React.FC = () => {
 
     const dataContainer = currentNode.getBoundingClientRect();
     currentNode.scrollTo({
-      left: index * dataContainer.width,
+      left: index * (dataContainer.width + 10),
       behavior: 'smooth'
 
     });
@@ -94,14 +94,16 @@ const ObjectImagePopup: React.FC = () => {
       handleNext();
     }
   };
-  // для переключений слайдов по стрелкам
+  // Активируем обработчик клавиш только когда попап открыт
   useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+    }
+
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleNext, handlePrev, isOpen]);
-
 
   // для задания первой фотографии при первичном рендере карточки объекта
   useEffect(() => {
@@ -112,7 +114,9 @@ const ObjectImagePopup: React.FC = () => {
 
     // для задания выбранной карточки при открытии попапа
     useEffect(() => {
-      scrollToImage(activePhoto);
+      if (isOpen) {
+        scrollToImage(activePhoto);
+      }
     }, [isOpen]);
 
 
