@@ -69,7 +69,7 @@ const ObjectImagePopup: React.FC = () => {
 
     const dataContainer = currentNode.getBoundingClientRect();
     currentNode.scrollTo({
-      left: index * dataContainer.width,
+      left: index * (dataContainer.width + 10),
       behavior: 'smooth'
 
     });
