@@ -14,7 +14,7 @@ export async function getVillageByID(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 10
+        revalidate: 900
       }
     });
 

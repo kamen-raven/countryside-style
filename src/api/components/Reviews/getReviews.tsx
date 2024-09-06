@@ -19,7 +19,7 @@ export async function getAllReviews(pageSize?: number, page?: number): Promise<A
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 10
+        revalidate: 86400
       }
     });
 

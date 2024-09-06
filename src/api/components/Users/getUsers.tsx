@@ -19,7 +19,7 @@ export async function getAllUsers(pageSize?: number, page?: number): Promise<Api
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 10
+        revalidate: 86400
       }
     });
 
