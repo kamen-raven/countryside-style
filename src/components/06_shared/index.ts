@@ -1,4 +1,5 @@
 export * from './Buttons/OpenPopupButton/OpenPopupButton';
+export * from './Buttons/PopupCloseButton/PopupCloseButton';
 export * from './Buttons/ReviewPopupButton/ReviewPopupButton';
 export * from './Buttons/PrintPageButton/PrintPageButton';
 export * from './Buttons/VideoPopupButton/VideoPopupButton';

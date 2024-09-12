@@ -5,7 +5,7 @@ import styles from './ArrowsButton.module.scss';
 
 import ArrowIcon from '~svg/button/arrow.svg';
 
-const ArrowsButton = ({ position, className, onClick, type = 'common' }: ArrowsButtonProps): JSX.Element => {
+const ArrowsButton = ({ position, className, onClick, disabled, type = 'common' }: ArrowsButtonProps): JSX.Element => {
 
   const setPosition = {
     left: styles.arrow_left,
@@ -13,39 +13,24 @@ const ArrowsButton = ({ position, className, onClick, type = 'common' }: ArrowsB
   };
 
 
-
-
-
   return (
     <>
       {type === 'common' ?
-        <button className={`${styles.arrow} ${styles.arrowDesign} ${setPosition[position]} ${className}`}
-          onClick={onClick}>
+        <button className={`${styles.arrow} ${styles.arrowDesign} ${disabled ? styles.disabled : ''} ${setPosition[position]} ${className}`}
+          onClick={onClick}
+          disabled={disabled}>
           <ArrowIcon />
         </button>
         :
-        <button className={`${styles.arrow} ${styles.arrow__inImg} ${setPosition[position]} ${className}`}
-          onClick={onClick}>
+        <button className={`${styles.arrow} ${styles.arrow__inImg} ${disabled ? styles.disabled : ''} ${setPosition[position]} ${className}`}
+          onClick={onClick}
+          disabled={disabled}>
           <span className={styles.arrowDesign}>
             <ArrowIcon />
           </span>
         </button>
       }
     </>
-
-
-
-
-
-    /*     <div className={`${styles.arrows} ${className}`} {...props}>
-          <button className={`${styles.arrow} ${styles.arrow_left}`}
-                  >
-            <ArrowIcon />
-          </button>
-          <button className={`${styles.arrow} ${styles.arrow_right}`}>
-            <ArrowIcon />
-          </button>
-        </div> */
   );
 };
 

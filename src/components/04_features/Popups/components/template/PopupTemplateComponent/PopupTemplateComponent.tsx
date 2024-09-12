@@ -4,8 +4,7 @@ import React, { useEffect } from 'react';
 import styles from './PopupTemplateComponent.module.scss';
 import { PopupTemplateComponentInterface } from './PopupTemplateComponent.interface.ts';
 
-import CloseIcon from '~svg/button/clear.svg';
-
+import { PopupCloseButton } from '~shared/index.ts';
 
 
 const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
@@ -27,26 +26,31 @@ const PopupTemplateComponent: React.FC<PopupTemplateComponentInterface> = ({
     videoPopup: styles.popupContainer_video,
   };
 
-/* Навешиваем слушатель на закрытие попапа по ESC */
-  useEffect(() => {
-    window.addEventListener('keydown', actions.handleKeyPress);
-    return () => {
-      window.removeEventListener('keydown', actions.handleKeyPress);
-    };
-  }, []);
 
+
+
+  /* Навешиваем слушатель на закрытие попапа по ESC */
+  useEffect(() => {
+      window.addEventListener('keydown', actions.handleKeyPress);
+      return () => {
+        window.removeEventListener('keydown', actions.handleKeyPress);
+      };
+    }, []);
 
 
   return (
     <div className={`${styles.popupOverlay}
                     ${isOpened ? styles.popup_open : styles.popup_close}`}
-        onClick={actions.handleOverlayClick}
+      onClick={actions.handleOverlayClick}
     >
       <div className={`${styles.popupContainer} ${type && popupContainerStyle[type]}`}>
-        <button className={styles.popupCloseButton}
-          onClick={actions.closePopup}>
-          <CloseIcon />
-        </button>
+
+        {/* не отображаем кнопку закрытия для попапа с изображением */}
+        {type !== 'objectImage' ?
+          <PopupCloseButton closePopupHandler={actions.closePopup} className={styles.popupCloseButton} />
+          :
+          null
+        }
         {children}
       </div>
     </div>

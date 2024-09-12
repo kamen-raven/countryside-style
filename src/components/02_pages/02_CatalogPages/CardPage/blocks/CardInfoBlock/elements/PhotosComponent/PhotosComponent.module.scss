@@ -49,6 +49,8 @@
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
 
+  scroll-behavior: smooth; /* Плавная прокрутка */
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -210,6 +212,10 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  visibility: visible;
+
+
+
 
   @include breakpoint(screen768) {
     margin: auto 0;
@@ -234,11 +240,24 @@
 
   &_left {
     left: 0;
+    transition: visibility .3s linear, left .3s linear;
+
+    &:disabled {
+      left: -80px;
+      visibility: hidden;
+      transition: visibility .3s linear, left .3s linear;
+    }
   }
 
   &_right {
     right: 0;
+    transition: visibility .3s linear, right .3s linear;
+
+    &:disabled {
+      right: -80px;
+      visibility: hidden;
+      transition: visibility .3s linear, right .3s linear;
+    }
   }
 }
-
 

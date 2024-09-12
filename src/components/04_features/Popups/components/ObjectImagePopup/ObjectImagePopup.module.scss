@@ -1,21 +1,30 @@
 @import '~global_styles';
 
 .innerContainer {
-  margin-top: 40px;
+  margin-top: 20px;
   position: relative;
   @include flexColumnGap($gap: 20px);
 
   @include breakpoint(screen576) {
-    margin-top: 30px;
+    margin-top: 10px;
   }
+
+  overflow: hidden;
+
 }
 
+.outsideContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: min-content;
+}
 
 .imageContainer {
   border: 1px solid $gray;
   position: relative;
 
-  max-height: calc(100vh - (40px * 2));// calc(80vh - (40px * 2)) //clamp(480px, 37.82738vw, 640px);
+  max-height: calc(100vh - (40px * 2)); // calc(80vh - (40px * 2)) //clamp(480px, 37.82738vw, 640px);
   height: 100%;
   width: 100%;
 
@@ -30,17 +39,18 @@
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
 
+  scroll-behavior: smooth;
+  /* Плавная прокрутка */
+
   &::-webkit-scrollbar {
     display: none;
   }
 
-/*   @include breakpoint(screen1024) {
-    max-height: clamp(480px, 62.5vw, 640px);
-  }
 
-  @include breakpoint(screen768) {
-    max-height: clamp(240px, 64.75vw, 480px);
-  } */
+  & img {
+    transition: transform 0.3s ease-in-out;
+    /* Плавный переход при смене слайдов */
+  }
 }
 
 
@@ -48,7 +58,7 @@
   width: 100%;
   min-width: 100%;
   height: auto;
- max-height: calc(100vh - (40px * 2));// calc(80vh - (40px * 2))
+  max-height: calc(100vh - (40px * 2)); // calc(80vh - (40px * 2))
   object-fit: contain;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -57,14 +67,6 @@
   @include breakpoint(screen1024) {
     height: max-content;
   }
-/*
-  @include breakpoint(screen1024) {
-    max-height: clamp(480px, 62.5vw, 640px);
-  }
-
-  @include breakpoint(screen768) {
-    max-height: clamp(240px, 64.75vw, 480px);
-  } */
 }
 
 
@@ -74,6 +76,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  visibility: visible;
+
 
 
   & span {
@@ -94,27 +98,63 @@
 
   &_left {
     left: 0;
+    transition: visibility .3s linear, left .3s linear;
+
+    &:disabled {
+      left: -80px;
+      visibility: hidden;
+      transition: visibility .3s linear, left .3s linear;
+    }
   }
 
   &_right {
     right: 0;
+    transition: visibility .3s linear, right .3s linear;
+
+    &:disabled {
+      right: -80px;
+      visibility: hidden;
+      transition: visibility .3s linear, right .3s linear;
+    }
+  }
+}
+
+
+
+.closePopupButton {
+/*   position: absolute;
+  top: 30px;
+  right: 0; */
+  background-color: transparent;
+  border: none;
+
+  width: 40px;
+  height: 40px;
+
+  transition: all .2s linear;
+
+  @include breakpoint(screen576) {
+    top: 20px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
   }
 
 
-}
+  & svg {
+    width: 22px;
+    height: 22px;
+    & path {
+      stroke: $white;
+    }
 
-
-.countPic {
-  position: absolute;
-  top: -35px;
-  left: 0;
-}
-
-.counter {
-  @include common-paragraph(pLg,
-  $font-family: $ff-openSans,
-  $font-weight: $medium,
-  $color: $white  // new
-  );
-  line-height: 100%;
+    transform: scale(1);
+    transition: transform .3s linear;
+  }
+  &:hover {
+    & svg {
+      transform: scale(1.3);
+      transition: transform .3s linear;
+    }
+  }
 }

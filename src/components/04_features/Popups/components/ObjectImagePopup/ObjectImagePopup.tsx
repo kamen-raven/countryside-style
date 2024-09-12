@@ -7,103 +7,75 @@ import Image from 'next/image';
 import useObjectPhotoStore from '~store/objectsCardStore/useObjectPhotoStore';
 
 import useObjectImagePopupStore from '~store/popupsStore/useObjectImagePopupStore.ts';
-import { ArrowsButton } from '~shared/index';
-import useUpdateActiveIndex from '~hooks/useUpdateActiveIndex';
+import { ArrowsButton, PopupCloseButton } from '~shared/index';
+import useSwipeUpdateActiveIndex from '~hooks/useSwipeUpdateActiveIndex';
 import { useToggleMainPopupStore } from '~store/popupsStore/useTogglePopupStore';
+import useArrowsKeysEvents from '~hooks/useArrowsKeysEvents';
+import { decreaseIndex, increaseIndex, isLoaded, setNewImage } from '~helpers/swipeFunction/swipeFunction';
+import { CounterElement } from './elements/CounterElement/CounterElement';
 
 
 const ObjectImagePopup: React.FC = () => {
 
+  //* переменные */
+  // весь массив фотографий и планов объекта
   const picsData = useObjectImagePopupStore((state) => state.picturesArray);
-
-
-
-  const { activePhoto,
-    actions: {
-      setActivePhoto,
-      nextPhoto,
-      prevPhoto,
-    }
-  } = useObjectPhotoStore();
-
-  const { isOpen } = useToggleMainPopupStore();  // стейт открытия попапа
-
-
+  // стейт управления состоянием попапа
+  const closePopup = useToggleMainPopupStore((state) => state.actions.closePopup); // функция закрытия попапа
+  const isOpen = useToggleMainPopupStore((state) => state.isOpen); // стейт состояния открытия попапа
 
   // создаем реф для скролла большой текущей фотографии
   const currentActiveImageRef = useRef<HTMLDivElement>(null);
+
+  // Получение текущего фото и действий из хранилища ZUSTAND
+  const activePhoto = useObjectPhotoStore((state) => state.activePhoto);
+  const setActivePhoto = useObjectPhotoStore((state) => state.actions.setActivePhoto);
+
   // кастомный хук для управления свайпа - в него передаем наши рефы и данные стейта
-  const scrollActiveIndex = useUpdateActiveIndex(currentActiveImageRef, activePhoto, setActivePhoto);
-
-  // обновляем текущий индекс на основе данных хука по контролю индекса
-  useEffect(() => {
-    setActivePhoto(scrollActiveIndex);
-  }, [scrollActiveIndex]);
+  const scrollActivePopupIndex = useSwipeUpdateActiveIndex(currentActiveImageRef, activePhoto, setActivePhoto, 10);
 
 
+
+  //* функции */
   // кнопка "Вперед"
   const handleNext = () => {
-    const nextIndex = scrollActiveIndex === picsData.length - 1 ? 0 : scrollActiveIndex + 1;
-    nextPhoto(nextIndex);
-    scrollToImage(nextIndex);
-
+    const nextPic = increaseIndex(activePhoto, picsData.length);  // переменная расчета листания вперед
+    setNewImage(nextPic, currentActiveImageRef, setActivePhoto, 10);
   };
 
   // кнопка "Назад"
   const handlePrev = () => {
-    const prevIndex = scrollActiveIndex === 0 ? picsData.length - 1 : scrollActiveIndex - 1;
-    prevPhoto(prevIndex);
-    scrollToImage(prevIndex);
+    const prevPic = decreaseIndex(activePhoto);  // переменная расчета листания назад
+    setNewImage(prevPic, currentActiveImageRef, setActivePhoto, 10);
   };
 
 
-
-  // скролл до изображения
-  const scrollToImage = (index: number) => {
-    const currentNode = currentActiveImageRef.current;
-
-    if (!currentNode) {
-      return;
+  // для переключений слайдов по стрелкам
+  useArrowsKeysEvents((key) => {
+    if (isOpen) { // если попап открыт, срабатывают стрелки в ObjectImagePopup
+      if (key === 'ArrowLeft') {
+        handlePrev();
+      }
+      if (key === 'ArrowRight') {
+        handleNext();
+      }
     }
-    setActivePhoto(index);
-
-    const dataContainer = currentNode.getBoundingClientRect();
-    currentNode.scrollTo({
-      left: index * (dataContainer.width + 10),
-      behavior: 'smooth'
-
-    });
-
-  };
-
-/*   useArrowsKeysEvents((key) => {
-    if (key === 'ArrowLeft') {
-      handlePrev();
-    }
-
-    if (key === 'ArrowRight') {
-      handleNext();
-    }
-  }); */
+  });
 
 
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'ArrowLeft') {
-      handlePrev();
-    } else if (event.key === 'ArrowRight') {
-      handleNext();
-    }
-  };
-  // Активируем обработчик клавиш только когда попап открыт
+  // обновляем текущий индекс на основе данных хука по контролю индекса
+  useEffect(() => {
+    setActivePhoto(scrollActivePopupIndex);
+  }, [scrollActivePopupIndex]);
+
+
+  // для задания выбранной карточки при открытии попапа
   useEffect(() => {
     if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown);
+      setNewImage(activePhoto, currentActiveImageRef, setActivePhoto, 10);
     }
+  }, [isOpen]);
 
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [handleNext, handlePrev, isOpen]);
 
   // для задания первой фотографии при первичном рендере карточки объекта
   useEffect(() => {
@@ -111,59 +83,57 @@ const ObjectImagePopup: React.FC = () => {
   }, []);
 
 
-
-    // для задания выбранной карточки при открытии попапа
-    useEffect(() => {
-      if (isOpen) {
-        scrollToImage(activePhoto);
-      }
-    }, [isOpen]);
-
-
-
   return (
-    <div className={styles.innerContainer}>
-      {picsData &&
-        <div className={styles.imageContainer} ref={currentActiveImageRef}>
-          {picsData.map((pic) => {
-            return (
-              <Image
-                key={pic.uuid}
-                className={styles.image}
-                src={pic.image}
-                alt={`Photo ${pic.uuid}`}
-                width={880}
-                height={740}
-               // priority={true}
-              />
-            );
-          })}
-        </div>
-      }
-      <>
-        {(picsData.length > 0) &&
-          <>
-            <ArrowsButton
-              type='inImg'
-              position={'left'}
-              onClick={handlePrev}
-              className={`${styles.arrowNavigate} ${styles.arrowNavigate_left}`}
-            />
-            <ArrowsButton
-              type='inImg'
-              position={'right'}
-              onClick={handleNext}
-              className={`${styles.arrowNavigate} ${styles.arrowNavigate_right}`}
-            />
-          </>
-        }
-      </>
 
-      <div className={styles.countPic}>
-        <p className={styles.counter}>{activePhoto + 1} / {picsData.length}</p>
+    <>
+      <div className={styles.outsideContainer}>
+        <CounterElement activeIndex={activePhoto} totalLength={picsData.length} />
+        <PopupCloseButton
+          className={styles.closePopupButton}
+          closePopupHandler={closePopup} />
       </div>
 
-    </div>
+      <div className={styles.innerContainer}>
+        {picsData &&
+          <div className={styles.imageContainer} ref={currentActiveImageRef}>
+            {picsData.map((pic, index) => {
+              return (
+                <Image
+                  key={pic.uuid}
+                  className={styles.image}
+                  src={pic.image}
+                  alt={`Photo ${pic.uuid}`}
+                  width={880}
+                  height={740}
+                  loading={isLoaded(index, activePhoto) ? 'eager' : 'lazy'}
+                // priority={true}
+                />
+              );
+            })}
+          </div>
+        }
+        <>
+          {((picsData.length > 0) && isOpen) &&
+            <>
+              <ArrowsButton
+                type='inImg'
+                position={'left'}
+                onClick={handlePrev}
+                disabled={activePhoto === 0}
+                className={`${styles.arrowNavigate} ${styles.arrowNavigate_left}`}
+              />
+              <ArrowsButton
+                type='inImg'
+                position={'right'}
+                onClick={handleNext}
+                disabled={activePhoto === picsData.length - 1}
+                className={`${styles.arrowNavigate} ${styles.arrowNavigate_right}`}
+              />
+            </>
+          }
+        </>
+      </div>
+    </>
   );
 };
 

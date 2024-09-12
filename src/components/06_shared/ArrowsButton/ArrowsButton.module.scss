@@ -11,9 +11,7 @@
   padding: 0;
 
 
-/*   @include breakpoint(screen768) {
-    max-height: 80px;
-  } */
+
 
   &__inImg {
     background-color: transparent;
@@ -21,8 +19,9 @@
 
     &:focus-visible {
       outline: transparent;
+
       & span {
-          outline: auto;
+        outline: auto;
       }
     }
   }
@@ -34,12 +33,23 @@
       transform: rotate(180deg);
     }
 
+    &:hover {
+      cursor: pointer;
+      & svg {
+        transition: transform .2s ease;
+        transform: rotate(180deg) translate(5px);
+      }
+    }
+
+    &:disabled {
+      cursor: default;
       &:hover {
         & svg {
-          transition: transform .3s linear;
-          transform: rotate(180deg) translate(5px);
+          transform: rotate(180deg) translate(0);
+          transition: transform .2s ease;
         }
       }
+    }
 
   }
 
@@ -47,10 +57,22 @@
     & svg {
       transform: rotate(0);
     }
+
     &:hover {
+      cursor: pointer;
       & svg {
-        transition: transform .3s linear;
+        transition: transform .2s ease;
         transform: translate(5px);
+      }
+    }
+
+    &:disabled {
+      &:hover {
+        cursor: default;
+        & svg {
+          transition: transform .2s ease;
+          transform: translate(0);
+        }
       }
     }
   }
@@ -87,11 +109,16 @@
     height: 35px;
     width: 35px;
   }
+
+  &:disabled {
+    border-color: $gray;
+  }
+
 }
 
 .arrow_left.arrow__inImg {
   padding-left: 30px;
-  padding-right: 60Cpx;
+  padding-right: 60px;
 
   @include breakpoint(screen960) {
     padding-right: 30px;
@@ -124,5 +151,21 @@
 
   @include breakpoint(screen576) {
     padding-right: 10px;
+  }
+}
+
+.disabled {
+  &:disabled {
+    opacity: .6;
+    &:hover {
+      opacity: 0.6;
+    }
+
+    & svg {
+      & path {
+        stroke: $gray;
+        fill: $gray;
+      }
+    }
   }
 }
