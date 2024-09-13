@@ -23,16 +23,46 @@
 
 
 
-  &>.image {
+  &>div>.image {
     opacity: .6;
     transition: opacity .2s linear;
   }
 
   &:hover {
-    & .image {
+    & div>.image {
       opacity: 1;
       transition: opacity .2s linear;
     }
+  }
+}
+
+
+.imageContainer {
+  width: 100%;
+
+  height: auto;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth; /* Плавная прокрутка */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & img {
+    transition: transform 0.3s ease-in-out;
+    /* Плавный переход при смене слайдов */
   }
 }
 
@@ -41,7 +71,14 @@
   object-fit: contain;
   object-position: center;
   width: 100%;
+  min-width: 100%;
   height: 100%;
+
+/*   background: url('../../../../../../../../../public/svg/loader.gif') center center no-repeat; // new
+  background-size: 40px; // new
+ */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .arrowNavigate {
@@ -54,6 +91,11 @@
     background-color: $white;
     opacity: .6;
     transition: opacity .3s linear;
+
+    @include breakpoint(screen576) {
+      width: 30px !important;
+      height: 30px !important;
+    }
 
     &:focus {
       outline: auto;
@@ -68,10 +110,20 @@
 
   &_left {
     left: 0;
+    padding: 0 10px 0 20px !important;
+
+    @include breakpoint(screen768) {
+      padding: 0 0 0 10px !important;
+    }
   }
 
   &_right {
     right: 0;
+    padding: 0 20px 0 10px !important;
+
+    @include breakpoint(screen768) {
+      padding: 0 10px 0 0 !important;
+    }
   }
 }
 
@@ -105,12 +157,13 @@
   height: 5px;
   width: 100%;
   border-radius: 3px;
-  background: $white;
-  opacity: .35;
-
+  background: linear-gradient(to right, rgba($white, 1) 50%, rgba($white, .35) 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: background-position 0.5s ease;
 
   &_isActive {
-    opacity: 1;
+    background-position: left;
   }
 }
 
@@ -139,7 +192,8 @@
 }
 
 .label {
-  width: 38px;
+  max-width: 38px;
+  width: 100%;
   height: 38px;
   background-color: $accent-green;
   border-radius: 50%;
@@ -148,12 +202,12 @@
   justify-content: center;
 
   @include breakpoint(screen768) {
-    width: 35px;
+    max-width: 35px;
     height: 35px;
   }
 
   @include breakpoint(screen480) {
-    width: 30px;
+    max-width: 30px;
     height: 30px;
   }
 }

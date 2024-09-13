@@ -11,4 +11,5 @@ export interface servicesCardsInterface {
 interface Image {
   _id: number;
   img: StaticImageData;
+  alt: string;
 }

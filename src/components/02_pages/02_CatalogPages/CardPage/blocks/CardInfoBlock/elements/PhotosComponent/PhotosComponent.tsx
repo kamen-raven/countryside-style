@@ -47,8 +47,10 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   // стейт для отображения активной выбранной фотографии в карусели миниатюр
   const [isActive, setIsActive] = useState(0);
 
+  const gapWidth = 10; // переменная для расстояния gap между изображениями
+
   // кастомный хук для управления свайпа - в него передаем наши рефы и данные стейта
-  const scrollActiveIndex = useSwipeUpdateActiveIndex(currentActiveImageRef, activePhoto, setActivePhoto, 10);
+  const scrollActiveIndex = useSwipeUpdateActiveIndex(currentActiveImageRef, activePhoto, setActivePhoto, gapWidth);
 
 
   //* функции */
@@ -65,7 +67,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
 
   // Поддерживаем синхронизацию между двумя контейнерами
   const syncScroll = (index: number) => {
-    setNewImage(index, currentActiveImageRef, setActivePhoto, 10);   // Скроллим до большого фото
+    setNewImage(index, currentActiveImageRef, setActivePhoto, gapWidth);   // Скроллим до большого фото
     scrollToThumbnail(index);  // Скроллим до миниатюры
   };
 
@@ -128,7 +130,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   // Обновляем основную галерею после закрытия попапа
   useEffect(() => {
     if (!isOpen) {
-      moveToImage(activePhoto, currentActiveImageRef, 10);   // Скроллим до большого фото
+      moveToImage(activePhoto, currentActiveImageRef, gapWidth);   // Скроллим до большого фото
     }
   }, [isOpen]);
 
@@ -138,7 +140,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     setActivePhoto(0);
     setIsActive(0);
     scrollToThumbnail(0);
-    moveToImage(0, currentActiveImageRef, 10);   // Скроллим до большого фото
+    moveToImage(0, currentActiveImageRef, gapWidth);   // Скроллим до большого фото
   }, []);
 
 
