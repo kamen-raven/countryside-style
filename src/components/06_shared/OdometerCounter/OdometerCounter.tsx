@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { OdometerCounterInterface } from './OdometerCounter.interface';
 import styles from './OdometerCounter.module.scss';
 import { useWindowWidthSize } from '~hooks/useWindowWidthSize';
@@ -9,8 +9,8 @@ import { useWindowWidthSize } from '~hooks/useWindowWidthSize';
 const OdometerCounter: React.FC<OdometerCounterInterface> = ({
   /* duration = 1000,
   step = 1, */
-  tag = 'span',
-  children,
+  // tag = 'span',
+  number,
   className
 }) => {
 
@@ -42,7 +42,7 @@ const OdometerCounter: React.FC<OdometerCounterInterface> = ({
     }
   }
 
-  const getChildren = children?.toString().replace(/[^\d]/g, ''); // приводим к строке и убираем все что НЕ-цифры
+  const getChildren = number?.toString().replace(/[^\d]/g, ''); // приводим к строке и убираем все что НЕ-цифры
   const totalNumbers = Number(getChildren); // переданное значение используем как цель для отображения (переводим в ЦИФРУ)
 
   const [count, setCount] = useState(startCount); // стейт отображаемого числа
@@ -51,6 +51,12 @@ const OdometerCounter: React.FC<OdometerCounterInterface> = ({
 
   getChildren && setCounterStats(getChildren); // 1 seconds
   const stepTime = Math.round(duration / (totalNumbers / step));
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
 
 
   // условие для запуска анимации когда пользователь выводит на экран информацию
@@ -77,7 +83,7 @@ const OdometerCounter: React.FC<OdometerCounterInterface> = ({
         observer.unobserve(ref.current);
       }
     };
-  }, []);
+  }, [isClient]);
 
 
 
@@ -86,7 +92,7 @@ const OdometerCounter: React.FC<OdometerCounterInterface> = ({
     let currentNumber = count;
     let interval: NodeJS.Timeout;
 
-    if (isVisible) {
+    if (isVisible && isClient) {
       interval = setInterval(() => {
         currentNumber = currentNumber + step;
 
@@ -100,8 +106,7 @@ const OdometerCounter: React.FC<OdometerCounterInterface> = ({
 
 
     return () => clearInterval(interval); // Очистка интервала при размонтировании или завершении эффекта
-  }, [isVisible]);
-
+  }, [isClient, isVisible, step, totalNumbers, stepTime]);
 
 
   const formattedNumber = count.toLocaleString('ru-RU');//.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0'); // добавляем неразрывный пробел после каждого третьего символа
@@ -109,48 +114,59 @@ const OdometerCounter: React.FC<OdometerCounterInterface> = ({
 
   const windowSize = useWindowWidthSize();
 
-
-
   // выбираем тэг для отображения информации - SPAN / P / DIV
-  const setTag = (t: typeof tag) => {
-    if (t == 'span') {
-      return (
-        <span ref={ref} className={`${className} ${isVisible ? styles.isVisible : styles.isHidden}`}>
-          {formattedNumber}
-        </span>
-      );
-    }
+  /*     const setTag = (t: typeof tag) => {
+        if (t == 'span') {
+          return (
+            <span ref={ref} className={`${className} ${isVisible ? styles.isVisible : styles.isHidden}`}>
+              {formattedNumber}
+            </span>
+          );
+        }
 
-    if (t == 'p') {
-      return (
-        <p ref={ref} className={`${className} ${isVisible ? styles.isVisible : styles.isHidden}`}>
-          {formattedNumber}
-        </p>
-      );
-    }
+        if (t == 'p') {
+          return (
+            <p ref={ref} className={`${className} ${isVisible ? styles.isVisible : styles.isHidden}`}>
+              {formattedNumber}
+            </p>
+          );
+        }
 
-    if (t == 'div') {
-      return (
-        <div ref={ref} className={`${className} ${isVisible ? styles.isVisible : styles.isHidden}`}>
-          {formattedNumber}
-        </div>
-      );
-    }
-  };
+        if (t == 'div') {
+          return (
+            <div ref={ref} className={`${className} ${isVisible ? styles.isVisible : styles.isHidden}`}>
+              {formattedNumber}
+            </div>
+          );
+        }
+      }; */
+
+  const isLargeScreen = windowSize >= 768;
 
 
 
-  if (windowSize >= 768) {
-    return (
-      setTag(tag)
-    );
-  } else {
-    return (
-      <div className={className}>
-        {children}
-      </div>
-    );
-  }
+  return (
+    <>
+      {isClient ?
+        (isLargeScreen ?
+          <div ref={ref} className={`${className} ${isVisible ? styles.isVisible : styles.isHidden}`}>
+            {formattedNumber}
+          </div>
+          :
+          <div className={className}>
+            {getChildren}
+          </div>
+        )
+        :
+        null
+      }
+    </>
+  );
+  /*     return (
+
+        setTag(tag)
+
+      ); */
 };
 
 

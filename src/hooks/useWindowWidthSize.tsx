@@ -1,22 +1,17 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export function useWindowWidthSize() {
-  const [widthSize, setWidthSize] = useState(0);
+  const [widthSize, setWidthSize] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
 
-  useEffect(() => {
+  const handleResize = useCallback(() => {
     setWidthSize(window.innerWidth);
+  }, []);
+  useEffect(() => {
 
-    function handleResize() {
-      setWidthSize(window.innerWidth);
-    }
 
-/*     window.addEventListener("resize", () => {
-      setTimeout(() => handleResize(), 10);
-    }); */
-
-    window.addEventListener("resize",handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);

@@ -33,9 +33,10 @@ const InfoHead: React.FC = () => {
 
         <div className={styles.countInfo}>
           <h3 className={styles.countInfo__title}>
-            <OdometerCounter className={styles.countInfo__num} tag={'div'}>
-              256
-            </OdometerCounter>
+            <OdometerCounter className={styles.countInfo__num}
+                              /* tag={'div'} */
+                              number={256}
+              />
             Проданных объектов загородной недвижимости в&nbsp;{reportYear}&nbsp;году
           </h3>
           <p className={styles.countInfo__description}>
