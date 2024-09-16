@@ -18,7 +18,7 @@ export async function getObjectsInVillages(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 900
+        revalidate: 3600 // 1 час
       }
     });
 
