@@ -21,11 +21,11 @@ import Service3_5 from '~img/servicesPages/storiesCards/forSellersPage/03mainten
 
 
 
-import { servicesCardsInterface } from '../servicesCards.interface';
+import { storiesCardsInterface } from '../servicesCards.interface';
 
 
 
-const servicesCardsForSellers: servicesCardsInterface[] = [
+const servicesCardsForSellers: storiesCardsInterface[] = [
   {
     _id: 1,
     title: 'Оценка',

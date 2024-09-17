@@ -11,5 +11,20 @@ export interface servicesCardsInterface {
 interface Image {
   _id: number;
   img: StaticImageData;
+}
+
+
+
+export interface storiesCardsInterface {
+  _id: number;
+  title: string;
+  images: ImageStories[];
+}
+
+
+
+interface ImageStories {
+  _id: number;
+  img: StaticImageData;
   alt: string;
 }
