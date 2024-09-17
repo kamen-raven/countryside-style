@@ -80,14 +80,16 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
   };
 
   const sortedObjects = sortingObjects(objectsType, typePage);
-
+  const allObjects = sortedObjectsByPrice(objectsType);
 
 
   return (
-    <CatalogPage typePage={params.type}
+    <CatalogPage
+      typePage={params.type}
       generalContactsData={generalContactsData}
       objectsData={sortedObjects}
       reviewsData={reviews}
+      allObjects={allObjects}
     />
   );
 }
