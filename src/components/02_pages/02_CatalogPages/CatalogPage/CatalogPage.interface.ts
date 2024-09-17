@@ -10,4 +10,5 @@ export interface CatalogPageInterface extends DetailedHTMLProps<HTMLAttributes<H
   villagesData?: VillageObjectInterface[];//objectItemInterface[];
   generalContactsData: generalContactsDataInterface;
   reviewsData: ReviewInterface[];
+  allObjects?: RealEstateObjectInterface[];
 }

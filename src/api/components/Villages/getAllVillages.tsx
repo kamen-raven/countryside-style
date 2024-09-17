@@ -12,7 +12,7 @@ export async function getAllVillages(): Promise<VillageObjectInterface[]> {
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 900
+        revalidate: 3600 // 1 час
       }
     });
 

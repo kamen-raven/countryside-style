@@ -12,7 +12,7 @@ import usePaginationCounter from '~hooks/usePaginationCounter.ts';
 
 
 const SearchResultsLayoutBlock: React.FC<SearchResultsLayoutBlockInterface> = ({ filteredData }) => {
-  const itemsPerPage = 12;//filteredData?.length + 1;  //! количество объектов на странице //*пока не отображаем
+  const itemsPerPage = 18;//filteredData?.length + 1;  //! количество объектов на странице //*пока не отображаем
 
 
 

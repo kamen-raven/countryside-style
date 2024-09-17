@@ -23,16 +23,22 @@ const Navbar: React.FC<NavbarInterface> = ({ listItems, generalContactsData }) =
 
   const windowWidth = useWindowWidthSize();
 
-  const deskWidth = windowWidth && windowWidth >= 1024;
+  const [isMounted, setIsMounted] = useState(false);
+  const deskWidth = isMounted && windowWidth >= 1024;
   const mobWidth = windowWidth < 1024;
 
+
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   /* Проверка разрешения экрана и установка закрытого меню в случае десктопа */
   useEffect(() => {
     if (deskWidth) {
       setShowMobileMenu(false);
     }
-  }, [deskWidth]);
+  }, [deskWidth, isMounted]);
 
   /* Навешиваем слушатель на закрытие меню по ESC */
   useEffect(() => {

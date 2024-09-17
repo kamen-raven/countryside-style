@@ -13,7 +13,7 @@ import { formatNumber, parseFormattedNumber } from '~helpers/formatters/formatCo
 import { SearchClearButton } from '~shared/index.ts';
 
 
-const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, typePage }) => {
+const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, typePage, allObjectsData }) => {
 
   // Деструктуризация объекта searchStore с значениями по умолчанию
   const {
@@ -35,6 +35,7 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
     setSearchTypes: useSearchObjectsStore((state) => state.actions.setSearchTypes),
     setSearchTypeLabels: useSearchObjectsStore((state) => state.actions.setSearchTypeLabels),
     setDataForSearch: useSearchObjectsStore((state) => state.actions.setDataForSearch),
+    setInitialDataForSearch: useSearchObjectsStore((state) => state.actions.setInitialDataForSearch),
     fetchDataForSearch: useSearchObjectsStore((state) => state.actions.fetchDataForSearch),
   };
 
@@ -107,7 +108,7 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
     setTempSearchTypeLabels(options);
     setTempSearchTypes(getTypes);
-    searchActions.setSearchTypeLabels(options);
+    //searchActions.setSearchTypeLabels(options);
     //searchActions.setSearchTypes(getTypes);
   };
 
@@ -128,6 +129,7 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
       searchActions.setSearchPriceMax(tempSearchPriceMax);
       //}
 
+      searchActions.setSearchTypeLabels(tempSearchTypeLabels);
       //if (tempSearchType !== 'all') {
       searchActions.setSearchTypes(tempSearchTypes);
       //}
@@ -136,6 +138,10 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
       if (initialData.length > 0) {
         searchActions.setDataForSearch(initialData);
         console.log('catch!');
+      } else if (allObjectsData && allObjectsData?.length > 0) {
+        searchActions.setInitialDataForSearch(allObjectsData);
+        searchActions.setDataForSearch(allObjectsData);
+        console.log('GetData!');
       } else {
         await searchActions.fetchDataForSearch();
         console.log('fetch!');

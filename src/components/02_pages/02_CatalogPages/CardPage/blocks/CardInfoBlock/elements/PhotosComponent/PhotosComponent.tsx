@@ -11,9 +11,10 @@ import { RealEstateObjectInterface } from '~interfaces/objects.interface.ts';
 import { VillageObjectInterface } from '~interfaces/villages.interface.ts';
 import formatPhotosArray from '~helpers/formatters/formatPhotosArray.ts';
 import useObjectPhotoStore from '~store/objectsCardStore/useObjectPhotoStore.ts';
-import useUpdateActiveIndex from '~hooks/useUpdateActiveIndex.ts';
+import useSwipeUpdateActiveIndex from '~hooks/useSwipeUpdateActiveIndex.ts';
 import useArrowsKeysEvents from '~hooks/useArrowsKeysEvents.ts';
 import { useToggleMainPopupStore } from '~store/popupsStore/useTogglePopupStore.ts';
+import { decreaseIndex, increaseIndex, moveToImage, setNewImage } from '~helpers/swipeFunction/swipeFunction.ts';
 
 
 const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
@@ -25,14 +26,13 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     );
   }
 
+  //* переменные */
   // весь массив фотографий и планов объекта
   const picturesArray = formatPhotosArray(data);
 
-
   // стейт открытия попапа
-  const { isOpen } = useToggleMainPopupStore();
-  // Локальное состояние
-  const [localActivePhoto, setLocalActivePhoto] = useState(0);
+  const isOpen = useToggleMainPopupStore((state) => state.isOpen);
+
 
   // создаем реф для скролла большой текущей фотографии
   const currentActiveImageRef = useRef<HTMLDivElement>(null);
@@ -40,18 +40,20 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   const smallPhotosContainerRef = useRef<HTMLDivElement>(null);
 
   // Получение текущего фото и действий из хранилища ZUSTAND
-  const {
-    activePhoto,
-    actions: { setActivePhoto, }
-  } = useObjectPhotoStore();
+  const activePhoto = useObjectPhotoStore((state) => state.activePhoto);
+  const setActivePhoto = useObjectPhotoStore((state) => state.actions.setActivePhoto);
+
+
+  // стейт для отображения активной выбранной фотографии в карусели миниатюр
+  const [isActive, setIsActive] = useState(0);
+
+  const gapWidth = 10; // переменная для расстояния gap между изображениями
 
   // кастомный хук для управления свайпа - в него передаем наши рефы и данные стейта
-  const scrollActiveIndex = useUpdateActiveIndex(currentActiveImageRef, localActivePhoto, setLocalActivePhoto);
+  const scrollActiveIndex = useSwipeUpdateActiveIndex(currentActiveImageRef, activePhoto, setActivePhoto, gapWidth);
 
 
-
-
-
+  //* функции */
   // скролл до миниатюры
   const scrollToThumbnail = (index: number) => {
     const container = smallPhotosContainerRef.current;
@@ -63,57 +65,39 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     }
   };
 
-  // скролл до изображения
-  const scrollToImage = (index: number) => {
-    const currentNode = currentActiveImageRef.current;
-
-    if (!currentNode) {
-      return;
-    }
-    // setActivePhoto(index);
-
-    const dataContainer = currentNode.getBoundingClientRect();
-    currentNode.scrollTo({
-      left: index * (dataContainer.width + 10),
-      behavior: 'smooth'
-    });
-  };
-
   // Поддерживаем синхронизацию между двумя контейнерами
   const syncScroll = (index: number) => {
+    setNewImage(index, currentActiveImageRef, setActivePhoto, gapWidth);   // Скроллим до большого фото
     scrollToThumbnail(index);  // Скроллим до миниатюры
-    scrollToImage(index);   // Скроллим до большого фото
   };
 
-
+  //* Кнопки */
   // клик на превью картинки
   const handleThumbnailClick = (index: number) => {
-    setLocalActivePhoto(index);  // Меняем локальное состояние
-    syncScroll(index);  // Синхронизируем скролл
+    if (activePhoto !== index) {
+      syncScroll(index);
+    }
   };
-
 
   // кнопка "Вперед"
   const handleNext = () => {
-    const nextIndex = localActivePhoto === picturesArray.length - 1 ? 0 : localActivePhoto + 1;
-    setLocalActivePhoto(nextIndex);  // Меняем локальное состояние
-    syncScroll(nextIndex);  // Синхронизируем скролл
+    const nextPic = increaseIndex(activePhoto, picturesArray.length); // переменная расчета листания вперед
+    syncScroll(nextPic);  // Синхронизируем скролл
   };
 
   // кнопка "Назад"
   const handlePrev = () => {
-    const prevIndex = localActivePhoto === 0 ? picturesArray.length - 1 : localActivePhoto - 1;
-    setLocalActivePhoto(prevIndex);  // Меняем локальное состояние
-    syncScroll(prevIndex);  // Синхронизируем скролл
+    const prevPic = decreaseIndex(activePhoto);    // переменная расчета листания назад
+    syncScroll(prevPic);  // Синхронизируем скролл
   };
 
   // Кнопка "Планировка"
   const handlePlanButton = () => {
     const planPicIndex = data.photo_images.length;
-    setLocalActivePhoto(planPicIndex);
     syncScroll(planPicIndex);
   };
 
+  //* Эффекты */
 
   // для переключений слайдов по стрелкам
   useArrowsKeysEvents((key) => {
@@ -127,53 +111,40 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
     }
   });
 
-  const [isActive, setIsActive] = useState(0);
+
+
+
+  // обновляем текущий индекс на основе данных хука по контролю индекса
+  useEffect(() => {
+    setActivePhoto(scrollActiveIndex);
+    scrollToThumbnail(scrollActiveIndex);
+
+    const timeoutThumbnail = setTimeout(() => {
+      setIsActive(scrollActiveIndex); // Отложенное обновление activeIndex
+    }, 70);
+    return () => clearTimeout(timeoutThumbnail); // Очистка таймера при изменении
+  }, [scrollActiveIndex]);
+
+
+
+  // Обновляем основную галерею после закрытия попапа
+  useEffect(() => {
+    if (!isOpen) {
+      moveToImage(activePhoto, currentActiveImageRef, gapWidth);   // Скроллим до большого фото
+    }
+  }, [isOpen]);
+
 
   // для задания первой фотографии при первичном рендере карточки объекта
   useEffect(() => {
     setActivePhoto(0);
+    setIsActive(0);
+    scrollToThumbnail(0);
+    moveToImage(0, currentActiveImageRef, gapWidth);   // Скроллим до большого фото
   }, []);
-  // обновляем текущий индекс на основе данных хука по контролю индекса
-  useEffect(() => {
-    scrollToThumbnail(localActivePhoto);
-    setLocalActivePhoto(scrollActiveIndex);
-
-    const timeout = setTimeout(() => {
-      setIsActive(localActivePhoto); // Отложенное обновление activeIndex
-    }, 70);
-    return () => clearTimeout(timeout); // Очистка таймера при изменении
-  }, [localActivePhoto, scrollActiveIndex]);
 
 
-  // Прокручивать миниатюры при изменении активного фото
-  /*   useEffect(() => {
-      scrollToThumbnail(localActivePhoto);
-    }, [localActivePhoto]);
-   */
-
-  // Устанавливаем начальное значение в Zustand после первого рендера
-  // Обновляем глобальное состояние только когда нужно
-  useEffect(() => {
-    setActivePhoto(localActivePhoto);
-  }, [localActivePhoto]);
-
-  // для задания выбранной карточки при открытии попапа
-  useEffect(() => {
-    setLocalActivePhoto(activePhoto);
-  }, [isOpen]);
-
-
-/*   useEffect(() => {
-    if (localActivePhoto !== null) {
-      const timeout = setTimeout(() => {
-        setIsActive(localActivePhoto); // Отложенное обновление activeIndex
-      }, 100);
-
-      return () => clearTimeout(timeout); // Очистка таймера при изменении
-    }
-  }, [localActivePhoto]);
- */
-
+  //* Верстка компонентов */
   // функция установления шильдика проданного объекта
   const setLabelSold = (data: RealEstateObjectInterface) => {
     const isArchive = data.display_pages.some(page => page.display_pages.value === 'Архив');
@@ -196,7 +167,6 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
   };
 
 
-
   return (
     <div className={styles.photosContainer}>
 
@@ -204,8 +174,8 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
         <div className={styles.mainPhotoContainer}>
           <ObjectImagePopupButton className={styles.imageContainer}
             picData={picturesArray}
-            ref={currentActiveImageRef}
-          >
+              ref={currentActiveImageRef}
+            >
             {picturesArray.map((pic, index) => (
               <Image
                 key={pic.uuid}
@@ -214,10 +184,8 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                 alt={data.name}
                 width={980}
                 height={740}
-                loading={index < 10 ? 'eager' : 'lazy'}
-                priority={index < 10 ? true : false}
-              /* placeholder={'blur'}
-              blurDataURL={pic.blurredDataUrl} */
+                loading={index < 5 ? 'eager' : 'lazy'}
+                priority={index < 5 ? true : false}
               />
             ))}
           </ObjectImagePopupButton>
@@ -243,6 +211,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                   type='inImg'
                   position={'left'}
                   onClick={handlePrev}
+                  disabled={activePhoto === 0}
                   className={`${styles.arrowNavigate} ${styles.arrowNavigate_left}`}
                 />
                 {/* Кнопка ВПЕРЕД */}
@@ -250,6 +219,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                   type='inImg'
                   position={'right'}
                   onClick={handleNext}
+                  disabled={activePhoto === picturesArray.length - 1}
                   className={`${styles.arrowNavigate} ${styles.arrowNavigate_right}`}
                 />
               </>
@@ -274,7 +244,6 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
       {(picturesArray.length > 0) &&
         <div className={`${styles.smallPhotosContainer} ${styles.smallPhotosContainer_isScroll}`}>
           <div ref={smallPhotosContainerRef} className={styles.smallPhotosInner}>
-
             {picturesArray.map((photo, index) => {
 
               const activeIndex = isActive === index;
@@ -288,14 +257,11 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                   alt={photo.uuid}
                   width={110}
                   height={110}
-                  loading={index < 4 ? 'eager' : 'lazy'}
-                  priority={index < 4 ? true : false}
-                /// placeholder={'blur'}
-                //blurDataURL={photo.blurredDataUrl}
+                  loading={index < 5 ? 'eager' : 'lazy'}
+                  priority={index < 5 ? true : false}
                 />
               );
             })}
-
           </div>
         </div>
       }

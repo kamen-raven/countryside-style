@@ -14,5 +14,6 @@ export interface SearchBarObjectsInterface
     initialData: RealEstateObjectInterface[];
   };
   typePage: "flats" | "lands" | "houses-and-cottages" | "villages" | "search";
+  allObjectsData?: RealEstateObjectInterface[];
   /*   villagesData?: VillageObjectInterface[]; */
 }

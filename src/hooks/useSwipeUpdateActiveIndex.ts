@@ -1,21 +1,13 @@
 'use client';
 import { RefObject, useEffect } from "react";
 
-export default function useUpdateActiveIndex(
+export default function useSwipeUpdateActiveIndex(
   containerRef: RefObject<HTMLDivElement>,
   currentImg: number,
   setCurrentImg: (index: number) => void,
+  gapWidth: number = 0
 ) {
-/*   // Получение текущего фото и действий из хранилища ZUSTAND
-  const { activePhoto,
-    actions: {
-      setActivePhoto,
-    }
-  } = useObjectPhotoStore();
- */
 
-    // объявляем стейт для корректного отображения большой текущей фотографии
-    //const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const currentNode = containerRef?.current;
@@ -33,7 +25,7 @@ export default function useUpdateActiveIndex(
       }
 
       const shift = firstElementData.left - dataContainer.left;
-      setCurrentImg(Math.abs(Math.round(shift / (dataContainer.width + 10))));
+      setCurrentImg(Math.abs(Math.round(shift / (dataContainer.width + (gapWidth ? gapWidth : 0)))));
     };
 
     currentNode.addEventListener('scroll', scroll);

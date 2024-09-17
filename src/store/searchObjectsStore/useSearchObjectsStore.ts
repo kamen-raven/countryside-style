@@ -21,6 +21,7 @@ interface SearchObjectsStateInterface {
     setSearchTypes: (type:  ("flats" | "lands" | "houses-and-cottages" | "all")[]) => void; // 'all' | 'flats' | 'lands' | 'houses-and-cottages') => void;
     setSearchTypeLabels: (label: string[]) => void;
     setDataForSearch: (data:  RealEstateObjectInterface[]) => void;
+    setInitialDataForSearch: (data:  RealEstateObjectInterface[]) => void;
     fetchDataForSearch: () => Promise<void>;
   }
 }
@@ -47,6 +48,7 @@ export const useSearchObjectsStore = create<SearchObjectsStateInterface>((set) =
     setSearchTypeLabels: (labels) => set({searchTypeLabels: labels}),
 
     setDataForSearch: (data) => set({ dataForSearch: data }),
+    setInitialDataForSearch: (data) => set({ initialData: data }),
 
 
     fetchDataForSearch: async () => {
