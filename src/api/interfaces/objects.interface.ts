@@ -3,7 +3,7 @@ import { ImageInterface } from "./objectImage.interface";
 export interface RealEstateObjectInterface {
   uuid: string;
   created_at: string;
-  id: number;
+  id: string;
   name: string;
   isbook: boolean,   //* новые правки
   pdf: string,    //* новые правки
