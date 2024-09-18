@@ -5,6 +5,7 @@ import styles from './ContactsMainBlock.module.scss';
 import { AddressElement } from '~entities/index';
 import { ContactFormLayout } from '~common/QuestionFormBlock/elements';
 import { RequestFormComponent } from '~features/Forms';
+import Link from 'next/link';
 
 
 const ContactsMainBlock: React.FC<ContactsBlockProps> = ({ generalContactsData }) => {
@@ -12,7 +13,9 @@ const ContactsMainBlock: React.FC<ContactsBlockProps> = ({ generalContactsData }
     <section className={styles.wrapper}>
       <div className={styles.containerInfo}>
         <h2 className={styles.title}>
-          Контакты
+          <Link className={styles.title_link} href={'/contacts'}>
+            Контакты
+          </Link>
         </h2>
         <AddressElement addressInfoData={generalContactsData} />
       </div>
