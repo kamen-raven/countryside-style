@@ -30,7 +30,7 @@ const TagsListElement: React.FC<TagsListElementInterface> = ({ blogPostsData }) 
 
     if (pathname.length > 2) {
       router.push('/blog');
-      console.log('push!');
+      //console.log('push!');
     }
   };
 

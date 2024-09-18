@@ -3,18 +3,21 @@ import styles from './ReviewTitleComponent.module.scss';
 import { ReviewTitleComponentInterface } from './ReviewTitleComponent.interface';
 import { RatingLabelElement } from './elements/RatingLabelElement/RatingLabelElement';
 import { OpenPopupButton } from '~shared/index';
+import Link from 'next/link';
 
-const ReviewTitleComponent: React.FC<ReviewTitleComponentInterface> = ({className, type}) => {
+const ReviewTitleComponent: React.FC<ReviewTitleComponentInterface> = ({ className, type }) => {
   return (
     <div className={`${styles.titleContainer} ${className}`}>
       {type === 'review' ?
-      <h1 className={styles.title}>
-        Отзывы
-      </h1>
-      :
-      <h2 className={styles.title}>
-        Отзывы
-      </h2>
+        <h1 className={styles.title}>
+          Отзывы
+        </h1>
+        :
+        <h2 className={styles.title}>
+          <Link className={styles.title_link} href={'/reviews'}>
+            Отзывы
+          </Link>
+        </h2>
       }
       <div className={styles.reviewsContainer}>
         <RatingLabelElement service={'yandex'} />

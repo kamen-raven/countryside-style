@@ -24,6 +24,7 @@ const AddressComponent: React.FC<AddressComponentInterface> = ({ data, type }) =
     }
   };
 
+  const currentDate = new Date();
 
   return (
     <address className={`${styles.addressContainer} ${setTypeStyle.container[type]}`}>
@@ -71,7 +72,7 @@ const AddressComponent: React.FC<AddressComponentInterface> = ({ data, type }) =
       <p className={`${styles.address} ${setTypeStyle.address[type]}`}>
         {data.address}
         <br />
-        агентство недвижимости «Загородный Стиль»
+        {type === 'footer' ? `©\u00a0${currentDate.getFullYear()}\u00a0\u00a0` : ''}Агентство недвижимости «Загородный Стиль»
       </p>
     </address>
   );

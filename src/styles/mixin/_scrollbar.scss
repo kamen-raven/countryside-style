@@ -7,8 +7,10 @@
                   $border: 1px solid $gray) {
   /* «цвет ползунка» «цвет полосы скроллбара» */
 /*   scrollbar-color: $accent-green $white;
-  scrollbar-width: $scrollbar-width;
-  border-radius: $border-radius; */
+  scrollbar-width: $scrollbar-width; */
+  //border-radius: $border-radius;
+
+
 
   &::-webkit-scrollbar {
     width: $scrollbar-width;

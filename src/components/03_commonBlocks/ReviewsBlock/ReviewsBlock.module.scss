@@ -28,7 +28,7 @@
   min-width: 0;
   max-width: 100%;
   overflow: auto;
-  overflow-x: auto;
+  overflow-x: visible;//auto;
   overflow-y: hidden;
   padding-bottom: 50px;
 
@@ -39,7 +39,10 @@
     padding-bottom: 20px;
   }
 
-  scroll-snap-type: x mandatory;  // new swipe
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+  /* Плавная прокрутка */
 }
 
 .innerBlock {

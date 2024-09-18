@@ -53,11 +53,11 @@ const SimpleSearchInput: React.FC<SimpleSearchInputInterface> = ({ searchBlogKey
   const handleSubmit = async (event?: React.FormEvent) => {
     event && event.preventDefault();
     setSearchBlogKey(tempSearchTerm);
-    console.log('click');
+    //console.log('click');
 
     if (pathname.length > 2) {
       router.push('/blog');
-      console.log('push!');
+      //console.log('push!');
     }
   };
 

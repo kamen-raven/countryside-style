@@ -46,11 +46,11 @@ const ReviewFormComponent: React.FC<ReviewFormComponentInterface> = ({ className
     // Проверка всех полей перед отправкой
     const isValid = validateAllFields({ phone, name, review });
     if (!isValid) {
-      console.log('error of send');
+      //console.log('error of send');
       /*       openSuccessPopup('errorMessage'); */
       return;
     }
-    console.log('success');
+    //console.log('success');
 
     try {
       // Вызываем функцию отправки данных, передавая значения полей формы

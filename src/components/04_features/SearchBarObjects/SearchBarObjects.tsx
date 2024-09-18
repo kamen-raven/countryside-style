@@ -137,24 +137,24 @@ const SearchBarObjects: React.FC<SearchBarObjectsInterface> = ({ searchStore, ty
 
       if (initialData.length > 0) {
         searchActions.setDataForSearch(initialData);
-        console.log('catch!');
+        //console.log('catch!');
       } else if (allObjectsData && allObjectsData?.length > 0) {
         searchActions.setInitialDataForSearch(allObjectsData);
         searchActions.setDataForSearch(allObjectsData);
-        console.log('GetData!');
+        //console.log('GetData!');
       } else {
         await searchActions.fetchDataForSearch();
-        console.log('fetch!');
+        //console.log('fetch!');
       }
 
 
       if (typePage !== 'search') {
         router.push('search-results');
-        console.log('push!');
+        //console.log('push!');
       }
 
     } catch (error) {
-      console.log('error', error);
+      //console.log('error', error);
     }
   };
 

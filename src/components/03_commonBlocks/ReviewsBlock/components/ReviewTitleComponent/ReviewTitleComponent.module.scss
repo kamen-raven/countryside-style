@@ -14,6 +14,14 @@
 
 .title {
   @include common-title(hTitle);
+
+  &_link {
+    color: $dark;
+    text-decoration: none;
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .reviewsContainer {

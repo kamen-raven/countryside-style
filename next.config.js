@@ -28,6 +28,22 @@ module.exports = {
         protocol: 'https',
         hostname: 'zagorod-style.ru',
       },
+      {
+        protocol: 'http',
+        hostname: '**.zagorodst.ru',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.zagorodst.ru',
+      },
+      {
+        protocol: 'http',
+        hostname: 'zagorodst.ru',
+      },
+      {
+        protocol: 'https',
+        hostname: 'zagorodst.ru',
+      },
     ],
   },
 };
