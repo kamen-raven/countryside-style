@@ -111,6 +111,10 @@
   gap: 20px 30px;
   justify-content: space-between;
 
+  @include breakpoint(screen1280) {
+    flex-wrap: wrap;
+  }
+
   @include breakpoint(screen1024) {
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -150,6 +154,18 @@
   align-items: flex-end;
   margin: auto 0;
 
+  @include breakpoint(screen1280) {
+    margin-left: auto;
+  }
+
+  @include breakpoint(screen1024) {
+    margin-left: 0;
+  }
+
+  @include breakpoint(screen768) {
+    align-items: center;
+    gap: 10px;
+  }
   &:hover {
     & .email {
       color: $accent-green-hover-dark;
@@ -181,5 +197,10 @@
 
   & svg {
     transition: all 0.2s linear;
+
+
+    @include breakpoint(screen768) {
+      scale: .8;
+    }
   }
 }
