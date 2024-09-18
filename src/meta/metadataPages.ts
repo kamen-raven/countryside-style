@@ -4,7 +4,7 @@ import generalContactsData from "~data/constant/generalContacts/generalContactsD
 import formatPhoneNumber from "~helpers/formatters/formatPhoneNumber";
 
 /* URL */
-const baseURL = "zagorod-style.ru";
+const baseURL = "zagorodst.ru";
 /* Изображение */
 const baseImg = "../../opengraph-image.png";
 /* Заголовок */
