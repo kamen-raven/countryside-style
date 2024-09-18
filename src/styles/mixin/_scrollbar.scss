@@ -12,6 +12,7 @@
 
   &::-webkit-scrollbar {
     width: $scrollbar-width;
+    scrollbar-width: $scrollbar-width;
     /* ширина для вертикального скролла */
     height: $scrollbar-width;
     /* высота для горизонтального скролла */

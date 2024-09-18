@@ -13,6 +13,9 @@
   display: grid;
   grid-template-rows: 310px auto;
 
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
   @include breakpoint(screen1280) {
     min-width: calc(50% - calc(80px/2));
   }
