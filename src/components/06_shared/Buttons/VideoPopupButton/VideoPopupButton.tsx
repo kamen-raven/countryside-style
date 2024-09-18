@@ -20,7 +20,7 @@ const VideoPopupButton: React.FC<VideoPopupButtonInterface> = ({ link, className
 
     getVideoLink(srcValue); // передаем ссылку
 
-    console.log('click VIDEO POPUP!!');
+    //console.log('click VIDEO POPUP!!');
   };
 
 

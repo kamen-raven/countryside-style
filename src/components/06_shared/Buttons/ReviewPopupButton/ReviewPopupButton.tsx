@@ -19,7 +19,7 @@ const ReviewPopupButton: React.FC<ReviewPopupButtonInterface> = ({ type, data, c
     null;
 
     getPopupData(data);
-    console.log('click Review POPUP!!');
+    //console.log('click Review POPUP!!');
   };
 
   return (

@@ -26,7 +26,7 @@ const SearchBarBlog: React.FC<SearchBarBlogInterface> = ({ blogPostsData }) => {
       //searchActions.fetchDataForBlogSearch();
       setInitialBlogData(blogPostsData);
       setDataForBlogSearch(blogPostsData);
-      console.log('set initial');
+      //console.log('set initial');
     }
     //? Добавьте зависимости, чтобы эффект выполнялся при изменении данных
   }, [blogPostsData, initialBlogData.length]);

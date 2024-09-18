@@ -46,11 +46,11 @@ const RequestFormComponent: React.FC<RequestFormComponentInterface> = ({ classNa
     // Проверка всех полей перед отправкой
     const isValid = validateAllFields({ phone, name });
     if (!isValid) {
-      console.log('error of send');
+      //console.log('error');
 /*       openSuccessPopup('errorMessage'); */
       return;
     }
-    console.log('success');
+    //console.log('success');
 
 
         try {
