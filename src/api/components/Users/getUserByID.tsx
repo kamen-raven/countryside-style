@@ -12,7 +12,7 @@ export async function getUserByID(uuid: string): Promise<UsersInterface> {
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 86400 // 1 сутки
+        revalidate: 60// 86400 // 1 сутки
       }
     });
 
