@@ -185,7 +185,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                 width={980}
                 height={740}
                 loading={index < 5 ? 'eager' : 'lazy'}
-                priority={index < 5 ? true : false}
+               /*  priority={index < 5 ? true : false} */
               />
             ))}
           </ObjectImagePopupButton>
@@ -258,7 +258,7 @@ const PhotosComponent: React.FC<PhotosComponentInterface> = ({ data }) => {
                   width={110}
                   height={110}
                   loading={index < 5 ? 'eager' : 'lazy'}
-                  priority={index < 5 ? true : false}
+                 /*  priority={index < 5 ? true : false} */
                 />
               );
             })}

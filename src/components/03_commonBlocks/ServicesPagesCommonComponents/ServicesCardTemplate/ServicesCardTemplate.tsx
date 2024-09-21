@@ -31,13 +31,13 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
 
 
   // функция установки приоритетности загрузки фото
-  const setPriority = () => {
+/*   const setPriority = () => {
     if(page === 'services') {
       return (index < 2 ? true : false);
     } else {
       return (false);
     }
-  };
+  }; */
   // функция установки приоритетности загрузки фото
   const setLoading = () => {
     if(page === 'services') {
@@ -58,7 +58,7 @@ const ServicesCardTemplate: React.FC<ServicesCardTemplateInterface> = ({
             src={serviceItem.image}
             alt={serviceItem.title}
             placeholder={'blur'}
-            priority={setPriority()}
+            /* priority={setPriority()} */
             loading={setLoading()}
           />
         }
