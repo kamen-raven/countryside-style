@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "targets": {
+          "browsers": ["> 1%", "last 4 versions", "Safari >= 9"]
+        },
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+  ],
+  "plugins": ["@babel/plugin-transform-named-capturing-groups-regex"]
+}

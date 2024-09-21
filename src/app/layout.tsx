@@ -1,5 +1,7 @@
-import { openSans, gothamPro } from '~fonts';
+/* import { openSans, gothamPro } from '~fonts'; */
 import '~styles/index.scss';
+import '~styles/fonts/openSans.scss';
+import '~styles/fonts/gothamPro.scss';
 import styles from "./layout.module.scss";
 import { Metadata } from 'next';
 
@@ -47,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={`${openSans.variable} ${gothamPro.variable}`} lang="ru" >
+    <html /* className={`${openSans.variable} ${gothamPro.variable}`} */ lang="ru" >
       <body className={` ${styles.page}`}>
         <div className={styles.container} >
           <Header />
