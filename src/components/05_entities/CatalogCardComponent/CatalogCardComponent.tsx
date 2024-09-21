@@ -16,13 +16,13 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = async ({ i
   const picturesArray = formatPhotosArray(item);
 
   // функция установки приоритетности загрузки фото
-  const setPriority = () => {
+/*   const setPriority = () => {
     if(place !== 'moreObj') {
       return (index < 6 ? true : false);
     } else {
       return (false);
     }
-  };
+  }; */
   // функция установки приоритетности загрузки фото
   const setLoading = () => {
     if(place !== 'moreObj') {
@@ -46,7 +46,7 @@ const CatalogCardComponent: React.FC<CatalogCardComponentInterface> = async ({ i
               width={460}
               height={350}
               loading={setLoading()}
-              priority={setPriority()}
+              /* priority={setPriority()} */
             />
           }
         </Link>
