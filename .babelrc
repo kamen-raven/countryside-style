@@ -1,13 +1,14 @@
 {
   "presets": [
+    "next/babel",
     [
-      "next/babel",
+      "@babel/preset-env",
       {
         "targets": {
-          "browsers": ["> 1%", "last 4 versions", "Safari >= 9"]
+          "browsers": ["defaults", "not IE 11", "maintained node versions", "safari >= 12"]
         },
-        "useBuiltIns": "usage",
-        "corejs": 3
+        "useBuiltIns": "entry",
+        "corejs": "3"
       }
     ]
   ],
