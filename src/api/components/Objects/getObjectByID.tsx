@@ -14,7 +14,7 @@ export async function getObjectByID(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 60 // 3600 // 1 час
+        revalidate:  3600 // 1 час
       }
     });
 
