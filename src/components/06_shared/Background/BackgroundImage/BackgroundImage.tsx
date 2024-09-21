@@ -17,7 +17,7 @@ const BackgroundImage: React.FC<BackgroundImageInterface> = ({ image, alt, class
       quality={100}
       sizes={sizes}
       fill
-      /* priority */
+      priority
     />
   );
 };
