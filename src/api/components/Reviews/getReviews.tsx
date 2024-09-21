@@ -19,7 +19,7 @@ export async function getAllReviews(pageSize?: number, page?: number): Promise<A
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 3600 // 1 час
+        revalidate: 60// 86400 // сутки
       }
     });
 
