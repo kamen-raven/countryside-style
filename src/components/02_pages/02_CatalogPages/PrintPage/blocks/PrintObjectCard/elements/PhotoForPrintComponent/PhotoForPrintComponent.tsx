@@ -28,7 +28,7 @@ const PhotoForPrintComponent: React.FC<PhotoForPrintComponentInterface> = ({ obj
               alt={objectData.name}
               width={640}
               height={480}
-              priority={true}
+              /* priority={true} */
             /*               onClick={() => console.log('click photo!!')} */
             />
           </div>

@@ -16,7 +16,7 @@ export async function getBlogArticleByID(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 60 // 7200 // 2 часа
+        revalidate: 3600 // 1 час
       }
     });
 
