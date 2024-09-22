@@ -12,7 +12,7 @@ export async function getObjects(): Promise<RealEstateObjectInterface[]> {
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 3600 // 1 час
+        revalidate: 60 //3600 // 1 час
       }
     });
 

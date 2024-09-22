@@ -1,7 +1,7 @@
 //---FONT---//
 /* font-family */
-$ff-gothamPro: 'Gotham Pro'; //var(--gothamPro);
-$ff-openSans: 'Open Sans';//var(--openSans);
+$ff-gothamPro: var(--gothamPro);
+$ff-openSans: var(--openSans);
 
 /* font-weight: */
 $light: 300;
