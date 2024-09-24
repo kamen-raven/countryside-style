@@ -17,7 +17,7 @@ const houseType = {
 
 const landType = {
   land_category: 'Категория земель',
-  //approve_usage: 'Разрешенное использование: ', //?
+  approve_usage: 'Разрешенное использование',
   area_plot: 'Площадь участка',
   relief_area: 'Рельеф участка',
   fencing: 'Ограждение участка',
@@ -56,7 +56,7 @@ const villageType = {
 };
 const villagePlotType = {
   category_land: 'Категория земель участков',
-  //approve_usage: 'Разрешенное использование: ', //?
+  approve_usage: 'Разрешенное использование',
   area_of_plot: 'Площадь одного участка от',
   relief_area_plot: 'Рельеф участков',
   //display_engineering_services: 'Коммуникации: ', //?
