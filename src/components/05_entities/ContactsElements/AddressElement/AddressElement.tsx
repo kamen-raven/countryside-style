@@ -47,7 +47,7 @@ const AddressElement: React.FC<AddressElementInterface> = ({ addressInfoData }) 
             href={addressInfoData.contacts.vkontakte}
             target='_blank'
             rel='noopener noreferrer'>
-            Все свежие объекты в&nbsp;нашей группе ВК
+            Все свежие объекты в&nbsp;группе ВК
             <span className={styles.contactItem__icon}>
               <VkontakteIcon />
             </span>
