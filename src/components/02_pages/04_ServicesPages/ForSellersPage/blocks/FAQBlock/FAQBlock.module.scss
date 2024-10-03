@@ -3,7 +3,7 @@
 .wrapper {
   grid-area: faqBlock;
   padding: $padding-gap;
-
+  border-top: 1px solid #A1A9AC;
   @include breakpoint(screen1024) {
     padding: $padding-gap-tab;
   }

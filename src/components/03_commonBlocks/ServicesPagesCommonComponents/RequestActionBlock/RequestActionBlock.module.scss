@@ -1,7 +1,6 @@
 @import '~global_styles';
 
 .wrapper {
-  background-color: $dark;
   padding: $padding-gap;
 
   @include breakpoint(screen1024) {
@@ -11,15 +10,16 @@
   @include breakpoint(screen768) {
     padding: $padding-gap-mob;
   }
-/*   padding: 70px 0;
 
-  @include breakpoint(screen1024) {
-    padding: clamp(50px, 6.6719vw, 70px) 0;
+
+  &__color_dark {
+    background-color: $dark;
   }
 
-  @include breakpoint(screen768) {
-  padding: clamp(30px, 7.2539vw, 50px) 0;
-  } */
+  &__color_green {
+    background-color: $accent-green;
+  }
+
 
   &_first {
     grid-area: requestAction-1;
@@ -27,6 +27,9 @@
 
   &_second {
     grid-area: requestAction-2;
+  }
+  &_third {
+    grid-area: requestAction-3;
   }
 }
 
@@ -46,6 +49,13 @@
 .description {
   @include common-paragraph(pXl,
     $color: $white,
+    $line-height: 125%);
+}
+
+.smallDescription {
+  @include common-paragraph(p,
+    $color: $white,
+    $font-weight: $light,
     $line-height: 125%);
 }
 
