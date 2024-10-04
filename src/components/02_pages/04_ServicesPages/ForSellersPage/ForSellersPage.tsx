@@ -22,10 +22,11 @@ const ForSellersPage: React.FC<ForSellersPageInterface> = ({
       <AdvantagesBlock advantagesList={advantagesListData} />
       <ServicesStoriesBlock servicesCardsData={servicesCardsData} />
       <RecentlySoldObjectsBlock archiveObjectsData={archiveObjectsData}/>
+      <RequestActionBlock typePage={typePage} gridArea={'second'} color={'green'} nameForm={'ForSellersPageForm2'} />
       <ReviewsBlock reviewsDataItem={reviewsData} />
-      <RequestActionBlock typePage={typePage} gridArea={'second'} nameForm={'ForSellersPageForm2'} />
       <FAQBlock faqData={faqData} />
       <InfoTextBlock />
+      <RequestActionBlock typePage={typePage} gridArea={'third'} nameForm={'ForSellersPageForm3'} />
     </main>
   );
 };

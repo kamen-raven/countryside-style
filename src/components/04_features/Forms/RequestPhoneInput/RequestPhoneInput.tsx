@@ -11,10 +11,13 @@ import { phoneValidationRules } from '~data/constant/formsValidationRules/formsV
 import useFormValidation from '~hooks/useFormValidation.ts';
 
 
-const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, nameForm, className }) => {
+const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, nameForm, color = 'common', className }) => {
   const validationRules = {
     phone: phoneValidationRules,
   };
+
+  const setColorBtn = color == 'common' ? styles.requestForm__button_common :  styles.requestForm__button_accent;
+  const setColorInput = color == 'common' ? null :  styles.requestForm__input_accent;
 
 
   // Состояния для значений полей формы
@@ -72,7 +75,7 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
       onSubmit={handleSubmit}>
       <label className={styles.requestForm__label}>
 
-        <input className={styles.requestForm__input}
+        <input className={`${styles.requestForm__input} ${setColorInput}`}
           placeholder='Ваш телефон'
           name={'phone'}
           type={'tel'}
@@ -86,7 +89,7 @@ const RequestPhoneInput: React.FC<RequestPhoneInputInterface> = ({ buttonText, n
           <InputErrorMessageElement error={errors.phone} />
         }
       </label>
-      <button className={styles.requestForm__button} type={"submit"}>
+      <button className={`${styles.requestForm__button} ${setColorBtn}`} type={"submit"}>
         {buttonText}
       </button>
       <PersonalAgreementElement className={styles.requestForm__agreement} />
