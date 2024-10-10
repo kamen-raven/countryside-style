@@ -2,6 +2,7 @@
 // stores/searchStore.ts
 import { create } from 'zustand';
 import { getObjects } from '~api/Objects/getObjects';
+import filteredActualObjects from '~helpers/objects/filteredActualObjects';
 import sortedObjectsByPrice from '~helpers/objects/sortedObjectsByPrice';
 import { RealEstateObjectInterface } from '~interfaces/objects.interface';
 
@@ -47,18 +48,21 @@ export const useSearchObjectsStore = create<SearchObjectsStateInterface>((set) =
     setSearchTypes: (types) => set({ searchTypes: types }),
     setSearchTypeLabels: (labels) => set({searchTypeLabels: labels}),
 
-    setDataForSearch: (data) => set({ dataForSearch: data }),
-    setInitialDataForSearch: (data) => set({ initialData: data }),
+    setDataForSearch: (data) => {
+      const filteredData = filteredActualObjects(data);
+      set({ dataForSearch: filteredData });
+    },
+    setInitialDataForSearch: (data) => {
+      const filteredData = filteredActualObjects(data);
+      set({ initialData: filteredData });
+    },
 
 
     fetchDataForSearch: async () => {
       try {
         const data = await getObjects();
 
-        const filteredData = data.filter((item: RealEstateObjectInterface) =>
-          item.display_pages.some(
-            (page) => page.display_pages.value !== 'Архив'
-          ));
+        const filteredData = filteredActualObjects(data);
 
           sortedObjectsByPrice(filteredData);
 
