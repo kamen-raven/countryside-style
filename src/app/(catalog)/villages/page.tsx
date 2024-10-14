@@ -10,6 +10,7 @@ import generalContactsData from "~data/constant/generalContacts/generalContactsD
 import { getAllVillages } from "~api/Villages/getAllVillages";
 import filteredVillagesByVisible from "~helpers/objects/filteredVillagesByVisible";
 import { metaCatalogPage } from "~meta/metadataPages";
+import sortReviewsByDate from "~helpers/reviews/sortReviewsByDate";
 
 export const metadata: Metadata = {
   title: `${metaCatalogPage.villages.category} | ${metaCatalogPage.villages.title}`,
@@ -36,7 +37,8 @@ export const metadata: Metadata = {
 
 export default async function PageVillages() {
 
-  const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
+  const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
+  const reviews = allReviews.toSpliced(8);
   const villagesObjects = await getAllVillages(); // берем все поселки
 
   const visibleVillages = filteredVillagesByVisible(villagesObjects); // отображаем только те поселки, которые необходимо по условиям их видимости на сайте

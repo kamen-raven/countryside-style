@@ -11,6 +11,7 @@ import servicesCardsForBuyers from "~data/constant/servicesBlock/servicesCards/f
 
 import { getAllReviews } from "~api/Reviews/getReviews";
 import { metaServicesForBuyers } from "~meta/metadataPages";
+import sortReviewsByDate from "~helpers/reviews/sortReviewsByDate";
 
 
 export const metadata: Metadata = {
@@ -38,8 +39,8 @@ export const metadata: Metadata = {
 
 
 export default async function PageForBuyers() {
-  const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
-
+  const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
+  const reviews = allReviews.toSpliced(8);
 
   return (
     <ForBuyersPage

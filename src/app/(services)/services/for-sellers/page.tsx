@@ -16,6 +16,7 @@ import { getObjects } from "~api/Objects/getObjects";
 import filteredArchiveObjects from "~helpers/objects/filteredArchiveObjects";
 import sortArchiveObjectsBySoldDate from "~helpers/objects/sortArchiveObjectsBySoldDate";
 import { metaServicesForSellers } from "~meta/metadataPages";
+import sortReviewsByDate from "~helpers/reviews/sortReviewsByDate";
 
 
 
@@ -45,7 +46,8 @@ export const metadata: Metadata = {
 
 
 export default async function PageForSellers() {
-  const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
+  const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
+  const reviews = allReviews.toSpliced(8);
   const objects = await getObjects(); // получаем все объекты
   const archiveObjects = filteredArchiveObjects(objects);
   const sortedArchiveObjects = sortArchiveObjectsBySoldDate(archiveObjects).slice(0, 10);

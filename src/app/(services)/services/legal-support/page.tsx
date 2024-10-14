@@ -11,6 +11,7 @@ import servicesCardsOfLegalSupport from "~data/constant/servicesBlock/servicesCa
 
 import { getAllReviews } from "~api/Reviews/getReviews";
 import { metaServicesLegalSupport } from "~meta/metadataPages";
+import sortReviewsByDate from "~helpers/reviews/sortReviewsByDate";
 
 export const metadata: Metadata = {
   title: metaServicesLegalSupport.title,
@@ -37,8 +38,8 @@ export const metadata: Metadata = {
 
 
 export default async function PageLegalSupport() {
-  const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
-
+  const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
+  const reviews = allReviews.toSpliced(8);
 
   return (
     <LegalSupportPage
