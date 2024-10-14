@@ -60,8 +60,14 @@ const useToggleSupportPopupStore = create<SupportPopupState>((set, get) => ({
   isOpen: false,
   type: null,
   actions: {
-    openPopup: (popupType: SupportPopupState["type"]) =>
-      set({ isOpen: true, type: popupType }),
+    openPopup: (popupType: SupportPopupState["type"]) => {
+      /* yandex.metrica */
+      if (popupType === 'successMessage' || popupType === 'reviewSuccessMessage') {
+        window.ym(98599118,'reachGoal','successMessage');
+      }
+      /* /yandex.metrica */
+      set({ isOpen: true, type: popupType });
+    },
 
     closePopup: () => set({ isOpen: false, type: null }),
 

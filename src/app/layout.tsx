@@ -50,15 +50,6 @@ export default function RootLayout({
   return (
     <html className={`${openSans.variable} ${gothamPro.variable}`} lang="ru" >
       <body className={` ${styles.page}`}>
-        {/* Yandex.Metrika counter - */}
-        <Suspense fallback={<></>}>
-          <YandexMetrica />
-          <div>
-            <img src="https://mc.yandex.ru/watch/98599118" className={styles.yandexMetrica} alt="" />
-          </div>
-        </Suspense>
-        {/* /Yandex.Metrika counter - */}
-
         <div className={styles.container} >
           <Header />
           <Navbar listItems={menuList} generalContactsData={generalContactsData} />
@@ -68,6 +59,15 @@ export default function RootLayout({
         </div>
         <MainPopups />
         <SupportPopups />
+        
+        {/* Yandex.Metrika counter - */}
+        <Suspense fallback={<></>}>
+          <YandexMetrica />
+          <div>
+            <img src="https://mc.yandex.ru/watch/98599118" className={styles.yandexMetrica} alt="" />
+          </div>
+        </Suspense>
+        {/* /Yandex.Metrika counter - */}
       </body>
     </html>
   );
