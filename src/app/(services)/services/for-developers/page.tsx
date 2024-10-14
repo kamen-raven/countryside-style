@@ -12,6 +12,7 @@ import { getAllReviews } from "~api/Reviews/getReviews";
 import { getAllUsers } from "~api/Users/getUsers";
 import sortUsersList from "~helpers/users/sortUsersData";
 import { metaServicesForDevelopers } from "~meta/metadataPages";
+import sortReviewsByDate from "~helpers/reviews/sortReviewsByDate";
 
 export const metadata: Metadata = {
   title: metaServicesForDevelopers.title,
@@ -39,7 +40,8 @@ export const metadata: Metadata = {
 
 
 export default async function PageForDevelopers() {
-  const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
+  const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
+  const reviews = allReviews.slice(0, 8);
   const employeeInitialData = await getAllUsers(10); // берем 10 пользователей
   const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 

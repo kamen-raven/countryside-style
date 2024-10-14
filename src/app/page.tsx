@@ -25,7 +25,8 @@ export default async function Home() {
   const employeeInitialData = await getAllUsers(10); // берем 10 пользователей
   const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 
-  const reviews = sortReviewsByDate((await getAllReviews(10)).results); // запрос ОТЗЫВОВ
+  const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
+  const reviews = allReviews.slice(0, 8);
 
   const blogPostsData = await getBlogArticle(300); // посты из блога
 
