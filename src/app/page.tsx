@@ -26,7 +26,7 @@ export default async function Home() {
   const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 
   const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
-  const reviews = allReviews.toSpliced(8);
+  const reviews = allReviews.slice(0, 8);
 
   const blogPostsData = await getBlogArticle(300); // посты из блога
 

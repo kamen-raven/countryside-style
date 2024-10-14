@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export default async function PageLegalSupport() {
   const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
-  const reviews = allReviews.toSpliced(8);
+  const reviews = allReviews.slice(0, 8);
 
   return (
     <LegalSupportPage
