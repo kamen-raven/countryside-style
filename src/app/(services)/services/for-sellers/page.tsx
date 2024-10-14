@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 
 export default async function PageForSellers() {
   const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
-  const reviews = allReviews.toSpliced(8);
+  const reviews = allReviews.slice(0, 8);
   const objects = await getObjects(); // получаем все объекты
   const archiveObjects = filteredArchiveObjects(objects);
   const sortedArchiveObjects = sortArchiveObjectsBySoldDate(archiveObjects).slice(0, 10);

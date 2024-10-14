@@ -70,7 +70,7 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
   }
 
   const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
-  const reviews = allReviews.toSpliced(8);
+  const reviews = allReviews.slice(0, 8);
   const objectsType = await getObjects(); // получаем все объекты
 
 

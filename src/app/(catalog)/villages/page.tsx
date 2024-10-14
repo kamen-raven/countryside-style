@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 export default async function PageVillages() {
 
   const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
-  const reviews = allReviews.toSpliced(8);
+  const reviews = allReviews.slice(0, 8);
   const villagesObjects = await getAllVillages(); // берем все поселки
 
   const visibleVillages = filteredVillagesByVisible(villagesObjects); // отображаем только те поселки, которые необходимо по условиям их видимости на сайте
