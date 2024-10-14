@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 
 
 export default async function PageReviews() {
-  const reviews = (await getAllReviews(300)).results; // запрос ОТЗЫВОВ
-  const sortedReviews = sortReviewsByDate(reviews);
+  const allReviews = await getAllReviews(); // запрос ОТЗЫВОВ
+  const sortedReviews = sortReviewsByDate(allReviews);
 
   const employeeInitialData = await getAllUsers(10); // берем 10 пользователей
   const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей

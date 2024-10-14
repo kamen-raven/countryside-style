@@ -10,6 +10,7 @@ import filteredObjectsByCategory from "~helpers/objects/filteredObjectsByCategor
 import sortedObjectsByPrice from "~helpers/objects/sortedObjectsByPrice";
 import { RealEstateObjectInterface } from "~interfaces/objects.interface";
 import { metaCatalogPage } from "~meta/metadataPages";
+import sortReviewsByDate from "~helpers/reviews/sortReviewsByDate";
 
 
 export async function generateMetadata({ params }: { params: { type: 'flats' | 'lands' | 'houses-and-cottages' } }): Promise<Metadata> {
@@ -68,7 +69,8 @@ export default async function PageType({ params }: { params: { type: 'flats' | '
     notFound();
   }
 
-  const reviews = (await getAllReviews()).results; // запрос ОТЗЫВОВ
+  const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
+  const reviews = allReviews.toSpliced(8);
   const objectsType = await getObjects(); // получаем все объекты
 
 
