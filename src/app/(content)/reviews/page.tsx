@@ -36,7 +36,7 @@ export default async function PageReviews() {
   const allReviews = await getAllReviews(); // запрос ОТЗЫВОВ
   const sortedReviews = sortReviewsByDate(allReviews);
 
-  const employeeInitialData = await getAllUsers(10); // берем 10 пользователей
+  const employeeInitialData = await getAllUsers(20); // берем 20 пользователей
   const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 
 

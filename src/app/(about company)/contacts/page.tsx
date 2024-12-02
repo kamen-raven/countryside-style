@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 
 export default async function PageContacts() {
-  const employeeInitialData = await getAllUsers(10); // берем 10 пользователей
+  const employeeInitialData = await getAllUsers(20); // берем 20 пользователей
   const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 
   return (

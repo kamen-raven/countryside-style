@@ -22,7 +22,7 @@ export default async function Home() {
   const villagesObjects = await getAllVillages();
   const visibleVillages = filteredVillagesByVisible(villagesObjects);
 
-  const employeeInitialData = await getAllUsers(10); // берем 10 пользователей
+  const employeeInitialData = await getAllUsers(20); // берем 20 пользователей
   const employeeData = sortUsersList(employeeInitialData); // сортируем приходящий массив пользователей
 
   const allReviews = sortReviewsByDate((await getAllReviews())); // запрос ОТЗЫВОВ
