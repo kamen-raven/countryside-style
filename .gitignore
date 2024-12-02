@@ -35,4 +35,5 @@ yarn-error.log*
 next-env.d.ts
 
 *.fig
+conf.pdf
 /public/svg/logo/zagorod_stile_logo
