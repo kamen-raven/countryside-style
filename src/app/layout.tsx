@@ -12,7 +12,8 @@ import { Header, Navbar, Footer } from '~common/index';
 import { MainPopups } from '~features/Popups/MainPopups';
 import { SupportPopups } from '~features/Popups/SupportPopups';
 import { metaLayout } from '~meta/metadataPages';
-
+import { Suspense } from 'react';
+import { YandexMetrica } from '~tools/YandexMetrica/YandexMetrica';
 
 export const metadata: Metadata = {
   title: metaLayout.title,
@@ -31,9 +32,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: './opengraph-image.png',
-        width:  metaLayout.openGraph.images.width,
-        height:  metaLayout.openGraph.images.height,
-        alt:  metaLayout.openGraph.images.alt,
+        width: metaLayout.openGraph.images.width,
+        height: metaLayout.openGraph.images.height,
+        alt: metaLayout.openGraph.images.alt,
       },
     ],
   },
@@ -58,6 +59,15 @@ export default function RootLayout({
         </div>
         <MainPopups />
         <SupportPopups />
+        
+        {/* Yandex.Metrika counter - */}
+        <Suspense fallback={<></>}>
+          <YandexMetrica />
+          <div>
+            <img src="https://mc.yandex.ru/watch/98599118" className={styles.yandexMetrica} alt="" />
+          </div>
+        </Suspense>
+        {/* /Yandex.Metrika counter - */}
       </body>
     </html>
   );

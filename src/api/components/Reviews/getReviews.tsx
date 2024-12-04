@@ -70,7 +70,7 @@ export async function getAllReviews(pageSize = 15): Promise<ReviewInterface[]> {
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 60// 86400 // сутки
+        revalidate: 86400 // сутки
       }
     });
 
