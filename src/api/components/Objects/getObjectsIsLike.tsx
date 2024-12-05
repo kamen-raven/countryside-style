@@ -18,7 +18,7 @@ export async function getObjectsIsLike(
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 3600 // 1 час
+        revalidate:  300 // 5 min // 3600 // 1 час
       }
     });
 

@@ -19,7 +19,7 @@ export async function getAllUsers(pageSize?: number, page?: number): Promise<Api
         'content-type': 'application/json'
       }),
       next: {
-        revalidate: 86400 // 1 сутки
+        revalidate: 7200 // 2 часа // 86400 // 1 сутки
       }
     });
 
